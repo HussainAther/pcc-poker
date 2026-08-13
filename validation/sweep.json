@@ -1,0 +1,23 @@
+{
+  "hands_per_matchup": 2000,
+  "seed": 17,
+  "mean_payoff_focal_policy": {
+    "pressure_vs_pressure": 0.0,
+    "pressure_vs_control": 1.181,
+    "control_vs_pressure": -1.181,
+    "pressure_vs_chaos": 0.13749999999999998,
+    "chaos_vs_pressure": -0.13749999999999998,
+    "control_vs_control": 0.0,
+    "control_vs_chaos": -0.1275,
+    "chaos_vs_control": 0.1275,
+    "chaos_vs_chaos": 0.0
+  },
+  "proposed_cycle": {
+    "control_over_pressure": false,
+    "chaos_over_control": true,
+    "pressure_over_chaos": true
+  },
+  "complete_cycle_observed": false,
+  "design": "each ordered comparison averages focal-policy payoff across both seats",
+  "warning": "No cyclic bonuses are encoded; this is a policy-specific simulation result."
+}

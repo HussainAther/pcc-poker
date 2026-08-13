@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcc-poker"
+version = "0.1.0"
+description = "Pressure-Control-Chaos experiments in imperfect-information games"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Syed Hussain Ather"}]
+dependencies = ["numpy>=1.24"]
+
+[project.scripts]
+pcc-poker = "pcc_poker.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pcc_poker*"]
