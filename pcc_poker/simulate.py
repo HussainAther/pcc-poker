@@ -11,11 +11,17 @@ from .families import IndependentMixturePolicy
 from .policies import MODES, PCCPolicy, PURE_MIXTURES
 
 
-def play_hand(policy0: PCCPolicy, policy1: PCCPolicy, deck: list[int], hand_id: str) -> tuple[list[dict], tuple[float, float]]:
+def play_hand(
+    policy0: PCCPolicy,
+    policy1: PCCPolicy,
+    deck: list[int],
+    hand_id: str,
+    measurement_oracle=None,
+) -> tuple[list[dict], tuple[float, float]]:
     state = initial_state(deck); policies = (policy0, policy1); records = []
     while not state.terminal:
         actor = state.actor; decision = policies[actor].decide(state)
-        records.append({
+        record = {
             "hand_id": hand_id, "decision_index": len(records), "actor": actor,
             "round_index": state.round_index, "public_rank": state.public,
             "private_rank": state.private[actor], "pot": state.pot,
@@ -25,7 +31,12 @@ def play_hand(policy0: PCCPolicy, policy1: PCCPolicy, deck: list[int], hand_id: 
             "component_scores": decision.component_scores,
             "hidden_pcc_weights": decision.weights,
             "policy_label": policies[actor].label, "showdown_equity": decision.equity,
-        })
+        }
+        if measurement_oracle is not None:
+            record["behavioral_measurements"] = measurement_oracle.measure(
+                state, decision.action
+            ).as_dict()
+        records.append(record)
         policies[1 - actor].opponent_model.observe(state, decision.action)
         state = apply_action(state, decision.action)
     payoffs = (utility(state, 0), utility(state, 1))
@@ -65,6 +76,7 @@ def simulate_policy_match(
     policy0,
     policy1,
     seed: int,
+    measurement_oracle=None,
 ) -> tuple[list[dict], dict]:
     """Play already-constructed policies from any compatible family."""
     rng = random.Random(seed)
@@ -74,7 +86,11 @@ def simulate_policy_match(
         deck = [0, 0, 1, 1, 2, 2]
         rng.shuffle(deck)
         hand_records, payoffs = play_hand(
-            policy0, policy1, deck, f"family-{seed}-hand-{index}"
+            policy0,
+            policy1,
+            deck,
+            f"family-{seed}-hand-{index}",
+            measurement_oracle,
         )
         records.extend(hand_records)
         totals[0] += payoffs[0]
@@ -244,6 +260,7 @@ def generate_family_dataset(
     seed: int = 61,
     alpha: float = 0.7,
     focal_temperature: float = 0.35,
+    measurement_oracle=None,
 ) -> tuple[list[dict], dict]:
     """Generate grouped mixtures from a selected policy implementation family."""
     families = {
@@ -276,7 +293,11 @@ def generate_family_dataset(
             policies = [reference, reference]
             policies[focal_seat] = focal
             batch, _ = simulate_policy_match(
-                hands_per_seat, policies[0], policies[1], simulation_seed
+                hands_per_seat,
+                policies[0],
+                policies[1],
+                simulation_seed,
+                measurement_oracle,
             )
             for record in batch:
                 record["mixture_id"] = mixture_id

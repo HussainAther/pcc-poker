@@ -1,0 +1,117 @@
+{
+  "status": "completed",
+  "measurement_inputs": "public betting context plus acting player's private rank for information-set value",
+  "generator_weights_used_as_predictors": false,
+  "families": {
+    "independent": {
+      "mixtures": 30,
+      "seat_level_examples": 60,
+      "measurement_weight_correlations": {
+        "pressure_index": {
+          "pressure": 0.6996140638317467,
+          "control": -0.32863146758369505,
+          "chaos": -0.37994116297905406
+        },
+        "control_efficiency": {
+          "pressure": -0.055229020548290604,
+          "control": 0.034047777336582076,
+          "chaos": 0.021687035710487263
+        },
+        "effective_surprisal": {
+          "pressure": -0.8721382626694465,
+          "control": 0.4400241019375319,
+          "chaos": 0.44252761179922634
+        }
+      },
+      "matching_axis_correlations": {
+        "pressure": 0.6996140638317467,
+        "control": 0.034047777336582076,
+        "chaos": 0.44252761179922634
+      },
+      "measurement_payoff_correlations": {
+        "pressure_index": -0.107359408170159,
+        "control_efficiency": 0.2314295246195554,
+        "effective_surprisal": 0.08309351091898728
+      }
+    },
+    "score": {
+      "mixtures": 30,
+      "seat_level_examples": 60,
+      "measurement_weight_correlations": {
+        "pressure_index": {
+          "pressure": 0.8960358669023217,
+          "control": -0.6995582468881807,
+          "chaos": -0.23903808410010513
+        },
+        "control_efficiency": {
+          "pressure": 0.6987017886493347,
+          "control": -0.6378569269627672,
+          "chaos": -0.08919652630350709
+        },
+        "effective_surprisal": {
+          "pressure": -0.9367668893588482,
+          "control": 0.6017364815141093,
+          "chaos": 0.3863119674308009
+        }
+      },
+      "matching_axis_correlations": {
+        "pressure": 0.8960358669023217,
+        "control": -0.6378569269627672,
+        "chaos": 0.3863119674308009
+      },
+      "measurement_payoff_correlations": {
+        "pressure_index": 0.44306092386898904,
+        "control_efficiency": 0.5561583855806739,
+        "effective_surprisal": -0.28419652760349734
+      }
+    }
+  },
+  "matching_axis_positive_in_every_family": {
+    "pressure": true,
+    "control": false,
+    "chaos": true
+  },
+  "cross_family_construct_result": {
+    "pressure": {
+      "result": "positive_in_both_families",
+      "correlations": {
+        "independent": 0.6996140638317467,
+        "score": 0.8960358669023217
+      }
+    },
+    "control": {
+      "result": "contradicted_in_at_least_one_family",
+      "correlations": {
+        "independent": 0.034047777336582076,
+        "score": -0.6378569269627672
+      }
+    },
+    "chaos": {
+      "result": "positive_in_both_families",
+      "correlations": {
+        "independent": 0.44252761179922634,
+        "score": 0.3863119674308009
+      }
+    }
+  },
+  "descriptive_effect_threshold": 0.2,
+  "threshold_note": "The 0.20 threshold is a transparent descriptive convention added for this engineering validation, not a preregistered significance test.",
+  "warning": "Assigned weights are used only for construct-validation correlations. The measurements themselves are computed without generator labels, hidden opponent cards, or component scores.",
+  "design": {
+    "calibration_mixtures_per_family": 20,
+    "calibration_hands_per_seat": 25,
+    "evaluation_mixtures_per_family": 30,
+    "evaluation_hands_per_seat": 50,
+    "calibration_seeds": {
+      "score": 101,
+      "independent": 103
+    },
+    "evaluation_seeds": {
+      "score": 211,
+      "independent": 223
+    },
+    "calibration_evaluation_overlap": false,
+    "unit_of_analysis": "mixture by focal seat",
+    "confirmatory_status": "synthetic engineering validation only"
+  }
+}

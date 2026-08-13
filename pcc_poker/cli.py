@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from .analyze import analyze_file
+from .behavioral_experiment import write_behavioral_validation
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .policies import PURE_MIXTURES
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
@@ -116,6 +117,21 @@ def family_transfer_grid_command(args) -> int:
     return 0
 
 
+def behavioral_validation_command(args) -> int:
+    report = write_behavioral_validation(
+        args.output,
+        calibration_mixtures=args.calibration_mixtures,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_mixtures=args.evaluation_mixtures,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+    )
+    print(json.dumps({
+        "families": report["families"],
+        "matching_axis_positive_in_every_family": report["matching_axis_positive_in_every_family"],
+    }, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -128,6 +144,7 @@ def parser() -> argparse.ArgumentParser:
     family_dataset=commands.add_parser("family-dataset", help="generate data from one policy family");family_dataset.add_argument("--family",choices=["score","independent"],required=True);family_dataset.add_argument("--mixtures",type=int,default=60);family_dataset.add_argument("--hands-per-seat",type=int,default=100);family_dataset.add_argument("--alpha",type=float,default=0.7);family_dataset.add_argument("--temperature",type=float,default=0.35);family_dataset.add_argument("--seed",type=int,required=True);family_dataset.add_argument("--output",required=True);family_dataset.set_defaults(func=family_dataset_command)
     family_transfer=commands.add_parser("family-transfer", help="train on one policy family and test another");family_transfer.add_argument("--training",required=True);family_transfer.add_argument("--transfer",required=True);family_transfer.add_argument("--output",required=True);family_transfer.set_defaults(func=family_transfer_command)
     transfer_grid=commands.add_parser("family-transfer-grid", help="replicate bidirectional family transfer");transfer_grid.add_argument("--score-seeds",type=int,nargs="+",default=[61,62,63,64,65]);transfer_grid.add_argument("--independent-seeds",type=int,nargs="+",default=[71,72,73,74,75]);transfer_grid.add_argument("--mixtures",type=int,default=40);transfer_grid.add_argument("--hands-per-seat",type=int,default=75);transfer_grid.add_argument("--alpha",type=float,default=0.7);transfer_grid.add_argument("--shuffle-repetitions",type=int,default=10);transfer_grid.add_argument("--output",required=True);transfer_grid.set_defaults(func=family_transfer_grid_command)
+    behavioral=commands.add_parser("behavioral-validation", help="validate label-free behavioral PCC measures");behavioral.add_argument("--calibration-mixtures",type=int,default=20);behavioral.add_argument("--calibration-hands-per-seat",type=int,default=25);behavioral.add_argument("--evaluation-mixtures",type=int,default=30);behavioral.add_argument("--evaluation-hands-per-seat",type=int,default=50);behavioral.add_argument("--output",required=True);behavioral.set_defaults(func=behavioral_validation_command)
     return root
 
 
