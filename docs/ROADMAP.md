@@ -4,9 +4,12 @@
 
 - Validate rules and exact equity.
 - Sweep mixture weights, temperatures, and opponent-memory lengths.
-- Test mode recovery from observable histories.
+- Replicate continuous mixture recovery across seeds, temperatures, and sample
+  sizes.
 - Compare action-frequency and sequence baselines.
 - Estimate pairwise payoff matrices without cyclic bonuses.
+- Replace direct cross-family weight regression with shared behavioral
+  measurements after the initial transfer test showed mechanism dependence.
 
 ## Phase 2 — stronger game-theoretic baselines
 
@@ -14,6 +17,8 @@
 - Add CFR/approximate-equilibrium policies.
 - Compute counterfactual regret and exploitability.
 - Compare PCC quantities with established poker constructs.
+- Test whether unlabeled behavioral measurements recover common structure
+  across CFR, best-response, entropy-regularized, and existing policy families.
 
 ## Phase 3 — human poker histories
 

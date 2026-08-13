@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "seed_pairs": [[61, 71], [62, 72], [63, 73], [64, 74], [65, 75]],
+  "mixtures_per_family": 40,
+  "hands_per_seat": 75,
+  "aggregate_by_direction": {
+    "score_to_independent": {
+      "runs": 5,
+      "contextual_mae_mean": 0.21855978319281527,
+      "action_frequency_mae_mean": 0.19611203117249668,
+      "constant_mean_mae_mean": 0.244265983016232,
+      "shuffled_mae_mean": 0.2785207031202824,
+      "contextual_below_action_rate": 0.0,
+      "contextual_below_constant_rate": 0.8,
+      "contextual_below_shuffled_rate": 1.0
+    },
+    "independent_to_score": {
+      "runs": 5,
+      "contextual_mae_mean": 0.2574030236485513,
+      "action_frequency_mae_mean": 0.23813034176213446,
+      "constant_mean_mae_mean": 0.2157903029028237,
+      "shuffled_mae_mean": 0.27448006355387655,
+      "contextual_below_action_rate": 0.2,
+      "contextual_below_constant_rate": 0.2,
+      "contextual_below_shuffled_rate": 0.6
+    }
+  },
+  "conclusion": "Current supervised PCC coordinates are not implementation-invariant.",
+  "warning": "Both families still use researcher-assigned PCC mixture coordinates."
+}

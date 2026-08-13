@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "seeds": [41, 42, 43, 44, 45],
+  "focal_temperatures": [0.25, 0.35, 0.5],
+  "reference_temperature": 0.35,
+  "mixtures_per_run": 60,
+  "hands_per_seat": 100,
+  "dirichlet_alpha": 0.7,
+  "aggregate": {
+    "runs": 15,
+    "contextual_mae_mean": 0.09624766566303133,
+    "contextual_mae_std": 0.019569236417975484,
+    "action_frequency_mae_mean": 0.11458577070456626,
+    "shuffled_mae_mean": 0.2410419719135881,
+    "contextual_below_action_frequency_rate": 0.9333333333333333,
+    "contextual_below_shuffled_rate": 1.0
+  },
+  "failed_action_frequency_condition": {
+    "seed": 42,
+    "focal_temperature": 0.5,
+    "contextual_mae": 0.11528811412773796,
+    "action_frequency_mae": 0.11399478110272371
+  },
+  "warning": "This grid tests robustness within one hand-authored policy family, not generalization to human behavior or other policy mechanisms."
+}

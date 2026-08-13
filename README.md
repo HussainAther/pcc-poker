@@ -33,6 +33,9 @@ Pressure, and a check is not intrinsically Control.
 - JSONL trajectory logs with hidden weights available as simulation truth;
 - AI-versus-AI sweeps and payoff matrices;
 - observable-history mode recovery with grouped train/test evaluation;
+- continuous-mixture recovery with held-out mixture and seed groups;
+- action-frequency and shuffled-target baselines;
+- bidirectional transfer tests across independently coded policy mechanisms;
 - falsification-oriented reports and reproducible seeds.
 
 No cyclic advantage is hardcoded. The initial simulations may or may not
@@ -66,6 +69,38 @@ mode advantage.
 reference. Recovery uses only public betting state and actions, filters out the
 reference agent, and holds out whole hands rather than individual decisions.
 
+Run the stronger continuous-mixture experiment:
+
+```bash
+python -m pcc_poker mixed-dataset --mixtures 60 --hands-per-seat 100 \
+  --alpha 0.7 --seed 41 --output outputs/mixed-recovery-data.jsonl
+python -m pcc_poker mixed-analyze outputs/mixed-recovery-data.jsonl \
+  --output outputs/mixed-recovery.json
+python -m pcc_poker mixed-grid --seeds 41 42 43 44 45 \
+  --temperatures 0.25 0.35 0.5 --output outputs/mixed-grid.json
+```
+
+This split holds out complete mixture vectors. Both seats and all simulation
+seeds associated with a mixture remain in the same partition. Hidden weights,
+private cards, component scores, and action probabilities are excluded from the
+features. See `docs/MIXED_MODE_PROTOCOL.md` for the frozen design and limits.
+The grid command repeats the full grouped evaluation across independent seeds
+and policy temperatures rather than treating a single split as decisive.
+
+Run the policy-family anti-circularity test:
+
+```bash
+python -m pcc_poker family-transfer-grid \
+  --score-seeds 61 62 63 64 65 \
+  --independent-seeds 71 72 73 74 75 \
+  --output outputs/family-transfer-grid.json
+```
+
+The independent family never calls the original PCC component-score function.
+Instead, it constructs separate coercive, one-step value, and novelty-filtered
+action distributions and mixes probabilities. This is a stricter domain-shift
+test, although both families still receive researcher-assigned mixture weights.
+
 ## Repository map
 
 ```text
@@ -79,6 +114,8 @@ docs/
   MEASUREMENT_CONTRACT.md
   FALSIFICATION_PLAN.md
   ETHICS_AND_DATA.md
+  MIXED_MODE_PROTOCOL.md
+  POLICY_FAMILY_TRANSFER.md
   ROADMAP.md
 tests/
 ```
