@@ -118,6 +118,18 @@ correlations. The first run is deliberately reported as partial: Pressure and
 effective Chaos transfer across both families, while this value-regret definition
 of Control does not. See `docs/BEHAVIORAL_MEASURES.md`.
 
+Run the prospective opponent-adaptation Control confirmation:
+
+```bash
+python -m pcc_poker control-confirmation \
+  --output outputs/control-confirmation.json
+```
+
+This uses new seeds and a larger evaluation set. The resulting Control signal
+is discriminant but only partly replicates: moderate in the independent family
+and weak in the score family. The repository records that result as
+inconclusive rather than changing the metric after confirmation.
+
 ## Repository map
 
 ```text

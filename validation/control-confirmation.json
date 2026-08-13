@@ -1,0 +1,166 @@
+{
+  "status": "completed",
+  "measurement_inputs": "public betting context, prior public opponent actions, and the acting player's private rank for information-set value",
+  "generator_weights_used_as_predictors": false,
+  "families": {
+    "independent": {
+      "mixtures": 60,
+      "seat_level_examples": 120,
+      "measurement_weight_correlations": {
+        "pressure_index": {
+          "pressure": 0.7464890747314805,
+          "control": -0.2167862671555596,
+          "chaos": -0.4546014710689261
+        },
+        "control_efficiency": {
+          "pressure": -0.08358989332867688,
+          "control": 0.05432501618932194,
+          "chaos": 0.024677713683178133
+        },
+        "predictive_control": {
+          "pressure": -0.8958828247182317,
+          "control": 0.3562415555743184,
+          "chaos": 0.4617306062142496
+        },
+        "opponent_adaptation_control": {
+          "pressure": -0.20850276244288926,
+          "control": 0.21867041824018937,
+          "chaos": -0.011030721862219196
+        },
+        "effective_surprisal": {
+          "pressure": -0.9272146298583676,
+          "control": 0.28556938962208994,
+          "chaos": 0.5504351276705132
+        }
+      },
+      "matching_axis_correlations": {
+        "pressure": 0.7464890747314805,
+        "control": 0.21867041824018937,
+        "chaos": 0.5504351276705132
+      },
+      "measurement_payoff_correlations": {
+        "pressure_index": -0.1116343725640088,
+        "control_efficiency": 0.28591382921953234,
+        "predictive_control": 0.2856286241746612,
+        "opponent_adaptation_control": -0.08134427110197519,
+        "effective_surprisal": 0.2157009931343358
+      }
+    },
+    "score": {
+      "mixtures": 60,
+      "seat_level_examples": 120,
+      "measurement_weight_correlations": {
+        "pressure_index": {
+          "pressure": 0.8987337583879581,
+          "control": -0.6023480118406411,
+          "chaos": -0.3860609702133589
+        },
+        "control_efficiency": {
+          "pressure": 0.7156876949025747,
+          "control": -0.5315296204695426,
+          "chaos": -0.2610865228874653
+        },
+        "predictive_control": {
+          "pressure": -0.8931302667244726,
+          "control": 0.47678396315644955,
+          "chaos": 0.4925036198564031
+        },
+        "opponent_adaptation_control": {
+          "pressure": -0.029549272493324102,
+          "control": 0.0943352186637409,
+          "chaos": -0.053908459043830806
+        },
+        "effective_surprisal": {
+          "pressure": -0.9502624797663831,
+          "control": 0.5083164254106343,
+          "chaos": 0.5230849702813903
+        }
+      },
+      "matching_axis_correlations": {
+        "pressure": 0.8987337583879581,
+        "control": 0.0943352186637409,
+        "chaos": 0.5230849702813903
+      },
+      "measurement_payoff_correlations": {
+        "pressure_index": 0.397012435469764,
+        "control_efficiency": 0.47499840506784763,
+        "predictive_control": -0.3127387611750982,
+        "opponent_adaptation_control": -0.22193511061386642,
+        "effective_surprisal": -0.25454354743472496
+      }
+    }
+  },
+  "matching_axis_positive_in_every_family": {
+    "pressure": true,
+    "control": true,
+    "chaos": true
+  },
+  "cross_family_construct_result": {
+    "pressure": {
+      "result": "positive_in_both_families",
+      "correlations": {
+        "independent": 0.7464890747314805,
+        "score": 0.8987337583879581
+      }
+    },
+    "control": {
+      "result": "inconclusive",
+      "correlations": {
+        "independent": 0.21867041824018937,
+        "score": 0.0943352186637409
+      }
+    },
+    "chaos": {
+      "result": "positive_in_both_families",
+      "correlations": {
+        "independent": 0.5504351276705132,
+        "score": 0.5230849702813903
+      }
+    }
+  },
+  "descriptive_effect_threshold": 0.2,
+  "threshold_note": "The 0.20 threshold is a transparent descriptive convention added for this engineering validation, not a preregistered significance test.",
+  "warning": "Assigned weights are used only for construct-validation correlations. The measurements themselves are computed without generator labels, hidden opponent cards, or component scores.",
+  "prospective_test": {
+    "candidate_frozen_before_confirmation_seeds": true,
+    "development_evaluation_seeds": {
+      "score": 401,
+      "independent": 409
+    },
+    "confirmation_evaluation_seeds": {
+      "score": 601,
+      "independent": 607
+    },
+    "old_validation_or_development_seeds_reused": false,
+    "control_definition": "within-seat covariance between aggression and the round-specific opponent fold rate estimated only from earlier observed actions",
+    "primary_control_measure": "opponent_adaptation_control",
+    "evaluation_mixtures_per_family": 60,
+    "evaluation_hands_per_seat": 100,
+    "discriminant_check": {
+      "independent": {
+        "control_is_largest_correlation": true,
+        "correlations": {
+          "pressure": -0.20850276244288926,
+          "control": 0.21867041824018937,
+          "chaos": -0.011030721862219196
+        },
+        "control_correlation_approximate_95pct_ci": [
+          0.041034212283410414,
+          0.38290676429963516
+        ]
+      },
+      "score": {
+        "control_is_largest_correlation": true,
+        "correlations": {
+          "pressure": -0.029549272493324102,
+          "control": 0.0943352186637409,
+          "chaos": -0.053908459043830806
+        },
+        "control_correlation_approximate_95pct_ci": [
+          -0.08636977608984135,
+          0.2690307198035689
+        ]
+      }
+    }
+  }
+}
