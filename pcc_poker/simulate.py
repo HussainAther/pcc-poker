@@ -7,6 +7,7 @@ import random
 from pathlib import Path
 
 from .engine import apply_action, initial_state, utility
+from .families import IndependentMixturePolicy
 from .policies import MODES, PCCPolicy, PURE_MIXTURES
 
 
@@ -37,10 +38,15 @@ def simulate_match(
     hands: int,
     mixture0=(0.8, 0.1, 0.1), mixture1=(1 / 3, 1 / 3, 1 / 3),
     seed: int = 7, label0: str | None = None, label1: str | None = None,
+    temperature0: float = 0.35, temperature1: float = 0.35,
 ) -> tuple[list[dict], dict]:
     rng = random.Random(seed)
-    policy0 = PCCPolicy(mixture0, seed=seed * 2 + 1, label=label0)
-    policy1 = PCCPolicy(mixture1, seed=seed * 2 + 2, label=label1)
+    policy0 = PCCPolicy(
+        mixture0, seed=seed * 2 + 1, label=label0, temperature=temperature0
+    )
+    policy1 = PCCPolicy(
+        mixture1, seed=seed * 2 + 2, label=label1, temperature=temperature1
+    )
     records = []; totals = [0.0, 0.0]
     for index in range(hands):
         deck = [0, 0, 1, 1, 2, 2]; rng.shuffle(deck)
@@ -49,7 +55,37 @@ def simulate_match(
     return records, {
         "hands": hands, "seed": seed, "policy0": policy0.label, "policy1": policy1.label,
         "mixture0": list(policy0.weights), "mixture1": list(policy1.weights),
+        "temperature0": temperature0, "temperature1": temperature1,
         "mean_payoff0": totals[0] / hands, "mean_payoff1": totals[1] / hands,
+    }
+
+
+def simulate_policy_match(
+    hands: int,
+    policy0,
+    policy1,
+    seed: int,
+) -> tuple[list[dict], dict]:
+    """Play already-constructed policies from any compatible family."""
+    rng = random.Random(seed)
+    records = []
+    totals = [0.0, 0.0]
+    for index in range(hands):
+        deck = [0, 0, 1, 1, 2, 2]
+        rng.shuffle(deck)
+        hand_records, payoffs = play_hand(
+            policy0, policy1, deck, f"family-{seed}-hand-{index}"
+        )
+        records.extend(hand_records)
+        totals[0] += payoffs[0]
+        totals[1] += payoffs[1]
+    return records, {
+        "hands": hands,
+        "seed": seed,
+        "policy0": policy0.label,
+        "policy1": policy1.label,
+        "mean_payoff0": totals[0] / hands,
+        "mean_payoff1": totals[1] / hands,
     }
 
 
@@ -118,4 +154,149 @@ def generate_recovery_dataset(hands_per_seat: int = 500, seed: int = 23) -> tupl
         "seed": seed,
         "design": "each pure mode in both seats versus a fixed balanced reference",
         "batches": batches,
+    }
+
+
+def sample_simplex(rng: random.Random, alpha: float = 0.7) -> tuple[float, float, float]:
+    """Sample continuous PCC weights from a symmetric Dirichlet distribution."""
+    if alpha <= 0:
+        raise ValueError("alpha must be positive")
+    values = [rng.gammavariate(alpha, 1.0) for _ in MODES]
+    total = sum(values)
+    return tuple(value / total for value in values)
+
+
+def generate_mixed_dataset(
+    mixtures: int = 60,
+    hands_per_seat: int = 100,
+    seed: int = 41,
+    alpha: float = 0.7,
+    focal_temperature: float = 0.35,
+    reference_temperature: float = 0.35,
+) -> tuple[list[dict], dict]:
+    """Generate continuous-mixture data with each mixture represented in both seats.
+
+    Mixture vectors and their simulation seeds are unique to a group. Downstream
+    analysis splits on ``mixture_id``, keeping both seats and all associated seeds
+    together and preventing the same target vector from appearing in train/test.
+    """
+    if mixtures < 5:
+        raise ValueError("at least five mixtures are required for grouped evaluation")
+    if hands_per_seat < 1:
+        raise ValueError("hands_per_seat must be positive")
+
+    rng = random.Random(seed)
+    balanced = (1 / 3, 1 / 3, 1 / 3)
+    records: list[dict] = []
+    groups = []
+    for mixture_index in range(mixtures):
+        mixture_id = f"mix-{mixture_index:04d}"
+        weights = sample_simplex(rng, alpha)
+        group_seeds = []
+        for focal_seat in (0, 1):
+            simulation_seed = seed * 10_000 + mixture_index * 2 + focal_seat
+            group_seeds.append(simulation_seed)
+            policy_weights = [balanced, balanced]
+            policy_labels = ["balanced_reference", "balanced_reference"]
+            policy_weights[focal_seat] = weights
+            policy_labels[focal_seat] = mixture_id
+            temperatures = [reference_temperature, reference_temperature]
+            temperatures[focal_seat] = focal_temperature
+            batch, _ = simulate_match(
+                hands_per_seat,
+                policy_weights[0],
+                policy_weights[1],
+                simulation_seed,
+                policy_labels[0],
+                policy_labels[1],
+                temperatures[0],
+                temperatures[1],
+            )
+            for record in batch:
+                record["mixture_id"] = mixture_id
+                record["simulation_seed"] = simulation_seed
+                record["focal_seat"] = focal_seat
+                record["is_focal_policy"] = record["actor"] == focal_seat
+                record["target_pcc_weights"] = dict(zip(MODES, weights))
+            records.extend(batch)
+        groups.append({
+            "mixture_id": mixture_id,
+            "weights": dict(zip(MODES, weights)),
+            "simulation_seeds": group_seeds,
+        })
+    return records, {
+        "mixtures": mixtures,
+        "hands_per_seat": hands_per_seat,
+        "total_hands": mixtures * hands_per_seat * 2,
+        "seed": seed,
+        "dirichlet_alpha": alpha,
+        "focal_temperature": focal_temperature,
+        "reference_temperature": reference_temperature,
+        "split_unit": "mixture_id (both seats and all associated seeds)",
+        "groups": groups,
+    }
+
+
+def generate_family_dataset(
+    family: str,
+    mixtures: int = 60,
+    hands_per_seat: int = 100,
+    seed: int = 61,
+    alpha: float = 0.7,
+    focal_temperature: float = 0.35,
+) -> tuple[list[dict], dict]:
+    """Generate grouped mixtures from a selected policy implementation family."""
+    families = {
+        "score": PCCPolicy,
+        "independent": IndependentMixturePolicy,
+    }
+    if family not in families:
+        raise ValueError(f"unknown policy family {family!r}; choices={tuple(families)}")
+    policy_class = families[family]
+    rng = random.Random(seed)
+    balanced = (1 / 3, 1 / 3, 1 / 3)
+    records = []
+    groups = []
+    for mixture_index in range(mixtures):
+        mixture_id = f"{family}-mix-{seed}-{mixture_index:04d}"
+        weights = sample_simplex(rng, alpha)
+        for focal_seat in (0, 1):
+            simulation_seed = seed * 10_000 + mixture_index * 2 + focal_seat
+            focal = policy_class(
+                weights,
+                seed=simulation_seed * 2 + focal_seat,
+                temperature=focal_temperature,
+                label=mixture_id,
+            )
+            reference = PCCPolicy(
+                balanced,
+                seed=simulation_seed * 2 + 10,
+                label="balanced_reference",
+            )
+            policies = [reference, reference]
+            policies[focal_seat] = focal
+            batch, _ = simulate_policy_match(
+                hands_per_seat, policies[0], policies[1], simulation_seed
+            )
+            for record in batch:
+                record["mixture_id"] = mixture_id
+                record["simulation_seed"] = simulation_seed
+                record["focal_seat"] = focal_seat
+                record["is_focal_policy"] = record["actor"] == focal_seat
+                record["target_pcc_weights"] = dict(zip(MODES, weights))
+                record["policy_family"] = family
+            records.extend(batch)
+        groups.append({
+            "mixture_id": mixture_id,
+            "weights": dict(zip(MODES, weights)),
+        })
+    return records, {
+        "family": family,
+        "mixtures": mixtures,
+        "hands_per_seat": hands_per_seat,
+        "total_hands": mixtures * hands_per_seat * 2,
+        "seed": seed,
+        "dirichlet_alpha": alpha,
+        "focal_temperature": focal_temperature,
+        "groups": groups,
     }

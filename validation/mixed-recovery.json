@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "prediction_target": "continuous_pressure_control_chaos_weights",
+  "split_unit": "mixture_id; both seats and simulation seeds remain grouped",
+  "observable_features_only": true,
+  "train_mixtures": 51,
+  "test_mixtures": 9,
+  "train_examples": 102,
+  "test_examples": 18,
+  "action_frequency_baseline": {
+    "mae": 0.10379317282811623,
+    "rmse": 0.15029926059340423,
+    "per_mode_mae": {
+      "pressure": 0.04681708740446655,
+      "control": 0.13014954690832606,
+      "chaos": 0.13441288417155606
+    },
+    "dominant_mode_accuracy": 0.8888888888888888
+  },
+  "contextual_history_model": {
+    "mae": 0.09058912123908779,
+    "rmse": 0.11856160167752217,
+    "per_mode_mae": {
+      "pressure": 0.04456563775699896,
+      "control": 0.11284841472441154,
+      "chaos": 0.11435331123585285
+    },
+    "dominant_mode_accuracy": 0.8333333333333334
+  },
+  "shuffled_target_baseline": {
+    "repetitions": 25,
+    "mae_mean": 0.26144093304927457,
+    "mae_std": 0.019420476138919767,
+    "rmse_mean": 0.3096534791077074,
+    "dominant_mode_accuracy_mean": 0.31333333333333335
+  },
+  "relative_mae_improvement_over_action_frequency": 0.12721502994127218,
+  "prespecified_checks": {
+    "contextual_mae_below_action_frequency": true,
+    "contextual_mae_below_shuffled_mean": true
+  },
+  "warning": "Recovery of synthetic objective weights establishes identifiability only; it is not evidence that human behavior follows PCC."
+}
