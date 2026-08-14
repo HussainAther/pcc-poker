@@ -1,0 +1,58 @@
+{
+  "contextual_control_observable_confirmed": false,
+  "families": {
+    "adaptive": {
+      "weight_correlations": {
+        "pressure": -0.5802728966170899,
+        "control": 0.8118332346982322,
+        "chaos": -0.3558014638621132
+      },
+      "control_correlation": 0.8118332346982322,
+      "discriminant_margin": 1.1676346985603454,
+      "groups": 120
+    },
+    "score": {
+      "weight_correlations": {
+        "pressure": 0.1464437090689478,
+        "control": 0.20956630129845977,
+        "chaos": -0.3345214192581623
+      },
+      "control_correlation": 0.20956630129845977,
+      "discriminant_margin": 0.06312259222951197,
+      "groups": 120
+    }
+  },
+  "cross_family_control_gap": 0.6022669333997724,
+  "checks": {
+    "control_positive_in_both_families": true,
+    "control_discriminant_in_both_families": true,
+    "cross_family_control_gap_at_most_0_20": false
+  },
+  "thresholds": {
+    "minimum_control_correlation": 0.2,
+    "minimum_discriminant_margin": 0.05,
+    "maximum_cross_family_gap": 0.2
+  },
+  "measurement_rule": "mean log p(chosen action | aligned public history) - log p(chosen action | context-yoked public history)",
+  "interpretation_rule": "Failure leaves Control observationally unresolved; thresholds and metric are not retuned post hoc.",
+  "margin_checks": {
+    "static_context_action_margins_preserved": true,
+    "global_action_margins_preserved": true
+  },
+  "design": {
+    "calibration_seeds": {
+      "score": 4101,
+      "adaptive": 4109
+    },
+    "evaluation_seeds": {
+      "score": 4301,
+      "adaptive": 4309
+    },
+    "yoke_seed": 41999,
+    "calibration_mixtures": 30,
+    "calibration_hands_per_seat": 50,
+    "evaluation_mixtures": 60,
+    "evaluation_hands_per_seat": 100,
+    "weight_boundary": "PCC weights are never measurement inputs and are used only after mixture aggregation for validation correlations."
+  }
+}

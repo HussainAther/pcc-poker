@@ -48,3 +48,7 @@
 
 - Port the measurement contract to Melee telemetry.
 - Test whether the same latent structure survives continuous action spaces.
+
+### Contextual Control observable — completed, not family invariant
+
+A frozen matched/yoked public-history likelihood contrast was evaluated on fresh Score and Adaptive seeds. It passed within-family Control positivity and discriminant checks in both families, but failed the preregistered cross-family invariance bound. Keep this as mechanistic evidence and a diagnostic candidate; do not promote it into the conservative family-invariant human-facing panel.

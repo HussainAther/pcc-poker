@@ -22,6 +22,7 @@ from .pressure_surprise_decomposition import write_pressure_surprise_decompositi
 from .invariant_panel import write_invariant_panel
 from .policies import PURE_MIXTURES
 from .robustness import write_robustness_outputs
+from .reproducibility import write_reproducibility_manifest
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
 from .temporal_control import write_temporal_control_validation
 from .simulate import (
@@ -396,6 +397,22 @@ def pressure_surprise_decomposition_command(args) -> int:
     return 0
 
 
+def reproducibility_command(args) -> int:
+    report = write_reproducibility_manifest(
+        args.output,
+        root=args.root,
+        run_tests=args.run_tests,
+    )
+    print(json.dumps({
+        "reproducibility_ready": report["reproducibility_ready"],
+        "source_combined_sha256": report["source"]["combined_sha256"],
+        "validation_combined_sha256": report["frozen_validation"]["combined_sha256"],
+        "validation_complete": report["frozen_validation"]["complete"],
+        "tests": report["tests"],
+    }, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -434,6 +451,11 @@ def parser() -> argparse.ArgumentParser:
     invariant.add_argument("--calibration-mixtures",type=int,default=20); invariant.add_argument("--calibration-hands-per-seat",type=int,default=25)
     invariant.add_argument("--evaluation-mixtures",type=int,default=60); invariant.add_argument("--evaluation-hands-per-seat",type=int,default=100)
     invariant.add_argument("--output",default="validation/family-invariant-panel.json"); invariant.set_defaults(func=invariant_panel_command)
+    reproduce=commands.add_parser("reproduce", help="write an audit manifest for frozen synthetic validation artifacts")
+    reproduce.add_argument("--root", default=".")
+    reproduce.add_argument("--output", default="validation/reproducibility-manifest.json")
+    reproduce.add_argument("--run-tests", action="store_true", help="also run the full pytest suite and record its result")
+    reproduce.set_defaults(func=reproducibility_command)
     return root
 
 

@@ -45,3 +45,16 @@ improvement after Pressure adjustment, while the independent family's Chaos
 margin decreases. The failed cross-family criterion is retained.
 - `pressure-surprise-decomposition.json`: fresh-seed family-split null showing that public Pressure exposure suppresses effective surprise but does not universally explain Chaos/Control overlap.
 - `family-invariant-panel.json`: fresh-seed cross-family selection gate. Only public Pressure exposure and predicted fold probability pass; Control and Chaos coverage remain empty.
+
+## Contextual Control observable
+
+`contextual-control-observable.json` is a frozen fresh-seed test of a public-only Control candidate: the mean log-likelihood advantage of correctly aligned public history over a matched context-yoked history model. The yoke preserves static-context and global action margins exactly.
+
+Result: **not confirmed as family invariant**. Control correlation is positive and discriminant in both tested families (Adaptive: ~0.812; Score: ~0.210), but the cross-family gap (~0.602) exceeds the preregistered 0.20 maximum. Control therefore remains observationally unresolved for the conservative cross-family panel. The metric and thresholds were not retuned after evaluation.
+
+## Reproducibility manifest
+
+`reproducibility-manifest.json` fingerprints the current PCC source/protocol
+surface and the frozen synthetic validation artifacts with SHA-256 hashes. It
+also records environment metadata and, when requested, the pytest result. It is
+an engineering provenance artifact only; it does not analyze human data.
