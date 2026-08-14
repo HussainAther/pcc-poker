@@ -35,3 +35,13 @@ larger JSONL trajectory file.
 They are engineering validation, not empirical evidence about humans and not a
 confirmatory PCC test. Regenerate them with the commands in the root README.
 - `chaos-control-decomposition.json` — frozen fresh-seed decomposition of effective surprisal into public-history-explained and history-residual value-preserving components; partial/null result retained.
+
+## Pressure suppression of effective surprise
+
+`pressure-surprise-decomposition.json` is the frozen fresh-seed test of whether
+a public-state Pressure exposure explains suppression of effective surprisal.
+The overall confirmation is false: the score family shows a large Chaos-margin
+improvement after Pressure adjustment, while the independent family's Chaos
+margin decreases. The failed cross-family criterion is retained.
+- `pressure-surprise-decomposition.json`: fresh-seed family-split null showing that public Pressure exposure suppresses effective surprise but does not universally explain Chaos/Control overlap.
+- `family-invariant-panel.json`: fresh-seed cross-family selection gate. Only public Pressure exposure and predicted fold probability pass; Control and Chaos coverage remain empty.

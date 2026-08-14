@@ -18,6 +18,8 @@ from .control_mechanism import write_control_pressure_mechanism
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
 from .pressure_decomposition import write_pressure_decomposition
+from .pressure_surprise_decomposition import write_pressure_surprise_decomposition
+from .invariant_panel import write_invariant_panel
 from .policies import PURE_MIXTURES
 from .robustness import write_robustness_outputs
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
@@ -34,6 +36,12 @@ from .simulate import (
 )
 
 
+
+
+def invariant_panel_command(args) -> int:
+    report = write_invariant_panel(args.output, calibration_mixtures=args.calibration_mixtures, calibration_hands_per_seat=args.calibration_hands_per_seat, evaluation_mixtures=args.evaluation_mixtures, evaluation_hands_per_seat=args.evaluation_hands_per_seat)
+    print(json.dumps({"family_invariant_panel_confirmed": report["family_invariant_panel_confirmed"], "selected_invariant_components": report["selected_invariant_components"], "axis_coverage": report["axis_coverage"]}, indent=2))
+    return 0
 
 def chaos_control_decomposition_command(args) -> int:
     report = write_chaos_control_decomposition(
@@ -382,6 +390,12 @@ def control_pressure_mechanism_command(args) -> int:
     return 0
 
 
+def pressure_surprise_decomposition_command(args) -> int:
+    report = write_pressure_surprise_decomposition(args.output)
+    print(json.dumps(report, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -413,6 +427,13 @@ def parser() -> argparse.ArgumentParser:
     chaos_decomp.add_argument("--output", required=True)
     chaos_decomp.set_defaults(func=chaos_control_decomposition_command)
     decomposition=commands.add_parser("pressure-decomposition", help="decompose which engineered Pressure term sustains Control contextual alignment");decomposition.add_argument("--replicates",type=int,default=16);decomposition.add_argument("--calibration-hands-per-seat",type=int,default=250);decomposition.add_argument("--evaluation-hands-per-seat",type=int,default=500);decomposition.add_argument("--calibration-seed",type=int,default=111001);decomposition.add_argument("--evaluation-seed",type=int,default=121001);decomposition.add_argument("--seed-stride",type=int,default=2000);decomposition.add_argument("--purity",type=float,default=0.8);decomposition.add_argument("--temperature",type=float,default=0.35);decomposition.add_argument("--minimum-attenuation",type=float,default=0.50);decomposition.add_argument("--output",required=True);decomposition.set_defaults(func=pressure_decomposition_command)
+    pressure_surprise = commands.add_parser("pressure-surprise-decomposition", help="test whether public Pressure exposure suppresses effective surprise")
+    pressure_surprise.add_argument("--output", default="validation/pressure-surprise-decomposition.json")
+    pressure_surprise.set_defaults(func=pressure_surprise_decomposition_command)
+    invariant=commands.add_parser("family-invariant-panel", help="select label-free PCC components stable across both policy families")
+    invariant.add_argument("--calibration-mixtures",type=int,default=20); invariant.add_argument("--calibration-hands-per-seat",type=int,default=25)
+    invariant.add_argument("--evaluation-mixtures",type=int,default=60); invariant.add_argument("--evaluation-hands-per-seat",type=int,default=100)
+    invariant.add_argument("--output",default="validation/family-invariant-panel.json"); invariant.set_defaults(func=invariant_panel_command)
     return root
 
 

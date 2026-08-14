@@ -373,3 +373,34 @@ misses the prespecified Control-discrimination threshold.  In the score family,
 history-explained surprise is strongly Control-specific.  The earlier
 Chaos/Control overlap therefore cannot be explained by one universal
 public-history mechanism.  See `docs/CHAOS_CONTROL_DECOMPOSITION_PROTOCOL.md`.
+
+### Pressure suppression of effective surprise
+
+A fresh-seed `pressure-surprise-decomposition` experiment tests whether the
+strong negative Pressure/effective-surprisal association is explained by a
+label-free public Pressure exposure measure. Exposure is computed from response
+compression, predicted fold probability, and commitment after the chosen action.
+The adjustment is fit without PCC weights; hidden weights are consulted only
+for post-hoc construct-validity correlations.
+
+The frozen result is **not a cross-family confirmation**. Pressure exposure
+tracks assigned Pressure strongly in both families and substantially reduces
+the negative Pressure correlation, but Chaos discrimination improves only in
+the score family and worsens in the independent family. See
+`docs/PRESSURE_SURPRISE_SUPPRESSION_PROTOCOL.md` and
+`validation/pressure-surprise-decomposition.json`.
+
+### Family-invariant measurement gate
+
+Run the prospective cross-family selection test:
+
+```bash
+python -m pcc_poker family-invariant-panel \
+  --output validation/family-invariant-panel.json
+```
+
+The frozen fresh-seed result selects only `pressure_exposure` and
+`predicted_fold_probability` as implementation-stable components. No Control or
+Chaos candidate passes the same gate, so those axes remain unresolved rather
+than being filled with post-hoc metrics. See
+`docs/FAMILY_INVARIANT_PANEL_PROTOCOL.md`.

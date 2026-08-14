@@ -1,0 +1,80 @@
+{
+  "pressure_suppression_mechanism_supported": false,
+  "prespecified_checks": {
+    "independent_pressure_exposure_tracks_pressure": true,
+    "independent_pressure_correlation_reduced_by_0_20": true,
+    "independent_chaos_margin_improves_by_0_03": false,
+    "score_pressure_exposure_tracks_pressure": true,
+    "score_pressure_correlation_reduced_by_0_20": true,
+    "score_chaos_margin_improves_by_0_03": true
+  },
+  "families": {
+    "independent": {
+      "pressure_exposure_correlations": {
+        "pressure": 0.7598058226967429,
+        "control": -0.3376268771064553,
+        "chaos": -0.48925868693519153
+      },
+      "effective_surprisal_correlations": {
+        "pressure": -0.9413242707571322,
+        "control": 0.4219554570214853,
+        "chaos": 0.6028609701920412
+      },
+      "pressure_adjusted_effective_surprisal_correlations": {
+        "pressure": -0.5958991747537058,
+        "control": 0.2695158308608188,
+        "chaos": 0.37949060666071915
+      },
+      "pressure_suppression_slope": -2.4382271176025623,
+      "raw_chaos_margin": 0.18090551317055592,
+      "adjusted_chaos_margin": 0.10997477579990034,
+      "chaos_margin_gain": -0.07093073737065558,
+      "pressure_correlation_reduction": 0.3454250960034264,
+      "seat_level_examples": 120
+    },
+    "score": {
+      "pressure_exposure_correlations": {
+        "pressure": 0.8813698516750585,
+        "control": -0.646037236466506,
+        "chaos": -0.11900981080273053
+      },
+      "effective_surprisal_correlations": {
+        "pressure": -0.9425800888429412,
+        "control": 0.5688317204029053,
+        "chaos": 0.25948629168327647
+      },
+      "pressure_adjusted_effective_surprisal_correlations": {
+        "pressure": -0.37271490421070763,
+        "control": 0.04821649348781422,
+        "chaos": 0.29399439735035054
+      },
+      "pressure_suppression_slope": -3.0186759160562096,
+      "raw_chaos_margin": -0.30934542871962883,
+      "adjusted_chaos_margin": 0.24577790386253634,
+      "chaos_margin_gain": 0.5551233325821652,
+      "pressure_correlation_reduction": 0.5698651846322336,
+      "seat_level_examples": 120
+    }
+  },
+  "thresholds": {
+    "minimum_pressure_exposure_correlation": 0.2,
+    "minimum_pressure_correlation_reduction": 0.2,
+    "minimum_chaos_margin_gain": 0.03
+  },
+  "interpretation": "Support requires a label-free public Pressure exposure to track assigned Pressure, explain a substantial portion of the negative Pressure/effective-surprisal association, and improve Chaos discrimination in both policy families. Residualization never uses PCC weights.",
+  "design": {
+    "calibration_seeds": {
+      "score": 2401,
+      "independent": 2409
+    },
+    "evaluation_seeds": {
+      "score": 2601,
+      "independent": 2609
+    },
+    "calibration_mixtures": 20,
+    "calibration_hands_per_seat": 25,
+    "evaluation_mixtures": 60,
+    "evaluation_hands_per_seat": 100,
+    "weight_boundary": "PCC weights are used only after aggregation for correlations; pressure adjustment is fit from pressure exposure and effective surprisal only."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "family_invariant_panel_confirmed": true,
+  "selected_invariant_components": [
+    "pressure_exposure",
+    "predicted_fold_probability"
+  ],
+  "axis_coverage": {
+    "pressure": [
+      "pressure_exposure",
+      "predicted_fold_probability"
+    ],
+    "control": [],
+    "chaos": []
+  },
+  "candidates": {
+    "pressure_exposure": {
+      "intended_axis": "pressure",
+      "families": {
+        "independent": {
+          "weight_correlations": {
+            "pressure": 0.6868078258398421,
+            "control": -0.24067231429325192,
+            "chaos": -0.34866073146370885
+          },
+          "target_correlation": 0.6868078258398421,
+          "discriminant_margin": 0.9274801401330941
+        },
+        "score": {
+          "weight_correlations": {
+            "pressure": 0.8864838890779707,
+            "control": -0.6417921010174104,
+            "chaos": -0.2090644854246149
+          },
+          "target_correlation": 0.8864838890779707,
+          "discriminant_margin": 1.0955483745025856
+        }
+      },
+      "cross_family_target_gap": 0.1996760632381286,
+      "checks": {
+        "target_positive_in_both_families": true,
+        "target_discriminant_in_both_families": true,
+        "cross_family_target_gap_at_most_0_20": true
+      },
+      "family_invariant": true
+    },
+    "response_compression": {
+      "intended_axis": "pressure",
+      "families": {
+        "independent": {
+          "weight_correlations": {
+            "pressure": 0.5734648087355756,
+            "control": -0.21883081469351026,
+            "chaos": -0.27374017127982675
+          },
+          "target_correlation": 0.5734648087355756,
+          "discriminant_margin": 0.7922956234290859
+        },
+        "score": {
+          "weight_correlations": {
+            "pressure": 0.840409617730436,
+            "control": -0.5782292506118414,
+            "chaos": -0.2282982552353615
+          },
+          "target_correlation": 0.840409617730436,
+          "discriminant_margin": 1.0687078729657975
+        }
+      },
+      "cross_family_target_gap": 0.2669448089948604,
+      "checks": {
+        "target_positive_in_both_families": true,
+        "target_discriminant_in_both_families": true,
+        "cross_family_target_gap_at_most_0_20": false
+      },
+      "family_invariant": false
+    },
+    "predicted_fold_probability": {
+      "intended_axis": "pressure",
+      "families": {
+        "independent": {
+          "weight_correlations": {
+            "pressure": 0.8739349846427888,
+            "control": -0.335909742813304,
+            "chaos": -0.41481365755851024
+          },
+          "target_correlation": 0.8739349846427888,
+          "discriminant_margin": 1.2098447274560928
+        },
+        "score": {
+          "weight_correlations": {
+            "pressure": 0.9249835934384736,
+            "control": -0.6575516730435979,
+            "chaos": -0.2302146236498827
+          },
+          "target_correlation": 0.9249835934384736,
+          "discriminant_margin": 1.1551982170883563
+        }
+      },
+      "cross_family_target_gap": 0.051048608795684736,
+      "checks": {
+        "target_positive_in_both_families": true,
+        "target_discriminant_in_both_families": true,
+        "cross_family_target_gap_at_most_0_20": true
+      },
+      "family_invariant": true
+    },
+    "commitment_ratio": {
+      "intended_axis": "pressure",
+      "families": {
+        "independent": {
+          "weight_correlations": {
+            "pressure": 0.6400928871776461,
+            "control": -0.18463579459172172,
+            "chaos": -0.3635143261988644
+          },
+          "target_correlation": 0.6400928871776461,
+          "discriminant_margin": 0.8247286817693679
+        },
+        "score": {
+          "weight_correlations": {
+            "pressure": 0.8738289676789968,
+            "control": -0.6687509023811253,
+            "chaos": -0.17008672062423552
+          },
+          "target_correlation": 0.8738289676789968,
+          "discriminant_margin": 1.0439156883032323
+        }
+      },
+      "cross_family_target_gap": 0.23373608050135064,
+      "checks": {
+        "target_positive_in_both_families": true,
+        "target_discriminant_in_both_families": true,
+        "cross_family_target_gap_at_most_0_20": false
+      },
+      "family_invariant": false
+    },
+    "normalized_surprisal": {
+      "intended_axis": "chaos",
+      "families": {
+        "independent": {
+          "weight_correlations": {
+            "pressure": -0.9003697010433237,
+            "control": 0.32996209642946156,
+            "chaos": 0.4430232489733869
+          },
+          "target_correlation": 0.4430232489733869,
+          "discriminant_margin": 0.11306115254392535
+        },
+        "score": {
+          "weight_correlations": {
+            "pressure": -0.9511464852583975,
+            "control": 0.6166364888377313,
+            "chaos": 0.29603016984796465
+          },
+          "target_correlation": 0.29603016984796465,
+          "discriminant_margin": -0.3206063189897666
+        }
+      },
+      "cross_family_target_gap": 0.14699307912542225,
+      "checks": {
+        "target_positive_in_both_families": true,
+        "target_discriminant_in_both_families": false,
+        "cross_family_target_gap_at_most_0_20": true
+      },
+      "family_invariant": false
+    },
+    "effective_surprisal": {
+      "intended_axis": "chaos",
+      "families": {
+        "independent": {
+          "weight_correlations": {
+            "pressure": -0.9159135128472565,
+            "control": 0.32892934048617095,
+            "chaos": 0.45721441355474446
+          },
+          "target_correlation": 0.45721441355474446,
+          "discriminant_margin": 0.1282850730685735
+        },
+        "score": {
+          "weight_correlations": {
+            "pressure": -0.9429304616314754,
+            "control": 0.6059455698413053,
+            "chaos": 0.29881853958080556
+          },
+          "target_correlation": 0.29881853958080556,
+          "discriminant_margin": -0.30712703026049976
+        }
+      },
+      "cross_family_target_gap": 0.1583958739739389,
+      "checks": {
+        "target_positive_in_both_families": true,
+        "target_discriminant_in_both_families": false,
+        "cross_family_target_gap_at_most_0_20": true
+      },
+      "family_invariant": false
+    }
+  },
+  "thresholds": {
+    "minimum_target_correlation": 0.2,
+    "minimum_discriminant_margin": 0.05,
+    "maximum_cross_family_target_gap": 0.2
+  },
+  "human_facing_rule": "Only components passing all cross-family checks are eligible for the conservative future human-data panel. Missing axes remain unresolved rather than being filled post hoc.",
+  "design": {
+    "calibration_seeds": {
+      "score": 3401,
+      "independent": 3409
+    },
+    "evaluation_seeds": {
+      "score": 3601,
+      "independent": 3609
+    },
+    "calibration_mixtures": 20,
+    "calibration_hands_per_seat": 25,
+    "evaluation_mixtures": 60,
+    "evaluation_hands_per_seat": 100,
+    "weight_boundary": "PCC weights are never measurement inputs and are used only after aggregation for construct-validity correlations."
+  }
+}

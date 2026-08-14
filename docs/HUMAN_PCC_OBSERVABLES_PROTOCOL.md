@@ -101,3 +101,15 @@ These measurements establish a reproducible feature contract. They do not show
 that human poker players possess Pressure, Control, or Chaos intentions. Human
 construct validity requires prospective tests, discriminant comparisons, and
 retention of negative results.
+
+## Cross-family invariance gate
+
+A fresh-seed synthetic invariance test is now used as a gate before promoting
+candidate components toward human analysis. Under the frozen rule in
+`FAMILY_INVARIANT_PANEL_PROTOCOL.md`, only `pressure_exposure` and
+`predicted_fold_probability` passed across both engineered policy families.
+No Control or Chaos component passed. Therefore the current mock-only
+commitment/escalation Pressure index remains useful as an engineering feature,
+but it is **not** silently promoted as the validated human Pressure measure;
+the future Hold'em protocol should prospectively implement and validate the
+response-model-based Pressure candidates. Control and Chaos remain unresolved.
