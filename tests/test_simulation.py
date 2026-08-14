@@ -34,6 +34,16 @@ class SimulationTests(unittest.TestCase):
         )
         self.assertIn(report["balance_status"], {"unbalanced", "candidate_cycle"})
 
+    def test_adaptive_sweep_accepts_temperature_and_purity(self):
+        report = adaptive_pairwise_sweep(
+            hands_per_seat_order=10,
+            seed=7,
+            temperature=0.5,
+            mode_purity=0.9,
+        )
+        self.assertEqual(report["temperature"], 0.5)
+        self.assertEqual(report["mode_purity"], 0.9)
+
     def test_balanced_cycle_confirmation_uses_replicate_level_edges(self):
         report = balanced_cycle_confirmation(
             replicates=2, hands_per_seat_order=10, seed=501

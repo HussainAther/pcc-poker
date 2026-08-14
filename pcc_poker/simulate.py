@@ -107,6 +107,27 @@ def simulate_policy_match(
     }
 
 
+def simulate_policy_payoff(hands: int, policy0, policy1, seed: int) -> tuple[float, float]:
+    """Fast payoff-only simulation for replicated balance experiments."""
+    if hands < 1:
+        raise ValueError("hands must be positive")
+    rng = random.Random(seed)
+    totals = [0.0, 0.0]
+    policies = (policy0, policy1)
+    for _ in range(hands):
+        deck = [0, 0, 1, 1, 2, 2]
+        rng.shuffle(deck)
+        state = initial_state(deck)
+        while not state.terminal:
+            actor = state.actor
+            decision = policies[actor].decide(state)
+            policies[1 - actor].opponent_model.observe(state, decision.action)
+            state = apply_action(state, decision.action)
+        totals[0] += utility(state, 0)
+        totals[1] += utility(state, 1)
+    return totals[0] / hands, totals[1] / hands
+
+
 def write_jsonl(path: str | Path, records: list[dict]) -> None:
     target = Path(path); target.parent.mkdir(parents=True, exist_ok=True)
     with target.open("w", encoding="utf-8") as handle:
@@ -147,10 +168,27 @@ def pairwise_sweep(hands_per_matchup: int = 2000, seed: int = 17) -> dict:
     }
 
 
+def mode_mixture(mode: str, purity: float) -> tuple[float, float, float]:
+    """Create a symmetric PCC mixture with ``purity`` on the named axis."""
+    if mode not in MODES:
+        raise ValueError(f"unknown mode: {mode}")
+    if not 1 / 3 <= purity <= 1:
+        raise ValueError("purity must be between one-third and one")
+    remainder = (1.0 - purity) / 2.0
+    return tuple(purity if candidate == mode else remainder for candidate in MODES)
+
+
 def adaptive_pairwise_sweep(
-    hands_per_seat_order: int = 4000, seed: int = 901
+    hands_per_seat_order: int = 4000,
+    seed: int = 901,
+    temperature: float = 0.35,
+    mode_purity: float = 0.8,
 ) -> dict:
     """Seat-balanced payoff matrix for the three playable Adaptive PCC AIs."""
+    if hands_per_seat_order < 1:
+        raise ValueError("hands_per_seat_order must be positive")
+    if temperature <= 0:
+        raise ValueError("temperature must be positive")
     matrix = {}
     modes = list(MODES)
     matchup_index = 0
@@ -159,31 +197,39 @@ def adaptive_pairwise_sweep(
         for right in modes[left_index + 1:]:
             matchup_seed = seed + matchup_index * 2
             left_policy = AdaptiveMixturePolicy(
-                PURE_MIXTURES[left], seed=matchup_seed * 2, label=left
+                mode_mixture(left, mode_purity),
+                seed=matchup_seed * 2,
+                label=left,
+                temperature=temperature,
             )
             right_policy = AdaptiveMixturePolicy(
-                PURE_MIXTURES[right], seed=matchup_seed * 2 + 1, label=right
+                mode_mixture(right, mode_purity),
+                seed=matchup_seed * 2 + 1,
+                label=right,
+                temperature=temperature,
             )
-            _, left_first = simulate_policy_match(
+            left_first = simulate_policy_payoff(
                 hands_per_seat_order, left_policy, right_policy, matchup_seed
             )
             right_policy = AdaptiveMixturePolicy(
-                PURE_MIXTURES[right], seed=(matchup_seed + 1) * 2, label=right
+                mode_mixture(right, mode_purity),
+                seed=(matchup_seed + 1) * 2,
+                label=right,
+                temperature=temperature,
             )
             left_policy = AdaptiveMixturePolicy(
-                PURE_MIXTURES[left],
+                mode_mixture(left, mode_purity),
                 seed=(matchup_seed + 1) * 2 + 1,
                 label=left,
+                temperature=temperature,
             )
-            _, right_first = simulate_policy_match(
+            right_first = simulate_policy_payoff(
                 hands_per_seat_order,
                 right_policy,
                 left_policy,
                 matchup_seed + 1,
             )
-            value = (
-                left_first["mean_payoff0"] + right_first["mean_payoff1"]
-            ) / 2
+            value = (left_first[0] + right_first[1]) / 2
             matrix[f"{left}_vs_{right}"] = value
             matrix[f"{right}_vs_{left}"] = -value
             matchup_index += 1
@@ -195,6 +241,8 @@ def adaptive_pairwise_sweep(
     return {
         "hands_per_seat_order": hands_per_seat_order,
         "seed": seed,
+        "temperature": temperature,
+        "mode_purity": mode_purity,
         "mean_payoff_focal_policy": matrix,
         "proposed_cycle": proposed,
         "complete_cycle_observed": all(proposed.values()),
