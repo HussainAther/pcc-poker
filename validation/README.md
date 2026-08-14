@@ -23,6 +23,10 @@ larger JSONL trajectory file.
   three proposed directions.
 - `balanced-cycle.json`: frozen 12-replicate confirmation of the engineered
   cycle, including replicate-level intervals and an edge-strength ratio.
+- `robustness-grid.json`: complete frozen out-of-sample robustness surface.
+  The global result is retained as failed (`36/48`, or `75%`, versus the frozen
+  `80%` criterion), with stratified summaries and all twelve failure cells.
+- `robustness-grid.csv`: one heatmap-ready row per parameter condition.
 
 They are engineering validation, not empirical evidence about humans and not a
 confirmatory PCC test. Regenerate them with the commands in the root README.

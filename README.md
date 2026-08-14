@@ -163,6 +163,27 @@ cyclic payoff bonuses. The revised label-free Control correlation is below the
 repository's descriptive threshold, so observational recovery remains an open
 measurement problem. See `docs/BALANCE_PROTOCOL.md`.
 
+Stress-test the frozen v0.3 policies across the preregistered robustness
+surface:
+
+```bash
+python -m pcc_poker robustness-grid \
+  --output outputs/robustness-grid.json \
+  --csv-output outputs/robustness-grid.csv
+```
+
+The default grid crosses four temperatures, four mode purities, three match
+lengths, and ten fresh replicates. It runs every matchup in both seat orders
+and refuses to start if the Adaptive policy source differs from the frozen v0.3
+checksum. See `docs/ROBUSTNESS_PROTOCOL.md`.
+
+The frozen 5.04-million-hand run retained the complete cycle in 36/48
+conditions (`75%`), narrowly missing the preregistered `80%` criterion. The
+cycle was present in 15/16 of the 4,000-hand conditions but only 8/16 of the
+250-hand conditions. No single mode dominated the surface. This is recorded as
+a failed global robustness confirmation with informative horizon boundaries;
+the policies were not retuned afterward.
+
 ## Repository map
 
 ```text
@@ -184,6 +205,7 @@ docs/
   POLICY_FAMILY_TRANSFER.md
   BEHAVIORAL_MEASURES.md
   BALANCE_PROTOCOL.md
+  ROBUSTNESS_PROTOCOL.md
   PLAYING.md
   ROADMAP.md
 tests/

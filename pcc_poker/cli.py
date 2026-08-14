@@ -14,6 +14,7 @@ from .behavioral_experiment import (
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
 from .policies import PURE_MIXTURES
+from .robustness import write_robustness_outputs
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
 from .simulate import (
     adaptive_pairwise_sweep,
@@ -218,6 +219,30 @@ def balanced_cycle_command(args) -> int:
     return 0
 
 
+def robustness_grid_command(args) -> int:
+    report = write_robustness_outputs(
+        args.output,
+        args.csv_output,
+        temperatures=tuple(args.temperatures),
+        purities=tuple(args.purities),
+        hand_counts=tuple(args.hand_counts),
+        replicates=args.replicates,
+        seed=args.seed,
+        seed_stride=args.seed_stride,
+        minimum_cycle_fraction=args.minimum_cycle_fraction,
+        maximum_dominance_fraction=args.maximum_dominance_fraction,
+        workers=args.workers,
+    )
+    print(json.dumps({
+        "design": report["design"],
+        "aggregate": report["aggregate"],
+        "json_output": args.output,
+        "csv_output": args.csv_output,
+        "warning": report["warning"],
+    }, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -236,6 +261,7 @@ def parser() -> argparse.ArgumentParser:
     adaptive=commands.add_parser("adaptive-validation", help="validate the playable Adaptive PCC family");adaptive.add_argument("--calibration-mixtures",type=int,default=20);adaptive.add_argument("--calibration-hands-per-seat",type=int,default=25);adaptive.add_argument("--evaluation-mixtures",type=int,default=60);adaptive.add_argument("--evaluation-hands-per-seat",type=int,default=100);adaptive.add_argument("--output",required=True);adaptive.set_defaults(func=adaptive_validation_command)
     adaptive_sweep=commands.add_parser("adaptive-sweep", help="diagnose balance among playable PCC opponents");adaptive_sweep.add_argument("--hands-per-seat-order",type=int,default=4000);adaptive_sweep.add_argument("--seed",type=int,default=901);adaptive_sweep.add_argument("--output",required=True);adaptive_sweep.set_defaults(func=adaptive_sweep_command)
     balanced_cycle=commands.add_parser("balanced-cycle", help="confirm the frozen engineered PCC cycle across fresh replicates");balanced_cycle.add_argument("--replicates",type=int,default=12);balanced_cycle.add_argument("--hands-per-seat-order",type=int,default=1000);balanced_cycle.add_argument("--seed",type=int,default=23001);balanced_cycle.add_argument("--seed-stride",type=int,default=20);balanced_cycle.add_argument("--maximum-edge-ratio",type=float,default=3.0);balanced_cycle.add_argument("--output",required=True);balanced_cycle.set_defaults(func=balanced_cycle_command)
+    robustness=commands.add_parser("robustness-grid", help="test the frozen v0.3 cycle across temperature, purity, and match length");robustness.add_argument("--temperatures",type=float,nargs="+",default=[0.20,0.35,0.50,0.75]);robustness.add_argument("--purities",type=float,nargs="+",default=[0.70,0.80,0.90,1.00]);robustness.add_argument("--hand-counts",type=int,nargs="+",default=[250,1000,4000]);robustness.add_argument("--replicates",type=int,default=10);robustness.add_argument("--seed",type=int,default=41001);robustness.add_argument("--seed-stride",type=int,default=20);robustness.add_argument("--minimum-cycle-fraction",type=float,default=0.80);robustness.add_argument("--maximum-dominance-fraction",type=float,default=0.20);robustness.add_argument("--workers",type=int);robustness.add_argument("--output",required=True);robustness.add_argument("--csv-output",required=True);robustness.set_defaults(func=robustness_grid_command)
     return root
 
 
