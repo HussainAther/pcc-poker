@@ -11,8 +11,14 @@
 - [Completed candidate pass] Replace direct cross-family weight regression with
   shared behavioral measurements. Pressure and effective surprisal transferred;
   exact-value Control efficiency did not and remains a recorded negative result.
-- Develop a prediction-sensitive Control measure prospectively, then evaluate it
-  on new seeds rather than tuning it on the existing validation output.
+- [Completed null] Test whether prior opponent history improves held-out action
+  prediction specifically for Control. History helped, but the score tracked
+  Pressure more strongly, so the frozen specificity criterion failed.
+- [Completed null] Intervene prospectively on opponent-model identity. A model
+  aligned to target mode helped Control against Pressure but hurt against
+  Control and Chaos; all frozen confirmation checks failed. Test pair-specific
+  interaction models prospectively rather than treating an opponent model as a
+  portable opponent trait.
 
 ## Phase 2 — stronger game-theoretic baselines
 

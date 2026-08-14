@@ -11,6 +11,7 @@ from .behavioral_experiment import (
     write_opponent_adaptation_confirmation,
     write_predictive_control_confirmation,
 )
+from .counterfactual_control import write_counterfactual_control_validation
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
 from .policies import PURE_MIXTURES
@@ -266,6 +267,30 @@ def temporal_control_command(args) -> int:
     return 0
 
 
+def counterfactual_control_command(args) -> int:
+    report = write_counterfactual_control_validation(
+        args.output,
+        replicates=args.replicates,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+        calibration_seed=args.calibration_seed,
+        evaluation_seed=args.evaluation_seed,
+        seed_stride=args.seed_stride,
+        purity=args.purity,
+        temperature=args.temperature,
+    )
+    print(json.dumps({
+        "mode_summary": report["mode_summary"],
+        "control_specificity": report["control_specificity"],
+        "prespecified_checks": report["prespecified_checks"],
+        "counterfactual_control_confirmed": report[
+            "counterfactual_control_confirmed"
+        ],
+        "warning": report["warning"],
+    }, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -286,6 +311,7 @@ def parser() -> argparse.ArgumentParser:
     balanced_cycle=commands.add_parser("balanced-cycle", help="confirm the frozen engineered PCC cycle across fresh replicates");balanced_cycle.add_argument("--replicates",type=int,default=12);balanced_cycle.add_argument("--hands-per-seat-order",type=int,default=1000);balanced_cycle.add_argument("--seed",type=int,default=23001);balanced_cycle.add_argument("--seed-stride",type=int,default=20);balanced_cycle.add_argument("--maximum-edge-ratio",type=float,default=3.0);balanced_cycle.add_argument("--output",required=True);balanced_cycle.set_defaults(func=balanced_cycle_command)
     robustness=commands.add_parser("robustness-grid", help="test the frozen v0.3 cycle across temperature, purity, and match length");robustness.add_argument("--temperatures",type=float,nargs="+",default=[0.20,0.35,0.50,0.75]);robustness.add_argument("--purities",type=float,nargs="+",default=[0.70,0.80,0.90,1.00]);robustness.add_argument("--hand-counts",type=int,nargs="+",default=[250,1000,4000]);robustness.add_argument("--replicates",type=int,default=10);robustness.add_argument("--seed",type=int,default=41001);robustness.add_argument("--seed-stride",type=int,default=20);robustness.add_argument("--minimum-cycle-fraction",type=float,default=0.80);robustness.add_argument("--maximum-dominance-fraction",type=float,default=0.20);robustness.add_argument("--workers",type=int);robustness.add_argument("--output",required=True);robustness.add_argument("--csv-output",required=True);robustness.set_defaults(func=robustness_grid_command)
     temporal_control=commands.add_parser("temporal-control-validation", help="test whether prior opponent history improves held-out Control detection");temporal_control.add_argument("--training-mixtures",type=int,default=80);temporal_control.add_argument("--evaluation-mixtures",type=int,default=80);temporal_control.add_argument("--hands-per-seat",type=int,default=100);temporal_control.add_argument("--training-seed",type=int,default=61001);temporal_control.add_argument("--evaluation-seed",type=int,default=62001);temporal_control.add_argument("--shuffle-repetitions",type=int,default=25);temporal_control.add_argument("--output",required=True);temporal_control.set_defaults(func=temporal_control_command)
+    counterfactual=commands.add_parser("counterfactual-control", help="intervene on opponent-model alignment under frozen policies");counterfactual.add_argument("--replicates",type=int,default=16);counterfactual.add_argument("--calibration-hands-per-seat",type=int,default=250);counterfactual.add_argument("--evaluation-hands-per-seat",type=int,default=500);counterfactual.add_argument("--calibration-seed",type=int,default=71001);counterfactual.add_argument("--evaluation-seed",type=int,default=81001);counterfactual.add_argument("--seed-stride",type=int,default=1000);counterfactual.add_argument("--purity",type=float,default=0.8);counterfactual.add_argument("--temperature",type=float,default=0.35);counterfactual.add_argument("--output",required=True);counterfactual.set_defaults(func=counterfactual_control_command)
     return root
 
 

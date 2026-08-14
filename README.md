@@ -204,6 +204,27 @@ shuffled-history baseline. It does not confirm Control specificity. The
 trajectory score correlates `.166` with Control weight but `.293` with Pressure,
 so both prespecified construct checks fail and the null result is retained.
 
+Intervene directly on opponent-model alignment under the unchanged policies:
+
+```bash
+python -m pcc_poker counterfactual-control \
+  --output outputs/counterfactual-control.json
+```
+
+This prospective test calibrates opponent models separately, freezes them, and
+compares aligned, swapped-opponent, and no-history conditions using common
+random numbers and both seat orders. Its primary outcome is actual held-out
+chip payoff rather than an aggression-prediction proxy. See
+`docs/COUNTERFACTUAL_CONTROL_PROTOCOL.md`.
+
+The frozen result is negative but informative. Control's aligned-minus-swapped
+mean is `.037`, with an interval crossing zero, while aligned models perform
+`.211` chips per hand worse than the no-history prior. Alignment helps Control
+against Pressure but hurts against Control and Chaos. All four prespecified
+checks remain false, showing that target identity alone is insufficient:
+opponent models may need to represent the interaction between opponent and
+focal policy rather than a portable opponent type.
+
 ## Repository map
 
 ```text
@@ -227,6 +248,7 @@ docs/
   BALANCE_PROTOCOL.md
   ROBUSTNESS_PROTOCOL.md
   TEMPORAL_CONTROL_PROTOCOL.md
+  COUNTERFACTUAL_CONTROL_PROTOCOL.md
   PLAYING.md
   ROADMAP.md
 tests/
