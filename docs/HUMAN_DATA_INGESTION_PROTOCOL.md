@@ -71,3 +71,12 @@ After sanitization, downstream code must consume `SanitizedHand` rather than raw
 The feature API deliberately excludes study/player identifiers, source seats as identity features, venue, the focal action label and amount, outcomes, winnings, private cards, exact public-card identities, and future actions. Public board *size/street* may be used as a modeling feature; public card identities remain available only in the reconstructed audit state for future preregistered analyses and are not emitted by the default `modeling_features()` function.
 
 All tests for this layer use invented PHHS fixtures only. No HandHQ/Zenodo human records are included in the test suite or repository artifacts.
+
+## Downstream PCC candidate observables
+
+After sanitized public-state reconstruction, future PCC behavioral measurements
+must use the label-free layer in `pcc_poker/human_observables.py`. Its current
+construct boundary is documented in `docs/HUMAN_PCC_OBSERVABLES_PROTOCOL.md`.
+The module intentionally distinguishes observable Pressure, Control-adjacent
+history alignment, and raw behavioral surprisal; it does not equate the latter
+two with validated Control or effective Chaos.

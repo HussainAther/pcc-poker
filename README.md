@@ -306,3 +306,13 @@ telemetry require separate validation.
 
 Research prototype. The immediate goal is to test identifiability and boundary
 conditions before scaling to Hold'em or human data.
+
+### Mock-only human PCC observable layer
+
+The repository now includes a prospective public-state measurement layer for
+future HandHQ work. `pcc_poker/human_observables.py` defines a transparent
+commitment/escalation Pressure candidate, a frozen history-alignment signal, and
+behavioral surprisal from a separately calibrated public-state action model.
+The latter two are deliberately not treated as validated Control or effective
+Chaos constructs. Development tests use invented PHHS fixtures only; see
+`docs/HUMAN_PCC_OBSERVABLES_PROTOCOL.md`.
