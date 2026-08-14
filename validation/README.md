@@ -14,6 +14,8 @@ larger JSONL trajectory file.
   original score family and an independently coded probability-mixture family.
 - `behavioral-measures.json`: disjoint-calibration validation of label-free
   behavioral measurements. It retains the failed Control construct check.
+- `control-confirmation.json`: fresh-seed confirmation of opponent-adaptive
+  Control, including its discriminant check and inconclusive cross-family result.
 
 They are engineering validation, not empirical evidence about humans and not a
 confirmatory PCC test. Regenerate them with the commands in the root README.

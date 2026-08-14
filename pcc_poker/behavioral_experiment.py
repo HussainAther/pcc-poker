@@ -12,7 +12,13 @@ from .behavioral import CounterfactualOracle, PublicActionModel
 from .policies import MODES
 from .simulate import generate_family_dataset
 
-MEASURES = ("pressure_index", "control_efficiency", "effective_surprisal")
+MEASURES = (
+    "pressure_index",
+    "control_efficiency",
+    "predictive_control",
+    "opponent_adaptation_control",
+    "effective_surprisal",
+)
 DESCRIPTIVE_EFFECT_THRESHOLD = 0.20
 
 
@@ -24,8 +30,49 @@ def _correlation(left: list[float], right: list[float]) -> float:
     return float(np.corrcoef(x, y)[0, 1])
 
 
+def _fisher_interval(correlation: float, sample_size: int) -> list[float]:
+    """Approximate two-sided 95% Fisher-z interval for a Pearson correlation."""
+    if sample_size <= 3:
+        return [-1.0, 1.0]
+    clipped = min(max(correlation, -0.999999), 0.999999)
+    center = np.arctanh(clipped)
+    margin = 1.96 / np.sqrt(sample_size - 3)
+    return [float(np.tanh(center - margin)), float(np.tanh(center + margin))]
+
+
 def aggregate_measured_mixtures(records: list[dict]) -> list[dict]:
     """Aggregate focal decisions; target weights remain validation outcomes only."""
+    adaptation = {}
+    complete_groups = defaultdict(list)
+    for record in records:
+        complete_groups[
+            (record["policy_family"], record["mixture_id"], record["focal_seat"])
+        ].append(record)
+    for key, group_records in complete_groups.items():
+        focal_seat = key[2]
+        folds = [0, 0]
+        faced_wagers = [0, 0]
+        predicted_fold_rates = []
+        aggressive_actions = []
+        for record in group_records:
+            round_index = int(record["round_index"])
+            if record["actor"] == focal_seat:
+                predicted_fold_rates.append(
+                    (folds[round_index] + 1) / (faced_wagers[round_index] + 3)
+                )
+                aggressive_actions.append(
+                    float(record["action"] in {"bet", "raise"})
+                )
+            elif record["to_call"] > 0:
+                faced_wagers[round_index] += 1
+                folds[round_index] += int(record["action"] == "fold")
+        x = np.asarray(predicted_fold_rates, dtype=float)
+        y = np.asarray(aggressive_actions, dtype=float)
+        adaptation[key] = (
+            float(np.mean((x - x.mean()) * (y - y.mean())))
+            if len(x) > 1 else 0.0
+        )
+
     grouped = defaultdict(list)
     for record in records:
         if record.get("is_focal_policy") and "behavioral_measurements" in record:
@@ -46,6 +93,7 @@ def aggregate_measured_mixtures(records: list[dict]) -> list[dict]:
                     for record in decisions
                 ]))
                 for measure in MEASURES
+                if measure != "opponent_adaptation_control"
             },
             "mean_payoff": float(np.mean([
                 record["terminal_payoff"] for record in decisions
@@ -56,15 +104,20 @@ def aggregate_measured_mixtures(records: list[dict]) -> list[dict]:
             },
             "decisions": len(decisions),
         })
+        rows[-1]["measurements"]["opponent_adaptation_control"] = adaptation[
+            (family, mixture_id, focal_seat)
+        ]
     return rows
 
 
-def summarize_behavioral_validation(records: list[dict]) -> dict:
+def summarize_behavioral_validation(
+    records: list[dict], control_measure: str = "control_efficiency"
+) -> dict:
     rows = aggregate_measured_mixtures(records)
     families = sorted({row["policy_family"] for row in rows})
     measurement_to_mode = {
         "pressure_index": "pressure",
-        "control_efficiency": "control",
+        control_measure: "control",
         "effective_surprisal": "chaos",
     }
     by_family = {}
@@ -86,7 +139,7 @@ def summarize_behavioral_validation(records: list[dict]) -> dict:
             "measurement_weight_correlations": matrix,
             "matching_axis_correlations": {
                 measurement_to_mode[measure]: matrix[measure][measurement_to_mode[measure]]
-                for measure in MEASURES
+                for measure in measurement_to_mode
             },
             "measurement_payoff_correlations": {
                 measure: _correlation(
@@ -122,7 +175,10 @@ def summarize_behavioral_validation(records: list[dict]) -> dict:
         }
     return {
         "status": "completed",
-        "measurement_inputs": "public betting context plus acting player's private rank for information-set value",
+        "measurement_inputs": (
+            "public betting context, prior public opponent actions, and the acting "
+            "player's private rank for information-set value"
+        ),
         "generator_weights_used_as_predictors": False,
         "families": by_family,
         "matching_axis_positive_in_every_family": matching_sign_consistency,
@@ -203,6 +259,156 @@ def run_behavioral_validation(
 
 def write_behavioral_validation(output_path: str | Path, **kwargs) -> dict:
     report = run_behavioral_validation(**kwargs)
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    return report
+
+
+def run_predictive_control_confirmation(
+    calibration_mixtures: int = 20,
+    calibration_hands_per_seat: int = 25,
+    evaluation_mixtures: int = 30,
+    evaluation_hands_per_seat: int = 50,
+    score_calibration_seed: int = 307,
+    independent_calibration_seed: int = 311,
+    score_evaluation_seed: int = 401,
+    independent_evaluation_seed: int = 409,
+) -> dict:
+    """Prospective confirmation of the frozen private-information Control metric."""
+    calibration_records = []
+    for family, seed in (
+        ("score", score_calibration_seed),
+        ("independent", independent_calibration_seed),
+    ):
+        records, _ = generate_family_dataset(
+            family, calibration_mixtures, calibration_hands_per_seat, seed
+        )
+        calibration_records.extend(records)
+
+    oracle = CounterfactualOracle(PublicActionModel.from_records(calibration_records))
+    evaluation_records = []
+    for family, seed in (
+        ("score", score_evaluation_seed),
+        ("independent", independent_evaluation_seed),
+    ):
+        records, _ = generate_family_dataset(
+            family,
+            evaluation_mixtures,
+            evaluation_hands_per_seat,
+            seed,
+            measurement_oracle=oracle,
+        )
+        evaluation_records.extend(records)
+
+    report = summarize_behavioral_validation(
+        evaluation_records, control_measure="predictive_control"
+    )
+    report["prospective_test"] = {
+        "candidate_frozen_before_seed_results": True,
+        "control_definition": (
+            "positive pointwise information gain for the chosen action when the "
+            "acting player's own private rank is added to full public context"
+        ),
+        "old_validation_seeds_reused": False,
+        "calibration_seeds": {
+            "score": score_calibration_seed,
+            "independent": independent_calibration_seed,
+        },
+        "evaluation_seeds": {
+            "score": score_evaluation_seed,
+            "independent": independent_evaluation_seed,
+        },
+        "calibration_evaluation_overlap": False,
+        "primary_control_measure": "predictive_control",
+        "legacy_control_efficiency_reported_as_secondary": True,
+    }
+    return report
+
+
+def write_predictive_control_confirmation(output_path: str | Path, **kwargs) -> dict:
+    report = run_predictive_control_confirmation(**kwargs)
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    return report
+
+
+def run_opponent_adaptation_confirmation(
+    calibration_mixtures: int = 20,
+    calibration_hands_per_seat: int = 25,
+    evaluation_mixtures: int = 60,
+    evaluation_hands_per_seat: int = 100,
+    score_calibration_seed: int = 503,
+    independent_calibration_seed: int = 509,
+    score_evaluation_seed: int = 601,
+    independent_evaluation_seed: int = 607,
+) -> dict:
+    """Confirm whether response-contingent aggression uniquely tracks Control."""
+    calibration_records = []
+    for family, seed in (
+        ("score", score_calibration_seed),
+        ("independent", independent_calibration_seed),
+    ):
+        records, _ = generate_family_dataset(
+            family, calibration_mixtures, calibration_hands_per_seat, seed
+        )
+        calibration_records.extend(records)
+    oracle = CounterfactualOracle(PublicActionModel.from_records(calibration_records))
+
+    evaluation_records = []
+    for family, seed in (
+        ("score", score_evaluation_seed),
+        ("independent", independent_evaluation_seed),
+    ):
+        records, _ = generate_family_dataset(
+            family,
+            evaluation_mixtures,
+            evaluation_hands_per_seat,
+            seed,
+            measurement_oracle=oracle,
+        )
+        evaluation_records.extend(records)
+
+    report = summarize_behavioral_validation(
+        evaluation_records, control_measure="opponent_adaptation_control"
+    )
+    discriminant = {}
+    for family, result in report["families"].items():
+        correlations = result["measurement_weight_correlations"][
+            "opponent_adaptation_control"
+        ]
+        discriminant[family] = {
+            "control_is_largest_correlation": correlations["control"] > max(
+                correlations["pressure"], correlations["chaos"]
+            ),
+            "correlations": correlations,
+            "control_correlation_approximate_95pct_ci": _fisher_interval(
+                correlations["control"], result["seat_level_examples"]
+            ),
+        }
+    report["prospective_test"] = {
+        "candidate_frozen_before_confirmation_seeds": True,
+        "development_evaluation_seeds": {"score": 401, "independent": 409},
+        "confirmation_evaluation_seeds": {
+            "score": score_evaluation_seed,
+            "independent": independent_evaluation_seed,
+        },
+        "old_validation_or_development_seeds_reused": False,
+        "control_definition": (
+            "within-seat covariance between aggression and the round-specific "
+            "opponent fold rate estimated only from earlier observed actions"
+        ),
+        "primary_control_measure": "opponent_adaptation_control",
+        "evaluation_mixtures_per_family": evaluation_mixtures,
+        "evaluation_hands_per_seat": evaluation_hands_per_seat,
+        "discriminant_check": discriminant,
+    }
+    return report
+
+
+def write_opponent_adaptation_confirmation(output_path: str | Path, **kwargs) -> dict:
+    report = run_opponent_adaptation_confirmation(**kwargs)
     target = Path(output_path)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
