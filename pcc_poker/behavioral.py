@@ -30,6 +30,29 @@ def _state_context(state: State) -> tuple:
     )
 
 
+def _information_record_context(record: dict) -> tuple:
+    """Public context used to ask whether private information improves prediction."""
+    return (
+        int(record["actor"]),
+        int(record["round_index"]),
+        record.get("public_rank"),
+        int(record["to_call"]),
+        int(record["pot"]),
+        tuple(record["legal_actions"]),
+    )
+
+
+def _information_state_context(state: State) -> tuple:
+    return (
+        state.actor,
+        state.round_index,
+        state.public,
+        state.to_call,
+        state.pot,
+        state.legal_actions(),
+    )
+
+
 class PublicActionModel:
     """Smoothed action frequencies conditioned only on public betting context."""
 
@@ -38,6 +61,8 @@ class PublicActionModel:
             raise ValueError("smoothing must be positive")
         self.smoothing = smoothing
         self.counts: dict[tuple, Counter] = defaultdict(Counter)
+        self.information_public_counts: dict[tuple, Counter] = defaultdict(Counter)
+        self.information_private_counts: dict[tuple, Counter] = defaultdict(Counter)
 
     @classmethod
     def from_records(
@@ -46,6 +71,11 @@ class PublicActionModel:
         model = cls(smoothing)
         for record in records:
             model.counts[_record_context(record)][record["action"]] += 1
+            if "private_rank" in record:
+                public_context = _information_record_context(record)
+                model.information_public_counts[public_context][record["action"]] += 1
+                private_context = (public_context, int(record["private_rank"]))
+                model.information_private_counts[private_context][record["action"]] += 1
         return model
 
     def probabilities(self, state: State) -> dict[str, float]:
@@ -56,6 +86,36 @@ class PublicActionModel:
             action: (counts[action] + self.smoothing) / denominator
             for action in legal
         }
+
+    def information_probabilities(
+        self, state: State, prior_strength: float = 3.0
+    ) -> tuple[dict[str, float], dict[str, float]]:
+        """Return public and own-card-conditioned action probabilities.
+
+        The conditioned estimate shrinks toward the public estimate. It uses the
+        acting player's own card, never the simulator's opponent card or deck.
+        """
+        if prior_strength <= 0:
+            raise ValueError("prior_strength must be positive")
+        legal = state.legal_actions()
+        public_context = _information_state_context(state)
+        public_counts = self.information_public_counts[public_context]
+        public_total = sum(public_counts[action] + self.smoothing for action in legal)
+        public = {
+            action: (public_counts[action] + self.smoothing) / public_total
+            for action in legal
+        }
+        private_counts = self.information_private_counts[
+            (public_context, state.private[state.actor])
+        ]
+        private_total = sum(private_counts[action] for action in legal)
+        conditioned = {
+            action: (
+                private_counts[action] + prior_strength * public[action]
+            ) / (private_total + prior_strength)
+            for action in legal
+        }
+        return public, conditioned
 
 
 def information_states(state: State, observer: int) -> list[tuple[State, float]]:
@@ -115,6 +175,10 @@ class BehavioralMeasurement:
     best_value: float
     regret: float
     control_efficiency: float
+    public_action_probability: float
+    private_conditioned_action_probability: float
+    private_information_gain: float
+    predictive_control: float
     response_entropy: float
     response_entropy_normalized: float
     response_compression: float
@@ -132,6 +196,10 @@ class BehavioralMeasurement:
             "best_value": self.best_value,
             "regret": self.regret,
             "control_efficiency": self.control_efficiency,
+            "public_action_probability": self.public_action_probability,
+            "private_conditioned_action_probability": self.private_conditioned_action_probability,
+            "private_information_gain": self.private_information_gain,
+            "predictive_control": self.predictive_control,
             "response_entropy": self.response_entropy,
             "response_entropy_normalized": self.response_entropy_normalized,
             "response_compression": self.response_compression,
@@ -210,6 +278,17 @@ class CounterfactualOracle:
         payoff_scale = max(state.pot + state.bet_size, 1)
         control = math.exp(-regret / payoff_scale)
 
+        public_information_probabilities, private_probabilities = (
+            self.action_model.information_probabilities(state)
+        )
+        public_action_probability = public_information_probabilities[chosen_action]
+        private_action_probability = private_probabilities[chosen_action]
+        information_gain = math.log(
+            max(private_action_probability, 1e-12)
+            / max(public_action_probability, 1e-12)
+        )
+        predictive_control = 1.0 - math.exp(-max(information_gain, 0.0))
+
         action_probability = self.action_model.probabilities(state)[chosen_action]
         surprisal = -math.log(max(action_probability, 1e-12))
         effective_surprisal = surprisal * control
@@ -223,6 +302,10 @@ class CounterfactualOracle:
             best_value=best_value,
             regret=regret,
             control_efficiency=control,
+            public_action_probability=public_action_probability,
+            private_conditioned_action_probability=private_action_probability,
+            private_information_gain=information_gain,
+            predictive_control=predictive_control,
             response_entropy=entropy,
             response_entropy_normalized=normalized,
             response_compression=compression,

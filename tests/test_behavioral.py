@@ -29,6 +29,8 @@ class BehavioralMeasurementTests(unittest.TestCase):
         self.assertLessEqual(
             measurement.effective_surprisal, measurement.action_surprisal
         )
+        self.assertGreaterEqual(measurement.predictive_control, 0.0)
+        self.assertLessEqual(measurement.predictive_control, 1.0)
 
     def test_best_counterfactual_action_has_full_control_efficiency(self):
         state = initial_state([0, 1, 2, 0, 1, 2])
@@ -69,6 +71,30 @@ class BehavioralMeasurementTests(unittest.TestCase):
         model = PublicActionModel.from_records([base, altered])
         probabilities = model.probabilities(initial_state([0, 1, 2, 0, 1, 2]))
         self.assertGreater(probabilities["bet"], probabilities["check"])
+
+    def test_predictive_control_uses_own_card_but_not_opponent_card(self):
+        records = []
+        for private_rank, action in ((0, "check"), (0, "check"), (2, "bet"), (2, "bet")):
+            records.append({
+                "actor": 0,
+                "round_index": 0,
+                "public_rank": None,
+                "private_rank": private_rank,
+                "to_call": 0,
+                "pot": 2,
+                "legal_actions": ["check", "bet"],
+                "action": action,
+            })
+        oracle = CounterfactualOracle(PublicActionModel.from_records(records))
+        left = initial_state([2, 0, 1, 0, 1, 2])
+        right = initial_state([2, 1, 0, 0, 1, 2])
+        left_measurement = oracle.measure(left, "bet")
+        right_measurement = oracle.measure(right, "bet")
+        self.assertGreater(left_measurement.predictive_control, 0.0)
+        self.assertEqual(
+            left_measurement.predictive_control,
+            right_measurement.predictive_control,
+        )
 
 
 if __name__ == "__main__":

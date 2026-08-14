@@ -53,6 +53,34 @@ the score-family Control weight. That failure is retained. It suggests either
 that the candidate misses prediction-oriented Control, that the original
 Control generator is not an exact-value policy, or both.
 
+## Prospective Control follow-up
+
+The failed value-efficiency result motivated two prospective candidates. First,
+private-information gain measured how much the player's own card improved
+prediction of the chosen action. It was positive for assigned Control on fresh
+seeds, but failed discriminant validity because it tracked assigned Chaos even
+more strongly in the independent family. That candidate was rejected.
+
+The second candidate directly operationalized opponent prediction. For each
+focal seat and betting round, it estimated the opponent's fold rate using only
+earlier visible responses. **Opponent-adaptation Control** is the within-seat
+covariance between that running estimate and subsequent aggressive choices.
+It therefore asks whether aggression is timed to a learned vulnerability rather
+than applied indiscriminately.
+
+After development on seeds 401/409, the definition was frozen and evaluated on
+new seeds 601/607 with 60 mixtures and 100 hands per seat. It was discriminant
+in both families—the Control correlation exceeded the Pressure and Chaos
+correlations—but strength did not fully replicate:
+
+- independent family: `r = .219`, approximate 95% CI `[.041, .383]`;
+- score family: `r = .094`, approximate 95% CI `[-.086, .269]`.
+
+Accordingly this is an **inconclusive boundary result**, not a successful
+universal Control detector. It supports opponent adaptation as one observable
+facet of Control while indicating that the original score-family Control
+generator only weakly expresses that facet.
+
 ## Interpretation boundary
 
 This experiment establishes neither naturally occurring PCC nor human intent.

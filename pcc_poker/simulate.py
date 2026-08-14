@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import json
+import math
 import random
+import statistics
 from pathlib import Path
 
 from .engine import apply_action, initial_state, utility
-from .families import IndependentMixturePolicy
+from .families import AdaptiveMixturePolicy, IndependentMixturePolicy
 from .policies import MODES, PCCPolicy, PURE_MIXTURES
 
 
@@ -145,6 +147,150 @@ def pairwise_sweep(hands_per_matchup: int = 2000, seed: int = 17) -> dict:
     }
 
 
+def adaptive_pairwise_sweep(
+    hands_per_seat_order: int = 4000, seed: int = 901
+) -> dict:
+    """Seat-balanced payoff matrix for the three playable Adaptive PCC AIs."""
+    matrix = {}
+    modes = list(MODES)
+    matchup_index = 0
+    for left_index, left in enumerate(modes):
+        matrix[f"{left}_vs_{left}"] = 0.0
+        for right in modes[left_index + 1:]:
+            matchup_seed = seed + matchup_index * 2
+            left_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[left], seed=matchup_seed * 2, label=left
+            )
+            right_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[right], seed=matchup_seed * 2 + 1, label=right
+            )
+            _, left_first = simulate_policy_match(
+                hands_per_seat_order, left_policy, right_policy, matchup_seed
+            )
+            right_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[right], seed=(matchup_seed + 1) * 2, label=right
+            )
+            left_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[left],
+                seed=(matchup_seed + 1) * 2 + 1,
+                label=left,
+            )
+            _, right_first = simulate_policy_match(
+                hands_per_seat_order,
+                right_policy,
+                left_policy,
+                matchup_seed + 1,
+            )
+            value = (
+                left_first["mean_payoff0"] + right_first["mean_payoff1"]
+            ) / 2
+            matrix[f"{left}_vs_{right}"] = value
+            matrix[f"{right}_vs_{left}"] = -value
+            matchup_index += 1
+    proposed = {
+        "control_over_pressure": matrix["control_vs_pressure"] > 0,
+        "chaos_over_control": matrix["chaos_vs_control"] > 0,
+        "pressure_over_chaos": matrix["pressure_vs_chaos"] > 0,
+    }
+    return {
+        "hands_per_seat_order": hands_per_seat_order,
+        "seed": seed,
+        "mean_payoff_focal_policy": matrix,
+        "proposed_cycle": proposed,
+        "complete_cycle_observed": all(proposed.values()),
+        "balance_status": "unbalanced" if not all(proposed.values()) else "candidate_cycle",
+        "warning": (
+            "This is a game-balance diagnostic for engineered AIs, not evidence "
+            "of a natural PCC cycle. No cyclic payoff bonuses are encoded."
+        ),
+    }
+
+
+def balanced_cycle_confirmation(
+    replicates: int = 12,
+    hands_per_seat_order: int = 1000,
+    seed: int = 23001,
+    seed_stride: int = 20,
+    maximum_edge_ratio: float = 3.0,
+) -> dict:
+    """Confirm the frozen engineered cycle on independent replicated sweeps.
+
+    Each replicate contains all three matchups in both seat orders. Normal
+    intervals summarize variation across replicate-level, seat-balanced edges;
+    individual hands are not treated as independent replicates.
+    """
+    if replicates < 2:
+        raise ValueError("at least two replicates are required")
+    if hands_per_seat_order < 1:
+        raise ValueError("hands_per_seat_order must be positive")
+    if maximum_edge_ratio < 1:
+        raise ValueError("maximum_edge_ratio must be at least one")
+
+    edge_keys = (
+        "control_over_pressure",
+        "chaos_over_control",
+        "pressure_over_chaos",
+    )
+    edge_runs = {key: [] for key in edge_keys}
+    runs = []
+    for replicate in range(replicates):
+        run_seed = seed + replicate * seed_stride
+        sweep = adaptive_pairwise_sweep(hands_per_seat_order, run_seed)
+        matrix = sweep["mean_payoff_focal_policy"]
+        edges = {
+            "control_over_pressure": matrix["control_vs_pressure"],
+            "chaos_over_control": matrix["chaos_vs_control"],
+            "pressure_over_chaos": matrix["pressure_vs_chaos"],
+        }
+        for key, value in edges.items():
+            edge_runs[key].append(value)
+        runs.append({"replicate": replicate, "seed": run_seed, "edges": edges})
+
+    edge_summary = {}
+    for key, values in edge_runs.items():
+        mean = statistics.mean(values)
+        standard_deviation = statistics.stdev(values)
+        standard_error = standard_deviation / math.sqrt(replicates)
+        margin = 1.96 * standard_error
+        edge_summary[key] = {
+            "mean_payoff_edge": mean,
+            "standard_deviation_across_replicates": standard_deviation,
+            "normal_95_interval": [mean - margin, mean + margin],
+            "positive_replicates": sum(value > 0 for value in values),
+            "replicates": replicates,
+        }
+
+    means = [edge_summary[key]["mean_payoff_edge"] for key in edge_keys]
+    edge_ratio = max(means) / min(means) if min(means) > 0 else None
+    directional_confirmation = all(
+        edge_summary[key]["normal_95_interval"][0] > 0 for key in edge_keys
+    )
+    strength_balance = edge_ratio is not None and edge_ratio <= maximum_edge_ratio
+    return {
+        "design": {
+            "status": "frozen_candidate_confirmation",
+            "replicates": replicates,
+            "hands_per_seat_order": hands_per_seat_order,
+            "hands_per_replicate": hands_per_seat_order * 6,
+            "seed": seed,
+            "seed_stride": seed_stride,
+            "seat_balancing": "every matchup is run in both seat orders",
+            "interval_unit": "replicate-level seat-balanced payoff edge",
+            "maximum_edge_ratio": maximum_edge_ratio,
+        },
+        "edges": edge_summary,
+        "edge_strength_ratio": edge_ratio,
+        "directional_confirmation": directional_confirmation,
+        "strength_balance": strength_balance,
+        "balanced_cycle_confirmed": directional_confirmation and strength_balance,
+        "runs": runs,
+        "warning": (
+            "This confirms balance of engineered synthetic policies only. It is "
+            "not empirical evidence that human play follows PCC dynamics."
+        ),
+    }
+
+
 def generate_recovery_dataset(hands_per_seat: int = 500, seed: int = 23) -> tuple[list[dict], dict]:
     """Generate seat-balanced focal-mode data against one reference policy."""
     records = []
@@ -266,6 +412,7 @@ def generate_family_dataset(
     families = {
         "score": PCCPolicy,
         "independent": IndependentMixturePolicy,
+        "adaptive": AdaptiveMixturePolicy,
     }
     if family not in families:
         raise ValueError(f"unknown policy family {family!r}; choices={tuple(families)}")

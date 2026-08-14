@@ -32,6 +32,13 @@ class PolicyFamilyTests(unittest.TestCase):
             seats.setdefault(record["mixture_id"], set()).add(record["focal_seat"])
         self.assertTrue(all(value == {0, 1} for value in seats.values()))
 
+    def test_adaptive_family_is_available(self):
+        records, summary = generate_family_dataset(
+            "adaptive", mixtures=5, hands_per_seat=2, seed=91
+        )
+        self.assertEqual(summary["family"], "adaptive")
+        self.assertTrue(records)
+
     def test_transfer_uses_disjoint_mixture_groups(self):
         training, _ = generate_family_dataset(
             "score", mixtures=10, hands_per_seat=8, seed=11
