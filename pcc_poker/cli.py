@@ -12,8 +12,10 @@ from .behavioral_experiment import (
     write_predictive_control_confirmation,
 )
 from .counterfactual_control import write_counterfactual_control_validation
+from .control_mechanism import write_control_pressure_mechanism
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
+from .pressure_decomposition import write_pressure_decomposition
 from .policies import PURE_MIXTURES
 from .robustness import write_robustness_outputs
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
@@ -28,6 +30,23 @@ from .simulate import (
     simulate_match,
     write_jsonl,
 )
+
+
+def pressure_decomposition_command(args) -> int:
+    report = write_pressure_decomposition(
+        args.output,
+        replicates=args.replicates,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+        calibration_seed=args.calibration_seed,
+        evaluation_seed=args.evaluation_seed,
+        seed_stride=args.seed_stride,
+        purity=args.purity,
+        temperature=args.temperature,
+        minimum_attenuation=args.minimum_attenuation,
+    )
+    print(json.dumps(report, indent=2))
+    return 0
 
 
 def simulate_command(args) -> int:
@@ -291,6 +310,35 @@ def counterfactual_control_command(args) -> int:
     return 0
 
 
+def control_pressure_mechanism_command(args) -> int:
+    report = write_control_pressure_mechanism(
+        args.output,
+        replicates=args.replicates,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+        calibration_seed=args.calibration_seed,
+        evaluation_seed=args.evaluation_seed,
+        seed_stride=args.seed_stride,
+        purities=tuple(args.purities),
+        temperatures=tuple(args.temperatures),
+    )
+    print(json.dumps({
+        "target_summary": report["target_summary"],
+        "pressure_minus_chaos_specificity": report[
+            "pressure_minus_chaos_specificity"
+        ],
+        "jointly_positive_pressure_cells": report[
+            "jointly_positive_pressure_cells"
+        ],
+        "prespecified_checks": report["prespecified_checks"],
+        "control_pressure_mechanism_confirmed": report[
+            "control_pressure_mechanism_confirmed"
+        ],
+        "warning": report["warning"],
+    }, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -312,6 +360,8 @@ def parser() -> argparse.ArgumentParser:
     robustness=commands.add_parser("robustness-grid", help="test the frozen v0.3 cycle across temperature, purity, and match length");robustness.add_argument("--temperatures",type=float,nargs="+",default=[0.20,0.35,0.50,0.75]);robustness.add_argument("--purities",type=float,nargs="+",default=[0.70,0.80,0.90,1.00]);robustness.add_argument("--hand-counts",type=int,nargs="+",default=[250,1000,4000]);robustness.add_argument("--replicates",type=int,default=10);robustness.add_argument("--seed",type=int,default=41001);robustness.add_argument("--seed-stride",type=int,default=20);robustness.add_argument("--minimum-cycle-fraction",type=float,default=0.80);robustness.add_argument("--maximum-dominance-fraction",type=float,default=0.20);robustness.add_argument("--workers",type=int);robustness.add_argument("--output",required=True);robustness.add_argument("--csv-output",required=True);robustness.set_defaults(func=robustness_grid_command)
     temporal_control=commands.add_parser("temporal-control-validation", help="test whether prior opponent history improves held-out Control detection");temporal_control.add_argument("--training-mixtures",type=int,default=80);temporal_control.add_argument("--evaluation-mixtures",type=int,default=80);temporal_control.add_argument("--hands-per-seat",type=int,default=100);temporal_control.add_argument("--training-seed",type=int,default=61001);temporal_control.add_argument("--evaluation-seed",type=int,default=62001);temporal_control.add_argument("--shuffle-repetitions",type=int,default=25);temporal_control.add_argument("--output",required=True);temporal_control.set_defaults(func=temporal_control_command)
     counterfactual=commands.add_parser("counterfactual-control", help="intervene on opponent-model alignment under frozen policies");counterfactual.add_argument("--replicates",type=int,default=16);counterfactual.add_argument("--calibration-hands-per-seat",type=int,default=250);counterfactual.add_argument("--evaluation-hands-per-seat",type=int,default=500);counterfactual.add_argument("--calibration-seed",type=int,default=71001);counterfactual.add_argument("--evaluation-seed",type=int,default=81001);counterfactual.add_argument("--seed-stride",type=int,default=1000);counterfactual.add_argument("--purity",type=float,default=0.8);counterfactual.add_argument("--temperature",type=float,default=0.35);counterfactual.add_argument("--output",required=True);counterfactual.set_defaults(func=counterfactual_control_command)
+    mechanism=commands.add_parser("control-pressure-mechanism", help="test contextual prediction in the Control-over-Pressure edge");mechanism.add_argument("--replicates",type=int,default=16);mechanism.add_argument("--calibration-hands-per-seat",type=int,default=250);mechanism.add_argument("--evaluation-hands-per-seat",type=int,default=500);mechanism.add_argument("--calibration-seed",type=int,default=91001);mechanism.add_argument("--evaluation-seed",type=int,default=101001);mechanism.add_argument("--seed-stride",type=int,default=2000);mechanism.add_argument("--purities",type=float,nargs="+",default=[0.70,0.80,0.90]);mechanism.add_argument("--temperatures",type=float,nargs="+",default=[0.25,0.35,0.50]);mechanism.add_argument("--output",required=True);mechanism.set_defaults(func=control_pressure_mechanism_command)
+    decomposition=commands.add_parser("pressure-decomposition", help="decompose which engineered Pressure term sustains Control contextual alignment");decomposition.add_argument("--replicates",type=int,default=16);decomposition.add_argument("--calibration-hands-per-seat",type=int,default=250);decomposition.add_argument("--evaluation-hands-per-seat",type=int,default=500);decomposition.add_argument("--calibration-seed",type=int,default=111001);decomposition.add_argument("--evaluation-seed",type=int,default=121001);decomposition.add_argument("--seed-stride",type=int,default=2000);decomposition.add_argument("--purity",type=float,default=0.8);decomposition.add_argument("--temperature",type=float,default=0.35);decomposition.add_argument("--minimum-attenuation",type=float,default=0.50);decomposition.add_argument("--output",required=True);decomposition.set_defaults(func=pressure_decomposition_command)
     return root
 
 

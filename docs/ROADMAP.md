@@ -19,6 +19,14 @@
   Control and Chaos; all frozen confirmation checks failed. Test pair-specific
   interaction models prospectively rather than treating an opponent model as a
   portable opponent trait.
+- [Completed confirmation] Destroy round timing or context alignment while
+  preserving the calibrated model's observation and action-count margins. On
+  fresh seeds, aligned contextual knowledge improves Control against Pressure
+  across all nine robustness cells and more strongly than against Chaos.
+- [Next prospective test] Decompose the engineered Pressure component while
+  leaving frozen Control unchanged. Remove learned fold leverage or
+  equity-strength selectivity one at a time and test whether either ablation
+  removes at least half of the confirmed contextual-alignment advantage.
 
 ## Phase 2 — stronger game-theoretic baselines
 
