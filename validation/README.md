@@ -12,6 +12,8 @@ larger JSONL trajectory file.
   three focal-policy temperatures.
 - `family-transfer-grid-summary.json`: bidirectional transfer across the
   original score family and an independently coded probability-mixture family.
+- `behavioral-measures.json`: disjoint-calibration validation of label-free
+  behavioral measurements. It retains the failed Control construct check.
 
 They are engineering validation, not empirical evidence about humans and not a
 confirmatory PCC test. Regenerate them with the commands in the root README.

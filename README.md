@@ -36,6 +36,8 @@ Pressure, and a check is not intrinsically Control.
 - continuous-mixture recovery with held-out mixture and seed groups;
 - action-frequency and shuffled-target baselines;
 - bidirectional transfer tests across independently coded policy mechanisms;
+- label-free, information-set behavioral measurements with hidden-card leakage tests;
+- disjoint calibration/evaluation validation across both policy families;
 - falsification-oriented reports and reproducible seeds.
 
 No cyclic advantage is hardcoded. The initial simulations may or may not
@@ -101,12 +103,30 @@ Instead, it constructs separate coercive, one-step value, and novelty-filtered
 action distributions and mixes probabilities. This is a stricter domain-shift
 test, although both families still receive researcher-assigned mixture weights.
 
+Run the label-free behavioral measurement test:
+
+```bash
+python -m pcc_poker behavioral-validation \
+  --output outputs/behavioral-measures.json
+```
+
+The action model is frozen on separate calibration hands. Candidate Pressure,
+Control, and effective-surprisal quantities are then calculated without policy
+weights, component scores, actual opponent cards, future cards, or outcomes.
+Assigned synthetic weights are consulted only afterward for construct-validity
+correlations. The first run is deliberately reported as partial: Pressure and
+effective Chaos transfer across both families, while this value-regret definition
+of Control does not. See `docs/BEHAVIORAL_MEASURES.md`.
+
 ## Repository map
 
 ```text
 pcc_poker/
   engine.py       Leduc rules, state transitions, equity
   policies.py     PCC objectives and policy mixtures
+  families.py     independently implemented policy family
+  behavioral.py   label-free measurements and counterfactual oracle
+  behavioral_experiment.py  disjoint calibration/evaluation harness
   simulate.py     hands, matches, logging, pairwise sweeps
   analyze.py      observable mode recovery and payoff tests
   cli.py          command-line interface
@@ -116,6 +136,7 @@ docs/
   ETHICS_AND_DATA.md
   MIXED_MODE_PROTOCOL.md
   POLICY_FAMILY_TRANSFER.md
+  BEHAVIORAL_MEASURES.md
   ROADMAP.md
 tests/
 ```
