@@ -27,25 +27,29 @@ the appropriate institutional determination and a prospectively frozen plan.
 
 ## Opponents
 
-- **Pressure** applies initiative and wager commitment broadly.
-- **Control v2** maintains a round-specific opponent response model. It times
+- **Pressure** applies selective force: strong information states commit and
+  escalate, while weak states can release instead of bluffing indiscriminately.
+- **Control v3** maintains a round-specific opponent response model. It times
   aggression to learned fold vulnerability while retaining a card-value safety
   constraint.
 - **Chaos** favors actions that have been unusual in comparable contexts, but
-  filters choices through a value tolerance.
+  retains several viable branches rather than always taking the estimated best
+  action.
 
 The modes are policy objectives, not fixed actions. Control may bet, check,
 call, raise, or fold; its defining mechanic is conditional adaptation.
 
 ## Current balance
 
-The first frozen Adaptive-family validation recovered the intended synthetic
-weights from behavior: Pressure `r=.796`, Control `r=.311`, and Chaos `r=.446`.
-This validates implementation because the Control generator and detector both
-encode opponent-response adaptation; it is not independent evidence of PCC.
+Version 0.3 passes the frozen engineering criterion for the complete cycle. In
+12 fresh replicates of every matchup in both seat orders, mean payoff edges were
+Control over Pressure `.206`, Chaos over Control `.166`, and Pressure over Chaos
+`.132`. All replicate-level 95% normal intervals were above zero, and the
+largest edge was `1.55` times the smallest (limit `3.0`). No policy receives its
+opponent's mode label and no cyclic payoff bonus exists.
 
-The first seat-balanced payoff sweep did not produce the complete proposed
-cycle. Control beat Pressure, Chaos beat Control, and Chaos also beat Pressure.
-The alpha is therefore playable and behaviorally differentiated, but not yet
-competitively balanced. Balance changes should use new seeds and preserve the
-unmodified diagnostic as a baseline.
+This is synthetic game balance, not evidence about humans. The frozen
+label-free detector also places the revised Control signature at `r=.157`, below
+the repository's descriptive `.20` threshold. Control is therefore an explicit,
+tested game mechanic whose observational recovery remains inconclusive. See
+`docs/BALANCE_PROTOCOL.md` for the full boundary.

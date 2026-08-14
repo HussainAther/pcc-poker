@@ -3,6 +3,7 @@ import unittest
 from pcc_poker.analyze import analyze_mode_recovery
 from pcc_poker.simulate import (
     adaptive_pairwise_sweep,
+    balanced_cycle_confirmation,
     generate_recovery_dataset,
     pairwise_sweep,
     simulate_match,
@@ -32,6 +33,21 @@ class SimulationTests(unittest.TestCase):
             matrix["pressure_vs_control"], -matrix["control_vs_pressure"]
         )
         self.assertIn(report["balance_status"], {"unbalanced", "candidate_cycle"})
+
+    def test_balanced_cycle_confirmation_uses_replicate_level_edges(self):
+        report = balanced_cycle_confirmation(
+            replicates=2, hands_per_seat_order=10, seed=501
+        )
+        self.assertEqual(
+            set(report["edges"]),
+            {
+                "control_over_pressure",
+                "chaos_over_control",
+                "pressure_over_chaos",
+            },
+        )
+        self.assertEqual(len(report["runs"]), 2)
+        self.assertEqual(report["design"]["hands_per_replicate"], 60)
 
 
 if __name__ == "__main__": unittest.main()

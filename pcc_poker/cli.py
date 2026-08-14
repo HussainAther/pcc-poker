@@ -17,6 +17,7 @@ from .policies import PURE_MIXTURES
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
 from .simulate import (
     adaptive_pairwise_sweep,
+    balanced_cycle_confirmation,
     generate_family_dataset,
     generate_mixed_dataset,
     generate_recovery_dataset,
@@ -197,6 +198,26 @@ def adaptive_sweep_command(args) -> int:
     return 0
 
 
+def balanced_cycle_command(args) -> int:
+    report = balanced_cycle_confirmation(
+        replicates=args.replicates,
+        hands_per_seat_order=args.hands_per_seat_order,
+        seed=args.seed,
+        seed_stride=args.seed_stride,
+        maximum_edge_ratio=args.maximum_edge_ratio,
+    )
+    target = Path(args.output)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({
+        "edges": report["edges"],
+        "edge_strength_ratio": report["edge_strength_ratio"],
+        "balanced_cycle_confirmed": report["balanced_cycle_confirmed"],
+        "warning": report["warning"],
+    }, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -214,6 +235,7 @@ def parser() -> argparse.ArgumentParser:
     play=commands.add_parser("play", help="play heads-up Leduc against an Adaptive PCC opponent");play.add_argument("--opponent",choices=["pressure","control","chaos"],default="control");play.add_argument("--hands",type=int,default=6);play.add_argument("--seed",type=int,default=701);play.add_argument("--output");play.add_argument("--auto-human",action="store_true",help=argparse.SUPPRESS);play.set_defaults(func=play_command)
     adaptive=commands.add_parser("adaptive-validation", help="validate the playable Adaptive PCC family");adaptive.add_argument("--calibration-mixtures",type=int,default=20);adaptive.add_argument("--calibration-hands-per-seat",type=int,default=25);adaptive.add_argument("--evaluation-mixtures",type=int,default=60);adaptive.add_argument("--evaluation-hands-per-seat",type=int,default=100);adaptive.add_argument("--output",required=True);adaptive.set_defaults(func=adaptive_validation_command)
     adaptive_sweep=commands.add_parser("adaptive-sweep", help="diagnose balance among playable PCC opponents");adaptive_sweep.add_argument("--hands-per-seat-order",type=int,default=4000);adaptive_sweep.add_argument("--seed",type=int,default=901);adaptive_sweep.add_argument("--output",required=True);adaptive_sweep.set_defaults(func=adaptive_sweep_command)
+    balanced_cycle=commands.add_parser("balanced-cycle", help="confirm the frozen engineered PCC cycle across fresh replicates");balanced_cycle.add_argument("--replicates",type=int,default=12);balanced_cycle.add_argument("--hands-per-seat-order",type=int,default=1000);balanced_cycle.add_argument("--seed",type=int,default=23001);balanced_cycle.add_argument("--seed-stride",type=int,default=20);balanced_cycle.add_argument("--maximum-edge-ratio",type=float,default=3.0);balanced_cycle.add_argument("--output",required=True);balanced_cycle.set_defaults(func=balanced_cycle_command)
     return root
 
 
