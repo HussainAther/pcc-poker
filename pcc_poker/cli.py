@@ -16,6 +16,7 @@ from .play import play_session, write_session
 from .policies import PURE_MIXTURES
 from .robustness import write_robustness_outputs
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
+from .temporal_control import write_temporal_control_validation
 from .simulate import (
     adaptive_pairwise_sweep,
     balanced_cycle_confirmation,
@@ -243,6 +244,28 @@ def robustness_grid_command(args) -> int:
     return 0
 
 
+def temporal_control_command(args) -> int:
+    report = write_temporal_control_validation(
+        args.output,
+        training_mixtures=args.training_mixtures,
+        evaluation_mixtures=args.evaluation_mixtures,
+        hands_per_seat=args.hands_per_seat,
+        training_seed=args.training_seed,
+        evaluation_seed=args.evaluation_seed,
+        shuffle_repetitions=args.shuffle_repetitions,
+    )
+    print(json.dumps({
+        "static_model": report["static_model"],
+        "temporal_model": report["temporal_model"],
+        "shuffled_history_baseline": report["shuffled_history_baseline"],
+        "trajectory_control_score": report["trajectory_control_score"],
+        "prespecified_checks": report["prespecified_checks"],
+        "temporal_control_confirmed": report["temporal_control_confirmed"],
+        "warning": report["warning"],
+    }, indent=2))
+    return 0
+
+
 def parser() -> argparse.ArgumentParser:
     root=argparse.ArgumentParser(description="PCC experiments in Leduc poker");commands=root.add_subparsers(required=True)
     sim=commands.add_parser("simulate");sim.add_argument("--hands",type=int,default=3000);sim.add_argument("--mode0",choices=PURE_MIXTURES,default="pressure");sim.add_argument("--mode1",choices=PURE_MIXTURES,default="control");sim.add_argument("--seed",type=int,default=7);sim.add_argument("--output",required=True);sim.set_defaults(func=simulate_command)
@@ -262,6 +285,7 @@ def parser() -> argparse.ArgumentParser:
     adaptive_sweep=commands.add_parser("adaptive-sweep", help="diagnose balance among playable PCC opponents");adaptive_sweep.add_argument("--hands-per-seat-order",type=int,default=4000);adaptive_sweep.add_argument("--seed",type=int,default=901);adaptive_sweep.add_argument("--output",required=True);adaptive_sweep.set_defaults(func=adaptive_sweep_command)
     balanced_cycle=commands.add_parser("balanced-cycle", help="confirm the frozen engineered PCC cycle across fresh replicates");balanced_cycle.add_argument("--replicates",type=int,default=12);balanced_cycle.add_argument("--hands-per-seat-order",type=int,default=1000);balanced_cycle.add_argument("--seed",type=int,default=23001);balanced_cycle.add_argument("--seed-stride",type=int,default=20);balanced_cycle.add_argument("--maximum-edge-ratio",type=float,default=3.0);balanced_cycle.add_argument("--output",required=True);balanced_cycle.set_defaults(func=balanced_cycle_command)
     robustness=commands.add_parser("robustness-grid", help="test the frozen v0.3 cycle across temperature, purity, and match length");robustness.add_argument("--temperatures",type=float,nargs="+",default=[0.20,0.35,0.50,0.75]);robustness.add_argument("--purities",type=float,nargs="+",default=[0.70,0.80,0.90,1.00]);robustness.add_argument("--hand-counts",type=int,nargs="+",default=[250,1000,4000]);robustness.add_argument("--replicates",type=int,default=10);robustness.add_argument("--seed",type=int,default=41001);robustness.add_argument("--seed-stride",type=int,default=20);robustness.add_argument("--minimum-cycle-fraction",type=float,default=0.80);robustness.add_argument("--maximum-dominance-fraction",type=float,default=0.20);robustness.add_argument("--workers",type=int);robustness.add_argument("--output",required=True);robustness.add_argument("--csv-output",required=True);robustness.set_defaults(func=robustness_grid_command)
+    temporal_control=commands.add_parser("temporal-control-validation", help="test whether prior opponent history improves held-out Control detection");temporal_control.add_argument("--training-mixtures",type=int,default=80);temporal_control.add_argument("--evaluation-mixtures",type=int,default=80);temporal_control.add_argument("--hands-per-seat",type=int,default=100);temporal_control.add_argument("--training-seed",type=int,default=61001);temporal_control.add_argument("--evaluation-seed",type=int,default=62001);temporal_control.add_argument("--shuffle-repetitions",type=int,default=25);temporal_control.add_argument("--output",required=True);temporal_control.set_defaults(func=temporal_control_command)
     return root
 
 

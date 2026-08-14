@@ -184,6 +184,26 @@ cycle was present in 15/16 of the 4,000-hand conditions but only 8/16 of the
 a failed global robustness confirmation with informative horizon boundaries;
 the policies were not retuned afterward.
 
+Test whether prior opponent history makes Control observable without generator
+labels:
+
+```bash
+python -m pcc_poker temporal-control-validation \
+  --output outputs/temporal-control.json
+```
+
+This cross-fitted test compares a static information-state action predictor
+against a temporal predictor that additionally receives prior opponent actions.
+Training and evaluation use disjoint mixture groups and seeds. Hidden weights
+are consulted only afterward to validate the resulting trajectory score. See
+`docs/TEMPORAL_CONTROL_PROTOCOL.md`.
+
+The frozen result shows genuine temporal predictability: log loss improves by
+`7.13%`, AUC rises from `.664` to `.741`, and aligned history outperforms the
+shuffled-history baseline. It does not confirm Control specificity. The
+trajectory score correlates `.166` with Control weight but `.293` with Pressure,
+so both prespecified construct checks fail and the null result is retained.
+
 ## Repository map
 
 ```text
@@ -206,6 +226,7 @@ docs/
   BEHAVIORAL_MEASURES.md
   BALANCE_PROTOCOL.md
   ROBUSTNESS_PROTOCOL.md
+  TEMPORAL_CONTROL_PROTOCOL.md
   PLAYING.md
   ROADMAP.md
 tests/

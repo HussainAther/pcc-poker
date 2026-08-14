@@ -1,0 +1,1825 @@
+{
+  "status": "completed",
+  "prediction_target": "aggressive action (bet or raise)",
+  "training_mixtures": 80,
+  "evaluation_mixtures": 80,
+  "training_examples": 40196,
+  "evaluation_examples": 40289,
+  "mixture_id_overlap": [],
+  "predictor_boundary": {
+    "static": "own card, public card, legal actions, current hand history, pot, amount to call, round, and seat",
+    "temporal_extension": "prior opponent actions only; cumulative context rates, entropy, recency, and smoothed response estimates",
+    "excluded": "hidden PCC weights, component scores, action probabilities, outcomes, future cards, and actual opponent private cards"
+  },
+  "static_model": {
+    "log_loss": 0.6115068783970488,
+    "auc": 0.6638450633015122
+  },
+  "temporal_model": {
+    "log_loss": 0.567887997691993,
+    "auc": 0.7405134447294821,
+    "relative_log_loss_improvement": 0.07133015546676183
+  },
+  "shuffled_history_baseline": {
+    "repetitions": 25,
+    "mean_log_loss": 0.7155170001439101,
+    "standard_deviation": 0.0023120852964553314
+  },
+  "trajectory_control_score": {
+    "definition": "mean held-out log p_temporal(action) minus log p_static(action)",
+    "trajectory_examples": 160,
+    "weight_correlations": {
+      "pressure": 0.29315869486130824,
+      "control": 0.1656019324829159,
+      "chaos": -0.4750875839491109
+    },
+    "control_fisher_95_interval": [
+      0.01071572303588711,
+      0.31272792257330473
+    ]
+  },
+  "prespecified_checks": {
+    "adaptive_log_loss_below_static": true,
+    "adaptive_log_loss_below_shuffled_history": true,
+    "control_correlation_at_least_0_20": false,
+    "control_correlation_discriminant": false
+  },
+  "temporal_control_confirmed": false,
+  "trajectory_scores": [
+    {
+      "mixture_id": "adaptive-mix-62001-0000",
+      "focal_seat": 0,
+      "decisions": 269,
+      "temporal_log_likelihood_gain": 0.16471605788538807,
+      "weights": {
+        "pressure": 0.7740805867638837,
+        "control": 0.001266554884426794,
+        "chaos": 0.2246528583516895
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0000",
+      "focal_seat": 1,
+      "decisions": 221,
+      "temporal_log_likelihood_gain": 0.08559320133813814,
+      "weights": {
+        "pressure": 0.7740805867638837,
+        "control": 0.001266554884426794,
+        "chaos": 0.2246528583516895
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0001",
+      "focal_seat": 0,
+      "decisions": 270,
+      "temporal_log_likelihood_gain": 0.02311124690536278,
+      "weights": {
+        "pressure": 0.6300332620350835,
+        "control": 0.14638384482772415,
+        "chaos": 0.22358289313719237
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0001",
+      "focal_seat": 1,
+      "decisions": 222,
+      "temporal_log_likelihood_gain": 0.0357597957559254,
+      "weights": {
+        "pressure": 0.6300332620350835,
+        "control": 0.14638384482772415,
+        "chaos": 0.22358289313719237
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0002",
+      "focal_seat": 0,
+      "decisions": 277,
+      "temporal_log_likelihood_gain": 0.009514291312001837,
+      "weights": {
+        "pressure": 0.17203361432026465,
+        "control": 0.05566342716995289,
+        "chaos": 0.7723029585097824
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0002",
+      "focal_seat": 1,
+      "decisions": 214,
+      "temporal_log_likelihood_gain": -0.0017576232058758605,
+      "weights": {
+        "pressure": 0.17203361432026465,
+        "control": 0.05566342716995289,
+        "chaos": 0.7723029585097824
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0003",
+      "focal_seat": 0,
+      "decisions": 279,
+      "temporal_log_likelihood_gain": 0.03105348990431786,
+      "weights": {
+        "pressure": 0.3836484866268602,
+        "control": 0.20597226257928816,
+        "chaos": 0.4103792507938516
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0003",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": 0.014862564863258525,
+      "weights": {
+        "pressure": 0.3836484866268602,
+        "control": 0.20597226257928816,
+        "chaos": 0.4103792507938516
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0004",
+      "focal_seat": 0,
+      "decisions": 276,
+      "temporal_log_likelihood_gain": 0.1279984969287798,
+      "weights": {
+        "pressure": 0.8805933551965777,
+        "control": 0.013734573666074206,
+        "chaos": 0.1056720711373482
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0004",
+      "focal_seat": 1,
+      "decisions": 216,
+      "temporal_log_likelihood_gain": 0.1563505601160999,
+      "weights": {
+        "pressure": 0.8805933551965777,
+        "control": 0.013734573666074206,
+        "chaos": 0.1056720711373482
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0005",
+      "focal_seat": 0,
+      "decisions": 302,
+      "temporal_log_likelihood_gain": -0.008551405438301352,
+      "weights": {
+        "pressure": 0.41208411480590745,
+        "control": 0.5292552813827254,
+        "chaos": 0.05866060381136717
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0005",
+      "focal_seat": 1,
+      "decisions": 219,
+      "temporal_log_likelihood_gain": -0.02003032174441505,
+      "weights": {
+        "pressure": 0.41208411480590745,
+        "control": 0.5292552813827254,
+        "chaos": 0.05866060381136717
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0006",
+      "focal_seat": 0,
+      "decisions": 294,
+      "temporal_log_likelihood_gain": 0.012789731557133359,
+      "weights": {
+        "pressure": 0.1445726400454995,
+        "control": 0.414563366470166,
+        "chaos": 0.4408639934843345
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0006",
+      "focal_seat": 1,
+      "decisions": 216,
+      "temporal_log_likelihood_gain": 0.004120710405667012,
+      "weights": {
+        "pressure": 0.1445726400454995,
+        "control": 0.414563366470166,
+        "chaos": 0.4408639934843345
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0007",
+      "focal_seat": 0,
+      "decisions": 286,
+      "temporal_log_likelihood_gain": 0.0161646353183204,
+      "weights": {
+        "pressure": 0.4176572837216503,
+        "control": 0.10248058669150643,
+        "chaos": 0.4798621295868432
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0007",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": 0.02324138708046114,
+      "weights": {
+        "pressure": 0.4176572837216503,
+        "control": 0.10248058669150643,
+        "chaos": 0.4798621295868432
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0008",
+      "focal_seat": 0,
+      "decisions": 307,
+      "temporal_log_likelihood_gain": 0.2589618712814039,
+      "weights": {
+        "pressure": 0.06585473925272664,
+        "control": 0.9330210581037635,
+        "chaos": 0.0011242026435098283
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0008",
+      "focal_seat": 1,
+      "decisions": 205,
+      "temporal_log_likelihood_gain": 0.20888919840858255,
+      "weights": {
+        "pressure": 0.06585473925272664,
+        "control": 0.9330210581037635,
+        "chaos": 0.0011242026435098283
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0009",
+      "focal_seat": 0,
+      "decisions": 296,
+      "temporal_log_likelihood_gain": 0.08901178205692474,
+      "weights": {
+        "pressure": 0.1633676593716211,
+        "control": 0.6820434063976595,
+        "chaos": 0.15458893423071937
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0009",
+      "focal_seat": 1,
+      "decisions": 211,
+      "temporal_log_likelihood_gain": 0.07475903402868961,
+      "weights": {
+        "pressure": 0.1633676593716211,
+        "control": 0.6820434063976595,
+        "chaos": 0.15458893423071937
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0010",
+      "focal_seat": 0,
+      "decisions": 257,
+      "temporal_log_likelihood_gain": 0.17773962105418784,
+      "weights": {
+        "pressure": 0.8519665968963651,
+        "control": 0.0521337651494959,
+        "chaos": 0.09589963795413901
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0010",
+      "focal_seat": 1,
+      "decisions": 234,
+      "temporal_log_likelihood_gain": 0.0839153225101961,
+      "weights": {
+        "pressure": 0.8519665968963651,
+        "control": 0.0521337651494959,
+        "chaos": 0.09589963795413901
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0011",
+      "focal_seat": 0,
+      "decisions": 278,
+      "temporal_log_likelihood_gain": 0.09319302611189968,
+      "weights": {
+        "pressure": 0.7355908429964182,
+        "control": 0.07932700543247823,
+        "chaos": 0.1850821515711037
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0011",
+      "focal_seat": 1,
+      "decisions": 227,
+      "temporal_log_likelihood_gain": 0.03193494856116629,
+      "weights": {
+        "pressure": 0.7355908429964182,
+        "control": 0.07932700543247823,
+        "chaos": 0.1850821515711037
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0012",
+      "focal_seat": 0,
+      "decisions": 284,
+      "temporal_log_likelihood_gain": -0.0027072348681088623,
+      "weights": {
+        "pressure": 0.1642991308337059,
+        "control": 0.2659075387668974,
+        "chaos": 0.5697933303993968
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0012",
+      "focal_seat": 1,
+      "decisions": 203,
+      "temporal_log_likelihood_gain": -0.0025887209481261025,
+      "weights": {
+        "pressure": 0.1642991308337059,
+        "control": 0.2659075387668974,
+        "chaos": 0.5697933303993968
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0013",
+      "focal_seat": 0,
+      "decisions": 294,
+      "temporal_log_likelihood_gain": 0.016716954471948833,
+      "weights": {
+        "pressure": 0.11046829567642898,
+        "control": 0.5022900252629212,
+        "chaos": 0.3872416790606497
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0013",
+      "focal_seat": 1,
+      "decisions": 209,
+      "temporal_log_likelihood_gain": 0.037586074732954104,
+      "weights": {
+        "pressure": 0.11046829567642898,
+        "control": 0.5022900252629212,
+        "chaos": 0.3872416790606497
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0014",
+      "focal_seat": 0,
+      "decisions": 268,
+      "temporal_log_likelihood_gain": 0.12693841522053592,
+      "weights": {
+        "pressure": 0.8263822930289391,
+        "control": 0.001605059262435266,
+        "chaos": 0.17201264770862565
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0014",
+      "focal_seat": 1,
+      "decisions": 218,
+      "temporal_log_likelihood_gain": 0.10598318713579195,
+      "weights": {
+        "pressure": 0.8263822930289391,
+        "control": 0.001605059262435266,
+        "chaos": 0.17201264770862565
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0015",
+      "focal_seat": 0,
+      "decisions": 286,
+      "temporal_log_likelihood_gain": 0.006989624834641456,
+      "weights": {
+        "pressure": 0.25461069188976676,
+        "control": 0.10428918708751546,
+        "chaos": 0.6411001210227177
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0015",
+      "focal_seat": 1,
+      "decisions": 226,
+      "temporal_log_likelihood_gain": 0.009754403549133782,
+      "weights": {
+        "pressure": 0.25461069188976676,
+        "control": 0.10428918708751546,
+        "chaos": 0.6411001210227177
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0016",
+      "focal_seat": 0,
+      "decisions": 298,
+      "temporal_log_likelihood_gain": 0.0011451050655580225,
+      "weights": {
+        "pressure": 0.5462382329281025,
+        "control": 0.2733562874249766,
+        "chaos": 0.180405479646921
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0016",
+      "focal_seat": 1,
+      "decisions": 218,
+      "temporal_log_likelihood_gain": 0.03584895536533202,
+      "weights": {
+        "pressure": 0.5462382329281025,
+        "control": 0.2733562874249766,
+        "chaos": 0.180405479646921
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0017",
+      "focal_seat": 0,
+      "decisions": 292,
+      "temporal_log_likelihood_gain": -0.0023087119201958485,
+      "weights": {
+        "pressure": 0.5246302671358969,
+        "control": 0.4498626923304489,
+        "chaos": 0.025507040533654282
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0017",
+      "focal_seat": 1,
+      "decisions": 220,
+      "temporal_log_likelihood_gain": -0.00556905722856153,
+      "weights": {
+        "pressure": 0.5246302671358969,
+        "control": 0.4498626923304489,
+        "chaos": 0.025507040533654282
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0018",
+      "focal_seat": 0,
+      "decisions": 301,
+      "temporal_log_likelihood_gain": 0.09356073561282102,
+      "weights": {
+        "pressure": 0.01992607579356729,
+        "control": 0.6434077273398378,
+        "chaos": 0.336666196866595
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0018",
+      "focal_seat": 1,
+      "decisions": 212,
+      "temporal_log_likelihood_gain": 0.02961875945765995,
+      "weights": {
+        "pressure": 0.01992607579356729,
+        "control": 0.6434077273398378,
+        "chaos": 0.336666196866595
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0019",
+      "focal_seat": 0,
+      "decisions": 305,
+      "temporal_log_likelihood_gain": 0.1254189595102788,
+      "weights": {
+        "pressure": 0.13519932446594365,
+        "control": 0.6769690546448254,
+        "chaos": 0.18783162088923097
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0019",
+      "focal_seat": 1,
+      "decisions": 208,
+      "temporal_log_likelihood_gain": 0.06103104381679296,
+      "weights": {
+        "pressure": 0.13519932446594365,
+        "control": 0.6769690546448254,
+        "chaos": 0.18783162088923097
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0020",
+      "focal_seat": 0,
+      "decisions": 298,
+      "temporal_log_likelihood_gain": -0.0016659829513456814,
+      "weights": {
+        "pressure": 0.42798040109301794,
+        "control": 0.5010808976159657,
+        "chaos": 0.07093870129101627
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0020",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": -0.00796949631697013,
+      "weights": {
+        "pressure": 0.42798040109301794,
+        "control": 0.5010808976159657,
+        "chaos": 0.07093870129101627
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0021",
+      "focal_seat": 0,
+      "decisions": 276,
+      "temporal_log_likelihood_gain": 0.06009436222926174,
+      "weights": {
+        "pressure": 0.5236984552276818,
+        "control": 0.11117189974464811,
+        "chaos": 0.36512964502767015
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0021",
+      "focal_seat": 1,
+      "decisions": 224,
+      "temporal_log_likelihood_gain": 0.040787998064564325,
+      "weights": {
+        "pressure": 0.5236984552276818,
+        "control": 0.11117189974464811,
+        "chaos": 0.36512964502767015
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0022",
+      "focal_seat": 0,
+      "decisions": 288,
+      "temporal_log_likelihood_gain": -0.002217480778185375,
+      "weights": {
+        "pressure": 0.4064467944304365,
+        "control": 0.5286753849086366,
+        "chaos": 0.06487782066092686
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0022",
+      "focal_seat": 1,
+      "decisions": 210,
+      "temporal_log_likelihood_gain": -0.005966399366077188,
+      "weights": {
+        "pressure": 0.4064467944304365,
+        "control": 0.5286753849086366,
+        "chaos": 0.06487782066092686
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0023",
+      "focal_seat": 0,
+      "decisions": 283,
+      "temporal_log_likelihood_gain": 0.0019176805523006984,
+      "weights": {
+        "pressure": 0.12022611309895881,
+        "control": 0.11586107021107464,
+        "chaos": 0.7639128166899666
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0023",
+      "focal_seat": 1,
+      "decisions": 212,
+      "temporal_log_likelihood_gain": 0.006060923439174699,
+      "weights": {
+        "pressure": 0.12022611309895881,
+        "control": 0.11586107021107464,
+        "chaos": 0.7639128166899666
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0024",
+      "focal_seat": 0,
+      "decisions": 291,
+      "temporal_log_likelihood_gain": 0.018928978064816363,
+      "weights": {
+        "pressure": 0.03665628827267678,
+        "control": 0.44605637849226953,
+        "chaos": 0.5172873332350537
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0024",
+      "focal_seat": 1,
+      "decisions": 211,
+      "temporal_log_likelihood_gain": 0.022041229275890313,
+      "weights": {
+        "pressure": 0.03665628827267678,
+        "control": 0.44605637849226953,
+        "chaos": 0.5172873332350537
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0025",
+      "focal_seat": 0,
+      "decisions": 271,
+      "temporal_log_likelihood_gain": 0.03271285233572541,
+      "weights": {
+        "pressure": 0.40859866257940913,
+        "control": 0.0650382625130946,
+        "chaos": 0.5263630749074963
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0025",
+      "focal_seat": 1,
+      "decisions": 225,
+      "temporal_log_likelihood_gain": 0.02294564605388525,
+      "weights": {
+        "pressure": 0.40859866257940913,
+        "control": 0.0650382625130946,
+        "chaos": 0.5263630749074963
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0026",
+      "focal_seat": 0,
+      "decisions": 286,
+      "temporal_log_likelihood_gain": 0.027549727026707625,
+      "weights": {
+        "pressure": 0.49946983337193224,
+        "control": 0.20899728357840186,
+        "chaos": 0.2915328830496659
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0026",
+      "focal_seat": 1,
+      "decisions": 215,
+      "temporal_log_likelihood_gain": 0.005252982143933196,
+      "weights": {
+        "pressure": 0.49946983337193224,
+        "control": 0.20899728357840186,
+        "chaos": 0.2915328830496659
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0027",
+      "focal_seat": 0,
+      "decisions": 273,
+      "temporal_log_likelihood_gain": 0.027536650514254062,
+      "weights": {
+        "pressure": 0.41437159111657274,
+        "control": 0.19420802723253433,
+        "chaos": 0.39142038165089305
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0027",
+      "focal_seat": 1,
+      "decisions": 223,
+      "temporal_log_likelihood_gain": 0.006855713497293203,
+      "weights": {
+        "pressure": 0.41437159111657274,
+        "control": 0.19420802723253433,
+        "chaos": 0.39142038165089305
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0028",
+      "focal_seat": 0,
+      "decisions": 307,
+      "temporal_log_likelihood_gain": 0.14765252649815397,
+      "weights": {
+        "pressure": 0.11229326921917346,
+        "control": 0.8693410519597348,
+        "chaos": 0.018365678821091757
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0028",
+      "focal_seat": 1,
+      "decisions": 211,
+      "temporal_log_likelihood_gain": 0.13286105010735985,
+      "weights": {
+        "pressure": 0.11229326921917346,
+        "control": 0.8693410519597348,
+        "chaos": 0.018365678821091757
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0029",
+      "focal_seat": 0,
+      "decisions": 299,
+      "temporal_log_likelihood_gain": -0.0038034146723269504,
+      "weights": {
+        "pressure": 0.29564865423674014,
+        "control": 0.4348664350124667,
+        "chaos": 0.2694849107507931
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0029",
+      "focal_seat": 1,
+      "decisions": 203,
+      "temporal_log_likelihood_gain": 0.005465999443367012,
+      "weights": {
+        "pressure": 0.29564865423674014,
+        "control": 0.4348664350124667,
+        "chaos": 0.2694849107507931
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0030",
+      "focal_seat": 0,
+      "decisions": 299,
+      "temporal_log_likelihood_gain": 0.00858056246815097,
+      "weights": {
+        "pressure": 0.05908320428162885,
+        "control": 0.40847989499372744,
+        "chaos": 0.5324369007246437
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0030",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": 0.006840300716915658,
+      "weights": {
+        "pressure": 0.05908320428162885,
+        "control": 0.40847989499372744,
+        "chaos": 0.5324369007246437
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0031",
+      "focal_seat": 0,
+      "decisions": 296,
+      "temporal_log_likelihood_gain": 0.009069897883751095,
+      "weights": {
+        "pressure": 0.4256854353711326,
+        "control": 0.5088884887954178,
+        "chaos": 0.06542607583344963
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0031",
+      "focal_seat": 1,
+      "decisions": 219,
+      "temporal_log_likelihood_gain": -0.010045965770672625,
+      "weights": {
+        "pressure": 0.4256854353711326,
+        "control": 0.5088884887954178,
+        "chaos": 0.06542607583344963
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0032",
+      "focal_seat": 0,
+      "decisions": 291,
+      "temporal_log_likelihood_gain": 0.006069556354154258,
+      "weights": {
+        "pressure": 0.3575209691727414,
+        "control": 0.2481371914847143,
+        "chaos": 0.39434183934254424
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0032",
+      "focal_seat": 1,
+      "decisions": 215,
+      "temporal_log_likelihood_gain": -0.003403468311880025,
+      "weights": {
+        "pressure": 0.3575209691727414,
+        "control": 0.2481371914847143,
+        "chaos": 0.39434183934254424
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0033",
+      "focal_seat": 0,
+      "decisions": 287,
+      "temporal_log_likelihood_gain": 0.024501839679073226,
+      "weights": {
+        "pressure": 0.01573797846886256,
+        "control": 0.3299523789527939,
+        "chaos": 0.6543096425783436
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0033",
+      "focal_seat": 1,
+      "decisions": 208,
+      "temporal_log_likelihood_gain": -0.010790899957474741,
+      "weights": {
+        "pressure": 0.01573797846886256,
+        "control": 0.3299523789527939,
+        "chaos": 0.6543096425783436
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0034",
+      "focal_seat": 0,
+      "decisions": 266,
+      "temporal_log_likelihood_gain": 0.1907224384302197,
+      "weights": {
+        "pressure": 0.9829448146196466,
+        "control": 0.0014802150078808405,
+        "chaos": 0.015574970372472628
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0034",
+      "focal_seat": 1,
+      "decisions": 227,
+      "temporal_log_likelihood_gain": 0.13628922529282003,
+      "weights": {
+        "pressure": 0.9829448146196466,
+        "control": 0.0014802150078808405,
+        "chaos": 0.015574970372472628
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0035",
+      "focal_seat": 0,
+      "decisions": 303,
+      "temporal_log_likelihood_gain": 0.005443831260410457,
+      "weights": {
+        "pressure": 0.4866585069344173,
+        "control": 0.4802327815816386,
+        "chaos": 0.03310871148394414
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0035",
+      "focal_seat": 1,
+      "decisions": 222,
+      "temporal_log_likelihood_gain": -0.002928528560901572,
+      "weights": {
+        "pressure": 0.4866585069344173,
+        "control": 0.4802327815816386,
+        "chaos": 0.03310871148394414
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0036",
+      "focal_seat": 0,
+      "decisions": 279,
+      "temporal_log_likelihood_gain": 0.0717532344526837,
+      "weights": {
+        "pressure": 0.6738946100372161,
+        "control": 0.10817889002416753,
+        "chaos": 0.21792649993861643
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0036",
+      "focal_seat": 1,
+      "decisions": 228,
+      "temporal_log_likelihood_gain": 0.0453413829562954,
+      "weights": {
+        "pressure": 0.6738946100372161,
+        "control": 0.10817889002416753,
+        "chaos": 0.21792649993861643
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0037",
+      "focal_seat": 0,
+      "decisions": 306,
+      "temporal_log_likelihood_gain": 0.005332318280635901,
+      "weights": {
+        "pressure": 0.3470510400780515,
+        "control": 0.5561923034823303,
+        "chaos": 0.09675665643961819
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0037",
+      "focal_seat": 1,
+      "decisions": 215,
+      "temporal_log_likelihood_gain": 0.016460295618221352,
+      "weights": {
+        "pressure": 0.3470510400780515,
+        "control": 0.5561923034823303,
+        "chaos": 0.09675665643961819
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0038",
+      "focal_seat": 0,
+      "decisions": 289,
+      "temporal_log_likelihood_gain": 0.01410360437812722,
+      "weights": {
+        "pressure": 0.2798056193351386,
+        "control": 0.3401919484183132,
+        "chaos": 0.3800024322465482
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0038",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": -0.007788976054981847,
+      "weights": {
+        "pressure": 0.2798056193351386,
+        "control": 0.3401919484183132,
+        "chaos": 0.3800024322465482
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0039",
+      "focal_seat": 0,
+      "decisions": 279,
+      "temporal_log_likelihood_gain": 0.07049847040737908,
+      "weights": {
+        "pressure": 0.6075987816093947,
+        "control": 0.006637732766684603,
+        "chaos": 0.38576348562392065
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0039",
+      "focal_seat": 1,
+      "decisions": 219,
+      "temporal_log_likelihood_gain": 0.07474619959745223,
+      "weights": {
+        "pressure": 0.6075987816093947,
+        "control": 0.006637732766684603,
+        "chaos": 0.38576348562392065
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0040",
+      "focal_seat": 0,
+      "decisions": 281,
+      "temporal_log_likelihood_gain": 0.016076524252248564,
+      "weights": {
+        "pressure": 0.28501660987749194,
+        "control": 0.06286511209219856,
+        "chaos": 0.6521182780303094
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0040",
+      "focal_seat": 1,
+      "decisions": 210,
+      "temporal_log_likelihood_gain": -0.0011470200920114268,
+      "weights": {
+        "pressure": 0.28501660987749194,
+        "control": 0.06286511209219856,
+        "chaos": 0.6521182780303094
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0041",
+      "focal_seat": 0,
+      "decisions": 295,
+      "temporal_log_likelihood_gain": 0.003275614858551322,
+      "weights": {
+        "pressure": 0.5552351349682773,
+        "control": 0.3805915322641725,
+        "chaos": 0.06417333276755022
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0041",
+      "focal_seat": 1,
+      "decisions": 215,
+      "temporal_log_likelihood_gain": -0.01136826822097601,
+      "weights": {
+        "pressure": 0.5552351349682773,
+        "control": 0.3805915322641725,
+        "chaos": 0.06417333276755022
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0042",
+      "focal_seat": 0,
+      "decisions": 299,
+      "temporal_log_likelihood_gain": -0.010392710435848086,
+      "weights": {
+        "pressure": 0.4835938269175239,
+        "control": 0.45551186001508526,
+        "chaos": 0.06089431306739083
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0042",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": -0.012901566554621593,
+      "weights": {
+        "pressure": 0.4835938269175239,
+        "control": 0.45551186001508526,
+        "chaos": 0.06089431306739083
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0043",
+      "focal_seat": 0,
+      "decisions": 283,
+      "temporal_log_likelihood_gain": 0.031515629033866704,
+      "weights": {
+        "pressure": 0.5409798190715295,
+        "control": 0.10150252524981564,
+        "chaos": 0.35751765567865484
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0043",
+      "focal_seat": 1,
+      "decisions": 218,
+      "temporal_log_likelihood_gain": 0.015270874276823063,
+      "weights": {
+        "pressure": 0.5409798190715295,
+        "control": 0.10150252524981564,
+        "chaos": 0.35751765567865484
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0044",
+      "focal_seat": 0,
+      "decisions": 288,
+      "temporal_log_likelihood_gain": 0.005464241344766193,
+      "weights": {
+        "pressure": 0.042589346779286684,
+        "control": 0.08839963591709331,
+        "chaos": 0.8690110173036201
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0044",
+      "focal_seat": 1,
+      "decisions": 209,
+      "temporal_log_likelihood_gain": 0.006728341883380286,
+      "weights": {
+        "pressure": 0.042589346779286684,
+        "control": 0.08839963591709331,
+        "chaos": 0.8690110173036201
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0045",
+      "focal_seat": 0,
+      "decisions": 270,
+      "temporal_log_likelihood_gain": 0.04374797111186647,
+      "weights": {
+        "pressure": 0.481238139007292,
+        "control": 0.15017852981375257,
+        "chaos": 0.3685833311789554
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0045",
+      "focal_seat": 1,
+      "decisions": 219,
+      "temporal_log_likelihood_gain": 0.04913891788294955,
+      "weights": {
+        "pressure": 0.481238139007292,
+        "control": 0.15017852981375257,
+        "chaos": 0.3685833311789554
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0046",
+      "focal_seat": 0,
+      "decisions": 283,
+      "temporal_log_likelihood_gain": -0.00011432731825090389,
+      "weights": {
+        "pressure": 0.10072518213526084,
+        "control": 0.14783205367459154,
+        "chaos": 0.7514427641901477
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0046",
+      "focal_seat": 1,
+      "decisions": 219,
+      "temporal_log_likelihood_gain": 0.008942412376138067,
+      "weights": {
+        "pressure": 0.10072518213526084,
+        "control": 0.14783205367459154,
+        "chaos": 0.7514427641901477
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0047",
+      "focal_seat": 0,
+      "decisions": 295,
+      "temporal_log_likelihood_gain": 0.06583672288306293,
+      "weights": {
+        "pressure": 0.025475685552697545,
+        "control": 0.5812313702955251,
+        "chaos": 0.3932929441517773
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0047",
+      "focal_seat": 1,
+      "decisions": 204,
+      "temporal_log_likelihood_gain": 0.024720720533208333,
+      "weights": {
+        "pressure": 0.025475685552697545,
+        "control": 0.5812313702955251,
+        "chaos": 0.3932929441517773
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0048",
+      "focal_seat": 0,
+      "decisions": 288,
+      "temporal_log_likelihood_gain": 0.0044297561615106356,
+      "weights": {
+        "pressure": 0.2597638504134498,
+        "control": 0.27386056388369034,
+        "chaos": 0.4663755857028598
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0048",
+      "focal_seat": 1,
+      "decisions": 214,
+      "temporal_log_likelihood_gain": 0.001078975881726458,
+      "weights": {
+        "pressure": 0.2597638504134498,
+        "control": 0.27386056388369034,
+        "chaos": 0.4663755857028598
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0049",
+      "focal_seat": 0,
+      "decisions": 288,
+      "temporal_log_likelihood_gain": 0.014351721579027714,
+      "weights": {
+        "pressure": 0.2167221440311657,
+        "control": 0.06242102163988169,
+        "chaos": 0.7208568343289526
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0049",
+      "focal_seat": 1,
+      "decisions": 209,
+      "temporal_log_likelihood_gain": 0.007652884767188583,
+      "weights": {
+        "pressure": 0.2167221440311657,
+        "control": 0.06242102163988169,
+        "chaos": 0.7208568343289526
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0050",
+      "focal_seat": 0,
+      "decisions": 298,
+      "temporal_log_likelihood_gain": 0.00686628855304033,
+      "weights": {
+        "pressure": 0.42919105221957343,
+        "control": 0.4407887739488511,
+        "chaos": 0.13002017383157544
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0050",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": -0.008159917062782244,
+      "weights": {
+        "pressure": 0.42919105221957343,
+        "control": 0.4407887739488511,
+        "chaos": 0.13002017383157544
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0051",
+      "focal_seat": 0,
+      "decisions": 257,
+      "temporal_log_likelihood_gain": 0.2074121489760563,
+      "weights": {
+        "pressure": 0.9401049654992257,
+        "control": 0.03500879391720896,
+        "chaos": 0.024886240583565266
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0051",
+      "focal_seat": 1,
+      "decisions": 226,
+      "temporal_log_likelihood_gain": 0.1285688141718003,
+      "weights": {
+        "pressure": 0.9401049654992257,
+        "control": 0.03500879391720896,
+        "chaos": 0.024886240583565266
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0052",
+      "focal_seat": 0,
+      "decisions": 292,
+      "temporal_log_likelihood_gain": -0.0009910924797689165,
+      "weights": {
+        "pressure": 0.015033233242908419,
+        "control": 0.2471582292918618,
+        "chaos": 0.7378085374652298
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0052",
+      "focal_seat": 1,
+      "decisions": 207,
+      "temporal_log_likelihood_gain": -0.006330639676074915,
+      "weights": {
+        "pressure": 0.015033233242908419,
+        "control": 0.2471582292918618,
+        "chaos": 0.7378085374652298
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0053",
+      "focal_seat": 0,
+      "decisions": 294,
+      "temporal_log_likelihood_gain": 0.03378889361152132,
+      "weights": {
+        "pressure": 0.3481400105659347,
+        "control": 0.600741098150086,
+        "chaos": 0.05111889128397925
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0053",
+      "focal_seat": 1,
+      "decisions": 218,
+      "temporal_log_likelihood_gain": -0.008677731769093248,
+      "weights": {
+        "pressure": 0.3481400105659347,
+        "control": 0.600741098150086,
+        "chaos": 0.05111889128397925
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0054",
+      "focal_seat": 0,
+      "decisions": 294,
+      "temporal_log_likelihood_gain": 0.026866435362304233,
+      "weights": {
+        "pressure": 0.21230603146637292,
+        "control": 0.587659694482898,
+        "chaos": 0.200034274050729
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0054",
+      "focal_seat": 1,
+      "decisions": 211,
+      "temporal_log_likelihood_gain": -0.0024873053111279094,
+      "weights": {
+        "pressure": 0.21230603146637292,
+        "control": 0.587659694482898,
+        "chaos": 0.200034274050729
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0055",
+      "focal_seat": 0,
+      "decisions": 300,
+      "temporal_log_likelihood_gain": 0.041428547670785354,
+      "weights": {
+        "pressure": 0.6805645351209215,
+        "control": 0.19476269271979907,
+        "chaos": 0.12467277215927947
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0055",
+      "focal_seat": 1,
+      "decisions": 226,
+      "temporal_log_likelihood_gain": 0.03943505032497232,
+      "weights": {
+        "pressure": 0.6805645351209215,
+        "control": 0.19476269271979907,
+        "chaos": 0.12467277215927947
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0056",
+      "focal_seat": 0,
+      "decisions": 305,
+      "temporal_log_likelihood_gain": 0.008391259508658985,
+      "weights": {
+        "pressure": 0.0839638647112099,
+        "control": 0.3504165219222026,
+        "chaos": 0.5656196133665875
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0056",
+      "focal_seat": 1,
+      "decisions": 211,
+      "temporal_log_likelihood_gain": 0.01021851346950797,
+      "weights": {
+        "pressure": 0.0839638647112099,
+        "control": 0.3504165219222026,
+        "chaos": 0.5656196133665875
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0057",
+      "focal_seat": 0,
+      "decisions": 289,
+      "temporal_log_likelihood_gain": -0.0026645717406819838,
+      "weights": {
+        "pressure": 0.2617786112203332,
+        "control": 0.18499962316676835,
+        "chaos": 0.5532217656128985
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0057",
+      "focal_seat": 1,
+      "decisions": 209,
+      "temporal_log_likelihood_gain": -0.007912090482440553,
+      "weights": {
+        "pressure": 0.2617786112203332,
+        "control": 0.18499962316676835,
+        "chaos": 0.5532217656128985
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0058",
+      "focal_seat": 0,
+      "decisions": 270,
+      "temporal_log_likelihood_gain": 0.006428522257239396,
+      "weights": {
+        "pressure": 0.4562907142254264,
+        "control": 0.22849376519832365,
+        "chaos": 0.31521552057625
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0058",
+      "focal_seat": 1,
+      "decisions": 228,
+      "temporal_log_likelihood_gain": 0.02627538381779419,
+      "weights": {
+        "pressure": 0.4562907142254264,
+        "control": 0.22849376519832365,
+        "chaos": 0.31521552057625
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0059",
+      "focal_seat": 0,
+      "decisions": 267,
+      "temporal_log_likelihood_gain": 0.09079669402312528,
+      "weights": {
+        "pressure": 0.7772734751509484,
+        "control": 0.17543600542634205,
+        "chaos": 0.04729051942270958
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0059",
+      "focal_seat": 1,
+      "decisions": 234,
+      "temporal_log_likelihood_gain": 0.05131161611983011,
+      "weights": {
+        "pressure": 0.7772734751509484,
+        "control": 0.17543600542634205,
+        "chaos": 0.04729051942270958
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0060",
+      "focal_seat": 0,
+      "decisions": 286,
+      "temporal_log_likelihood_gain": -0.0007884947347282368,
+      "weights": {
+        "pressure": 0.03942457832025671,
+        "control": 0.21810971434173831,
+        "chaos": 0.7424657073380051
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0060",
+      "focal_seat": 1,
+      "decisions": 203,
+      "temporal_log_likelihood_gain": -0.008145092784175084,
+      "weights": {
+        "pressure": 0.03942457832025671,
+        "control": 0.21810971434173831,
+        "chaos": 0.7424657073380051
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0061",
+      "focal_seat": 0,
+      "decisions": 308,
+      "temporal_log_likelihood_gain": 0.08082760699335464,
+      "weights": {
+        "pressure": 0.00199664663015706,
+        "control": 0.6707889496065539,
+        "chaos": 0.327214403763289
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0061",
+      "focal_seat": 1,
+      "decisions": 208,
+      "temporal_log_likelihood_gain": 0.06644523088777006,
+      "weights": {
+        "pressure": 0.00199664663015706,
+        "control": 0.6707889496065539,
+        "chaos": 0.327214403763289
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0062",
+      "focal_seat": 0,
+      "decisions": 283,
+      "temporal_log_likelihood_gain": 0.0074398296866162025,
+      "weights": {
+        "pressure": 0.10081487366456154,
+        "control": 0.19561820378643713,
+        "chaos": 0.7035669225490014
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0062",
+      "focal_seat": 1,
+      "decisions": 210,
+      "temporal_log_likelihood_gain": -8.606616867305038e-05,
+      "weights": {
+        "pressure": 0.10081487366456154,
+        "control": 0.19561820378643713,
+        "chaos": 0.7035669225490014
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0063",
+      "focal_seat": 0,
+      "decisions": 280,
+      "temporal_log_likelihood_gain": 0.02864292724390603,
+      "weights": {
+        "pressure": 0.28619220535877027,
+        "control": 0.12736188613916555,
+        "chaos": 0.5864459085020641
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0063",
+      "focal_seat": 1,
+      "decisions": 212,
+      "temporal_log_likelihood_gain": 0.007837149832916971,
+      "weights": {
+        "pressure": 0.28619220535877027,
+        "control": 0.12736188613916555,
+        "chaos": 0.5864459085020641
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0064",
+      "focal_seat": 0,
+      "decisions": 276,
+      "temporal_log_likelihood_gain": 0.14145584053110713,
+      "weights": {
+        "pressure": 0.8155792696614734,
+        "control": 0.04135036215300169,
+        "chaos": 0.14307036818552485
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0064",
+      "focal_seat": 1,
+      "decisions": 225,
+      "temporal_log_likelihood_gain": 0.15518438149942812,
+      "weights": {
+        "pressure": 0.8155792696614734,
+        "control": 0.04135036215300169,
+        "chaos": 0.14307036818552485
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0065",
+      "focal_seat": 0,
+      "decisions": 283,
+      "temporal_log_likelihood_gain": -0.0033896703135643056,
+      "weights": {
+        "pressure": 0.251517222801067,
+        "control": 0.3036855751692566,
+        "chaos": 0.4447972020296763
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0065",
+      "focal_seat": 1,
+      "decisions": 214,
+      "temporal_log_likelihood_gain": -0.005835685760238263,
+      "weights": {
+        "pressure": 0.251517222801067,
+        "control": 0.3036855751692566,
+        "chaos": 0.4447972020296763
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0066",
+      "focal_seat": 0,
+      "decisions": 298,
+      "temporal_log_likelihood_gain": 0.12540789796753435,
+      "weights": {
+        "pressure": 0.10581167983922976,
+        "control": 0.8304120084647081,
+        "chaos": 0.06377631169606224
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0066",
+      "focal_seat": 1,
+      "decisions": 211,
+      "temporal_log_likelihood_gain": 0.12229477960439562,
+      "weights": {
+        "pressure": 0.10581167983922976,
+        "control": 0.8304120084647081,
+        "chaos": 0.06377631169606224
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0067",
+      "focal_seat": 0,
+      "decisions": 291,
+      "temporal_log_likelihood_gain": -0.008820554004555812,
+      "weights": {
+        "pressure": 0.3436307935097049,
+        "control": 0.4635350619676622,
+        "chaos": 0.1928341445226329
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0067",
+      "focal_seat": 1,
+      "decisions": 214,
+      "temporal_log_likelihood_gain": -0.0009740683398821523,
+      "weights": {
+        "pressure": 0.3436307935097049,
+        "control": 0.4635350619676622,
+        "chaos": 0.1928341445226329
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0068",
+      "focal_seat": 0,
+      "decisions": 283,
+      "temporal_log_likelihood_gain": 0.011682751284116315,
+      "weights": {
+        "pressure": 0.014397003530023848,
+        "control": 0.13316433240057202,
+        "chaos": 0.8524386640694042
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0068",
+      "focal_seat": 1,
+      "decisions": 216,
+      "temporal_log_likelihood_gain": 0.0163573130643908,
+      "weights": {
+        "pressure": 0.014397003530023848,
+        "control": 0.13316433240057202,
+        "chaos": 0.8524386640694042
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0069",
+      "focal_seat": 0,
+      "decisions": 295,
+      "temporal_log_likelihood_gain": 0.000949920983888519,
+      "weights": {
+        "pressure": 0.5716739332881032,
+        "control": 0.34852037811255054,
+        "chaos": 0.07980568859934621
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0069",
+      "focal_seat": 1,
+      "decisions": 233,
+      "temporal_log_likelihood_gain": -0.004897552369014794,
+      "weights": {
+        "pressure": 0.5716739332881032,
+        "control": 0.34852037811255054,
+        "chaos": 0.07980568859934621
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0070",
+      "focal_seat": 0,
+      "decisions": 277,
+      "temporal_log_likelihood_gain": 0.010570143052268183,
+      "weights": {
+        "pressure": 0.04407000648090183,
+        "control": 0.3212780811309611,
+        "chaos": 0.634651912388137
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0070",
+      "focal_seat": 1,
+      "decisions": 213,
+      "temporal_log_likelihood_gain": 0.0009650434898529296,
+      "weights": {
+        "pressure": 0.04407000648090183,
+        "control": 0.3212780811309611,
+        "chaos": 0.634651912388137
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0071",
+      "focal_seat": 0,
+      "decisions": 314,
+      "temporal_log_likelihood_gain": 0.13622865420219293,
+      "weights": {
+        "pressure": 0.16178643160126904,
+        "control": 0.8300676874342835,
+        "chaos": 0.00814588096444744
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0071",
+      "focal_seat": 1,
+      "decisions": 207,
+      "temporal_log_likelihood_gain": 0.10998608157837561,
+      "weights": {
+        "pressure": 0.16178643160126904,
+        "control": 0.8300676874342835,
+        "chaos": 0.00814588096444744
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0072",
+      "focal_seat": 0,
+      "decisions": 278,
+      "temporal_log_likelihood_gain": -0.018239509051266072,
+      "weights": {
+        "pressure": 0.5019910412136053,
+        "control": 0.4202925549378002,
+        "chaos": 0.07771640384859466
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0072",
+      "focal_seat": 1,
+      "decisions": 222,
+      "temporal_log_likelihood_gain": -0.0012101765437791988,
+      "weights": {
+        "pressure": 0.5019910412136053,
+        "control": 0.4202925549378002,
+        "chaos": 0.07771640384859466
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0073",
+      "focal_seat": 0,
+      "decisions": 312,
+      "temporal_log_likelihood_gain": 0.1780375093528446,
+      "weights": {
+        "pressure": 0.04900417126090168,
+        "control": 0.93765836591214,
+        "chaos": 0.013337462826958215
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0073",
+      "focal_seat": 1,
+      "decisions": 203,
+      "temporal_log_likelihood_gain": 0.23060963242588062,
+      "weights": {
+        "pressure": 0.04900417126090168,
+        "control": 0.93765836591214,
+        "chaos": 0.013337462826958215
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0074",
+      "focal_seat": 0,
+      "decisions": 298,
+      "temporal_log_likelihood_gain": -0.0036741152560105846,
+      "weights": {
+        "pressure": 0.4131569507269632,
+        "control": 0.3969905831114755,
+        "chaos": 0.18985246616156143
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0074",
+      "focal_seat": 1,
+      "decisions": 221,
+      "temporal_log_likelihood_gain": -0.0039296891899362855,
+      "weights": {
+        "pressure": 0.4131569507269632,
+        "control": 0.3969905831114755,
+        "chaos": 0.18985246616156143
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0075",
+      "focal_seat": 0,
+      "decisions": 279,
+      "temporal_log_likelihood_gain": 0.12977019024744305,
+      "weights": {
+        "pressure": 0.9196082908068289,
+        "control": 0.07116440433092518,
+        "chaos": 0.009227304862245937
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0075",
+      "focal_seat": 1,
+      "decisions": 230,
+      "temporal_log_likelihood_gain": 0.12473029869696453,
+      "weights": {
+        "pressure": 0.9196082908068289,
+        "control": 0.07116440433092518,
+        "chaos": 0.009227304862245937
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0076",
+      "focal_seat": 0,
+      "decisions": 296,
+      "temporal_log_likelihood_gain": 0.012128527432245923,
+      "weights": {
+        "pressure": 0.1916509004232995,
+        "control": 0.40284993558980065,
+        "chaos": 0.40549916398689995
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0076",
+      "focal_seat": 1,
+      "decisions": 212,
+      "temporal_log_likelihood_gain": 0.0045447299113169325,
+      "weights": {
+        "pressure": 0.1916509004232995,
+        "control": 0.40284993558980065,
+        "chaos": 0.40549916398689995
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0077",
+      "focal_seat": 0,
+      "decisions": 268,
+      "temporal_log_likelihood_gain": 0.21130722041282896,
+      "weights": {
+        "pressure": 0.9923610691923583,
+        "control": 0.0072073176936786176,
+        "chaos": 0.00043161311396305597
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0077",
+      "focal_seat": 1,
+      "decisions": 231,
+      "temporal_log_likelihood_gain": 0.14660728696459177,
+      "weights": {
+        "pressure": 0.9923610691923583,
+        "control": 0.0072073176936786176,
+        "chaos": 0.00043161311396305597
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0078",
+      "focal_seat": 0,
+      "decisions": 290,
+      "temporal_log_likelihood_gain": 0.009065676127480627,
+      "weights": {
+        "pressure": 0.15606881572658143,
+        "control": 0.011070568174994255,
+        "chaos": 0.8328606160984244
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0078",
+      "focal_seat": 1,
+      "decisions": 207,
+      "temporal_log_likelihood_gain": 0.012398560756472716,
+      "weights": {
+        "pressure": 0.15606881572658143,
+        "control": 0.011070568174994255,
+        "chaos": 0.8328606160984244
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0079",
+      "focal_seat": 0,
+      "decisions": 310,
+      "temporal_log_likelihood_gain": 0.20566217743532317,
+      "weights": {
+        "pressure": 0.050890264759921845,
+        "control": 0.8802983823161765,
+        "chaos": 0.06881135292390171
+      }
+    },
+    {
+      "mixture_id": "adaptive-mix-62001-0079",
+      "focal_seat": 1,
+      "decisions": 206,
+      "temporal_log_likelihood_gain": 0.2150067990901268,
+      "weights": {
+        "pressure": 0.050890264759921845,
+        "control": 0.8802983823161765,
+        "chaos": 0.06881135292390171
+      }
+    }
+  ],
+  "warning": "Synthetic identifiability does not establish that human players possess a PCC Control state.",
+  "design": {
+    "status": "frozen_temporal_control_validation",
+    "policy_version": "0.3.0",
+    "frozen_policy_sha256": "ec6020ea7903365c5437ab10bf813cd1a77ab7f62613e118048d613870c0f962",
+    "observed_policy_sha256": "ec6020ea7903365c5437ab10bf813cd1a77ab7f62613e118048d613870c0f962",
+    "policies_modified": false,
+    "training_mixtures": 80,
+    "evaluation_mixtures": 80,
+    "hands_per_seat": 100,
+    "training_seed": 61001,
+    "evaluation_seed": 62001,
+    "shuffle_repetitions": 25,
+    "split_unit": "complete mixture_id; both seats remain in one partition"
+  }
+}
