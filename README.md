@@ -260,6 +260,29 @@ confirmed aligned-versus-context-yoked Control payoff advantage. See
 `docs/PRESSURE_DECOMPOSITION_PROTOCOL.md`. No default result is reported until
 the frozen run is executed.
 
+## Fresh-seed effective Chaos validation
+
+Validate the independent value-floor candidate without changing its definition:
+
+```bash
+python -m pcc_poker effective-chaos-validation \
+  --output validation/effective-chaos-validation.json
+```
+
+This freezes the public surprisal model on disjoint calibration hands, evaluates
+fresh score-family and independent-family mixture groups, reports the full
+Pressure/Control/Chaos correlation matrix, compares against raw surprisal, and
+includes a shuffled-weight diagnostic. See
+`docs/EFFECTIVE_CHAOS_CONSTRUCT_VALIDATION.md`. No human data are used.
+
+The frozen default run is **not confirmed**. Effective surprisal correlates
+positively with assigned Chaos in both families (`.447` independent, `.500`
+score), but the independent-family Control correlation (`.487`) remains larger
+than its Chaos correlation, so the prespecified discriminant requirement fails.
+The score family improves from a raw discriminant margin of `-.006` to `.030`,
+while the independent family remains slightly negative (`-.039`). The null is
+retained without retuning the value floor or thresholds.
+
 ## Repository map
 
 ```text
@@ -274,6 +297,7 @@ pcc_poker/
   analyze.py      observable mode recovery and payoff tests
   handhq.py       privacy-minimized PHHS/HandHQ ingestion
   handhq_features.py  pre-decision public game-state reconstruction
+  effective_chaos_validation.py  fresh-seed value-floor construct test
   cli.py          command-line interface
 docs/
   MEASUREMENT_CONTRACT.md
@@ -289,6 +313,8 @@ docs/
   CONTROL_PRESSURE_MECHANISM_PROTOCOL.md
   PRESSURE_DECOMPOSITION_PROTOCOL.md
   HUMAN_DATA_INGESTION_PROTOCOL.md
+  EFFECTIVE_CHAOS_VALUE_PROTOCOL.md
+  EFFECTIVE_CHAOS_CONSTRUCT_VALIDATION.md
   PLAYING.md
   ROADMAP.md
 tests/

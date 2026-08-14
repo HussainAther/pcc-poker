@@ -12,6 +12,7 @@ from .behavioral_experiment import (
     write_predictive_control_confirmation,
 )
 from .counterfactual_control import write_counterfactual_control_validation
+from .effective_chaos_validation import write_effective_chaos_validation
 from .control_mechanism import write_control_pressure_mechanism
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
@@ -30,6 +31,31 @@ from .simulate import (
     simulate_match,
     write_jsonl,
 )
+
+
+def effective_chaos_validation_command(args) -> int:
+    report = write_effective_chaos_validation(
+        args.output,
+        calibration_mixtures=args.calibration_mixtures,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_mixtures=args.evaluation_mixtures,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+    )
+    print(json.dumps({
+        "effective_chaos_construct_confirmed": report["effective_chaos_construct_confirmed"],
+        "prespecified_checks": report["prespecified_checks"],
+        "families": {
+            family: {
+                "raw": result["raw_surprisal_weight_correlations"],
+                "effective": result["effective_surprisal_weight_correlations"],
+                "raw_margin": result["raw_discriminant_margin"],
+                "effective_margin": result["effective_discriminant_margin"],
+                "shuffled_chaos": result["shuffled_chaos_weight_correlation"],
+            }
+            for family, result in report["families"].items()
+        },
+    }, indent=2))
+    return 0
 
 
 def pressure_decomposition_command(args) -> int:
@@ -361,6 +387,7 @@ def parser() -> argparse.ArgumentParser:
     temporal_control=commands.add_parser("temporal-control-validation", help="test whether prior opponent history improves held-out Control detection");temporal_control.add_argument("--training-mixtures",type=int,default=80);temporal_control.add_argument("--evaluation-mixtures",type=int,default=80);temporal_control.add_argument("--hands-per-seat",type=int,default=100);temporal_control.add_argument("--training-seed",type=int,default=61001);temporal_control.add_argument("--evaluation-seed",type=int,default=62001);temporal_control.add_argument("--shuffle-repetitions",type=int,default=25);temporal_control.add_argument("--output",required=True);temporal_control.set_defaults(func=temporal_control_command)
     counterfactual=commands.add_parser("counterfactual-control", help="intervene on opponent-model alignment under frozen policies");counterfactual.add_argument("--replicates",type=int,default=16);counterfactual.add_argument("--calibration-hands-per-seat",type=int,default=250);counterfactual.add_argument("--evaluation-hands-per-seat",type=int,default=500);counterfactual.add_argument("--calibration-seed",type=int,default=71001);counterfactual.add_argument("--evaluation-seed",type=int,default=81001);counterfactual.add_argument("--seed-stride",type=int,default=1000);counterfactual.add_argument("--purity",type=float,default=0.8);counterfactual.add_argument("--temperature",type=float,default=0.35);counterfactual.add_argument("--output",required=True);counterfactual.set_defaults(func=counterfactual_control_command)
     mechanism=commands.add_parser("control-pressure-mechanism", help="test contextual prediction in the Control-over-Pressure edge");mechanism.add_argument("--replicates",type=int,default=16);mechanism.add_argument("--calibration-hands-per-seat",type=int,default=250);mechanism.add_argument("--evaluation-hands-per-seat",type=int,default=500);mechanism.add_argument("--calibration-seed",type=int,default=91001);mechanism.add_argument("--evaluation-seed",type=int,default=101001);mechanism.add_argument("--seed-stride",type=int,default=2000);mechanism.add_argument("--purities",type=float,nargs="+",default=[0.70,0.80,0.90]);mechanism.add_argument("--temperatures",type=float,nargs="+",default=[0.25,0.35,0.50]);mechanism.add_argument("--output",required=True);mechanism.set_defaults(func=control_pressure_mechanism_command)
+    effective_chaos=commands.add_parser("effective-chaos-validation", help="validate the independent value-floor Chaos candidate on fresh synthetic mixtures");effective_chaos.add_argument("--calibration-mixtures",type=int,default=20);effective_chaos.add_argument("--calibration-hands-per-seat",type=int,default=25);effective_chaos.add_argument("--evaluation-mixtures",type=int,default=60);effective_chaos.add_argument("--evaluation-hands-per-seat",type=int,default=100);effective_chaos.add_argument("--output",required=True);effective_chaos.set_defaults(func=effective_chaos_validation_command)
     decomposition=commands.add_parser("pressure-decomposition", help="decompose which engineered Pressure term sustains Control contextual alignment");decomposition.add_argument("--replicates",type=int,default=16);decomposition.add_argument("--calibration-hands-per-seat",type=int,default=250);decomposition.add_argument("--evaluation-hands-per-seat",type=int,default=500);decomposition.add_argument("--calibration-seed",type=int,default=111001);decomposition.add_argument("--evaluation-seed",type=int,default=121001);decomposition.add_argument("--seed-stride",type=int,default=2000);decomposition.add_argument("--purity",type=float,default=0.8);decomposition.add_argument("--temperature",type=float,default=0.35);decomposition.add_argument("--minimum-attenuation",type=float,default=0.50);decomposition.add_argument("--output",required=True);decomposition.set_defaults(func=pressure_decomposition_command)
     return root
 

@@ -1,0 +1,89 @@
+{
+  "effective_chaos_construct_confirmed": false,
+  "families": {
+    "independent": {
+      "mixtures": 60,
+      "seat_level_examples": 120,
+      "mean_decisions_per_example": 262.4916666666667,
+      "mean_performance_adequacy": 0.9573304432519987,
+      "raw_surprisal_weight_correlations": {
+        "pressure": -0.9122401107080131,
+        "control": 0.4769150770139456,
+        "chaos": 0.44313188326377256
+      },
+      "effective_surprisal_weight_correlations": {
+        "pressure": -0.9260422677374126,
+        "control": 0.48667003053878005,
+        "chaos": 0.4472316405095108
+      },
+      "raw_discriminant_margin": -0.033783193750173024,
+      "effective_discriminant_margin": -0.039438390029269244,
+      "value_floor_margin_gain": -0.00565519627909622,
+      "shuffled_chaos_weight_correlation": 0.02686328548750093,
+      "prespecified_checks": {
+        "chaos_correlation_at_least_0_20": true,
+        "chaos_exceeds_off_axes_by_at_least_0_05": false,
+        "value_floor_not_materially_worse_than_raw_margin": true
+      }
+    },
+    "score": {
+      "mixtures": 60,
+      "seat_level_examples": 120,
+      "mean_decisions_per_example": 258.6333333333333,
+      "mean_performance_adequacy": 0.9382515976091566,
+      "raw_surprisal_weight_correlations": {
+        "pressure": -0.9584475547994572,
+        "control": 0.4914311424493437,
+        "chaos": 0.48533125638807684
+      },
+      "effective_surprisal_weight_correlations": {
+        "pressure": -0.9554861248586074,
+        "control": 0.47009609971345107,
+        "chaos": 0.5002024678847425
+      },
+      "raw_discriminant_margin": -0.006099886061266879,
+      "effective_discriminant_margin": 0.030106368171291475,
+      "value_floor_margin_gain": 0.036206254232558355,
+      "shuffled_chaos_weight_correlation": 0.12360235126690738,
+      "prespecified_checks": {
+        "chaos_correlation_at_least_0_20": true,
+        "chaos_exceeds_off_axes_by_at_least_0_05": false,
+        "value_floor_not_materially_worse_than_raw_margin": true
+      }
+    }
+  },
+  "prespecified_checks": {
+    "all_families_positive_and_descriptively_meaningful": true,
+    "all_families_discriminant": false,
+    "value_floor_noninferior_in_all_families": true,
+    "value_floor_improves_margin_in_at_least_one_family": true
+  },
+  "thresholds": {
+    "minimum_chaos_correlation": 0.2,
+    "minimum_discriminant_margin": 0.05,
+    "raw_margin_noninferiority_tolerance": 0.02,
+    "minimum_margin_gain_in_at_least_one_family": 0.02
+  },
+  "interpretation": "Confirmation supports this exact synthetic effective-surprisal operationalization as a Chaos candidate across both engineered policy families. Failure is retained without retuning thresholds or the value floor.",
+  "shuffled_label_baseline_is_diagnostic_not_acceptance_criterion": true,
+  "design": {
+    "candidate_frozen_before_evaluation": true,
+    "calibration_seeds": {
+      "score": 1401,
+      "independent": 1409
+    },
+    "evaluation_seeds": {
+      "score": 1601,
+      "independent": 1609
+    },
+    "calibration_evaluation_overlap": false,
+    "calibration_mixtures_per_family": 20,
+    "calibration_hands_per_seat": 25,
+    "evaluation_mixtures_per_family": 60,
+    "evaluation_hands_per_seat": 100,
+    "surprisal_model": "smoothed public-action frequencies from disjoint calibration hands",
+    "value_model": "exact Leduc information-set Q-values under uniform legal-action continuation",
+    "constant_floor_baseline": "raw normalized surprisal (adequacy fixed to one)",
+    "human_data_used": false
+  }
+}
