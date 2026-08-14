@@ -45,7 +45,7 @@ produce the proposed PCC cycle.
 
 ## Play the game
 
-Play six hands against the prediction-oriented Control v2 AI:
+Play six hands against the prediction-oriented Control v3 AI:
 
 ```bash
 python -m pcc_poker play --opponent control --hands 6
@@ -151,11 +151,17 @@ python -m pcc_poker adaptive-validation \
   --output outputs/adaptive-family.json
 python -m pcc_poker adaptive-sweep \
   --output outputs/adaptive-sweep.json
+python -m pcc_poker balanced-cycle \
+  --output outputs/balanced-cycle.json
 ```
 
-Control v2 expresses the frozen adaptation signature, but the first payoff
-sweep is not a complete PCC cycle. The game is a differentiated research alpha,
-not yet a balanced competitive release.
+Version 0.3 meets the frozen synthetic balance criterion: replicated,
+seat-balanced payoff intervals support Control over Pressure, Chaos over
+Control, and Pressure over Chaos, with an edge-strength ratio below `3.0`.
+This was achieved through general policy mechanisms, not opponent labels or
+cyclic payoff bonuses. The revised label-free Control correlation is below the
+repository's descriptive threshold, so observational recovery remains an open
+measurement problem. See `docs/BALANCE_PROTOCOL.md`.
 
 ## Repository map
 
@@ -177,6 +183,7 @@ docs/
   MIXED_MODE_PROTOCOL.md
   POLICY_FAMILY_TRANSFER.md
   BEHAVIORAL_MEASURES.md
+  BALANCE_PROTOCOL.md
   PLAYING.md
   ROADMAP.md
 tests/

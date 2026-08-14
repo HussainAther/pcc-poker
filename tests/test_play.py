@@ -6,6 +6,22 @@ from pcc_poker.play import play_session
 
 
 class AdaptiveGameTests(unittest.TestCase):
+    def test_pressure_commits_more_with_stronger_information(self):
+        policy = AdaptiveMixturePolicy((1.0, 0.0, 0.0), seed=1)
+        weak = initial_state([0, 1, 2, 0, 1, 2])
+        strong = initial_state([2, 1, 0, 0, 1, 2])
+        self.assertGreater(
+            policy._coercive_distribution(strong)["bet"],
+            policy._coercive_distribution(weak)["bet"],
+        )
+
+    def test_chaos_keeps_every_legal_branch_possible(self):
+        policy = AdaptiveMixturePolicy((0.0, 0.0, 1.0), seed=1)
+        state = initial_state([0, 1, 2, 0, 1, 2])
+        probabilities = policy._novelty_distribution(state)
+        self.assertAlmostEqual(sum(probabilities.values()), 1.0)
+        self.assertTrue(all(value > 0 for value in probabilities.values()))
+
     def test_control_times_aggression_to_observed_fold_rate(self):
         policy = AdaptiveMixturePolicy((0.0, 1.0, 0.0), seed=1)
         state = initial_state([0, 1, 2, 0, 1, 2])

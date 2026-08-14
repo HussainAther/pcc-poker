@@ -1,22 +1,83 @@
 {
   "status": "completed",
-  "policy_family": "adaptive",
-  "calibration_seed": 809,
-  "evaluation_seed": 811,
-  "evaluation_mixtures": 60,
-  "evaluation_hands_per_seat": 100,
-  "matching_axis_correlations": {
-    "pressure": 0.7958443435604623,
-    "control": 0.3106602756803714,
-    "chaos": 0.445821403805874
-  },
-  "control_discriminant_correlations": {
-    "pressure": -0.2457729464182256,
-    "control": 0.3106602756803714,
-    "chaos": -0.029286695634740095
-  },
+  "measurement_inputs": "public betting context, prior public opponent actions, and the acting player's private rank for information-set value",
   "generator_weights_used_as_predictors": false,
-  "calibration_evaluation_overlap": false,
-  "purpose": "game-mechanic construct validation, not independent PCC evidence",
-  "circularity_warning": "The generator and measurement both operationalize opponent-response adaptation; success validates implementation, not natural occurrence."
+  "families": {
+    "adaptive": {
+      "mixtures": 60,
+      "seat_level_examples": 120,
+      "measurement_weight_correlations": {
+        "pressure_index": {
+          "pressure": 0.7480138662326205,
+          "control": -0.8343070191732399,
+          "chaos": -0.01333189917177307
+        },
+        "control_efficiency": {
+          "pressure": 0.7606620950036017,
+          "control": -0.854782662935998,
+          "chaos": -0.007688815221470197
+        },
+        "predictive_control": {
+          "pressure": 0.4449972668468133,
+          "control": -0.6481185319688185,
+          "chaos": 0.13194219207829289
+        },
+        "opponent_adaptation_control": {
+          "pressure": 0.10344377933894403,
+          "control": 0.1573379800448468,
+          "chaos": -0.25315717350108724
+        },
+        "effective_surprisal": {
+          "pressure": 0.16626128627750747,
+          "control": -0.4316793700046718,
+          "chaos": 0.22395041714249536
+        }
+      },
+      "matching_axis_correlations": {
+        "pressure": 0.7480138662326205,
+        "control": 0.1573379800448468,
+        "chaos": 0.22395041714249536
+      },
+      "measurement_payoff_correlations": {
+        "pressure_index": 0.3480157474176684,
+        "control_efficiency": 0.3740898117277517,
+        "predictive_control": 0.29551421908417136,
+        "opponent_adaptation_control": -0.04289623805231447,
+        "effective_surprisal": 0.17992472844109114
+      }
+    }
+  },
+  "matching_axis_positive_in_every_family": {
+    "pressure": true,
+    "control": true,
+    "chaos": true
+  },
+  "descriptive_effect_threshold": 0.2,
+  "threshold_note": "The 0.20 threshold is a transparent descriptive convention added for this engineering validation, not a preregistered significance test.",
+  "warning": "Assigned weights are used only for construct-validation correlations. The measurements themselves are computed without generator labels, hidden opponent cards, or component scores.",
+  "adaptive_family_construct_result": {
+    "pressure": {
+      "result": "positive_in_adaptive_family",
+      "correlation": 0.7480138662326205
+    },
+    "control": {
+      "result": "inconclusive_in_adaptive_family",
+      "correlation": 0.1573379800448468
+    },
+    "chaos": {
+      "result": "positive_in_adaptive_family",
+      "correlation": 0.22395041714249536
+    }
+  },
+  "design": {
+    "purpose": "game-mechanic construct validation, not independent PCC evidence",
+    "policy_family": "adaptive",
+    "control_mechanism": "card-value-constrained aggression timed to an online estimate of the opponent's round-specific fold probability",
+    "calibration_seed": 809,
+    "evaluation_seed": 811,
+    "calibration_evaluation_overlap": false,
+    "evaluation_mixtures": 60,
+    "evaluation_hands_per_seat": 100,
+    "circularity_warning": "The generator and measurement both operationalize opponent-response adaptation; success validates implementation, not natural occurrence."
+  }
 }

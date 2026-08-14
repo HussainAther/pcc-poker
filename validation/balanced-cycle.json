@@ -1,0 +1,160 @@
+{
+  "design": {
+    "status": "frozen_candidate_confirmation",
+    "replicates": 12,
+    "hands_per_seat_order": 1000,
+    "hands_per_replicate": 6000,
+    "seed": 23001,
+    "seed_stride": 20,
+    "seat_balancing": "every matchup is run in both seat orders",
+    "interval_unit": "replicate-level seat-balanced payoff edge",
+    "maximum_edge_ratio": 3.0
+  },
+  "edges": {
+    "control_over_pressure": {
+      "mean_payoff_edge": 0.20575000000000002,
+      "standard_deviation_across_replicates": 0.15497807762859414,
+      "normal_95_interval": [
+        0.11806289785938766,
+        0.29343710214061236
+      ],
+      "positive_replicates": 10,
+      "replicates": 12
+    },
+    "chaos_over_control": {
+      "mean_payoff_edge": 0.16616666666666666,
+      "standard_deviation_across_replicates": 0.1215824324431284,
+      "normal_95_interval": [
+        0.09737492956889238,
+        0.23495840376444094
+      ],
+      "positive_replicates": 12,
+      "replicates": 12
+    },
+    "pressure_over_chaos": {
+      "mean_payoff_edge": 0.13245833333333334,
+      "standard_deviation_across_replicates": 0.20038570289380037,
+      "normal_95_interval": [
+        0.0190794486159951,
+        0.2458372180506716
+      ],
+      "positive_replicates": 9,
+      "replicates": 12
+    }
+  },
+  "edge_strength_ratio": 1.5533186536646744,
+  "directional_confirmation": true,
+  "strength_balance": true,
+  "balanced_cycle_confirmed": true,
+  "runs": [
+    {
+      "replicate": 0,
+      "seed": 23001,
+      "edges": {
+        "control_over_pressure": 0.3045,
+        "chaos_over_control": 0.336,
+        "pressure_over_chaos": -0.086
+      }
+    },
+    {
+      "replicate": 1,
+      "seed": 23021,
+      "edges": {
+        "control_over_pressure": 0.224,
+        "chaos_over_control": 0.081,
+        "pressure_over_chaos": -0.1095
+      }
+    },
+    {
+      "replicate": 2,
+      "seed": 23041,
+      "edges": {
+        "control_over_pressure": -0.114,
+        "chaos_over_control": 0.0225,
+        "pressure_over_chaos": 0.0365
+      }
+    },
+    {
+      "replicate": 3,
+      "seed": 23061,
+      "edges": {
+        "control_over_pressure": 0.36050000000000004,
+        "chaos_over_control": 0.3005,
+        "pressure_over_chaos": 0.38
+      }
+    },
+    {
+      "replicate": 4,
+      "seed": 23081,
+      "edges": {
+        "control_over_pressure": 0.29000000000000004,
+        "chaos_over_control": 0.0305,
+        "pressure_over_chaos": 0.221
+      }
+    },
+    {
+      "replicate": 5,
+      "seed": 23101,
+      "edges": {
+        "control_over_pressure": 0.182,
+        "chaos_over_control": 0.068,
+        "pressure_over_chaos": 0.13
+      }
+    },
+    {
+      "replicate": 6,
+      "seed": 23121,
+      "edges": {
+        "control_over_pressure": 0.359,
+        "chaos_over_control": 0.2645,
+        "pressure_over_chaos": 0.019500000000000003
+      }
+    },
+    {
+      "replicate": 7,
+      "seed": 23141,
+      "edges": {
+        "control_over_pressure": -0.03900000000000001,
+        "chaos_over_control": 0.028999999999999998,
+        "pressure_over_chaos": -0.024999999999999994
+      }
+    },
+    {
+      "replicate": 8,
+      "seed": 23161,
+      "edges": {
+        "control_over_pressure": 0.185,
+        "chaos_over_control": 0.2395,
+        "pressure_over_chaos": 0.1265
+      }
+    },
+    {
+      "replicate": 9,
+      "seed": 23181,
+      "edges": {
+        "control_over_pressure": 0.3865,
+        "chaos_over_control": 0.1345,
+        "pressure_over_chaos": 0.28650000000000003
+      }
+    },
+    {
+      "replicate": 10,
+      "seed": 23201,
+      "edges": {
+        "control_over_pressure": 0.181,
+        "chaos_over_control": 0.16399999999999998,
+        "pressure_over_chaos": 0.5660000000000001
+      }
+    },
+    {
+      "replicate": 11,
+      "seed": 23221,
+      "edges": {
+        "control_over_pressure": 0.1495,
+        "chaos_over_control": 0.324,
+        "pressure_over_chaos": 0.044
+      }
+    }
+  ],
+  "warning": "This confirms balance of engineered synthetic policies only. It is not empirical evidence that human play follows PCC dynamics."
+}
