@@ -254,6 +254,13 @@ docs/
 tests/
 ```
 
+Claim 1 — Engineered PCC policies can produce cyclic non-transitivity. Confirmed under the frozen balance experiment, but global robustness missed the preregistered threshold at 75%.
+Claim 2 — Synthetic PCC mixtures leave recoverable behavioral signatures. Supported under generator-linked simulations and transfer tests.
+Claim 3 — PCC modes can be identified with label-free behavioral measurements. Pressure and Chaos have support; Control remains weak/inconclusive.
+Claim 4 — Temporal history contains predictive information. Confirmed, but that information is not specifically diagnostic of Control.
+Claim 5 — Generic opponent-model alignment causes a Control advantage. Not confirmed.
+Claim 6 — Contextually aligned modeling specifically causes Control’s advantage over Pressure. Confirmed.
+
 ## Interpretation boundary
 
 Successful recovery in simulated Leduc would show that known PCC-like
