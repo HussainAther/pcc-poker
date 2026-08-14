@@ -16,3 +16,10 @@ Before adding public human poker histories, the project will:
 
 This is a research-plan safeguard, not an institutional determination or legal
 advice.
+
+## Prepared ingestion layer
+
+A mock-only HandHQ/PHH parser and leakage-validation layer is implemented in
+`pcc_poker/handhq.py`; its governing boundary is documented in
+`docs/HUMAN_DATA_INGESTION_PROTOCOL.md`. This preparation does not authorize or
+constitute confirmatory analysis of human poker histories.
