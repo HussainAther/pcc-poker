@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-08-14T21:41:02.316823+00:00",
+  "generated_at_utc": "2026-08-14T21:45:14.335196+00:00",
   "purpose": "Reproducibility fingerprint for frozen synthetic PCC Poker validation artifacts; not human-data evidence.",
   "environment": {
     "python": "3.13.5",
@@ -79,6 +79,11 @@
         "sha256": "59f154a28261101239fa4b1bf42d149bcfc3a26de96af808a1dd2d45474860bc"
       },
       {
+        "path": "docs/RESEARCH_STATUS_PROTOCOL.md",
+        "bytes": 1187,
+        "sha256": "cdb39cef76a21fb45c5e845d8a79b1b2e3b246af1f857b6595332537cf70847e"
+      },
+      {
         "path": "docs/ROBUSTNESS_PROTOCOL.md",
         "bytes": 3395,
         "sha256": "f51377e4289d2edb0af47a10e91cfd449a9c570240129b9803cb6f2603bc4850"
@@ -120,8 +125,8 @@
       },
       {
         "path": "pcc_poker/cli.py",
-        "bytes": 29277,
-        "sha256": "9f69cb9959a938b2621a9e9fc2b3fb2ea1cca265a32f6f6000e35103e6bee27e"
+        "bytes": 30195,
+        "sha256": "e8c34f042baa7f8848d48ba1bb59bc9a6171c7f2ee31aae949194ea6ef39f075"
       },
       {
         "path": "pcc_poker/contextual_control_observable.py",
@@ -202,6 +207,11 @@
         "path": "pcc_poker/reproducibility.py",
         "bytes": 5309,
         "sha256": "16b649d58310c81bc4d937c05cc94c947787a02c9813cfdf83dc1fd28594965b"
+      },
+      {
+        "path": "pcc_poker/research_status.py",
+        "bytes": 13048,
+        "sha256": "6bc394501a6a159437a8609ac92a39479192b2d12c3864b7dabdc4762dbdfe8d"
       },
       {
         "path": "pcc_poker/robustness.py",
@@ -334,6 +344,11 @@
         "sha256": "dc17787fbe22259896225f606615b6c733a2f8b3a4441cdaa4ecf0f4ee199d8f"
       },
       {
+        "path": "tests/test_research_status.py",
+        "bytes": 1630,
+        "sha256": "1a076e18f4ed8b35df4d1ed8c43e503536aab9a809686c6ffdff9c2618045d1c"
+      },
+      {
         "path": "tests/test_robustness.py",
         "bytes": 2334,
         "sha256": "bed7037b880cc565725d8b3290c3e4464fb6273b79aaf42ffc659a3208cdd705"
@@ -354,8 +369,8 @@
         "sha256": "3336ae4e96926a83156c65c08a8cdd559b67d0a08871662811bdfc1bb1309027"
       }
     ],
-    "combined_sha256": "3f132ec83a15d278760ddf212b9e714664d2dfde5b939242a2edd4375d905534",
-    "file_count": 68
+    "combined_sha256": "1d39bec4e4944d30570d230230dd5b70643d9f4f04092d20bce46bc8ed1b2fb0",
+    "file_count": 71
   },
   "frozen_validation": {
     "files": [
@@ -400,8 +415,8 @@
     "executed": true,
     "returncode": 0,
     "passed": true,
-    "summary": "99 passed in 2.17s",
-    "output": "........................................................................ [ 72%]\n...........................                                              [100%]\n99 passed in 2.17s"
+    "summary": "102 passed in 2.19s",
+    "output": "........................................................................ [ 70%]\n..............................                                           [100%]\n102 passed in 2.19s"
   },
   "reproducibility_ready": true
 }

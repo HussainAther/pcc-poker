@@ -23,6 +23,7 @@ from .invariant_panel import write_invariant_panel
 from .policies import PURE_MIXTURES
 from .robustness import write_robustness_outputs
 from .reproducibility import write_reproducibility_manifest
+from .research_status import write_research_status
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
 from .temporal_control import write_temporal_control_validation
 from .simulate import (
@@ -38,6 +39,17 @@ from .simulate import (
 
 
 
+
+
+def research_status_command(args) -> int:
+    report = write_research_status(
+        root=args.root,
+        json_output=args.json_output,
+        csv_output=args.csv_output,
+        markdown_output=args.markdown_output,
+    )
+    print(json.dumps({"counts": report["counts"], "claims": len(report["claims"]), "missing_sources": report["missing_sources"]}, indent=2))
+    return 0
 
 def invariant_panel_command(args) -> int:
     report = write_invariant_panel(args.output, calibration_mixtures=args.calibration_mixtures, calibration_hands_per_seat=args.calibration_hands_per_seat, evaluation_mixtures=args.evaluation_mixtures, evaluation_hands_per_seat=args.evaluation_hands_per_seat)
@@ -456,6 +468,12 @@ def parser() -> argparse.ArgumentParser:
     reproduce.add_argument("--output", default="validation/reproducibility-manifest.json")
     reproduce.add_argument("--run-tests", action="store_true", help="also run the full pytest suite and record its result")
     reproduce.set_defaults(func=reproducibility_command)
+    status=commands.add_parser("research-status", help="summarize frozen PCC claims into publication-friendly JSON/CSV/Markdown")
+    status.add_argument("--root", default=".")
+    status.add_argument("--json-output", default="validation/research-status.json")
+    status.add_argument("--csv-output", default="validation/research-status.csv")
+    status.add_argument("--markdown-output", default="validation/RESEARCH_STATUS.md")
+    status.set_defaults(func=research_status_command)
     return root
 
 

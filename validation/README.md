@@ -58,3 +58,7 @@ Result: **not confirmed as family invariant**. Control correlation is positive a
 surface and the frozen synthetic validation artifacts with SHA-256 hashes. It
 also records environment metadata and, when requested, the pytest result. It is
 an engineering provenance artifact only; it does not analyze human data.
+
+## Research status outputs
+
+`research-status.json`, `research-status.csv`, and `RESEARCH_STATUS.md` are generated from the frozen validation artifacts by `python -m pcc_poker research-status`. They summarize confirmed, partial, failed, and unresolved synthetic claims without changing experimental thresholds.
