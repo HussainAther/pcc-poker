@@ -225,6 +225,41 @@ checks remain false, showing that target identity alone is insufficient:
 opponent models may need to represent the interaction between opponent and
 focal policy rather than a portable opponent type.
 
+Test that pair-specific mechanism while matching model margins:
+
+```bash
+python -m pcc_poker control-pressure-mechanism \
+  --output outputs/control-pressure-mechanism.json
+```
+
+This fresh-seed intervention keeps the frozen Control policy unchanged and
+preserves calibrated observation counts and global action frequencies. It
+destroys only round timing or action-to-context alignment, with Chaos as a
+discriminant target. See `docs/CONTROL_PRESSURE_MECHANISM_PROTOCOL.md`.
+
+The frozen v0.7 result confirms all prespecified checks. Against Pressure,
+correct contextual information improves Control payoff by `.284` chips per
+hand over round-swapping and `.207` over support-preserving context-yoking;
+both intervals are
+entirely positive. The effects are significantly larger than their Chaos
+counterparts, both contrasts are positive in all nine robustness cells, and
+all matched-margin checks pass. This is causal evidence for the engineered
+Control-over-Pressure mechanism, not evidence about human players.
+
+Decompose which programmed Pressure term sustains that effect prospectively:
+
+```bash
+python -m pcc_poker pressure-decomposition \
+  --output outputs/pressure-decomposition.json
+```
+
+This fresh-seed test leaves the frozen Control implementation unchanged and
+removes either learned fold leverage or equity-strength selectivity from the
+Pressure component. The prespecified estimand is attenuation of the previously
+confirmed aligned-versus-context-yoked Control payoff advantage. See
+`docs/PRESSURE_DECOMPOSITION_PROTOCOL.md`. No default result is reported until
+the frozen run is executed.
+
 ## Repository map
 
 ```text
@@ -249,10 +284,19 @@ docs/
   ROBUSTNESS_PROTOCOL.md
   TEMPORAL_CONTROL_PROTOCOL.md
   COUNTERFACTUAL_CONTROL_PROTOCOL.md
+  CONTROL_PRESSURE_MECHANISM_PROTOCOL.md
+  PRESSURE_DECOMPOSITION_PROTOCOL.md
   PLAYING.md
   ROADMAP.md
 tests/
 ```
+
+Claim 1 — Engineered PCC policies can produce cyclic non-transitivity. Confirmed under the frozen balance experiment, but global robustness missed the preregistered threshold at 75%.
+Claim 2 — Synthetic PCC mixtures leave recoverable behavioral signatures. Supported under generator-linked simulations and transfer tests.
+Claim 3 — PCC modes can be identified with label-free behavioral measurements. Pressure and Chaos have support; Control remains weak/inconclusive.
+Claim 4 — Temporal history contains predictive information. Confirmed, but that information is not specifically diagnostic of Control.
+Claim 5 — Generic opponent-model alignment causes a Control advantage. Not confirmed.
+Claim 6 — Contextually aligned modeling specifically causes Control’s advantage over Pressure. Confirmed.
 
 ## Interpretation boundary
 
