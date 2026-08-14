@@ -62,3 +62,7 @@ an engineering provenance artifact only; it does not analyze human data.
 ## Research status outputs
 
 `research-status.json`, `research-status.csv`, and `RESEARCH_STATUS.md` are generated from the frozen validation artifacts by `python -m pcc_poker research-status`. They summarize confirmed, partial, failed, and unresolved synthetic claims without changing experimental thresholds.
+
+## v0.8.0 pre-human freeze
+
+`synthetic-freeze-manifest.json` is the release-level freeze record. It hashes the synthetic evidence/protocol bundle, records seed-bearing design fields, captures the conservative Pressure-only confirmatory human panel, and preserves the ORIA/IRB gate. It does not contain human-data results.

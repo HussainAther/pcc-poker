@@ -52,3 +52,9 @@
 ### Contextual Control observable — completed, not family invariant
 
 A frozen matched/yoked public-history likelihood contrast was evaluated on fresh Score and Adaptive seeds. It passed within-family Control positivity and discriminant checks in both families, but failed the preregistered cross-family invariance bound. Keep this as mechanistic evidence and a diagnostic candidate; do not promote it into the conservative family-invariant human-facing panel.
+
+## v0.8.0 — synthetic evidence freeze / pre-human boundary
+
+The synthetic construct-development phase is frozen for the next human-analysis stage. The canonical claim table is `validation/RESEARCH_STATUS.md`. Human confirmatory analysis is restricted to the cross-family-invariant Pressure panel (`pressure_exposure`, `predicted_fold_probability`); Control and Chaos remain exploratory/unresolved. The pre-human analysis protocol is frozen in `HUMAN_ANALYSIS_PREREGISTRATION.md` and cannot be changed in response to confirmatory evaluation outcomes without a documented versioned amendment.
+
+External release actions still pending outside this snapshot: create/push Git tag `v0.8.0`, publish the GitHub release, and archive that exact release in Zenodo.

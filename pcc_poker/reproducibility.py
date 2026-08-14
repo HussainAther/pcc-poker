@@ -10,6 +10,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
 
+from . import __version__
+
 
 DEFAULT_VALIDATION_FILES = (
     "validation/control-pressure-mechanism.json",
@@ -129,7 +131,7 @@ def build_reproducibility_manifest(
             "python": platform.python_version(),
             "python_implementation": platform.python_implementation(),
             "platform": platform.platform(),
-            "pcc_poker_version": _package_version("pcc-poker"),
+            "pcc_poker_version": _package_version("pcc-poker") or __version__,
             "numpy_version": _package_version("numpy"),
             "pytest_version": _package_version("pytest"),
             "git_commit": _git_commit(root),

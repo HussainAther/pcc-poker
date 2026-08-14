@@ -36,3 +36,4 @@ def test_write_manifest_for_current_repo(tmp_path):
     assert report["frozen_validation"]["complete"] is True
     assert report["source"]["file_count"] > 10
     assert len(report["source"]["combined_sha256"]) == 64
+    assert report["environment"]["pcc_poker_version"] == "0.8.0"

@@ -404,3 +404,17 @@ The frozen fresh-seed result selects only `pressure_exposure` and
 Chaos candidate passes the same gate, so those axes remain unresolved rather
 than being filled with post-hoc metrics. See
 `docs/FAMILY_INVARIANT_PANEL_PROTOCOL.md`.
+
+## v0.8.0 synthetic evidence freeze
+
+`v0.8.0` is the pre-human-analysis freeze. It preserves the current synthetic claim inventory, locks the conservative human measurement contract, and preregisters the future HandHQ confirmatory analysis before any such analysis begins.
+
+The only confirmatory human-facing PCC axis in this release is **Pressure**, using the two components that survived the two-family invariance gate: `pressure_exposure` and `predicted_fold_probability`. Control and Chaos remain exploratory/unresolved for human measurement.
+
+```bash
+python -m pcc_poker research-status
+python -m pcc_poker reproduce --run-tests
+python -m pcc_poker synthetic-freeze
+```
+
+See `docs/SYNTHETIC_EVIDENCE_FREEZE.md`, `docs/HUMAN_MEASUREMENT_CONTRACT.md`, `docs/HUMAN_ANALYSIS_PREREGISTRATION.md`, and `docs/RELEASE_CHECKLIST.md`.

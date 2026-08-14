@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-08-14T21:45:14.335196+00:00",
+  "generated_at_utc": "2026-08-14T21:54:11.379132+00:00",
   "purpose": "Reproducibility fingerprint for frozen synthetic PCC Poker validation artifacts; not human-data evidence.",
   "environment": {
     "python": "3.13.5",
     "python_implementation": "CPython",
     "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
-    "pcc_poker_version": null,
+    "pcc_poker_version": "0.8.0",
     "numpy_version": "2.3.5",
     "pytest_version": "9.0.2",
     "git_commit": null
@@ -96,7 +96,7 @@
       {
         "path": "pcc_poker/__init__.py",
         "bytes": 59,
-        "sha256": "c0a4954b779a3c628fccdbc53961ff2d49cfa92daaf4d15b2536864c3da21bc5"
+        "sha256": "5e3809b5c6bdae0c85512d6946ca2c2e2fb72114add3b3bc12d6c0879bb45b3e"
       },
       {
         "path": "pcc_poker/__main__.py",
@@ -125,8 +125,8 @@
       },
       {
         "path": "pcc_poker/cli.py",
-        "bytes": 30195,
-        "sha256": "e8c34f042baa7f8848d48ba1bb59bc9a6171c7f2ee31aae949194ea6ef39f075"
+        "bytes": 30920,
+        "sha256": "b2cced3f372f1bf6274a8cc74cbd9216cfede29d2a9e36333299eed669ddbd61"
       },
       {
         "path": "pcc_poker/contextual_control_observable.py",
@@ -205,8 +205,8 @@
       },
       {
         "path": "pcc_poker/reproducibility.py",
-        "bytes": 5309,
-        "sha256": "16b649d58310c81bc4d937c05cc94c947787a02c9813cfdf83dc1fd28594965b"
+        "bytes": 5351,
+        "sha256": "558732aaea6321ca86f3ca6ab278b8254d5c8168f3e7bad26dc0a46e2da267cd"
       },
       {
         "path": "pcc_poker/research_status.py",
@@ -222,6 +222,11 @@
         "path": "pcc_poker/simulate.py",
         "bytes": 20287,
         "sha256": "b264155ad9df17926e1d69a91d1f1eef6b84427cd457b1c9d6d1857137b25e9e"
+      },
+      {
+        "path": "pcc_poker/synthetic_freeze.py",
+        "bytes": 6826,
+        "sha256": "fc7c0eceb7397a450a4661be840d960fa773286e5b69ca5a235dcb82256e0484"
       },
       {
         "path": "pcc_poker/temporal_control.py",
@@ -241,7 +246,7 @@
       {
         "path": "pyproject.toml",
         "bytes": 471,
-        "sha256": "dce490a772b61b17311de7df3d175f0e7d8034ab7f30ac622a44f85ddc3c6003"
+        "sha256": "f913ad0b7cc1cf6e950ca8cdf07da57c2de5522feae381bcb4e650ea922705d7"
       },
       {
         "path": "requirements.txt",
@@ -340,8 +345,8 @@
       },
       {
         "path": "tests/test_reproducibility.py",
-        "bytes": 1315,
-        "sha256": "dc17787fbe22259896225f606615b6c733a2f8b3a4441cdaa4ecf0f4ee199d8f"
+        "bytes": 1380,
+        "sha256": "44da380d0e39512a79327c1d4e803b17fb63a98f23aada6e5f524e34e4320980"
       },
       {
         "path": "tests/test_research_status.py",
@@ -359,6 +364,11 @@
         "sha256": "f8577fa2a0b812eaf624f82c92ade2811fe70c33b665fbd4bf20af68039ec36b"
       },
       {
+        "path": "tests/test_synthetic_freeze.py",
+        "bytes": 1155,
+        "sha256": "3f3ecef5e2445e755585ce43c202e8c728a3fa6aa4b87124a6c4eca15f8b59f6"
+      },
+      {
         "path": "tests/test_temporal_control.py",
         "bytes": 2641,
         "sha256": "4a2b3f3350cebc0b82718d653680921ec9d43312d33c274b156a298f89c56628"
@@ -367,10 +377,15 @@
         "path": "tests/test_value_floor.py",
         "bytes": 2652,
         "sha256": "3336ae4e96926a83156c65c08a8cdd559b67d0a08871662811bdfc1bb1309027"
+      },
+      {
+        "path": "tests/test_version.py",
+        "bytes": 312,
+        "sha256": "884c78f1a42dda921d87e9daedf1a2a78772a910e808f9dd55fc5465dbfabdf7"
       }
     ],
-    "combined_sha256": "1d39bec4e4944d30570d230230dd5b70643d9f4f04092d20bce46bc8ed1b2fb0",
-    "file_count": 71
+    "combined_sha256": "8b78a0626f54bc832cb9e427bf136bddcf973456009853a68845f373699222cc",
+    "file_count": 74
   },
   "frozen_validation": {
     "files": [
@@ -415,8 +430,8 @@
     "executed": true,
     "returncode": 0,
     "passed": true,
-    "summary": "102 passed in 2.19s",
-    "output": "........................................................................ [ 70%]\n..............................                                           [100%]\n102 passed in 2.19s"
+    "summary": "105 passed in 2.24s",
+    "output": "........................................................................ [ 68%]\n.................................                                        [100%]\n105 passed in 2.24s"
   },
   "reproducibility_ready": true
 }
