@@ -43,6 +43,20 @@ Pressure, and a check is not intrinsically Control.
 No cyclic advantage is hardcoded. The initial simulations may or may not
 produce the proposed PCC cycle.
 
+## Play the game
+
+Play six hands against the prediction-oriented Control v3 AI:
+
+```bash
+python -m pcc_poker play --opponent control --hands 6
+```
+
+You can replace `control` with `pressure` or `chaos`. The terminal game uses
+the tested Leduc engine, alternates your seat, enforces legal actions, reveals
+showdowns, and keeps a zero-sum session score. Add
+`--output outputs/my-session.jsonl` for an anonymous local debugging log. See
+`docs/PLAYING.md` for rules, opponent definitions, and the research boundary.
+
 ## Quick start
 
 Requires Python 3.10+ and NumPy.
@@ -118,6 +132,37 @@ correlations. The first run is deliberately reported as partial: Pressure and
 effective Chaos transfer across both families, while this value-regret definition
 of Control does not. See `docs/BEHAVIORAL_MEASURES.md`.
 
+Run the prospective opponent-adaptation Control confirmation:
+
+```bash
+python -m pcc_poker control-confirmation \
+  --output outputs/control-confirmation.json
+```
+
+This uses new seeds and a larger evaluation set. The resulting Control signal
+is discriminant but only partly replicates: moderate in the independent family
+and weak in the score family. The repository records that result as
+inconclusive rather than changing the metric after confirmation.
+
+Validate and balance-check the playable Adaptive PCC family:
+
+```bash
+python -m pcc_poker adaptive-validation \
+  --output outputs/adaptive-family.json
+python -m pcc_poker adaptive-sweep \
+  --output outputs/adaptive-sweep.json
+python -m pcc_poker balanced-cycle \
+  --output outputs/balanced-cycle.json
+```
+
+Version 0.3 meets the frozen synthetic balance criterion: replicated,
+seat-balanced payoff intervals support Control over Pressure, Chaos over
+Control, and Pressure over Chaos, with an edge-strength ratio below `3.0`.
+This was achieved through general policy mechanisms, not opponent labels or
+cyclic payoff bonuses. The revised label-free Control correlation is below the
+repository's descriptive threshold, so observational recovery remains an open
+measurement problem. See `docs/BALANCE_PROTOCOL.md`.
+
 ## Repository map
 
 ```text
@@ -127,6 +172,7 @@ pcc_poker/
   families.py     independently implemented policy family
   behavioral.py   label-free measurements and counterfactual oracle
   behavioral_experiment.py  disjoint calibration/evaluation harness
+  play.py         interactive human-versus-AI game
   simulate.py     hands, matches, logging, pairwise sweeps
   analyze.py      observable mode recovery and payoff tests
   cli.py          command-line interface
@@ -137,6 +183,8 @@ docs/
   MIXED_MODE_PROTOCOL.md
   POLICY_FAMILY_TRANSFER.md
   BEHAVIORAL_MEASURES.md
+  BALANCE_PROTOCOL.md
+  PLAYING.md
   ROADMAP.md
 tests/
 ```

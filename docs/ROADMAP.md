@@ -8,8 +8,11 @@
   sizes.
 - Compare action-frequency and sequence baselines.
 - Estimate pairwise payoff matrices without cyclic bonuses.
-- Replace direct cross-family weight regression with shared behavioral
-  measurements after the initial transfer test showed mechanism dependence.
+- [Completed candidate pass] Replace direct cross-family weight regression with
+  shared behavioral measurements. Pressure and effective surprisal transferred;
+  exact-value Control efficiency did not and remains a recorded negative result.
+- Develop a prediction-sensitive Control measure prospectively, then evaluate it
+  on new seeds rather than tuning it on the existing validation output.
 
 ## Phase 2 — stronger game-theoretic baselines
 
