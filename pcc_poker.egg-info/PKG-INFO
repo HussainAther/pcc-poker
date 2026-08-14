@@ -1,3 +1,15 @@
+Metadata-Version: 2.4
+Name: pcc-poker
+Version: 0.5.0
+Summary: Pressure-Control-Chaos experiments in imperfect-information games
+Author: Syed Hussain Ather
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Dynamic: license-file
+
 # PCC Poker
 
 An auditable empirical bridge between **Pressure–Control–Chaos (PCC)** theory
@@ -316,15 +328,3 @@ behavioral surprisal from a separately calibrated public-state action model.
 The latter two are deliberately not treated as validated Control or effective
 Chaos constructs. Development tests use invented PHHS fixtures only; see
 `docs/HUMAN_PCC_OBSERVABLES_PROTOCOL.md`.
-
-### Independent effective-Chaos value floor
-
-`pcc_poker/value_floor.py` adds a synthetic-only, non-PCC value reference for the
-next Chaos construct-validation step. Exact Leduc information-set action values
-are computed under a fixed uniform legal-action continuation model, then used
-to discount behavioral surprisal when the chosen action has excessive regret.
-The prespecified sanity tests require random-but-bad behavior to score low,
-strong deterministic behavior to remain low-surprisal, and strong mixed but
-value-adequate behavior to score higher. This does not analyze HandHQ data and
-does not yet define a Hold'em value model. See
-`docs/EFFECTIVE_CHAOS_VALUE_PROTOCOL.md`.

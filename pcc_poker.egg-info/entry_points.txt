@@ -1,0 +1,2 @@
+[console_scripts]
+pcc-poker = pcc_poker.cli:main
