@@ -1,0 +1,23 @@
+{
+  "hands_per_seat_order": 4000,
+  "seed": 901,
+  "mean_payoff_focal_policy": {
+    "pressure_vs_pressure": 0.0,
+    "pressure_vs_control": -0.3425,
+    "control_vs_pressure": 0.3425,
+    "pressure_vs_chaos": -1.7160000000000002,
+    "chaos_vs_pressure": 1.7160000000000002,
+    "control_vs_control": 0.0,
+    "control_vs_chaos": -0.37825,
+    "chaos_vs_control": 0.37825,
+    "chaos_vs_chaos": 0.0
+  },
+  "proposed_cycle": {
+    "control_over_pressure": true,
+    "chaos_over_control": true,
+    "pressure_over_chaos": false
+  },
+  "complete_cycle_observed": false,
+  "balance_status": "unbalanced",
+  "warning": "This is a game-balance diagnostic for engineered AIs, not evidence of a natural PCC cycle. No cyclic payoff bonuses are encoded."
+}

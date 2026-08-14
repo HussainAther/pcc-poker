@@ -143,3 +143,68 @@ class IndependentMixturePolicy:
             weights=dict(zip(MODES, self.weights.tolist())),
             equity=equity(state, state.actor),
         )
+
+
+class AdaptiveMixturePolicy(IndependentMixturePolicy):
+    """PCC family whose Control component explicitly exploits learned responses.
+
+    Pressure remains broadly aggressive and Chaos remains novelty-seeking. The
+    Control component changes its open aggression with the opponent's observed
+    round-specific fold rate, while retaining a card-value safety constraint.
+    """
+
+    family_name = "adaptive_response_mixture"
+
+    def _adaptive_control_distribution(self, state: State) -> dict[str, float]:
+        legal = state.legal_actions()
+        eq = equity(state, state.actor)
+        fold_probability = self.opponent_model.fold_probability(state)
+        scores = {}
+        for action in legal:
+            value = self._action_value(state, action)
+            scaled_value = value / max(state.pot + state.bet_size, 1)
+            if action in {"bet", "raise"}:
+                # Time aggression to learned fold vulnerability. Weak hands may
+                # exploit a reliable fold, while strong hands still value-build.
+                response_timing = 4.0 * (fold_probability - 1 / 3)
+                card_safety = 0.8 * (2 * eq - 1)
+                scores[action] = scaled_value + response_timing + card_safety
+            elif action in {"check", "call"}:
+                # Preserve optionality when the opponent has resisted pressure.
+                resistance = 1.2 * (1.0 - fold_probability)
+                scores[action] = scaled_value + resistance + 0.35 * eq
+            else:
+                scores[action] = scaled_value + 0.8 * (1.0 - eq)
+        return _softmax(scores, max(self.temperature * 1.25, 0.12))
+
+    def decide(self, state: State) -> Decision:
+        component_probabilities = {
+            "pressure": self._coercive_distribution(state),
+            "control": self._adaptive_control_distribution(state),
+            "chaos": self._novelty_distribution(state),
+        }
+        combined = {
+            action: sum(
+                self.weights[index]
+                * component_probabilities[mode].get(action, 0.0)
+                for index, mode in enumerate(MODES)
+            )
+            for action in state.legal_actions()
+        }
+        probabilities = _normalize(combined)
+        threshold = self.rng.random()
+        cumulative = 0.0
+        selected = next(iter(probabilities))
+        for action, probability in probabilities.items():
+            cumulative += probability
+            if threshold <= cumulative:
+                selected = action
+                break
+        self.action_history.observe(state, selected)
+        return Decision(
+            action=selected,
+            probabilities=probabilities,
+            component_scores=component_probabilities,
+            weights=dict(zip(MODES, self.weights.tolist())),
+            equity=equity(state, state.actor),
+        )

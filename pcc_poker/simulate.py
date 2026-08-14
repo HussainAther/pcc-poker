@@ -7,7 +7,7 @@ import random
 from pathlib import Path
 
 from .engine import apply_action, initial_state, utility
-from .families import IndependentMixturePolicy
+from .families import AdaptiveMixturePolicy, IndependentMixturePolicy
 from .policies import MODES, PCCPolicy, PURE_MIXTURES
 
 
@@ -145,6 +145,65 @@ def pairwise_sweep(hands_per_matchup: int = 2000, seed: int = 17) -> dict:
     }
 
 
+def adaptive_pairwise_sweep(
+    hands_per_seat_order: int = 4000, seed: int = 901
+) -> dict:
+    """Seat-balanced payoff matrix for the three playable Adaptive PCC AIs."""
+    matrix = {}
+    modes = list(MODES)
+    matchup_index = 0
+    for left_index, left in enumerate(modes):
+        matrix[f"{left}_vs_{left}"] = 0.0
+        for right in modes[left_index + 1:]:
+            matchup_seed = seed + matchup_index * 2
+            left_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[left], seed=matchup_seed * 2, label=left
+            )
+            right_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[right], seed=matchup_seed * 2 + 1, label=right
+            )
+            _, left_first = simulate_policy_match(
+                hands_per_seat_order, left_policy, right_policy, matchup_seed
+            )
+            right_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[right], seed=(matchup_seed + 1) * 2, label=right
+            )
+            left_policy = AdaptiveMixturePolicy(
+                PURE_MIXTURES[left],
+                seed=(matchup_seed + 1) * 2 + 1,
+                label=left,
+            )
+            _, right_first = simulate_policy_match(
+                hands_per_seat_order,
+                right_policy,
+                left_policy,
+                matchup_seed + 1,
+            )
+            value = (
+                left_first["mean_payoff0"] + right_first["mean_payoff1"]
+            ) / 2
+            matrix[f"{left}_vs_{right}"] = value
+            matrix[f"{right}_vs_{left}"] = -value
+            matchup_index += 1
+    proposed = {
+        "control_over_pressure": matrix["control_vs_pressure"] > 0,
+        "chaos_over_control": matrix["chaos_vs_control"] > 0,
+        "pressure_over_chaos": matrix["pressure_vs_chaos"] > 0,
+    }
+    return {
+        "hands_per_seat_order": hands_per_seat_order,
+        "seed": seed,
+        "mean_payoff_focal_policy": matrix,
+        "proposed_cycle": proposed,
+        "complete_cycle_observed": all(proposed.values()),
+        "balance_status": "unbalanced" if not all(proposed.values()) else "candidate_cycle",
+        "warning": (
+            "This is a game-balance diagnostic for engineered AIs, not evidence "
+            "of a natural PCC cycle. No cyclic payoff bonuses are encoded."
+        ),
+    }
+
+
 def generate_recovery_dataset(hands_per_seat: int = 500, seed: int = 23) -> tuple[list[dict], dict]:
     """Generate seat-balanced focal-mode data against one reference policy."""
     records = []
@@ -266,6 +325,7 @@ def generate_family_dataset(
     families = {
         "score": PCCPolicy,
         "independent": IndependentMixturePolicy,
+        "adaptive": AdaptiveMixturePolicy,
     }
     if family not in families:
         raise ValueError(f"unknown policy family {family!r}; choices={tuple(families)}")

@@ -43,6 +43,20 @@ Pressure, and a check is not intrinsically Control.
 No cyclic advantage is hardcoded. The initial simulations may or may not
 produce the proposed PCC cycle.
 
+## Play the game
+
+Play six hands against the prediction-oriented Control v2 AI:
+
+```bash
+python -m pcc_poker play --opponent control --hands 6
+```
+
+You can replace `control` with `pressure` or `chaos`. The terminal game uses
+the tested Leduc engine, alternates your seat, enforces legal actions, reveals
+showdowns, and keeps a zero-sum session score. Add
+`--output outputs/my-session.jsonl` for an anonymous local debugging log. See
+`docs/PLAYING.md` for rules, opponent definitions, and the research boundary.
+
 ## Quick start
 
 Requires Python 3.10+ and NumPy.
@@ -130,6 +144,19 @@ is discriminant but only partly replicates: moderate in the independent family
 and weak in the score family. The repository records that result as
 inconclusive rather than changing the metric after confirmation.
 
+Validate and balance-check the playable Adaptive PCC family:
+
+```bash
+python -m pcc_poker adaptive-validation \
+  --output outputs/adaptive-family.json
+python -m pcc_poker adaptive-sweep \
+  --output outputs/adaptive-sweep.json
+```
+
+Control v2 expresses the frozen adaptation signature, but the first payoff
+sweep is not a complete PCC cycle. The game is a differentiated research alpha,
+not yet a balanced competitive release.
+
 ## Repository map
 
 ```text
@@ -139,6 +166,7 @@ pcc_poker/
   families.py     independently implemented policy family
   behavioral.py   label-free measurements and counterfactual oracle
   behavioral_experiment.py  disjoint calibration/evaluation harness
+  play.py         interactive human-versus-AI game
   simulate.py     hands, matches, logging, pairwise sweeps
   analyze.py      observable mode recovery and payoff tests
   cli.py          command-line interface
@@ -149,6 +177,7 @@ docs/
   MIXED_MODE_PROTOCOL.md
   POLICY_FAMILY_TRANSFER.md
   BEHAVIORAL_MEASURES.md
+  PLAYING.md
   ROADMAP.md
 tests/
 ```

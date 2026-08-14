@@ -16,6 +16,10 @@ larger JSONL trajectory file.
   behavioral measurements. It retains the failed Control construct check.
 - `control-confirmation.json`: fresh-seed confirmation of opponent-adaptive
   Control, including its discriminant check and inconclusive cross-family result.
+- `adaptive-family.json`: construct validation for the playable Control-v2
+  family, with an explicit circularity warning.
+- `adaptive-sweep.json`: initial seat-balanced game-balance diagnostic; it does
+  not show the complete proposed cycle.
 
 They are engineering validation, not empirical evidence about humans and not a
 confirmatory PCC test. Regenerate them with the commands in the root README.
