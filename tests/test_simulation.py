@@ -1,7 +1,12 @@
 import unittest
 
 from pcc_poker.analyze import analyze_mode_recovery
-from pcc_poker.simulate import generate_recovery_dataset, pairwise_sweep, simulate_match
+from pcc_poker.simulate import (
+    adaptive_pairwise_sweep,
+    generate_recovery_dataset,
+    pairwise_sweep,
+    simulate_match,
+)
 
 
 class SimulationTests(unittest.TestCase):
@@ -19,6 +24,14 @@ class SimulationTests(unittest.TestCase):
         self.assertEqual(set(report["labels"]), {"pressure", "control", "chaos"})
         self.assertGreaterEqual(report["accuracy"], 0.0)
         self.assertLessEqual(report["accuracy"], 1.0)
+
+    def test_adaptive_sweep_is_seat_balanced_and_antisymmetric(self):
+        report = adaptive_pairwise_sweep(hands_per_seat_order=10, seed=5)
+        matrix = report["mean_payoff_focal_policy"]
+        self.assertAlmostEqual(
+            matrix["pressure_vs_control"], -matrix["control_vs_pressure"]
+        )
+        self.assertIn(report["balance_status"], {"unbalanced", "candidate_cycle"})
 
 
 if __name__ == "__main__": unittest.main()

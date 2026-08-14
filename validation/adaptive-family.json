@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "policy_family": "adaptive",
+  "calibration_seed": 809,
+  "evaluation_seed": 811,
+  "evaluation_mixtures": 60,
+  "evaluation_hands_per_seat": 100,
+  "matching_axis_correlations": {
+    "pressure": 0.7958443435604623,
+    "control": 0.3106602756803714,
+    "chaos": 0.445821403805874
+  },
+  "control_discriminant_correlations": {
+    "pressure": -0.2457729464182256,
+    "control": 0.3106602756803714,
+    "chaos": -0.029286695634740095
+  },
+  "generator_weights_used_as_predictors": false,
+  "calibration_evaluation_overlap": false,
+  "purpose": "game-mechanic construct validation, not independent PCC evidence",
+  "circularity_warning": "The generator and measurement both operationalize opponent-response adaptation; success validates implementation, not natural occurrence."
+}

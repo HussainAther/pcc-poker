@@ -413,3 +413,74 @@ def write_opponent_adaptation_confirmation(output_path: str | Path, **kwargs) ->
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     return report
+
+
+def run_adaptive_family_validation(
+    calibration_mixtures: int = 20,
+    calibration_hands_per_seat: int = 25,
+    evaluation_mixtures: int = 60,
+    evaluation_hands_per_seat: int = 100,
+    calibration_seed: int = 809,
+    evaluation_seed: int = 811,
+) -> dict:
+    """Test whether the deliberately adaptive family expresses all PCC axes."""
+    calibration_records, _ = generate_family_dataset(
+        "adaptive",
+        calibration_mixtures,
+        calibration_hands_per_seat,
+        calibration_seed,
+    )
+    oracle = CounterfactualOracle(PublicActionModel.from_records(calibration_records))
+    evaluation_records, _ = generate_family_dataset(
+        "adaptive",
+        evaluation_mixtures,
+        evaluation_hands_per_seat,
+        evaluation_seed,
+        measurement_oracle=oracle,
+    )
+    report = summarize_behavioral_validation(
+        evaluation_records, control_measure="opponent_adaptation_control"
+    )
+    # This is a single-family construct check; the generic cross-family field
+    # produced by the shared summarizer does not apply.
+    report.pop("cross_family_construct_result", None)
+    report["adaptive_family_construct_result"] = {
+        mode: {
+            "result": (
+                "positive_in_adaptive_family"
+                if report["families"]["adaptive"]["matching_axis_correlations"][mode]
+                >= DESCRIPTIVE_EFFECT_THRESHOLD
+                else "inconclusive_in_adaptive_family"
+            ),
+            "correlation": report["families"]["adaptive"][
+                "matching_axis_correlations"
+            ][mode],
+        }
+        for mode in MODES
+    }
+    report["design"] = {
+        "purpose": "game-mechanic construct validation, not independent PCC evidence",
+        "policy_family": "adaptive",
+        "control_mechanism": (
+            "card-value-constrained aggression timed to an online estimate of "
+            "the opponent's round-specific fold probability"
+        ),
+        "calibration_seed": calibration_seed,
+        "evaluation_seed": evaluation_seed,
+        "calibration_evaluation_overlap": False,
+        "evaluation_mixtures": evaluation_mixtures,
+        "evaluation_hands_per_seat": evaluation_hands_per_seat,
+        "circularity_warning": (
+            "The generator and measurement both operationalize opponent-response "
+            "adaptation; success validates implementation, not natural occurrence."
+        ),
+    }
+    return report
+
+
+def write_adaptive_family_validation(output_path: str | Path, **kwargs) -> dict:
+    report = run_adaptive_family_validation(**kwargs)
+    target = Path(output_path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    return report

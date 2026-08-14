@@ -1,6 +1,7 @@
 import unittest
 
 from pcc_poker.behavioral_experiment import (
+    run_adaptive_family_validation,
     run_behavioral_validation,
     run_opponent_adaptation_confirmation,
     run_predictive_control_confirmation,
@@ -67,6 +68,16 @@ class BehavioralExperimentTests(unittest.TestCase):
             self.assertEqual(
                 len(result["control_correlation_approximate_95pct_ci"]), 2
             )
+
+    def test_adaptive_validation_declares_construct_circularity(self):
+        report = run_adaptive_family_validation(
+            calibration_mixtures=5,
+            calibration_hands_per_seat=2,
+            evaluation_mixtures=5,
+            evaluation_hands_per_seat=3,
+        )
+        self.assertEqual(set(report["families"]), {"adaptive"})
+        self.assertIn("circularity_warning", report["design"])
 
 
 if __name__ == "__main__":

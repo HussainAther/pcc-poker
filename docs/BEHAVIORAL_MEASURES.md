@@ -70,8 +70,8 @@ than applied indiscriminately.
 
 After development on seeds 401/409, the definition was frozen and evaluated on
 new seeds 601/607 with 60 mixtures and 100 hands per seat. It was discriminant
-in both familiesâ€”the Control correlation exceeded the Pressure and Chaos
-correlationsâ€”but strength did not fully replicate:
+in both families—the Control correlation exceeded the Pressure and Chaos
+correlations—but strength did not fully replicate:
 
 - independent family: `r = .219`, approximate 95% CI `[.041, .383]`;
 - score family: `r = .094`, approximate 95% CI `[-.086, .269]`.
