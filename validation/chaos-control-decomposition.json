@@ -1,0 +1,82 @@
+{
+  "chaos_control_entanglement_decomposition_supported": false,
+  "prespecified_checks": {
+    "independent_residual_chaos_correlation_at_least_0_20": true,
+    "independent_residual_is_chaos_discriminant_by_0_03": true,
+    "independent_history_explained_is_control_discriminant_by_0_03": false,
+    "independent_residual_improves_chaos_margin_by_0_03": false
+  },
+  "families": {
+    "independent": {
+      "mixtures": 60,
+      "seat_level_examples": 120,
+      "mean_performance_adequacy": 0.9591482996096249,
+      "static_effective_correlations": {
+        "pressure": -0.951365000761799,
+        "control": 0.49309485824265087,
+        "chaos": 0.5546876374206119
+      },
+      "history_explained_effective_correlations": {
+        "pressure": -0.16774337576340081,
+        "control": 0.10467578465603616,
+        "chaos": 0.08110379343779407
+      },
+      "history_residual_effective_correlations": {
+        "pressure": -0.9558591850432432,
+        "control": 0.4994115640735313,
+        "chaos": 0.5535535232618658
+      },
+      "static_chaos_margin": 0.06159277917796102,
+      "history_explained_control_margin": 0.02357199121824209,
+      "history_residual_chaos_margin": 0.054141959188334476,
+      "residual_chaos_margin_gain_over_static": -0.007450819989626545
+    },
+    "score": {
+      "mixtures": 60,
+      "seat_level_examples": 120,
+      "mean_performance_adequacy": 0.9301337408976063,
+      "static_effective_correlations": {
+        "pressure": -0.9554288863479109,
+        "control": 0.6002425009325421,
+        "chaos": 0.29916971167008893
+      },
+      "history_explained_effective_correlations": {
+        "pressure": -0.4754063681367468,
+        "control": 0.59642267144414,
+        "chaos": -0.151693942094299
+      },
+      "history_residual_effective_correlations": {
+        "pressure": -0.9630643267867111,
+        "control": 0.5760238095146377,
+        "chaos": 0.33084948671813297
+      },
+      "static_chaos_margin": -0.3010727892624531,
+      "history_explained_control_margin": 0.748116613538439,
+      "history_residual_chaos_margin": -0.24517432279650475,
+      "residual_chaos_margin_gain_over_static": 0.05589846646594837
+    }
+  },
+  "thresholds": {
+    "minimum_residual_chaos_correlation": 0.2,
+    "minimum_residual_chaos_margin": 0.03,
+    "minimum_history_explained_control_margin": 0.03,
+    "minimum_residual_margin_improvement": 0.03
+  },
+  "interpretation": "Support would mean that conditioning on public action history removes a Control-linked part of effective surprisal while leaving a more Chaos-specific value-preserving residual in the independent family. Failure is retained without changing contexts, thresholds, seeds, generators, or the value floor.",
+  "design": {
+    "calibration_seeds": {
+      "score": 2001,
+      "independent": 2009
+    },
+    "evaluation_seeds": {
+      "score": 2201,
+      "independent": 2209
+    },
+    "calibration_mixtures": 20,
+    "calibration_hands_per_seat": 25,
+    "evaluation_mixtures": 60,
+    "evaluation_hands_per_seat": 100,
+    "history_boundary": "public prior actions only; no weights, policy labels, component scores, outcomes, or opponent private cards",
+    "value_floor": "unchanged UniformContinuationValueModel"
+  }
+}

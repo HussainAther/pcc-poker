@@ -354,3 +354,22 @@ strong deterministic behavior to remain low-surprisal, and strong mixed but
 value-adequate behavior to score higher. This does not analyze HandHQ data and
 does not yet define a Hold'em value model. See
 `docs/EFFECTIVE_CHAOS_VALUE_PROTOCOL.md`.
+
+### Chaos–Control entanglement decomposition
+
+A fresh-seed follow-up now decomposes effective surprisal into a component
+explained by prior public action history and a value-preserving residual that
+remains after history conditioning:
+
+```bash
+python -m pcc_poker chaos-control-decomposition \
+  --output validation/chaos-control-decomposition.json
+```
+
+The frozen result is partial/null.  In the independent family the residual is
+Chaos-discriminant (`r=.554` for Chaos versus `.499` for Control), but history
+conditioning does not improve the Chaos margin and the history-explained piece
+misses the prespecified Control-discrimination threshold.  In the score family,
+history-explained surprise is strongly Control-specific.  The earlier
+Chaos/Control overlap therefore cannot be explained by one universal
+public-history mechanism.  See `docs/CHAOS_CONTROL_DECOMPOSITION_PROTOCOL.md`.

@@ -34,3 +34,4 @@ larger JSONL trajectory file.
 
 They are engineering validation, not empirical evidence about humans and not a
 confirmatory PCC test. Regenerate them with the commands in the root README.
+- `chaos-control-decomposition.json` — frozen fresh-seed decomposition of effective surprisal into public-history-explained and history-residual value-preserving components; partial/null result retained.
