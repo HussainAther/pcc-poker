@@ -54,3 +54,20 @@ No real HandHQ record is included in the tests or repository fixtures.
 ## Before any human-data run
 
 Before this module is pointed at the public HandHQ files, the project must record the institutional determination, freeze the retained/excluded field list, specify the pseudonymization-key handling procedure, and preregister the confirmatory feature/analysis contract. Any change after looking at human results must be labeled exploratory.
+
+## Public game-state reconstruction layer
+
+After sanitization, downstream code must consume `SanitizedHand` rather than raw PHHS records. The public-state layer in `pcc_poker/handhq_features.py` reconstructs only information available before each focal decision:
+
+- street and public board progression;
+- pot size from antes, blinds, calls, bets, and raises already observed;
+- current street bet and amount to call;
+- actor street/total contribution and remaining stack;
+- multiway effective stack using active opponents;
+- active-player count and number of prior bets/raises on the street;
+- prior public action sequence and current-street action sequence; and
+- a conservative legal-action context (`fold`, `check_call`, `bet_raise`).
+
+The feature API deliberately excludes study/player identifiers, source seats as identity features, venue, the focal action label and amount, outcomes, winnings, private cards, exact public-card identities, and future actions. Public board *size/street* may be used as a modeling feature; public card identities remain available only in the reconstructed audit state for future preregistered analyses and are not emitted by the default `modeling_features()` function.
+
+All tests for this layer use invented PHHS fixtures only. No HandHQ/Zenodo human records are included in the test suite or repository artifacts.

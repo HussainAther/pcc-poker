@@ -272,6 +272,8 @@ pcc_poker/
   play.py         interactive human-versus-AI game
   simulate.py     hands, matches, logging, pairwise sweeps
   analyze.py      observable mode recovery and payoff tests
+  handhq.py       privacy-minimized PHHS/HandHQ ingestion
+  handhq_features.py  pre-decision public game-state reconstruction
   cli.py          command-line interface
 docs/
   MEASUREMENT_CONTRACT.md
@@ -286,17 +288,11 @@ docs/
   COUNTERFACTUAL_CONTROL_PROTOCOL.md
   CONTROL_PRESSURE_MECHANISM_PROTOCOL.md
   PRESSURE_DECOMPOSITION_PROTOCOL.md
+  HUMAN_DATA_INGESTION_PROTOCOL.md
   PLAYING.md
   ROADMAP.md
 tests/
 ```
-
-Claim 1 — Engineered PCC policies can produce cyclic non-transitivity. Confirmed under the frozen balance experiment, but global robustness missed the preregistered threshold at 75%.
-Claim 2 — Synthetic PCC mixtures leave recoverable behavioral signatures. Supported under generator-linked simulations and transfer tests.
-Claim 3 — PCC modes can be identified with label-free behavioral measurements. Pressure and Chaos have support; Control remains weak/inconclusive.
-Claim 4 — Temporal history contains predictive information. Confirmed, but that information is not specifically diagnostic of Control.
-Claim 5 — Generic opponent-model alignment causes a Control advantage. Not confirmed.
-Claim 6 — Contextually aligned modeling specifically causes Control’s advantage over Pressure. Confirmed.
 
 ## Interpretation boundary
 
