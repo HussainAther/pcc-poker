@@ -418,3 +418,13 @@ python -m pcc_poker synthetic-freeze
 ```
 
 See `docs/SYNTHETIC_EVIDENCE_FREEZE.md`, `docs/HUMAN_MEASUREMENT_CONTRACT.md`, `docs/HUMAN_ANALYSIS_PREREGISTRATION.md`, and `docs/RELEASE_CHECKLIST.md`.
+
+### Verify the v0.8.0 synthetic evidence freeze
+
+The frozen release can be checked without rerunning experiments or accessing human data:
+
+```bash
+python -m pcc_poker verify-freeze
+```
+
+The command exits nonzero if a frozen artifact/protocol is missing or differs from the SHA-256 recorded in `validation/synthetic-freeze-manifest.json`, or if core release gates no longer match the pressure-only pre-human contract. CI runs the same check on every push and pull request.

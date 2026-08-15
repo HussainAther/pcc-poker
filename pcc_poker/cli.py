@@ -25,6 +25,7 @@ from .robustness import write_robustness_outputs
 from .reproducibility import write_reproducibility_manifest
 from .research_status import write_research_status
 from .synthetic_freeze import write_synthetic_freeze_manifest
+from .freeze_verification import verify_synthetic_freeze
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
 from .temporal_control import write_temporal_control_validation
 from .simulate import (
@@ -40,6 +41,12 @@ from .simulate import (
 
 
 
+
+
+def verify_freeze_command(args) -> int:
+    report = verify_synthetic_freeze(root=args.root, manifest=args.manifest)
+    print(json.dumps(report, indent=2))
+    return 0 if report["freeze_verified"] else 1
 
 
 def synthetic_freeze_command(args) -> int:
@@ -481,6 +488,10 @@ def parser() -> argparse.ArgumentParser:
     status.add_argument("--csv-output", default="validation/research-status.csv")
     status.add_argument("--markdown-output", default="validation/RESEARCH_STATUS.md")
     status.set_defaults(func=research_status_command)
+    verify_freeze=commands.add_parser("verify-freeze", help="verify immutable hashes and gates for the v0.8.0 synthetic evidence freeze")
+    verify_freeze.add_argument("--root", default=".")
+    verify_freeze.add_argument("--manifest", default="validation/synthetic-freeze-manifest.json")
+    verify_freeze.set_defaults(func=verify_freeze_command)
     freeze=commands.add_parser("synthetic-freeze", help="write the v0.8.0 pre-human synthetic evidence freeze manifest")
     freeze.add_argument("--root", default=".")
     freeze.add_argument("--output", default="validation/synthetic-freeze-manifest.json")
