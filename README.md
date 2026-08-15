@@ -428,3 +428,18 @@ python -m pcc_poker verify-freeze
 ```
 
 The command exits nonzero if a frozen artifact/protocol is missing or differs from the SHA-256 recorded in `validation/synthetic-freeze-manifest.json`, or if core release gates no longer match the pressure-only pre-human contract. CI runs the same check on every push and pull request.
+
+### Safe release/developer workflow
+
+Routine engineering checks should not rewrite the v0.8.0 frozen scientific bundle. The repository therefore provides safe Make targets whose generated audit files go under `build/audit/`:
+
+```bash
+make test
+make verify-freeze
+make reproduce
+make research-status
+make release-check
+make preflight
+```
+
+`make preflight` is the recommended check before pushing or tagging. It runs the full test suite, verifies the frozen SHA-256 contract, creates non-frozen audit copies of the reproducibility/status reports, validates release metadata, and runs `git diff --check`. See `CHANGELOG.md` and `docs/RELEASE_NOTES_v0.8.0.md`.

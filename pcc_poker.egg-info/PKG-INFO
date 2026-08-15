@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: pcc-poker
-Version: 0.5.0
+Version: 0.8.0
 Summary: Pressure-Control-Chaos experiments in imperfect-information games
 Author: Syed Hussain Ather
 License: MIT
@@ -8,6 +8,8 @@ Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: numpy>=1.24
+Provides-Extra: dev
+Requires-Dist: pytest>=7; extra == "dev"
 Dynamic: license-file
 
 # PCC Poker
@@ -272,6 +274,29 @@ confirmed aligned-versus-context-yoked Control payoff advantage. See
 `docs/PRESSURE_DECOMPOSITION_PROTOCOL.md`. No default result is reported until
 the frozen run is executed.
 
+## Fresh-seed effective Chaos validation
+
+Validate the independent value-floor candidate without changing its definition:
+
+```bash
+python -m pcc_poker effective-chaos-validation \
+  --output validation/effective-chaos-validation.json
+```
+
+This freezes the public surprisal model on disjoint calibration hands, evaluates
+fresh score-family and independent-family mixture groups, reports the full
+Pressure/Control/Chaos correlation matrix, compares against raw surprisal, and
+includes a shuffled-weight diagnostic. See
+`docs/EFFECTIVE_CHAOS_CONSTRUCT_VALIDATION.md`. No human data are used.
+
+The frozen default run is **not confirmed**. Effective surprisal correlates
+positively with assigned Chaos in both families (`.447` independent, `.500`
+score), but the independent-family Control correlation (`.487`) remains larger
+than its Chaos correlation, so the prespecified discriminant requirement fails.
+The score family improves from a raw discriminant margin of `-.006` to `.030`,
+while the independent family remains slightly negative (`-.039`). The null is
+retained without retuning the value floor or thresholds.
+
 ## Repository map
 
 ```text
@@ -286,6 +311,7 @@ pcc_poker/
   analyze.py      observable mode recovery and payoff tests
   handhq.py       privacy-minimized PHHS/HandHQ ingestion
   handhq_features.py  pre-decision public game-state reconstruction
+  effective_chaos_validation.py  fresh-seed value-floor construct test
   cli.py          command-line interface
 docs/
   MEASUREMENT_CONTRACT.md
@@ -301,6 +327,8 @@ docs/
   CONTROL_PRESSURE_MECHANISM_PROTOCOL.md
   PRESSURE_DECOMPOSITION_PROTOCOL.md
   HUMAN_DATA_INGESTION_PROTOCOL.md
+  EFFECTIVE_CHAOS_VALUE_PROTOCOL.md
+  EFFECTIVE_CHAOS_CONSTRUCT_VALIDATION.md
   PLAYING.md
   ROADMAP.md
 tests/
@@ -328,3 +356,104 @@ behavioral surprisal from a separately calibrated public-state action model.
 The latter two are deliberately not treated as validated Control or effective
 Chaos constructs. Development tests use invented PHHS fixtures only; see
 `docs/HUMAN_PCC_OBSERVABLES_PROTOCOL.md`.
+
+### Independent effective-Chaos value floor
+
+`pcc_poker/value_floor.py` adds a synthetic-only, non-PCC value reference for the
+next Chaos construct-validation step. Exact Leduc information-set action values
+are computed under a fixed uniform legal-action continuation model, then used
+to discount behavioral surprisal when the chosen action has excessive regret.
+The prespecified sanity tests require random-but-bad behavior to score low,
+strong deterministic behavior to remain low-surprisal, and strong mixed but
+value-adequate behavior to score higher. This does not analyze HandHQ data and
+does not yet define a Hold'em value model. See
+`docs/EFFECTIVE_CHAOS_VALUE_PROTOCOL.md`.
+
+### Chaos–Control entanglement decomposition
+
+A fresh-seed follow-up now decomposes effective surprisal into a component
+explained by prior public action history and a value-preserving residual that
+remains after history conditioning:
+
+```bash
+python -m pcc_poker chaos-control-decomposition \
+  --output validation/chaos-control-decomposition.json
+```
+
+The frozen result is partial/null.  In the independent family the residual is
+Chaos-discriminant (`r=.554` for Chaos versus `.499` for Control), but history
+conditioning does not improve the Chaos margin and the history-explained piece
+misses the prespecified Control-discrimination threshold.  In the score family,
+history-explained surprise is strongly Control-specific.  The earlier
+Chaos/Control overlap therefore cannot be explained by one universal
+public-history mechanism.  See `docs/CHAOS_CONTROL_DECOMPOSITION_PROTOCOL.md`.
+
+### Pressure suppression of effective surprise
+
+A fresh-seed `pressure-surprise-decomposition` experiment tests whether the
+strong negative Pressure/effective-surprisal association is explained by a
+label-free public Pressure exposure measure. Exposure is computed from response
+compression, predicted fold probability, and commitment after the chosen action.
+The adjustment is fit without PCC weights; hidden weights are consulted only
+for post-hoc construct-validity correlations.
+
+The frozen result is **not a cross-family confirmation**. Pressure exposure
+tracks assigned Pressure strongly in both families and substantially reduces
+the negative Pressure correlation, but Chaos discrimination improves only in
+the score family and worsens in the independent family. See
+`docs/PRESSURE_SURPRISE_SUPPRESSION_PROTOCOL.md` and
+`validation/pressure-surprise-decomposition.json`.
+
+### Family-invariant measurement gate
+
+Run the prospective cross-family selection test:
+
+```bash
+python -m pcc_poker family-invariant-panel \
+  --output validation/family-invariant-panel.json
+```
+
+The frozen fresh-seed result selects only `pressure_exposure` and
+`predicted_fold_probability` as implementation-stable components. No Control or
+Chaos candidate passes the same gate, so those axes remain unresolved rather
+than being filled with post-hoc metrics. See
+`docs/FAMILY_INVARIANT_PANEL_PROTOCOL.md`.
+
+## v0.8.0 synthetic evidence freeze
+
+`v0.8.0` is the pre-human-analysis freeze. It preserves the current synthetic claim inventory, locks the conservative human measurement contract, and preregisters the future HandHQ confirmatory analysis before any such analysis begins.
+
+The only confirmatory human-facing PCC axis in this release is **Pressure**, using the two components that survived the two-family invariance gate: `pressure_exposure` and `predicted_fold_probability`. Control and Chaos remain exploratory/unresolved for human measurement.
+
+```bash
+python -m pcc_poker research-status
+python -m pcc_poker reproduce --run-tests
+python -m pcc_poker synthetic-freeze
+```
+
+See `docs/SYNTHETIC_EVIDENCE_FREEZE.md`, `docs/HUMAN_MEASUREMENT_CONTRACT.md`, `docs/HUMAN_ANALYSIS_PREREGISTRATION.md`, and `docs/RELEASE_CHECKLIST.md`.
+
+### Verify the v0.8.0 synthetic evidence freeze
+
+The frozen release can be checked without rerunning experiments or accessing human data:
+
+```bash
+python -m pcc_poker verify-freeze
+```
+
+The command exits nonzero if a frozen artifact/protocol is missing or differs from the SHA-256 recorded in `validation/synthetic-freeze-manifest.json`, or if core release gates no longer match the pressure-only pre-human contract. CI runs the same check on every push and pull request.
+
+### Safe release/developer workflow
+
+Routine engineering checks should not rewrite the v0.8.0 frozen scientific bundle. The repository therefore provides safe Make targets whose generated audit files go under `build/audit/`:
+
+```bash
+make test
+make verify-freeze
+make reproduce
+make research-status
+make release-check
+make preflight
+```
+
+`make preflight` is the recommended check before pushing or tagging. It runs the full test suite, verifies the frozen SHA-256 contract, creates non-frozen audit copies of the reproducibility/status reports, validates release metadata, and runs `git diff --check`. See `CHANGELOG.md` and `docs/RELEASE_NOTES_v0.8.0.md`.

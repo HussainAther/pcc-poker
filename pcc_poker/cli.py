@@ -24,6 +24,7 @@ from .policies import PURE_MIXTURES
 from .robustness import write_robustness_outputs
 from .reproducibility import write_reproducibility_manifest
 from .research_status import write_research_status
+from .release_check import run_release_check
 from .synthetic_freeze import write_synthetic_freeze_manifest
 from .freeze_verification import verify_synthetic_freeze
 from .transfer import analyze_family_transfer_files, write_family_transfer_grid
@@ -40,6 +41,13 @@ from .simulate import (
 )
 
 
+
+
+
+def release_check_command(args) -> int:
+    report = run_release_check(root=args.root)
+    print(json.dumps(report, indent=2))
+    return 0 if report["release_check_passed"] else 1
 
 
 
@@ -488,6 +496,9 @@ def parser() -> argparse.ArgumentParser:
     status.add_argument("--csv-output", default="validation/research-status.csv")
     status.add_argument("--markdown-output", default="validation/RESEARCH_STATUS.md")
     status.set_defaults(func=research_status_command)
+    release_check=commands.add_parser("release-check", help="run read-only v0.8.0 release hygiene checks")
+    release_check.add_argument("--root", default=".")
+    release_check.set_defaults(func=release_check_command)
     verify_freeze=commands.add_parser("verify-freeze", help="verify immutable hashes and gates for the v0.8.0 synthetic evidence freeze")
     verify_freeze.add_argument("--root", default=".")
     verify_freeze.add_argument("--manifest", default="validation/synthetic-freeze-manifest.json")

@@ -12,6 +12,9 @@ license = {text = "MIT"}
 authors = [{name = "Syed Hussain Ather"}]
 dependencies = ["numpy>=1.24"]
 
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
 [project.scripts]
 pcc-poker = "pcc_poker.cli:main"
 

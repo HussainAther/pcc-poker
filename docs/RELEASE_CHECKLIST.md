@@ -26,3 +26,16 @@ The final three distribution steps require an authenticated canonical GitHub/Zen
 - [x] Run freeze verification in GitHub Actions on pushes and pull requests.
 
 This hardening layer does **not** regenerate synthetic evidence, change frozen scientific definitions, or authorize human-data analysis.
+## Release preflight
+
+Before pushing the intended v0.8.0 release commit:
+
+- [x] Provide safe developer targets in `Makefile`.
+- [x] Route regenerated audit/status outputs to ignored `build/audit/` paths rather than the frozen validation bundle.
+- [x] Add `release-check` for version, required-file, freeze, and whitespace checks.
+- [x] Add `CHANGELOG.md` and `docs/RELEASE_NOTES_v0.8.0.md`.
+- [x] Add a GitHub Actions `release preflight` job.
+- [ ] Run `make preflight` from the canonical Git worktree immediately before tagging.
+- [ ] Confirm all GitHub Actions checks pass on that exact commit.
+
+The preflight is read-only with respect to frozen scientific evidence.
