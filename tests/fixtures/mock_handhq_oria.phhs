@@ -1,0 +1,22 @@
+# SYNTHETIC_FIXTURE_ONLY
+# Invented test data. This file contains no HandHQ or human-source records.
+[1]
+variant = 'NT'
+ante_trimming_status = false
+antes = [0, 0, 0]
+blinds_or_straddles = [0.25, 0.50, 0]
+min_bet = 0.50
+starting_stacks = [40.00, 55.00, 60.00]
+actions = ['d dh p1 AsKd', 'd dh p2 QhQs', 'd dh p3 7c2d', 'p3 f', 'p1 cbr 1.50', 'p2 cc', 'd db 2c 8d Jh', 'p2 cc', 'p1 cbr 3.00', 'p2 f']
+venue = 'Synthetic Poker Lab'
+time = 12:34:56
+day = 14
+month = 8
+year = 2026
+hand = 999000111
+table = 'MOCK TABLE ONLY'
+seats = [2, 4, 6]
+players = ['mock-alice-source-id', 'mock-bob-source-id', 'mock-carol-source-id']
+winnings = [2.75, -1.50, -1.25]
+currency_symbol = '$'
+time_zone_abbreviation = 'ET'

@@ -24,6 +24,7 @@ from .policies import PURE_MIXTURES
 from .robustness import write_robustness_outputs
 from .reproducibility import write_reproducibility_manifest
 from .research_status import write_research_status
+from .oria_preflight import write_oria_ingestion_preflight
 from .release_check import run_release_check
 from .synthetic_freeze import write_synthetic_freeze_manifest
 from .freeze_verification import verify_synthetic_freeze
@@ -431,6 +432,23 @@ def pressure_surprise_decomposition_command(args) -> int:
     return 0
 
 
+
+def oria_ingestion_preflight_command(args) -> int:
+    report = write_oria_ingestion_preflight(
+        args.output,
+        root=args.root,
+        input_path=args.input,
+    )
+    print(json.dumps({
+        "oria_preflight_passed": report["oria_preflight_passed"],
+        "input_allowed": report["input_allowed"],
+        "human_data_gate_closed": report["human_data_gate_closed"],
+        "checks": report.get("checks", {}),
+        "errors": report.get("errors", []),
+        "output": args.output,
+    }, indent=2))
+    return 0 if report["oria_preflight_passed"] else 1
+
 def reproducibility_command(args) -> int:
     report = write_reproducibility_manifest(
         args.output,
@@ -496,6 +514,11 @@ def parser() -> argparse.ArgumentParser:
     status.add_argument("--csv-output", default="validation/research-status.csv")
     status.add_argument("--markdown-output", default="validation/RESEARCH_STATUS.md")
     status.set_defaults(func=research_status_command)
+    oria_preflight=commands.add_parser("oria-ingestion-preflight", help="validate the future HandHQ ingestion boundary using synthetic fixtures only")
+    oria_preflight.add_argument("--root", default=".")
+    oria_preflight.add_argument("--input", default="tests/fixtures/mock_handhq_oria.phhs")
+    oria_preflight.add_argument("--output", default="build/audit/oria-ingestion-preflight.json")
+    oria_preflight.set_defaults(func=oria_ingestion_preflight_command)
     release_check=commands.add_parser("release-check", help="run read-only v0.8.0 release hygiene checks")
     release_check.add_argument("--root", default=".")
     release_check.set_defaults(func=release_check_command)

@@ -1,3 +1,10 @@
+## Unreleased
+
+- Add a synthetic-only `oria-ingestion-preflight` command for the future HandHQ pipeline.
+- Reject any input outside sentinel-marked `tests/fixtures/` before reading contents while the human-data gate is closed.
+- Audit schema fields, identifier scrubbing, prohibited-field leakage, private-card exclusion, outcome isolation, and audit-output placement.
+- Add `make oria-preflight` and include it in `make preflight`.
+
 # Changelog
 
 All notable changes to PCC Poker are documented here.

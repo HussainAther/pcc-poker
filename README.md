@@ -443,3 +443,19 @@ make preflight
 ```
 
 `make preflight` is the recommended check before pushing or tagging. It runs the full test suite, verifies the frozen SHA-256 contract, creates non-frozen audit copies of the reproducibility/status reports, validates release metadata, and runs `git diff --check`. See `CHANGELOG.md` and `docs/RELEASE_NOTES_v0.8.0.md`.
+
+### ORIA-safe HandHQ ingestion preflight
+
+While the human-data gate remains closed, the future HandHQ boundary can be
+exercised against an invented sentinel-marked fixture only:
+
+```bash
+python -m pcc_poker oria-ingestion-preflight
+# or
+make oria-preflight
+```
+
+The command rejects arbitrary paths before reading them, checks identifier
+scrubbing and prohibited-field leakage, and writes only to `build/audit/`. See
+`docs/ORIA_SAFE_INGESTION_PREFLIGHT.md`. A passing preflight is an engineering
+check only; it does not authorize human-data analysis.
