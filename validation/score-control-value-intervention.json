@@ -1,0 +1,174 @@
+{
+  "control_structural_recovery_confirmed": false,
+  "status": "partial",
+  "structural_hypothesis": "information uptake -> context alignment -> value-sensitive intervention",
+  "stages": {
+    "information_uptake": "aligned public-history log likelihood minus static-context log likelihood",
+    "context_alignment": "aligned public-history log likelihood minus matched context-yoked log likelihood",
+    "value_sensitive_intervention": "positive context-alignment gain weighted by label-free counterfactual action efficiency"
+  },
+  "families": {
+    "score": {
+      "groups": 80,
+      "stages": {
+        "information_uptake": {
+          "weight_correlations": {
+            "pressure": 0.016627986122808844,
+            "control": 0.19572738419850771,
+            "chaos": -0.2314129420724369
+          },
+          "control_correlation": 0.19572738419850771,
+          "discriminant_margin": 0.17909939807569886,
+          "checks": {
+            "control_correlation_at_least_0_20": false,
+            "control_discriminant_margin_at_least_0_05": true
+          },
+          "stage_recovered": false
+        },
+        "context_alignment": {
+          "weight_correlations": {
+            "pressure": -0.008570895590834493,
+            "control": 0.25580620421237243,
+            "chaos": -0.27104926532580603
+          },
+          "control_correlation": 0.25580620421237243,
+          "discriminant_margin": 0.26437709980320695,
+          "checks": {
+            "control_correlation_at_least_0_20": true,
+            "control_discriminant_margin_at_least_0_05": true
+          },
+          "stage_recovered": true
+        },
+        "value_sensitive_intervention": {
+          "weight_correlations": {
+            "pressure": -0.04033076137262335,
+            "control": 0.10145485693809787,
+            "chaos": -0.06923637346734791
+          },
+          "control_correlation": 0.10145485693809787,
+          "discriminant_margin": 0.14178561831072123,
+          "checks": {
+            "control_correlation_at_least_0_20": false,
+            "control_discriminant_margin_at_least_0_05": true
+          },
+          "stage_recovered": false
+        }
+      },
+      "all_three_stages_recovered": false
+    },
+    "adaptive": {
+      "groups": 80,
+      "stages": {
+        "information_uptake": {
+          "weight_correlations": {
+            "pressure": -0.45728943482058626,
+            "control": 0.608679284978098,
+            "chaos": -0.17887316162854763
+          },
+          "control_correlation": 0.608679284978098,
+          "discriminant_margin": 0.7875524466066456,
+          "checks": {
+            "control_correlation_at_least_0_20": true,
+            "control_discriminant_margin_at_least_0_05": true
+          },
+          "stage_recovered": true
+        },
+        "context_alignment": {
+          "weight_correlations": {
+            "pressure": -0.3151629421023528,
+            "control": 0.5540483333004733,
+            "chaos": -0.2512049915184497
+          },
+          "control_correlation": 0.5540483333004733,
+          "discriminant_margin": 0.8052533248189231,
+          "checks": {
+            "control_correlation_at_least_0_20": true,
+            "control_discriminant_margin_at_least_0_05": true
+          },
+          "stage_recovered": true
+        },
+        "value_sensitive_intervention": {
+          "weight_correlations": {
+            "pressure": -0.2392002093589833,
+            "control": 0.43552320587223353,
+            "chaos": -0.20493425149935904
+          },
+          "control_correlation": 0.43552320587223353,
+          "discriminant_margin": 0.6404574573715925,
+          "checks": {
+            "control_correlation_at_least_0_20": true,
+            "control_discriminant_margin_at_least_0_05": true
+          },
+          "stage_recovered": true
+        }
+      },
+      "all_three_stages_recovered": true
+    }
+  },
+  "stage_replication": {
+    "information_uptake": false,
+    "context_alignment": true,
+    "value_sensitive_intervention": false
+  },
+  "prespecified_checks": {
+    "information_uptake_replicates_across_families": false,
+    "context_alignment_replicates_across_families": true,
+    "value_sensitive_intervention_replicates_across_families": false,
+    "matched_yoke_margins_preserved": true
+  },
+  "thresholds": {
+    "minimum_control_correlation": 0.2,
+    "minimum_discriminant_margin": 0.05
+  },
+  "margin_checks": {
+    "static_context_action_margins_preserved": true,
+    "global_action_margins_preserved": true
+  },
+  "trajectory_groups": 160,
+  "interpretation_rule": "Control is structurally resolved only if all three stages are positive and discriminant in both synthetic implementation families. A one-family success is retained as partial mechanism evidence, not promoted to the frozen human-facing panel.",
+  "intervention": {
+    "status": "prospective_post_v0.8_score_control_value_guard",
+    "context_response_gain": 3.35,
+    "neutral_fold_prior": 0.3333333333333333,
+    "minimum_aggressive_counterfactual_efficiency": 0.8,
+    "changed_component": "Score-family contextual Control term is applied to bet/raise only when a frozen synthetic counterfactual oracle estimates action efficiency >= 0.80",
+    "unchanged_components": [
+      "contextual response gain 3.35",
+      "neutral fold prior 1/3",
+      "Score card/showdown value",
+      "Score flexibility",
+      "Score commitment-risk penalty",
+      "Pressure component",
+      "Chaos component",
+      "Adaptive family",
+      "three-stage recovery measurements",
+      "three-stage recovery thresholds",
+      "three-stage recovery calibration/evaluation seeds"
+    ],
+    "human_data_accessed": false,
+    "frozen_v0.8_human_panel_modified": false
+  },
+  "design": {
+    "status": "post_v0.8_score_control_prospective_value_intervention",
+    "decision_oracle_seeds": {
+      "score": 5501,
+      "adaptive": 5509
+    },
+    "decision_oracle_mixtures": 20,
+    "decision_oracle_hands_per_seat": 30,
+    "calibration_seeds": {
+      "score": 5101,
+      "adaptive": 5109
+    },
+    "evaluation_seeds": {
+      "score": 5301,
+      "adaptive": 5309
+    },
+    "yoke_seed": 51999,
+    "calibration_mixtures": 20,
+    "calibration_hands_per_seat": 30,
+    "evaluation_mixtures": 40,
+    "evaluation_hands_per_seat": 60,
+    "weight_boundary": "Synthetic PCC weights are used only after trajectory aggregation for construct-validity correlations. The decision oracle uses only the actor's information state and a separately frozen synthetic public continuation model."
+  }
+}

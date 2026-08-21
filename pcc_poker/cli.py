@@ -19,6 +19,7 @@ from .control_structural_recovery import write_control_structural_recovery
 from .score_control_decomposition import write_score_control_decomposition
 from .score_control_intervention import write_score_control_intervention
 from .score_control_value_decomposition import write_score_control_value_decomposition
+from .score_control_value_intervention import write_score_control_value_intervention
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
 from .pressure_decomposition import write_pressure_decomposition
@@ -103,6 +104,24 @@ def score_control_value_decomposition_command(args) -> int:
         "value_guardrail_bottleneck_supported": report["value_guardrail_bottleneck_supported"],
         "score": report["families"]["score"],
         "prespecified_checks": report["prespecified_checks"],
+    }, indent=2))
+    return 0
+
+def score_control_value_intervention_command(args) -> int:
+    report = write_score_control_value_intervention(
+        args.output,
+        oracle_mixtures=args.oracle_mixtures,
+        oracle_hands_per_seat=args.oracle_hands_per_seat,
+        calibration_mixtures=args.calibration_mixtures,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_mixtures=args.evaluation_mixtures,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+    )
+    print(json.dumps({
+        "control_structural_recovery_confirmed": report["control_structural_recovery_confirmed"],
+        "status": report["status"],
+        "stage_replication": report["stage_replication"],
+        "score": report["families"]["score"],
     }, indent=2))
     return 0
 
@@ -595,6 +614,15 @@ def parser() -> argparse.ArgumentParser:
     score_control_value.add_argument("--evaluation-hands-per-seat", type=int, default=60)
     score_control_value.add_argument("--output", default="validation/score-control-value-decomposition.json")
     score_control_value.set_defaults(func=score_control_value_decomposition_command)
+    score_control_value_intervention=commands.add_parser("score-control-value-intervention", help="run the prospective value-aware Score-Control intervention")
+    score_control_value_intervention.add_argument("--oracle-mixtures",type=int,default=20)
+    score_control_value_intervention.add_argument("--oracle-hands-per-seat",type=int,default=30)
+    score_control_value_intervention.add_argument("--calibration-mixtures",type=int,default=20)
+    score_control_value_intervention.add_argument("--calibration-hands-per-seat",type=int,default=30)
+    score_control_value_intervention.add_argument("--evaluation-mixtures",type=int,default=40)
+    score_control_value_intervention.add_argument("--evaluation-hands-per-seat",type=int,default=60)
+    score_control_value_intervention.add_argument("--output",default="validation/score-control-value-intervention.json")
+    score_control_value_intervention.set_defaults(func=score_control_value_intervention_command)
     score_control_intervention=commands.add_parser("score-control-intervention", help="run the prospective post-v0.8 Score-Control contextual-gain intervention")
     score_control_intervention.add_argument("--calibration-mixtures", type=int, default=20)
     score_control_intervention.add_argument("--calibration-hands-per-seat", type=int, default=30)

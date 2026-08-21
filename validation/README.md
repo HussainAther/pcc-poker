@@ -80,3 +80,10 @@ an engineering provenance artifact only; it does not analyze human data.
 Control failure after the prospective Score-Control contextual intervention.
 It is a post-freeze synthetic artifact and is not part of the immutable v0.8
 human-facing evidence bundle.
+
+## Post-v0.8 Score-Control value-aware intervention
+
+`score-control-value-intervention.json` records the prospective test that gates
+the existing Score-Control contextual response term by a frozen synthetic
+counterfactual-efficiency threshold of `0.80`. The result is partial and does
+not resolve Control or modify the frozen human-facing panel.

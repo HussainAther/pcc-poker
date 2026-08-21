@@ -1,7 +1,7 @@
 PYTHON ?= python
 AUDIT_DIR ?= build/audit
 
-.PHONY: help install test verify-freeze oria-preflight reproduce research-status control-structural-recovery score-control-intervention score-control-value-decomposition release-check diff-check preflight clean-audit
+.PHONY: help install test verify-freeze oria-preflight reproduce research-status control-structural-recovery score-control-intervention score-control-value-intervention score-control-value-decomposition release-check diff-check preflight clean-audit
 
 help:
 	@printf '%s\n' \
@@ -15,6 +15,7 @@ help:
 	  '  make research-status  Regenerate status reports under build/audit/' \
 	  '  make control-structural-recovery  Run post-freeze synthetic Control structure test' \
 	  '  make score-control-intervention  Run prospective Score-Control contextual-gain test' \
+	  '  make score-control-value-intervention  Run prospective value-aware Score-Control test' \
 	  '  make score-control-value-decomposition  Diagnose Score Control value bottleneck' \
 	  '  make release-check    Run read-only release metadata/hygiene checks' \
 	  '  make diff-check       Run git diff --check' \
@@ -49,6 +50,9 @@ control-structural-recovery:
 
 score-control-intervention:
 	$(PYTHON) -m pcc_poker score-control-intervention --output validation/score-control-intervention.json
+
+score-control-value-intervention:
+	$(PYTHON) -m pcc_poker score-control-value-intervention --output validation/score-control-value-intervention.json
 
 score-control-value-decomposition:
 	$(PYTHON) -m pcc_poker score-control-value-decomposition --output validation/score-control-value-decomposition.json

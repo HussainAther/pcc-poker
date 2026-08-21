@@ -58,3 +58,11 @@ No release-hardening change authorizes human-data analysis or changes a frozen s
 - Separate positive context gain, counterfactual efficiency, regret, and their value-weighted product without changing any policy.
 - Diagnose whether the value guardrail attenuates Control-linked contextual gains in Control-heavy trajectories.
 - Keep the frozen v0.8 human-facing panel and ORIA gate unchanged.
+
+## Post-v0.8 Score-Control value-aware intervention
+
+- Add one prospective value-aware intervention after the frozen Score-Control value bottleneck decomposition.
+- Preserve the contextual response gain at `3.35` and gate its effect on aggressive actions using the already-frozen `0.80` counterfactual-efficiency threshold.
+- Re-run the existing three-stage Control recovery gate without changing its seeds, yoking, measurements, or acceptance thresholds.
+- Retain the negative/partial result: Score keeps context alignment, narrowly loses information uptake, and does not recover value-sensitive intervention.
+- Perform no post-result retuning; keep the v0.8 human-facing Control axis unresolved and the ORIA gate closed.

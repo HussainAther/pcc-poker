@@ -525,3 +525,23 @@ context signal but lower counterfactual action efficiency, causing the
 context-by-value product to lose construct signal. See
 `docs/SCORE_CONTROL_VALUE_DECOMPOSITION.md`. This is post-freeze synthetic
 mechanism evidence only; it does not modify the v0.8 human-facing panel.
+
+### Prospective Score-Control value-aware intervention
+
+The frozen value decomposition localized the remaining Score-Control failure to
+value-sensitive action selection rather than missing context signal. A single
+prospective follow-up therefore kept the contextual gain unchanged but applied
+it to `bet`/`raise` only when a separately frozen synthetic counterfactual oracle
+estimated action efficiency at least `0.80`:
+
+```bash
+python -m pcc_poker score-control-value-intervention \
+  --output validation/score-control-value-intervention.json
+```
+
+The frozen result remains **partial** and rejects this hard value-gating rule as
+a route to full Control resolution. Score retains context alignment but fails
+information uptake narrowly and value-sensitive intervention clearly. No
+post-result retuning was performed. See
+`docs/PROSPECTIVE_SCORE_CONTROL_VALUE_INTERVENTION.md` and
+`docs/FROZEN_SCORE_CONTROL_VALUE_INTERVENTION_RESULT.md`.
