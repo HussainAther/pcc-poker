@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Add a post-v0.8 synthetic Control structural-recovery experiment using the frozen three-stage hypothesis `information uptake -> context alignment -> value-sensitive intervention`.
+- Require positive, discriminant recovery independently in the Score and Adaptive implementation families; do not promote one-family success into the frozen human-facing panel.
+- Freeze the first structural-recovery result as partial: Adaptive passes all three stages, while Score passes none; leave the v0.8 human-facing Control axis unresolved.
 - Add a synthetic-only `oria-ingestion-preflight` command for the future HandHQ pipeline.
 - Reject any input outside sentinel-marked `tests/fixtures/` before reading contents while the human-data gate is closed.
 - Audit schema fields, identifier scrubbing, prohibited-field leakage, private-card exclusion, outcome isolation, and audit-output placement.

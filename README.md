@@ -459,3 +459,22 @@ The command rejects arbitrary paths before reading them, checks identifier
 scrubbing and prohibited-field leakage, and writes only to `build/audit/`. See
 `docs/ORIA_SAFE_INGESTION_PREFLIGHT.md`. A passing preflight is an engineering
 check only; it does not authorize human-data analysis.
+
+### Post-freeze Poker Control structural recovery
+
+The frozen v0.8.0 human-facing panel remains Pressure-only. A separate synthetic extension tests whether Control is recoverable as a three-stage structure across the Score and Adaptive policy implementations:
+
+```text
+information uptake -> context alignment -> value-sensitive intervention
+```
+
+Run:
+
+```bash
+python -m pcc_poker control-structural-recovery \
+  --output validation/control-structural-recovery.json
+```
+
+The experiment uses fresh synthetic seeds, matched context-yoking, and label-free counterfactual action efficiency. Synthetic PCC weights are used only after trajectory aggregation for construct-validity correlations. See `docs/CONTROL_STRUCTURAL_RECOVERY_PROTOCOL.md`. A failure or one-family result does not change the frozen v0.8 human measurement contract.
+
+The frozen post-v0.8 result is **partial**: Adaptive recovers all three stages, while Score recovers none. This localizes the remaining Control problem to implementation portability rather than supporting a new human-facing Control measure. See `docs/FROZEN_CONTROL_STRUCTURAL_RECOVERY_RESULT.md` and `validation/control-structural-recovery.json`.

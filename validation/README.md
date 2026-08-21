@@ -66,3 +66,7 @@ an engineering provenance artifact only; it does not analyze human data.
 ## v0.8.0 pre-human freeze
 
 `synthetic-freeze-manifest.json` is the release-level freeze record. It hashes the synthetic evidence/protocol bundle, records seed-bearing design fields, captures the conservative Pressure-only confirmatory human panel, and preserves the ORIA/IRB gate. It does not contain human-data results.
+
+## Post-v0.8 synthetic extensions
+
+`control-structural-recovery.json` records the prospective three-stage synthetic Control recovery test. It is not part of the immutable v0.8.0 freeze and does not authorize or alter human-data analysis.

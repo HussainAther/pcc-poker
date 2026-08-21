@@ -1,7 +1,7 @@
 PYTHON ?= python
 AUDIT_DIR ?= build/audit
 
-.PHONY: help install test verify-freeze oria-preflight reproduce research-status release-check diff-check preflight clean-audit
+.PHONY: help install test verify-freeze oria-preflight reproduce research-status control-structural-recovery release-check diff-check preflight clean-audit
 
 help:
 	@printf '%s\n' \
@@ -13,6 +13,7 @@ help:
 	  '  make oria-preflight    Run synthetic-only HandHQ ingestion safety checks' \
 	  '  make reproduce        Write a NON-FROZEN audit manifest under build/audit/' \
 	  '  make research-status  Regenerate status reports under build/audit/' \
+	  '  make control-structural-recovery  Run post-freeze synthetic Control structure test' \
 	  '  make release-check    Run read-only release metadata/hygiene checks' \
 	  '  make diff-check       Run git diff --check' \
 	  '  make preflight        Run all safe pre-release checks' \
@@ -40,6 +41,9 @@ research-status:
 		--json-output $(AUDIT_DIR)/research-status.json \
 		--csv-output $(AUDIT_DIR)/research-status.csv \
 		--markdown-output $(AUDIT_DIR)/RESEARCH_STATUS.md
+
+control-structural-recovery:
+	$(PYTHON) -m pcc_poker control-structural-recovery --output validation/control-structural-recovery.json
 
 release-check:
 	$(PYTHON) -m pcc_poker release-check

@@ -15,6 +15,7 @@ from .counterfactual_control import write_counterfactual_control_validation
 from .chaos_control_decomposition import write_chaos_control_decomposition
 from .effective_chaos_validation import write_effective_chaos_validation
 from .control_mechanism import write_control_pressure_mechanism
+from .control_structural_recovery import write_control_structural_recovery
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
 from .pressure_decomposition import write_pressure_decomposition
@@ -72,6 +73,29 @@ def research_status_command(args) -> int:
         markdown_output=args.markdown_output,
     )
     print(json.dumps({"counts": report["counts"], "claims": len(report["claims"]), "missing_sources": report["missing_sources"]}, indent=2))
+    return 0
+
+
+def control_structural_recovery_command(args) -> int:
+    report = write_control_structural_recovery(
+        args.output,
+        calibration_mixtures=args.calibration_mixtures,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_mixtures=args.evaluation_mixtures,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+    )
+    print(json.dumps({
+        "control_structural_recovery_confirmed": report["control_structural_recovery_confirmed"],
+        "status": report["status"],
+        "stage_replication": report["stage_replication"],
+        "families": {
+            family: {
+                "all_three_stages_recovered": result["all_three_stages_recovered"],
+                "stages": result["stages"],
+            }
+            for family, result in report["families"].items()
+        },
+    }, indent=2))
     return 0
 
 def invariant_panel_command(args) -> int:
@@ -508,6 +532,13 @@ def parser() -> argparse.ArgumentParser:
     reproduce.add_argument("--output", default="validation/reproducibility-manifest.json")
     reproduce.add_argument("--run-tests", action="store_true", help="also run the full pytest suite and record its result")
     reproduce.set_defaults(func=reproducibility_command)
+    control_structural=commands.add_parser("control-structural-recovery", help="run the post-v0.8 three-stage synthetic Control recovery test")
+    control_structural.add_argument("--calibration-mixtures", type=int, default=20)
+    control_structural.add_argument("--calibration-hands-per-seat", type=int, default=30)
+    control_structural.add_argument("--evaluation-mixtures", type=int, default=40)
+    control_structural.add_argument("--evaluation-hands-per-seat", type=int, default=60)
+    control_structural.add_argument("--output", default="validation/control-structural-recovery.json")
+    control_structural.set_defaults(func=control_structural_recovery_command)
     status=commands.add_parser("research-status", help="summarize frozen PCC claims into publication-friendly JSON/CSV/Markdown")
     status.add_argument("--root", default=".")
     status.add_argument("--json-output", default="validation/research-status.json")
