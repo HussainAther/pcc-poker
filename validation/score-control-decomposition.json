@@ -1,0 +1,294 @@
+{
+  "status": "confirmed",
+  "mechanism_split_confirmed": true,
+  "hypothesis": "Score Control is primarily static value/card-state optimization with weak learned-response gain; Adaptive Control explicitly amplifies learned opponent response and therefore expresses the information->context->intervention structure.",
+  "fold_probability_perturbation": {
+    "low": 0.1,
+    "high": 0.9
+  },
+  "summary": {
+    "score_mean_absolute_aggression_shift": 0.16407274281248968,
+    "adaptive_mean_absolute_aggression_shift": 0.9983986087118455,
+    "score_mean_total_variation_shift": 0.1640727428124897,
+    "adaptive_mean_total_variation_shift": 0.9983986087118455,
+    "adaptive_to_score_tv_ratio": 6.085097326939088
+  },
+  "prespecified_checks": {
+    "score_response_is_weak": true,
+    "adaptive_response_is_strong": true,
+    "adaptive_total_sensitivity_at_least_3x_score": true
+  },
+  "states": [
+    {
+      "state": 0,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "low": {
+          "check": 0.9845723517753034,
+          "bet": 0.015427648224696494
+        },
+        "high": {
+          "check": 0.9479779432402828,
+          "bet": 0.05202205675971713
+        },
+        "aggression_shift": 0.036594408535020634,
+        "tv_shift": 0.03659440853502062
+      },
+      "adaptive": {
+        "low": {
+          "check": 0.9999979577911475,
+          "bet": 2.042208852550853e-06
+        },
+        "high": {
+          "check": 4.0291415595907654e-06,
+          "bet": 0.9999959708584404
+        },
+        "aggression_shift": 0.9999939286495878,
+        "tv_shift": 0.9999939286495878
+      }
+    },
+    {
+      "state": 1,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "low": {
+          "check": 0.8907965387055746,
+          "bet": 0.10920346129442544
+        },
+        "high": {
+          "check": 0.6996266387374175,
+          "bet": 0.3003733612625825
+        },
+        "aggression_shift": 0.1911698999681571,
+        "tv_shift": 0.19116989996815711
+      },
+      "adaptive": {
+        "low": {
+          "check": 0.9998432570080195,
+          "bet": 0.00015674299198055266
+        },
+        "high": {
+          "check": 5.966822286926107e-07,
+          "bet": 0.9999994033177714
+        },
+        "aggression_shift": 0.9998426603257908,
+        "tv_shift": 0.9998426603257908
+      }
+    },
+    {
+      "state": 2,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "low": {
+          "fold": 0.25952543305925935,
+          "call": 0.6790939394153819,
+          "raise": 0.06138062752535887
+        },
+        "high": {
+          "fold": 0.2249730095624348,
+          "call": 0.5886814464577094,
+          "raise": 0.18634554397985595
+        },
+        "aggression_shift": 0.12496491645449709,
+        "tv_shift": 0.12496491645449707
+      },
+      "adaptive": {
+        "low": {
+          "fold": 0.036314342822606975,
+          "call": 0.9636849530039858,
+          "raise": 7.041734070912886e-07
+        },
+        "high": {
+          "fold": 1.6264145120022795e-05,
+          "call": 4.525641523251051e-06,
+          "raise": 0.9999792102133567
+        },
+        "aggression_shift": 0.9999785060399495,
+        "tv_shift": 0.9999785060399495
+      }
+    },
+    {
+      "state": 3,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "low": {
+          "fold": 0.34385623411361665,
+          "call": 0.45323652620454263,
+          "raise": 0.20290723968184074
+        },
+        "high": {
+          "fold": 0.22806548217493663,
+          "call": 0.300612862682541,
+          "raise": 0.47132165514252244
+        },
+        "aggression_shift": 0.2684144154606817,
+        "tv_shift": 0.2684144154606817
+      },
+      "adaptive": {
+        "low": {
+          "fold": 0.00142112836209004,
+          "call": 0.998439240368887,
+          "raise": 0.0001396312690229367
+        },
+        "high": {
+          "fold": 8.204857290041683e-08,
+          "call": 6.04437480770136e-07,
+          "raise": 0.9999993135139463
+        },
+        "aggression_shift": 0.9998596822449234,
+        "tv_shift": 0.9998596822449234
+      }
+    },
+    {
+      "state": 4,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "low": {
+          "check": 0.9991385624169544,
+          "bet": 0.0008614375830456161
+        },
+        "high": {
+          "check": 0.9969895881745275,
+          "bet": 0.003010411825472358
+        },
+        "aggression_shift": 0.002148974242426742,
+        "tv_shift": 0.002148974242426812
+      },
+      "adaptive": {
+        "low": {
+          "check": 0.9999998218556774,
+          "bet": 1.781443226039302e-07
+        },
+        "high": {
+          "check": 2.646087005326672e-05,
+          "bet": 0.9999735391299467
+        },
+        "aggression_shift": 0.9999733609856241,
+        "tv_shift": 0.9999733609856241
+      }
+    },
+    {
+      "state": 5,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "low": {
+          "check": 0.6355372024085094,
+          "bet": 0.36446279759149053
+        },
+        "high": {
+          "check": 0.3324030106770621,
+          "bet": 0.6675969893229379
+        },
+        "aggression_shift": 0.30313419173144734,
+        "tv_shift": 0.3031341917314473
+      },
+      "adaptive": {
+        "low": {
+          "check": 0.9928552937790462,
+          "bet": 0.00714470622095367
+        },
+        "high": {
+          "check": 1.3353604399063477e-07,
+          "bet": 0.9999998664639561
+        },
+        "aggression_shift": 0.9928551602430025,
+        "tv_shift": 0.9928551602430024
+      }
+    },
+    {
+      "state": 6,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "low": {
+          "fold": 0.16182681677840535,
+          "call": 0.7998993560779494,
+          "raise": 0.038273827143645335
+        },
+        "high": {
+          "fold": 0.14768351870718993,
+          "call": 0.7299899600631018,
+          "raise": 0.12232652122970822
+        },
+        "aggression_shift": 0.08405269408606289,
+        "tv_shift": 0.08405269408606295
+      },
+      "adaptive": {
+        "low": {
+          "fold": 0.11643576163470232,
+          "call": 0.8835641761450675,
+          "raise": 6.222023001350599e-08
+        },
+        "high": {
+          "fold": 0.00013784989446796928,
+          "call": 1.0968574004966153e-05,
+          "raise": 0.9998511815315271
+        },
+        "aggression_shift": 0.9998511193112971,
+        "tv_shift": 0.999851119311297
+      }
+    },
+    {
+      "state": 7,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "low": {
+          "fold": 0.3252625402349038,
+          "call": 0.2937096974874279,
+          "raise": 0.3810277622776683
+        },
+        "high": {
+          "fold": 0.16651130437220366,
+          "call": 0.15035849132850398,
+          "raise": 0.6831302042992924
+        },
+        "aggression_shift": 0.30210244202162406,
+        "tv_shift": 0.30210244202162406
+      },
+      "adaptive": {
+        "low": {
+          "fold": 0.00010118385138763275,
+          "call": 0.9947334079423366,
+          "raise": 0.005165408206275774
+        },
+        "high": {
+          "fold": 1.3441098490602165e-09,
+          "call": 1.3855502537500628e-07,
+          "raise": 0.9999998601008648
+        },
+        "aggression_shift": 0.9948344518945891,
+        "tv_shift": 0.9948344518945891
+      }
+    }
+  ],
+  "policy_modified": false,
+  "human_data_accessed": false,
+  "interpretation": "This diagnoses the Score-family structural-recovery failure; it does not resolve Poker Control and does not alter the v0.8 human-facing panel."
+}

@@ -478,3 +478,50 @@ python -m pcc_poker control-structural-recovery \
 The experiment uses fresh synthetic seeds, matched context-yoking, and label-free counterfactual action efficiency. Synthetic PCC weights are used only after trajectory aggregation for construct-validity correlations. See `docs/CONTROL_STRUCTURAL_RECOVERY_PROTOCOL.md`. A failure or one-family result does not change the frozen v0.8 human measurement contract.
 
 The frozen post-v0.8 result is **partial**: Adaptive recovers all three stages, while Score recovers none. This localizes the remaining Control problem to implementation portability rather than supporting a new human-facing Control measure. See `docs/FROZEN_CONTROL_STRUCTURAL_RECOVERY_RESULT.md` and `validation/control-structural-recovery.json`.
+
+
+### Score-family Control mechanism decomposition
+
+The post-freeze synthetic diagnostic localizes the Control family split without changing either policy:
+
+```bash
+python -m pcc_poker score-control-decomposition --output validation/score-control-decomposition.json
+```
+
+The frozen diagnostic finds about a 6.1x Adaptive-to-Score action-distribution sensitivity gap under matched opponent-response perturbations. See `docs/SCORE_CONTROL_MECHANISM_DECOMPOSITION.md`. This does not alter the v0.8 human-facing panel or authorize human-data analysis.
+
+### Post-freeze Score-Control intervention
+
+The Score-family mechanism decomposition showed that its Control component was
+far less responsive than Adaptive Control to learned opponent fold behavior.
+A single prospective intervention therefore adds a zero-centered contextual
+response term to Score-Control aggression while preserving the existing
+card-value/flexibility/risk guardrail.
+
+```bash
+python -m pcc_poker score-control-intervention \
+  --output validation/score-control-intervention.json
+```
+
+The frozen result is **partial**. Score now passes information uptake and
+context alignment, but still fails value-sensitive intervention; Adaptive
+continues to pass all three stages. No post-result retuning was performed. See
+`docs/PROSPECTIVE_SCORE_CONTROL_INTERVENTION.md` and
+`docs/FROZEN_SCORE_CONTROL_INTERVENTION_RESULT.md`.
+
+### Score-Control value-sensitive intervention decomposition
+
+After the prospective contextual-gain intervention, Score recovers information
+uptake and context alignment but still fails value-sensitive intervention. The
+remaining synthetic bottleneck can be diagnosed without changing any policy:
+
+```bash
+python -m pcc_poker score-control-value-decomposition \
+  --output validation/score-control-value-decomposition.json
+```
+
+The decomposition asks whether Control-heavy Score trajectories carry genuine
+context signal but lower counterfactual action efficiency, causing the
+context-by-value product to lose construct signal. See
+`docs/SCORE_CONTROL_VALUE_DECOMPOSITION.md`. This is post-freeze synthetic
+mechanism evidence only; it does not modify the v0.8 human-facing panel.

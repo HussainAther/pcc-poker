@@ -16,6 +16,9 @@ from .chaos_control_decomposition import write_chaos_control_decomposition
 from .effective_chaos_validation import write_effective_chaos_validation
 from .control_mechanism import write_control_pressure_mechanism
 from .control_structural_recovery import write_control_structural_recovery
+from .score_control_decomposition import write_score_control_decomposition
+from .score_control_intervention import write_score_control_intervention
+from .score_control_value_decomposition import write_score_control_value_decomposition
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
 from .pressure_decomposition import write_pressure_decomposition
@@ -76,6 +79,33 @@ def research_status_command(args) -> int:
     return 0
 
 
+
+def score_control_decomposition_command(args) -> int:
+    report = write_score_control_decomposition(args.output)
+    print(json.dumps({
+        "status": report["status"],
+        "mechanism_split_confirmed": report["mechanism_split_confirmed"],
+        "summary": report["summary"],
+        "prespecified_checks": report["prespecified_checks"],
+    }, indent=2))
+    return 0
+
+def score_control_value_decomposition_command(args) -> int:
+    report = write_score_control_value_decomposition(
+        args.output,
+        calibration_mixtures=args.calibration_mixtures,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_mixtures=args.evaluation_mixtures,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+    )
+    print(json.dumps({
+        "status": report["status"],
+        "value_guardrail_bottleneck_supported": report["value_guardrail_bottleneck_supported"],
+        "score": report["families"]["score"],
+        "prespecified_checks": report["prespecified_checks"],
+    }, indent=2))
+    return 0
+
 def control_structural_recovery_command(args) -> int:
     report = write_control_structural_recovery(
         args.output,
@@ -95,6 +125,22 @@ def control_structural_recovery_command(args) -> int:
             }
             for family, result in report["families"].items()
         },
+    }, indent=2))
+    return 0
+
+def score_control_intervention_command(args) -> int:
+    report = write_score_control_intervention(
+        args.output,
+        calibration_mixtures=args.calibration_mixtures,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        evaluation_mixtures=args.evaluation_mixtures,
+        evaluation_hands_per_seat=args.evaluation_hands_per_seat,
+    )
+    print(json.dumps({
+        "control_structural_recovery_confirmed": report["control_structural_recovery_confirmed"],
+        "status": report["status"],
+        "stage_replication": report["stage_replication"],
+        "intervention": report["intervention"],
     }, indent=2))
     return 0
 
@@ -539,6 +585,23 @@ def parser() -> argparse.ArgumentParser:
     control_structural.add_argument("--evaluation-hands-per-seat", type=int, default=60)
     control_structural.add_argument("--output", default="validation/control-structural-recovery.json")
     control_structural.set_defaults(func=control_structural_recovery_command)
+    score_control_decomposition=commands.add_parser("score-control-decomposition", help="diagnose why Score-family Control fails structural recovery")
+    score_control_decomposition.add_argument("--output", default="validation/score-control-decomposition.json")
+    score_control_decomposition.set_defaults(func=score_control_decomposition_command)
+    score_control_value=commands.add_parser("score-control-value-decomposition", help="diagnose why Score-Control fails value-sensitive intervention")
+    score_control_value.add_argument("--calibration-mixtures", type=int, default=20)
+    score_control_value.add_argument("--calibration-hands-per-seat", type=int, default=30)
+    score_control_value.add_argument("--evaluation-mixtures", type=int, default=40)
+    score_control_value.add_argument("--evaluation-hands-per-seat", type=int, default=60)
+    score_control_value.add_argument("--output", default="validation/score-control-value-decomposition.json")
+    score_control_value.set_defaults(func=score_control_value_decomposition_command)
+    score_control_intervention=commands.add_parser("score-control-intervention", help="run the prospective post-v0.8 Score-Control contextual-gain intervention")
+    score_control_intervention.add_argument("--calibration-mixtures", type=int, default=20)
+    score_control_intervention.add_argument("--calibration-hands-per-seat", type=int, default=30)
+    score_control_intervention.add_argument("--evaluation-mixtures", type=int, default=40)
+    score_control_intervention.add_argument("--evaluation-hands-per-seat", type=int, default=60)
+    score_control_intervention.add_argument("--output", default="validation/score-control-intervention.json")
+    score_control_intervention.set_defaults(func=score_control_intervention_command)
     status=commands.add_parser("research-status", help="summarize frozen PCC claims into publication-friendly JSON/CSV/Markdown")
     status.add_argument("--root", default=".")
     status.add_argument("--json-output", default="validation/research-status.json")

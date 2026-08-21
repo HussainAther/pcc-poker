@@ -70,3 +70,13 @@ an engineering provenance artifact only; it does not analyze human data.
 ## Post-v0.8 synthetic extensions
 
 `control-structural-recovery.json` records the prospective three-stage synthetic Control recovery test. It is not part of the immutable v0.8.0 freeze and does not authorize or alter human-data analysis.
+
+
+- `score-control-decomposition.json`: post-v0.8 synthetic diagnosis of the Score-vs-Adaptive Control response-sensitivity split; not part of the frozen human-facing panel.
+
+## Post-v0.8 Score-Control value decomposition
+
+`score-control-value-decomposition.json` diagnoses the remaining final-stage
+Control failure after the prospective Score-Control contextual intervention.
+It is a post-freeze synthetic artifact and is not part of the immutable v0.8
+human-facing evidence bundle.

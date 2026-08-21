@@ -1,0 +1,142 @@
+{
+  "status": "confirmed",
+  "value_guardrail_bottleneck_supported": true,
+  "hypothesis": "After contextual response gain is strengthened, Score-Control reads context but Control-heavy trajectories increasingly select actions with lower counterfactual efficiency. The value guardrail therefore attenuates the final context-by-value signal rather than revealing a missing context signal.",
+  "families": {
+    "score": {
+      "groups": 80,
+      "means": {
+        "context_alignment": 0.004234492440127455,
+        "positive_context_gain": 0.02014195515158665,
+        "control_efficiency": 0.9249882448788048,
+        "regret": 0.9002320450357768,
+        "value_sensitive_intervention": 0.018213156578993035,
+        "positive_context_rate": 0.16839441892227694,
+        "low_efficiency_positive_context_rate": 0.012488651803809717
+      },
+      "weight_correlations": {
+        "context_alignment": {
+          "pressure": 0.004249224256440037,
+          "control": 0.3154372941437452,
+          "chaos": -0.34958641166414384
+        },
+        "positive_context_gain": {
+          "pressure": 0.012252190348286654,
+          "control": 0.22040488212257933,
+          "chaos": -0.2538839136604607
+        },
+        "control_efficiency": {
+          "pressure": 0.7022311679073795,
+          "control": -0.7539210772919571,
+          "chaos": 0.09744928210231493
+        },
+        "regret": {
+          "pressure": -0.42262188367899634,
+          "control": 0.5332224876610486,
+          "chaos": -0.14563616988560438
+        },
+        "value_sensitive_intervention": {
+          "pressure": 0.08374226246818604,
+          "control": 0.13237985467907432,
+          "chaos": -0.23162741648716184
+        },
+        "positive_context_rate": {
+          "pressure": 0.6236951977415524,
+          "control": -0.1887360878063654,
+          "chaos": -0.43966450775701166
+        },
+        "low_efficiency_positive_context_rate": {
+          "pressure": -0.3030626954352439,
+          "control": 0.5236018287782894,
+          "chaos": -0.2589812925105193
+        }
+      },
+      "positive_gain_to_value_product_control_attenuation": 0.08802502744350502
+    },
+    "adaptive": {
+      "groups": 80,
+      "means": {
+        "context_alignment": 0.0019804462080335802,
+        "positive_context_gain": 0.020774517696521704,
+        "control_efficiency": 0.9361206553901514,
+        "regret": 0.6476389624145502,
+        "value_sensitive_intervention": 0.01935094291309216,
+        "positive_context_rate": 0.16752118904841048,
+        "low_efficiency_positive_context_rate": 0.007604830987794871
+      },
+      "weight_correlations": {
+        "context_alignment": {
+          "pressure": -0.34240775093937664,
+          "control": 0.5940829079771023,
+          "chaos": -0.2654466346909771
+        },
+        "positive_context_gain": {
+          "pressure": -0.1797177940160476,
+          "control": 0.3898593876319875,
+          "chaos": -0.21352867586752458
+        },
+        "control_efficiency": {
+          "pressure": 0.7252921371593107,
+          "control": -0.787735007517564,
+          "chaos": 0.11477747867194411
+        },
+        "regret": {
+          "pressure": -0.6095307014482201,
+          "control": 0.6619582326804614,
+          "chaos": -0.09641160261099538
+        },
+        "value_sensitive_intervention": {
+          "pressure": -0.14146199572621998,
+          "control": 0.3330223215167156,
+          "chaos": -0.19293939204532504
+        },
+        "positive_context_rate": {
+          "pressure": 0.019598474355038715,
+          "control": 0.4354770018822821,
+          "chaos": -0.4311814965013107
+        },
+        "low_efficiency_positive_context_rate": {
+          "pressure": -0.2634051775858522,
+          "control": 0.43458620546049553,
+          "chaos": -0.18287876574550785
+        }
+      },
+      "positive_gain_to_value_product_control_attenuation": 0.056837066115271895
+    }
+  },
+  "prespecified_checks": {
+    "score_efficiency_is_control_anticorrelated": true,
+    "score_regret_is_control_correlated": true,
+    "value_guardrail_attenuates_score_control_signal_by_0_05": true,
+    "low_efficiency_positive_contexts_concentrate_with_control": true
+  },
+  "thresholds": {
+    "maximum_efficiency_control_correlation": -0.2,
+    "minimum_regret_control_correlation": 0.2,
+    "minimum_product_attenuation": 0.05,
+    "minimum_low_efficiency_context_control_correlation": 0.2,
+    "low_efficiency_threshold": 0.8
+  },
+  "trajectory_groups": 160,
+  "policy_modified": false,
+  "human_data_accessed": false,
+  "frozen_v0.8_human_panel_modified": false,
+  "interpretation": "This is a post-intervention mechanism decomposition. It does not resolve Poker Control and does not authorize retuning. A future intervention, if any, should target value-sensitive action selection rather than increasing contextual gain again.",
+  "design": {
+    "status": "post_v0.8_score_control_value_decomposition",
+    "calibration_seeds": {
+      "score": 5101,
+      "adaptive": 5109
+    },
+    "evaluation_seeds": {
+      "score": 5301,
+      "adaptive": 5309
+    },
+    "yoke_seed": 51999,
+    "calibration_mixtures": 20,
+    "calibration_hands_per_seat": 30,
+    "evaluation_mixtures": 40,
+    "evaluation_hands_per_seat": 60,
+    "weight_boundary": "Synthetic PCC weights are used only after trajectory aggregation for diagnostic correlations."
+  }
+}
