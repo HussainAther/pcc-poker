@@ -1,0 +1,754 @@
+{
+  "status": "confirmed",
+  "minimal_architectural_difference_supported": true,
+  "hypothesis": "Adaptive Control does not merely add a stronger aggression response. It allocates context on both sides of the decision: aggression is timed to fold vulnerability while passive/check-call branches receive an explicit resistance/optionality bonus when folds are unlikely. Card safety remains a state-value guardrail rather than the contextual signal itself.",
+  "summary": {
+    "adaptive_minus_score_mean_expected_value": 0.46047259137951846,
+    "adaptive_minus_score_low_fold_passive_mass": 0.1701541715043185,
+    "two_sided_context_state_share": 1.0
+  },
+  "prespecified_checks": {
+    "adaptive_has_mean_value_advantage_on_matched_states": true,
+    "adaptive_context_is_two_sided_in_at_least_half_states": true,
+    "adaptive_preserves_more_passive_mass_when_fold_resistance_is_high": true
+  },
+  "thresholds": {
+    "minimum_mean_value_advantage": 0.1,
+    "minimum_two_sided_context_share": 0.5,
+    "minimum_low_fold_passive_mass_advantage": 0.1
+  },
+  "states": [
+    {
+      "state": 0,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.9983235173986581,
+          "bet": 0.0016764826013418908
+        },
+        "expected_value": -0.8007334402447347,
+        "passive_mass": 0.9983235173986581,
+        "aggressive_mass": 0.0016764826013418908
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 0.9999979981097608,
+          "bet": 2.0018902391645113e-06
+        },
+        "expected_value": -0.8000008758020308,
+        "passive_mass": 0.9999979981097608,
+        "aggressive_mass": 2.0018902391645113e-06,
+        "score_parts": {
+          "check": {
+            "scaled_value": -0.2,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.105
+          },
+          "bet": {
+            "scaled_value": -0.30937188434695917,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.48
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.0007325644427038647
+    },
+    {
+      "state": 0,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.0743889926320275,
+          "bet": 0.9256110073679724
+        },
+        "expected_value": 1.4528430620006922,
+        "passive_mass": 0.0743889926320275,
+        "aggressive_mass": 0.9256110073679724
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 3.838675484184918e-06,
+          "bet": 0.9999961613245157
+        },
+        "expected_value": 1.6338889621389912,
+        "passive_mass": 3.838675484184918e-06,
+        "aggressive_mass": 0.9999961613245157,
+        "score_parts": {
+          "check": {
+            "scaled_value": -0.2,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.105
+          },
+          "bet": {
+            "scaled_value": 0.4084745762711865,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.48
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.1810459001382989
+    },
+    {
+      "state": 1,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.9870322425226767,
+          "bet": 0.01296775747732318
+        },
+        "expected_value": 0.8108965363927096,
+        "passive_mass": 0.9870322425226767,
+        "aggressive_mass": 0.01296775747732318
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 0.9998463510606805,
+          "bet": 0.00015364893931935387
+        },
+        "expected_value": 0.800129108002052,
+        "passive_mass": 0.9998463510606805,
+        "aggressive_mass": 0.00015364893931935387,
+        "score_parts": {
+          "check": {
+            "scaled_value": 0.19999999999999996,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.24499999999999997
+          },
+          "bet": {
+            "scaled_value": 0.41006979062811555,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": 0.47999999999999987
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": -0.010767428390657696
+    },
+    {
+      "state": 1,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.010168007600555097,
+          "bet": 0.989831992399445
+        },
+        "expected_value": 1.9475340386461362,
+        "passive_mass": 0.010168007600555097,
+        "aggressive_mass": 0.989831992399445
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 5.684757007424678e-07,
+          "bet": 0.9999994315242994
+        },
+        "expected_value": 1.9593213748518996,
+        "passive_mass": 5.684757007424678e-07,
+        "aggressive_mass": 0.9999994315242994,
+        "score_parts": {
+          "check": {
+            "scaled_value": 0.19999999999999996,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.24499999999999997
+          },
+          "bet": {
+            "scaled_value": 0.48983050847457626,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": 0.47999999999999987
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.011787336205763443
+    },
+    {
+      "state": 2,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.27457268300338566,
+          "call": 0.7184677153165335,
+          "raise": 0.006959601680080827
+        },
+        "expected_value": -0.16091838375187378,
+        "passive_mass": 0.7184677153165335,
+        "aggressive_mass": 0.006959601680080827
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 0.036175037360078065,
+          "call": 0.9638242722689992,
+          "raise": 6.90370922582806e-07
+        },
+        "expected_value": -0.19276656310462575,
+        "passive_mass": 0.9638242722689992,
+        "aggressive_mass": 6.90370922582806e-07,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.5599999999999999
+          },
+          "call": {
+            "scaled_value": -0.03333333333333336,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.105
+          },
+          "raise": {
+            "scaled_value": -0.41249584579594556,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.48
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": -0.03184817935275197
+    },
+    {
+      "state": 2,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.005223927269924666,
+          "call": 0.013669324455544002,
+          "raise": 0.9811067482745313
+        },
+        "expected_value": 3.2033234413348177,
+        "passive_mass": 0.013669324455544002,
+        "aggressive_mass": 0.9811067482745313
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 1.564611918665846e-05,
+          "call": 4.311707606494095e-06,
+          "raise": 0.9999800421732069
+        },
+        "expected_value": 3.26773052970923,
+        "passive_mass": 4.311707606494095e-06,
+        "aggressive_mass": 0.9999800421732069,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.5599999999999999
+          },
+          "call": {
+            "scaled_value": -0.03333333333333336,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.105
+          },
+          "raise": {
+            "scaled_value": 0.544632768361582,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.48
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.06440708837441234
+    },
+    {
+      "state": 3,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.41993171403410123,
+          "call": 0.5535115331049875,
+          "raise": 0.026556752860911328
+        },
+        "expected_value": 1.3048463495144642,
+        "passive_mass": 0.5535115331049875,
+        "aggressive_mass": 0.026556752860911328
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 0.0014154840456409611,
+          "call": 0.9984476402305202,
+          "raise": 0.00013687572383885255
+        },
+        "expected_value": 2.1970338373024774,
+        "passive_mass": 0.9984476402305202,
+        "aggressive_mass": 0.00013687572383885255,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.24000000000000005
+          },
+          "call": {
+            "scaled_value": 0.36666666666666653,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.24499999999999997
+          },
+          "raise": {
+            "scaled_value": 0.5467597208374874,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": 0.47999999999999987
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.8921874877880132
+    },
+    {
+      "state": 3,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.0021235791471958436,
+          "call": 0.0027990873519467053,
+          "raise": 0.9950773335008575
+        },
+        "expected_value": 3.905511882096287,
+        "passive_mass": 0.0027990873519467053,
+        "aggressive_mass": 0.9950773335008575
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 7.893072238729984e-08,
+          "call": 5.758643463975493e-07,
+          "raise": 0.9999993452049312
+        },
+        "expected_value": 3.91864276878936,
+        "passive_mass": 5.758643463975493e-07,
+        "aggressive_mass": 0.9999993452049312,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.24000000000000005
+          },
+          "call": {
+            "scaled_value": 0.36666666666666653,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.24499999999999997
+          },
+          "raise": {
+            "scaled_value": 0.6531073446327683,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": 0.47999999999999987
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.013130886693073052
+    },
+    {
+      "state": 4,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.9999076081583195,
+          "bet": 9.239184168049504e-05
+        },
+        "expected_value": -1.500216701702446,
+        "passive_mass": 0.9999076081583195,
+        "aggressive_mass": 9.239184168049504e-05
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 0.9999998253727248,
+          "bet": 1.7462727527281717e-07
+        },
+        "expected_value": -1.5000004095819195,
+        "passive_mass": 0.9999998253727248,
+        "aggressive_mass": 1.7462727527281717e-07,
+        "score_parts": {
+          "check": {
+            "scaled_value": -0.25,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.04375
+          },
+          "bet": {
+            "scaled_value": -0.6409106015287471,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.8999999999999999
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.000216292120526429
+    },
+    {
+      "state": 4,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.593596651322336,
+          "bet": 0.40640334867766414
+        },
+        "expected_value": -0.34622778129646203,
+        "passive_mass": 0.593596651322336,
+        "aggressive_mass": 0.40640334867766414
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 2.5210035282027453e-05,
+          "bet": 0.9999747899647181
+        },
+        "expected_value": 1.3389114799845814,
+        "passive_mass": 2.5210035282027453e-05,
+        "aggressive_mass": 0.9999747899647181,
+        "score_parts": {
+          "check": {
+            "scaled_value": -0.25,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.04375
+          },
+          "bet": {
+            "scaled_value": 0.22316384180790969,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.8999999999999999
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 1.6851392612810434
+    },
+    {
+      "state": 5,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.9420992057345273,
+          "bet": 0.05790079426547272
+        },
+        "expected_value": 2.2082812220436945,
+        "passive_mass": 0.9420992057345273,
+        "aggressive_mass": 0.05790079426547272
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 0.9929953614471605,
+          "bet": 0.007004638552839518
+        },
+        "expected_value": 2.0251971444652495,
+        "passive_mass": 0.9929953614471605,
+        "aggressive_mass": 0.007004638552839518,
+        "score_parts": {
+          "check": {
+            "scaled_value": 0.3333333333333333,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.35
+          },
+          "bet": {
+            "scaled_value": 0.932868062479229,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": 1.2
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": -0.18308407757844503
+    },
+    {
+      "state": 5,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "check",
+        "bet"
+      ],
+      "score": {
+        "probabilities": {
+          "check": 0.0021911262108783506,
+          "bet": 0.9978088737891216
+        },
+        "expected_value": 2.405888355439642,
+        "passive_mass": 0.0021911262108783506,
+        "aggressive_mass": 0.9978088737891216
+      },
+      "adaptive": {
+        "probabilities": {
+          "check": 1.2722348826487998e-07,
+          "bet": 0.9999998727765118
+        },
+        "expected_value": 2.4067796092650218,
+        "passive_mass": 1.2722348826487998e-07,
+        "aggressive_mass": 0.9999998727765118,
+        "score_parts": {
+          "check": {
+            "scaled_value": 0.3333333333333333,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.35
+          },
+          "bet": {
+            "scaled_value": 0.4011299435028248,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": 1.2
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.0008912538253795788
+    },
+    {
+      "state": 6,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.16755241768942233,
+          "call": 0.8282006263683563,
+          "raise": 0.00424695594222142
+        },
+        "expected_value": -1.9107353146197155,
+        "passive_mass": 0.8282006263683563,
+        "aggressive_mass": 0.00424695594222142
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 0.11602610590665924,
+          "call": 0.8839738330732272,
+          "raise": 6.10201137070808e-08
+        },
+        "expected_value": -1.9889418037882505,
+        "passive_mass": 0.8839738330732272,
+        "aggressive_mass": 6.10201137070808e-08,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.7000000000000001
+          },
+          "call": {
+            "scaled_value": -0.16071428571428573,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.04375
+          },
+          "raise": {
+            "scaled_value": -0.7952570858852016,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.8999999999999999
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": -0.07820648916853501
+    },
+    {
+      "state": 6,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.005161207217204353,
+          "call": 0.025511509228287172,
+          "raise": 0.9693272835545085
+        },
+        "expected_value": 7.31934402484609,
+        "passive_mass": 0.025511509228287172,
+        "aggressive_mass": 0.9693272835545085
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 0.0001326123497321918,
+          "call": 1.0450124394496751e-05,
+          "raise": 0.9998569375258733
+        },
+        "expected_value": 7.609057249069557,
+        "passive_mass": 1.0450124394496751e-05,
+        "aggressive_mass": 0.9998569375258733,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.7000000000000001
+          },
+          "call": {
+            "scaled_value": -0.16071428571428573,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.04375
+          },
+          "raise": {
+            "scaled_value": 0.543583535108959,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": -0.8999999999999999
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.28971322422346724
+    },
+    {
+      "state": 7,
+      "fold_probability": 0.1,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.4929660281668193,
+          "call": 0.44514472186034443,
+          "raise": 0.06188924997283631
+        },
+        "expected_value": 5.515596774965893,
+        "passive_mass": 0.44514472186034443,
+        "aggressive_mass": 0.06188924997283631
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 0.00010079144933060546,
+          "call": 0.9948352609358779,
+          "raise": 0.005063947614791355
+        },
+        "expected_value": 10.035424235046408,
+        "passive_mass": 0.9948352609358779,
+        "aggressive_mass": 0.005063947614791355,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.0
+          },
+          "call": {
+            "scaled_value": 0.7142857142857143,
+            "response_timing": 0.0,
+            "passive_resistance": 1.35,
+            "card_safety": 0.35
+          },
+          "raise": {
+            "scaled_value": 1.2281726249821965,
+            "response_timing": -1.4,
+            "passive_resistance": 0.0,
+            "card_safety": 1.2
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 4.519827460080515
+    },
+    {
+      "state": 7,
+      "fold_probability": 0.9,
+      "legal_actions": [
+        "fold",
+        "call",
+        "raise"
+      ],
+      "score": {
+        "probabilities": {
+          "fold": 0.0010728083602448196,
+          "call": 0.0009687381114404668,
+          "raise": 0.9979584535283148
+        },
+        "expected_value": 10.801170319268046,
+        "passive_mass": 0.0009687381114404668,
+        "aggressive_mass": 0.9979584535283148
+      },
+      "adaptive": {
+        "probabilities": {
+          "fold": 1.2930335646559318e-09,
+          "call": 1.3200521090138106e-07,
+          "raise": 0.9999998667017556
+        },
+        "expected_value": 10.813559200657533,
+        "passive_mass": 1.3200521090138106e-07,
+        "aggressive_mass": 0.9999998667017556,
+        "score_parts": {
+          "fold": {
+            "scaled_value": 0.0,
+            "response_timing": 0.0,
+            "passive_resistance": 0.0,
+            "card_safety": 0.0
+          },
+          "call": {
+            "scaled_value": 0.7142857142857143,
+            "response_timing": 0.0,
+            "passive_resistance": 0.14999999999999997,
+            "card_safety": 0.35
+          },
+          "raise": {
+            "scaled_value": 0.7723970944309927,
+            "response_timing": 3.4,
+            "passive_resistance": 0.0,
+            "card_safety": 1.2
+          }
+        }
+      },
+      "adaptive_minus_score_expected_value": 0.012388881389487238
+    }
+  ],
+  "policy_modified": false,
+  "human_data_accessed": false,
+  "frozen_v0.8_human_panel_modified": false,
+  "interpretation": "The matched-state diagnostic localizes the remaining Score-Control gap to two-sided context allocation: Adaptive couples opportunistic aggression with explicit passive resistance/optionality. This result does not itself resolve Control or authorize automatic retuning."
+}
