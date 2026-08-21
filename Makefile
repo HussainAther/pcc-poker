@@ -1,7 +1,7 @@
 PYTHON ?= python
 AUDIT_DIR ?= build/audit
 
-.PHONY: help install test verify-freeze oria-preflight reproduce research-status control-structural-recovery score-control-intervention score-control-value-intervention score-control-value-decomposition release-check diff-check preflight clean-audit
+.PHONY: help install test verify-freeze oria-preflight reproduce research-status control-structural-recovery score-control-intervention score-control-value-intervention score-control-value-decomposition chaos-strong-falsification release-check diff-check preflight clean-audit
 
 help:
 	@printf '%s\n' \
@@ -17,6 +17,7 @@ help:
 	  '  make score-control-intervention  Run prospective Score-Control contextual-gain test' \
 	  '  make score-control-value-intervention  Run prospective value-aware Score-Control test' \
 	  '  make score-control-value-decomposition  Diagnose Score Control value bottleneck' \
+	  '  make chaos-strong-falsification  Run post-freeze strong Poker Chaos falsification' \
 	  '  make release-check    Run read-only release metadata/hygiene checks' \
 	  '  make diff-check       Run git diff --check' \
 	  '  make preflight        Run all safe pre-release checks' \
@@ -56,6 +57,9 @@ score-control-value-intervention:
 
 score-control-value-decomposition:
 	$(PYTHON) -m pcc_poker score-control-value-decomposition --output validation/score-control-value-decomposition.json
+
+chaos-strong-falsification:
+	$(PYTHON) -m pcc_poker chaos-strong-falsification --output validation/chaos-strong-falsification.json
 
 release-check:
 	$(PYTHON) -m pcc_poker release-check

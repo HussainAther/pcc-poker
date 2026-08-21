@@ -66,3 +66,12 @@ No release-hardening change authorizes human-data analysis or changes a frozen s
 - Re-run the existing three-stage Control recovery gate without changing its seeds, yoking, measurements, or acceptance thresholds.
 - Retain the negative/partial result: Score keeps context alignment, narrowly loses information uptake, and does not recover value-sensitive intervention.
 - Perform no post-result retuning; keep the v0.8 human-facing Control axis unresolved and the ORIA gate closed.
+
+
+## Post-v0.8 synthetic extension — strong Poker Chaos falsification
+
+- Added a frozen predictable-vs-random-vs-Chaos falsification across Score and Independent policy families.
+- Added an Adaptive exploiter calibrated only against predictable play and frozen before Chaos evaluation.
+- Both existing Chaos families pass unpredictability, value-preservation, and exploitability-resistance checks.
+- Uniform random play is maximally entropic but substantially worse strategically, directly supporting `Chaos != randomness`.
+- No v0.8 frozen artifact, human-facing measurement contract, or human-data gate is modified.

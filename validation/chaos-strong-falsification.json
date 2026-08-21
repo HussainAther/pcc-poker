@@ -1,0 +1,201 @@
+{
+  "poker_chaos_strong_falsification_confirmed": true,
+  "headline": "Chaos is not randomness: confirmation requires unpredictability, preserved value, and resistance to a separately calibrated exploiter across both synthetic families.",
+  "exploiter_calibration": {
+    "selected": {
+      "label": "adaptive-pressure-cold",
+      "weights": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "temperature": 0.15,
+      "predictable_mean_payoff": -0.9550000000000001
+    },
+    "predictable_exploited_by_at_least_0_20": true,
+    "candidate_grid": [
+      {
+        "label": "adaptive-control-cold",
+        "weights": [
+          0.1,
+          0.8,
+          0.1
+        ],
+        "temperature": 0.15,
+        "predictable_mean_payoff": 0.11099999999999999
+      },
+      {
+        "label": "adaptive-pressure-control-cold",
+        "weights": [
+          0.45,
+          0.45,
+          0.1
+        ],
+        "temperature": 0.15,
+        "predictable_mean_payoff": -0.27299999999999996
+      },
+      {
+        "label": "adaptive-pressure-cold",
+        "weights": [
+          0.8,
+          0.1,
+          0.1
+        ],
+        "temperature": 0.15,
+        "predictable_mean_payoff": -0.9550000000000001
+      },
+      {
+        "label": "adaptive-control-standard",
+        "weights": [
+          0.1,
+          0.8,
+          0.1
+        ],
+        "temperature": 0.35,
+        "predictable_mean_payoff": 0.365
+      },
+      {
+        "label": "adaptive-pressure-control-standard",
+        "weights": [
+          0.45,
+          0.45,
+          0.1
+        ],
+        "temperature": 0.35,
+        "predictable_mean_payoff": -0.715
+      }
+    ],
+    "selection_used_only_predictable_baseline": true
+  },
+  "baselines": {
+    "predictable": {
+      "mean_normalized_policy_entropy": 0.0,
+      "mean_payoff_vs_neutral": -0.6589583333333333,
+      "mean_payoff_vs_frozen_exploiter": -0.7162499999999999,
+      "replicate_payoffs_vs_neutral": [
+        -0.18124999999999997,
+        -0.6775,
+        -0.57375,
+        -1.1925000000000001,
+        -0.80125,
+        -0.5275
+      ],
+      "replicate_payoffs_vs_frozen_exploiter": [
+        -0.59875,
+        -0.7625,
+        -0.55375,
+        -0.69875,
+        -1.18875,
+        -0.495
+      ]
+    },
+    "uniform_random": {
+      "mean_normalized_policy_entropy": 0.9999999999999999,
+      "mean_payoff_vs_neutral": -1.4466666666666665,
+      "mean_payoff_vs_frozen_exploiter": -1.7943749999999998,
+      "replicate_payoffs_vs_neutral": [
+        -1.40625,
+        -1.60125,
+        -1.2574999999999998,
+        -1.31,
+        -1.67875,
+        -1.42625
+      ],
+      "replicate_payoffs_vs_frozen_exploiter": [
+        -1.98875,
+        -1.72,
+        -1.8112499999999998,
+        -1.67125,
+        -1.87,
+        -1.705
+      ]
+    }
+  },
+  "families": {
+    "score": {
+      "policy_kind": "score-chaos",
+      "checks": {
+        "unpredictability_exceeds_predictable_by_0_20": true,
+        "value_exceeds_random_by_0_30": true,
+        "value_not_worse_than_predictable_by_more_than_0_10": true,
+        "resists_exploiter_better_than_predictable_by_0_10": true,
+        "resists_exploiter_better_than_random_by_0_30": true
+      },
+      "all_checks_pass": true,
+      "metrics": {
+        "mean_normalized_policy_entropy": 0.9081771768093606,
+        "mean_payoff_vs_neutral": -0.30041666666666667,
+        "mean_payoff_vs_frozen_exploiter": -0.439375,
+        "replicate_payoffs_vs_neutral": [
+          0.255,
+          -0.32625,
+          -0.38375000000000004,
+          -0.6875,
+          -0.20625000000000002,
+          -0.45375
+        ],
+        "replicate_payoffs_vs_frozen_exploiter": [
+          -0.44375,
+          -0.50875,
+          -0.31125,
+          -0.4575,
+          -0.7525,
+          -0.1625
+        ]
+      }
+    },
+    "independent": {
+      "policy_kind": "independent-chaos",
+      "checks": {
+        "unpredictability_exceeds_predictable_by_0_20": true,
+        "value_exceeds_random_by_0_30": true,
+        "value_not_worse_than_predictable_by_more_than_0_10": true,
+        "resists_exploiter_better_than_predictable_by_0_10": true,
+        "resists_exploiter_better_than_random_by_0_30": true
+      },
+      "all_checks_pass": true,
+      "metrics": {
+        "mean_normalized_policy_entropy": 0.5394564800510765,
+        "mean_payoff_vs_neutral": 0.43249999999999994,
+        "mean_payoff_vs_frozen_exploiter": 0.7370833333333332,
+        "replicate_payoffs_vs_neutral": [
+          0.8775,
+          0.1375,
+          0.35749999999999993,
+          0.51625,
+          0.37249999999999994,
+          0.33375
+        ],
+        "replicate_payoffs_vs_frozen_exploiter": [
+          0.69,
+          0.7975,
+          1.05625,
+          0.8825000000000001,
+          0.33375,
+          0.6625
+        ]
+      }
+    }
+  },
+  "thresholds": {
+    "minimum_entropy_gain_over_predictable": 0.2,
+    "minimum_value_gain_over_random": 0.3,
+    "maximum_value_loss_vs_predictable": 0.1,
+    "minimum_exploiter_gain_over_predictable": 0.1,
+    "minimum_exploiter_gain_over_random": 0.3
+  },
+  "design": {
+    "post_v0_8_synthetic_extension": true,
+    "human_data_used": false,
+    "calibration_hands_per_seat": 500,
+    "evaluation_hands_per_seat": 400,
+    "replicates": 6,
+    "calibration_seed": 181001,
+    "neutral_seed": 191001,
+    "exploiter_seed": 201001,
+    "seed_stride": 40,
+    "seat_balanced": true,
+    "exploiter_frozen_before_chaos_evaluation": true,
+    "score_and_independent_chaos_policies_not_modified": true
+  }
+}

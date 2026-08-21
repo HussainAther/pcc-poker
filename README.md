@@ -545,3 +545,14 @@ information uptake narrowly and value-sensitive intervention clearly. No
 post-result retuning was performed. See
 `docs/PROSPECTIVE_SCORE_CONTROL_VALUE_INTERVENTION.md` and
 `docs/FROZEN_SCORE_CONTROL_VALUE_INTERVENTION_RESULT.md`.
+
+
+### Post-v0.8 strong Poker Chaos falsification
+
+The synthetic extension now includes a strong falsification of the shortcut **Chaos = randomness**. A deterministic value baseline and uniform-random baseline are compared with the existing Score and Independent Chaos-heavy policies. An Adaptive exploiter is selected using only predictable-baseline calibration outcomes and frozen before Chaos evaluation. Both Chaos families must combine higher unpredictability than predictable play, substantially better value than uniform randomness, and greater resistance to the frozen exploiter.
+
+```bash
+python -m pcc_poker chaos-strong-falsification --output validation/chaos-strong-falsification.json
+```
+
+The frozen post-v0.8 result passes across both families. Uniform random play has the highest entropy but far worse payoff, supporting **effective Chaos as value-preserving, exploitation-resistant unpredictability rather than randomness itself**. See `docs/POKER_CHAOS_STRONG_FALSIFICATION_PROTOCOL.md` and `docs/FROZEN_POKER_CHAOS_STRONG_FALSIFICATION_RESULT.md`. This does not alter the v0.8.0 human-facing freeze or authorize human-data analysis.
