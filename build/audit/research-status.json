@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "purpose": "Publication-oriented status summary of frozen synthetic PCC Poker claims. Human-data claims are intentionally excluded.",
+  "status_definitions": {
+    "confirmed": "All direct preregistered acceptance criteria represented by the source artifact passed.",
+    "partial": "The primary confirmation failed, but one or more prespecified component checks passed.",
+    "failed": "The represented claim failed its direct acceptance criterion without qualifying component support sufficient for partial status.",
+    "unresolved": "No conservative cross-family observable is currently selected for this claim/axis."
+  },
+  "counts": {
+    "confirmed": 5,
+    "partial": 6,
+    "failed": 2,
+    "unresolved": 2
+  },
+  "claims": [
+    {
+      "claim_id": "engineered-cycle",
+      "claim": "Frozen engineered PCC policies exhibit the prespecified balanced Pressure\u2192Chaos\u2192Control\u2192Pressure cycle.",
+      "status": "confirmed",
+      "evidence": "balanced_cycle_confirmed=True; edge_strength_ratio=1.553",
+      "source": "validation/balanced-cycle.json",
+      "scope": "synthetic frozen policy family"
+    },
+    {
+      "claim_id": "cycle-robustness",
+      "claim": "The frozen PCC cycle is robust across the prespecified temperature, purity, and match-length grid.",
+      "status": "partial",
+      "evidence": "cycle_fraction=0.750; no_mode_dominates_grid=True",
+      "source": "validation/robustness-grid.json",
+      "scope": "synthetic robustness surface"
+    },
+    {
+      "claim_id": "control-pressure-mechanism",
+      "claim": "Contextually aligned Control specifically improves performance against Pressure under matched counterfactual controls.",
+      "status": "confirmed",
+      "evidence": "passed 6/6 prespecified checks",
+      "source": "validation/control-pressure-mechanism.json",
+      "scope": "synthetic causal-mechanism intervention"
+    },
+    {
+      "claim_id": "generic-counterfactual-control",
+      "claim": "Generic model-alignment counterfactuals identify a Control-specific dependence across targets.",
+      "status": "failed",
+      "evidence": "failed: control_aligned_beats_swapped, control_aligned_beats_prior, control_model_dependence_is_discriminant, control_largest_for_at_least_two_targets",
+      "source": "validation/counterfactual-control.json",
+      "scope": "synthetic counterfactual intervention"
+    },
+    {
+      "claim_id": "temporal-control-observable",
+      "claim": "Public temporal-history prediction gain is a discriminant observational measure of Control.",
+      "status": "partial",
+      "evidence": "passed 2/4 prespecified checks; failed: control_correlation_at_least_0_20, control_correlation_discriminant",
+      "source": "validation/temporal-control.json",
+      "scope": "synthetic observational measurement"
+    },
+    {
+      "claim_id": "contextual-control-observable",
+      "claim": "Matched public-history likelihood contrast is a family-invariant observational measure of Control.",
+      "status": "partial",
+      "evidence": "cross_family_control_gap=0.602; passed 2/3 prespecified checks; failed: cross_family_control_gap_at_most_0_20",
+      "source": "validation/contextual-control-observable.json",
+      "scope": "two synthetic policy families"
+    },
+    {
+      "claim_id": "effective-chaos",
+      "claim": "Value-floor-weighted effective surprisal is a cross-family discriminant observational measure of Chaos.",
+      "status": "partial",
+      "evidence": "passed 3/4 prespecified checks; failed: all_families_discriminant",
+      "source": "validation/effective-chaos-validation.json",
+      "scope": "two synthetic policy families"
+    },
+    {
+      "claim_id": "chaos-control-decomposition",
+      "claim": "Conditioning on public history universally separates Control-linked surprise from Chaos-linked residual surprise.",
+      "status": "partial",
+      "evidence": "passed 2/4 prespecified checks; failed: independent_history_explained_is_control_discriminant_by_0_03, independent_residual_improves_chaos_margin_by_0_03",
+      "source": "validation/chaos-control-decomposition.json",
+      "scope": "two synthetic policy families"
+    },
+    {
+      "claim_id": "pressure-surprise-suppression",
+      "claim": "Public Pressure exposure universally explains the negative Pressure/effective-surprisal association and improves Chaos discrimination.",
+      "status": "partial",
+      "evidence": "passed 5/6 prespecified checks; failed: independent_chaos_margin_improves_by_0_03",
+      "source": "validation/pressure-surprise-decomposition.json",
+      "scope": "two synthetic policy families"
+    },
+    {
+      "claim_id": "family-invariant-pressure-panel",
+      "claim": "At least one conservative label-free Pressure observable is stable across both policy families.",
+      "status": "confirmed",
+      "evidence": "selected: pressure_exposure, predicted_fold_probability",
+      "source": "validation/family-invariant-panel.json",
+      "scope": "two synthetic policy families"
+    },
+    {
+      "claim_id": "family-invariant-control-panel",
+      "claim": "A conservative label-free Control observable is currently supported across both policy families.",
+      "status": "unresolved",
+      "evidence": "selected: none",
+      "source": "validation/family-invariant-panel.json",
+      "scope": "two synthetic policy families"
+    },
+    {
+      "claim_id": "family-invariant-chaos-panel",
+      "claim": "A conservative label-free Chaos observable is currently supported across both policy families.",
+      "status": "unresolved",
+      "evidence": "selected: none",
+      "source": "validation/family-invariant-panel.json",
+      "scope": "two synthetic policy families"
+    },
+    {
+      "claim_id": "implementation-invariant-supervised-coordinates",
+      "claim": "Supervised PCC coordinate recovery transfers invariantly between the Score and Independent policy families.",
+      "status": "failed",
+      "evidence": "Current supervised PCC coordinates are not implementation-invariant.",
+      "source": "validation/family-transfer-grid-summary.json",
+      "scope": "cross-family supervised transfer"
+    },
+    {
+      "claim_id": "synthetic-mixture-identifiability",
+      "claim": "Continuous synthetic PCC mixture weights are identifiable above the prespecified baselines within the development family.",
+      "status": "confirmed",
+      "evidence": "relative_mae_improvement_over_action_frequency=0.127; passed 2/2 prespecified checks",
+      "source": "validation/mixed-recovery.json",
+      "scope": "synthetic mixture recovery; not human construct validity"
+    },
+    {
+      "claim_id": "reproducibility-audit",
+      "claim": "The frozen synthetic validation bundle is complete and reproducibility-audit ready.",
+      "status": "confirmed",
+      "evidence": "reproducibility_ready=True; present=6/6",
+      "source": "validation/reproducibility-manifest.json",
+      "scope": "engineering/reproducibility"
+    }
+  ],
+  "missing_sources": []
+}

@@ -9,6 +9,26 @@ terminal payoff. It asks whether hidden action-selection objectives can be
 recovered from observable play and whether their interactions are conditionally
 non-transitive.
 
+
+## Live rolling PCC regime detector (exploratory)
+
+Interactive play now includes an online, rolling PCC evidence panel after each
+human decision. The detector reports `PRESSURE-LIKE`, `CHAOS-LIKE`,
+`CONTROL-LIKE`, or `MIXED` together with transparent 0--1 evidence scores and
+recent regime transitions.
+
+The detector is deliberately conservative: these are **exploratory behavioral
+observables, not ground-truth latent psychological states**. Current-decision
+classification does not use the opponent's private card, terminal payoff, or
+future actions. Pressure emphasizes constraint faced, Chaos requires surprising
+/diverse behavior moderated by an adequacy proxy, and Control emphasizes
+initiative plus immediate leverage.
+
+Run the normal interactive player and watch the panel update after your actions.
+Session JSONL rows now include `live_regime_evidence` and
+`live_regime_snapshot` for human decisions.
+See `docs/LIVE_REGIME_PROTOCOL.md` for the no-hindsight constraint, formulas, and scientific status.
+
 ## Scientific contract
 
 PCC modes are not poker actions or permanent player types.
@@ -556,3 +576,14 @@ python -m pcc_poker chaos-strong-falsification --output validation/chaos-strong-
 ```
 
 The frozen post-v0.8 result passes across both families. Uniform random play has the highest entropy but far worse payoff, supporting **effective Chaos as value-preserving, exploitation-resistant unpredictability rather than randomness itself**. See `docs/POKER_CHAOS_STRONG_FALSIFICATION_PROTOCOL.md` and `docs/FROZEN_POKER_CHAOS_STRONG_FALSIFICATION_RESULT.md`. This does not alter the v0.8.0 human-facing freeze or authorize human-data analysis.
+
+### Post-v0.8 two-sided Score-Control intervention
+
+The matched-state decomposition motivated one final one-shot architectural intervention: preserve the existing contextual aggression term and add a zero-centered check/call optionality response when the opponent resists folding. The passive gain is frozen prospectively at `1.24`; the original three-stage recovery gate is unchanged.
+
+```bash
+python -m pcc_poker score-control-two-sided-intervention \
+  --output validation/score-control-two-sided-intervention.json
+```
+
+The frozen outcome remains **partial**: Score passes information uptake and context alignment, but value-sensitive intervention remains below the preregistered correlation threshold. No additional coefficient tuning was performed.

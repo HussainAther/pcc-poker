@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "oria_preflight_passed": true,
+  "input_allowed": true,
+  "human_data_gate_closed": true,
+  "input": {
+    "path": "tests/fixtures/mock_handhq_oria.phhs",
+    "content_read": true,
+    "sha256": "cae0c1880353262817649b33e8ad3e3ec3778403958dea58ad41bfc2e7228716",
+    "bytes": 703,
+    "synthetic_fixture": true
+  },
+  "schema": {
+    "observed_source_fields": [
+      "actions",
+      "ante_trimming_status",
+      "antes",
+      "blinds_or_straddles",
+      "currency_symbol",
+      "day",
+      "hand",
+      "min_bet",
+      "month",
+      "players",
+      "seats",
+      "starting_stacks",
+      "table",
+      "time",
+      "time_zone_abbreviation",
+      "variant",
+      "venue",
+      "winnings",
+      "year"
+    ],
+    "planned_source_fields": [
+      "actions",
+      "ante_trimming_status",
+      "antes",
+      "blinds_or_straddles",
+      "currency_symbol",
+      "day",
+      "hand",
+      "min_bet",
+      "month",
+      "players",
+      "seats",
+      "starting_stacks",
+      "table",
+      "time",
+      "time_zone_abbreviation",
+      "variant",
+      "venue",
+      "winnings",
+      "year"
+    ],
+    "forbidden_source_fields": [
+      "currency_symbol",
+      "day",
+      "hand",
+      "month",
+      "players",
+      "table",
+      "time",
+      "time_zone_abbreviation",
+      "year"
+    ],
+    "outcome_fields": [
+      "winnings"
+    ],
+    "unknown_fields": [],
+    "missing_core_fields": []
+  },
+  "counts": {
+    "source_records": 1,
+    "sanitized_hands": 1,
+    "decision_rows": 6,
+    "study_player_ids": 3
+  },
+  "checks": {
+    "synthetic_fixture_location": true,
+    "synthetic_sentinel_present": true,
+    "schema_matches_planned_inventory": true,
+    "identifiers_scrubbed": true,
+    "forbidden_values_absent": true,
+    "outcomes_excluded_from_decision_rows": true,
+    "private_cards_excluded": true,
+    "audit_output_isolated": true
+  },
+  "errors": [],
+  "note": "Synthetic/mock-only ingestion preflight. No human HandHQ data were accessed or analyzed."
+}

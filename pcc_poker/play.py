@@ -10,6 +10,7 @@ from typing import Callable
 from .engine import State, apply_action, initial_state, utility, winner
 from .families import AdaptiveMixturePolicy
 from .policies import PURE_MIXTURES
+from .live_regime import LiveRegimeTracker, format_regime_panel
 
 RANK_NAMES = {0: "J", 1: "Q", 2: "K"}
 
@@ -57,6 +58,8 @@ def play_session(
     input_fn: Callable[[str], str] = input,
     output_fn: Callable[[str], None] = print,
     auto_human: bool = False,
+    live_regime: bool = True,
+    regime_window: int = 12,
 ) -> tuple[list[dict], dict]:
     """Play a seat-alternating session and return anonymous decision telemetry."""
     if hands < 1:
@@ -66,6 +69,7 @@ def play_session(
     records = []
     totals = [0.0, 0.0]
     human_total = 0.0
+    regime_tracker = LiveRegimeTracker(window=regime_window) if live_regime else None
     output_fn("PCC Poker — heads-up limit Leduc")
     output_fn(f"Opponent: {opponent_mode.title()} AI   Hands: {hands}")
 
@@ -87,6 +91,14 @@ def play_session(
                     action = _choose_human_action(state, input_fn, output_fn)
                 opponent.opponent_model.observe(state, action)
                 source = "human"
+                if regime_tracker is not None:
+                    evidence = regime_tracker.observe(state, action)
+                    snapshot = regime_tracker.rolling()
+                    for line in format_regime_panel(snapshot):
+                        output_fn(line)
+                else:
+                    evidence = None
+                    snapshot = None
             else:
                 decision = opponent.decide(state)
                 action = decision.action
@@ -108,6 +120,12 @@ def play_session(
                 "legal_actions": list(state.legal_actions()),
                 "history": list(state.history),
                 "action": action,
+                "live_regime_evidence": (
+                    evidence.as_dict() if source == "human" and evidence is not None else None
+                ),
+                "live_regime_snapshot": (
+                    snapshot.as_dict() if source == "human" and snapshot is not None else None
+                ),
             })
             state = apply_action(state, action)
 
@@ -142,6 +160,7 @@ def play_session(
         "ai_total": -human_total,
         "decisions": len(records),
         "note": "personal gameplay/debugging; not human-subject evidence",
+        "live_regime": regime_tracker.rolling().as_dict() if regime_tracker is not None else None,
     }
     output_fn(
         f"\nSession complete. You {human_total:+.1f} | "

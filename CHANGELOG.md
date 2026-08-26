@@ -1,3 +1,10 @@
+## 0.9.0-dev
+
+- Add exploratory rolling live PCC regime evidence during interactive human play.
+- Add PRESSURE-LIKE / CHAOS-LIKE / CONTROL-LIKE / MIXED labels, evidence bars, and transition history.
+- Persist per-decision live regime evidence and rolling snapshots in gameplay telemetry.
+- Add tests for online regime tracking without hindsight leakage.
+
 ## Unreleased
 
 - Add a post-v0.8 synthetic Control structural-recovery experiment using the frozen three-stage hypothesis `information uptake -> context alignment -> value-sensitive intervention`.
@@ -75,3 +82,11 @@ No release-hardening change authorizes human-data analysis or changes a frozen s
 - Both existing Chaos families pass unpredictability, value-preservation, and exploitability-resistance checks.
 - Uniform random play is maximally entropic but substantially worse strategically, directly supporting `Chaos != randomness`.
 - No v0.8 frozen artifact, human-facing measurement contract, or human-data gate is modified.
+
+## Post-v0.8 two-sided Score-Control intervention
+
+- Added a single prospective passive/optionality contextual response to Score-Control while preserving the existing aggressive context term.
+- Fixed passive gain at `1.24` from the preceding frozen matched-state decomposition, before recovery evaluation.
+- Reused the original Control structural-recovery seeds, stages, and thresholds unchanged.
+- Retained the partial result: information uptake and context alignment replicate, value-sensitive intervention does not.
+- No human data were accessed and the v0.8 human-facing freeze remains unchanged.
