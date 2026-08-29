@@ -1,0 +1,525 @@
+{
+  "status": "completed",
+  "design": {
+    "status": "prospective_pressure_decomposition",
+    "policy_version": "0.3.0",
+    "frozen_policy_sha256": "ec6020ea7903365c5437ab10bf813cd1a77ab7f62613e118048d613870c0f962",
+    "observed_policy_sha256": "ec6020ea7903365c5437ab10bf813cd1a77ab7f62613e118048d613870c0f962",
+    "control_policy_modified": false,
+    "pressure_variants": [
+      "full",
+      "no_fold_leverage",
+      "no_strength_selectivity"
+    ],
+    "replicates": 16,
+    "calibration_hands_per_seat": 250,
+    "evaluation_hands_per_seat": 500,
+    "calibration_seed": 111001,
+    "evaluation_seed": 121001,
+    "seed_stride": 2000,
+    "purity": 0.8,
+    "temperature": 0.35,
+    "minimum_attenuation": 0.5,
+    "common_random_numbers_within_alignment_comparison": true,
+    "seat_balanced": true
+  },
+  "estimand": "loss of Control contextual-alignment advantage after removing one engineered Pressure term",
+  "variant_summary": {
+    "full": {
+      "mean": 0.22899999999999998,
+      "standard_deviation": 0.1467546705673565,
+      "normal_95_interval": [
+        0.1570902114219953,
+        0.30090978857800466
+      ],
+      "replicates": 16
+    },
+    "no_fold_leverage": {
+      "mean": 0.1870625,
+      "standard_deviation": 0.13803210677230135,
+      "normal_95_interval": [
+        0.11942676768157233,
+        0.25469823231842764
+      ],
+      "replicates": 16
+    },
+    "no_strength_selectivity": {
+      "mean": -0.023124999999999996,
+      "standard_deviation": 0.03373005583551066,
+      "normal_95_interval": [
+        -0.03965272735940022,
+        -0.006597272640599772
+      ],
+      "replicates": 16
+    }
+  },
+  "full_minus_ablation": {
+    "no_fold_leverage": {
+      "mean": 0.04193749999999999,
+      "standard_deviation": 0.17523982376541394,
+      "normal_95_interval": [
+        -0.04393001364505285,
+        0.1278050136450528
+      ],
+      "replicates": 16
+    },
+    "no_strength_selectivity": {
+      "mean": 0.252125,
+      "standard_deviation": 0.14749276818429663,
+      "normal_95_interval": [
+        0.17985354358969463,
+        0.32439645641030534
+      ],
+      "replicates": 16
+    }
+  },
+  "attenuation_fraction_of_full_effect": {
+    "no_fold_leverage": 0.18313318777292573,
+    "no_strength_selectivity": 1.1009825327510918
+  },
+  "qualifying_mechanisms": [
+    "no_strength_selectivity"
+  ],
+  "prespecified_checks": {
+    "full_pressure_alignment_effect_positive": true,
+    "at_least_one_ablation_reduces_effect": true,
+    "qualifying_ablation_reduces_effect_by_threshold": true,
+    "frozen_control_policy_unchanged": true
+  },
+  "pressure_mechanism_decomposition_confirmed": true,
+  "rows": [
+    {
+      "replicate": 0,
+      "pressure_variant": "full",
+      "model_observations": 1150,
+      "common_evaluation_seed": 121001,
+      "aligned_payoff": 0.531,
+      "context_yoked_payoff": 0.297,
+      "alignment_effect": 0.23400000000000004
+    },
+    {
+      "replicate": 0,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1154,
+      "common_evaluation_seed": 121101,
+      "aligned_payoff": 0.143,
+      "context_yoked_payoff": -0.08499999999999999,
+      "alignment_effect": 0.22799999999999998
+    },
+    {
+      "replicate": 0,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1147,
+      "common_evaluation_seed": 121201,
+      "aligned_payoff": 0.308,
+      "context_yoked_payoff": 0.308,
+      "alignment_effect": 0.0
+    },
+    {
+      "replicate": 1,
+      "pressure_variant": "full",
+      "model_observations": 1134,
+      "common_evaluation_seed": 123001,
+      "aligned_payoff": 0.028000000000000004,
+      "context_yoked_payoff": -0.17099999999999999,
+      "alignment_effect": 0.19899999999999998
+    },
+    {
+      "replicate": 1,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1150,
+      "common_evaluation_seed": 123101,
+      "aligned_payoff": -0.05499999999999999,
+      "context_yoked_payoff": -0.17200000000000001,
+      "alignment_effect": 0.11700000000000002
+    },
+    {
+      "replicate": 1,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1144,
+      "common_evaluation_seed": 123201,
+      "aligned_payoff": 0.193,
+      "context_yoked_payoff": 0.22499999999999998,
+      "alignment_effect": -0.03199999999999997
+    },
+    {
+      "replicate": 2,
+      "pressure_variant": "full",
+      "model_observations": 1116,
+      "common_evaluation_seed": 125001,
+      "aligned_payoff": 0.091,
+      "context_yoked_payoff": -0.248,
+      "alignment_effect": 0.33899999999999997
+    },
+    {
+      "replicate": 2,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1109,
+      "common_evaluation_seed": 125101,
+      "aligned_payoff": 0.508,
+      "context_yoked_payoff": 0.008000000000000007,
+      "alignment_effect": 0.5
+    },
+    {
+      "replicate": 2,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1156,
+      "common_evaluation_seed": 125201,
+      "aligned_payoff": 0.248,
+      "context_yoked_payoff": 0.255,
+      "alignment_effect": -0.007000000000000006
+    },
+    {
+      "replicate": 3,
+      "pressure_variant": "full",
+      "model_observations": 1146,
+      "common_evaluation_seed": 127001,
+      "aligned_payoff": -0.18,
+      "context_yoked_payoff": -0.193,
+      "alignment_effect": 0.013000000000000012
+    },
+    {
+      "replicate": 3,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1125,
+      "common_evaluation_seed": 127101,
+      "aligned_payoff": 0.006000000000000005,
+      "context_yoked_payoff": -0.07400000000000001,
+      "alignment_effect": 0.08000000000000002
+    },
+    {
+      "replicate": 3,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1121,
+      "common_evaluation_seed": 127201,
+      "aligned_payoff": -0.05,
+      "context_yoked_payoff": 0.006,
+      "alignment_effect": -0.056
+    },
+    {
+      "replicate": 4,
+      "pressure_variant": "full",
+      "model_observations": 1149,
+      "common_evaluation_seed": 129001,
+      "aligned_payoff": 0.218,
+      "context_yoked_payoff": 0.15,
+      "alignment_effect": 0.068
+    },
+    {
+      "replicate": 4,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1116,
+      "common_evaluation_seed": 129101,
+      "aligned_payoff": 0.447,
+      "context_yoked_payoff": 0.289,
+      "alignment_effect": 0.15800000000000003
+    },
+    {
+      "replicate": 4,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1122,
+      "common_evaluation_seed": 129201,
+      "aligned_payoff": 0.501,
+      "context_yoked_payoff": 0.49,
+      "alignment_effect": 0.01100000000000001
+    },
+    {
+      "replicate": 5,
+      "pressure_variant": "full",
+      "model_observations": 1127,
+      "common_evaluation_seed": 131001,
+      "aligned_payoff": 0.14,
+      "context_yoked_payoff": -0.063,
+      "alignment_effect": 0.203
+    },
+    {
+      "replicate": 5,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1159,
+      "common_evaluation_seed": 131101,
+      "aligned_payoff": 0.05,
+      "context_yoked_payoff": 0.018000000000000002,
+      "alignment_effect": 0.032
+    },
+    {
+      "replicate": 5,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1124,
+      "common_evaluation_seed": 131201,
+      "aligned_payoff": 0.442,
+      "context_yoked_payoff": 0.442,
+      "alignment_effect": 0.0
+    },
+    {
+      "replicate": 6,
+      "pressure_variant": "full",
+      "model_observations": 1138,
+      "common_evaluation_seed": 133001,
+      "aligned_payoff": 0.314,
+      "context_yoked_payoff": 0.08199999999999996,
+      "alignment_effect": 0.23200000000000004
+    },
+    {
+      "replicate": 6,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1124,
+      "common_evaluation_seed": 133101,
+      "aligned_payoff": -0.28800000000000003,
+      "context_yoked_payoff": -0.33099999999999996,
+      "alignment_effect": 0.04299999999999993
+    },
+    {
+      "replicate": 6,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1118,
+      "common_evaluation_seed": 133201,
+      "aligned_payoff": 0.398,
+      "context_yoked_payoff": 0.501,
+      "alignment_effect": -0.10299999999999998
+    },
+    {
+      "replicate": 7,
+      "pressure_variant": "full",
+      "model_observations": 1156,
+      "common_evaluation_seed": 135001,
+      "aligned_payoff": 0.26,
+      "context_yoked_payoff": 0.218,
+      "alignment_effect": 0.04200000000000001
+    },
+    {
+      "replicate": 7,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1134,
+      "common_evaluation_seed": 135101,
+      "aligned_payoff": 0.373,
+      "context_yoked_payoff": 0.118,
+      "alignment_effect": 0.255
+    },
+    {
+      "replicate": 7,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1139,
+      "common_evaluation_seed": 135201,
+      "aligned_payoff": 0.355,
+      "context_yoked_payoff": 0.429,
+      "alignment_effect": -0.07400000000000001
+    },
+    {
+      "replicate": 8,
+      "pressure_variant": "full",
+      "model_observations": 1135,
+      "common_evaluation_seed": 137001,
+      "aligned_payoff": 0.08,
+      "context_yoked_payoff": -0.199,
+      "alignment_effect": 0.279
+    },
+    {
+      "replicate": 8,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1136,
+      "common_evaluation_seed": 137101,
+      "aligned_payoff": 0.29,
+      "context_yoked_payoff": 0.069,
+      "alignment_effect": 0.22099999999999997
+    },
+    {
+      "replicate": 8,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1126,
+      "common_evaluation_seed": 137201,
+      "aligned_payoff": 0.23600000000000002,
+      "context_yoked_payoff": 0.23600000000000002,
+      "alignment_effect": 0.0
+    },
+    {
+      "replicate": 9,
+      "pressure_variant": "full",
+      "model_observations": 1131,
+      "common_evaluation_seed": 139001,
+      "aligned_payoff": 0.409,
+      "context_yoked_payoff": 0.098,
+      "alignment_effect": 0.31099999999999994
+    },
+    {
+      "replicate": 9,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1156,
+      "common_evaluation_seed": 139101,
+      "aligned_payoff": 0.03799999999999999,
+      "context_yoked_payoff": 0.095,
+      "alignment_effect": -0.05700000000000001
+    },
+    {
+      "replicate": 9,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1160,
+      "common_evaluation_seed": 139201,
+      "aligned_payoff": 0.387,
+      "context_yoked_payoff": 0.39399999999999996,
+      "alignment_effect": -0.006999999999999951
+    },
+    {
+      "replicate": 10,
+      "pressure_variant": "full",
+      "model_observations": 1141,
+      "common_evaluation_seed": 141001,
+      "aligned_payoff": -0.064,
+      "context_yoked_payoff": -0.127,
+      "alignment_effect": 0.063
+    },
+    {
+      "replicate": 10,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1140,
+      "common_evaluation_seed": 141101,
+      "aligned_payoff": -0.096,
+      "context_yoked_payoff": -0.391,
+      "alignment_effect": 0.29500000000000004
+    },
+    {
+      "replicate": 10,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1145,
+      "common_evaluation_seed": 141201,
+      "aligned_payoff": 0.305,
+      "context_yoked_payoff": 0.305,
+      "alignment_effect": 0.0
+    },
+    {
+      "replicate": 11,
+      "pressure_variant": "full",
+      "model_observations": 1132,
+      "common_evaluation_seed": 143001,
+      "aligned_payoff": -0.281,
+      "context_yoked_payoff": -0.44299999999999995,
+      "alignment_effect": 0.16199999999999992
+    },
+    {
+      "replicate": 11,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1114,
+      "common_evaluation_seed": 143101,
+      "aligned_payoff": -0.10700000000000001,
+      "context_yoked_payoff": -0.188,
+      "alignment_effect": 0.08099999999999999
+    },
+    {
+      "replicate": 11,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1138,
+      "common_evaluation_seed": 143201,
+      "aligned_payoff": 0.337,
+      "context_yoked_payoff": 0.333,
+      "alignment_effect": 0.0040000000000000036
+    },
+    {
+      "replicate": 12,
+      "pressure_variant": "full",
+      "model_observations": 1133,
+      "common_evaluation_seed": 145001,
+      "aligned_payoff": 0.46299999999999997,
+      "context_yoked_payoff": -0.018000000000000002,
+      "alignment_effect": 0.481
+    },
+    {
+      "replicate": 12,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1168,
+      "common_evaluation_seed": 145101,
+      "aligned_payoff": 0.39699999999999996,
+      "context_yoked_payoff": 0.21799999999999997,
+      "alignment_effect": 0.179
+    },
+    {
+      "replicate": 12,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1116,
+      "common_evaluation_seed": 145201,
+      "aligned_payoff": 0.702,
+      "context_yoked_payoff": 0.749,
+      "alignment_effect": -0.04700000000000004
+    },
+    {
+      "replicate": 13,
+      "pressure_variant": "full",
+      "model_observations": 1109,
+      "common_evaluation_seed": 147001,
+      "aligned_payoff": 0.12599999999999997,
+      "context_yoked_payoff": -0.40299999999999997,
+      "alignment_effect": 0.5289999999999999
+    },
+    {
+      "replicate": 13,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1160,
+      "common_evaluation_seed": 147101,
+      "aligned_payoff": 0.20900000000000002,
+      "context_yoked_payoff": -0.138,
+      "alignment_effect": 0.34700000000000003
+    },
+    {
+      "replicate": 13,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1163,
+      "common_evaluation_seed": 147201,
+      "aligned_payoff": 0.341,
+      "context_yoked_payoff": 0.342,
+      "alignment_effect": -0.0010000000000000009
+    },
+    {
+      "replicate": 14,
+      "pressure_variant": "full",
+      "model_observations": 1135,
+      "common_evaluation_seed": 149001,
+      "aligned_payoff": 0.301,
+      "context_yoked_payoff": 0.1,
+      "alignment_effect": 0.20099999999999998
+    },
+    {
+      "replicate": 14,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1131,
+      "common_evaluation_seed": 149101,
+      "aligned_payoff": 0.049,
+      "context_yoked_payoff": -0.224,
+      "alignment_effect": 0.273
+    },
+    {
+      "replicate": 14,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1157,
+      "common_evaluation_seed": 149201,
+      "aligned_payoff": 0.152,
+      "context_yoked_payoff": 0.156,
+      "alignment_effect": -0.0040000000000000036
+    },
+    {
+      "replicate": 15,
+      "pressure_variant": "full",
+      "model_observations": 1117,
+      "common_evaluation_seed": 151001,
+      "aligned_payoff": 0.152,
+      "context_yoked_payoff": -0.15600000000000003,
+      "alignment_effect": 0.30800000000000005
+    },
+    {
+      "replicate": 15,
+      "pressure_variant": "no_fold_leverage",
+      "model_observations": 1099,
+      "common_evaluation_seed": 151101,
+      "aligned_payoff": 0.016,
+      "context_yoked_payoff": -0.225,
+      "alignment_effect": 0.241
+    },
+    {
+      "replicate": 15,
+      "pressure_variant": "no_strength_selectivity",
+      "model_observations": 1145,
+      "common_evaluation_seed": 151201,
+      "aligned_payoff": 0.355,
+      "context_yoked_payoff": 0.409,
+      "alignment_effect": -0.05399999999999999
+    }
+  ],
+  "warning": "This decomposes engineered Adaptive Pressure. It does not establish that human poker players instantiate these mechanisms."
+}
