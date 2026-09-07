@@ -1,4 +1,4 @@
-# PCC Poker
+# PCC Poker 
 
 An auditable empirical bridge between **Pressure–Control–Chaos (PCC)** theory
 and imperfect-information games.
@@ -59,9 +59,27 @@ Pressure, and a check is not intrinsically Control.
 - label-free, information-set behavioral measurements with hidden-card leakage tests;
 - disjoint calibration/evaluation validation across both policy families;
 - falsification-oriented reports and reproducible seeds.
+- cross-game-compatible additive-vs-context-interaction architecture export for Poker.
 
 No cyclic advantage is hardcoded. The initial simulations may or may not
 produce the proposed PCC cycle.
+
+
+## Cross-game architecture export (post-v0.8 synthetic extension)
+
+Poker now emits `validation/control-architecture-export.json` for the shared
+`pcc-cross-game` state-axes-vs-contextual-modulation falsification. The frozen
+Poker result is negative: adding `Control x context` worsens leave-one-agent-out
+prediction by about 4.1%, while `Pressure x context` improves it by about 7.9%.
+This makes Poker an evaluable **negative** cross-game architecture result rather
+than a missing-data case. See `docs/CONTROL_ARCHITECTURE_PROTOCOL.md`.
+
+Run:
+
+```bash
+python -m pcc_poker control-architecture-export \
+  --output validation/control-architecture-export.json
+```
 
 ## Play the game
 
@@ -587,3 +605,17 @@ python -m pcc_poker score-control-two-sided-intervention \
 ```
 
 The frozen outcome remains **partial**: Score passes information uptake and context alignment, but value-sensitive intervention remains below the preregistered correlation threshold. No additional coefficient tuning was performed.
+
+
+### Post-v0.8 mixed OOD observable-feature ablation
+
+The frozen mixed OOD result showed that contextual-history features improved continuous PCC mixture recovery under distribution shift, but did not identify which observable information layer produced the gain. A prospective nested ablation now decomposes the same frozen training and OOD evaluation data without using private cards, equity, outcomes, hidden weights, policy scores, or action probabilities:
+
+```bash
+python -m pcc_poker mixed-ood-ablation \
+  --training outputs/mixed-recovery-data.jsonl \
+  --ood outputs/mixed-ood-data.jsonl \
+  --output validation/mixed-ood-feature-ablation.json
+```
+
+Overall MAE falls monotonically from **0.14162 (M0 action frequencies)** to **0.11455 (+ public betting context)** to **0.11035 (+ public state intensity)** to **0.09339 (+ sequential history)**. The largest incremental gains come from betting context and sequential history. The balanced OOD region remains the negative case: action frequencies alone are best there. See `docs/MIXED_OOD_FEATURE_ABLATION_PROTOCOL.md` and `docs/FROZEN_MIXED_OOD_FEATURE_ABLATION_RESULT.md`.

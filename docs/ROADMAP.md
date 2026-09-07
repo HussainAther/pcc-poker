@@ -23,10 +23,10 @@
   preserving the calibrated model's observation and action-count margins. On
   fresh seeds, aligned contextual knowledge improves Control against Pressure
   across all nine robustness cells and more strongly than against Chaos.
-- [Next prospective test] Decompose the engineered Pressure component while
-  leaving frozen Control unchanged. Remove learned fold leverage or
-  equity-strength selectivity one at a time and test whether either ablation
-  removes at least half of the confirmed contextual-alignment advantage.
+- [Completed confirmation] Decompose the engineered Pressure component while
+  leaving frozen Control unchanged. Strength-selectivity removal eliminates the
+  positive contextual-alignment advantage; fold-leverage removal does not meet
+  the prespecified 50% attenuation threshold.
 
 ## Phase 2 — stronger game-theoretic baselines
 
@@ -58,3 +58,10 @@ A frozen matched/yoked public-history likelihood contrast was evaluated on fresh
 The synthetic construct-development phase is frozen for the next human-analysis stage. The canonical claim table is `validation/RESEARCH_STATUS.md`. Human confirmatory analysis is restricted to the cross-family-invariant Pressure panel (`pressure_exposure`, `predicted_fold_probability`); Control and Chaos remain exploratory/unresolved. The pre-human analysis protocol is frozen in `HUMAN_ANALYSIS_PREREGISTRATION.md` and cannot be changed in response to confirmatory evaluation outcomes without a documented versioned amendment.
 
 External release actions still pending outside this snapshot: create/push Git tag `v0.8.0`, publish the GitHub release, and archive that exact release in Zenodo.
+
+
+## Post-v0.8 mixed recovery frontier
+
+- [Completed] Continuous mixed-weight OOD recovery: contextual-history features beat action frequencies overall and in four of five prespecified simplex regions; balanced mixtures remain the negative case.
+- [Completed] Nested observable-feature ablation: betting context and sequential history account for most of the OOD advantage; public state/value-intensity summaries add a smaller gain; balanced remains action-frequency-favored.
+- [Next prospective test] Destroy within-hand sequence order while preserving per-hand action counts and public-state margins. Test whether M3's advantage over M2 attenuates, with Control-heavy mixtures as the prespecified focal region and all OOD regions retained.

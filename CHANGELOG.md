@@ -7,6 +7,12 @@
 
 ## Unreleased
 
+- Add a prospective nested observable-feature ablation for mixed PCC OOD recovery.
+- Keep private cards, showdown equity, terminal outcomes, hidden PCC targets, component scores, policy probabilities, and simulation seeds out of every predictor.
+- Decompose the frozen contextual advantage into public betting context, public state/value-intensity summaries, and within-hand sequential history.
+- Freeze a monotonic overall MAE improvement from 0.14162 (actions) to 0.11455 to 0.11035 to 0.09339; retain the balanced-region failure where action frequencies remain best.
+- Motivate a next prospective history-destruction/yoking experiment rather than tuning the balanced negative case.
+
 - Add a post-v0.8 synthetic Control structural-recovery experiment using the frozen three-stage hypothesis `information uptake -> context alignment -> value-sensitive intervention`.
 - Require positive, discriminant recovery independently in the Score and Adaptive implementation families; do not promote one-family success into the frozen human-facing panel.
 - Freeze the first structural-recovery result as partial: Adaptive passes all three stages, while Score passes none; leave the v0.8 human-facing Control axis unresolved.
@@ -18,6 +24,16 @@
 # Changelog
 
 All notable changes to PCC Poker are documented here.
+
+## Post-v0.8 synthetic extension — Poker cross-game architecture falsification
+
+- Add a normalized `control-architecture-export.json` for `pcc-cross-game`.
+- Estimate Pressure, Control, and Chaos signatures from disjoint signature seeds and evaluate behavior on separate outcome seeds across four opponent contexts.
+- Freeze leave-one-agent-out additive versus `P x context`, `C x context`, and `Chaos x context` comparisons.
+- Retain the negative primary result without retuning: `Control x context` worsens standardized MAE by ~4.1%, while `Pressure x context` improves it by ~7.9%.
+- Mark Poker as an evaluable negative architecture result; do not generalize the Blotto Control-modulation result unchanged to Leduc.
+- Preserve the frozen v0.8 human-facing measurement contract and human-data gate.
+
 
 ## v0.8.0 - Synthetic evidence freeze
 

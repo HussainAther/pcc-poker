@@ -16,42 +16,42 @@
       },
       "weight_correlations": {
         "context_alignment": {
-          "pressure": 0.004249224256440037,
-          "control": 0.3154372941437452,
-          "chaos": -0.34958641166414384
+          "pressure": 0.004249224256440064,
+          "control": 0.31543729414374533,
+          "chaos": -0.34958641166414417
         },
         "positive_context_gain": {
-          "pressure": 0.012252190348286654,
-          "control": 0.22040488212257933,
-          "chaos": -0.2538839136604607
+          "pressure": 0.01225219034828668,
+          "control": 0.22040488212257925,
+          "chaos": -0.25388391366046076
         },
         "control_efficiency": {
-          "pressure": 0.7022311679073795,
-          "control": -0.7539210772919571,
-          "chaos": 0.09744928210231493
+          "pressure": 0.7022311679073789,
+          "control": -0.7539210772919569,
+          "chaos": 0.09744928210231511
         },
         "regret": {
-          "pressure": -0.42262188367899634,
+          "pressure": -0.42262188367899656,
           "control": 0.5332224876610486,
-          "chaos": -0.14563616988560438
+          "chaos": -0.14563616988560443
         },
         "value_sensitive_intervention": {
-          "pressure": 0.08374226246818604,
-          "control": 0.13237985467907432,
-          "chaos": -0.23162741648716184
+          "pressure": 0.08374226246818606,
+          "control": 0.13237985467907434,
+          "chaos": -0.23162741648716195
         },
         "positive_context_rate": {
-          "pressure": 0.6236951977415524,
-          "control": -0.1887360878063654,
-          "chaos": -0.43966450775701166
+          "pressure": 0.6236951977415526,
+          "control": -0.18873608780636533,
+          "chaos": -0.4396645077570119
         },
         "low_efficiency_positive_context_rate": {
-          "pressure": -0.3030626954352439,
-          "control": 0.5236018287782894,
-          "chaos": -0.2589812925105193
+          "pressure": -0.303062695435244,
+          "control": 0.5236018287782891,
+          "chaos": -0.2589812925105194
         }
       },
-      "positive_gain_to_value_product_control_attenuation": 0.08802502744350502
+      "positive_gain_to_value_product_control_attenuation": 0.0880250274435049
     },
     "adaptive": {
       "groups": 80,
@@ -59,46 +59,46 @@
         "context_alignment": 0.0019804462080335802,
         "positive_context_gain": 0.020774517696521704,
         "control_efficiency": 0.9361206553901514,
-        "regret": 0.6476389624145502,
+        "regret": 0.6476389624145504,
         "value_sensitive_intervention": 0.01935094291309216,
         "positive_context_rate": 0.16752118904841048,
         "low_efficiency_positive_context_rate": 0.007604830987794871
       },
       "weight_correlations": {
         "context_alignment": {
-          "pressure": -0.34240775093937664,
-          "control": 0.5940829079771023,
-          "chaos": -0.2654466346909771
+          "pressure": -0.34240775093937653,
+          "control": 0.5940829079771021,
+          "chaos": -0.26544663469097723
         },
         "positive_context_gain": {
           "pressure": -0.1797177940160476,
-          "control": 0.3898593876319875,
-          "chaos": -0.21352867586752458
+          "control": 0.38985938763198763,
+          "chaos": -0.21352867586752455
         },
         "control_efficiency": {
-          "pressure": 0.7252921371593107,
-          "control": -0.787735007517564,
-          "chaos": 0.11477747867194411
+          "pressure": 0.7252921371593108,
+          "control": -0.7877350075175635,
+          "chaos": 0.1147774786719441
         },
         "regret": {
-          "pressure": -0.6095307014482201,
-          "control": 0.6619582326804614,
-          "chaos": -0.09641160261099538
+          "pressure": -0.6095307014482204,
+          "control": 0.6619582326804616,
+          "chaos": -0.09641160261099534
         },
         "value_sensitive_intervention": {
-          "pressure": -0.14146199572621998,
-          "control": 0.3330223215167156,
-          "chaos": -0.19293939204532504
+          "pressure": -0.14146199572621995,
+          "control": 0.33302232151671574,
+          "chaos": -0.192939392045325
         },
         "positive_context_rate": {
-          "pressure": 0.019598474355038715,
-          "control": 0.4354770018822821,
-          "chaos": -0.4311814965013107
+          "pressure": 0.019598474355038725,
+          "control": 0.43547700188228183,
+          "chaos": -0.43118149650131066
         },
         "low_efficiency_positive_context_rate": {
-          "pressure": -0.2634051775858522,
+          "pressure": -0.2634051775858523,
           "control": 0.43458620546049553,
-          "chaos": -0.18287876574550785
+          "chaos": -0.1828787657455078
         }
       },
       "positive_gain_to_value_product_control_attenuation": 0.056837066115271895

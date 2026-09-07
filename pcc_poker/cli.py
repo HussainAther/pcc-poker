@@ -15,6 +15,7 @@ from .mixed_ood import (
     analyze_mixed_ood_files,
     write_mixed_ood_dataset,
 )
+from .mixed_ood_ablation import analyze_mixed_ood_ablation_files
 
 from .counterfactual_control import write_counterfactual_control_validation
 from .chaos_control_decomposition import write_chaos_control_decomposition
@@ -22,6 +23,7 @@ from .effective_chaos_validation import write_effective_chaos_validation
 from .chaos_strong_falsification import write_chaos_strong_falsification
 from .control_mechanism import write_control_pressure_mechanism
 from .control_structural_recovery import write_control_structural_recovery
+from .control_architecture import write_control_architecture_export
 from .score_control_decomposition import write_score_control_decomposition
 from .score_control_intervention import write_score_control_intervention
 from .score_control_value_decomposition import write_score_control_value_decomposition
@@ -56,6 +58,25 @@ from .simulate import (
 
 
 
+
+
+def control_architecture_command(args) -> int:
+    report = write_control_architecture_export(
+        args.output,
+        agents=args.agents,
+        calibration_mixtures=args.calibration_mixtures,
+        calibration_hands_per_seat=args.calibration_hands_per_seat,
+        signature_replicates=args.signature_replicates,
+        outcome_replicates=args.outcome_replicates,
+        hands_per_seat=args.hands_per_seat,
+        seed=args.seed,
+    )
+    print(json.dumps({
+        "primary_pass": report["primary_pass"],
+        "relative_improvement": report["relative_improvement"],
+        "interaction_improvements": report["interaction_improvements"],
+    }, indent=2))
+    return 0
 
 
 def chaos_strong_falsification_command(args) -> int:
@@ -308,6 +329,16 @@ def mixed_ood_analyze_command(args) -> int:
 
     print(json.dumps(report, indent=2))
     return 0
+
+def mixed_ood_ablation_command(args) -> int:
+    report = analyze_mixed_ood_ablation_files(
+        args.training,
+        args.ood,
+        args.output,
+    )
+    print(json.dumps(report, indent=2))
+    return 0
+
 
 def mixed_dataset_command(args) -> int:
     records, summary = generate_mixed_dataset(
@@ -681,6 +712,15 @@ def parser() -> argparse.ArgumentParser:
     func=mixed_ood_analyze_command
     )
 
+    mixed_ood_ablation = commands.add_parser(
+    "mixed-ood-ablation",
+    help="decompose the observable feature layers driving mixed OOD recovery",
+    )
+    mixed_ood_ablation.add_argument("--training", required=True)
+    mixed_ood_ablation.add_argument("--ood", required=True)
+    mixed_ood_ablation.add_argument("--output", required=True)
+    mixed_ood_ablation.set_defaults(func=mixed_ood_ablation_command)
+
     family_dataset=commands.add_parser("family-dataset", help="generate data from one policy family");family_dataset.add_argument("--family",choices=["score","independent","adaptive"],required=True);family_dataset.add_argument("--mixtures",type=int,default=60);family_dataset.add_argument("--hands-per-seat",type=int,default=100);family_dataset.add_argument("--alpha",type=float,default=0.7);family_dataset.add_argument("--temperature",type=float,default=0.35);family_dataset.add_argument("--seed",type=int,required=True);family_dataset.add_argument("--output",required=True);family_dataset.set_defaults(func=family_dataset_command)
     family_transfer=commands.add_parser("family-transfer", help="train on one policy family and test another");family_transfer.add_argument("--training",required=True);family_transfer.add_argument("--transfer",required=True);family_transfer.add_argument("--output",required=True);family_transfer.set_defaults(func=family_transfer_command)
     transfer_grid=commands.add_parser("family-transfer-grid", help="replicate bidirectional family transfer");transfer_grid.add_argument("--score-seeds",type=int,nargs="+",default=[61,62,63,64,65]);transfer_grid.add_argument("--independent-seeds",type=int,nargs="+",default=[71,72,73,74,75]);transfer_grid.add_argument("--mixtures",type=int,default=40);transfer_grid.add_argument("--hands-per-seat",type=int,default=75);transfer_grid.add_argument("--alpha",type=float,default=0.7);transfer_grid.add_argument("--shuffle-repetitions",type=int,default=10);transfer_grid.add_argument("--output",required=True);transfer_grid.set_defaults(func=family_transfer_grid_command)
@@ -772,6 +812,16 @@ def parser() -> argparse.ArgumentParser:
     oria_preflight.add_argument("--input", default="tests/fixtures/mock_handhq_oria.phhs")
     oria_preflight.add_argument("--output", default="build/audit/oria-ingestion-preflight.json")
     oria_preflight.set_defaults(func=oria_ingestion_preflight_command)
+    architecture=commands.add_parser("control-architecture-export", help="run Poker additive-vs-context-modulation architecture falsification")
+    architecture.add_argument("--output", default="validation/control-architecture-export.json")
+    architecture.add_argument("--agents", type=int, default=12)
+    architecture.add_argument("--calibration-mixtures", type=int, default=20)
+    architecture.add_argument("--calibration-hands-per-seat", type=int, default=30)
+    architecture.add_argument("--signature-replicates", type=int, default=3)
+    architecture.add_argument("--outcome-replicates", type=int, default=3)
+    architecture.add_argument("--hands-per-seat", type=int, default=60)
+    architecture.add_argument("--seed", type=int, default=9101)
+    architecture.set_defaults(func=control_architecture_command)
     release_check=commands.add_parser("release-check", help="run read-only v0.8.0 release hygiene checks")
     release_check.add_argument("--root", default=".")
     release_check.set_defaults(func=release_check_command)
