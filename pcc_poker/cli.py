@@ -16,6 +16,7 @@ from .mixed_ood import (
     write_mixed_ood_dataset,
 )
 from .mixed_ood_ablation import analyze_mixed_ood_ablation_files
+from .mixed_ood_history_destruction import analyze_mixed_ood_history_destruction_files
 
 from .counterfactual_control import write_counterfactual_control_validation
 from .chaos_control_decomposition import write_chaos_control_decomposition
@@ -335,6 +336,15 @@ def mixed_ood_ablation_command(args) -> int:
         args.training,
         args.ood,
         args.output,
+    )
+    print(json.dumps(report, indent=2))
+    return 0
+
+
+def mixed_ood_history_destruction_command(args) -> int:
+    seeds = tuple(range(args.seed, args.seed + args.permutations))
+    report = analyze_mixed_ood_history_destruction_files(
+        args.training, args.ood, args.output, permutation_seeds=seeds
     )
     print(json.dumps(report, indent=2))
     return 0
@@ -720,6 +730,17 @@ def parser() -> argparse.ArgumentParser:
     mixed_ood_ablation.add_argument("--ood", required=True)
     mixed_ood_ablation.add_argument("--output", required=True)
     mixed_ood_ablation.set_defaults(func=mixed_ood_ablation_command)
+
+    mixed_ood_history = commands.add_parser(
+    "mixed-ood-history-destruction",
+    help="destroy within-hand action order while preserving counts/state margins",
+    )
+    mixed_ood_history.add_argument("--training", required=True)
+    mixed_ood_history.add_argument("--ood", required=True)
+    mixed_ood_history.add_argument("--output", required=True)
+    mixed_ood_history.add_argument("--permutations", type=int, default=25)
+    mixed_ood_history.add_argument("--seed", type=int, default=88001)
+    mixed_ood_history.set_defaults(func=mixed_ood_history_destruction_command)
 
     family_dataset=commands.add_parser("family-dataset", help="generate data from one policy family");family_dataset.add_argument("--family",choices=["score","independent","adaptive"],required=True);family_dataset.add_argument("--mixtures",type=int,default=60);family_dataset.add_argument("--hands-per-seat",type=int,default=100);family_dataset.add_argument("--alpha",type=float,default=0.7);family_dataset.add_argument("--temperature",type=float,default=0.35);family_dataset.add_argument("--seed",type=int,required=True);family_dataset.add_argument("--output",required=True);family_dataset.set_defaults(func=family_dataset_command)
     family_transfer=commands.add_parser("family-transfer", help="train on one policy family and test another");family_transfer.add_argument("--training",required=True);family_transfer.add_argument("--transfer",required=True);family_transfer.add_argument("--output",required=True);family_transfer.set_defaults(func=family_transfer_command)

@@ -64,4 +64,5 @@ External release actions still pending outside this snapshot: create/push Git ta
 
 - [Completed] Continuous mixed-weight OOD recovery: contextual-history features beat action frequencies overall and in four of five prespecified simplex regions; balanced mixtures remain the negative case.
 - [Completed] Nested observable-feature ablation: betting context and sequential history account for most of the OOD advantage; public state/value-intensity summaries add a smaller gain; balanced remains action-frequency-favored.
-- [Next prospective test] Destroy within-hand sequence order while preserving per-hand action counts and public-state margins. Test whether M3's advantage over M2 attenuates, with Control-heavy mixtures as the prespecified focal region and all OOD regions retained.
+- [Completed partial/null] Destroy within-hand sequence order while preserving M0-M2 and per-hand action counts. Overall M3 gain attenuated 38.8% and Control-heavy 28.2%, failing the frozen 50% criteria; Chaos-heavy attenuated 90.4%. The strong temporal-order interpretation is not supported.
+- [Next prospective test] Decompose the transition block into unordered adjacent-pair composition, directionless transitions, run-length/persistence statistics, and fully directed transitions to identify what drives the surviving Control-heavy signal.

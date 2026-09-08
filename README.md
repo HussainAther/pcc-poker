@@ -619,3 +619,15 @@ python -m pcc_poker mixed-ood-ablation \
 ```
 
 Overall MAE falls monotonically from **0.14162 (M0 action frequencies)** to **0.11455 (+ public betting context)** to **0.11035 (+ public state intensity)** to **0.09339 (+ sequential history)**. The largest incremental gains come from betting context and sequential history. The balanced OOD region remains the negative case: action frequencies alone are best there. See `docs/MIXED_OOD_FEATURE_ABLATION_PROTOCOL.md` and `docs/FROZEN_MIXED_OOD_FEATURE_ABLATION_RESULT.md`.
+
+
+### Post-v0.8 mixed OOD history-destruction control
+
+The sequential-history ablation was followed by a yoked negative control that destroys within-hand action order only inside the transition-feature block while holding M0-M2 fixed exactly. Across 25 deterministic permutations, the original overall M2 -> M3 gain attenuated by 38.8%, and the Control-heavy gain attenuated by 28.2%; both failed the prespecified 50% criterion. Chaos-heavy showed a much stronger 90.4% attenuation. See `docs/FROZEN_MIXED_OOD_HISTORY_DESTRUCTION_RESULT.md`.
+
+```bash
+python -m pcc_poker mixed-ood-history-destruction \
+  --training outputs/mixed-recovery-data.jsonl \
+  --ood outputs/mixed-ood-data.jsonl \
+  --output validation/mixed-ood-history-destruction.json
+```

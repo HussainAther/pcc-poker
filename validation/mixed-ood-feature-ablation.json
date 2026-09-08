@@ -1,0 +1,332 @@
+{
+  "status": "completed",
+  "design": "nested_observable_feature_ablation",
+  "prediction_target": "continuous_pressure_control_chaos_weights",
+  "training_distribution": "ordinary_dirichlet_mixtures",
+  "evaluation_distribution": "prespecified_ood_simplex_regions",
+  "observable_features_only": true,
+  "forbidden_predictor_fields": [
+    "action_probabilities",
+    "component_scores",
+    "hidden_pcc_weights",
+    "private_rank",
+    "showdown_equity",
+    "simulation_seed",
+    "target_pcc_weights",
+    "terminal_payoff"
+  ],
+  "models": {
+    "M0": "action frequencies only",
+    "M1": "M0 + public betting context (round x facing-bet action rates)",
+    "M2": "M1 + public state/value-intensity summaries (pot, to-call, legal actions, round, decisions/hand, seat)",
+    "M3": "M2 + within-hand action-transition history"
+  },
+  "train_examples": 120,
+  "ood_test_examples": 200,
+  "overall": {
+    "M0": {
+      "label": "action_frequencies",
+      "feature_count": 5,
+      "mae": 0.14161946118236884,
+      "rmse": 0.18768134543593054,
+      "per_mode_mae": {
+        "pressure": 0.07505188261786193,
+        "control": 0.15255959775615097,
+        "chaos": 0.1972469031730936
+      },
+      "dominant_mode_accuracy": 0.845
+    },
+    "M1": {
+      "label": "public_betting_context",
+      "feature_count": 25,
+      "mae": 0.11455370545216392,
+      "rmse": 0.1500708124014752,
+      "per_mode_mae": {
+        "pressure": 0.06060547815827774,
+        "control": 0.12101694910612462,
+        "chaos": 0.16203868909208943
+      },
+      "dominant_mode_accuracy": 0.85
+    },
+    "M2": {
+      "label": "public_state_intensity",
+      "feature_count": 31,
+      "mae": 0.11034617323173081,
+      "rmse": 0.1453417385002938,
+      "per_mode_mae": {
+        "pressure": 0.06132582764688247,
+        "control": 0.116878729006813,
+        "chaos": 0.15283396304149696
+      },
+      "dominant_mode_accuracy": 0.86
+    },
+    "M3": {
+      "label": "sequential_history",
+      "feature_count": 56,
+      "mae": 0.0933926603747962,
+      "rmse": 0.1275146058804743,
+      "per_mode_mae": {
+        "pressure": 0.054931591873353496,
+        "control": 0.1087746679276234,
+        "chaos": 0.11647172132341169
+      },
+      "dominant_mode_accuracy": 0.865
+    }
+  },
+  "incremental_effects": {
+    "M0_to_M1": {
+      "mae_change": -0.02706575573020492,
+      "relative_improvement": 0.19111607616802964,
+      "improves_mae": true
+    },
+    "M1_to_M2": {
+      "mae_change": -0.004207532220433116,
+      "relative_improvement": 0.03672977843732977,
+      "improves_mae": true
+    },
+    "M2_to_M3": {
+      "mae_change": -0.01695351285693461,
+      "relative_improvement": 0.15363933664769364,
+      "improves_mae": true
+    }
+  },
+  "best_overall_model_by_mae": "M3",
+  "by_region": {
+    "pressure_heavy": {
+      "examples": 40,
+      "models": {
+        "M0": {
+          "mae": 0.14107284848944465,
+          "rmse": 0.16652234484235068,
+          "per_mode_mae": {
+            "pressure": 0.16629803389027478,
+            "control": 0.09327154145139901,
+            "chaos": 0.16364897012666013
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M1": {
+          "mae": 0.08490180698595257,
+          "rmse": 0.10349386505183138,
+          "per_mode_mae": {
+            "pressure": 0.1024053008211124,
+            "control": 0.04053841703066367,
+            "chaos": 0.11176170310608162
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M2": {
+          "mae": 0.08002811914639434,
+          "rmse": 0.09911768179580266,
+          "per_mode_mae": {
+            "pressure": 0.10688133176729478,
+            "control": 0.041124386990279926,
+            "chaos": 0.0920786386816083
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M3": {
+          "mae": 0.0751400357525207,
+          "rmse": 0.09196159414369712,
+          "per_mode_mae": {
+            "pressure": 0.08170182217813249,
+            "control": 0.10527345061141564,
+            "chaos": 0.038444834468013944
+          },
+          "dominant_mode_accuracy": 1.0
+        }
+      },
+      "best_model_by_mae": "M3"
+    },
+    "control_heavy": {
+      "examples": 40,
+      "models": {
+        "M0": {
+          "mae": 0.16381632211722097,
+          "rmse": 0.21841022049469552,
+          "per_mode_mae": {
+            "pressure": 0.0445357081530336,
+            "control": 0.20293766411039074,
+            "chaos": 0.2439755940882386
+          },
+          "dominant_mode_accuracy": 0.9
+        },
+        "M1": {
+          "mae": 0.13292681963459657,
+          "rmse": 0.17728968905893658,
+          "per_mode_mae": {
+            "pressure": 0.042974479818817066,
+            "control": 0.1583879870687457,
+            "chaos": 0.19741799201622695
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M2": {
+          "mae": 0.12634181405578876,
+          "rmse": 0.1692533731395667,
+          "per_mode_mae": {
+            "pressure": 0.044734388364138754,
+            "control": 0.1480717949201341,
+            "chaos": 0.18621925888309349
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M3": {
+          "mae": 0.06603331995327323,
+          "rmse": 0.09972924223675463,
+          "per_mode_mae": {
+            "pressure": 0.03168140412661524,
+            "control": 0.0736201958988674,
+            "chaos": 0.09279835983433707
+          },
+          "dominant_mode_accuracy": 1.0
+        }
+      },
+      "best_model_by_mae": "M3"
+    },
+    "chaos_heavy": {
+      "examples": 40,
+      "models": {
+        "M0": {
+          "mae": 0.23157071385327124,
+          "rmse": 0.2684113113326266,
+          "per_mode_mae": {
+            "pressure": 0.08595639642344503,
+            "control": 0.2614816277837752,
+            "chaos": 0.3472741173525935
+          },
+          "dominant_mode_accuracy": 0.95
+        },
+        "M1": {
+          "mae": 0.1796517713812134,
+          "rmse": 0.20979918535927342,
+          "per_mode_mae": {
+            "pressure": 0.07223903505391814,
+            "control": 0.19754018899964781,
+            "chaos": 0.26917609009007426
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M2": {
+          "mae": 0.17311881863997206,
+          "rmse": 0.20467261178231824,
+          "per_mode_mae": {
+            "pressure": 0.07100959422258313,
+            "control": 0.18870547651403582,
+            "chaos": 0.25964138518329727
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M3": {
+          "mae": 0.1571058374960378,
+          "rmse": 0.19191701653479903,
+          "per_mode_mae": {
+            "pressure": 0.06396283227569768,
+            "control": 0.17412207362064924,
+            "chaos": 0.23323260659176642
+          },
+          "dominant_mode_accuracy": 1.0
+        }
+      },
+      "best_model_by_mae": "M3"
+    },
+    "balanced": {
+      "examples": 40,
+      "models": {
+        "M0": {
+          "mae": 0.04829595546855101,
+          "rmse": 0.065343781398985,
+          "per_mode_mae": {
+            "pressure": 0.024635697487098568,
+            "control": 0.053644037789044044,
+            "chaos": 0.06660813112951045
+          },
+          "dominant_mode_accuracy": 0.6
+        },
+        "M1": {
+          "mae": 0.07276707458033851,
+          "rmse": 0.09514895838090073,
+          "per_mode_mae": {
+            "pressure": 0.032421853923800904,
+            "control": 0.0787226868291756,
+            "chaos": 0.10715668298803904
+          },
+          "dominant_mode_accuracy": 0.525
+        },
+        "M2": {
+          "mae": 0.07243183588182246,
+          "rmse": 0.09432696114853409,
+          "per_mode_mae": {
+            "pressure": 0.03045871282931631,
+            "control": 0.0800046137477312,
+            "chaos": 0.10683218106841982
+          },
+          "dominant_mode_accuracy": 0.5
+        },
+        "M3": {
+          "mae": 0.07549014193355962,
+          "rmse": 0.1027615429276309,
+          "per_mode_mae": {
+            "pressure": 0.039500660008883116,
+            "control": 0.07982182707313315,
+            "chaos": 0.10714793871866254
+          },
+          "dominant_mode_accuracy": 0.475
+        }
+      },
+      "best_model_by_mae": "M0"
+    },
+    "boundary": {
+      "examples": 40,
+      "models": {
+        "M0": {
+          "mae": 0.12334146598335627,
+          "rmse": 0.1561226426757202,
+          "per_mode_mae": {
+            "pressure": 0.05383357713545768,
+            "control": 0.15146311764614576,
+            "chaos": 0.16472770316846536
+          },
+          "dominant_mode_accuracy": 0.775
+        },
+        "M1": {
+          "mae": 0.1025210546787186,
+          "rmse": 0.1318886168925416,
+          "per_mode_mae": {
+            "pressure": 0.05298672117374019,
+            "control": 0.1298954656023903,
+            "chaos": 0.12468097726002533
+          },
+          "dominant_mode_accuracy": 0.725
+        },
+        "M2": {
+          "mae": 0.0998102784346764,
+          "rmse": 0.12791259505783992,
+          "per_mode_mae": {
+            "pressure": 0.053545111051079376,
+            "control": 0.12648737286188388,
+            "chaos": 0.11939835139106594
+          },
+          "dominant_mode_accuracy": 0.8
+        },
+        "M3": {
+          "mae": 0.09319396673858964,
+          "rmse": 0.1245188382101698,
+          "per_mode_mae": {
+            "pressure": 0.05781124077743893,
+            "control": 0.11103579243405153,
+            "chaos": 0.1107348670042784
+          },
+          "dominant_mode_accuracy": 0.85
+        }
+      },
+      "best_model_by_mae": "M3"
+    }
+  },
+  "prespecified_checks": {
+    "at_least_one_context_layer_improves_over_M0": true,
+    "full_M3_beats_M0_overall": true,
+    "balanced_region_retained_without_tuning": true
+  },
+  "warning": "This is a synthetic identifiability decomposition. It does not establish human PCC constructs, and it intentionally excludes private cards, equity, terminal outcomes, and hidden policy internals."
+}

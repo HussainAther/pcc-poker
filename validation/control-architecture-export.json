@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "game": "poker",
+  "additive_standardized_mae": 0.3184590092982832,
+  "control_context_standardized_mae": 0.3314966110488376,
+  "relative_improvement": -0.04093965430364947,
+  "primary_pass": false,
+  "targets_improved": [
+    "action_entropy"
+  ],
+  "targets_total": 4,
+  "interaction_improvements": {
+    "pressure": 0.07926413938504936,
+    "control": -0.04093965430364947,
+    "chaos": 0.03923849325054684
+  },
+  "control_interaction_disproportionate": false,
+  "per_target": {
+    "additive": {
+      "mean_payoff": 0.6479861379877397,
+      "aggression_rate": 0.1318514422704598,
+      "fold_rate": 0.3133380345778618,
+      "action_entropy": 0.18066042235707136
+    },
+    "control_interaction": {
+      "mean_payoff": 0.6785668414750513,
+      "aggression_rate": 0.15009200562563996,
+      "fold_rate": 0.31786141827179265,
+      "action_entropy": 0.1794661788228665
+    }
+  },
+  "design": {
+    "agents": 12,
+    "contexts": [
+      "balanced",
+      "pressure",
+      "control",
+      "chaos"
+    ],
+    "targets": [
+      "mean_payoff",
+      "aggression_rate",
+      "fold_rate",
+      "action_entropy"
+    ],
+    "signature_replicates": 3,
+    "outcome_replicates": 3,
+    "hands_per_seat": 60,
+    "cross_validation": "leave-one-agent-out",
+    "signature_outcome_seeds_disjoint": true,
+    "latent_pcc_weights_in_generator": true,
+    "latent_pcc_weights_used_as_regression_predictors": false,
+    "control_signature": "frozen aligned-vs-context-yoked public-history log-likelihood advantage",
+    "pressure_signature": "observed aggressive-action rate",
+    "chaos_signature": "observed action entropy"
+  },
+  "thresholds": {
+    "minimum_relative_improvement": 0.05,
+    "minimum_targets_improved": 2
+  },
+  "guardrail": "This evaluates architectural organization in engineered synthetic PCC-mixture agents; unlike Blotto v1.1 it is not an emergence-without-latent-PCC experiment.",
+  "rows": [
+    {
+      "agent_index": 0,
+      "context": "balanced",
+      "pressure_signature": 0.7469211156839769,
+      "control_signature": 0.003157151635061467,
+      "chaos_signature": 1.3395352176647106,
+      "mean_payoff": 0.4833333333333334,
+      "aggression_rate": 0.7399922644498487,
+      "fold_rate": 0.05628677216107477,
+      "action_entropy": 1.3504415181296892
+    },
+    {
+      "agent_index": 0,
+      "context": "pressure",
+      "pressure_signature": 0.7469211156839769,
+      "control_signature": 0.003157151635061467,
+      "chaos_signature": 1.3395352176647106,
+      "mean_payoff": -0.22777777777777772,
+      "aggression_rate": 0.6302738503128907,
+      "fold_rate": 0.09196496180797449,
+      "action_entropy": 1.4006012228267621
+    },
+    {
+      "agent_index": 0,
+      "context": "control",
+      "pressure_signature": 0.7469211156839769,
+      "control_signature": 0.003157151635061467,
+      "chaos_signature": 1.3395352176647106,
+      "mean_payoff": 0.4583333333333333,
+      "aggression_rate": 0.8181210407487779,
+      "fold_rate": 0.019955245320208825,
+      "action_entropy": 1.12318814084531
+    },
+    {
+      "agent_index": 0,
+      "context": "chaos",
+      "pressure_signature": 0.7469211156839769,
+      "control_signature": 0.003157151635061467,
+      "chaos_signature": 1.3395352176647106,
+      "mean_payoff": -0.4166666666666667,
+      "aggression_rate": 0.7894703673350829,
+      "fold_rate": 0.032773524533382205,
+      "action_entropy": 1.258939794962035
+    },
+    {
+      "agent_index": 1,
+      "context": "balanced",
+      "pressure_signature": 0.6905153999318703,
+      "control_signature": -0.0012562938305072213,
+      "chaos_signature": 1.3989572695195298,
+      "mean_payoff": 0.425,
+      "aggression_rate": 0.696105970179246,
+      "fold_rate": 0.04556476569407603,
+      "action_entropy": 1.3972340187614625
+    },
+    {
+      "agent_index": 1,
+      "context": "pressure",
+      "pressure_signature": 0.6905153999318703,
+      "control_signature": -0.0012562938305072213,
+      "chaos_signature": 1.3989572695195298,
+      "mean_payoff": -1.6027777777777779,
+      "aggression_rate": 0.5800938595957753,
+      "fold_rate": 0.07636076141823268,
+      "action_entropy": 1.4286615324875516
+    },
+    {
+      "agent_index": 1,
+      "context": "control",
+      "pressure_signature": 0.6905153999318703,
+      "control_signature": -0.0012562938305072213,
+      "chaos_signature": 1.3989572695195298,
+      "mean_payoff": 0.1722222222222222,
+      "aggression_rate": 0.7331930775896115,
+      "fold_rate": 0.024859691906418555,
+      "action_entropy": 1.2424829550460792
+    },
+    {
+      "agent_index": 1,
+      "context": "chaos",
+      "pressure_signature": 0.6905153999318703,
+      "control_signature": -0.0012562938305072213,
+      "chaos_signature": 1.3989572695195298,
+      "mean_payoff": -0.8305555555555556,
+      "aggression_rate": 0.7223719457290864,
+      "fold_rate": 0.03997068222949739,
+      "action_entropy": 1.350993476878419
+    },
+    {
+      "agent_index": 2,
+      "context": "balanced",
+      "pressure_signature": 0.3899896052245045,
+      "control_signature": 0.00636787086188112,
+      "chaos_signature": 1.5673103414450855,
+      "mean_payoff": -0.10833333333333335,
+      "aggression_rate": 0.38108569683671334,
+      "fold_rate": 0.12047367830283984,
+      "action_entropy": 1.5719509277210664
+    },
+    {
+      "agent_index": 2,
+      "context": "pressure",
+      "pressure_signature": 0.3899896052245045,
+      "control_signature": 0.00636787086188112,
+      "chaos_signature": 1.5673103414450855,
+      "mean_payoff": -0.6166666666666666,
+      "aggression_rate": 0.3490836686787391,
+      "fold_rate": 0.17219041521858422,
+      "action_entropy": 1.5559836650426904
+    },
+    {
+      "agent_index": 2,
+      "context": "control",
+      "pressure_signature": 0.3899896052245045,
+      "control_signature": 0.00636787086188112,
+      "chaos_signature": 1.5673103414450855,
+      "mean_payoff": 0.2583333333333333,
+      "aggression_rate": 0.4149758546817985,
+      "fold_rate": 0.05276724987681088,
+      "action_entropy": 1.3514475033403184
+    },
+    {
+      "agent_index": 2,
+      "context": "chaos",
+      "pressure_signature": 0.3899896052245045,
+      "control_signature": 0.00636787086188112,
+      "chaos_signature": 1.5673103414450855,
+      "mean_payoff": -0.019444444444444448,
+      "aggression_rate": 0.3925467637888504,
+      "fold_rate": 0.11177606476879225,
+      "action_entropy": 1.5358746062432704
+    },
+    {
+      "agent_index": 3,
+      "context": "balanced",
+      "pressure_signature": 0.8524300275814737,
+      "control_signature": 0.008339935144420892,
+      "chaos_signature": 1.1445693227880909,
+      "mean_payoff": 1.636111111111111,
+      "aggression_rate": 0.8698473098954578,
+      "fold_rate": 0.02834427098619069,
+      "action_entropy": 1.1016905326002988
+    },
+    {
+      "agent_index": 3,
+      "context": "pressure",
+      "pressure_signature": 0.8524300275814737,
+      "control_signature": 0.008339935144420892,
+      "chaos_signature": 1.1445693227880909,
+      "mean_payoff": -1.7833333333333334,
+      "aggression_rate": 0.7153060142503063,
+      "fold_rate": 0.06301159375834313,
+      "action_entropy": 1.2806028457370202
+    },
+    {
+      "agent_index": 3,
+      "context": "control",
+      "pressure_signature": 0.8524300275814737,
+      "control_signature": 0.008339935144420892,
+      "chaos_signature": 1.1445693227880909,
+      "mean_payoff": 1.2972222222222223,
+      "aggression_rate": 0.9205685563082912,
+      "fold_rate": 0.011450530586766544,
+      "action_entropy": 0.9008814757840599
+    },
+    {
+      "agent_index": 3,
+      "context": "chaos",
+      "pressure_signature": 0.8524300275814737,
+      "control_signature": 0.008339935144420892,
+      "chaos_signature": 1.1445693227880909,
+      "mean_payoff": 0.20555555555555557,
+      "aggression_rate": 0.8792627569361263,
+      "fold_rate": 0.02427161883621723,
+      "action_entropy": 1.085161850665868
+    },
+    {
+      "agent_index": 4,
+      "context": "balanced",
+      "pressure_signature": 0.18533522512429512,
+      "control_signature": 0.029735403171292512,
+      "chaos_signature": 1.4220071694510343,
+      "mean_payoff": -0.7833333333333333,
+      "aggression_rate": 0.1960549366234411,
+      "fold_rate": 0.12860841285858135,
+      "action_entropy": 1.4249705072085022
+    },
+    {
+      "agent_index": 4,
+      "context": "pressure",
+      "pressure_signature": 0.18533522512429512,
+      "control_signature": 0.029735403171292512,
+      "chaos_signature": 1.4220071694510343,
+      "mean_payoff": -0.7083333333333334,
+      "aggression_rate": 0.18736306971601088,
+      "fold_rate": 0.15488627443086644,
+      "action_entropy": 1.4220473462931527
+    },
+    {
+      "agent_index": 4,
+      "context": "control",
+      "pressure_signature": 0.18533522512429512,
+      "control_signature": 0.029735403171292512,
+      "chaos_signature": 1.4220071694510343,
+      "mean_payoff": -0.04444444444444443,
+      "aggression_rate": 0.16825074062865011,
+      "fold_rate": 0.04307070649979844,
+      "action_entropy": 1.0652076016699525
+    },
+    {
+      "agent_index": 4,
+      "context": "chaos",
+      "pressure_signature": 0.18533522512429512,
+      "control_signature": 0.029735403171292512,
+      "chaos_signature": 1.4220071694510343,
+      "mean_payoff": -0.3083333333333333,
+      "aggression_rate": 0.188963838003386,
+      "fold_rate": 0.11689893283113623,
+      "action_entropy": 1.3691531952187426
+    },
+    {
+      "agent_index": 5,
+      "context": "balanced",
+      "pressure_signature": 0.8818824681441817,
+      "control_signature": 0.010494079207269164,
+      "chaos_signature": 1.0487249144197661,
+      "mean_payoff": 1.9666666666666666,
+      "aggression_rate": 0.8938565617312357,
+      "fold_rate": 0.015466423881569352,
+      "action_entropy": 1.020271954609927
+    },
+    {
+      "agent_index": 5,
+      "context": "pressure",
+      "pressure_signature": 0.8818824681441817,
+      "control_signature": 0.010494079207269164,
+      "chaos_signature": 1.0487249144197661,
+      "mean_payoff": -0.4888888888888889,
+      "aggression_rate": 0.7491822400708442,
+      "fold_rate": 0.05209013920962064,
+      "action_entropy": 1.2103431365873025
+    },
+    {
+      "agent_index": 5,
+      "context": "control",
+      "pressure_signature": 0.8818824681441817,
+      "control_signature": 0.010494079207269164,
+      "chaos_signature": 1.0487249144197661,
+      "mean_payoff": 1.488888888888889,
+      "aggression_rate": 0.9578747204263199,
+      "fold_rate": 0.005148312138785773,
+      "action_entropy": 0.7735405730362466
+    },
+    {
+      "agent_index": 5,
+      "context": "chaos",
+      "pressure_signature": 0.8818824681441817,
+      "control_signature": 0.010494079207269164,
+      "chaos_signature": 1.0487249144197661,
+      "mean_payoff": 0.019444444444444448,
+      "aggression_rate": 0.8959451527589923,
+      "fold_rate": 0.01751162507133855,
+      "action_entropy": 1.0238121038847603
+    },
+    {
+      "agent_index": 6,
+      "context": "balanced",
+      "pressure_signature": 0.4815140607727359,
+      "control_signature": 0.002919236967786847,
+      "chaos_signature": 1.547826414924744,
+      "mean_payoff": 0.10277777777777779,
+      "aggression_rate": 0.4808198595265046,
+      "fold_rate": 0.08978308694271651,
+      "action_entropy": 1.5584732651673032
+    },
+    {
+      "agent_index": 6,
+      "context": "pressure",
+      "pressure_signature": 0.4815140607727359,
+      "control_signature": 0.002919236967786847,
+      "chaos_signature": 1.547826414924744,
+      "mean_payoff": -0.22222222222222224,
+      "aggression_rate": 0.4345835599710819,
+      "fold_rate": 0.13806570752808592,
+      "action_entropy": 1.5457260787185074
+    },
+    {
+      "agent_index": 6,
+      "context": "control",
+      "pressure_signature": 0.4815140607727359,
+      "control_signature": 0.002919236967786847,
+      "chaos_signature": 1.547826414924744,
+      "mean_payoff": 0.525,
+      "aggression_rate": 0.5351495993539183,
+      "fold_rate": 0.033736960615907224,
+      "action_entropy": 1.3415011028263804
+    },
+    {
+      "agent_index": 6,
+      "context": "chaos",
+      "pressure_signature": 0.4815140607727359,
+      "control_signature": 0.002919236967786847,
+      "chaos_signature": 1.547826414924744,
+      "mean_payoff": -1.0055555555555555,
+      "aggression_rate": 0.5248105741028194,
+      "fold_rate": 0.07188145018905055,
+      "action_entropy": 1.5192048711013246
+    },
+    {
+      "agent_index": 7,
+      "context": "balanced",
+      "pressure_signature": 0.47483779482246624,
+      "control_signature": -0.004001871440255313,
+      "chaos_signature": 1.5804956429350003,
+      "mean_payoff": 0.2638888888888889,
+      "aggression_rate": 0.4792011814363062,
+      "fold_rate": 0.10839911047114602,
+      "action_entropy": 1.5721623353176135
+    },
+    {
+      "agent_index": 7,
+      "context": "pressure",
+      "pressure_signature": 0.47483779482246624,
+      "control_signature": -0.004001871440255313,
+      "chaos_signature": 1.5804956429350003,
+      "mean_payoff": -0.35000000000000003,
+      "aggression_rate": 0.43162374142369075,
+      "fold_rate": 0.1552714619820216,
+      "action_entropy": 1.55596608555608
+    },
+    {
+      "agent_index": 7,
+      "context": "control",
+      "pressure_signature": 0.47483779482246624,
+      "control_signature": -0.004001871440255313,
+      "chaos_signature": 1.5804956429350003,
+      "mean_payoff": 1.1194444444444445,
+      "aggression_rate": 0.5463052006533253,
+      "fold_rate": 0.05358387649911211,
+      "action_entropy": 1.3405210270862271
+    },
+    {
+      "agent_index": 7,
+      "context": "chaos",
+      "pressure_signature": 0.47483779482246624,
+      "control_signature": -0.004001871440255313,
+      "chaos_signature": 1.5804956429350003,
+      "mean_payoff": 0.06666666666666665,
+      "aggression_rate": 0.5101490808093619,
+      "fold_rate": 0.08961566553621197,
+      "action_entropy": 1.5336416048919084
+    },
+    {
+      "agent_index": 8,
+      "context": "balanced",
+      "pressure_signature": 0.5545528787260107,
+      "control_signature": -0.01095257531145423,
+      "chaos_signature": 1.545281943288541,
+      "mean_payoff": -0.2722222222222222,
+      "aggression_rate": 0.5673570871786628,
+      "fold_rate": 0.09013597950737536,
+      "action_entropy": 1.535015061863441
+    },
+    {
+      "agent_index": 8,
+      "context": "pressure",
+      "pressure_signature": 0.5545528787260107,
+      "control_signature": -0.01095257531145423,
+      "chaos_signature": 1.545281943288541,
+      "mean_payoff": -0.9722222222222222,
+      "aggression_rate": 0.5016724375373279,
+      "fold_rate": 0.13266884625907704,
+      "action_entropy": 1.522218240197355
+    },
+    {
+      "agent_index": 8,
+      "context": "control",
+      "pressure_signature": 0.5545528787260107,
+      "control_signature": -0.01095257531145423,
+      "chaos_signature": 1.545281943288541,
+      "mean_payoff": -0.10833333333333334,
+      "aggression_rate": 0.5968369084099421,
+      "fold_rate": 0.04398316333831722,
+      "action_entropy": 1.3568101682227038
+    },
+    {
+      "agent_index": 8,
+      "context": "chaos",
+      "pressure_signature": 0.5545528787260107,
+      "control_signature": -0.01095257531145423,
+      "chaos_signature": 1.545281943288541,
+      "mean_payoff": -0.28333333333333327,
+      "aggression_rate": 0.5905072227652873,
+      "fold_rate": 0.07208428369718693,
+      "action_entropy": 1.4913494022488392
+    },
+    {
+      "agent_index": 9,
+      "context": "balanced",
+      "pressure_signature": 0.5698184889547675,
+      "control_signature": -0.003705055013093728,
+      "chaos_signature": 1.497669371129975,
+      "mean_payoff": 0.21666666666666667,
+      "aggression_rate": 0.5891389048632322,
+      "fold_rate": 0.055230146828376535,
+      "action_entropy": 1.4909161579774886
+    },
+    {
+      "agent_index": 9,
+      "context": "pressure",
+      "pressure_signature": 0.5698184889547675,
+      "control_signature": -0.003705055013093728,
+      "chaos_signature": 1.497669371129975,
+      "mean_payoff": -0.4666666666666666,
+      "aggression_rate": 0.5046910113338531,
+      "fold_rate": 0.10462764926998046,
+      "action_entropy": 1.4952550546404566
+    },
+    {
+      "agent_index": 9,
+      "context": "control",
+      "pressure_signature": 0.5698184889547675,
+      "control_signature": -0.003705055013093728,
+      "chaos_signature": 1.497669371129975,
+      "mean_payoff": 0.7083333333333334,
+      "aggression_rate": 0.6330533713233534,
+      "fold_rate": 0.023627390247570327,
+      "action_entropy": 1.3068645953558575
+    },
+    {
+      "agent_index": 9,
+      "context": "chaos",
+      "pressure_signature": 0.5698184889547675,
+      "control_signature": -0.003705055013093728,
+      "chaos_signature": 1.497669371129975,
+      "mean_payoff": -0.8861111111111111,
+      "aggression_rate": 0.6401678750396638,
+      "fold_rate": 0.03531096729044391,
+      "action_entropy": 1.426482588553875
+    },
+    {
+      "agent_index": 10,
+      "context": "balanced",
+      "pressure_signature": 0.3208275864755982,
+      "control_signature": 0.003320066970949789,
+      "chaos_signature": 1.5477509006968653,
+      "mean_payoff": 0.18888888888888888,
+      "aggression_rate": 0.3285839338932124,
+      "fold_rate": 0.12412429300785655,
+      "action_entropy": 1.552780764420626
+    },
+    {
+      "agent_index": 10,
+      "context": "pressure",
+      "pressure_signature": 0.3208275864755982,
+      "control_signature": 0.003320066970949789,
+      "chaos_signature": 1.5477509006968653,
+      "mean_payoff": -1.136111111111111,
+      "aggression_rate": 0.3032311861016291,
+      "fold_rate": 0.15730319046305263,
+      "action_entropy": 1.5284032203814117
+    },
+    {
+      "agent_index": 10,
+      "context": "control",
+      "pressure_signature": 0.3208275864755982,
+      "control_signature": 0.003320066970949789,
+      "chaos_signature": 1.5477509006968653,
+      "mean_payoff": 0.2777777777777778,
+      "aggression_rate": 0.34863381505172547,
+      "fold_rate": 0.057034931164284396,
+      "action_entropy": 1.304969473834407
+    },
+    {
+      "agent_index": 10,
+      "context": "chaos",
+      "pressure_signature": 0.3208275864755982,
+      "control_signature": 0.003320066970949789,
+      "chaos_signature": 1.5477509006968653,
+      "mean_payoff": 0.39166666666666666,
+      "aggression_rate": 0.3377443336444226,
+      "fold_rate": 0.10500203718536917,
+      "action_entropy": 1.5132490898160071
+    },
+    {
+      "agent_index": 11,
+      "context": "balanced",
+      "pressure_signature": 0.38808390829067524,
+      "control_signature": -0.002583698036990844,
+      "chaos_signature": 1.5715318759266677,
+      "mean_payoff": 0.005555555555555554,
+      "aggression_rate": 0.36951552842500807,
+      "fold_rate": 0.12395935022449633,
+      "action_entropy": 1.5718812734958079
+    },
+    {
+      "agent_index": 11,
+      "context": "pressure",
+      "pressure_signature": 0.38808390829067524,
+      "control_signature": -0.002583698036990844,
+      "chaos_signature": 1.5715318759266677,
+      "mean_payoff": -1.6027777777777776,
+      "aggression_rate": 0.3313457015939378,
+      "fold_rate": 0.1829250811900407,
+      "action_entropy": 1.561830190231759
+    },
+    {
+      "agent_index": 11,
+      "context": "control",
+      "pressure_signature": 0.38808390829067524,
+      "control_signature": -0.002583698036990844,
+      "chaos_signature": 1.5715318759266677,
+      "mean_payoff": 0.3638888888888889,
+      "aggression_rate": 0.4031252382475808,
+      "fold_rate": 0.05072247948012923,
+      "action_entropy": 1.3328044680797848
+    },
+    {
+      "agent_index": 11,
+      "context": "chaos",
+      "pressure_signature": 0.38808390829067524,
+      "control_signature": -0.002583698036990844,
+      "chaos_signature": 1.5715318759266677,
+      "mean_payoff": 0.14166666666666666,
+      "aggression_rate": 0.3915121899399798,
+      "fold_rate": 0.09758148757989411,
+      "action_entropy": 1.528896918060335
+    }
+  ]
+}
