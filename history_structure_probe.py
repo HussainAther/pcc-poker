@@ -13,6 +13,16 @@ PAIR_CATEGORIES = tuple(
     combinations_with_replacement(sorted(ACTIONS), 2)
 )
 
+SAME_PAIR_CATEGORIES = tuple(
+    (action, action)
+    for action in sorted(ACTIONS)
+)
+
+MIXED_PAIR_CATEGORIES = tuple(
+    pair
+    for pair in PAIR_CATEGORIES
+    if pair[0] != pair[1]
+)
 
 def persistence_features(rows):
     by_hand = defaultdict(list)
@@ -113,6 +123,22 @@ def make_examples(records):
         counts = Counter(pairs)
         total = max(len(pairs), 1)
 
+        same_block = np.asarray(
+            [
+                counts[pair] / total
+                for pair in SAME_PAIR_CATEGORIES
+            ],
+            dtype=float,
+        )
+
+        mixed_block = np.asarray(
+            [
+                counts[pair] / total
+                for pair in MIXED_PAIR_CATEGORIES
+            ],
+            dtype=float,
+        )
+
         unordered_block = np.asarray(
             [
                 counts[pair] / total
@@ -151,6 +177,20 @@ def make_examples(records):
                     [
                         base["M2"],
                         persistence_block,
+                    ]
+                ),
+
+                "same_pair_features": np.concatenate(
+                    [
+                        base["M2"],
+                        same_block,
+                    ]
+                ),
+
+                "mixed_pair_features": np.concatenate(
+                    [
+                        base["M2"],
+                        mixed_block,
                     ]
                 ),
 
@@ -220,6 +260,8 @@ truth = np.stack(
 MODELS = (
     "M2_features",
     "persistence_features",
+    "same_pair_features",
+    "mixed_pair_features",
     "unordered_features",
     "M3_features",
 )
