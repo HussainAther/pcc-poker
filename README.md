@@ -631,3 +631,11 @@ python -m pcc_poker mixed-ood-history-destruction \
   --ood outputs/mixed-ood-data.jsonl \
   --output validation/mixed-ood-history-destruction.json
 ```
+
+### Exploratory post-freeze history-structure probe
+
+`history_structure_probe.py` decomposes the mixed-OOD history signal into persistence, same-action pairs, mixed-action pairs, unordered pairs, and directed M3 transitions. A fixed-normalization zero-out analysis identifies `bet-call`, `bet-check`, and `call-raise` as the strongest mixed-pair contributors in the Control-heavy region. Cumulative removal hurts both focal seats, but more strongly in seat 1, so the effect is position-sensitive rather than seat-invariant. See `docs/CONTROL_MIXED_PAIR_STABILITY_RESULT.md`.
+
+```bash
+PYTHONPATH=. python history_structure_probe.py
+```
