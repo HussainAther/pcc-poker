@@ -1,6 +1,6 @@
 import numpy as np
 
-import history_structure_probe as probe
+from pcc_poker import history_structure_probe as probe
 
 
 def test_pair_partition_is_complete_and_disjoint():

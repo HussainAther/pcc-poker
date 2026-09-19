@@ -17,8 +17,19 @@ The cumulative top-three zero-out degrades recovery in both focal seats:
 
 The signal is therefore directionally stable across seats but materially stronger in seat 1. It should not be described as seat-invariant.
 
+## Matched-context localization
+
+A follow-up matched-context probe recomputed the mixed-pair block separately within each public round/facing-bet context. The strongest degradations localized rather than appearing uniformly:
+
+- round 0, facing a bet: removing bet-call worsens Control-heavy MAE by +0.004121;
+- round 1, open/not facing a bet: removing bet-check worsens MAE by +0.005487;
+- round 1, facing a bet: removing bet-call worsens MAE by +0.003342;
+- round 0, open/not facing a bet: none of the top-three pairs contributes measurable incremental recovery.
+
+The call-raise zero-out does not show a stable positive degradation after context matching. This weakens a generic pair-frequency interpretation and instead points toward an interaction between local action adjacency and public betting context.
+
 ## Interpretation
 
-The current exploratory interpretation is that Control-heavy recovery is largely associated with local unordered action structure, with important contribution from bet-call, bet-check, and call-raise adjacency. The seat asymmetry suggests position/context sensitivity and motivates a matched-seat or interaction analysis before any stronger mechanistic claim.
+The current exploratory interpretation is that Control-heavy recovery is largely associated with local unordered action structure. Bet-call and bet-check are the clearest contributors and localize to distinct public betting contexts; call-raise does not remain stable after context matching. The seat asymmetry therefore looks plausibly context-mediated and motivates a fresh-seed matched-context interaction test before any stronger mechanistic claim.
 
 This remains exploratory and does not alter the frozen confirmatory claims.
