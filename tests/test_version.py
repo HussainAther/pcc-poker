@@ -1,10 +1,6 @@
+import tomllib
 from pathlib import Path
 import pcc_poker
-
-try:
-    import tomllib
-except ModuleNotFoundError:
-    import tomli as tomllib
 
 
 def test_package_versions_are_synchronized():
