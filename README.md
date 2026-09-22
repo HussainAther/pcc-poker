@@ -1,7 +1,7 @@
 # PCC Poker 
 
 An auditable empirical bridge between **Pressure–Control–Chaos (PCC)** theory
-and imperfect-information games.
+and imperfect-information games. 
 
 This repository begins with heads-up Leduc poker because every decision has an
 explicit information state, legal action set, counterfactual alternatives, and
