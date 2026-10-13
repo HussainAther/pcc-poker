@@ -1,0 +1,3046 @@
+{
+  "status": "completed",
+  "analysis_status": "descriptive_conditional_action_composition",
+  "seeds": [
+    1501,
+    1502,
+    1503,
+    1504,
+    1505
+  ],
+  "mixtures_per_seed": 20,
+  "hands_per_seat": 100,
+  "method": "Within-mixture shared public contexts; overlap quotas weight full empirical conditional action-pair distributions; no action-based subsampling.",
+  "seed_results": [
+    {
+      "seed": 1501,
+      "design": {
+        "seed": 1501,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1501-0000",
+            "seat_yoke_id": "seat-yoked-1501-0000",
+            "weights": {
+              "pressure": 0.04433253922717189,
+              "control": 0.8958673963955877,
+              "chaos": 0.059800064377240454
+            },
+            "simulation_seeds": [
+              150100000,
+              150100001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0001",
+            "seat_yoke_id": "seat-yoked-1501-0001",
+            "weights": {
+              "pressure": 0.11782131411324659,
+              "control": 0.808236190907248,
+              "chaos": 0.07394249497950545
+            },
+            "simulation_seeds": [
+              150100002,
+              150100003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0002",
+            "seat_yoke_id": "seat-yoked-1501-0002",
+            "weights": {
+              "pressure": 0.048800582804435944,
+              "control": 0.9340992031467681,
+              "chaos": 0.01710021404879597
+            },
+            "simulation_seeds": [
+              150100004,
+              150100005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0003",
+            "seat_yoke_id": "seat-yoked-1501-0003",
+            "weights": {
+              "pressure": 0.024429228205551812,
+              "control": 0.9219428173332722,
+              "chaos": 0.05362795446117598
+            },
+            "simulation_seeds": [
+              150100006,
+              150100007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0004",
+            "seat_yoke_id": "seat-yoked-1501-0004",
+            "weights": {
+              "pressure": 0.02517599178103681,
+              "control": 0.9034167926689899,
+              "chaos": 0.0714072155499733
+            },
+            "simulation_seeds": [
+              150100008,
+              150100009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0005",
+            "seat_yoke_id": "seat-yoked-1501-0005",
+            "weights": {
+              "pressure": 0.047974612985132704,
+              "control": 0.800416469871269,
+              "chaos": 0.15160891714359828
+            },
+            "simulation_seeds": [
+              150100010,
+              150100011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0006",
+            "seat_yoke_id": "seat-yoked-1501-0006",
+            "weights": {
+              "pressure": 0.03506633449469698,
+              "control": 0.8542681699467002,
+              "chaos": 0.11066549555860283
+            },
+            "simulation_seeds": [
+              150100012,
+              150100013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0007",
+            "seat_yoke_id": "seat-yoked-1501-0007",
+            "weights": {
+              "pressure": 0.022678418397928467,
+              "control": 0.8829491408993655,
+              "chaos": 0.09437244070270603
+            },
+            "simulation_seeds": [
+              150100014,
+              150100015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0008",
+            "seat_yoke_id": "seat-yoked-1501-0008",
+            "weights": {
+              "pressure": 0.02992813066001023,
+              "control": 0.937367803397217,
+              "chaos": 0.03270406594277273
+            },
+            "simulation_seeds": [
+              150100016,
+              150100017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0009",
+            "seat_yoke_id": "seat-yoked-1501-0009",
+            "weights": {
+              "pressure": 0.058535163717704605,
+              "control": 0.9407730492416162,
+              "chaos": 0.0006917870406791954
+            },
+            "simulation_seeds": [
+              150100018,
+              150100019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0010",
+            "seat_yoke_id": "seat-yoked-1501-0010",
+            "weights": {
+              "pressure": 0.07842497024861125,
+              "control": 0.8631981531803598,
+              "chaos": 0.058376876571028996
+            },
+            "simulation_seeds": [
+              150100020,
+              150100021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0011",
+            "seat_yoke_id": "seat-yoked-1501-0011",
+            "weights": {
+              "pressure": 0.1576579992322666,
+              "control": 0.8202434810289112,
+              "chaos": 0.02209851973882221
+            },
+            "simulation_seeds": [
+              150100022,
+              150100023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0012",
+            "seat_yoke_id": "seat-yoked-1501-0012",
+            "weights": {
+              "pressure": 0.0641939476307324,
+              "control": 0.8495055805886578,
+              "chaos": 0.08630047178060983
+            },
+            "simulation_seeds": [
+              150100024,
+              150100025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0013",
+            "seat_yoke_id": "seat-yoked-1501-0013",
+            "weights": {
+              "pressure": 0.019318281819209332,
+              "control": 0.9027049388425972,
+              "chaos": 0.0779767793381935
+            },
+            "simulation_seeds": [
+              150100026,
+              150100027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0014",
+            "seat_yoke_id": "seat-yoked-1501-0014",
+            "weights": {
+              "pressure": 0.020121123926944474,
+              "control": 0.8519922688143935,
+              "chaos": 0.12788660725866202
+            },
+            "simulation_seeds": [
+              150100028,
+              150100029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0015",
+            "seat_yoke_id": "seat-yoked-1501-0015",
+            "weights": {
+              "pressure": 0.08542859130109866,
+              "control": 0.8003721382990293,
+              "chaos": 0.11419927039987203
+            },
+            "simulation_seeds": [
+              150100030,
+              150100031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0016",
+            "seat_yoke_id": "seat-yoked-1501-0016",
+            "weights": {
+              "pressure": 0.0291420183535098,
+              "control": 0.9383661084519893,
+              "chaos": 0.03249187319450089
+            },
+            "simulation_seeds": [
+              150100032,
+              150100033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0017",
+            "seat_yoke_id": "seat-yoked-1501-0017",
+            "weights": {
+              "pressure": 0.0050575383309183234,
+              "control": 0.9387803554629687,
+              "chaos": 0.056162106206113005
+            },
+            "simulation_seeds": [
+              150100034,
+              150100035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0018",
+            "seat_yoke_id": "seat-yoked-1501-0018",
+            "weights": {
+              "pressure": 0.15879289629473609,
+              "control": 0.8301776216208941,
+              "chaos": 0.011029482084369768
+            },
+            "simulation_seeds": [
+              150100036,
+              150100037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1501-0019",
+            "seat_yoke_id": "seat-yoked-1501-0019",
+            "weights": {
+              "pressure": 0.07657441421323179,
+              "control": 0.863438159339333,
+              "chaos": 0.059987426447435224
+            },
+            "simulation_seeds": [
+              150100038,
+              150100039
+            ]
+          }
+        ]
+      },
+      "summary": {
+        "mixtures": 20,
+        "supported_mixtures": 20,
+        "zero_support_mixtures": 0,
+        "total_overlap": 965,
+        "overlap_weighted_conditional_tv": 0.3743934634422758,
+        "overlap_weighted_bet_call_absolute_gap": 0.05541365979342206,
+        "overlap_weighted_bet_call_signed_gap": 0.01185152177227764
+      },
+      "mixtures": [
+        {
+          "mixture_id": "seat-yoked-1501-0000",
+          "overlap": 50,
+          "eligible_by_seat": [
+            115,
+            50
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.32666666666666666,
+          "conditional_bet_call_gap": 0.05199999999999999,
+          "conditional_bet_call_signed_gap": 0.05199999999999999,
+          "unmatched_context_counts_by_seat": [
+            65,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0001",
+          "overlap": 44,
+          "eligible_by_seat": [
+            113,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.45339198581177187,
+          "conditional_bet_call_gap": 0.11773016051090918,
+          "conditional_bet_call_signed_gap": -0.06973270342254301,
+          "unmatched_context_counts_by_seat": [
+            69,
+            10
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0002",
+          "overlap": 47,
+          "eligible_by_seat": [
+            123,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4016210739614995,
+          "conditional_bet_call_gap": 0.07304964539007092,
+          "conditional_bet_call_signed_gap": 0.04751773049645389,
+          "unmatched_context_counts_by_seat": [
+            76,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0003",
+          "overlap": 48,
+          "eligible_by_seat": [
+            108,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.41287878787878785,
+          "conditional_bet_call_gap": 0.017857142857142856,
+          "conditional_bet_call_signed_gap": -0.017857142857142856,
+          "unmatched_context_counts_by_seat": [
+            60,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0004",
+          "overlap": 42,
+          "eligible_by_seat": [
+            112,
+            46
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.322068143496715,
+          "conditional_bet_call_gap": 0.05901505901505902,
+          "conditional_bet_call_signed_gap": 0.015059015059015055,
+          "unmatched_context_counts_by_seat": [
+            70,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0005",
+          "overlap": 47,
+          "eligible_by_seat": [
+            113,
+            57
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3799394078048848,
+          "conditional_bet_call_gap": 0.053513862024500314,
+          "conditional_bet_call_signed_gap": 0.053513862024500314,
+          "unmatched_context_counts_by_seat": [
+            66,
+            10
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0006",
+          "overlap": 53,
+          "eligible_by_seat": [
+            115,
+            57
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3840051457975986,
+          "conditional_bet_call_gap": 0.062092624356775296,
+          "conditional_bet_call_signed_gap": 0.04493996569468268,
+          "unmatched_context_counts_by_seat": [
+            62,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0007",
+          "overlap": 48,
+          "eligible_by_seat": [
+            114,
+            55
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.35177951388888895,
+          "conditional_bet_call_gap": 0.08680555555555555,
+          "conditional_bet_call_signed_gap": 0.045138888888888895,
+          "unmatched_context_counts_by_seat": [
+            66,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0008",
+          "overlap": 61,
+          "eligible_by_seat": [
+            123,
+            65
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.35327868852459016,
+          "conditional_bet_call_gap": 0.018579234972677598,
+          "conditional_bet_call_signed_gap": 0.018579234972677598,
+          "unmatched_context_counts_by_seat": [
+            62,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0009",
+          "overlap": 42,
+          "eligible_by_seat": [
+            115,
+            50
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3273809523809524,
+          "conditional_bet_call_gap": 0.031746031746031744,
+          "conditional_bet_call_signed_gap": -0.031746031746031744,
+          "unmatched_context_counts_by_seat": [
+            73,
+            8
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0010",
+          "overlap": 42,
+          "eligible_by_seat": [
+            119,
+            47
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.371957671957672,
+          "conditional_bet_call_gap": 0.030952380952380946,
+          "conditional_bet_call_signed_gap": 0.030952380952380946,
+          "unmatched_context_counts_by_seat": [
+            77,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0011",
+          "overlap": 56,
+          "eligible_by_seat": [
+            116,
+            64
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.44085497835497833,
+          "conditional_bet_call_gap": 0.0545954045954046,
+          "conditional_bet_call_signed_gap": -0.040859140859140844,
+          "unmatched_context_counts_by_seat": [
+            60,
+            8
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0012",
+          "overlap": 48,
+          "eligible_by_seat": [
+            118,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4430053538509421,
+          "conditional_bet_call_gap": 0.05181623931623931,
+          "conditional_bet_call_signed_gap": -0.05181623931623931,
+          "unmatched_context_counts_by_seat": [
+            70,
+            3
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0013",
+          "overlap": 50,
+          "eligible_by_seat": [
+            124,
+            58
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.33028083028083033,
+          "conditional_bet_call_gap": 0.061147741147741144,
+          "conditional_bet_call_signed_gap": 0.061147741147741144,
+          "unmatched_context_counts_by_seat": [
+            74,
+            8
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0014",
+          "overlap": 41,
+          "eligible_by_seat": [
+            105,
+            53
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3559516364394413,
+          "conditional_bet_call_gap": 0.053812041616919666,
+          "conditional_bet_call_signed_gap": -0.0005969640115981601,
+          "unmatched_context_counts_by_seat": [
+            64,
+            12
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0015",
+          "overlap": 58,
+          "eligible_by_seat": [
+            116,
+            66
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3654649947753396,
+          "conditional_bet_call_gap": 0.054989550679205856,
+          "conditional_bet_call_signed_gap": -0.04062173458725184,
+          "unmatched_context_counts_by_seat": [
+            58,
+            8
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0016",
+          "overlap": 46,
+          "eligible_by_seat": [
+            114,
+            52
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.42906079427818555,
+          "conditional_bet_call_gap": 0.06832298136645963,
+          "conditional_bet_call_signed_gap": 0.06832298136645963,
+          "unmatched_context_counts_by_seat": [
+            68,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0017",
+          "overlap": 40,
+          "eligible_by_seat": [
+            114,
+            42
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.2759290540540541,
+          "conditional_bet_call_gap": 0.020833333333333332,
+          "conditional_bet_call_signed_gap": 0.020833333333333332,
+          "unmatched_context_counts_by_seat": [
+            74,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0018",
+          "overlap": 52,
+          "eligible_by_seat": [
+            130,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3840581531758003,
+          "conditional_bet_call_gap": 0.056636500754147806,
+          "conditional_bet_call_signed_gap": -0.010482654600301653,
+          "unmatched_context_counts_by_seat": [
+            78,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1501-0019",
+          "overlap": 50,
+          "eligible_by_seat": [
+            111,
+            52
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3553333333333333,
+          "conditional_bet_call_gap": 0.08533333333333333,
+          "conditional_bet_call_signed_gap": 0.047999999999999994,
+          "unmatched_context_counts_by_seat": [
+            61,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 1502,
+      "design": {
+        "seed": 1502,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1502-0000",
+            "seat_yoke_id": "seat-yoked-1502-0000",
+            "weights": {
+              "pressure": 0.1038787296851388,
+              "control": 0.8253874765913405,
+              "chaos": 0.07073379372352072
+            },
+            "simulation_seeds": [
+              150200000,
+              150200001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0001",
+            "seat_yoke_id": "seat-yoked-1502-0001",
+            "weights": {
+              "pressure": 0.0689062681307805,
+              "control": 0.8397444109560852,
+              "chaos": 0.09134932091313429
+            },
+            "simulation_seeds": [
+              150200002,
+              150200003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0002",
+            "seat_yoke_id": "seat-yoked-1502-0002",
+            "weights": {
+              "pressure": 0.03889636374532188,
+              "control": 0.9289938535731479,
+              "chaos": 0.032109782681530225
+            },
+            "simulation_seeds": [
+              150200004,
+              150200005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0003",
+            "seat_yoke_id": "seat-yoked-1502-0003",
+            "weights": {
+              "pressure": 0.10606545029835707,
+              "control": 0.8873900475508517,
+              "chaos": 0.0065445021507912204
+            },
+            "simulation_seeds": [
+              150200006,
+              150200007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0004",
+            "seat_yoke_id": "seat-yoked-1502-0004",
+            "weights": {
+              "pressure": 0.1058788365442759,
+              "control": 0.8463009705173643,
+              "chaos": 0.04782019293835979
+            },
+            "simulation_seeds": [
+              150200008,
+              150200009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0005",
+            "seat_yoke_id": "seat-yoked-1502-0005",
+            "weights": {
+              "pressure": 0.026433485057847376,
+              "control": 0.8700414820623918,
+              "chaos": 0.10352503287976078
+            },
+            "simulation_seeds": [
+              150200010,
+              150200011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0006",
+            "seat_yoke_id": "seat-yoked-1502-0006",
+            "weights": {
+              "pressure": 0.0680406735583516,
+              "control": 0.8660856739210729,
+              "chaos": 0.06587365252057546
+            },
+            "simulation_seeds": [
+              150200012,
+              150200013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0007",
+            "seat_yoke_id": "seat-yoked-1502-0007",
+            "weights": {
+              "pressure": 0.06355325030650705,
+              "control": 0.8278102212688553,
+              "chaos": 0.10863652842463767
+            },
+            "simulation_seeds": [
+              150200014,
+              150200015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0008",
+            "seat_yoke_id": "seat-yoked-1502-0008",
+            "weights": {
+              "pressure": 0.008829749570314563,
+              "control": 0.9441035236660358,
+              "chaos": 0.047066726763649654
+            },
+            "simulation_seeds": [
+              150200016,
+              150200017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0009",
+            "seat_yoke_id": "seat-yoked-1502-0009",
+            "weights": {
+              "pressure": 0.134362578864597,
+              "control": 0.8593315858938295,
+              "chaos": 0.006305835241573493
+            },
+            "simulation_seeds": [
+              150200018,
+              150200019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0010",
+            "seat_yoke_id": "seat-yoked-1502-0010",
+            "weights": {
+              "pressure": 0.015247220909775911,
+              "control": 0.8653555586315295,
+              "chaos": 0.11939722045869462
+            },
+            "simulation_seeds": [
+              150200020,
+              150200021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0011",
+            "seat_yoke_id": "seat-yoked-1502-0011",
+            "weights": {
+              "pressure": 0.12405428147114184,
+              "control": 0.8169084121624074,
+              "chaos": 0.05903730636645077
+            },
+            "simulation_seeds": [
+              150200022,
+              150200023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0012",
+            "seat_yoke_id": "seat-yoked-1502-0012",
+            "weights": {
+              "pressure": 0.06387227755271165,
+              "control": 0.855811820553676,
+              "chaos": 0.08031590189361236
+            },
+            "simulation_seeds": [
+              150200024,
+              150200025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0013",
+            "seat_yoke_id": "seat-yoked-1502-0013",
+            "weights": {
+              "pressure": 0.025413669377511022,
+              "control": 0.8924043020509698,
+              "chaos": 0.08218202857151921
+            },
+            "simulation_seeds": [
+              150200026,
+              150200027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0014",
+            "seat_yoke_id": "seat-yoked-1502-0014",
+            "weights": {
+              "pressure": 0.05355541557093501,
+              "control": 0.8953405596802619,
+              "chaos": 0.05110402474880305
+            },
+            "simulation_seeds": [
+              150200028,
+              150200029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0015",
+            "seat_yoke_id": "seat-yoked-1502-0015",
+            "weights": {
+              "pressure": 0.044964198910198705,
+              "control": 0.8667179785496788,
+              "chaos": 0.08831782254012249
+            },
+            "simulation_seeds": [
+              150200030,
+              150200031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0016",
+            "seat_yoke_id": "seat-yoked-1502-0016",
+            "weights": {
+              "pressure": 0.021025412504438526,
+              "control": 0.888201032933835,
+              "chaos": 0.09077355456172646
+            },
+            "simulation_seeds": [
+              150200032,
+              150200033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0017",
+            "seat_yoke_id": "seat-yoked-1502-0017",
+            "weights": {
+              "pressure": 0.03477803060159846,
+              "control": 0.925091906861401,
+              "chaos": 0.04013006253700057
+            },
+            "simulation_seeds": [
+              150200034,
+              150200035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0018",
+            "seat_yoke_id": "seat-yoked-1502-0018",
+            "weights": {
+              "pressure": 0.0770614153922001,
+              "control": 0.9214517788772072,
+              "chaos": 0.0014868057305927052
+            },
+            "simulation_seeds": [
+              150200036,
+              150200037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1502-0019",
+            "seat_yoke_id": "seat-yoked-1502-0019",
+            "weights": {
+              "pressure": 0.15157217877252252,
+              "control": 0.8334940087883334,
+              "chaos": 0.014933812439144128
+            },
+            "simulation_seeds": [
+              150200038,
+              150200039
+            ]
+          }
+        ]
+      },
+      "summary": {
+        "mixtures": 20,
+        "supported_mixtures": 20,
+        "zero_support_mixtures": 0,
+        "total_overlap": 982,
+        "overlap_weighted_conditional_tv": 0.3721966887610849,
+        "overlap_weighted_bet_call_absolute_gap": 0.0633585779948762,
+        "overlap_weighted_bet_call_signed_gap": 0.015486177046416529
+      },
+      "mixtures": [
+        {
+          "mixture_id": "seat-yoked-1502-0000",
+          "overlap": 50,
+          "eligible_by_seat": [
+            118,
+            55
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.2813333333333333,
+          "conditional_bet_call_gap": 0.039833333333333325,
+          "conditional_bet_call_signed_gap": 0.02683333333333334,
+          "unmatched_context_counts_by_seat": [
+            68,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0001",
+          "overlap": 47,
+          "eligible_by_seat": [
+            116,
+            50
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.31937689969604866,
+          "conditional_bet_call_gap": 0.035866261398176294,
+          "conditional_bet_call_signed_gap": 0.006686930091185411,
+          "unmatched_context_counts_by_seat": [
+            69,
+            3
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0002",
+          "overlap": 47,
+          "eligible_by_seat": [
+            113,
+            52
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3973717146433042,
+          "conditional_bet_call_gap": 0.04609929078014185,
+          "conditional_bet_call_signed_gap": 0.01773049645390071,
+          "unmatched_context_counts_by_seat": [
+            66,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0003",
+          "overlap": 47,
+          "eligible_by_seat": [
+            114,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3374597034171502,
+          "conditional_bet_call_gap": 0.036170212765957444,
+          "conditional_bet_call_signed_gap": 0.019148936170212766,
+          "unmatched_context_counts_by_seat": [
+            67,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0004",
+          "overlap": 50,
+          "eligible_by_seat": [
+            118,
+            60
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.2721483516483516,
+          "conditional_bet_call_gap": 0.06021428571428571,
+          "conditional_bet_call_signed_gap": -0.06021428571428571,
+          "unmatched_context_counts_by_seat": [
+            68,
+            10
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0005",
+          "overlap": 46,
+          "eligible_by_seat": [
+            117,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.5280797101449275,
+          "conditional_bet_call_gap": 0.043478260869565216,
+          "conditional_bet_call_signed_gap": 0.021739130434782608,
+          "unmatched_context_counts_by_seat": [
+            71,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0006",
+          "overlap": 45,
+          "eligible_by_seat": [
+            115,
+            46
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4883906633906634,
+          "conditional_bet_call_gap": 0.11313131313131314,
+          "conditional_bet_call_signed_gap": -0.02424242424242424,
+          "unmatched_context_counts_by_seat": [
+            70,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0007",
+          "overlap": 46,
+          "eligible_by_seat": [
+            110,
+            58
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4436758893280633,
+          "conditional_bet_call_gap": 0.0958498023715415,
+          "conditional_bet_call_signed_gap": 0.06027667984189723,
+          "unmatched_context_counts_by_seat": [
+            64,
+            12
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0008",
+          "overlap": 44,
+          "eligible_by_seat": [
+            126,
+            44
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.35845057720057716,
+          "conditional_bet_call_gap": 0.0808080808080808,
+          "conditional_bet_call_signed_gap": 0.07070707070707072,
+          "unmatched_context_counts_by_seat": [
+            82,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0009",
+          "overlap": 50,
+          "eligible_by_seat": [
+            116,
+            61
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3407717282717283,
+          "conditional_bet_call_gap": 0.06927489177489177,
+          "conditional_bet_call_signed_gap": 0.01715367965367965,
+          "unmatched_context_counts_by_seat": [
+            66,
+            11
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0010",
+          "overlap": 53,
+          "eligible_by_seat": [
+            115,
+            58
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3017557651991614,
+          "conditional_bet_call_gap": 0.0589622641509434,
+          "conditional_bet_call_signed_gap": 0.054245283018867926,
+          "unmatched_context_counts_by_seat": [
+            62,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0011",
+          "overlap": 53,
+          "eligible_by_seat": [
+            116,
+            55
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.36440991490936,
+          "conditional_bet_call_gap": 0.08805031446540881,
+          "conditional_bet_call_signed_gap": 0.02515723270440251,
+          "unmatched_context_counts_by_seat": [
+            63,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0012",
+          "overlap": 51,
+          "eligible_by_seat": [
+            122,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.357315233785822,
+          "conditional_bet_call_gap": 0.034389140271493215,
+          "conditional_bet_call_signed_gap": -0.02835595776772247,
+          "unmatched_context_counts_by_seat": [
+            71,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0013",
+          "overlap": 53,
+          "eligible_by_seat": [
+            113,
+            57
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3955974842767295,
+          "conditional_bet_call_gap": 0.06226415094339621,
+          "conditional_bet_call_signed_gap": 0.04339622641509433,
+          "unmatched_context_counts_by_seat": [
+            60,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0014",
+          "overlap": 55,
+          "eligible_by_seat": [
+            120,
+            58
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.36553030303030304,
+          "conditional_bet_call_gap": 0.06477272727272727,
+          "conditional_bet_call_signed_gap": -0.0034090909090909068,
+          "unmatched_context_counts_by_seat": [
+            65,
+            3
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0015",
+          "overlap": 56,
+          "eligible_by_seat": [
+            117,
+            58
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3794049437957001,
+          "conditional_bet_call_gap": 0.0388682745825603,
+          "conditional_bet_call_signed_gap": 0.0388682745825603,
+          "unmatched_context_counts_by_seat": [
+            61,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0016",
+          "overlap": 46,
+          "eligible_by_seat": [
+            113,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4007505175983437,
+          "conditional_bet_call_gap": 0.046583850931677016,
+          "conditional_bet_call_signed_gap": -0.0031055900621118,
+          "unmatched_context_counts_by_seat": [
+            67,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0017",
+          "overlap": 46,
+          "eligible_by_seat": [
+            117,
+            50
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.34191999528690936,
+          "conditional_bet_call_gap": 0.07213438735177866,
+          "conditional_bet_call_signed_gap": -0.01482213438735178,
+          "unmatched_context_counts_by_seat": [
+            71,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0018",
+          "overlap": 45,
+          "eligible_by_seat": [
+            117,
+            45
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.37259259259259253,
+          "conditional_bet_call_gap": 0.041296296296296296,
+          "conditional_bet_call_signed_gap": 0.004259259259259256,
+          "unmatched_context_counts_by_seat": [
+            72,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1502-0019",
+          "overlap": 52,
+          "eligible_by_seat": [
+            114,
+            63
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4232624139785944,
+          "conditional_bet_call_gap": 0.13923178943072842,
+          "conditional_bet_call_signed_gap": 0.03384513364619466,
+          "unmatched_context_counts_by_seat": [
+            62,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 1503,
+      "design": {
+        "seed": 1503,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1503-0000",
+            "seat_yoke_id": "seat-yoked-1503-0000",
+            "weights": {
+              "pressure": 0.01686161911191981,
+              "control": 0.8696069515481268,
+              "chaos": 0.11353142933995335
+            },
+            "simulation_seeds": [
+              150300000,
+              150300001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0001",
+            "seat_yoke_id": "seat-yoked-1503-0001",
+            "weights": {
+              "pressure": 0.019165112579186145,
+              "control": 0.8257661855886311,
+              "chaos": 0.15506870183218271
+            },
+            "simulation_seeds": [
+              150300002,
+              150300003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0002",
+            "seat_yoke_id": "seat-yoked-1503-0002",
+            "weights": {
+              "pressure": 0.05270427885988691,
+              "control": 0.909333379962342,
+              "chaos": 0.03796234117777111
+            },
+            "simulation_seeds": [
+              150300004,
+              150300005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0003",
+            "seat_yoke_id": "seat-yoked-1503-0003",
+            "weights": {
+              "pressure": 0.020181387163624723,
+              "control": 0.9037774591608674,
+              "chaos": 0.0760411536755079
+            },
+            "simulation_seeds": [
+              150300006,
+              150300007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0004",
+            "seat_yoke_id": "seat-yoked-1503-0004",
+            "weights": {
+              "pressure": 0.0052355789083044545,
+              "control": 0.948745642065243,
+              "chaos": 0.04601877902645251
+            },
+            "simulation_seeds": [
+              150300008,
+              150300009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0005",
+            "seat_yoke_id": "seat-yoked-1503-0005",
+            "weights": {
+              "pressure": 0.022230129217973172,
+              "control": 0.8670742597556849,
+              "chaos": 0.11069561102634197
+            },
+            "simulation_seeds": [
+              150300010,
+              150300011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0006",
+            "seat_yoke_id": "seat-yoked-1503-0006",
+            "weights": {
+              "pressure": 0.02726242506381945,
+              "control": 0.8953925089211441,
+              "chaos": 0.07734506601503646
+            },
+            "simulation_seeds": [
+              150300012,
+              150300013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0007",
+            "seat_yoke_id": "seat-yoked-1503-0007",
+            "weights": {
+              "pressure": 0.04092695764481494,
+              "control": 0.8422519261443115,
+              "chaos": 0.11682111621087352
+            },
+            "simulation_seeds": [
+              150300014,
+              150300015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0008",
+            "seat_yoke_id": "seat-yoked-1503-0008",
+            "weights": {
+              "pressure": 0.1328885833131817,
+              "control": 0.8403857699559939,
+              "chaos": 0.026725646730824393
+            },
+            "simulation_seeds": [
+              150300016,
+              150300017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0009",
+            "seat_yoke_id": "seat-yoked-1503-0009",
+            "weights": {
+              "pressure": 0.03801046262441104,
+              "control": 0.8942658256533806,
+              "chaos": 0.06772371172220831
+            },
+            "simulation_seeds": [
+              150300018,
+              150300019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0010",
+            "seat_yoke_id": "seat-yoked-1503-0010",
+            "weights": {
+              "pressure": 0.03159315654828488,
+              "control": 0.8108389996836547,
+              "chaos": 0.15756784376806043
+            },
+            "simulation_seeds": [
+              150300020,
+              150300021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0011",
+            "seat_yoke_id": "seat-yoked-1503-0011",
+            "weights": {
+              "pressure": 0.04583130546634876,
+              "control": 0.9402165799063693,
+              "chaos": 0.01395211462728193
+            },
+            "simulation_seeds": [
+              150300022,
+              150300023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0012",
+            "seat_yoke_id": "seat-yoked-1503-0012",
+            "weights": {
+              "pressure": 0.13032137317255343,
+              "control": 0.8633254006206895,
+              "chaos": 0.0063532262067570455
+            },
+            "simulation_seeds": [
+              150300024,
+              150300025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0013",
+            "seat_yoke_id": "seat-yoked-1503-0013",
+            "weights": {
+              "pressure": 0.02979320053204312,
+              "control": 0.913612884549776,
+              "chaos": 0.056593914918180915
+            },
+            "simulation_seeds": [
+              150300026,
+              150300027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0014",
+            "seat_yoke_id": "seat-yoked-1503-0014",
+            "weights": {
+              "pressure": 0.044705592219885376,
+              "control": 0.9324942409702495,
+              "chaos": 0.022800166809865158
+            },
+            "simulation_seeds": [
+              150300028,
+              150300029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0015",
+            "seat_yoke_id": "seat-yoked-1503-0015",
+            "weights": {
+              "pressure": 0.033522458048076825,
+              "control": 0.8126233355977109,
+              "chaos": 0.15385420635421224
+            },
+            "simulation_seeds": [
+              150300030,
+              150300031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0016",
+            "seat_yoke_id": "seat-yoked-1503-0016",
+            "weights": {
+              "pressure": 0.06811117472243078,
+              "control": 0.8260834251125938,
+              "chaos": 0.10580540016497542
+            },
+            "simulation_seeds": [
+              150300032,
+              150300033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0017",
+            "seat_yoke_id": "seat-yoked-1503-0017",
+            "weights": {
+              "pressure": 0.09003637106775307,
+              "control": 0.8029727010820691,
+              "chaos": 0.10699092785017784
+            },
+            "simulation_seeds": [
+              150300034,
+              150300035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0018",
+            "seat_yoke_id": "seat-yoked-1503-0018",
+            "weights": {
+              "pressure": 0.08394527084718004,
+              "control": 0.864772078135769,
+              "chaos": 0.05128265101705101
+            },
+            "simulation_seeds": [
+              150300036,
+              150300037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1503-0019",
+            "seat_yoke_id": "seat-yoked-1503-0019",
+            "weights": {
+              "pressure": 0.046132503607522135,
+              "control": 0.9288878088487847,
+              "chaos": 0.02497968754369312
+            },
+            "simulation_seeds": [
+              150300038,
+              150300039
+            ]
+          }
+        ]
+      },
+      "summary": {
+        "mixtures": 20,
+        "supported_mixtures": 20,
+        "zero_support_mixtures": 0,
+        "total_overlap": 961,
+        "overlap_weighted_conditional_tv": 0.411570171917093,
+        "overlap_weighted_bet_call_absolute_gap": 0.07057638105096488,
+        "overlap_weighted_bet_call_signed_gap": 0.01267911903443054
+      },
+      "mixtures": [
+        {
+          "mixture_id": "seat-yoked-1503-0000",
+          "overlap": 47,
+          "eligible_by_seat": [
+            120,
+            52
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3879356363913673,
+          "conditional_bet_call_gap": 0.08886107634543179,
+          "conditional_bet_call_signed_gap": 0.08886107634543179,
+          "unmatched_context_counts_by_seat": [
+            73,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0001",
+          "overlap": 53,
+          "eligible_by_seat": [
+            110,
+            55
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4568324757004002,
+          "conditional_bet_call_gap": 0.03945111492281304,
+          "conditional_bet_call_signed_gap": -0.036020583190394515,
+          "unmatched_context_counts_by_seat": [
+            57,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0002",
+          "overlap": 47,
+          "eligible_by_seat": [
+            114,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4130918152194747,
+          "conditional_bet_call_gap": 0.05395136778115501,
+          "conditional_bet_call_signed_gap": 0.05395136778115501,
+          "unmatched_context_counts_by_seat": [
+            67,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0003",
+          "overlap": 48,
+          "eligible_by_seat": [
+            113,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.33055555555555555,
+          "conditional_bet_call_gap": 0.035416666666666666,
+          "conditional_bet_call_signed_gap": -0.035416666666666666,
+          "unmatched_context_counts_by_seat": [
+            65,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0004",
+          "overlap": 52,
+          "eligible_by_seat": [
+            121,
+            56
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4627658517193401,
+          "conditional_bet_call_gap": 0.05448717948717949,
+          "conditional_bet_call_signed_gap": 0.016025641025641024,
+          "unmatched_context_counts_by_seat": [
+            69,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0005",
+          "overlap": 46,
+          "eligible_by_seat": [
+            108,
+            47
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.45690993788819867,
+          "conditional_bet_call_gap": 0.08144409937888199,
+          "conditional_bet_call_signed_gap": -0.005512422360248445,
+          "unmatched_context_counts_by_seat": [
+            62,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0006",
+          "overlap": 49,
+          "eligible_by_seat": [
+            119,
+            55
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.38566195709052853,
+          "conditional_bet_call_gap": 0.06593406593406594,
+          "conditional_bet_call_signed_gap": 0.01569858712715855,
+          "unmatched_context_counts_by_seat": [
+            70,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0007",
+          "overlap": 44,
+          "eligible_by_seat": [
+            115,
+            60
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4112962394212395,
+          "conditional_bet_call_gap": 0.05702293202293203,
+          "conditional_bet_call_signed_gap": -0.019144144144144146,
+          "unmatched_context_counts_by_seat": [
+            71,
+            16
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0008",
+          "overlap": 47,
+          "eligible_by_seat": [
+            116,
+            49
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3235632183908046,
+          "conditional_bet_call_gap": 0.09078014184397164,
+          "conditional_bet_call_signed_gap": 0.04822695035460992,
+          "unmatched_context_counts_by_seat": [
+            69,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0009",
+          "overlap": 40,
+          "eligible_by_seat": [
+            112,
+            46
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.37357142857142855,
+          "conditional_bet_call_gap": 0.10428571428571429,
+          "conditional_bet_call_signed_gap": 0.05785714285714286,
+          "unmatched_context_counts_by_seat": [
+            72,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0010",
+          "overlap": 49,
+          "eligible_by_seat": [
+            120,
+            56
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.45158832763874784,
+          "conditional_bet_call_gap": 0.07417582417582418,
+          "conditional_bet_call_signed_gap": -0.017660910518053383,
+          "unmatched_context_counts_by_seat": [
+            71,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0011",
+          "overlap": 52,
+          "eligible_by_seat": [
+            115,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3288461538461538,
+          "conditional_bet_call_gap": 0.02777777777777778,
+          "conditional_bet_call_signed_gap": 0.02777777777777778,
+          "unmatched_context_counts_by_seat": [
+            63,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0012",
+          "overlap": 53,
+          "eligible_by_seat": [
+            123,
+            55
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4283826051861568,
+          "conditional_bet_call_gap": 0.0797598627787307,
+          "conditional_bet_call_signed_gap": 0.04202401372212693,
+          "unmatched_context_counts_by_seat": [
+            70,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0013",
+          "overlap": 44,
+          "eligible_by_seat": [
+            109,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4917207792207792,
+          "conditional_bet_call_gap": 0.10454545454545455,
+          "conditional_bet_call_signed_gap": 0.07727272727272727,
+          "unmatched_context_counts_by_seat": [
+            65,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0014",
+          "overlap": 48,
+          "eligible_by_seat": [
+            117,
+            53
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4560185185185185,
+          "conditional_bet_call_gap": 0.05324074074074074,
+          "conditional_bet_call_signed_gap": -0.011574074074074077,
+          "unmatched_context_counts_by_seat": [
+            69,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0015",
+          "overlap": 50,
+          "eligible_by_seat": [
+            117,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.39999911582670206,
+          "conditional_bet_call_gap": 0.10980548187444739,
+          "conditional_bet_call_signed_gap": 0.05686118479221927,
+          "unmatched_context_counts_by_seat": [
+            67,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0016",
+          "overlap": 54,
+          "eligible_by_seat": [
+            112,
+            57
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4757887209994489,
+          "conditional_bet_call_gap": 0.034621437878142855,
+          "conditional_bet_call_signed_gap": -0.007872466684727221,
+          "unmatched_context_counts_by_seat": [
+            58,
+            3
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0017",
+          "overlap": 49,
+          "eligible_by_seat": [
+            113,
+            58
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.37382572076449627,
+          "conditional_bet_call_gap": 0.09637188208616779,
+          "conditional_bet_call_signed_gap": -0.021541950113378686,
+          "unmatched_context_counts_by_seat": [
+            64,
+            9
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0018",
+          "overlap": 50,
+          "eligible_by_seat": [
+            118,
+            56
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.42323565323565326,
+          "conditional_bet_call_gap": 0.09,
+          "conditional_bet_call_signed_gap": -0.03000000000000001,
+          "unmatched_context_counts_by_seat": [
+            68,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1503-0019",
+          "overlap": 39,
+          "eligible_by_seat": [
+            119,
+            45
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.38299686738600763,
+          "conditional_bet_call_gap": 0.09023668639053253,
+          "conditional_bet_call_signed_gap": -0.03895463510848126,
+          "unmatched_context_counts_by_seat": [
+            80,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 1504,
+      "design": {
+        "seed": 1504,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1504-0000",
+            "seat_yoke_id": "seat-yoked-1504-0000",
+            "weights": {
+              "pressure": 0.025519898729952722,
+              "control": 0.9384144148916044,
+              "chaos": 0.0360656863784429
+            },
+            "simulation_seeds": [
+              150400000,
+              150400001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0001",
+            "seat_yoke_id": "seat-yoked-1504-0001",
+            "weights": {
+              "pressure": 0.012216044103688836,
+              "control": 0.9135599370311547,
+              "chaos": 0.07422401886515649
+            },
+            "simulation_seeds": [
+              150400002,
+              150400003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0002",
+            "seat_yoke_id": "seat-yoked-1504-0002",
+            "weights": {
+              "pressure": 0.048323455228542415,
+              "control": 0.8934293113504418,
+              "chaos": 0.058247233421015794
+            },
+            "simulation_seeds": [
+              150400004,
+              150400005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0003",
+            "seat_yoke_id": "seat-yoked-1504-0003",
+            "weights": {
+              "pressure": 0.028562071904244674,
+              "control": 0.9111463232982523,
+              "chaos": 0.060291604797503034
+            },
+            "simulation_seeds": [
+              150400006,
+              150400007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0004",
+            "seat_yoke_id": "seat-yoked-1504-0004",
+            "weights": {
+              "pressure": 0.022828307760719542,
+              "control": 0.9475705774912826,
+              "chaos": 0.029601114747997863
+            },
+            "simulation_seeds": [
+              150400008,
+              150400009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0005",
+            "seat_yoke_id": "seat-yoked-1504-0005",
+            "weights": {
+              "pressure": 0.08839069869568537,
+              "control": 0.8030601773147966,
+              "chaos": 0.108549123989518
+            },
+            "simulation_seeds": [
+              150400010,
+              150400011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0006",
+            "seat_yoke_id": "seat-yoked-1504-0006",
+            "weights": {
+              "pressure": 0.049925015552501485,
+              "control": 0.93949784632545,
+              "chaos": 0.010577138122048545
+            },
+            "simulation_seeds": [
+              150400012,
+              150400013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0007",
+            "seat_yoke_id": "seat-yoked-1504-0007",
+            "weights": {
+              "pressure": 0.0360931994304329,
+              "control": 0.9082498947429376,
+              "chaos": 0.0556569058266295
+            },
+            "simulation_seeds": [
+              150400014,
+              150400015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0008",
+            "seat_yoke_id": "seat-yoked-1504-0008",
+            "weights": {
+              "pressure": 0.02401127552953276,
+              "control": 0.8989508426404178,
+              "chaos": 0.07703788183004943
+            },
+            "simulation_seeds": [
+              150400016,
+              150400017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0009",
+            "seat_yoke_id": "seat-yoked-1504-0009",
+            "weights": {
+              "pressure": 0.10962946493226049,
+              "control": 0.8006456314532223,
+              "chaos": 0.0897249036145172
+            },
+            "simulation_seeds": [
+              150400018,
+              150400019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0010",
+            "seat_yoke_id": "seat-yoked-1504-0010",
+            "weights": {
+              "pressure": 0.1924770922339089,
+              "control": 0.8030218924026012,
+              "chaos": 0.004501015363489846
+            },
+            "simulation_seeds": [
+              150400020,
+              150400021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0011",
+            "seat_yoke_id": "seat-yoked-1504-0011",
+            "weights": {
+              "pressure": 0.040871905005629046,
+              "control": 0.9498170129133676,
+              "chaos": 0.009311082081003334
+            },
+            "simulation_seeds": [
+              150400022,
+              150400023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0012",
+            "seat_yoke_id": "seat-yoked-1504-0012",
+            "weights": {
+              "pressure": 0.02489431536099361,
+              "control": 0.9093904169020627,
+              "chaos": 0.06571526773694371
+            },
+            "simulation_seeds": [
+              150400024,
+              150400025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0013",
+            "seat_yoke_id": "seat-yoked-1504-0013",
+            "weights": {
+              "pressure": 0.09372212240206973,
+              "control": 0.8152790601565515,
+              "chaos": 0.09099881744137878
+            },
+            "simulation_seeds": [
+              150400026,
+              150400027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0014",
+            "seat_yoke_id": "seat-yoked-1504-0014",
+            "weights": {
+              "pressure": 0.022866242114902766,
+              "control": 0.9019145796248917,
+              "chaos": 0.0752191782602055
+            },
+            "simulation_seeds": [
+              150400028,
+              150400029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0015",
+            "seat_yoke_id": "seat-yoked-1504-0015",
+            "weights": {
+              "pressure": 0.15454753639038324,
+              "control": 0.8029790350631321,
+              "chaos": 0.0424734285464847
+            },
+            "simulation_seeds": [
+              150400030,
+              150400031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0016",
+            "seat_yoke_id": "seat-yoked-1504-0016",
+            "weights": {
+              "pressure": 0.00944941024564183,
+              "control": 0.8027691525057885,
+              "chaos": 0.18778143724856966
+            },
+            "simulation_seeds": [
+              150400032,
+              150400033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0017",
+            "seat_yoke_id": "seat-yoked-1504-0017",
+            "weights": {
+              "pressure": 0.11099530062991507,
+              "control": 0.8400709402886892,
+              "chaos": 0.0489337590813957
+            },
+            "simulation_seeds": [
+              150400034,
+              150400035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0018",
+            "seat_yoke_id": "seat-yoked-1504-0018",
+            "weights": {
+              "pressure": 0.04128677078853318,
+              "control": 0.8312211597250284,
+              "chaos": 0.1274920694864384
+            },
+            "simulation_seeds": [
+              150400036,
+              150400037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1504-0019",
+            "seat_yoke_id": "seat-yoked-1504-0019",
+            "weights": {
+              "pressure": 0.0662850441107898,
+              "control": 0.9143590779647413,
+              "chaos": 0.019355877924468953
+            },
+            "simulation_seeds": [
+              150400038,
+              150400039
+            ]
+          }
+        ]
+      },
+      "summary": {
+        "mixtures": 20,
+        "supported_mixtures": 20,
+        "zero_support_mixtures": 0,
+        "total_overlap": 966,
+        "overlap_weighted_conditional_tv": 0.3889497254256413,
+        "overlap_weighted_bet_call_absolute_gap": 0.0771981060430048,
+        "overlap_weighted_bet_call_signed_gap": -0.003821039598711467
+      },
+      "mixtures": [
+        {
+          "mixture_id": "seat-yoked-1504-0000",
+          "overlap": 39,
+          "eligible_by_seat": [
+            117,
+            43
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.40190297507370676,
+          "conditional_bet_call_gap": 0.04395604395604395,
+          "conditional_bet_call_signed_gap": -0.007326007326007328,
+          "unmatched_context_counts_by_seat": [
+            78,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0001",
+          "overlap": 48,
+          "eligible_by_seat": [
+            114,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3317847464188927,
+          "conditional_bet_call_gap": 0.028769841269841268,
+          "conditional_bet_call_signed_gap": -0.028769841269841268,
+          "unmatched_context_counts_by_seat": [
+            66,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0002",
+          "overlap": 50,
+          "eligible_by_seat": [
+            116,
+            53
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.351,
+          "conditional_bet_call_gap": 0.10433333333333333,
+          "conditional_bet_call_signed_gap": -0.02566666666666667,
+          "unmatched_context_counts_by_seat": [
+            66,
+            3
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0003",
+          "overlap": 44,
+          "eligible_by_seat": [
+            119,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.395405669599218,
+          "conditional_bet_call_gap": 0.06016042780748662,
+          "conditional_bet_call_signed_gap": 0.014705882352941175,
+          "unmatched_context_counts_by_seat": [
+            75,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0004",
+          "overlap": 39,
+          "eligible_by_seat": [
+            122,
+            44
+          ],
+          "common_contexts": 4,
+          "conditional_tv": 0.4155067155067156,
+          "conditional_bet_call_gap": 0.10183150183150183,
+          "conditional_bet_call_signed_gap": -0.030036630036630034,
+          "unmatched_context_counts_by_seat": [
+            83,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0005",
+          "overlap": 47,
+          "eligible_by_seat": [
+            119,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.43486997635933805,
+          "conditional_bet_call_gap": 0.09479905437352244,
+          "conditional_bet_call_signed_gap": 0.04988179669030733,
+          "unmatched_context_counts_by_seat": [
+            72,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0006",
+          "overlap": 42,
+          "eligible_by_seat": [
+            119,
+            42
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.35840032982890124,
+          "conditional_bet_call_gap": 0.1507936507936508,
+          "conditional_bet_call_signed_gap": 0.039682539682539666,
+          "unmatched_context_counts_by_seat": [
+            77,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0007",
+          "overlap": 48,
+          "eligible_by_seat": [
+            119,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.2802579365079365,
+          "conditional_bet_call_gap": 0.07291666666666666,
+          "conditional_bet_call_signed_gap": -0.025297619047619048,
+          "unmatched_context_counts_by_seat": [
+            71,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0008",
+          "overlap": 50,
+          "eligible_by_seat": [
+            120,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.40015873015873027,
+          "conditional_bet_call_gap": 0.05571428571428572,
+          "conditional_bet_call_signed_gap": -0.015714285714285715,
+          "unmatched_context_counts_by_seat": [
+            70,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0009",
+          "overlap": 53,
+          "eligible_by_seat": [
+            116,
+            53
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.335783120308379,
+          "conditional_bet_call_gap": 0.05314465408805032,
+          "conditional_bet_call_signed_gap": -0.0003144654088050279,
+          "unmatched_context_counts_by_seat": [
+            63,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0010",
+          "overlap": 57,
+          "eligible_by_seat": [
+            119,
+            68
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3972886762360446,
+          "conditional_bet_call_gap": 0.02485380116959064,
+          "conditional_bet_call_signed_gap": 0.0014619883040935633,
+          "unmatched_context_counts_by_seat": [
+            62,
+            11
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0011",
+          "overlap": 46,
+          "eligible_by_seat": [
+            112,
+            50
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4365942028985507,
+          "conditional_bet_call_gap": 0.03985507246376811,
+          "conditional_bet_call_signed_gap": 0.03985507246376811,
+          "unmatched_context_counts_by_seat": [
+            66,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0012",
+          "overlap": 49,
+          "eligible_by_seat": [
+            117,
+            56
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4604681033252461,
+          "conditional_bet_call_gap": 0.13053613053613053,
+          "conditional_bet_call_signed_gap": 0.005518291232576959,
+          "unmatched_context_counts_by_seat": [
+            68,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0013",
+          "overlap": 50,
+          "eligible_by_seat": [
+            113,
+            74
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.44159722222222225,
+          "conditional_bet_call_gap": 0.07570833333333332,
+          "conditional_bet_call_signed_gap": -0.00104166666666667,
+          "unmatched_context_counts_by_seat": [
+            63,
+            24
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0014",
+          "overlap": 47,
+          "eligible_by_seat": [
+            123,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4078014184397163,
+          "conditional_bet_call_gap": 0.10372340425531913,
+          "conditional_bet_call_signed_gap": -0.061170212765957445,
+          "unmatched_context_counts_by_seat": [
+            76,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0015",
+          "overlap": 55,
+          "eligible_by_seat": [
+            112,
+            71
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3902733630006357,
+          "conditional_bet_call_gap": 0.032837465564738294,
+          "conditional_bet_call_signed_gap": 0.032837465564738294,
+          "unmatched_context_counts_by_seat": [
+            57,
+            16
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0016",
+          "overlap": 50,
+          "eligible_by_seat": [
+            113,
+            57
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.34691519949584465,
+          "conditional_bet_call_gap": 0.08744771357674584,
+          "conditional_bet_call_signed_gap": -0.05887628500531727,
+          "unmatched_context_counts_by_seat": [
+            63,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0017",
+          "overlap": 50,
+          "eligible_by_seat": [
+            118,
+            52
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3153571428571429,
+          "conditional_bet_call_gap": 0.0625,
+          "conditional_bet_call_signed_gap": 0.0625,
+          "unmatched_context_counts_by_seat": [
+            68,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0018",
+          "overlap": 47,
+          "eligible_by_seat": [
+            109,
+            53
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.5045332917673343,
+          "conditional_bet_call_gap": 0.1650689735796119,
+          "conditional_bet_call_signed_gap": -0.005143792377834931,
+          "unmatched_context_counts_by_seat": [
+            62,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1504-0019",
+          "overlap": 55,
+          "eligible_by_seat": [
+            122,
+            59
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.388989898989899,
+          "conditional_bet_call_gap": 0.0796969696969697,
+          "conditional_bet_call_signed_gap": -0.05848484848484849,
+          "unmatched_context_counts_by_seat": [
+            67,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 1505,
+      "design": {
+        "seed": 1505,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1505-0000",
+            "seat_yoke_id": "seat-yoked-1505-0000",
+            "weights": {
+              "pressure": 0.01425545473350411,
+              "control": 0.8179644107420663,
+              "chaos": 0.1677801345244296
+            },
+            "simulation_seeds": [
+              150500000,
+              150500001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0001",
+            "seat_yoke_id": "seat-yoked-1505-0001",
+            "weights": {
+              "pressure": 0.05648956517016433,
+              "control": 0.8867351288984008,
+              "chaos": 0.056775305931434886
+            },
+            "simulation_seeds": [
+              150500002,
+              150500003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0002",
+            "seat_yoke_id": "seat-yoked-1505-0002",
+            "weights": {
+              "pressure": 0.10417390120046947,
+              "control": 0.8543587319457948,
+              "chaos": 0.04146736685373571
+            },
+            "simulation_seeds": [
+              150500004,
+              150500005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0003",
+            "seat_yoke_id": "seat-yoked-1505-0003",
+            "weights": {
+              "pressure": 0.06760111793614593,
+              "control": 0.8227055367169368,
+              "chaos": 0.10969334534691727
+            },
+            "simulation_seeds": [
+              150500006,
+              150500007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0004",
+            "seat_yoke_id": "seat-yoked-1505-0004",
+            "weights": {
+              "pressure": 0.0011429793250721917,
+              "control": 0.9163015792365277,
+              "chaos": 0.08255544143840014
+            },
+            "simulation_seeds": [
+              150500008,
+              150500009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0005",
+            "seat_yoke_id": "seat-yoked-1505-0005",
+            "weights": {
+              "pressure": 0.020892207067741947,
+              "control": 0.9476165451908676,
+              "chaos": 0.03149124774139048
+            },
+            "simulation_seeds": [
+              150500010,
+              150500011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0006",
+            "seat_yoke_id": "seat-yoked-1505-0006",
+            "weights": {
+              "pressure": 0.01141422552196622,
+              "control": 0.8504534175436066,
+              "chaos": 0.1381323569344272
+            },
+            "simulation_seeds": [
+              150500012,
+              150500013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0007",
+            "seat_yoke_id": "seat-yoked-1505-0007",
+            "weights": {
+              "pressure": 0.017412389731659247,
+              "control": 0.8667118237123446,
+              "chaos": 0.11587578655599619
+            },
+            "simulation_seeds": [
+              150500014,
+              150500015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0008",
+            "seat_yoke_id": "seat-yoked-1505-0008",
+            "weights": {
+              "pressure": 0.12966439903650462,
+              "control": 0.8601576001011981,
+              "chaos": 0.010178000862297254
+            },
+            "simulation_seeds": [
+              150500016,
+              150500017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0009",
+            "seat_yoke_id": "seat-yoked-1505-0009",
+            "weights": {
+              "pressure": 0.0017064650756346627,
+              "control": 0.9296478958085561,
+              "chaos": 0.06864563911580922
+            },
+            "simulation_seeds": [
+              150500018,
+              150500019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0010",
+            "seat_yoke_id": "seat-yoked-1505-0010",
+            "weights": {
+              "pressure": 0.11103476543658776,
+              "control": 0.8190933950703946,
+              "chaos": 0.06987183949301766
+            },
+            "simulation_seeds": [
+              150500020,
+              150500021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0011",
+            "seat_yoke_id": "seat-yoked-1505-0011",
+            "weights": {
+              "pressure": 0.021095480470058138,
+              "control": 0.8848664553906487,
+              "chaos": 0.09403806413929319
+            },
+            "simulation_seeds": [
+              150500022,
+              150500023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0012",
+            "seat_yoke_id": "seat-yoked-1505-0012",
+            "weights": {
+              "pressure": 0.09725944053905461,
+              "control": 0.8024359209998428,
+              "chaos": 0.10030463846110255
+            },
+            "simulation_seeds": [
+              150500024,
+              150500025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0013",
+            "seat_yoke_id": "seat-yoked-1505-0013",
+            "weights": {
+              "pressure": 0.02632314902013167,
+              "control": 0.8797610788055388,
+              "chaos": 0.09391577217432956
+            },
+            "simulation_seeds": [
+              150500026,
+              150500027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0014",
+            "seat_yoke_id": "seat-yoked-1505-0014",
+            "weights": {
+              "pressure": 0.15527047645256523,
+              "control": 0.8106521765400647,
+              "chaos": 0.03407734700737006
+            },
+            "simulation_seeds": [
+              150500028,
+              150500029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0015",
+            "seat_yoke_id": "seat-yoked-1505-0015",
+            "weights": {
+              "pressure": 0.07727386229020188,
+              "control": 0.8659465738478652,
+              "chaos": 0.056779563861932905
+            },
+            "simulation_seeds": [
+              150500030,
+              150500031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0016",
+            "seat_yoke_id": "seat-yoked-1505-0016",
+            "weights": {
+              "pressure": 0.1553425409775449,
+              "control": 0.8405704015148322,
+              "chaos": 0.004087057507622893
+            },
+            "simulation_seeds": [
+              150500032,
+              150500033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0017",
+            "seat_yoke_id": "seat-yoked-1505-0017",
+            "weights": {
+              "pressure": 0.020613099389029735,
+              "control": 0.8375584878650536,
+              "chaos": 0.14182841274591668
+            },
+            "simulation_seeds": [
+              150500034,
+              150500035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0018",
+            "seat_yoke_id": "seat-yoked-1505-0018",
+            "weights": {
+              "pressure": 0.016797165308130926,
+              "control": 0.8059439176681803,
+              "chaos": 0.1772589170236888
+            },
+            "simulation_seeds": [
+              150500036,
+              150500037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1505-0019",
+            "seat_yoke_id": "seat-yoked-1505-0019",
+            "weights": {
+              "pressure": 0.11673572627061145,
+              "control": 0.8267765733483189,
+              "chaos": 0.056487700381069664
+            },
+            "simulation_seeds": [
+              150500038,
+              150500039
+            ]
+          }
+        ]
+      },
+      "summary": {
+        "mixtures": 20,
+        "supported_mixtures": 20,
+        "zero_support_mixtures": 0,
+        "total_overlap": 1028,
+        "overlap_weighted_conditional_tv": 0.37491927644962414,
+        "overlap_weighted_bet_call_absolute_gap": 0.07205014206196472,
+        "overlap_weighted_bet_call_signed_gap": 0.0031601175926757904
+      },
+      "mixtures": [
+        {
+          "mixture_id": "seat-yoked-1505-0000",
+          "overlap": 43,
+          "eligible_by_seat": [
+            114,
+            44
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.27718715393133997,
+          "conditional_bet_call_gap": 0.034108527131782945,
+          "conditional_bet_call_signed_gap": -0.003100775193798453,
+          "unmatched_context_counts_by_seat": [
+            71,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0001",
+          "overlap": 49,
+          "eligible_by_seat": [
+            114,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.39905247813411077,
+          "conditional_bet_call_gap": 0.11989795918367346,
+          "conditional_bet_call_signed_gap": 0.03826530612244899,
+          "unmatched_context_counts_by_seat": [
+            65,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0002",
+          "overlap": 54,
+          "eligible_by_seat": [
+            111,
+            64
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3965902410346855,
+          "conditional_bet_call_gap": 0.07848324514991181,
+          "conditional_bet_call_signed_gap": 0.025573192239858905,
+          "unmatched_context_counts_by_seat": [
+            57,
+            10
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0003",
+          "overlap": 51,
+          "eligible_by_seat": [
+            110,
+            55
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3823529411764706,
+          "conditional_bet_call_gap": 0.07598039215686275,
+          "conditional_bet_call_signed_gap": -0.07598039215686275,
+          "unmatched_context_counts_by_seat": [
+            59,
+            4
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0004",
+          "overlap": 46,
+          "eligible_by_seat": [
+            116,
+            46
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.37184265010351963,
+          "conditional_bet_call_gap": 0.10289855072463767,
+          "conditional_bet_call_signed_gap": 0.01884057971014493,
+          "unmatched_context_counts_by_seat": [
+            70,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0005",
+          "overlap": 53,
+          "eligible_by_seat": [
+            111,
+            53
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.32713387241689124,
+          "conditional_bet_call_gap": 0.06401617250673855,
+          "conditional_bet_call_signed_gap": 0.02628032345013477,
+          "unmatched_context_counts_by_seat": [
+            58,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0006",
+          "overlap": 50,
+          "eligible_by_seat": [
+            120,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3992857142857143,
+          "conditional_bet_call_gap": 0.03904761904761905,
+          "conditional_bet_call_signed_gap": 0.012380952380952378,
+          "unmatched_context_counts_by_seat": [
+            70,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0007",
+          "overlap": 53,
+          "eligible_by_seat": [
+            120,
+            54
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.33467741935483863,
+          "conditional_bet_call_gap": 0.0394856968959221,
+          "conditional_bet_call_signed_gap": -0.0394856968959221,
+          "unmatched_context_counts_by_seat": [
+            67,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0008",
+          "overlap": 48,
+          "eligible_by_seat": [
+            115,
+            50
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3683469308469308,
+          "conditional_bet_call_gap": 0.05048076923076923,
+          "conditional_bet_call_signed_gap": -0.05048076923076923,
+          "unmatched_context_counts_by_seat": [
+            67,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0009",
+          "overlap": 53,
+          "eligible_by_seat": [
+            114,
+            53
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3611859838274933,
+          "conditional_bet_call_gap": 0.015274034141958668,
+          "conditional_bet_call_signed_gap": 0.009883198562443843,
+          "unmatched_context_counts_by_seat": [
+            61,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0010",
+          "overlap": 48,
+          "eligible_by_seat": [
+            116,
+            48
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.43040771864301275,
+          "conditional_bet_call_gap": 0.08349673202614379,
+          "conditional_bet_call_signed_gap": 0.06683006535947712,
+          "unmatched_context_counts_by_seat": [
+            68,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0011",
+          "overlap": 58,
+          "eligible_by_seat": [
+            121,
+            59
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.36829501915708807,
+          "conditional_bet_call_gap": 0.05651340996168583,
+          "conditional_bet_call_signed_gap": -0.012452107279693486,
+          "unmatched_context_counts_by_seat": [
+            63,
+            1
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0012",
+          "overlap": 51,
+          "eligible_by_seat": [
+            110,
+            66
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.34216569510687156,
+          "conditional_bet_call_gap": 0.087528705175764,
+          "conditional_bet_call_signed_gap": -0.009097332626744399,
+          "unmatched_context_counts_by_seat": [
+            59,
+            15
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0013",
+          "overlap": 46,
+          "eligible_by_seat": [
+            110,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3134057971014493,
+          "conditional_bet_call_gap": 0.06340579710144928,
+          "conditional_bet_call_signed_gap": -0.0018115942028985518,
+          "unmatched_context_counts_by_seat": [
+            64,
+            5
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0014",
+          "overlap": 59,
+          "eligible_by_seat": [
+            115,
+            66
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4199623352165725,
+          "conditional_bet_call_gap": 0.09347714432460195,
+          "conditional_bet_call_signed_gap": -0.008217770929635344,
+          "unmatched_context_counts_by_seat": [
+            56,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0015",
+          "overlap": 52,
+          "eligible_by_seat": [
+            113,
+            59
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.35604395604395606,
+          "conditional_bet_call_gap": 0.07051282051282051,
+          "conditional_bet_call_signed_gap": -0.012820512820512815,
+          "unmatched_context_counts_by_seat": [
+            61,
+            7
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0016",
+          "overlap": 62,
+          "eligible_by_seat": [
+            123,
+            62
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3799627791563276,
+          "conditional_bet_call_gap": 0.06359447004608296,
+          "conditional_bet_call_signed_gap": -0.0055299539170506895,
+          "unmatched_context_counts_by_seat": [
+            61,
+            0
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0017",
+          "overlap": 54,
+          "eligible_by_seat": [
+            121,
+            56
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.41405790711346263,
+          "conditional_bet_call_gap": 0.09457671957671956,
+          "conditional_bet_call_signed_gap": 0.057539682539682536,
+          "unmatched_context_counts_by_seat": [
+            67,
+            2
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0018",
+          "overlap": 45,
+          "eligible_by_seat": [
+            117,
+            51
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.3979582146248813,
+          "conditional_bet_call_gap": 0.09781576448243115,
+          "conditional_bet_call_signed_gap": 0.028679962013295347,
+          "unmatched_context_counts_by_seat": [
+            72,
+            6
+          ]
+        },
+        {
+          "mixture_id": "seat-yoked-1505-0019",
+          "overlap": 53,
+          "eligible_by_seat": [
+            109,
+            69
+          ],
+          "common_contexts": 5,
+          "conditional_tv": 0.4350031519842841,
+          "conditional_bet_call_gap": 0.11149228130360206,
+          "conditional_bet_call_signed_gap": 0.005145797598627787,
+          "unmatched_context_counts_by_seat": [
+            56,
+            16
+          ]
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "supported_seeds": 5,
+    "mean_seed_conditional_tv": 0.3844058651991438,
+    "total_zero_support_mixtures": 0
+  },
+  "provenance": {
+    "human_data_accessed": false,
+    "previous_frozen_artifacts_modified": false
+  },
+  "limitations": "Mixed-transition eligibility depends on observed actions; this is a descriptive conditional-composition diagnostic, not causal identification. Sparse common support and finite-sample estimation can bias comparisons."
+}

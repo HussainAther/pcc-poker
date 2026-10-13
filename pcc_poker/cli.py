@@ -33,6 +33,7 @@ from .score_control_two_sided_intervention import write_score_control_two_sided_
 from .mixed import analyze_mixed_file, write_mixed_grid
 from .play import play_session, write_session
 from .pressure_decomposition import write_pressure_decomposition
+from .paired_matched_opportunity_validation import write_paired_matched_opportunity_validation
 from .pressure_surprise_decomposition import write_pressure_surprise_decomposition
 from .invariant_panel import write_invariant_panel
 from .policies import PURE_MIXTURES
@@ -285,6 +286,24 @@ def pressure_decomposition_command(args) -> int:
     print(json.dumps(report, indent=2))
     return 0
 
+
+
+
+def paired_matched_opportunity_command(args) -> int:
+    report = write_paired_matched_opportunity_validation(
+        args.output,
+        training_path=args.training,
+        seeds=args.seeds,
+        mixtures_per_seed=args.mixtures_per_seed,
+        hands_per_seat=args.hands_per_seat,
+    )
+    print(json.dumps({
+        "status": report["status"],
+        "seeds": report["seeds"],
+        "aggregate": report["aggregate"],
+        "output": args.output,
+    }, indent=2))
+    return 0
 
 def simulate_command(args) -> int:
     records, summary = simulate_match(args.hands, PURE_MIXTURES[args.mode0], PURE_MIXTURES[args.mode1], args.seed, args.mode0, args.mode1)
@@ -822,6 +841,17 @@ def parser() -> argparse.ArgumentParser:
     score_control_intervention.add_argument("--evaluation-hands-per-seat", type=int, default=60)
     score_control_intervention.add_argument("--output", default="validation/score-control-intervention.json")
     score_control_intervention.set_defaults(func=score_control_intervention_command)
+
+    paired_matched = commands.add_parser(
+        "paired-matched-opportunity",
+        help="run prospective per-yoke exact opportunity matching",
+    )
+    paired_matched.add_argument("--training", default="outputs/mixed-recovery-data.jsonl")
+    paired_matched.add_argument("--seeds", type=int, nargs="+", default=[1401, 1402, 1403, 1404, 1405])
+    paired_matched.add_argument("--mixtures-per-seed", type=int, default=20)
+    paired_matched.add_argument("--hands-per-seat", type=int, default=100)
+    paired_matched.add_argument("--output", default="validation/paired-matched-opportunity-validation.json")
+    paired_matched.set_defaults(func=paired_matched_opportunity_command)
     status=commands.add_parser("research-status", help="summarize frozen PCC claims into publication-friendly JSON/CSV/Markdown")
     status.add_argument("--root", default=".")
     status.add_argument("--json-output", default="validation/research-status.json")
