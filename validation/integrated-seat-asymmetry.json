@@ -1,0 +1,146 @@
+{
+  "status": "completed",
+  "analysis_status": "descriptive_nonadditive_seat_diagnostics",
+  "design": {
+    "seeds": [
+      1501,
+      1502,
+      1503,
+      1504,
+      1505
+    ],
+    "mixtures_per_seed": 20,
+    "hands_per_seat": 100
+  },
+  "seed_results": [
+    {
+      "seed": 1501,
+      "ordinary_seat_gap": 0.0037595098838639762,
+      "count_matched_seat_gap": 0.0008780278219225612,
+      "context_matched_seat_gap": 0.0006950555591808127,
+      "conditional_action_tv": 0.3743934634422758,
+      "conditional_bet_call_gap": 0.05541365979342206,
+      "temporal_orientation_gap": 0.0,
+      "context_vs_count_gap_change": 0.0001829722627417485
+    },
+    {
+      "seed": 1502,
+      "ordinary_seat_gap": 0.0010701419561227263,
+      "count_matched_seat_gap": 0.003722229093755483,
+      "context_matched_seat_gap": 0.0012339091109614952,
+      "conditional_action_tv": 0.3721966887610849,
+      "conditional_bet_call_gap": 0.0633585779948762,
+      "temporal_orientation_gap": 0.0,
+      "context_vs_count_gap_change": 0.002488319982793988
+    },
+    {
+      "seed": 1503,
+      "ordinary_seat_gap": 0.013257928881324349,
+      "count_matched_seat_gap": 0.009186119344068433,
+      "context_matched_seat_gap": 0.004494869221155107,
+      "conditional_action_tv": 0.411570171917093,
+      "conditional_bet_call_gap": 0.07057638105096488,
+      "temporal_orientation_gap": 0.0,
+      "context_vs_count_gap_change": 0.004691250122913326
+    },
+    {
+      "seed": 1504,
+      "ordinary_seat_gap": 0.003656664253135662,
+      "count_matched_seat_gap": 0.0015389669815730894,
+      "context_matched_seat_gap": 0.00252813752659746,
+      "conditional_action_tv": 0.3889497254256413,
+      "conditional_bet_call_gap": 0.0771981060430048,
+      "temporal_orientation_gap": 0.0,
+      "context_vs_count_gap_change": -0.0009891705450243704
+    },
+    {
+      "seed": 1505,
+      "ordinary_seat_gap": 0.00028632398247656343,
+      "count_matched_seat_gap": 0.0024740392208369155,
+      "context_matched_seat_gap": 0.0016618621160079533,
+      "conditional_action_tv": 0.37491927644962414,
+      "conditional_bet_call_gap": 0.07205014206196472,
+      "temporal_orientation_gap": 0.0,
+      "context_vs_count_gap_change": 0.0008121771048289622
+    }
+  ],
+  "summary": {
+    "ordinary_seat_gap": {
+      "supported_seeds": 5,
+      "mean": 0.004406113791384655,
+      "seed_resampling_interval_95": [
+        0.0012739192260668483,
+        0.009417423030048874
+      ]
+    },
+    "count_matched_seat_gap": {
+      "supported_seeds": 5,
+      "mean": 0.0035598764924312963,
+      "seed_resampling_interval_95": [
+        0.0014616057655656434,
+        0.0067509252693595395
+      ]
+    },
+    "context_matched_seat_gap": {
+      "supported_seeds": 5,
+      "mean": 0.0021227667067805654,
+      "seed_resampling_interval_95": [
+        0.0011039582912585138,
+        0.003342062805579904
+      ]
+    },
+    "conditional_action_tv": {
+      "supported_seeds": 5,
+      "mean": 0.3844058651991438,
+      "seed_resampling_interval_95": [
+        0.37372507877273875,
+        0.39961074092383925
+      ]
+    },
+    "conditional_bet_call_gap": {
+      "supported_seeds": 5,
+      "mean": 0.06771937338884652,
+      "seed_resampling_interval_95": [
+        0.06032620665809324,
+        0.07381457545218079
+      ]
+    },
+    "temporal_orientation_gap": {
+      "supported_seeds": 5,
+      "mean": 0.0,
+      "seed_resampling_interval_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "context_vs_count_gap_change": {
+      "supported_seeds": 5,
+      "mean": 0.0014371097856507309,
+      "seed_resampling_interval_95": [
+        -0.00016004389194725633,
+        0.003474849491272586
+      ]
+    }
+  },
+  "temporal_sensitivity": {
+    "status": "passed",
+    "null_gap": 0.0,
+    "injected_reversal_gap": 1.0,
+    "overlap_per_comparison": 10,
+    "scope": "Fully separated two-action ordering contrast; not a power analysis for observed data."
+  },
+  "support": {
+    "composition": {
+      "zero_support_mixtures": 0
+    },
+    "temporal": {
+      "zero_support_mixtures": 0
+    }
+  },
+  "provenance": {
+    "human_data_accessed": false,
+    "input_reports_read_only": true,
+    "frozen_evidence_modified": false
+  },
+  "limitations": "Metrics use different denominators and estimands, so they must NOT be summed, attributed causal shares, or interpreted as a formal decomposition. Seed bootstrap intervals are descriptive and unstable with five seeds. Temporal positive control is a maximal reversal contrast and does not establish sensitivity to weak or long-range effects."
+}

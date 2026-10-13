@@ -1,0 +1,1770 @@
+{
+  "status": "completed",
+  "analysis_status": "public_proxy_held_out_synthetic_baselines",
+  "seeds": [
+    1601,
+    1602,
+    1603,
+    1604,
+    1605
+  ],
+  "mixtures_per_seed": 20,
+  "hands_per_seat": 100,
+  "seed_results": [
+    {
+      "seed": 1601,
+      "design": {
+        "seed": 1601,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1601-0000",
+            "seat_yoke_id": "seat-yoked-1601-0000",
+            "weights": {
+              "pressure": 0.10843049897702849,
+              "control": 0.8589609684324798,
+              "chaos": 0.03260853259049169
+            },
+            "simulation_seeds": [
+              160100000,
+              160100001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0001",
+            "seat_yoke_id": "seat-yoked-1601-0001",
+            "weights": {
+              "pressure": 0.06012106918915222,
+              "control": 0.9242233486980309,
+              "chaos": 0.015655582112816868
+            },
+            "simulation_seeds": [
+              160100002,
+              160100003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0002",
+            "seat_yoke_id": "seat-yoked-1601-0002",
+            "weights": {
+              "pressure": 0.07593243225445678,
+              "control": 0.9090467414078409,
+              "chaos": 0.015020826337702298
+            },
+            "simulation_seeds": [
+              160100004,
+              160100005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0003",
+            "seat_yoke_id": "seat-yoked-1601-0003",
+            "weights": {
+              "pressure": 0.014984745595287244,
+              "control": 0.9441921079728155,
+              "chaos": 0.04082314643189726
+            },
+            "simulation_seeds": [
+              160100006,
+              160100007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0004",
+            "seat_yoke_id": "seat-yoked-1601-0004",
+            "weights": {
+              "pressure": 0.023262177345683983,
+              "control": 0.9206612697187972,
+              "chaos": 0.05607655293551877
+            },
+            "simulation_seeds": [
+              160100008,
+              160100009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0005",
+            "seat_yoke_id": "seat-yoked-1601-0005",
+            "weights": {
+              "pressure": 0.041863776431135674,
+              "control": 0.9199175847905754,
+              "chaos": 0.03821863877828893
+            },
+            "simulation_seeds": [
+              160100010,
+              160100011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0006",
+            "seat_yoke_id": "seat-yoked-1601-0006",
+            "weights": {
+              "pressure": 0.10019501394384768,
+              "control": 0.8929994366627488,
+              "chaos": 0.006805549393403484
+            },
+            "simulation_seeds": [
+              160100012,
+              160100013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0007",
+            "seat_yoke_id": "seat-yoked-1601-0007",
+            "weights": {
+              "pressure": 0.03839904686343293,
+              "control": 0.8702319660525994,
+              "chaos": 0.09136898708396762
+            },
+            "simulation_seeds": [
+              160100014,
+              160100015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0008",
+            "seat_yoke_id": "seat-yoked-1601-0008",
+            "weights": {
+              "pressure": 0.11901509459620681,
+              "control": 0.8347610415841443,
+              "chaos": 0.04622386381964887
+            },
+            "simulation_seeds": [
+              160100016,
+              160100017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0009",
+            "seat_yoke_id": "seat-yoked-1601-0009",
+            "weights": {
+              "pressure": 0.05529812885793761,
+              "control": 0.8521611202423399,
+              "chaos": 0.09254075089972247
+            },
+            "simulation_seeds": [
+              160100018,
+              160100019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0010",
+            "seat_yoke_id": "seat-yoked-1601-0010",
+            "weights": {
+              "pressure": 0.15232990186557693,
+              "control": 0.8195214612310001,
+              "chaos": 0.028148636903422952
+            },
+            "simulation_seeds": [
+              160100020,
+              160100021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0011",
+            "seat_yoke_id": "seat-yoked-1601-0011",
+            "weights": {
+              "pressure": 0.0040459656347508685,
+              "control": 0.8013822432312996,
+              "chaos": 0.19457179113394954
+            },
+            "simulation_seeds": [
+              160100022,
+              160100023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0012",
+            "seat_yoke_id": "seat-yoked-1601-0012",
+            "weights": {
+              "pressure": 0.051664407434269165,
+              "control": 0.8422788151898196,
+              "chaos": 0.10605677737591121
+            },
+            "simulation_seeds": [
+              160100024,
+              160100025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0013",
+            "seat_yoke_id": "seat-yoked-1601-0013",
+            "weights": {
+              "pressure": 0.07717950251125921,
+              "control": 0.8091234443814926,
+              "chaos": 0.11369705310724815
+            },
+            "simulation_seeds": [
+              160100026,
+              160100027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0014",
+            "seat_yoke_id": "seat-yoked-1601-0014",
+            "weights": {
+              "pressure": 0.05328903892432735,
+              "control": 0.8396693927154787,
+              "chaos": 0.10704156836019396
+            },
+            "simulation_seeds": [
+              160100028,
+              160100029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0015",
+            "seat_yoke_id": "seat-yoked-1601-0015",
+            "weights": {
+              "pressure": 0.10980733000990127,
+              "control": 0.8590921676247026,
+              "chaos": 0.03110050236539609
+            },
+            "simulation_seeds": [
+              160100030,
+              160100031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0016",
+            "seat_yoke_id": "seat-yoked-1601-0016",
+            "weights": {
+              "pressure": 0.045427916866378065,
+              "control": 0.8957079078294541,
+              "chaos": 0.05886417530416785
+            },
+            "simulation_seeds": [
+              160100032,
+              160100033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0017",
+            "seat_yoke_id": "seat-yoked-1601-0017",
+            "weights": {
+              "pressure": 0.04885135568444889,
+              "control": 0.9271582425814378,
+              "chaos": 0.023990401734113355
+            },
+            "simulation_seeds": [
+              160100034,
+              160100035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0018",
+            "seat_yoke_id": "seat-yoked-1601-0018",
+            "weights": {
+              "pressure": 0.05218855125802182,
+              "control": 0.8232538344586672,
+              "chaos": 0.124557614283311
+            },
+            "simulation_seeds": [
+              160100036,
+              160100037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1601-0019",
+            "seat_yoke_id": "seat-yoked-1601-0019",
+            "weights": {
+              "pressure": 0.044354227011803395,
+              "control": 0.9487187200332393,
+              "chaos": 0.00692705295495729
+            },
+            "simulation_seeds": [
+              160100038,
+              160100039
+            ]
+          }
+        ]
+      },
+      "models": {
+        "public_decision_proxy": {
+          "mae": 0.11982353584155536,
+          "rmse": 0.16983927883149544,
+          "per_mode_mae": {
+            "pressure": 0.04960287396098921,
+            "control": 0.1366654039218594,
+            "chaos": 0.17320232964181742
+          },
+          "dominant_mode_accuracy": 0.95
+        },
+        "M0": {
+          "mae": 0.14847165532356968,
+          "rmse": 0.20583116417680317,
+          "per_mode_mae": {
+            "pressure": 0.05103251922868921,
+            "control": 0.17731615434327339,
+            "chaos": 0.21706629239874647
+          },
+          "dominant_mode_accuracy": 0.875
+        },
+        "M1": {
+          "mae": 0.12838576485648398,
+          "rmse": 0.1727746766887403,
+          "per_mode_mae": {
+            "pressure": 0.05511212854603659,
+            "control": 0.14014234814637716,
+            "chaos": 0.1899028178770382
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M2": {
+          "mae": 0.12255851964672006,
+          "rmse": 0.16622516150806918,
+          "per_mode_mae": {
+            "pressure": 0.053325505513738866,
+            "control": 0.13300504031268973,
+            "chaos": 0.18134501311373163
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M3": {
+          "mae": 0.07752440565027457,
+          "rmse": 0.10414292129985508,
+          "per_mode_mae": {
+            "pressure": 0.04033246282573225,
+            "control": 0.08341973913565595,
+            "chaos": 0.10882101498943553
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M2_plus_matched_transitions": {
+          "mae": 0.07958280374312864,
+          "rmse": 0.114417112810375,
+          "per_mode_mae": {
+            "pressure": 0.04424855256469688,
+            "control": 0.08268444540223345,
+            "chaos": 0.11181541326245563
+          },
+          "dominant_mode_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "seed": 1602,
+      "design": {
+        "seed": 1602,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1602-0000",
+            "seat_yoke_id": "seat-yoked-1602-0000",
+            "weights": {
+              "pressure": 0.024334395845139516,
+              "control": 0.9211781266355232,
+              "chaos": 0.05448747751933725
+            },
+            "simulation_seeds": [
+              160200000,
+              160200001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0001",
+            "seat_yoke_id": "seat-yoked-1602-0001",
+            "weights": {
+              "pressure": 0.004875194108450607,
+              "control": 0.8981308656621252,
+              "chaos": 0.0969939402294242
+            },
+            "simulation_seeds": [
+              160200002,
+              160200003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0002",
+            "seat_yoke_id": "seat-yoked-1602-0002",
+            "weights": {
+              "pressure": 0.0852329076733628,
+              "control": 0.8612923602850037,
+              "chaos": 0.05347473204163353
+            },
+            "simulation_seeds": [
+              160200004,
+              160200005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0003",
+            "seat_yoke_id": "seat-yoked-1602-0003",
+            "weights": {
+              "pressure": 0.07532776320408585,
+              "control": 0.9039649804546068,
+              "chaos": 0.020707256341307323
+            },
+            "simulation_seeds": [
+              160200006,
+              160200007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0004",
+            "seat_yoke_id": "seat-yoked-1602-0004",
+            "weights": {
+              "pressure": 0.06451460644269266,
+              "control": 0.8777358965692922,
+              "chaos": 0.05774949698801515
+            },
+            "simulation_seeds": [
+              160200008,
+              160200009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0005",
+            "seat_yoke_id": "seat-yoked-1602-0005",
+            "weights": {
+              "pressure": 0.05824854572469537,
+              "control": 0.8316722231598775,
+              "chaos": 0.11007923111542708
+            },
+            "simulation_seeds": [
+              160200010,
+              160200011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0006",
+            "seat_yoke_id": "seat-yoked-1602-0006",
+            "weights": {
+              "pressure": 0.02217039567015398,
+              "control": 0.9437144625197653,
+              "chaos": 0.0341151418100807
+            },
+            "simulation_seeds": [
+              160200012,
+              160200013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0007",
+            "seat_yoke_id": "seat-yoked-1602-0007",
+            "weights": {
+              "pressure": 0.04211529966982126,
+              "control": 0.849936671689267,
+              "chaos": 0.10794802864091173
+            },
+            "simulation_seeds": [
+              160200014,
+              160200015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0008",
+            "seat_yoke_id": "seat-yoked-1602-0008",
+            "weights": {
+              "pressure": 0.12091912566779285,
+              "control": 0.8707136850495422,
+              "chaos": 0.008367189282664986
+            },
+            "simulation_seeds": [
+              160200016,
+              160200017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0009",
+            "seat_yoke_id": "seat-yoked-1602-0009",
+            "weights": {
+              "pressure": 0.14956875185145144,
+              "control": 0.8082263990996202,
+              "chaos": 0.04220484904892832
+            },
+            "simulation_seeds": [
+              160200018,
+              160200019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0010",
+            "seat_yoke_id": "seat-yoked-1602-0010",
+            "weights": {
+              "pressure": 0.014360321907511102,
+              "control": 0.9317872343120374,
+              "chaos": 0.05385244378045154
+            },
+            "simulation_seeds": [
+              160200020,
+              160200021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0011",
+            "seat_yoke_id": "seat-yoked-1602-0011",
+            "weights": {
+              "pressure": 0.07614418745755216,
+              "control": 0.85244785404116,
+              "chaos": 0.07140795850128787
+            },
+            "simulation_seeds": [
+              160200022,
+              160200023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0012",
+            "seat_yoke_id": "seat-yoked-1602-0012",
+            "weights": {
+              "pressure": 0.1104107275382317,
+              "control": 0.8456228246794046,
+              "chaos": 0.043966447782363666
+            },
+            "simulation_seeds": [
+              160200024,
+              160200025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0013",
+            "seat_yoke_id": "seat-yoked-1602-0013",
+            "weights": {
+              "pressure": 0.058970780980860026,
+              "control": 0.8046604896532273,
+              "chaos": 0.13636872936591263
+            },
+            "simulation_seeds": [
+              160200026,
+              160200027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0014",
+            "seat_yoke_id": "seat-yoked-1602-0014",
+            "weights": {
+              "pressure": 0.00980266536674392,
+              "control": 0.9259330035009342,
+              "chaos": 0.06426433113232187
+            },
+            "simulation_seeds": [
+              160200028,
+              160200029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0015",
+            "seat_yoke_id": "seat-yoked-1602-0015",
+            "weights": {
+              "pressure": 0.02289030678735102,
+              "control": 0.9346158130433271,
+              "chaos": 0.0424938801693219
+            },
+            "simulation_seeds": [
+              160200030,
+              160200031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0016",
+            "seat_yoke_id": "seat-yoked-1602-0016",
+            "weights": {
+              "pressure": 0.027177822025675154,
+              "control": 0.9184933375275122,
+              "chaos": 0.05432884044681268
+            },
+            "simulation_seeds": [
+              160200032,
+              160200033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0017",
+            "seat_yoke_id": "seat-yoked-1602-0017",
+            "weights": {
+              "pressure": 0.0007478261057885207,
+              "control": 0.8476451049962629,
+              "chaos": 0.1516070688979486
+            },
+            "simulation_seeds": [
+              160200034,
+              160200035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0018",
+            "seat_yoke_id": "seat-yoked-1602-0018",
+            "weights": {
+              "pressure": 0.12531408511342687,
+              "control": 0.8550775470258897,
+              "chaos": 0.019608367860683457
+            },
+            "simulation_seeds": [
+              160200036,
+              160200037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1602-0019",
+            "seat_yoke_id": "seat-yoked-1602-0019",
+            "weights": {
+              "pressure": 0.05307859907562663,
+              "control": 0.9427279339342953,
+              "chaos": 0.004193466990078047
+            },
+            "simulation_seeds": [
+              160200038,
+              160200039
+            ]
+          }
+        ]
+      },
+      "models": {
+        "public_decision_proxy": {
+          "mae": 0.11698641488386997,
+          "rmse": 0.1712452443084937,
+          "per_mode_mae": {
+            "pressure": 0.031934635067190284,
+            "control": 0.14854830642223793,
+            "chaos": 0.1704763031621817
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M0": {
+          "mae": 0.15092380716845508,
+          "rmse": 0.20903360980847815,
+          "per_mode_mae": {
+            "pressure": 0.034689734668182426,
+            "control": 0.19517298142507905,
+            "chaos": 0.2229087054121038
+          },
+          "dominant_mode_accuracy": 0.9
+        },
+        "M1": {
+          "mae": 0.11864477711945653,
+          "rmse": 0.16800754958906675,
+          "per_mode_mae": {
+            "pressure": 0.03159001308147309,
+            "control": 0.1480371702265305,
+            "chaos": 0.176307148050366
+          },
+          "dominant_mode_accuracy": 0.95
+        },
+        "M2": {
+          "mae": 0.11366523702889998,
+          "rmse": 0.16231194920554493,
+          "per_mode_mae": {
+            "pressure": 0.033936177180831674,
+            "control": 0.13993836077703606,
+            "chaos": 0.16712117312883223
+          },
+          "dominant_mode_accuracy": 0.95
+        },
+        "M3": {
+          "mae": 0.06638640954672059,
+          "rmse": 0.09379780085169341,
+          "per_mode_mae": {
+            "pressure": 0.033120335378994656,
+            "control": 0.07605887298700993,
+            "chaos": 0.08998002027415722
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M2_plus_matched_transitions": {
+          "mae": 0.0752660910583396,
+          "rmse": 0.10877290076622352,
+          "per_mode_mae": {
+            "pressure": 0.037524768708417894,
+            "control": 0.08310742141041359,
+            "chaos": 0.10516608305618735
+          },
+          "dominant_mode_accuracy": 0.975
+        }
+      }
+    },
+    {
+      "seed": 1603,
+      "design": {
+        "seed": 1603,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1603-0000",
+            "seat_yoke_id": "seat-yoked-1603-0000",
+            "weights": {
+              "pressure": 0.006571730806485856,
+              "control": 0.8774723382451223,
+              "chaos": 0.11595593094839186
+            },
+            "simulation_seeds": [
+              160300000,
+              160300001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0001",
+            "seat_yoke_id": "seat-yoked-1603-0001",
+            "weights": {
+              "pressure": 7.357470679167609e-05,
+              "control": 0.9415881694182893,
+              "chaos": 0.05833825587491906
+            },
+            "simulation_seeds": [
+              160300002,
+              160300003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0002",
+            "seat_yoke_id": "seat-yoked-1603-0002",
+            "weights": {
+              "pressure": 0.08813171061477836,
+              "control": 0.8879078265686751,
+              "chaos": 0.023960462816546582
+            },
+            "simulation_seeds": [
+              160300004,
+              160300005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0003",
+            "seat_yoke_id": "seat-yoked-1603-0003",
+            "weights": {
+              "pressure": 0.032105079243970096,
+              "control": 0.8510832203217732,
+              "chaos": 0.1168117004342567
+            },
+            "simulation_seeds": [
+              160300006,
+              160300007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0004",
+            "seat_yoke_id": "seat-yoked-1603-0004",
+            "weights": {
+              "pressure": 0.02204634438759256,
+              "control": 0.9408738387584151,
+              "chaos": 0.03707981685399231
+            },
+            "simulation_seeds": [
+              160300008,
+              160300009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0005",
+            "seat_yoke_id": "seat-yoked-1603-0005",
+            "weights": {
+              "pressure": 0.006658256794052726,
+              "control": 0.8902452805830405,
+              "chaos": 0.10309646262290674
+            },
+            "simulation_seeds": [
+              160300010,
+              160300011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0006",
+            "seat_yoke_id": "seat-yoked-1603-0006",
+            "weights": {
+              "pressure": 0.010403048046163856,
+              "control": 0.8637562565481598,
+              "chaos": 0.12584069540567636
+            },
+            "simulation_seeds": [
+              160300012,
+              160300013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0007",
+            "seat_yoke_id": "seat-yoked-1603-0007",
+            "weights": {
+              "pressure": 0.10317494027599484,
+              "control": 0.8048362170289013,
+              "chaos": 0.09198884269510386
+            },
+            "simulation_seeds": [
+              160300014,
+              160300015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0008",
+            "seat_yoke_id": "seat-yoked-1603-0008",
+            "weights": {
+              "pressure": 0.03860383385707704,
+              "control": 0.8319456947248701,
+              "chaos": 0.12945047141805283
+            },
+            "simulation_seeds": [
+              160300016,
+              160300017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0009",
+            "seat_yoke_id": "seat-yoked-1603-0009",
+            "weights": {
+              "pressure": 0.06494910318851316,
+              "control": 0.8884576612258818,
+              "chaos": 0.046593235585605075
+            },
+            "simulation_seeds": [
+              160300018,
+              160300019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0010",
+            "seat_yoke_id": "seat-yoked-1603-0010",
+            "weights": {
+              "pressure": 0.05187969463846936,
+              "control": 0.8600866542423453,
+              "chaos": 0.08803365111918532
+            },
+            "simulation_seeds": [
+              160300020,
+              160300021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0011",
+            "seat_yoke_id": "seat-yoked-1603-0011",
+            "weights": {
+              "pressure": 0.03538691323688733,
+              "control": 0.8716481078586057,
+              "chaos": 0.09296497890450697
+            },
+            "simulation_seeds": [
+              160300022,
+              160300023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0012",
+            "seat_yoke_id": "seat-yoked-1603-0012",
+            "weights": {
+              "pressure": 0.06149559600700053,
+              "control": 0.9023744216071288,
+              "chaos": 0.036129982385870694
+            },
+            "simulation_seeds": [
+              160300024,
+              160300025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0013",
+            "seat_yoke_id": "seat-yoked-1603-0013",
+            "weights": {
+              "pressure": 0.029668570836365614,
+              "control": 0.9198881640797886,
+              "chaos": 0.05044326508384581
+            },
+            "simulation_seeds": [
+              160300026,
+              160300027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0014",
+            "seat_yoke_id": "seat-yoked-1603-0014",
+            "weights": {
+              "pressure": 0.05576322503393479,
+              "control": 0.8546389611806914,
+              "chaos": 0.08959781378537382
+            },
+            "simulation_seeds": [
+              160300028,
+              160300029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0015",
+            "seat_yoke_id": "seat-yoked-1603-0015",
+            "weights": {
+              "pressure": 0.1404378414851928,
+              "control": 0.8421370005919886,
+              "chaos": 0.017425157922818596
+            },
+            "simulation_seeds": [
+              160300030,
+              160300031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0016",
+            "seat_yoke_id": "seat-yoked-1603-0016",
+            "weights": {
+              "pressure": 0.008587557886540897,
+              "control": 0.9144249339523566,
+              "chaos": 0.07698750816110253
+            },
+            "simulation_seeds": [
+              160300032,
+              160300033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0017",
+            "seat_yoke_id": "seat-yoked-1603-0017",
+            "weights": {
+              "pressure": 0.0735337528848288,
+              "control": 0.802025283825881,
+              "chaos": 0.12444096328929019
+            },
+            "simulation_seeds": [
+              160300034,
+              160300035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0018",
+            "seat_yoke_id": "seat-yoked-1603-0018",
+            "weights": {
+              "pressure": 0.05776548707772719,
+              "control": 0.858557812892066,
+              "chaos": 0.0836767000302068
+            },
+            "simulation_seeds": [
+              160300036,
+              160300037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1603-0019",
+            "seat_yoke_id": "seat-yoked-1603-0019",
+            "weights": {
+              "pressure": 0.0149955927896361,
+              "control": 0.834003199227412,
+              "chaos": 0.15100120798295194
+            },
+            "simulation_seeds": [
+              160300038,
+              160300039
+            ]
+          }
+        ]
+      },
+      "models": {
+        "public_decision_proxy": {
+          "mae": 0.1255845843842161,
+          "rmse": 0.18903985654752184,
+          "per_mode_mae": {
+            "pressure": 0.02738241268966261,
+            "control": 0.16458012650584558,
+            "chaos": 0.18479121395714007
+          },
+          "dominant_mode_accuracy": 0.925
+        },
+        "M0": {
+          "mae": 0.15311682376604258,
+          "rmse": 0.22000348856567226,
+          "per_mode_mae": {
+            "pressure": 0.02869258260434565,
+            "control": 0.2027703643202467,
+            "chaos": 0.22788752437353538
+          },
+          "dominant_mode_accuracy": 0.9
+        },
+        "M1": {
+          "mae": 0.1167436910361527,
+          "rmse": 0.1734722192354261,
+          "per_mode_mae": {
+            "pressure": 0.029161216933640526,
+            "control": 0.14957827369720336,
+            "chaos": 0.17149158247761426
+          },
+          "dominant_mode_accuracy": 0.95
+        },
+        "M2": {
+          "mae": 0.11388104718388205,
+          "rmse": 0.17082554449624654,
+          "per_mode_mae": {
+            "pressure": 0.029582427694833,
+            "control": 0.14598997363802885,
+            "chaos": 0.16607074021878435
+          },
+          "dominant_mode_accuracy": 0.95
+        },
+        "M3": {
+          "mae": 0.07043763543560637,
+          "rmse": 0.108926070276818,
+          "per_mode_mae": {
+            "pressure": 0.033590028453096346,
+            "control": 0.07782258165868064,
+            "chaos": 0.0999002961950421
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M2_plus_matched_transitions": {
+          "mae": 0.08097676569675387,
+          "rmse": 0.12295324718247565,
+          "per_mode_mae": {
+            "pressure": 0.03601041101075665,
+            "control": 0.09269341308043795,
+            "chaos": 0.11422647299906699
+          },
+          "dominant_mode_accuracy": 0.975
+        }
+      }
+    },
+    {
+      "seed": 1604,
+      "design": {
+        "seed": 1604,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1604-0000",
+            "seat_yoke_id": "seat-yoked-1604-0000",
+            "weights": {
+              "pressure": 0.15296229211637072,
+              "control": 0.8036234467606652,
+              "chaos": 0.043414261122964065
+            },
+            "simulation_seeds": [
+              160400000,
+              160400001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0001",
+            "seat_yoke_id": "seat-yoked-1604-0001",
+            "weights": {
+              "pressure": 0.028182691810921277,
+              "control": 0.8691876724155447,
+              "chaos": 0.10262963577353398
+            },
+            "simulation_seeds": [
+              160400002,
+              160400003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0002",
+            "seat_yoke_id": "seat-yoked-1604-0002",
+            "weights": {
+              "pressure": 0.08525155650542086,
+              "control": 0.8454786067161623,
+              "chaos": 0.06926983677841687
+            },
+            "simulation_seeds": [
+              160400004,
+              160400005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0003",
+            "seat_yoke_id": "seat-yoked-1604-0003",
+            "weights": {
+              "pressure": 0.13997897118656596,
+              "control": 0.8552670446423927,
+              "chaos": 0.004753984171041364
+            },
+            "simulation_seeds": [
+              160400006,
+              160400007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0004",
+            "seat_yoke_id": "seat-yoked-1604-0004",
+            "weights": {
+              "pressure": 0.035445973773493906,
+              "control": 0.839160118839588,
+              "chaos": 0.12539390738691814
+            },
+            "simulation_seeds": [
+              160400008,
+              160400009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0005",
+            "seat_yoke_id": "seat-yoked-1604-0005",
+            "weights": {
+              "pressure": 0.07973966299685716,
+              "control": 0.8927120309686004,
+              "chaos": 0.027548306034542433
+            },
+            "simulation_seeds": [
+              160400010,
+              160400011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0006",
+            "seat_yoke_id": "seat-yoked-1604-0006",
+            "weights": {
+              "pressure": 0.05057673849411155,
+              "control": 0.9440212265707308,
+              "chaos": 0.005402034935157604
+            },
+            "simulation_seeds": [
+              160400012,
+              160400013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0007",
+            "seat_yoke_id": "seat-yoked-1604-0007",
+            "weights": {
+              "pressure": 0.03351459154393221,
+              "control": 0.8628090675144051,
+              "chaos": 0.10367634094166267
+            },
+            "simulation_seeds": [
+              160400014,
+              160400015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0008",
+            "seat_yoke_id": "seat-yoked-1604-0008",
+            "weights": {
+              "pressure": 0.035395892103343866,
+              "control": 0.9443108940825995,
+              "chaos": 0.02029321381405664
+            },
+            "simulation_seeds": [
+              160400016,
+              160400017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0009",
+            "seat_yoke_id": "seat-yoked-1604-0009",
+            "weights": {
+              "pressure": 0.038014423604338994,
+              "control": 0.942762201835954,
+              "chaos": 0.019223374559706956
+            },
+            "simulation_seeds": [
+              160400018,
+              160400019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0010",
+            "seat_yoke_id": "seat-yoked-1604-0010",
+            "weights": {
+              "pressure": 0.011697031676892851,
+              "control": 0.9025944085200555,
+              "chaos": 0.0857085598030517
+            },
+            "simulation_seeds": [
+              160400020,
+              160400021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0011",
+            "seat_yoke_id": "seat-yoked-1604-0011",
+            "weights": {
+              "pressure": 0.0087633461634673,
+              "control": 0.872957918345925,
+              "chaos": 0.11827873549060774
+            },
+            "simulation_seeds": [
+              160400022,
+              160400023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0012",
+            "seat_yoke_id": "seat-yoked-1604-0012",
+            "weights": {
+              "pressure": 0.09035724844969023,
+              "control": 0.9034450755738956,
+              "chaos": 0.00619767597641413
+            },
+            "simulation_seeds": [
+              160400024,
+              160400025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0013",
+            "seat_yoke_id": "seat-yoked-1604-0013",
+            "weights": {
+              "pressure": 0.00511753783908688,
+              "control": 0.9242375320607078,
+              "chaos": 0.07064493010020532
+            },
+            "simulation_seeds": [
+              160400026,
+              160400027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0014",
+            "seat_yoke_id": "seat-yoked-1604-0014",
+            "weights": {
+              "pressure": 0.06219724936272975,
+              "control": 0.8369032716870143,
+              "chaos": 0.10089947895025597
+            },
+            "simulation_seeds": [
+              160400028,
+              160400029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0015",
+            "seat_yoke_id": "seat-yoked-1604-0015",
+            "weights": {
+              "pressure": 0.062045164903862464,
+              "control": 0.9249466541010793,
+              "chaos": 0.01300818099505819
+            },
+            "simulation_seeds": [
+              160400030,
+              160400031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0016",
+            "seat_yoke_id": "seat-yoked-1604-0016",
+            "weights": {
+              "pressure": 0.03837616250396408,
+              "control": 0.8875687369140354,
+              "chaos": 0.07405510058200054
+            },
+            "simulation_seeds": [
+              160400032,
+              160400033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0017",
+            "seat_yoke_id": "seat-yoked-1604-0017",
+            "weights": {
+              "pressure": 2.0111211916309043e-05,
+              "control": 0.925348787073624,
+              "chaos": 0.07463110171445969
+            },
+            "simulation_seeds": [
+              160400034,
+              160400035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0018",
+            "seat_yoke_id": "seat-yoked-1604-0018",
+            "weights": {
+              "pressure": 0.016167173661972272,
+              "control": 0.8893396191200917,
+              "chaos": 0.09449320721793598
+            },
+            "simulation_seeds": [
+              160400036,
+              160400037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1604-0019",
+            "seat_yoke_id": "seat-yoked-1604-0019",
+            "weights": {
+              "pressure": 0.10104634284535662,
+              "control": 0.8748275046361789,
+              "chaos": 0.02412615251846452
+            },
+            "simulation_seeds": [
+              160400038,
+              160400039
+            ]
+          }
+        ]
+      },
+      "models": {
+        "public_decision_proxy": {
+          "mae": 0.11346311883598328,
+          "rmse": 0.15803105805796364,
+          "per_mode_mae": {
+            "pressure": 0.03537668356541329,
+            "control": 0.1396604217800579,
+            "chaos": 0.1653522511624787
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M0": {
+          "mae": 0.13836823059547157,
+          "rmse": 0.18871610740049277,
+          "per_mode_mae": {
+            "pressure": 0.03744138917523358,
+            "control": 0.1726115583673006,
+            "chaos": 0.20505174424388056
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M1": {
+          "mae": 0.11948668101307015,
+          "rmse": 0.1687657548508256,
+          "per_mode_mae": {
+            "pressure": 0.03782132495991432,
+            "control": 0.14473030652256855,
+            "chaos": 0.17590841155672754
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M2": {
+          "mae": 0.11548688174956823,
+          "rmse": 0.16372542526314499,
+          "per_mode_mae": {
+            "pressure": 0.037578489865055874,
+            "control": 0.14096939199229613,
+            "chaos": 0.16791276339135264
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M3": {
+          "mae": 0.057376421316120765,
+          "rmse": 0.07886813591864594,
+          "per_mode_mae": {
+            "pressure": 0.031759216450002105,
+            "control": 0.060471546110978436,
+            "chaos": 0.07989850138738176
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M2_plus_matched_transitions": {
+          "mae": 0.07111930471304918,
+          "rmse": 0.0988047427905815,
+          "per_mode_mae": {
+            "pressure": 0.03569657140942191,
+            "control": 0.07987796258137618,
+            "chaos": 0.09778338014834945
+          },
+          "dominant_mode_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "seed": 1605,
+      "design": {
+        "seed": 1605,
+        "region": "control_heavy",
+        "design": "same mixture weights evaluated in both focal seats",
+        "mixtures": 20,
+        "hands_per_seat": 100,
+        "total_hands": 4000,
+        "groups": [
+          {
+            "mixture_id": "seat-yoked-1605-0000",
+            "seat_yoke_id": "seat-yoked-1605-0000",
+            "weights": {
+              "pressure": 0.07369709474382953,
+              "control": 0.8202777371733015,
+              "chaos": 0.10602516808286892
+            },
+            "simulation_seeds": [
+              160500000,
+              160500001
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0001",
+            "seat_yoke_id": "seat-yoked-1605-0001",
+            "weights": {
+              "pressure": 0.1486502482894945,
+              "control": 0.8341099159255355,
+              "chaos": 0.017239835784969987
+            },
+            "simulation_seeds": [
+              160500002,
+              160500003
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0002",
+            "seat_yoke_id": "seat-yoked-1605-0002",
+            "weights": {
+              "pressure": 0.10347436546285732,
+              "control": 0.8881778132801644,
+              "chaos": 0.00834782125697825
+            },
+            "simulation_seeds": [
+              160500004,
+              160500005
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0003",
+            "seat_yoke_id": "seat-yoked-1605-0003",
+            "weights": {
+              "pressure": 0.06870295804344412,
+              "control": 0.906179171575261,
+              "chaos": 0.025117870381294927
+            },
+            "simulation_seeds": [
+              160500006,
+              160500007
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0004",
+            "seat_yoke_id": "seat-yoked-1605-0004",
+            "weights": {
+              "pressure": 0.06720797981134881,
+              "control": 0.9028766151160255,
+              "chaos": 0.02991540507262573
+            },
+            "simulation_seeds": [
+              160500008,
+              160500009
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0005",
+            "seat_yoke_id": "seat-yoked-1605-0005",
+            "weights": {
+              "pressure": 0.045918754496703865,
+              "control": 0.8458461557939331,
+              "chaos": 0.10823508970936306
+            },
+            "simulation_seeds": [
+              160500010,
+              160500011
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0006",
+            "seat_yoke_id": "seat-yoked-1605-0006",
+            "weights": {
+              "pressure": 0.04669872490945051,
+              "control": 0.8513252669704331,
+              "chaos": 0.1019760081201164
+            },
+            "simulation_seeds": [
+              160500012,
+              160500013
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0007",
+            "seat_yoke_id": "seat-yoked-1605-0007",
+            "weights": {
+              "pressure": 0.08685855284456788,
+              "control": 0.8652052102363651,
+              "chaos": 0.047936236919067024
+            },
+            "simulation_seeds": [
+              160500014,
+              160500015
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0008",
+            "seat_yoke_id": "seat-yoked-1605-0008",
+            "weights": {
+              "pressure": 0.07064396262422958,
+              "control": 0.9036243789887022,
+              "chaos": 0.025731658387068243
+            },
+            "simulation_seeds": [
+              160500016,
+              160500017
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0009",
+            "seat_yoke_id": "seat-yoked-1605-0009",
+            "weights": {
+              "pressure": 0.022978967484651315,
+              "control": 0.9067951846723631,
+              "chaos": 0.0702258478429856
+            },
+            "simulation_seeds": [
+              160500018,
+              160500019
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0010",
+            "seat_yoke_id": "seat-yoked-1605-0010",
+            "weights": {
+              "pressure": 0.03652181452268636,
+              "control": 0.9280786922359957,
+              "chaos": 0.035399493241317935
+            },
+            "simulation_seeds": [
+              160500020,
+              160500021
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0011",
+            "seat_yoke_id": "seat-yoked-1605-0011",
+            "weights": {
+              "pressure": 0.09523523500569189,
+              "control": 0.8297269142849345,
+              "chaos": 0.0750378507093736
+            },
+            "simulation_seeds": [
+              160500022,
+              160500023
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0012",
+            "seat_yoke_id": "seat-yoked-1605-0012",
+            "weights": {
+              "pressure": 0.052926667607769366,
+              "control": 0.9402703533512045,
+              "chaos": 0.006802979041026176
+            },
+            "simulation_seeds": [
+              160500024,
+              160500025
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0013",
+            "seat_yoke_id": "seat-yoked-1605-0013",
+            "weights": {
+              "pressure": 0.01320337665182867,
+              "control": 0.8765933173664497,
+              "chaos": 0.1102033059817216
+            },
+            "simulation_seeds": [
+              160500026,
+              160500027
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0014",
+            "seat_yoke_id": "seat-yoked-1605-0014",
+            "weights": {
+              "pressure": 0.06909489044703937,
+              "control": 0.9299107342735825,
+              "chaos": 0.0009943752793781235
+            },
+            "simulation_seeds": [
+              160500028,
+              160500029
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0015",
+            "seat_yoke_id": "seat-yoked-1605-0015",
+            "weights": {
+              "pressure": 0.011733410146287515,
+              "control": 0.8600507134272054,
+              "chaos": 0.12821587642650709
+            },
+            "simulation_seeds": [
+              160500030,
+              160500031
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0016",
+            "seat_yoke_id": "seat-yoked-1605-0016",
+            "weights": {
+              "pressure": 0.11490292277028871,
+              "control": 0.8802623351252905,
+              "chaos": 0.0048347421044207806
+            },
+            "simulation_seeds": [
+              160500032,
+              160500033
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0017",
+            "seat_yoke_id": "seat-yoked-1605-0017",
+            "weights": {
+              "pressure": 0.10235213819204306,
+              "control": 0.8217606909731535,
+              "chaos": 0.07588717083480342
+            },
+            "simulation_seeds": [
+              160500034,
+              160500035
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0018",
+            "seat_yoke_id": "seat-yoked-1605-0018",
+            "weights": {
+              "pressure": 0.0022837463164386094,
+              "control": 0.8411499907190743,
+              "chaos": 0.15656626296448714
+            },
+            "simulation_seeds": [
+              160500036,
+              160500037
+            ]
+          },
+          {
+            "mixture_id": "seat-yoked-1605-0019",
+            "seat_yoke_id": "seat-yoked-1605-0019",
+            "weights": {
+              "pressure": 0.0562896687884355,
+              "control": 0.9325282309079788,
+              "chaos": 0.01118210030358574
+            },
+            "simulation_seeds": [
+              160500038,
+              160500039
+            ]
+          }
+        ]
+      },
+      "models": {
+        "public_decision_proxy": {
+          "mae": 0.1235349693794101,
+          "rmse": 0.19461598708868144,
+          "per_mode_mae": {
+            "pressure": 0.042794491935460574,
+            "control": 0.1480817803487425,
+            "chaos": 0.17972863585402718
+          },
+          "dominant_mode_accuracy": 0.9
+        },
+        "M0": {
+          "mae": 0.1437736533886062,
+          "rmse": 0.20840540311642014,
+          "per_mode_mae": {
+            "pressure": 0.04544335165949572,
+            "control": 0.1726828587674849,
+            "chaos": 0.21319474973883795
+          },
+          "dominant_mode_accuracy": 0.9
+        },
+        "M1": {
+          "mae": 0.11953205536629458,
+          "rmse": 0.1796858502454741,
+          "per_mode_mae": {
+            "pressure": 0.043842880766575984,
+            "control": 0.13802089505586843,
+            "chaos": 0.17673239027643933
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M2": {
+          "mae": 0.11582007596916946,
+          "rmse": 0.1775289348702529,
+          "per_mode_mae": {
+            "pressure": 0.042996788814308795,
+            "control": 0.13521998021235587,
+            "chaos": 0.1692434588808437
+          },
+          "dominant_mode_accuracy": 0.975
+        },
+        "M3": {
+          "mae": 0.0635829978972185,
+          "rmse": 0.09755084233438677,
+          "per_mode_mae": {
+            "pressure": 0.03462697983973758,
+            "control": 0.07255116373360784,
+            "chaos": 0.08357085011831007
+          },
+          "dominant_mode_accuracy": 1.0
+        },
+        "M2_plus_matched_transitions": {
+          "mae": 0.07393112737583811,
+          "rmse": 0.11935915939598492,
+          "per_mode_mae": {
+            "pressure": 0.03746581901398133,
+            "control": 0.08008941705293873,
+            "chaos": 0.10423814606059427
+          },
+          "dominant_mode_accuracy": 0.975
+        }
+      }
+    }
+  ],
+  "summary": {
+    "public_decision_proxy": {
+      "mean_mae": 0.11987852466500697,
+      "seed_mae": [
+        0.11982353584155536,
+        0.11698641488386997,
+        0.1255845843842161,
+        0.11346311883598328,
+        0.1235349693794101
+      ]
+    },
+    "M0": {
+      "mean_mae": 0.14693083404842905,
+      "seed_mae": [
+        0.14847165532356968,
+        0.15092380716845508,
+        0.15311682376604258,
+        0.13836823059547157,
+        0.1437736533886062
+      ]
+    },
+    "M1": {
+      "mean_mae": 0.1205585938782916,
+      "seed_mae": [
+        0.12838576485648398,
+        0.11864477711945653,
+        0.1167436910361527,
+        0.11948668101307015,
+        0.11953205536629458
+      ]
+    },
+    "M2": {
+      "mean_mae": 0.11628235231564796,
+      "seed_mae": [
+        0.12255851964672006,
+        0.11366523702889998,
+        0.11388104718388205,
+        0.11548688174956823,
+        0.11582007596916946
+      ]
+    },
+    "M3": {
+      "mean_mae": 0.06706157396918816,
+      "seed_mae": [
+        0.07752440565027457,
+        0.06638640954672059,
+        0.07043763543560637,
+        0.057376421316120765,
+        0.0635829978972185
+      ]
+    },
+    "M2_plus_matched_transitions": {
+      "mean_mae": 0.07617521851742189,
+      "seed_mae": [
+        0.07958280374312864,
+        0.0752660910583396,
+        0.08097676569675387,
+        0.07111930471304918,
+        0.07393112737583811
+      ]
+    },
+    "incremental_matched_transition_vs_M2": {
+      "mean_mae_reduction": 0.04010713379822608,
+      "seed_mae_reductions": [
+        0.04297571590359142,
+        0.03839914597056038,
+        0.03290428148712818,
+        0.04436757703651904,
+        0.04188894859333135
+      ],
+      "positive_seed_fraction": 1.0
+    }
+  },
+  "provenance": {
+    "human_data_accessed": false,
+    "frozen_evidence_modified": false,
+    "private_rank_used_as_predictor": false,
+    "mixture_ids_disjoint": true
+  },
+  "limitations": "No CFR, regret minimization, exploitability, or causal identification. Pot-odds features are decision-theoretic proxies only. Matched transitions use action-dependent selection; synthetic labels only; five seeds are insufficient for strong inferential claims."
+}
