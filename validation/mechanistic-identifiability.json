@@ -1,0 +1,922 @@
+{
+  "status": "completed",
+  "analysis_status": "synthetic_observational_distinguishability",
+  "train_seed": 1800,
+  "evaluation_seeds": [
+    1901,
+    1902,
+    1903,
+    1904,
+    1905
+  ],
+  "mixtures_per_region": 20,
+  "hands_per_seat": 100,
+  "knn_k": 5,
+  "summary": {
+    "pressure_heavy": {
+      "ridge_M3": {
+        "mean_mae": 0.09447295019783218,
+        "seed_mae": [
+          0.09197200441320706,
+          0.09490146684768903,
+          0.09866644594539296,
+          0.09999563456341101,
+          0.0868291992194608
+        ]
+      },
+      "knn_M3": {
+        "mean_mae": 0.09872824731111066,
+        "seed_mae": [
+          0.0998206030981934,
+          0.09627903699098013,
+          0.10749977632625338,
+          0.10243700266199199,
+          0.08760481747813448
+        ]
+      }
+    },
+    "control_heavy": {
+      "ridge_M3": {
+        "mean_mae": 0.1220380265232764,
+        "seed_mae": [
+          0.12836073153694766,
+          0.12453847092590989,
+          0.10843137571733369,
+          0.15149057073809444,
+          0.09736898369809634
+        ]
+      },
+      "knn_M3": {
+        "mean_mae": 0.1834964073541679,
+        "seed_mae": [
+          0.18665592240798615,
+          0.18216403747170518,
+          0.18440015318153005,
+          0.17610626701451024,
+          0.1881556566951079
+        ]
+      }
+    },
+    "chaos_heavy": {
+      "ridge_M3": {
+        "mean_mae": 0.30298602270077446,
+        "seed_mae": [
+          0.3053277171744597,
+          0.30617195275924514,
+          0.30567334610535907,
+          0.3096794535650208,
+          0.28807764389978757
+        ]
+      },
+      "knn_M3": {
+        "mean_mae": 0.33979545516094173,
+        "seed_mae": [
+          0.3446392359862572,
+          0.34422638943368483,
+          0.3385334818310867,
+          0.34051932824051995,
+          0.3310588403131599
+        ]
+      }
+    },
+    "balanced": {
+      "ridge_M3": {
+        "mean_mae": 0.1694652965174444,
+        "seed_mae": [
+          0.18683037824343554,
+          0.18206698842495073,
+          0.15707394811406192,
+          0.17110175447215728,
+          0.15025341333261663
+        ]
+      },
+      "knn_M3": {
+        "mean_mae": 0.27175141324579816,
+        "seed_mae": [
+          0.26367855410287583,
+          0.2794644730186917,
+          0.26305463691630554,
+          0.27933347149825255,
+          0.2732259306928651
+        ]
+      }
+    },
+    "boundary": {
+      "ridge_M3": {
+        "mean_mae": 0.08984787081432986,
+        "seed_mae": [
+          0.0855721501445005,
+          0.08917967170667242,
+          0.0888726221146136,
+          0.08535631426761561,
+          0.10025859583824719
+        ]
+      },
+      "knn_M3": {
+        "mean_mae": 0.16455932103332302,
+        "seed_mae": [
+          0.17472350711274226,
+          0.16825717657287903,
+          0.16278255558935928,
+          0.14261552617807552,
+          0.174417839713559
+        ]
+      }
+    }
+  },
+  "seed_results": [
+    {
+      "seed": 1901,
+      "regions": {
+        "pressure_heavy": {
+          "ridge_M3": {
+            "mae": 0.09197200441320706,
+            "rmse": 0.11071024707455426,
+            "per_mode_mae": {
+              "pressure": 0.09484283727247131,
+              "control": 0.12915586700578083,
+              "chaos": 0.051917308961369
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "knn_M3": {
+            "mae": 0.0998206030981934,
+            "rmse": 0.11491647353308021,
+            "per_mode_mae": {
+              "pressure": 0.13169443799947542,
+              "control": 0.12359423055339488,
+              "chaos": 0.04417314074170988
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.14370151687852367,
+            "closest_pairs_mean_target_l2": 0.09247480249208728,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "control_heavy": {
+          "ridge_M3": {
+            "mae": 0.12836073153694766,
+            "rmse": 0.18612180962622055,
+            "per_mode_mae": {
+              "pressure": 0.05182900633002824,
+              "control": 0.1548518401712582,
+              "chaos": 0.1784013481095566
+            },
+            "dominant_mode_accuracy": 0.9
+          },
+          "knn_M3": {
+            "mae": 0.18665592240798615,
+            "rmse": 0.21995096906101075,
+            "per_mode_mae": {
+              "pressure": 0.033554129242015895,
+              "control": 0.2555184333704704,
+              "chaos": 0.2708952046114721
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.26294968827785,
+            "closest_pairs_mean_target_l2": 0.07714066151835959,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "chaos_heavy": {
+          "ridge_M3": {
+            "mae": 0.3053277171744597,
+            "rmse": 0.33619655468186876,
+            "per_mode_mae": {
+              "pressure": 0.13399661633184046,
+              "control": 0.32399495942984907,
+              "chaos": 0.4579915757616896
+            },
+            "dominant_mode_accuracy": 0.7
+          },
+          "knn_M3": {
+            "mae": 0.3446392359862572,
+            "rmse": 0.37717267492944967,
+            "per_mode_mae": {
+              "pressure": 0.15948254149822544,
+              "control": 0.3578793876369085,
+              "chaos": 0.5165557788236376
+            },
+            "dominant_mode_accuracy": 0.05
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.1738105566632158,
+            "closest_pairs_mean_target_l2": 0.06435115684222675,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "balanced": {
+          "ridge_M3": {
+            "mae": 0.18683037824343554,
+            "rmse": 0.22171120603096559,
+            "per_mode_mae": {
+              "pressure": 0.07785735419998654,
+              "control": 0.20499151166862634,
+              "chaos": 0.2776422688616938
+            },
+            "dominant_mode_accuracy": 0.2
+          },
+          "knn_M3": {
+            "mae": 0.26367855410287583,
+            "rmse": 0.29896121736135184,
+            "per_mode_mae": {
+              "pressure": 0.13429097218800598,
+              "control": 0.2676137554113476,
+              "chaos": 0.389130934709274
+            },
+            "dominant_mode_accuracy": 0.2
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.22371759475137606,
+            "closest_pairs_mean_target_l2": 0.07637354873268977,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "boundary": {
+          "ridge_M3": {
+            "mae": 0.0855721501445005,
+            "rmse": 0.11155315884667093,
+            "per_mode_mae": {
+              "pressure": 0.06759776003724113,
+              "control": 0.08203414620478208,
+              "chaos": 0.10708454419147821
+            },
+            "dominant_mode_accuracy": 0.7
+          },
+          "knn_M3": {
+            "mae": 0.17472350711274226,
+            "rmse": 0.20994191801587408,
+            "per_mode_mae": {
+              "pressure": 0.09052636946308792,
+              "control": 0.2163615490358058,
+              "chaos": 0.21728260283933315
+            },
+            "dominant_mode_accuracy": 0.775
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.36016670428617,
+            "closest_pairs_mean_target_l2": 0.2425869750351012,
+            "closest_pairs_target_far_fraction": 0.42105263157894735,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        }
+      }
+    },
+    {
+      "seed": 1902,
+      "regions": {
+        "pressure_heavy": {
+          "ridge_M3": {
+            "mae": 0.09490146684768903,
+            "rmse": 0.11142548481796354,
+            "per_mode_mae": {
+              "pressure": 0.09553338438266493,
+              "control": 0.13363346507541424,
+              "chaos": 0.05553755108498791
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "knn_M3": {
+            "mae": 0.09627903699098013,
+            "rmse": 0.11182518369746018,
+            "per_mode_mae": {
+              "pressure": 0.13124666598778373,
+              "control": 0.11826576107770755,
+              "chaos": 0.03932468390744914
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.16667620845890152,
+            "closest_pairs_mean_target_l2": 0.0734157251598706,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "control_heavy": {
+          "ridge_M3": {
+            "mae": 0.12453847092590989,
+            "rmse": 0.17999713298556352,
+            "per_mode_mae": {
+              "pressure": 0.04090139550640014,
+              "control": 0.151211648824727,
+              "chaos": 0.18150236844660247
+            },
+            "dominant_mode_accuracy": 0.925
+          },
+          "knn_M3": {
+            "mae": 0.18216403747170518,
+            "rmse": 0.21514984918584557,
+            "per_mode_mae": {
+              "pressure": 0.03199213364118661,
+              "control": 0.2612336819460729,
+              "chaos": 0.25326629682785606
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.2249677077712817,
+            "closest_pairs_mean_target_l2": 0.07006284626768759,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "chaos_heavy": {
+          "ridge_M3": {
+            "mae": 0.30617195275924514,
+            "rmse": 0.3368601944470186,
+            "per_mode_mae": {
+              "pressure": 0.13892160085287916,
+              "control": 0.3203363282859886,
+              "chaos": 0.45925792913886776
+            },
+            "dominant_mode_accuracy": 0.675
+          },
+          "knn_M3": {
+            "mae": 0.34422638943368483,
+            "rmse": 0.37760512375988803,
+            "per_mode_mae": {
+              "pressure": 0.1670179736248582,
+              "control": 0.3493216105256689,
+              "chaos": 0.5163395841505272
+            },
+            "dominant_mode_accuracy": 0.15
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.1725703083528527,
+            "closest_pairs_mean_target_l2": 0.0729087083977967,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "balanced": {
+          "ridge_M3": {
+            "mae": 0.18206698842495073,
+            "rmse": 0.21443952334006153,
+            "per_mode_mae": {
+              "pressure": 0.08405258773275212,
+              "control": 0.19061996589956626,
+              "chaos": 0.2715284116425339
+            },
+            "dominant_mode_accuracy": 0.475
+          },
+          "knn_M3": {
+            "mae": 0.2794644730186917,
+            "rmse": 0.31135921757848956,
+            "per_mode_mae": {
+              "pressure": 0.15175518864507598,
+              "control": 0.26959676884701256,
+              "chaos": 0.4170414615639865
+            },
+            "dominant_mode_accuracy": 0.45
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.21043068318460545,
+            "closest_pairs_mean_target_l2": 0.07850207565133767,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "boundary": {
+          "ridge_M3": {
+            "mae": 0.08917967170667242,
+            "rmse": 0.1182945811251191,
+            "per_mode_mae": {
+              "pressure": 0.05602491617990206,
+              "control": 0.10057660124037959,
+              "chaos": 0.11093749769973557
+            },
+            "dominant_mode_accuracy": 0.825
+          },
+          "knn_M3": {
+            "mae": 0.16825717657287903,
+            "rmse": 0.2104420009056813,
+            "per_mode_mae": {
+              "pressure": 0.1030265211293084,
+              "control": 0.18927688922903524,
+              "chaos": 0.2124681193602934
+            },
+            "dominant_mode_accuracy": 0.825
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.4278548191932547,
+            "closest_pairs_mean_target_l2": 0.36735426822366063,
+            "closest_pairs_target_far_fraction": 0.6052631578947368,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        }
+      }
+    },
+    {
+      "seed": 1903,
+      "regions": {
+        "pressure_heavy": {
+          "ridge_M3": {
+            "mae": 0.09866644594539296,
+            "rmse": 0.11497741550340002,
+            "per_mode_mae": {
+              "pressure": 0.10509105101161005,
+              "control": 0.1319482678493574,
+              "chaos": 0.058960018975211394
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "knn_M3": {
+            "mae": 0.10749977632625338,
+            "rmse": 0.12262126662134774,
+            "per_mode_mae": {
+              "pressure": 0.13964388698087346,
+              "control": 0.1345524713010755,
+              "chaos": 0.04830297069681118
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.14521681390029553,
+            "closest_pairs_mean_target_l2": 0.06690617730766797,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "control_heavy": {
+          "ridge_M3": {
+            "mae": 0.10843137571733369,
+            "rmse": 0.16151490080361677,
+            "per_mode_mae": {
+              "pressure": 0.038067673638818196,
+              "control": 0.13454773056576994,
+              "chaos": 0.15267872294741297
+            },
+            "dominant_mode_accuracy": 0.925
+          },
+          "knn_M3": {
+            "mae": 0.18440015318153005,
+            "rmse": 0.21615508997098132,
+            "per_mode_mae": {
+              "pressure": 0.03806993265801738,
+              "control": 0.2566402548866048,
+              "chaos": 0.258490271999968
+            },
+            "dominant_mode_accuracy": 0.975
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.25396447195033006,
+            "closest_pairs_mean_target_l2": 0.07794906329206222,
+            "closest_pairs_target_far_fraction": 0.02631578947368421,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "chaos_heavy": {
+          "ridge_M3": {
+            "mae": 0.30567334610535907,
+            "rmse": 0.3360960964640157,
+            "per_mode_mae": {
+              "pressure": 0.14221263143129148,
+              "control": 0.31629738772674715,
+              "chaos": 0.4585100191580386
+            },
+            "dominant_mode_accuracy": 0.75
+          },
+          "knn_M3": {
+            "mae": 0.3385334818310867,
+            "rmse": 0.37121446702843686,
+            "per_mode_mae": {
+              "pressure": 0.15902087736298198,
+              "control": 0.3487793453836481,
+              "chaos": 0.5078002227466301
+            },
+            "dominant_mode_accuracy": 0.075
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.17196303199245414,
+            "closest_pairs_mean_target_l2": 0.09782337216673304,
+            "closest_pairs_target_far_fraction": 0.02631578947368421,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "balanced": {
+          "ridge_M3": {
+            "mae": 0.15707394811406192,
+            "rmse": 0.19576488304383635,
+            "per_mode_mae": {
+              "pressure": 0.06907238047106226,
+              "control": 0.17008373225726817,
+              "chaos": 0.23206573161385524
+            },
+            "dominant_mode_accuracy": 0.2
+          },
+          "knn_M3": {
+            "mae": 0.26305463691630554,
+            "rmse": 0.29932022148154247,
+            "per_mode_mae": {
+              "pressure": 0.13480392636996247,
+              "control": 0.26547966242147164,
+              "chaos": 0.38888032195748246
+            },
+            "dominant_mode_accuracy": 0.175
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.23143351762585734,
+            "closest_pairs_mean_target_l2": 0.07598166389459192,
+            "closest_pairs_target_far_fraction": 0.02631578947368421,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "boundary": {
+          "ridge_M3": {
+            "mae": 0.0888726221146136,
+            "rmse": 0.11216901772676334,
+            "per_mode_mae": {
+              "pressure": 0.06564698511424735,
+              "control": 0.09095033925287661,
+              "chaos": 0.11002054197671682
+            },
+            "dominant_mode_accuracy": 0.8
+          },
+          "knn_M3": {
+            "mae": 0.16278255558935928,
+            "rmse": 0.1999829579406511,
+            "per_mode_mae": {
+              "pressure": 0.09786380200583256,
+              "control": 0.19187809995953434,
+              "chaos": 0.19860576480271092
+            },
+            "dominant_mode_accuracy": 0.85
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.3435216976284303,
+            "closest_pairs_mean_target_l2": 0.1955987149689973,
+            "closest_pairs_target_far_fraction": 0.47368421052631576,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        }
+      }
+    },
+    {
+      "seed": 1904,
+      "regions": {
+        "pressure_heavy": {
+          "ridge_M3": {
+            "mae": 0.09999563456341101,
+            "rmse": 0.11606841631257446,
+            "per_mode_mae": {
+              "pressure": 0.10832587714797866,
+              "control": 0.12794497522055975,
+              "chaos": 0.0637160513216947
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "knn_M3": {
+            "mae": 0.10243700266199199,
+            "rmse": 0.11682555497967469,
+            "per_mode_mae": {
+              "pressure": 0.13852283950418748,
+              "control": 0.12343694885882131,
+              "chaos": 0.04535121962296718
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.16295724092936256,
+            "closest_pairs_mean_target_l2": 0.09445090510442963,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "control_heavy": {
+          "ridge_M3": {
+            "mae": 0.15149057073809444,
+            "rmse": 0.2188704919809763,
+            "per_mode_mae": {
+              "pressure": 0.05924232857718766,
+              "control": 0.1769186240028057,
+              "chaos": 0.21831075963428992
+            },
+            "dominant_mode_accuracy": 0.875
+          },
+          "knn_M3": {
+            "mae": 0.17610626701451024,
+            "rmse": 0.20813217561658162,
+            "per_mode_mae": {
+              "pressure": 0.04206942311473065,
+              "control": 0.23664054965130082,
+              "chaos": 0.24960882827749922
+            },
+            "dominant_mode_accuracy": 0.975
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.26323594286145513,
+            "closest_pairs_mean_target_l2": 0.08854910114723274,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "chaos_heavy": {
+          "ridge_M3": {
+            "mae": 0.3096794535650208,
+            "rmse": 0.340604156466645,
+            "per_mode_mae": {
+              "pressure": 0.14582145557188048,
+              "control": 0.3186977247756507,
+              "chaos": 0.46451918034753115
+            },
+            "dominant_mode_accuracy": 0.625
+          },
+          "knn_M3": {
+            "mae": 0.34051932824051995,
+            "rmse": 0.37410836867391306,
+            "per_mode_mae": {
+              "pressure": 0.15791467166550482,
+              "control": 0.3528643206952751,
+              "chaos": 0.5107789923607798
+            },
+            "dominant_mode_accuracy": 0.05
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.17068877100293797,
+            "closest_pairs_mean_target_l2": 0.08759582078394405,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "balanced": {
+          "ridge_M3": {
+            "mae": 0.17110175447215728,
+            "rmse": 0.20833881376832497,
+            "per_mode_mae": {
+              "pressure": 0.07634221295690476,
+              "control": 0.18447485826352003,
+              "chaos": 0.25248819219604707
+            },
+            "dominant_mode_accuracy": 0.525
+          },
+          "knn_M3": {
+            "mae": 0.27933347149825255,
+            "rmse": 0.31329199875337427,
+            "per_mode_mae": {
+              "pressure": 0.15181708270208982,
+              "control": 0.26953862428379766,
+              "chaos": 0.4166447075088703
+            },
+            "dominant_mode_accuracy": 0.5
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.19540562118911015,
+            "closest_pairs_mean_target_l2": 0.07641509259714231,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "boundary": {
+          "ridge_M3": {
+            "mae": 0.08535631426761561,
+            "rmse": 0.1070951567368442,
+            "per_mode_mae": {
+              "pressure": 0.05395967751247573,
+              "control": 0.10253799081103807,
+              "chaos": 0.09957127447933303
+            },
+            "dominant_mode_accuracy": 0.9
+          },
+          "knn_M3": {
+            "mae": 0.14261552617807552,
+            "rmse": 0.18212770888122135,
+            "per_mode_mae": {
+              "pressure": 0.0934432387178236,
+              "control": 0.161008725485653,
+              "chaos": 0.17339461433074993
+            },
+            "dominant_mode_accuracy": 0.8
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.4069991697667517,
+            "closest_pairs_mean_target_l2": 0.27725064368221725,
+            "closest_pairs_target_far_fraction": 0.6052631578947368,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        }
+      }
+    },
+    {
+      "seed": 1905,
+      "regions": {
+        "pressure_heavy": {
+          "ridge_M3": {
+            "mae": 0.0868291992194608,
+            "rmse": 0.10476187555522211,
+            "per_mode_mae": {
+              "pressure": 0.0876466863536907,
+              "control": 0.10170832749382193,
+              "chaos": 0.07113258381086983
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "knn_M3": {
+            "mae": 0.08760481747813448,
+            "rmse": 0.10396922654005476,
+            "per_mode_mae": {
+              "pressure": 0.11966051839714917,
+              "control": 0.09642115121899959,
+              "chaos": 0.04673278281825462
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.14572850382902688,
+            "closest_pairs_mean_target_l2": 0.10559646732995065,
+            "closest_pairs_target_far_fraction": 0.05263157894736842,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "control_heavy": {
+          "ridge_M3": {
+            "mae": 0.09736898369809634,
+            "rmse": 0.13840021727816898,
+            "per_mode_mae": {
+              "pressure": 0.04624008334106412,
+              "control": 0.11289057365393425,
+              "chaos": 0.13297629409929063
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "knn_M3": {
+            "mae": 0.1881556566951079,
+            "rmse": 0.22101262282602482,
+            "per_mode_mae": {
+              "pressure": 0.03926775976723269,
+              "control": 0.2586277701423764,
+              "chaos": 0.26657144017571455
+            },
+            "dominant_mode_accuracy": 1.0
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.2475032787139539,
+            "closest_pairs_mean_target_l2": 0.08619360702405898,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "chaos_heavy": {
+          "ridge_M3": {
+            "mae": 0.28807764389978757,
+            "rmse": 0.31746369611069775,
+            "per_mode_mae": {
+              "pressure": 0.13479994853426053,
+              "control": 0.29731651731542086,
+              "chaos": 0.4321164658496814
+            },
+            "dominant_mode_accuracy": 0.575
+          },
+          "knn_M3": {
+            "mae": 0.3310588403131599,
+            "rmse": 0.3625807536311853,
+            "per_mode_mae": {
+              "pressure": 0.16388579211128093,
+              "control": 0.3330026492278006,
+              "chaos": 0.4962880796003983
+            },
+            "dominant_mode_accuracy": 0.275
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.19224586489226667,
+            "closest_pairs_mean_target_l2": 0.07631116157248775,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "balanced": {
+          "ridge_M3": {
+            "mae": 0.15025341333261663,
+            "rmse": 0.18385989014708695,
+            "per_mode_mae": {
+              "pressure": 0.07536785789223148,
+              "control": 0.15365509400191596,
+              "chaos": 0.22173728810370252
+            },
+            "dominant_mode_accuracy": 0.35
+          },
+          "knn_M3": {
+            "mae": 0.2732259306928651,
+            "rmse": 0.30680855937564233,
+            "per_mode_mae": {
+              "pressure": 0.14787348492379693,
+              "control": 0.2672590747856868,
+              "chaos": 0.40454523236911155
+            },
+            "dominant_mode_accuracy": 0.3
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.22382164276681185,
+            "closest_pairs_mean_target_l2": 0.06908474093934097,
+            "closest_pairs_target_far_fraction": 0.0,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        },
+        "boundary": {
+          "ridge_M3": {
+            "mae": 0.10025859583824719,
+            "rmse": 0.12743527318602835,
+            "per_mode_mae": {
+              "pressure": 0.06803157724209989,
+              "control": 0.11317254519245408,
+              "chaos": 0.11957166508018757
+            },
+            "dominant_mode_accuracy": 0.85
+          },
+          "knn_M3": {
+            "mae": 0.174417839713559,
+            "rmse": 0.2159621854786827,
+            "per_mode_mae": {
+              "pressure": 0.0736511212839138,
+              "control": 0.23418601605260134,
+              "chaos": 0.21541638180416195
+            },
+            "dominant_mode_accuracy": 0.725
+          },
+          "pairwise_M3": {
+            "comparisons": 380,
+            "closest_feature_pairs": 38,
+            "feature_distance_threshold": 0.3515406024401593,
+            "closest_pairs_mean_target_l2": 0.2652193317083473,
+            "closest_pairs_target_far_fraction": 0.47368421052631576,
+            "note": "Unscaled Euclidean distances; descriptive, sensitive to feature parameterization and finite-simulation noise."
+          }
+        }
+      }
+    }
+  ],
+  "cfr_readiness": {
+    "game": "two-player heads-up limit Leduc",
+    "chance_deals": 90,
+    "traversed_nodes_including_chance_deal_repeats": 14490,
+    "terminal_nodes": 8730,
+    "unique_player_information_sets": 528,
+    "consistent_information_set_legal_actions": true,
+    "zero_sum_terminal_utilities": true,
+    "solver_status": "not_implemented",
+    "required_next_step": "Implement and separately test information-set CFR, average strategies, best responses and exploitability."
+  },
+  "provenance": {
+    "human_data_accessed": false,
+    "frozen_evidence_modified": false,
+    "heldout_regions_excluded_from_training": true,
+    "evaluation_targets_not_used_for_fitting": true
+  },
+  "limitations": "Observational pair distances are not structural identifiability proofs. kNN is not an oracle. No CFR, regret, exploitability, or human validation. One fixed training seed."
+}

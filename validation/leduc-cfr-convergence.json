@@ -1,0 +1,63 @@
+{
+  "status": "completed",
+  "game": "two-player heads-up limit Leduc",
+  "chance_deals": 90,
+  "information_sets": 528,
+  "metrics_unit": "net chips per hand",
+  "exploitability_definition": "NashConv / 2",
+  "checkpoints": [
+    {
+      "iterations": 1,
+      "profile_value_player0": 0.18807870370370325,
+      "best_response_player0": 3.0685185185185166,
+      "best_response_player1": 3.192592592592593,
+      "nash_conv": 6.261111111111109,
+      "exploitability": 3.1305555555555546
+    },
+    {
+      "iterations": 10,
+      "profile_value_player0": -0.1474660639984967,
+      "best_response_player0": 1.207044001403071,
+      "best_response_player1": 1.474109486076091,
+      "nash_conv": 2.681153487479162,
+      "exploitability": 1.340576743739581
+    },
+    {
+      "iterations": 50,
+      "profile_value_player0": -0.13535363193433542,
+      "best_response_player0": 0.2702667201804341,
+      "best_response_player1": 0.4793706368564959,
+      "nash_conv": 0.7496373570369299,
+      "exploitability": 0.37481867851846495
+    },
+    {
+      "iterations": 100,
+      "profile_value_player0": -0.11311155437417433,
+      "best_response_player0": 0.12954543721202408,
+      "best_response_player1": 0.3026149925393431,
+      "nash_conv": 0.43216042975136715,
+      "exploitability": 0.21608021487568357
+    },
+    {
+      "iterations": 250,
+      "profile_value_player0": -0.0892424129262219,
+      "best_response_player0": 0.015123422085244798,
+      "best_response_player1": 0.202234761768755,
+      "nash_conv": 0.2173581838539998,
+      "exploitability": 0.1086790919269999
+    },
+    {
+      "iterations": 500,
+      "profile_value_player0": -0.08660053632140191,
+      "best_response_player0": -0.020652975454986004,
+      "best_response_player1": 0.1601919478890092,
+      "nash_conv": 0.1395389724340232,
+      "exploitability": 0.0697694862170116
+    }
+  ],
+  "provenance": {
+    "human_data_accessed": false,
+    "frozen_evidence_modified": false
+  },
+  "limitations": "Solver benchmark only; not a PCC mixture-recovery predictor. No external solver cross-validation."
+}
