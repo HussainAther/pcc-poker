@@ -1,0 +1,2617 @@
+{
+  "status": "completed",
+  "analysis_status": "synthetic_region_held_out_transfer",
+  "training_seed": 1800,
+  "evaluation_seeds": [
+    1801,
+    1802,
+    1803,
+    1804,
+    1805
+  ],
+  "mixtures_per_region": 20,
+  "hands_per_seat": 100,
+  "seed_results": [
+    {
+      "seed": 1801,
+      "regions": {
+        "pressure_heavy": {
+          "training_regions": [
+            "control_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.21754214406021605,
+            "control": 0.4001984096516019,
+            "chaos": 0.38225944628818237
+          },
+          "prior_only": {
+            "mae": 0.42615900220511743,
+            "rmse": 0.45488015098798157,
+            "per_mode_mae": {
+              "pressure": 0.6392385033076761,
+              "control": 0.33273368625965016,
+              "chaos": 0.3065048170480263
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.12755260664145487,
+              "rmse": 0.14886400088509083,
+              "per_mode_mae": {
+                "pressure": 0.14966633258836123,
+                "control": 0.08136896561313467,
+                "chaos": 0.15162252172286875
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.16773912529500004,
+              "rmse": 0.20670854359288368,
+              "per_mode_mae": {
+                "pressure": 0.21040559573437942,
+                "control": 0.08008018009326548,
+                "chaos": 0.21273160005735514
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.10939304079672672,
+              "rmse": 0.1343458977510216,
+              "per_mode_mae": {
+                "pressure": 0.12390900083058747,
+                "control": 0.05445903812563001,
+                "chaos": 0.14981108343396268
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.10594284950599127,
+              "rmse": 0.1320281668129364,
+              "per_mode_mae": {
+                "pressure": 0.12259249948117978,
+                "control": 0.06228815506188684,
+                "chaos": 0.13294789397490708
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.09373622368370825,
+              "rmse": 0.11180953004594173,
+              "per_mode_mae": {
+                "pressure": 0.09011020463273418,
+                "control": 0.12970014635889218,
+                "chaos": 0.06139832005949839
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09290054248933624,
+              "rmse": 0.10881922703658303,
+              "per_mode_mae": {
+                "pressure": 0.09070292814524444,
+                "control": 0.11865164621960696,
+                "chaos": 0.06934705310315728
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.41595859830997817,
+            "control": 0.19707048481218034,
+            "chaos": 0.3869709168778421
+          },
+          "prior_only": {
+            "mae": 0.4533297087897745,
+            "rmse": 0.48284845355106343,
+            "per_mode_mae": {
+              "pressure": 0.3543325067845561,
+              "control": 0.6799945631846616,
+              "chaos": 0.3256620564001061
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.2682403272366942,
+              "rmse": 0.32708838722469963,
+              "per_mode_mae": {
+                "pressure": 0.06162609152542211,
+                "control": 0.3407343993296192,
+                "chaos": 0.40236049085504133
+              },
+              "dominant_mode_accuracy": 0.6
+            },
+            "M0": {
+              "mae": 0.33646484070208377,
+              "rmse": 0.4050061555934644,
+              "per_mode_mae": {
+                "pressure": 0.06162609152542211,
+                "control": 0.44307116952770353,
+                "chaos": 0.5046972610531256
+              },
+              "dominant_mode_accuracy": 0.35
+            },
+            "M1": {
+              "mae": 0.24018869089581463,
+              "rmse": 0.30696297252946414,
+              "per_mode_mae": {
+                "pressure": 0.06162609152542211,
+                "control": 0.2991688420239405,
+                "chaos": 0.35977113913808123
+              },
+              "dominant_mode_accuracy": 0.675
+            },
+            "M2": {
+              "mae": 0.2367993919700194,
+              "rmse": 0.3026303073118149,
+              "per_mode_mae": {
+                "pressure": 0.06162609152542211,
+                "control": 0.2942096497809504,
+                "chaos": 0.3545624346036857
+              },
+              "dominant_mode_accuracy": 0.675
+            },
+            "M3": {
+              "mae": 0.12472248132630548,
+              "rmse": 0.17964971610695907,
+              "per_mode_mae": {
+                "pressure": 0.051825660478081056,
+                "control": 0.14844436059607058,
+                "chaos": 0.1738974229047648
+              },
+              "dominant_mode_accuracy": 0.875
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.12929339223511813,
+              "rmse": 0.18322906150024493,
+              "per_mode_mae": {
+                "pressure": 0.056204005007681704,
+                "control": 0.15150792257111192,
+                "chaos": 0.18016824912656074
+              },
+              "dominant_mode_accuracy": 0.925
+            }
+          }
+        },
+        "chaos_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.42145853799877725,
+            "control": 0.40286325091443353,
+            "chaos": 0.17567821108678924
+          },
+          "prior_only": {
+            "mae": 0.4643036922764459,
+            "rmse": 0.4942450677099286,
+            "per_mode_mae": {
+              "pressure": 0.3625324788093597,
+              "control": 0.33392305960530927,
+              "chaos": 0.6964555384146689
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.37492376073529116,
+              "rmse": 0.4109869809080192,
+              "per_mode_mae": {
+                "pressure": 0.1670177652098989,
+                "control": 0.3953678758930378,
+                "chaos": 0.5623856411029367
+              },
+              "dominant_mode_accuracy": 0.05
+            },
+            "M0": {
+              "mae": 0.4167049163154621,
+              "rmse": 0.4583185887434396,
+              "per_mode_mae": {
+                "pressure": 0.17356788389985095,
+                "control": 0.45148949057334214,
+                "chaos": 0.6250573744731931
+              },
+              "dominant_mode_accuracy": 0.0
+            },
+            "M1": {
+              "mae": 0.3653422140677602,
+              "rmse": 0.39676014744012017,
+              "per_mode_mae": {
+                "pressure": 0.18183521840119796,
+                "control": 0.3661781027004424,
+                "chaos": 0.5480133211016402
+              },
+              "dominant_mode_accuracy": 0.1
+            },
+            "M2": {
+              "mae": 0.3602543258147438,
+              "rmse": 0.391157774910867,
+              "per_mode_mae": {
+                "pressure": 0.18149440668651787,
+                "control": 0.3588870820355979,
+                "chaos": 0.5403814887221157
+              },
+              "dominant_mode_accuracy": 0.1
+            },
+            "M3": {
+              "mae": 0.30822350496376844,
+              "rmse": 0.33657896763726813,
+              "per_mode_mae": {
+                "pressure": 0.15136814906343724,
+                "control": 0.31096710838221553,
+                "chaos": 0.46233525744565274
+              },
+              "dominant_mode_accuracy": 0.625
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.30561207659731304,
+              "rmse": 0.3364260534003652,
+              "per_mode_mae": {
+                "pressure": 0.14152655965569005,
+                "control": 0.31689155524027945,
+                "chaos": 0.45841811489596973
+              },
+              "dominant_mode_accuracy": 0.525
+            }
+          }
+        },
+        "balanced": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3524416459861529,
+            "control": 0.3304740131618354,
+            "chaos": 0.31708434085201237
+          },
+          "prior_only": {
+            "mae": 0.033790466569626934,
+            "rmse": 0.03971393709657636,
+            "per_mode_mae": {
+              "pressure": 0.03656340124912698,
+              "control": 0.02990474563892514,
+              "chaos": 0.034903252820828685
+            },
+            "dominant_mode_accuracy": 0.35
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.0735469912972593,
+              "rmse": 0.09881538809640501,
+              "per_mode_mae": {
+                "pressure": 0.043067359072018294,
+                "control": 0.07924437722961683,
+                "chaos": 0.09832923759014278
+              },
+              "dominant_mode_accuracy": 0.625
+            },
+            "M0": {
+              "mae": 0.06954902693715284,
+              "rmse": 0.08600422080721039,
+              "per_mode_mae": {
+                "pressure": 0.04502649688697459,
+                "control": 0.0710372086646011,
+                "chaos": 0.0925833752598828
+              },
+              "dominant_mode_accuracy": 0.6
+            },
+            "M1": {
+              "mae": 0.07459867591101448,
+              "rmse": 0.0955713201189799,
+              "per_mode_mae": {
+                "pressure": 0.04570783809269918,
+                "control": 0.0776446331293543,
+                "chaos": 0.10044355651098998
+              },
+              "dominant_mode_accuracy": 0.675
+            },
+            "M2": {
+              "mae": 0.08089852631444668,
+              "rmse": 0.10216319887421452,
+              "per_mode_mae": {
+                "pressure": 0.04738372261132554,
+                "control": 0.0860441173589768,
+                "chaos": 0.1092677389730377
+              },
+              "dominant_mode_accuracy": 0.65
+            },
+            "M3": {
+              "mae": 0.18784634602212696,
+              "rmse": 0.22349080319122325,
+              "per_mode_mae": {
+                "pressure": 0.08702443671734379,
+                "control": 0.19830373406502316,
+                "chaos": 0.278210867284014
+              },
+              "dominant_mode_accuracy": 0.45
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.16135664611477787,
+              "rmse": 0.19335669285014562,
+              "per_mode_mae": {
+                "pressure": 0.06487178557486976,
+                "control": 0.18148680146259327,
+                "chaos": 0.23771135130687057
+              },
+              "dominant_mode_accuracy": 0.5
+            }
+          }
+        },
+        "boundary": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "balanced"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3300755424206463,
+            "control": 0.3333536680546105,
+            "chaos": 0.3365707895247436
+          },
+          "prior_only": {
+            "mae": 0.2403453588720213,
+            "rmse": 0.27517552060021255,
+            "per_mode_mae": {
+              "pressure": 0.23398633574138028,
+              "control": 0.26029518540329033,
+              "chaos": 0.2267545554713933
+            },
+            "dominant_mode_accuracy": 0.3
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.09379653877514402,
+              "rmse": 0.12224407409230968,
+              "per_mode_mae": {
+                "pressure": 0.05203069886377204,
+                "control": 0.11097555938367712,
+                "chaos": 0.11838335807798286
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M0": {
+              "mae": 0.10987596326174559,
+              "rmse": 0.1460441145555739,
+              "per_mode_mae": {
+                "pressure": 0.05096447221067857,
+                "control": 0.13379885102304165,
+                "chaos": 0.14486456655151653
+              },
+              "dominant_mode_accuracy": 0.8
+            },
+            "M1": {
+              "mae": 0.08886386207672269,
+              "rmse": 0.11578840061348408,
+              "per_mode_mae": {
+                "pressure": 0.059117576040555266,
+                "control": 0.09579341476571646,
+                "chaos": 0.11168059542389638
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M2": {
+              "mae": 0.08748759536684005,
+              "rmse": 0.11296840601651414,
+              "per_mode_mae": {
+                "pressure": 0.060523115281097994,
+                "control": 0.09222374413738585,
+                "chaos": 0.10971592668203631
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M3": {
+              "mae": 0.09732292503649784,
+              "rmse": 0.12998161847002698,
+              "per_mode_mae": {
+                "pressure": 0.05602711550455815,
+                "control": 0.11030215239105642,
+                "chaos": 0.12563950721387895
+              },
+              "dominant_mode_accuracy": 0.825
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.08597046229372537,
+              "rmse": 0.11426684014523059,
+              "per_mode_mae": {
+                "pressure": 0.05133951833007666,
+                "control": 0.09905751149523895,
+                "chaos": 0.1075143570558605
+              },
+              "dominant_mode_accuracy": 0.85
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 1802,
+      "regions": {
+        "pressure_heavy": {
+          "training_regions": [
+            "control_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.21754214406021605,
+            "control": 0.4001984096516019,
+            "chaos": 0.38225944628818237
+          },
+          "prior_only": {
+            "mae": 0.4338639692218225,
+            "rmse": 0.4624075580945895,
+            "per_mode_mae": {
+              "pressure": 0.6507959538327336,
+              "control": 0.3457534589567367,
+              "chaos": 0.30504249487599716
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.1331451516985955,
+              "rmse": 0.15562044960454807,
+              "per_mode_mae": {
+                "pressure": 0.16349472467580023,
+                "control": 0.08327461787163412,
+                "chaos": 0.15266611254835216
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.17848081411491787,
+              "rmse": 0.2206993634062188,
+              "per_mode_mae": {
+                "pressure": 0.22997135989744627,
+                "control": 0.0879820045975593,
+                "chaos": 0.21748907784974802
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.1125151699159144,
+              "rmse": 0.13808757566922472,
+              "per_mode_mae": {
+                "pressure": 0.13794145511990227,
+                "control": 0.04452993932441821,
+                "chaos": 0.1550741153034227
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.10632237518914497,
+              "rmse": 0.1350342414281766,
+              "per_mode_mae": {
+                "pressure": 0.1365066140949614,
+                "control": 0.043225174113877544,
+                "chaos": 0.13923533735859603
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.09911017507092318,
+              "rmse": 0.11550216557410949,
+              "per_mode_mae": {
+                "pressure": 0.10069191419597408,
+                "control": 0.1331893320377791,
+                "chaos": 0.06344927897901641
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09670341791858351,
+              "rmse": 0.1120156589186428,
+              "per_mode_mae": {
+                "pressure": 0.09928336135426964,
+                "control": 0.12682603889476646,
+                "chaos": 0.0640008535067145
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.41595859830997817,
+            "control": 0.19707048481218034,
+            "chaos": 0.3869709168778421
+          },
+          "prior_only": {
+            "mae": 0.4644324302865288,
+            "rmse": 0.49467038167171173,
+            "per_mode_mae": {
+              "pressure": 0.3593740386322752,
+              "control": 0.6966486454297929,
+              "chaos": 0.3372746067975183
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.2486665411601259,
+              "rmse": 0.3168551603567412,
+              "per_mode_mae": {
+                "pressure": 0.052887495021763396,
+                "control": 0.32118765558520873,
+                "chaos": 0.3719244728734055
+              },
+              "dominant_mode_accuracy": 0.7
+            },
+            "M0": {
+              "mae": 0.3185681205852864,
+              "rmse": 0.39011983004389034,
+              "per_mode_mae": {
+                "pressure": 0.052810952390519625,
+                "control": 0.42504122848740994,
+                "chaos": 0.47785218087792963
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M1": {
+              "mae": 0.2230898613073192,
+              "rmse": 0.2942152182451974,
+              "per_mode_mae": {
+                "pressure": 0.05055713043094541,
+                "control": 0.28794230328901604,
+                "chaos": 0.3307701502019962
+              },
+              "dominant_mode_accuracy": 0.775
+            },
+            "M2": {
+              "mae": 0.22020749076777565,
+              "rmse": 0.29075408761534755,
+              "per_mode_mae": {
+                "pressure": 0.05059914766487138,
+                "control": 0.28387742774400204,
+                "chaos": 0.3261458968944536
+              },
+              "dominant_mode_accuracy": 0.775
+            },
+            "M3": {
+              "mae": 0.10032698665089845,
+              "rmse": 0.15322726943565462,
+              "per_mode_mae": {
+                "pressure": 0.0420439197943547,
+                "control": 0.11976785997324849,
+                "chaos": 0.13916918018509217
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.11669315539161827,
+              "rmse": 0.16153594666315063,
+              "per_mode_mae": {
+                "pressure": 0.045813683498488175,
+                "control": 0.1402612673328673,
+                "chaos": 0.16400451534349933
+              },
+              "dominant_mode_accuracy": 0.975
+            }
+          }
+        },
+        "chaos_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.42145853799877725,
+            "control": 0.40286325091443353,
+            "chaos": 0.17567821108678924
+          },
+          "prior_only": {
+            "mae": 0.461407370465048,
+            "rmse": 0.49128205896579724,
+            "per_mode_mae": {
+              "pressure": 0.3368786482322424,
+              "control": 0.35523240746532964,
+              "chaos": 0.6921110556975719
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.3762673058178597,
+              "rmse": 0.4149776469694113,
+              "per_mode_mae": {
+                "pressure": 0.1577052017231851,
+                "control": 0.40669575700360455,
+                "chaos": 0.5644009587267895
+              },
+              "dominant_mode_accuracy": 0.05
+            },
+            "M0": {
+              "mae": 0.4171826596019911,
+              "rmse": 0.4611498794661993,
+              "per_mode_mae": {
+                "pressure": 0.16378004536412943,
+                "control": 0.46199394403885713,
+                "chaos": 0.6257739894029866
+              },
+              "dominant_mode_accuracy": 0.0
+            },
+            "M1": {
+              "mae": 0.3652698417583787,
+              "rmse": 0.39913701590184897,
+              "per_mode_mae": {
+                "pressure": 0.1687186223076628,
+                "control": 0.37918614032990516,
+                "chaos": 0.5479047626375679
+              },
+              "dominant_mode_accuracy": 0.05
+            },
+            "M2": {
+              "mae": 0.36447519907689346,
+              "rmse": 0.39846107701981376,
+              "per_mode_mae": {
+                "pressure": 0.16877245785141362,
+                "control": 0.37794034076392663,
+                "chaos": 0.5467127986153402
+              },
+              "dominant_mode_accuracy": 0.075
+            },
+            "M3": {
+              "mae": 0.30687968403700355,
+              "rmse": 0.33911444387300266,
+              "per_mode_mae": {
+                "pressure": 0.1317522831369345,
+                "control": 0.3285672429185708,
+                "chaos": 0.46031952605550536
+              },
+              "dominant_mode_accuracy": 0.575
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.3129047726928628,
+              "rmse": 0.34729921066272024,
+              "per_mode_mae": {
+                "pressure": 0.1283068551004869,
+                "control": 0.34105030393880736,
+                "chaos": 0.4693571590392943
+              },
+              "dominant_mode_accuracy": 0.475
+            }
+          }
+        },
+        "balanced": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3524416459861529,
+            "control": 0.3304740131618354,
+            "chaos": 0.31708434085201237
+          },
+          "prior_only": {
+            "mae": 0.03903499912044899,
+            "rmse": 0.04708665021791303,
+            "per_mode_mae": {
+              "pressure": 0.035378264300382475,
+              "control": 0.04213767022038275,
+              "chaos": 0.03958906284058176
+            },
+            "dominant_mode_accuracy": 0.1
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.07563884026527808,
+              "rmse": 0.10629108883910968,
+              "per_mode_mae": {
+                "pressure": 0.04047115933944591,
+                "control": 0.08099061875071636,
+                "chaos": 0.10545474270567198
+              },
+              "dominant_mode_accuracy": 0.45
+            },
+            "M0": {
+              "mae": 0.08592645192905486,
+              "rmse": 0.10761879560345236,
+              "per_mode_mae": {
+                "pressure": 0.0448362963019366,
+                "control": 0.08803084294178667,
+                "chaos": 0.12491221654344131
+              },
+              "dominant_mode_accuracy": 0.5
+            },
+            "M1": {
+              "mae": 0.08464475940048952,
+              "rmse": 0.10948378893009662,
+              "per_mode_mae": {
+                "pressure": 0.04733277149352846,
+                "control": 0.08589715331447702,
+                "chaos": 0.12070435339346308
+              },
+              "dominant_mode_accuracy": 0.5
+            },
+            "M2": {
+              "mae": 0.08766595370478815,
+              "rmse": 0.10904956884476859,
+              "per_mode_mae": {
+                "pressure": 0.04968990566097008,
+                "control": 0.08980118441921973,
+                "chaos": 0.12350677103417462
+              },
+              "dominant_mode_accuracy": 0.4
+            },
+            "M3": {
+              "mae": 0.15054522351461347,
+              "rmse": 0.18749631627596577,
+              "per_mode_mae": {
+                "pressure": 0.0735307971713215,
+                "control": 0.15442387113942663,
+                "chaos": 0.22368100223309223
+              },
+              "dominant_mode_accuracy": 0.35
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.1332984319168887,
+              "rmse": 0.169146171444033,
+              "per_mode_mae": {
+                "pressure": 0.0530175306083826,
+                "control": 0.14928900908504789,
+                "chaos": 0.19758875605723553
+              },
+              "dominant_mode_accuracy": 0.35
+            }
+          }
+        },
+        "boundary": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "balanced"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3300755424206463,
+            "control": 0.3333536680546105,
+            "chaos": 0.3365707895247436
+          },
+          "prior_only": {
+            "mae": 0.24110706643164617,
+            "rmse": 0.27438379681174935,
+            "per_mode_mae": {
+              "pressure": 0.2860941097604929,
+              "control": 0.20917364454365672,
+              "chaos": 0.2280534449907889
+            },
+            "dominant_mode_accuracy": 0.45
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.09686803686055605,
+              "rmse": 0.12698787472058104,
+              "per_mode_mae": {
+                "pressure": 0.05977126374279982,
+                "control": 0.10875579252245218,
+                "chaos": 0.12207705431641616
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M0": {
+              "mae": 0.10917910993231007,
+              "rmse": 0.14879217757043364,
+              "per_mode_mae": {
+                "pressure": 0.06131979058511598,
+                "control": 0.12183963059935761,
+                "chaos": 0.14437790861245664
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M1": {
+              "mae": 0.09746983857979269,
+              "rmse": 0.1279964834309306,
+              "per_mode_mae": {
+                "pressure": 0.07074110818355035,
+                "control": 0.09914232068748348,
+                "chaos": 0.12252608686834421
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M2": {
+              "mae": 0.09634554665576686,
+              "rmse": 0.12455076067933829,
+              "per_mode_mae": {
+                "pressure": 0.07189266620048149,
+                "control": 0.09711483473127425,
+                "chaos": 0.12002913903554494
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M3": {
+              "mae": 0.08501335413738081,
+              "rmse": 0.1107566529204612,
+              "per_mode_mae": {
+                "pressure": 0.06292876674174863,
+                "control": 0.08994246000918886,
+                "chaos": 0.10216883566120497
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09012362521867662,
+              "rmse": 0.11930834705114911,
+              "per_mode_mae": {
+                "pressure": 0.07006442320400233,
+                "control": 0.09360888579243234,
+                "chaos": 0.1066975666595952
+              },
+              "dominant_mode_accuracy": 0.975
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 1803,
+      "regions": {
+        "pressure_heavy": {
+          "training_regions": [
+            "control_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.21754214406021605,
+            "control": 0.4001984096516019,
+            "chaos": 0.38225944628818237
+          },
+          "prior_only": {
+            "mae": 0.44155928140510026,
+            "rmse": 0.4704605946928516,
+            "per_mode_mae": {
+              "pressure": 0.6623389221076504,
+              "control": 0.3454546884243431,
+              "chaos": 0.31688423368330765
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.13586346644937328,
+              "rmse": 0.15778379080381064,
+              "per_mode_mae": {
+                "pressure": 0.1683080532234348,
+                "control": 0.0826347928042484,
+                "chaos": 0.1566475533204365
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.18065126369176265,
+              "rmse": 0.22375700901397566,
+              "per_mode_mae": {
+                "pressure": 0.23392717413998643,
+                "control": 0.08250303221862948,
+                "chaos": 0.22552358471667197
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.11662644628472775,
+              "rmse": 0.14138074342418758,
+              "per_mode_mae": {
+                "pressure": 0.1446241052710408,
+                "control": 0.03600385147703213,
+                "chaos": 0.16925138210611032
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.11166006860452213,
+              "rmse": 0.13890976864630503,
+              "per_mode_mae": {
+                "pressure": 0.14483774870359004,
+                "control": 0.03694907701954789,
+                "chaos": 0.15319338009042843
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.09378735810624152,
+              "rmse": 0.10884597193039482,
+              "per_mode_mae": {
+                "pressure": 0.1033187167481101,
+                "control": 0.12379806286260304,
+                "chaos": 0.054245294708011385
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.08907881917074888,
+              "rmse": 0.10212367902213315,
+              "per_mode_mae": {
+                "pressure": 0.09980374189093497,
+                "control": 0.11781604421157513,
+                "chaos": 0.04961667140973654
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.41595859830997817,
+            "control": 0.19707048481218034,
+            "chaos": 0.3869709168778421
+          },
+          "prior_only": {
+            "mae": 0.45091092859054804,
+            "rmse": 0.48072275107439955,
+            "per_mode_mae": {
+              "pressure": 0.3439184070223216,
+              "control": 0.6763663928858218,
+              "chaos": 0.3324479858635008
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.2556944383988891,
+              "rmse": 0.3121908857550134,
+              "per_mode_mae": {
+                "pressure": 0.07145836417581695,
+                "control": 0.3120832934225167,
+                "chaos": 0.38354165759833364
+              },
+              "dominant_mode_accuracy": 0.6
+            },
+            "M0": {
+              "mae": 0.31889767629531146,
+              "rmse": 0.3830995838174317,
+              "per_mode_mae": {
+                "pressure": 0.07111258783221093,
+                "control": 0.4072339266107564,
+                "chaos": 0.47834651444296733
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M1": {
+              "mae": 0.22175758321561995,
+              "rmse": 0.29209138762603204,
+              "per_mode_mae": {
+                "pressure": 0.06823748279476155,
+                "control": 0.27000665434784876,
+                "chaos": 0.3270286125042494
+              },
+              "dominant_mode_accuracy": 0.7
+            },
+            "M2": {
+              "mae": 0.2201569167735742,
+              "rmse": 0.28919397338578806,
+              "per_mode_mae": {
+                "pressure": 0.06828013580924776,
+                "control": 0.2681477804202641,
+                "chaos": 0.32404283409121076
+              },
+              "dominant_mode_accuracy": 0.7
+            },
+            "M3": {
+              "mae": 0.11154128961164175,
+              "rmse": 0.1634010064534235,
+              "per_mode_mae": {
+                "pressure": 0.05059836873841188,
+                "control": 0.1261866293777043,
+                "chaos": 0.15783887071880912
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.11645760604289156,
+              "rmse": 0.15920678217964787,
+              "per_mode_mae": {
+                "pressure": 0.05889904282555507,
+                "control": 0.13035258788827786,
+                "chaos": 0.16012118741484174
+              },
+              "dominant_mode_accuracy": 0.975
+            }
+          }
+        },
+        "chaos_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.42145853799877725,
+            "control": 0.40286325091443353,
+            "chaos": 0.17567821108678924
+          },
+          "prior_only": {
+            "mae": 0.46127886374075916,
+            "rmse": 0.49151745601672325,
+            "per_mode_mae": {
+              "pressure": 0.34982759455539425,
+              "control": 0.3420907010557445,
+              "chaos": 0.6919182956111387
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.373272336364208,
+              "rmse": 0.4097199853738439,
+              "per_mode_mae": {
+                "pressure": 0.16286565372769818,
+                "control": 0.3970428508186137,
+                "chaos": 0.5599085045463118
+              },
+              "dominant_mode_accuracy": 0.025
+            },
+            "M0": {
+              "mae": 0.4137517766199204,
+              "rmse": 0.4561874669765639,
+              "per_mode_mae": {
+                "pressure": 0.1686090264381035,
+                "control": 0.45201863849177704,
+                "chaos": 0.6206276649298805
+              },
+              "dominant_mode_accuracy": 0.0
+            },
+            "M1": {
+              "mae": 0.36319257722558457,
+              "rmse": 0.39643435875703914,
+              "per_mode_mae": {
+                "pressure": 0.1751025081177362,
+                "control": 0.36968635772064073,
+                "chaos": 0.5447888658383769
+              },
+              "dominant_mode_accuracy": 0.125
+            },
+            "M2": {
+              "mae": 0.36259166277657173,
+              "rmse": 0.39548251771833304,
+              "per_mode_mae": {
+                "pressure": 0.1751043323102375,
+                "control": 0.3687831618546201,
+                "chaos": 0.5438874941648576
+              },
+              "dominant_mode_accuracy": 0.1
+            },
+            "M3": {
+              "mae": 0.3021457797200945,
+              "rmse": 0.3333978962451357,
+              "per_mode_mae": {
+                "pressure": 0.13293540457315145,
+                "control": 0.32028326500699034,
+                "chaos": 0.4532186695801418
+              },
+              "dominant_mode_accuracy": 0.65
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.3190027688016816,
+              "rmse": 0.35179359331961696,
+              "per_mode_mae": {
+                "pressure": 0.13841656574459688,
+                "control": 0.3400875874579256,
+                "chaos": 0.47850415320252243
+              },
+              "dominant_mode_accuracy": 0.5
+            }
+          }
+        },
+        "balanced": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3524416459861529,
+            "control": 0.3304740131618354,
+            "chaos": 0.31708434085201237
+          },
+          "prior_only": {
+            "mae": 0.029975825675352112,
+            "rmse": 0.03636392175324399,
+            "per_mode_mae": {
+              "pressure": 0.031483342741664457,
+              "control": 0.02756884431671659,
+              "chaos": 0.03087528996767529
+            },
+            "dominant_mode_accuracy": 0.2
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.07830337522632755,
+              "rmse": 0.10103037817190852,
+              "per_mode_mae": {
+                "pressure": 0.03929973397147146,
+                "control": 0.09073331816085402,
+                "chaos": 0.10487707354665714
+              },
+              "dominant_mode_accuracy": 0.525
+            },
+            "M0": {
+              "mae": 0.05408907886220102,
+              "rmse": 0.06916206839715004,
+              "per_mode_mae": {
+                "pressure": 0.04017810696458145,
+                "control": 0.05176784097861235,
+                "chaos": 0.07032128864340925
+              },
+              "dominant_mode_accuracy": 0.575
+            },
+            "M1": {
+              "mae": 0.0723065709237721,
+              "rmse": 0.09653359616148309,
+              "per_mode_mae": {
+                "pressure": 0.04129755230182375,
+                "control": 0.07692799189913198,
+                "chaos": 0.0986941685703606
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M2": {
+              "mae": 0.0746260576967968,
+              "rmse": 0.0994051562446426,
+              "per_mode_mae": {
+                "pressure": 0.042683878988159854,
+                "control": 0.07898851180012825,
+                "chaos": 0.10220578230210228
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M3": {
+              "mae": 0.18147751805027557,
+              "rmse": 0.21601759861117462,
+              "per_mode_mae": {
+                "pressure": 0.07829317734641499,
+                "control": 0.1967009991286617,
+                "chaos": 0.26943837767574996
+              },
+              "dominant_mode_accuracy": 0.275
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.17003837828984825,
+              "rmse": 0.20754428513503193,
+              "per_mode_mae": {
+                "pressure": 0.07130021915537837,
+                "control": 0.18745179731132752,
+                "chaos": 0.25136311840283876
+              },
+              "dominant_mode_accuracy": 0.3
+            }
+          }
+        },
+        "boundary": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "balanced"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3300755424206463,
+            "control": 0.3333536680546105,
+            "chaos": 0.3365707895247436
+          },
+          "prior_only": {
+            "mae": 0.23500675640208205,
+            "rmse": 0.2662585595903633,
+            "per_mode_mae": {
+              "pressure": 0.26556643598870916,
+              "control": 0.22106890348526825,
+              "chaos": 0.21838492973226878
+            },
+            "dominant_mode_accuracy": 0.2
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.1085082633252462,
+              "rmse": 0.13711127236708198,
+              "per_mode_mae": {
+                "pressure": 0.0680232977618584,
+                "control": 0.12621898029951314,
+                "chaos": 0.13128251191436704
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M0": {
+              "mae": 0.1156620006597963,
+              "rmse": 0.14981496449121048,
+              "per_mode_mae": {
+                "pressure": 0.06520642572979622,
+                "control": 0.1337465803898364,
+                "chaos": 0.14803299585975632
+              },
+              "dominant_mode_accuracy": 0.825
+            },
+            "M1": {
+              "mae": 0.09923699428730065,
+              "rmse": 0.13146451616297805,
+              "per_mode_mae": {
+                "pressure": 0.06864834736047494,
+                "control": 0.10901347659797249,
+                "chaos": 0.12004915890345451
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M2": {
+              "mae": 0.09641888739424648,
+              "rmse": 0.12732449294340348,
+              "per_mode_mae": {
+                "pressure": 0.07049108749549844,
+                "control": 0.10432255385242599,
+                "chaos": 0.11444302083481502
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M3": {
+              "mae": 0.08735754778491674,
+              "rmse": 0.11514207705749993,
+              "per_mode_mae": {
+                "pressure": 0.06948172513791898,
+                "control": 0.09939055726816198,
+                "chaos": 0.09320036094866922
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.08933734517212473,
+              "rmse": 0.11676291516192992,
+              "per_mode_mae": {
+                "pressure": 0.06589541082035774,
+                "control": 0.10193308227416047,
+                "chaos": 0.10018354242185601
+              },
+              "dominant_mode_accuracy": 0.875
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 1804,
+      "regions": {
+        "pressure_heavy": {
+          "training_regions": [
+            "control_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.21754214406021605,
+            "control": 0.4001984096516019,
+            "chaos": 0.38225944628818237
+          },
+          "prior_only": {
+            "mae": 0.4426947464204564,
+            "rmse": 0.47136433182488385,
+            "per_mode_mae": {
+              "pressure": 0.6640421196306845,
+              "control": 0.3504407886344508,
+              "chaos": 0.31360133099623405
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.13543398146285301,
+              "rmse": 0.15866330088047217,
+              "per_mode_mae": {
+                "pressure": 0.1727607839015858,
+                "control": 0.06833958194117701,
+                "chaos": 0.1652015785457961
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.17815889825321268,
+              "rmse": 0.22238897900151727,
+              "per_mode_mae": {
+                "pressure": 0.24170561298723733,
+                "control": 0.06884502128209226,
+                "chaos": 0.22392606049030847
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.11634739689051289,
+              "rmse": 0.14502833894025177,
+              "per_mode_mae": {
+                "pressure": 0.1502100829627125,
+                "control": 0.034436112459253085,
+                "chaos": 0.16439599524957316
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.11265421633393621,
+              "rmse": 0.14390691146226073,
+              "per_mode_mae": {
+                "pressure": 0.15041863168071293,
+                "control": 0.045107461618963465,
+                "chaos": 0.14243655570213223
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.10069980046567444,
+              "rmse": 0.11694721315859714,
+              "per_mode_mae": {
+                "pressure": 0.11198301491403728,
+                "control": 0.13717058526118242,
+                "chaos": 0.052945801221803555
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.1003290541325262,
+              "rmse": 0.11354382339313673,
+              "per_mode_mae": {
+                "pressure": 0.1141127891587197,
+                "control": 0.12586167690451822,
+                "chaos": 0.0610126963343407
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.41595859830997817,
+            "control": 0.19707048481218034,
+            "chaos": 0.3869709168778421
+          },
+          "prior_only": {
+            "mae": 0.459422044182142,
+            "rmse": 0.4891111938631268,
+            "per_mode_mae": {
+              "pressure": 0.3585828876560052,
+              "control": 0.6891330662732125,
+              "chaos": 0.33055017861720803
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.26794791729420664,
+              "rmse": 0.33249174069515003,
+              "per_mode_mae": {
+                "pressure": 0.057375710653973,
+                "control": 0.34492858504255564,
+                "chaos": 0.4015394561860914
+              },
+              "dominant_mode_accuracy": 0.65
+            },
+            "M0": {
+              "mae": 0.335038991571153,
+              "rmse": 0.40623647534666585,
+              "per_mode_mae": {
+                "pressure": 0.05711615769530058,
+                "control": 0.4454423296614289,
+                "chaos": 0.5025584873567295
+              },
+              "dominant_mode_accuracy": 0.4
+            },
+            "M1": {
+              "mae": 0.24048811147187935,
+              "rmse": 0.31087363157928705,
+              "per_mode_mae": {
+                "pressure": 0.05590452485596205,
+                "control": 0.3057026186826856,
+                "chaos": 0.3598571908769904
+              },
+              "dominant_mode_accuracy": 0.725
+            },
+            "M2": {
+              "mae": 0.23727515531042834,
+              "rmse": 0.30755258950836045,
+              "per_mode_mae": {
+                "pressure": 0.05606739763644951,
+                "control": 0.30088318444050915,
+                "chaos": 0.3548748838543264
+              },
+              "dominant_mode_accuracy": 0.725
+            },
+            "M3": {
+              "mae": 0.12382330827996821,
+              "rmse": 0.18876226544291932,
+              "per_mode_mae": {
+                "pressure": 0.04794436501617874,
+                "control": 0.14498638254696528,
+                "chaos": 0.17853917727676055
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.13433785529890685,
+              "rmse": 0.18801825103146932,
+              "per_mode_mae": {
+                "pressure": 0.051225600272113425,
+                "control": 0.15827388984781932,
+                "chaos": 0.19351407577678786
+              },
+              "dominant_mode_accuracy": 0.875
+            }
+          }
+        },
+        "chaos_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.42145853799877725,
+            "control": 0.40286325091443353,
+            "chaos": 0.17567821108678924
+          },
+          "prior_only": {
+            "mae": 0.4753392238897571,
+            "rmse": 0.5054809216387688,
+            "per_mode_mae": {
+              "pressure": 0.37137816012530916,
+              "control": 0.3416306757093264,
+              "chaos": 0.7130088358346356
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.3820196991668324,
+              "rmse": 0.4185409396421997,
+              "per_mode_mae": {
+                "pressure": 0.16996772112932357,
+                "control": 0.40306182762092496,
+                "chaos": 0.5730295487502486
+              },
+              "dominant_mode_accuracy": 0.0
+            },
+            "M0": {
+              "mae": 0.42523770695044955,
+              "rmse": 0.4675480200494939,
+              "per_mode_mae": {
+                "pressure": 0.17703379577768602,
+                "control": 0.46082276464798844,
+                "chaos": 0.6378565604256744
+              },
+              "dominant_mode_accuracy": 0.0
+            },
+            "M1": {
+              "mae": 0.3691498696820073,
+              "rmse": 0.4020130820576287,
+              "per_mode_mae": {
+                "pressure": 0.183171432753762,
+                "control": 0.37055337176924885,
+                "chaos": 0.553724804523011
+              },
+              "dominant_mode_accuracy": 0.175
+            },
+            "M2": {
+              "mae": 0.3695275487250222,
+              "rmse": 0.4022954444266184,
+              "per_mode_mae": {
+                "pressure": 0.18296821878039143,
+                "control": 0.3713231043071418,
+                "chaos": 0.5542913230875333
+              },
+              "dominant_mode_accuracy": 0.15
+            },
+            "M3": {
+              "mae": 0.31152199952270965,
+              "rmse": 0.3424481709473518,
+              "per_mode_mae": {
+                "pressure": 0.14708186874963808,
+                "control": 0.32020113053442645,
+                "chaos": 0.4672829992840645
+              },
+              "dominant_mode_accuracy": 0.7
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.3209885659012272,
+              "rmse": 0.3547732547878965,
+              "per_mode_mae": {
+                "pressure": 0.14190413212775688,
+                "control": 0.3395787167240839,
+                "chaos": 0.48148284885184084
+              },
+              "dominant_mode_accuracy": 0.55
+            }
+          }
+        },
+        "balanced": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3524416459861529,
+            "control": 0.3304740131618354,
+            "chaos": 0.31708434085201237
+          },
+          "prior_only": {
+            "mae": 0.03504598487850282,
+            "rmse": 0.04175301060578908,
+            "per_mode_mae": {
+              "pressure": 0.034045328663833474,
+              "control": 0.03497990368471377,
+              "chaos": 0.03611272228696123
+            },
+            "dominant_mode_accuracy": 0.25
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10053307314338665,
+              "rmse": 0.12610627282111106,
+              "per_mode_mae": {
+                "pressure": 0.0450116048177797,
+                "control": 0.117718191347888,
+                "chaos": 0.13886942326449223
+              },
+              "dominant_mode_accuracy": 0.375
+            },
+            "M0": {
+              "mae": 0.06873048029293401,
+              "rmse": 0.08696162506718917,
+              "per_mode_mae": {
+                "pressure": 0.039871214725051396,
+                "control": 0.07386290975169578,
+                "chaos": 0.09245731640205483
+              },
+              "dominant_mode_accuracy": 0.3
+            },
+            "M1": {
+              "mae": 0.07630871114474015,
+              "rmse": 0.1019360134881659,
+              "per_mode_mae": {
+                "pressure": 0.048501715460576474,
+                "control": 0.0747246094617998,
+                "chaos": 0.10569980851184413
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M2": {
+              "mae": 0.08037466579258129,
+              "rmse": 0.10849347458356708,
+              "per_mode_mae": {
+                "pressure": 0.04968473681665489,
+                "control": 0.08301772496133482,
+                "chaos": 0.10842153559975418
+              },
+              "dominant_mode_accuracy": 0.35
+            },
+            "M3": {
+              "mae": 0.17813910915180992,
+              "rmse": 0.21576768678946584,
+              "per_mode_mae": {
+                "pressure": 0.08362897538740928,
+                "control": 0.18881244547444614,
+                "chaos": 0.2619759065935743
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.1573902637855999,
+              "rmse": 0.19559423852981253,
+              "per_mode_mae": {
+                "pressure": 0.06328882815817657,
+                "control": 0.17773238621887572,
+                "chaos": 0.23114957697974736
+              },
+              "dominant_mode_accuracy": 0.45
+            }
+          }
+        },
+        "boundary": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "balanced"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3300755424206463,
+            "control": 0.3333536680546105,
+            "chaos": 0.3365707895247436
+          },
+          "prior_only": {
+            "mae": 0.23828305988400075,
+            "rmse": 0.27040298919966615,
+            "per_mode_mae": {
+              "pressure": 0.24017724242350819,
+              "control": 0.22145865910374818,
+              "chaos": 0.25321327812474587
+            },
+            "dominant_mode_accuracy": 0.35
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.11266602884360323,
+              "rmse": 0.14420691782635647,
+              "per_mode_mae": {
+                "pressure": 0.06575954051884703,
+                "control": 0.13815603258857329,
+                "chaos": 0.1340825134233894
+              },
+              "dominant_mode_accuracy": 0.825
+            },
+            "M0": {
+              "mae": 0.11756048125276443,
+              "rmse": 0.1531556463597876,
+              "per_mode_mae": {
+                "pressure": 0.05753617946404378,
+                "control": 0.15079768902461738,
+                "chaos": 0.14434757526963216
+              },
+              "dominant_mode_accuracy": 0.775
+            },
+            "M1": {
+              "mae": 0.1125934802463284,
+              "rmse": 0.14099662403457647,
+              "per_mode_mae": {
+                "pressure": 0.07026750804171897,
+                "control": 0.1366719336524786,
+                "chaos": 0.13084099904478766
+              },
+              "dominant_mode_accuracy": 0.8
+            },
+            "M2": {
+              "mae": 0.11274173977655723,
+              "rmse": 0.14071670075065046,
+              "per_mode_mae": {
+                "pressure": 0.06894998431915453,
+                "control": 0.13716205553181277,
+                "chaos": 0.13211317947870443
+              },
+              "dominant_mode_accuracy": 0.8
+            },
+            "M3": {
+              "mae": 0.1047106387057604,
+              "rmse": 0.13428063735022763,
+              "per_mode_mae": {
+                "pressure": 0.07586456581534412,
+                "control": 0.12259950114365237,
+                "chaos": 0.1156678491582847
+              },
+              "dominant_mode_accuracy": 0.825
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.10537286770555823,
+              "rmse": 0.14024914351600798,
+              "per_mode_mae": {
+                "pressure": 0.07423530054062091,
+                "control": 0.12549530851260804,
+                "chaos": 0.11638799406344576
+              },
+              "dominant_mode_accuracy": 0.875
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 1805,
+      "regions": {
+        "pressure_heavy": {
+          "training_regions": [
+            "control_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.21754214406021605,
+            "control": 0.4001984096516019,
+            "chaos": 0.38225944628818237
+          },
+          "prior_only": {
+            "mae": 0.44089642402869317,
+            "rmse": 0.469621367943353,
+            "per_mode_mae": {
+              "pressure": 0.6613446360430395,
+              "control": 0.3413034745062483,
+              "chaos": 0.32004116153679163
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.145386938785774,
+              "rmse": 0.16973809542769608,
+              "per_mode_mae": {
+                "pressure": 0.17553649820702796,
+                "control": 0.08508165474722532,
+                "chaos": 0.1755426634030687
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.1838862815695995,
+              "rmse": 0.22656653838606974,
+              "per_mode_mae": {
+                "pressure": 0.2354162350814594,
+                "control": 0.08968224924767668,
+                "chaos": 0.22656036037966237
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.11968975209882965,
+              "rmse": 0.14980075346351504,
+              "per_mode_mae": {
+                "pressure": 0.14940306912705262,
+                "control": 0.04262018690677198,
+                "chaos": 0.16704600026266436
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.11954460828761272,
+              "rmse": 0.15012090197183028,
+              "per_mode_mae": {
+                "pressure": 0.14785921533096702,
+                "control": 0.05313603468212809,
+                "chaos": 0.15763857484974303
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.10080166185558462,
+              "rmse": 0.11770968140183274,
+              "per_mode_mae": {
+                "pressure": 0.11218763666955689,
+                "control": 0.12983461773087887,
+                "chaos": 0.06038273116631806
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09549048193438246,
+              "rmse": 0.11266769303484753,
+              "per_mode_mae": {
+                "pressure": 0.10732186104126588,
+                "control": 0.1216157178032666,
+                "chaos": 0.057533866958614864
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "chaos_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.41595859830997817,
+            "control": 0.19707048481218034,
+            "chaos": 0.3869709168778421
+          },
+          "prior_only": {
+            "mae": 0.4540211275980448,
+            "rmse": 0.4834006655373339,
+            "per_mode_mae": {
+              "pressure": 0.3536201800295893,
+              "control": 0.6810316913970669,
+              "chaos": 0.32741151136747815
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.2613883787719518,
+              "rmse": 0.32243840768735094,
+              "per_mode_mae": {
+                "pressure": 0.060681238526718737,
+                "control": 0.3314113027081215,
+                "chaos": 0.3920725950810152
+              },
+              "dominant_mode_accuracy": 0.6
+            },
+            "M0": {
+              "mae": 0.32507570403629843,
+              "rmse": 0.3901058201762036,
+              "per_mode_mae": {
+                "pressure": 0.0601453057873933,
+                "control": 0.4274682502670544,
+                "chaos": 0.4876135560544476
+              },
+              "dominant_mode_accuracy": 0.4
+            },
+            "M1": {
+              "mae": 0.2249171048335966,
+              "rmse": 0.28113863276266543,
+              "per_mode_mae": {
+                "pressure": 0.05850507728959686,
+                "control": 0.2806795338338196,
+                "chaos": 0.3355667033773733
+              },
+              "dominant_mode_accuracy": 0.775
+            },
+            "M2": {
+              "mae": 0.2227098508173985,
+              "rmse": 0.2791910669801947,
+              "per_mode_mae": {
+                "pressure": 0.05815252153432835,
+                "control": 0.27878649490013574,
+                "chaos": 0.3311905360177314
+              },
+              "dominant_mode_accuracy": 0.725
+            },
+            "M3": {
+              "mae": 0.11073674418104523,
+              "rmse": 0.1585955012055,
+              "per_mode_mae": {
+                "pressure": 0.04935903448965133,
+                "control": 0.1265854583941794,
+                "chaos": 0.156265739659305
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.12607724115309696,
+              "rmse": 0.17259539833576706,
+              "per_mode_mae": {
+                "pressure": 0.053229966957287045,
+                "control": 0.14205044742259726,
+                "chaos": 0.18295130907940654
+              },
+              "dominant_mode_accuracy": 0.95
+            }
+          }
+        },
+        "chaos_heavy": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "balanced",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.42145853799877725,
+            "control": 0.40286325091443353,
+            "chaos": 0.17567821108678924
+          },
+          "prior_only": {
+            "mae": 0.4672201526312751,
+            "rmse": 0.4975344858691193,
+            "per_mode_mae": {
+              "pressure": 0.3511269463050121,
+              "control": 0.34970328264190054,
+              "chaos": 0.7008302289469126
+            },
+            "dominant_mode_accuracy": 0.0
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.3791700692614901,
+              "rmse": 0.4169292431863508,
+              "per_mode_mae": {
+                "pressure": 0.16146511885520937,
+                "control": 0.40728998503702585,
+                "chaos": 0.5687551038922353
+              },
+              "dominant_mode_accuracy": 0.025
+            },
+            "M0": {
+              "mae": 0.4190355782014102,
+              "rmse": 0.4623947980222499,
+              "per_mode_mae": {
+                "pressure": 0.16688908177108058,
+                "control": 0.46166428553103467,
+                "chaos": 0.6285533673021153
+              },
+              "dominant_mode_accuracy": 0.0
+            },
+            "M1": {
+              "mae": 0.3651534870772685,
+              "rmse": 0.3982385468866599,
+              "per_mode_mae": {
+                "pressure": 0.17358204654566606,
+                "control": 0.37414818407023676,
+                "chaos": 0.5477302306159029
+              },
+              "dominant_mode_accuracy": 0.125
+            },
+            "M2": {
+              "mae": 0.36384170326145254,
+              "rmse": 0.39691943731703955,
+              "per_mode_mae": {
+                "pressure": 0.1739434651161299,
+                "control": 0.3718190897760489,
+                "chaos": 0.5457625548921788
+              },
+              "dominant_mode_accuracy": 0.125
+            },
+            "M3": {
+              "mae": 0.29681252176168743,
+              "rmse": 0.3274294510679641,
+              "per_mode_mae": {
+                "pressure": 0.13171769217874185,
+                "control": 0.3135010904637893,
+                "chaos": 0.4452187826425312
+              },
+              "dominant_mode_accuracy": 0.825
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.29699616041699717,
+              "rmse": 0.33063755046962656,
+              "per_mode_mae": {
+                "pressure": 0.12236267746855307,
+                "control": 0.3232293025135526,
+                "chaos": 0.44539650126888597
+              },
+              "dominant_mode_accuracy": 0.65
+            }
+          }
+        },
+        "balanced": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "boundary"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3524416459861529,
+            "control": 0.3304740131618354,
+            "chaos": 0.31708434085201237
+          },
+          "prior_only": {
+            "mae": 0.030871688454437864,
+            "rmse": 0.036817089012832815,
+            "per_mode_mae": {
+              "pressure": 0.024420612006847125,
+              "control": 0.03712959746924964,
+              "chaos": 0.031064855887216823
+            },
+            "dominant_mode_accuracy": 0.35
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.07746481794863155,
+              "rmse": 0.09635816863963129,
+              "per_mode_mae": {
+                "pressure": 0.04542873355100876,
+                "control": 0.0783355380406785,
+                "chaos": 0.10863018225420737
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M0": {
+              "mae": 0.07569670900143782,
+              "rmse": 0.09720974865515701,
+              "per_mode_mae": {
+                "pressure": 0.04561265216532816,
+                "control": 0.07313155883904619,
+                "chaos": 0.1083459159999391
+              },
+              "dominant_mode_accuracy": 0.55
+            },
+            "M1": {
+              "mae": 0.08743823027426528,
+              "rmse": 0.11522409881120842,
+              "per_mode_mae": {
+                "pressure": 0.051448556958910444,
+                "control": 0.0850627988497367,
+                "chaos": 0.1258033350141487
+              },
+              "dominant_mode_accuracy": 0.45
+            },
+            "M2": {
+              "mae": 0.08534255927141017,
+              "rmse": 0.11189353307663073,
+              "per_mode_mae": {
+                "pressure": 0.051341956141471655,
+                "control": 0.08205226235042593,
+                "chaos": 0.12263345932233291
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M3": {
+              "mae": 0.16365444935521806,
+              "rmse": 0.196678537720642,
+              "per_mode_mae": {
+                "pressure": 0.07209887221320802,
+                "control": 0.17599054577439716,
+                "chaos": 0.24287393007804897
+              },
+              "dominant_mode_accuracy": 0.375
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.15125218510452332,
+              "rmse": 0.1840107901518525,
+              "per_mode_mae": {
+                "pressure": 0.062111308914681876,
+                "control": 0.1678572640906318,
+                "chaos": 0.2237879823082563
+              },
+              "dominant_mode_accuracy": 0.325
+            }
+          }
+        },
+        "boundary": {
+          "training_regions": [
+            "pressure_heavy",
+            "control_heavy",
+            "chaos_heavy",
+            "balanced"
+          ],
+          "training_groups": 80,
+          "evaluation_groups": 20,
+          "training_prior": {
+            "pressure": 0.3300755424206463,
+            "control": 0.3333536680546105,
+            "chaos": 0.3365707895247436
+          },
+          "prior_only": {
+            "mae": 0.23471219289470285,
+            "rmse": 0.26660965184468194,
+            "per_mode_mae": {
+              "pressure": 0.2380968842707361,
+              "control": 0.2589553683026355,
+              "chaos": 0.20708432611073704
+            },
+            "dominant_mode_accuracy": 0.35
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.09640789428156765,
+              "rmse": 0.13009272797866142,
+              "per_mode_mae": {
+                "pressure": 0.06214713852882919,
+                "control": 0.10798196384739449,
+                "chaos": 0.11909458046847932
+              },
+              "dominant_mode_accuracy": 0.825
+            },
+            "M0": {
+              "mae": 0.09999179890373562,
+              "rmse": 0.13379392415237526,
+              "per_mode_mae": {
+                "pressure": 0.0560023819398765,
+                "control": 0.118552055397246,
+                "chaos": 0.12542095937408435
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M1": {
+              "mae": 0.0918649724254865,
+              "rmse": 0.11433370893351026,
+              "per_mode_mae": {
+                "pressure": 0.059438115379166226,
+                "control": 0.10207751648064298,
+                "chaos": 0.11407928541665024
+              },
+              "dominant_mode_accuracy": 0.8
+            },
+            "M2": {
+              "mae": 0.0930531170983026,
+              "rmse": 0.11552216121705504,
+              "per_mode_mae": {
+                "pressure": 0.06149165495093769,
+                "control": 0.10214945325670235,
+                "chaos": 0.11551824308726774
+              },
+              "dominant_mode_accuracy": 0.8
+            },
+            "M3": {
+              "mae": 0.09258990500631827,
+              "rmse": 0.12358277396504037,
+              "per_mode_mae": {
+                "pressure": 0.06443321372714103,
+                "control": 0.09979394403715061,
+                "chaos": 0.11354255725466315
+              },
+              "dominant_mode_accuracy": 0.8
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.10165240674107419,
+              "rmse": 0.13908197032576916,
+              "per_mode_mae": {
+                "pressure": 0.06338603948847862,
+                "control": 0.1156121083198071,
+                "chaos": 0.1259590724149368
+              },
+              "dominant_mode_accuracy": 0.825
+            }
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "pressure_heavy": {
+      "models": {
+        "prior_only": {
+          "mean_mae": 0.43703468465623796,
+          "seed_mae": [
+            0.42615900220511743,
+            0.4338639692218225,
+            0.44155928140510026,
+            0.4426947464204564,
+            0.44089642402869317
+          ]
+        },
+        "public_decision_proxy": {
+          "mean_mae": 0.13547642900761014,
+          "seed_mae": [
+            0.12755260664145487,
+            0.1331451516985955,
+            0.13586346644937328,
+            0.13543398146285301,
+            0.145386938785774
+          ]
+        },
+        "M0": {
+          "mean_mae": 0.17778327658489854,
+          "seed_mae": [
+            0.16773912529500004,
+            0.17848081411491787,
+            0.18065126369176265,
+            0.17815889825321268,
+            0.1838862815695995
+          ]
+        },
+        "M1": {
+          "mean_mae": 0.11491436119734226,
+          "seed_mae": [
+            0.10939304079672672,
+            0.1125151699159144,
+            0.11662644628472775,
+            0.11634739689051289,
+            0.11968975209882965
+          ]
+        },
+        "M2": {
+          "mean_mae": 0.11122482358424146,
+          "seed_mae": [
+            0.10594284950599127,
+            0.10632237518914497,
+            0.11166006860452213,
+            0.11265421633393621,
+            0.11954460828761272
+          ]
+        },
+        "M3": {
+          "mean_mae": 0.0976270438364264,
+          "seed_mae": [
+            0.09373622368370825,
+            0.09911017507092318,
+            0.09378735810624152,
+            0.10069980046567444,
+            0.10080166185558462
+          ]
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.09490046312911546,
+          "seed_mae": [
+            0.09290054248933624,
+            0.09670341791858351,
+            0.08907881917074888,
+            0.1003290541325262,
+            0.09549048193438246
+          ]
+        }
+      },
+      "transition_vs_M2": {
+        "mean_mae_reduction": 0.016324360455126002,
+        "positive_seed_fraction": 1.0
+      }
+    },
+    "control_heavy": {
+      "models": {
+        "prior_only": {
+          "mean_mae": 0.4564232478894077,
+          "seed_mae": [
+            0.4533297087897745,
+            0.4644324302865288,
+            0.45091092859054804,
+            0.459422044182142,
+            0.4540211275980448
+          ]
+        },
+        "public_decision_proxy": {
+          "mean_mae": 0.2603875205723735,
+          "seed_mae": [
+            0.2682403272366942,
+            0.2486665411601259,
+            0.2556944383988891,
+            0.26794791729420664,
+            0.2613883787719518
+          ]
+        },
+        "M0": {
+          "mean_mae": 0.3268090666380266,
+          "seed_mae": [
+            0.33646484070208377,
+            0.3185681205852864,
+            0.31889767629531146,
+            0.335038991571153,
+            0.32507570403629843
+          ]
+        },
+        "M1": {
+          "mean_mae": 0.2300882703448459,
+          "seed_mae": [
+            0.24018869089581463,
+            0.2230898613073192,
+            0.22175758321561995,
+            0.24048811147187935,
+            0.2249171048335966
+          ]
+        },
+        "M2": {
+          "mean_mae": 0.22742976112783922,
+          "seed_mae": [
+            0.2367993919700194,
+            0.22020749076777565,
+            0.2201569167735742,
+            0.23727515531042834,
+            0.2227098508173985
+          ]
+        },
+        "M3": {
+          "mean_mae": 0.11423016200997185,
+          "seed_mae": [
+            0.12472248132630548,
+            0.10032698665089845,
+            0.11154128961164175,
+            0.12382330827996821,
+            0.11073674418104523
+          ]
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.12457185002432636,
+          "seed_mae": [
+            0.12929339223511813,
+            0.11669315539161827,
+            0.11645760604289156,
+            0.13433785529890685,
+            0.12607724115309696
+          ]
+        }
+      },
+      "transition_vs_M2": {
+        "mean_mae_reduction": 0.10285791110351288,
+        "positive_seed_fraction": 1.0
+      }
+    },
+    "chaos_heavy": {
+      "models": {
+        "prior_only": {
+          "mean_mae": 0.46590986060065703,
+          "seed_mae": [
+            0.4643036922764459,
+            0.461407370465048,
+            0.46127886374075916,
+            0.4753392238897571,
+            0.4672201526312751
+          ]
+        },
+        "public_decision_proxy": {
+          "mean_mae": 0.37713063426913634,
+          "seed_mae": [
+            0.37492376073529116,
+            0.3762673058178597,
+            0.373272336364208,
+            0.3820196991668324,
+            0.3791700692614901
+          ]
+        },
+        "M0": {
+          "mean_mae": 0.41838252753784666,
+          "seed_mae": [
+            0.4167049163154621,
+            0.4171826596019911,
+            0.4137517766199204,
+            0.42523770695044955,
+            0.4190355782014102
+          ]
+        },
+        "M1": {
+          "mean_mae": 0.36562159796219984,
+          "seed_mae": [
+            0.3653422140677602,
+            0.3652698417583787,
+            0.36319257722558457,
+            0.3691498696820073,
+            0.3651534870772685
+          ]
+        },
+        "M2": {
+          "mean_mae": 0.3641380879309367,
+          "seed_mae": [
+            0.3602543258147438,
+            0.36447519907689346,
+            0.36259166277657173,
+            0.3695275487250222,
+            0.36384170326145254
+          ]
+        },
+        "M3": {
+          "mean_mae": 0.30511669800105273,
+          "seed_mae": [
+            0.30822350496376844,
+            0.30687968403700355,
+            0.3021457797200945,
+            0.31152199952270965,
+            0.29681252176168743
+          ]
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.3111008688820164,
+          "seed_mae": [
+            0.30561207659731304,
+            0.3129047726928628,
+            0.3190027688016816,
+            0.3209885659012272,
+            0.29699616041699717
+          ]
+        }
+      },
+      "transition_vs_M2": {
+        "mean_mae_reduction": 0.05303721904892038,
+        "positive_seed_fraction": 1.0
+      }
+    },
+    "balanced": {
+      "models": {
+        "prior_only": {
+          "mean_mae": 0.03374379293967374,
+          "seed_mae": [
+            0.033790466569626934,
+            0.03903499912044899,
+            0.029975825675352112,
+            0.03504598487850282,
+            0.030871688454437864
+          ]
+        },
+        "public_decision_proxy": {
+          "mean_mae": 0.08109741957617662,
+          "seed_mae": [
+            0.0735469912972593,
+            0.07563884026527808,
+            0.07830337522632755,
+            0.10053307314338665,
+            0.07746481794863155
+          ]
+        },
+        "M0": {
+          "mean_mae": 0.07079834940455612,
+          "seed_mae": [
+            0.06954902693715284,
+            0.08592645192905486,
+            0.05408907886220102,
+            0.06873048029293401,
+            0.07569670900143782
+          ]
+        },
+        "M1": {
+          "mean_mae": 0.07905938953085631,
+          "seed_mae": [
+            0.07459867591101448,
+            0.08464475940048952,
+            0.0723065709237721,
+            0.07630871114474015,
+            0.08743823027426528
+          ]
+        },
+        "M2": {
+          "mean_mae": 0.08178155255600461,
+          "seed_mae": [
+            0.08089852631444668,
+            0.08766595370478815,
+            0.0746260576967968,
+            0.08037466579258129,
+            0.08534255927141017
+          ]
+        },
+        "M3": {
+          "mean_mae": 0.1723325292188088,
+          "seed_mae": [
+            0.18784634602212696,
+            0.15054522351461347,
+            0.18147751805027557,
+            0.17813910915180992,
+            0.16365444935521806
+          ]
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.15466718104232763,
+          "seed_mae": [
+            0.16135664611477787,
+            0.1332984319168887,
+            0.17003837828984825,
+            0.1573902637855999,
+            0.15125218510452332
+          ]
+        }
+      },
+      "transition_vs_M2": {
+        "mean_mae_reduction": -0.07288562848632299,
+        "positive_seed_fraction": 0.0
+      }
+    },
+    "boundary": {
+      "models": {
+        "prior_only": {
+          "mean_mae": 0.2378908868968906,
+          "seed_mae": [
+            0.2403453588720213,
+            0.24110706643164617,
+            0.23500675640208205,
+            0.23828305988400075,
+            0.23471219289470285
+          ]
+        },
+        "public_decision_proxy": {
+          "mean_mae": 0.10164935241722342,
+          "seed_mae": [
+            0.09379653877514402,
+            0.09686803686055605,
+            0.1085082633252462,
+            0.11266602884360323,
+            0.09640789428156765
+          ]
+        },
+        "M0": {
+          "mean_mae": 0.1104538708020704,
+          "seed_mae": [
+            0.10987596326174559,
+            0.10917910993231007,
+            0.1156620006597963,
+            0.11756048125276443,
+            0.09999179890373562
+          ]
+        },
+        "M1": {
+          "mean_mae": 0.0980058295231262,
+          "seed_mae": [
+            0.08886386207672269,
+            0.09746983857979269,
+            0.09923699428730065,
+            0.1125934802463284,
+            0.0918649724254865
+          ]
+        },
+        "M2": {
+          "mean_mae": 0.09720937725834264,
+          "seed_mae": [
+            0.08748759536684005,
+            0.09634554665576686,
+            0.09641888739424648,
+            0.11274173977655723,
+            0.0930531170983026
+          ]
+        },
+        "M3": {
+          "mean_mae": 0.09339887413417482,
+          "seed_mae": [
+            0.09732292503649784,
+            0.08501335413738081,
+            0.08735754778491674,
+            0.1047106387057604,
+            0.09258990500631827
+          ]
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.09449134142623182,
+          "seed_mae": [
+            0.08597046229372537,
+            0.09012362521867662,
+            0.08933734517212473,
+            0.10537286770555823,
+            0.10165240674107419
+          ]
+        }
+      },
+      "transition_vs_M2": {
+        "mean_mae_reduction": 0.0027180358321108157,
+        "positive_seed_fraction": 0.8
+      }
+    }
+  },
+  "provenance": {
+    "human_data_accessed": false,
+    "frozen_evidence_modified": false,
+    "region_excluded_from_training": true,
+    "train_only_standardization": true,
+    "disjoint_simulation_seeds": true,
+    "private_rank_used_as_predictor": false
+  },
+  "limitations": "Synthetic simulator only. Source-region training and target-region testing are distribution-shift experiments, not evidence of real-human construct validity or CFR/exploitability. The training set is reused across evaluation seeds; uncertainty across seeds is not population inference."
+}

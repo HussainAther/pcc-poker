@@ -1,0 +1,2366 @@
+{
+  "status": "completed",
+  "analysis_status": "synthetic_mixture_space_generalization",
+  "seeds": [
+    1701,
+    1702,
+    1703,
+    1704,
+    1705
+  ],
+  "regions": [
+    "pressure_heavy",
+    "control_heavy",
+    "chaos_heavy",
+    "balanced",
+    "boundary"
+  ],
+  "mixtures_per_region": 20,
+  "hands_per_seat": 100,
+  "seed_results": [
+    {
+      "seed": 1701,
+      "regions": {
+        "pressure_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.8636894855282117,
+            "control": 0.07513880409541429,
+            "chaos": 0.061171710376374054
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.11005872990347411,
+              "rmse": 0.12926052009536207,
+              "per_mode_mae": {
+                "pressure": 0.11372611724948589,
+                "control": 0.09987967331600352,
+                "chaos": 0.11657039914493295
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.1386940757706747,
+              "rmse": 0.16110904246987467,
+              "per_mode_mae": {
+                "pressure": 0.15044011455918124,
+                "control": 0.09696992286950702,
+                "chaos": 0.16867218988333582
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.08722823688738372,
+              "rmse": 0.11394430118384179,
+              "per_mode_mae": {
+                "pressure": 0.09948215197472723,
+                "control": 0.05238411397212313,
+                "chaos": 0.1098184447153008
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.08623175598543728,
+              "rmse": 0.11093026061689089,
+              "per_mode_mae": {
+                "pressure": 0.10086179724185491,
+                "control": 0.06264012119407447,
+                "chaos": 0.09519334952038247
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.07768103323312926,
+              "rmse": 0.09459456395724791,
+              "per_mode_mae": {
+                "pressure": 0.06935630385999894,
+                "control": 0.10651533999600087,
+                "chaos": 0.05717145584338797
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.07215767797857857,
+              "rmse": 0.08890502030227392,
+              "per_mode_mae": {
+                "pressure": 0.06833045544723446,
+                "control": 0.08810310063092631,
+                "chaos": 0.06003947785757493
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.08173839935823986,
+            "control": 0.8648971200230129,
+            "chaos": 0.0533644806187473
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.11258910545516028,
+              "rmse": 0.1547535950871741,
+              "per_mode_mae": {
+                "pressure": 0.041161833391869386,
+                "control": 0.13168659610313274,
+                "chaos": 0.16491888687047873
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.1331876857927438,
+              "rmse": 0.1776511794017608,
+              "per_mode_mae": {
+                "pressure": 0.044319356944307914,
+                "control": 0.15750636748597252,
+                "chaos": 0.19773733294795087
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M1": {
+              "mae": 0.10016159712926535,
+              "rmse": 0.1355615154419867,
+              "per_mode_mae": {
+                "pressure": 0.042165534234223076,
+                "control": 0.11025953906851231,
+                "chaos": 0.14805971808506063
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.10071945859164196,
+              "rmse": 0.13449776813309963,
+              "per_mode_mae": {
+                "pressure": 0.04156759904565116,
+                "control": 0.11319092906791103,
+                "chaos": 0.14739984766136366
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.055521315501284925,
+              "rmse": 0.07952111433732088,
+              "per_mode_mae": {
+                "pressure": 0.02968448585796939,
+                "control": 0.06408486873457471,
+                "chaos": 0.07279459191131063
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.06355291978599714,
+              "rmse": 0.0907449015777537,
+              "per_mode_mae": {
+                "pressure": 0.03477101362123456,
+                "control": 0.06944620656055775,
+                "chaos": 0.08644153917619914
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "chaos_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.06872599705104925,
+            "control": 0.0591108051568883,
+            "chaos": 0.8721631977920623
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.16928341130604777,
+              "rmse": 0.2008787010967908,
+              "per_mode_mae": {
+                "pressure": 0.07318636501869065,
+                "control": 0.18103736989565083,
+                "chaos": 0.2536264990038018
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M0": {
+              "mae": 0.20138133992095783,
+              "rmse": 0.23468435562135723,
+              "per_mode_mae": {
+                "pressure": 0.07838334624194147,
+                "control": 0.2236886636394953,
+                "chaos": 0.30207200988143673
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M1": {
+              "mae": 0.1449181822024065,
+              "rmse": 0.16918133712389113,
+              "per_mode_mae": {
+                "pressure": 0.06168490466186209,
+                "control": 0.1556923686417476,
+                "chaos": 0.21737727330360967
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.13647497907373723,
+              "rmse": 0.16070095533595158,
+              "per_mode_mae": {
+                "pressure": 0.06249558459976785,
+                "control": 0.1422573659017281,
+                "chaos": 0.20467198671971568
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.13345561932528438,
+              "rmse": 0.1625745312196878,
+              "per_mode_mae": {
+                "pressure": 0.06193620696314143,
+                "control": 0.13996069640022138,
+                "chaos": 0.19846995461249028
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.13180985143814725,
+              "rmse": 0.15945646368550337,
+              "per_mode_mae": {
+                "pressure": 0.06354428717264192,
+                "control": 0.13557141967228897,
+                "chaos": 0.1963138474695109
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "balanced": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.32450200065741025,
+            "control": 0.3392665576133417,
+            "chaos": 0.33623144172924796
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.06236266757811928,
+              "rmse": 0.08003009483177077,
+              "per_mode_mae": {
+                "pressure": 0.03146211896265605,
+                "control": 0.07010230272310522,
+                "chaos": 0.08552358104859656
+              },
+              "dominant_mode_accuracy": 0.625
+            },
+            "M0": {
+              "mae": 0.04596924463925224,
+              "rmse": 0.05752261030967444,
+              "per_mode_mae": {
+                "pressure": 0.02711609862139718,
+                "control": 0.0512612831518033,
+                "chaos": 0.059530352144556264
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M1": {
+              "mae": 0.056431748270329686,
+              "rmse": 0.07503778944352237,
+              "per_mode_mae": {
+                "pressure": 0.030727798323542756,
+                "control": 0.06200853731108748,
+                "chaos": 0.07655890917635881
+              },
+              "dominant_mode_accuracy": 0.55
+            },
+            "M2": {
+              "mae": 0.05798604938032859,
+              "rmse": 0.0785351117904294,
+              "per_mode_mae": {
+                "pressure": 0.03405697182706306,
+                "control": 0.062136251581666156,
+                "chaos": 0.07776492473225656
+              },
+              "dominant_mode_accuracy": 0.575
+            },
+            "M3": {
+              "mae": 0.07044995791678729,
+              "rmse": 0.0890101456576268,
+              "per_mode_mae": {
+                "pressure": 0.03977948704605849,
+                "control": 0.07141412554865388,
+                "chaos": 0.10015626115564953
+              },
+              "dominant_mode_accuracy": 0.55
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.07670063162613859,
+              "rmse": 0.09760655347174488,
+              "per_mode_mae": {
+                "pressure": 0.049381678841758835,
+                "control": 0.07383489197831827,
+                "chaos": 0.10688532405833873
+              },
+              "dominant_mode_accuracy": 0.525
+            }
+          }
+        },
+        "boundary": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.3405042326606915,
+            "control": 0.23907130911346472,
+            "chaos": 0.42042445822584373
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.09731220003963684,
+              "rmse": 0.12501589905231117,
+              "per_mode_mae": {
+                "pressure": 0.049972406493781873,
+                "control": 0.12069723902478588,
+                "chaos": 0.12126695460034279
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M0": {
+              "mae": 0.10862250788549914,
+              "rmse": 0.14405481387019217,
+              "per_mode_mae": {
+                "pressure": 0.049429910943029946,
+                "control": 0.13175790077553956,
+                "chaos": 0.14467971193792786
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M1": {
+              "mae": 0.09290048936351462,
+              "rmse": 0.1231370800800367,
+              "per_mode_mae": {
+                "pressure": 0.04782626487758464,
+                "control": 0.11256957809978893,
+                "chaos": 0.11830562511317026
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M2": {
+              "mae": 0.09315709385227629,
+              "rmse": 0.11959564811550237,
+              "per_mode_mae": {
+                "pressure": 0.05132852200157315,
+                "control": 0.11304578543266408,
+                "chaos": 0.11509697412259161
+              },
+              "dominant_mode_accuracy": 0.875
+            },
+            "M3": {
+              "mae": 0.08650464205619472,
+              "rmse": 0.10842026730936087,
+              "per_mode_mae": {
+                "pressure": 0.06221041957543054,
+                "control": 0.09165169141225234,
+                "chaos": 0.10565181518090128
+              },
+              "dominant_mode_accuracy": 0.875
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09694136566530703,
+              "rmse": 0.12095392621263654,
+              "per_mode_mae": {
+                "pressure": 0.05632600627424805,
+                "control": 0.11454476742266846,
+                "chaos": 0.11995332329900452
+              },
+              "dominant_mode_accuracy": 0.925
+            }
+          }
+        }
+      },
+      "mixtures_per_region": 20
+    },
+    {
+      "seed": 1702,
+      "regions": {
+        "pressure_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.8811811371256522,
+            "control": 0.051786029279071874,
+            "chaos": 0.06703283359527618
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10512819145450061,
+              "rmse": 0.12219202138868569,
+              "per_mode_mae": {
+                "pressure": 0.12711263157934605,
+                "control": 0.0741538766549011,
+                "chaos": 0.11411806612925471
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.1347925735774748,
+              "rmse": 0.15910423472496873,
+              "per_mode_mae": {
+                "pressure": 0.17063649547389786,
+                "control": 0.07780829295115028,
+                "chaos": 0.1559329323073762
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.09157797220362655,
+              "rmse": 0.11465552777860423,
+              "per_mode_mae": {
+                "pressure": 0.11729314259982301,
+                "control": 0.040386176163902936,
+                "chaos": 0.11705459784715373
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.08851009134117983,
+              "rmse": 0.11360894208776542,
+              "per_mode_mae": {
+                "pressure": 0.11836650195479978,
+                "control": 0.04853949878093864,
+                "chaos": 0.09862427328780107
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.08418853390460034,
+              "rmse": 0.09887133073313514,
+              "per_mode_mae": {
+                "pressure": 0.07839405114156042,
+                "control": 0.1101566425751002,
+                "chaos": 0.06401490799714037
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.07732159696542903,
+              "rmse": 0.0922733026055139,
+              "per_mode_mae": {
+                "pressure": 0.07745274442752392,
+                "control": 0.08878755309440695,
+                "chaos": 0.06572449337435618
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.08626189463558506,
+            "control": 0.8683142168982136,
+            "chaos": 0.04542388846620139
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.11780404686224678,
+              "rmse": 0.16802210353389424,
+              "per_mode_mae": {
+                "pressure": 0.052042525942633436,
+                "control": 0.13285766680644095,
+                "chaos": 0.168511947837666
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M0": {
+              "mae": 0.14415404433857149,
+              "rmse": 0.19091533101293898,
+              "per_mode_mae": {
+                "pressure": 0.056465512460958635,
+                "control": 0.1626600268900024,
+                "chaos": 0.2133365936647535
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M1": {
+              "mae": 0.1069930294025115,
+              "rmse": 0.14713550684876836,
+              "per_mode_mae": {
+                "pressure": 0.052823849585635574,
+                "control": 0.1117708214547585,
+                "chaos": 0.15638441716714044
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M2": {
+              "mae": 0.10554524655567403,
+              "rmse": 0.14672302129825918,
+              "per_mode_mae": {
+                "pressure": 0.05455095899251956,
+                "control": 0.11030753704006999,
+                "chaos": 0.15177724363443248
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M3": {
+              "mae": 0.0690070610004944,
+              "rmse": 0.09673518401262199,
+              "per_mode_mae": {
+                "pressure": 0.03967183268441563,
+                "control": 0.07153234059406452,
+                "chaos": 0.09581700972300304
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.08137696887993397,
+              "rmse": 0.11693584639361004,
+              "per_mode_mae": {
+                "pressure": 0.04563342204897454,
+                "control": 0.08209916472139298,
+                "chaos": 0.11639831986943439
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "chaos_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.06658916253662758,
+            "control": 0.05735355744754046,
+            "chaos": 0.8760572800158318
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.19546345020073028,
+              "rmse": 0.2380905059081805,
+              "per_mode_mae": {
+                "pressure": 0.07622101603675588,
+                "control": 0.21764852787040648,
+                "chaos": 0.2925208066950285
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M0": {
+              "mae": 0.2198703966321746,
+              "rmse": 0.2602586881467968,
+              "per_mode_mae": {
+                "pressure": 0.08176527997989501,
+                "control": 0.248328497989258,
+                "chaos": 0.32951741192737083
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M1": {
+              "mae": 0.17417164264851687,
+              "rmse": 0.20471643876748236,
+              "per_mode_mae": {
+                "pressure": 0.07270821377181576,
+                "control": 0.18888718971164917,
+                "chaos": 0.26091952446208566
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.16938845629430382,
+              "rmse": 0.19971076845922886,
+              "per_mode_mae": {
+                "pressure": 0.0722790848995722,
+                "control": 0.18249104005729583,
+                "chaos": 0.2533952439260434
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.16762505283527554,
+              "rmse": 0.19811823350730082,
+              "per_mode_mae": {
+                "pressure": 0.06812090922175404,
+                "control": 0.18400288931735184,
+                "chaos": 0.2507513599667207
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.16456182251168705,
+              "rmse": 0.19687123225986744,
+              "per_mode_mae": {
+                "pressure": 0.06724823571627969,
+                "control": 0.1806386903551804,
+                "chaos": 0.2457985414636011
+              },
+              "dominant_mode_accuracy": 0.975
+            }
+          }
+        },
+        "balanced": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.32315863447744925,
+            "control": 0.34659378668606433,
+            "chaos": 0.33024757883648637
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.06113978589940776,
+              "rmse": 0.08133564336221753,
+              "per_mode_mae": {
+                "pressure": 0.03292166045483683,
+                "control": 0.06379770213342487,
+                "chaos": 0.0866999951099616
+              },
+              "dominant_mode_accuracy": 0.4
+            },
+            "M0": {
+              "mae": 0.05077203691202518,
+              "rmse": 0.06859650940985287,
+              "per_mode_mae": {
+                "pressure": 0.03161636299730801,
+                "control": 0.052572224879374116,
+                "chaos": 0.06812752285939343
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M1": {
+              "mae": 0.06398818572645053,
+              "rmse": 0.08822431601350346,
+              "per_mode_mae": {
+                "pressure": 0.03452358922541043,
+                "control": 0.06726482643673286,
+                "chaos": 0.09017614151720829
+              },
+              "dominant_mode_accuracy": 0.35
+            },
+            "M2": {
+              "mae": 0.06313012760405051,
+              "rmse": 0.08850511599255566,
+              "per_mode_mae": {
+                "pressure": 0.033425554126919256,
+                "control": 0.06776845565439632,
+                "chaos": 0.08819637303083595
+              },
+              "dominant_mode_accuracy": 0.4
+            },
+            "M3": {
+              "mae": 0.0743981631982429,
+              "rmse": 0.09752320627650247,
+              "per_mode_mae": {
+                "pressure": 0.03624934352436347,
+                "control": 0.08225328611815368,
+                "chaos": 0.10469185995221157
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.07153842413413009,
+              "rmse": 0.09778135241085842,
+              "per_mode_mae": {
+                "pressure": 0.0374212123359488,
+                "control": 0.07921596878641221,
+                "chaos": 0.09797809128002918
+              },
+              "dominant_mode_accuracy": 0.35
+            }
+          }
+        },
+        "boundary": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.3052722703349546,
+            "control": 0.37995035322903414,
+            "chaos": 0.3147773764360112
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.09368217367150455,
+              "rmse": 0.12779051871372132,
+              "per_mode_mae": {
+                "pressure": 0.04774926117451733,
+                "control": 0.11941514098638559,
+                "chaos": 0.11388211885361073
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M0": {
+              "mae": 0.10186134562445598,
+              "rmse": 0.13772512902656328,
+              "per_mode_mae": {
+                "pressure": 0.04735617081429573,
+                "control": 0.13184739363642578,
+                "chaos": 0.12638047242264644
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M1": {
+              "mae": 0.08785542989256939,
+              "rmse": 0.1250421114397791,
+              "per_mode_mae": {
+                "pressure": 0.0449604216258933,
+                "control": 0.11144545101959843,
+                "chaos": 0.10716041703221646
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M2": {
+              "mae": 0.08810759977656084,
+              "rmse": 0.12297276876312466,
+              "per_mode_mae": {
+                "pressure": 0.046851753169457354,
+                "control": 0.11125425829932482,
+                "chaos": 0.10621678786090032
+              },
+              "dominant_mode_accuracy": 0.875
+            },
+            "M3": {
+              "mae": 0.09725039875827532,
+              "rmse": 0.12951026840274923,
+              "per_mode_mae": {
+                "pressure": 0.0500135075944538,
+                "control": 0.1164207072020178,
+                "chaos": 0.12531698147835435
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09949131595998635,
+              "rmse": 0.1320957098362365,
+              "per_mode_mae": {
+                "pressure": 0.051086439610464905,
+                "control": 0.12177068498744785,
+                "chaos": 0.12561682328204632
+              },
+              "dominant_mode_accuracy": 0.825
+            }
+          }
+        }
+      },
+      "mixtures_per_region": 20
+    },
+    {
+      "seed": 1703,
+      "regions": {
+        "pressure_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.870091178592505,
+            "control": 0.07021138447579983,
+            "chaos": 0.059697436931695234
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10435235575240877,
+              "rmse": 0.1209393350945697,
+              "per_mode_mae": {
+                "pressure": 0.11819113870704175,
+                "control": 0.0715327667965521,
+                "chaos": 0.12333316175363244
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.13509640290851,
+              "rmse": 0.15904962397224076,
+              "per_mode_mae": {
+                "pressure": 0.1557136784979872,
+                "control": 0.07869293863532248,
+                "chaos": 0.17088259159222025
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.08833866291442873,
+              "rmse": 0.11132189759414943,
+              "per_mode_mae": {
+                "pressure": 0.10387930972479871,
+                "control": 0.043556479183957025,
+                "chaos": 0.11758019983453045
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.08199829829357069,
+              "rmse": 0.10569791878680761,
+              "per_mode_mae": {
+                "pressure": 0.10171857692113942,
+                "control": 0.04349114922384738,
+                "chaos": 0.10078516873572523
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.06677853100321438,
+              "rmse": 0.07928247904416218,
+              "per_mode_mae": {
+                "pressure": 0.06694801069887385,
+                "control": 0.08486035245291905,
+                "chaos": 0.048527229857850226
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.061328424361356056,
+              "rmse": 0.07363848573477257,
+              "per_mode_mae": {
+                "pressure": 0.06313977851138294,
+                "control": 0.06972445092055266,
+                "chaos": 0.05112104365213256
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.061348119334968844,
+            "control": 0.882588589802413,
+            "chaos": 0.0560632908626183
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.12251429347205693,
+              "rmse": 0.16943063025879632,
+              "per_mode_mae": {
+                "pressure": 0.0419536246917801,
+                "control": 0.14597310007739456,
+                "chaos": 0.17961615564699618
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M0": {
+              "mae": 0.15710646385266916,
+              "rmse": 0.20227038361009142,
+              "per_mode_mae": {
+                "pressure": 0.0438902880519592,
+                "control": 0.19307492025232734,
+                "chaos": 0.2343541832537209
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M1": {
+              "mae": 0.11963302507073138,
+              "rmse": 0.16518894717897667,
+              "per_mode_mae": {
+                "pressure": 0.040987957891099,
+                "control": 0.14183976276966748,
+                "chaos": 0.17607135455142767
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M2": {
+              "mae": 0.11647217716858302,
+              "rmse": 0.1610215125718251,
+              "per_mode_mae": {
+                "pressure": 0.041753897263461556,
+                "control": 0.13580480111136006,
+                "chaos": 0.17185783313092742
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M3": {
+              "mae": 0.05690133476565705,
+              "rmse": 0.09209496559514017,
+              "per_mode_mae": {
+                "pressure": 0.03866325662724742,
+                "control": 0.05617852515918491,
+                "chaos": 0.07586222251053883
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.07206904505163896,
+              "rmse": 0.1041731481941804,
+              "per_mode_mae": {
+                "pressure": 0.04271917853483922,
+                "control": 0.06965909177388382,
+                "chaos": 0.1038288648461938
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "chaos_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.06973224663765194,
+            "control": 0.05269659937428206,
+            "chaos": 0.8775711539880661
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.20092383909663603,
+              "rmse": 0.23469739706284715,
+              "per_mode_mae": {
+                "pressure": 0.08298865466743287,
+                "control": 0.2183971039775212,
+                "chaos": 0.30138575864495404
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M0": {
+              "mae": 0.22389401592347588,
+              "rmse": 0.2580744812213255,
+              "per_mode_mae": {
+                "pressure": 0.08756522002734735,
+                "control": 0.24827580385786643,
+                "chaos": 0.33584102388521375
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M1": {
+              "mae": 0.18325453094559435,
+              "rmse": 0.21880970535774813,
+              "per_mode_mae": {
+                "pressure": 0.07722612249718955,
+                "control": 0.197655673921202,
+                "chaos": 0.27488179641839156
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M2": {
+              "mae": 0.1759869197640339,
+              "rmse": 0.21294132460158188,
+              "per_mode_mae": {
+                "pressure": 0.07612668297963274,
+                "control": 0.18785369666641816,
+                "chaos": 0.26398037964605087
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M3": {
+              "mae": 0.16562944631777268,
+              "rmse": 0.2031597434755611,
+              "per_mode_mae": {
+                "pressure": 0.06776961947199767,
+                "control": 0.18121524548959433,
+                "chaos": 0.24790347399172608
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.14905242075171157,
+              "rmse": 0.18162827918347685,
+              "per_mode_mae": {
+                "pressure": 0.061505403162029036,
+                "control": 0.16226864685947215,
+                "chaos": 0.22338321223363353
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "balanced": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.3317340109868159,
+            "control": 0.3357736127174463,
+            "chaos": 0.3324923762957378
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.05292010241472734,
+              "rmse": 0.07070089053848068,
+              "per_mode_mae": {
+                "pressure": 0.02963244896446952,
+                "control": 0.06311893919039362,
+                "chaos": 0.06600891908931887
+              },
+              "dominant_mode_accuracy": 0.525
+            },
+            "M0": {
+              "mae": 0.0478368345920306,
+              "rmse": 0.06071405154973885,
+              "per_mode_mae": {
+                "pressure": 0.02873877347516568,
+                "control": 0.055850051744384246,
+                "chaos": 0.05892167855654186
+              },
+              "dominant_mode_accuracy": 0.525
+            },
+            "M1": {
+              "mae": 0.05594618951034825,
+              "rmse": 0.07417426678972146,
+              "per_mode_mae": {
+                "pressure": 0.031023061830501575,
+                "control": 0.06107205692542093,
+                "chaos": 0.07574344977512225
+              },
+              "dominant_mode_accuracy": 0.55
+            },
+            "M2": {
+              "mae": 0.05666432264453983,
+              "rmse": 0.07789882436953892,
+              "per_mode_mae": {
+                "pressure": 0.03194077440644002,
+                "control": 0.062397138521885595,
+                "chaos": 0.07565505500529388
+              },
+              "dominant_mode_accuracy": 0.575
+            },
+            "M3": {
+              "mae": 0.08459407026660262,
+              "rmse": 0.108242722829598,
+              "per_mode_mae": {
+                "pressure": 0.043353026929406395,
+                "control": 0.0890781478502325,
+                "chaos": 0.12135103602016899
+              },
+              "dominant_mode_accuracy": 0.55
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.06546530270184206,
+              "rmse": 0.08581640063510268,
+              "per_mode_mae": {
+                "pressure": 0.04144295614668937,
+                "control": 0.06583282484084688,
+                "chaos": 0.08912012711798994
+              },
+              "dominant_mode_accuracy": 0.5
+            }
+          }
+        },
+        "boundary": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.37596805371497893,
+            "control": 0.333639616079501,
+            "chaos": 0.2903923302055201
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10752924942156898,
+              "rmse": 0.14368992479051776,
+              "per_mode_mae": {
+                "pressure": 0.05449026805394828,
+                "control": 0.13566746303642324,
+                "chaos": 0.13243001717433545
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M0": {
+              "mae": 0.11152167529741602,
+              "rmse": 0.1483338517140518,
+              "per_mode_mae": {
+                "pressure": 0.05739720037608539,
+                "control": 0.13672237006766808,
+                "chaos": 0.14044545544849457
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M1": {
+              "mae": 0.09024538560209798,
+              "rmse": 0.12075641360460787,
+              "per_mode_mae": {
+                "pressure": 0.05043568911555446,
+                "control": 0.11502790921493403,
+                "chaos": 0.10527255847580545
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M2": {
+              "mae": 0.0900359468225714,
+              "rmse": 0.12113160935928219,
+              "per_mode_mae": {
+                "pressure": 0.04926763021593655,
+                "control": 0.11700994564119424,
+                "chaos": 0.10383026461058345
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M3": {
+              "mae": 0.07945368856259792,
+              "rmse": 0.10810622706903388,
+              "per_mode_mae": {
+                "pressure": 0.048561534791073536,
+                "control": 0.09705180996255412,
+                "chaos": 0.09274772093416608
+              },
+              "dominant_mode_accuracy": 0.875
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09331223190080146,
+              "rmse": 0.1279047311848371,
+              "per_mode_mae": {
+                "pressure": 0.05276026946668864,
+                "control": 0.11597604639987069,
+                "chaos": 0.111200379835845
+              },
+              "dominant_mode_accuracy": 0.9
+            }
+          }
+        }
+      },
+      "mixtures_per_region": 20
+    },
+    {
+      "seed": 1704,
+      "regions": {
+        "pressure_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.8839849439592324,
+            "control": 0.06338146447194244,
+            "chaos": 0.0526335915688251
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10720517587946296,
+              "rmse": 0.1251425287192579,
+              "per_mode_mae": {
+                "pressure": 0.12653742316194339,
+                "control": 0.07813926795319912,
+                "chaos": 0.11693883652324635
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.14012245720535918,
+              "rmse": 0.16804217256537726,
+              "per_mode_mae": {
+                "pressure": 0.17126563906890038,
+                "control": 0.0722499275994268,
+                "chaos": 0.17685180494775032
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.09422206703663999,
+              "rmse": 0.11415762565889867,
+              "per_mode_mae": {
+                "pressure": 0.11418354381215515,
+                "control": 0.044609215298647226,
+                "chaos": 0.12387344199911761
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.08742066418752685,
+              "rmse": 0.1060621172042391,
+              "per_mode_mae": {
+                "pressure": 0.11112128405023107,
+                "control": 0.05197061092248556,
+                "chaos": 0.09917009758986395
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.07334376538121092,
+              "rmse": 0.08845928339604192,
+              "per_mode_mae": {
+                "pressure": 0.07284606524767635,
+                "control": 0.10238223276926064,
+                "chaos": 0.04480299812669571
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.06541329633841213,
+              "rmse": 0.07890753069336073,
+              "per_mode_mae": {
+                "pressure": 0.0740238630309911,
+                "control": 0.07633126068399326,
+                "chaos": 0.045884765300252
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.07498157283002418,
+            "control": 0.8625565719885483,
+            "chaos": 0.06246185518142755
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10556426194252279,
+              "rmse": 0.14960531664548485,
+              "per_mode_mae": {
+                "pressure": 0.04267596311935305,
+                "control": 0.12387210893608916,
+                "chaos": 0.15014471377212618
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M0": {
+              "mae": 0.1259932270700384,
+              "rmse": 0.16742458481962066,
+              "per_mode_mae": {
+                "pressure": 0.046114334252217525,
+                "control": 0.14660263094355236,
+                "chaos": 0.18526271601434532
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M1": {
+              "mae": 0.10137268290109708,
+              "rmse": 0.1370547437820028,
+              "per_mode_mae": {
+                "pressure": 0.040401613099570216,
+                "control": 0.11742391638686009,
+                "chaos": 0.14629251921686098
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M2": {
+              "mae": 0.09968649841722407,
+              "rmse": 0.13758533734166356,
+              "per_mode_mae": {
+                "pressure": 0.04011571661691939,
+                "control": 0.11476975546296257,
+                "chaos": 0.14417402317179023
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M3": {
+              "mae": 0.054020813025979046,
+              "rmse": 0.07997224228332667,
+              "per_mode_mae": {
+                "pressure": 0.03292086251899621,
+                "control": 0.05883424281950282,
+                "chaos": 0.07030733373943812
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.0636933766465944,
+              "rmse": 0.0891970348211722,
+              "per_mode_mae": {
+                "pressure": 0.03652944235644741,
+                "control": 0.06929290089827947,
+                "chaos": 0.08525778668505636
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "chaos_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.058441027545834356,
+            "control": 0.05468175533004831,
+            "chaos": 0.8868772171241173
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.16969529829066404,
+              "rmse": 0.19978513398347217,
+              "per_mode_mae": {
+                "pressure": 0.07908086115625919,
+                "control": 0.1765857090457496,
+                "chaos": 0.2534193246699833
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.21170122032239533,
+              "rmse": 0.2467518709661804,
+              "per_mode_mae": {
+                "pressure": 0.08492190669590878,
+                "control": 0.23420933047295836,
+                "chaos": 0.3159724237983189
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M1": {
+              "mae": 0.1593747603317257,
+              "rmse": 0.18876869617999986,
+              "per_mode_mae": {
+                "pressure": 0.07197573898985474,
+                "control": 0.16898992500614862,
+                "chaos": 0.2371586169991738
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.15201742428406426,
+              "rmse": 0.18087919458894125,
+              "per_mode_mae": {
+                "pressure": 0.07643488859717737,
+                "control": 0.15371840096783235,
+                "chaos": 0.2258989832871831
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.13407342117495866,
+              "rmse": 0.16593531064875844,
+              "per_mode_mae": {
+                "pressure": 0.0676821171341814,
+                "control": 0.13546055470696622,
+                "chaos": 0.19907759168372832
+              },
+              "dominant_mode_accuracy": 0.975
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.13298852763263286,
+              "rmse": 0.15899064453700282,
+              "per_mode_mae": {
+                "pressure": 0.06908149057608196,
+                "control": 0.1330489824374597,
+                "chaos": 0.1968351098843569
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "balanced": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.35505220876112065,
+            "control": 0.3176259418778099,
+            "chaos": 0.3273218493610695
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.053558486910425265,
+              "rmse": 0.07169967670736024,
+              "per_mode_mae": {
+                "pressure": 0.027603459471464902,
+                "control": 0.058389455263440596,
+                "chaos": 0.0746825459963703
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M0": {
+              "mae": 0.04110467004043419,
+              "rmse": 0.05146107533706007,
+              "per_mode_mae": {
+                "pressure": 0.023556460596263033,
+                "control": 0.04877259564168392,
+                "chaos": 0.05098495388335561
+              },
+              "dominant_mode_accuracy": 0.625
+            },
+            "M1": {
+              "mae": 0.05844267158196034,
+              "rmse": 0.07869620917071392,
+              "per_mode_mae": {
+                "pressure": 0.02988874451192285,
+                "control": 0.0627737447851622,
+                "chaos": 0.08266552544879596
+              },
+              "dominant_mode_accuracy": 0.375
+            },
+            "M2": {
+              "mae": 0.06149145013878323,
+              "rmse": 0.08287188240692757,
+              "per_mode_mae": {
+                "pressure": 0.03163140806517219,
+                "control": 0.06621217781268313,
+                "chaos": 0.0866307645384944
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M3": {
+              "mae": 0.07862234647283953,
+              "rmse": 0.10483192181619813,
+              "per_mode_mae": {
+                "pressure": 0.04071703834697976,
+                "control": 0.08180060133578444,
+                "chaos": 0.11334939973575442
+              },
+              "dominant_mode_accuracy": 0.3
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.06758485074819484,
+              "rmse": 0.09052008044197872,
+              "per_mode_mae": {
+                "pressure": 0.04174294735236302,
+                "control": 0.06905824723280247,
+                "chaos": 0.091953357659419
+              },
+              "dominant_mode_accuracy": 0.35
+            }
+          }
+        },
+        "boundary": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.2925959410713963,
+            "control": 0.42208416798654136,
+            "chaos": 0.28531989094206234
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.1018841013907199,
+              "rmse": 0.13262047958407763,
+              "per_mode_mae": {
+                "pressure": 0.05259575604683352,
+                "control": 0.1251625532017943,
+                "chaos": 0.12789399492353193
+              },
+              "dominant_mode_accuracy": 0.825
+            },
+            "M0": {
+              "mae": 0.11036511265878077,
+              "rmse": 0.14011839864445952,
+              "per_mode_mae": {
+                "pressure": 0.05128375118296212,
+                "control": 0.13962422175038286,
+                "chaos": 0.14018736504299728
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M1": {
+              "mae": 0.09077346748781843,
+              "rmse": 0.12108388257475618,
+              "per_mode_mae": {
+                "pressure": 0.05113879211751288,
+                "control": 0.10866591204131608,
+                "chaos": 0.1125156983046264
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M2": {
+              "mae": 0.0907467455792666,
+              "rmse": 0.1226323777564413,
+              "per_mode_mae": {
+                "pressure": 0.051603587398926266,
+                "control": 0.10918031230424785,
+                "chaos": 0.11145633703462568
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M3": {
+              "mae": 0.08914483362902766,
+              "rmse": 0.1213258341932413,
+              "per_mode_mae": {
+                "pressure": 0.05354316657905829,
+                "control": 0.10162967319852326,
+                "chaos": 0.11226166110950145
+              },
+              "dominant_mode_accuracy": 0.875
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.10016587599672938,
+              "rmse": 0.12721766435984486,
+              "per_mode_mae": {
+                "pressure": 0.05310163948469848,
+                "control": 0.12122084148431508,
+                "chaos": 0.12617514702117455
+              },
+              "dominant_mode_accuracy": 0.875
+            }
+          }
+        }
+      },
+      "mixtures_per_region": 20
+    },
+    {
+      "seed": 1705,
+      "regions": {
+        "pressure_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.8790671329067582,
+            "control": 0.060733653001422236,
+            "chaos": 0.06019921409181962
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10373822994747242,
+              "rmse": 0.12029224999938826,
+              "per_mode_mae": {
+                "pressure": 0.12706784107002997,
+                "control": 0.07769642118272034,
+                "chaos": 0.10645042758966701
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M0": {
+              "mae": 0.13682276238506982,
+              "rmse": 0.16188212344081995,
+              "per_mode_mae": {
+                "pressure": 0.17002632708717855,
+                "control": 0.07595722278945549,
+                "chaos": 0.16448473727857538
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M1": {
+              "mae": 0.09590760650421302,
+              "rmse": 0.11530497625737586,
+              "per_mode_mae": {
+                "pressure": 0.11586271710352006,
+                "control": 0.04308439524142153,
+                "chaos": 0.12877570716769746
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.0903290984806942,
+              "rmse": 0.11051517467850461,
+              "per_mode_mae": {
+                "pressure": 0.11490728523157903,
+                "control": 0.0494259587591489,
+                "chaos": 0.10665405145135469
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.07863327836636837,
+              "rmse": 0.09380040950882994,
+              "per_mode_mae": {
+                "pressure": 0.08134738493422926,
+                "control": 0.104683459445397,
+                "chaos": 0.049868990719478826
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.07389212734707667,
+              "rmse": 0.0880162554707733,
+              "per_mode_mae": {
+                "pressure": 0.0788162700197946,
+                "control": 0.08327613905175328,
+                "chaos": 0.05958397296968211
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "control_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.06040225158458077,
+            "control": 0.8886783409796255,
+            "chaos": 0.05091940743579364
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.11315255983967155,
+              "rmse": 0.16709334541666146,
+              "per_mode_mae": {
+                "pressure": 0.03974446464128816,
+                "control": 0.13524830010933925,
+                "chaos": 0.16446491476838726
+              },
+              "dominant_mode_accuracy": 0.925
+            },
+            "M0": {
+              "mae": 0.1458651329458453,
+              "rmse": 0.20664746989123012,
+              "per_mode_mae": {
+                "pressure": 0.04160505133774141,
+                "control": 0.179996474271102,
+                "chaos": 0.21599387322869257
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M1": {
+              "mae": 0.10337141469961475,
+              "rmse": 0.15218292817995638,
+              "per_mode_mae": {
+                "pressure": 0.03979844021884578,
+                "control": 0.11819852213347568,
+                "chaos": 0.15211728174652278
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M2": {
+              "mae": 0.09750656774045113,
+              "rmse": 0.1478846856115293,
+              "per_mode_mae": {
+                "pressure": 0.0390708916248207,
+                "control": 0.1110886986283958,
+                "chaos": 0.1423601129681369
+              },
+              "dominant_mode_accuracy": 0.95
+            },
+            "M3": {
+              "mae": 0.053033737270594974,
+              "rmse": 0.07911407574835268,
+              "per_mode_mae": {
+                "pressure": 0.029175508885024647,
+                "control": 0.056554365331000986,
+                "chaos": 0.07337133759575927
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.06154234634505317,
+              "rmse": 0.09040884069016926,
+              "per_mode_mae": {
+                "pressure": 0.037729388866921745,
+                "control": 0.06724869129937441,
+                "chaos": 0.07964895886886339
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "chaos_heavy": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.06756215356252811,
+            "control": 0.05615754153585885,
+            "chaos": 0.8762803049016131
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.19004985818130027,
+              "rmse": 0.22594339183767403,
+              "per_mode_mae": {
+                "pressure": 0.08342623343998573,
+                "control": 0.20181748139771466,
+                "chaos": 0.28490585970620036
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M0": {
+              "mae": 0.22560077117395838,
+              "rmse": 0.26197988477109535,
+              "per_mode_mae": {
+                "pressure": 0.09008801292933867,
+                "control": 0.2485293045395319,
+                "chaos": 0.33818499605300456
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M1": {
+              "mae": 0.18248709686950795,
+              "rmse": 0.2129101347283895,
+              "per_mode_mae": {
+                "pressure": 0.07933735077022105,
+                "control": 0.1949826192333192,
+                "chaos": 0.27314132060498364
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2": {
+              "mae": 0.17437153730934718,
+              "rmse": 0.2058828493842054,
+              "per_mode_mae": {
+                "pressure": 0.0794858383565032,
+                "control": 0.18251469305976414,
+                "chaos": 0.26111408051177415
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M3": {
+              "mae": 0.17297043929078088,
+              "rmse": 0.20895461872108748,
+              "per_mode_mae": {
+                "pressure": 0.07237559807186869,
+                "control": 0.18721670204753932,
+                "chaos": 0.2593190177529346
+              },
+              "dominant_mode_accuracy": 1.0
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.16004014971448915,
+              "rmse": 0.1906607413307509,
+              "per_mode_mae": {
+                "pressure": 0.07145796257651224,
+                "control": 0.17042978844068907,
+                "chaos": 0.23823269812626607
+              },
+              "dominant_mode_accuracy": 1.0
+            }
+          }
+        },
+        "balanced": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.33879165998926136,
+            "control": 0.3360343207843889,
+            "chaos": 0.32517401922634975
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.06919102593847905,
+              "rmse": 0.09173909012805295,
+              "per_mode_mae": {
+                "pressure": 0.028241463133161383,
+                "control": 0.08315902918499532,
+                "chaos": 0.09617258549728043
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M0": {
+              "mae": 0.05327262507702457,
+              "rmse": 0.07770581935862222,
+              "per_mode_mae": {
+                "pressure": 0.027506267380915474,
+                "control": 0.05741892627987004,
+                "chaos": 0.07489268157028821
+              },
+              "dominant_mode_accuracy": 0.425
+            },
+            "M1": {
+              "mae": 0.05717425518301516,
+              "rmse": 0.08047592062176376,
+              "per_mode_mae": {
+                "pressure": 0.028913739773087033,
+                "control": 0.061734756994846804,
+                "chaos": 0.08087426878111163
+              },
+              "dominant_mode_accuracy": 0.4
+            },
+            "M2": {
+              "mae": 0.05888377130198637,
+              "rmse": 0.08072203461257121,
+              "per_mode_mae": {
+                "pressure": 0.03128365869456462,
+                "control": 0.06309201301109621,
+                "chaos": 0.08227564220029829
+              },
+              "dominant_mode_accuracy": 0.475
+            },
+            "M3": {
+              "mae": 0.07048030187330877,
+              "rmse": 0.09110657498974938,
+              "per_mode_mae": {
+                "pressure": 0.039787507299075583,
+                "control": 0.07331586919836319,
+                "chaos": 0.09833752912248753
+              },
+              "dominant_mode_accuracy": 0.4
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.059108157949010996,
+              "rmse": 0.08027951851824813,
+              "per_mode_mae": {
+                "pressure": 0.035570013701199006,
+                "control": 0.061877607066817206,
+                "chaos": 0.07987685307901678
+              },
+              "dominant_mode_accuracy": 0.425
+            }
+          }
+        },
+        "boundary": {
+          "examples": 40,
+          "target_mean": {
+            "pressure": 0.41398700656439386,
+            "control": 0.30385689543761835,
+            "chaos": 0.28215609799798785
+          },
+          "models": {
+            "public_decision_proxy": {
+              "mae": 0.10638431386151925,
+              "rmse": 0.1333958147352027,
+              "per_mode_mae": {
+                "pressure": 0.0537495391448101,
+                "control": 0.12925920777835764,
+                "chaos": 0.13614419466139002
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M0": {
+              "mae": 0.11287752468339261,
+              "rmse": 0.14273230611746104,
+              "per_mode_mae": {
+                "pressure": 0.05730043861807086,
+                "control": 0.13415230675524917,
+                "chaos": 0.1471798286768578
+              },
+              "dominant_mode_accuracy": 0.9
+            },
+            "M1": {
+              "mae": 0.09699909581995285,
+              "rmse": 0.12227720808564449,
+              "per_mode_mae": {
+                "pressure": 0.05411852867472979,
+                "control": 0.1174274655864729,
+                "chaos": 0.11945129319865586
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M2": {
+              "mae": 0.09393076469142617,
+              "rmse": 0.12043878830474122,
+              "per_mode_mae": {
+                "pressure": 0.05326847704963432,
+                "control": 0.11474121723576072,
+                "chaos": 0.11378259978888342
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M3": {
+              "mae": 0.09253396753451094,
+              "rmse": 0.12225752483183018,
+              "per_mode_mae": {
+                "pressure": 0.05162359466142683,
+                "control": 0.11331224707150275,
+                "chaos": 0.11266606087060324
+              },
+              "dominant_mode_accuracy": 0.85
+            },
+            "M2_plus_matched_transitions": {
+              "mae": 0.09252966804902656,
+              "rmse": 0.11996374367144429,
+              "per_mode_mae": {
+                "pressure": 0.05216697593230636,
+                "control": 0.11418088627197806,
+                "chaos": 0.11124114194279525
+              },
+              "dominant_mode_accuracy": 0.85
+            }
+          }
+        }
+      },
+      "mixtures_per_region": 20
+    }
+  ],
+  "summary": {
+    "pressure_heavy": {
+      "models": {
+        "public_decision_proxy": {
+          "mean_mae": 0.10609653658746376,
+          "seed_mae": [
+            0.11005872990347411,
+            0.10512819145450061,
+            0.10435235575240877,
+            0.10720517587946296,
+            0.10373822994747242
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.1225270303535694,
+            "control": 0.08028040118067523,
+            "chaos": 0.1154821782281467
+          },
+          "mean_dominant_mode_accuracy": 1.0
+        },
+        "M0": {
+          "mean_mae": 0.1371056543694177,
+          "seed_mae": [
+            0.1386940757706747,
+            0.1347925735774748,
+            0.13509640290851,
+            0.14012245720535918,
+            0.13682276238506982
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.16361645093742905,
+            "control": 0.08033566096897242,
+            "chaos": 0.1673648512018516
+          },
+          "mean_dominant_mode_accuracy": 1.0
+        },
+        "M1": {
+          "mean_mae": 0.09145490910925841,
+          "seed_mae": [
+            0.08722823688738372,
+            0.09157797220362655,
+            0.08833866291442873,
+            0.09422206703663999,
+            0.09590760650421302
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.11014017304300483,
+            "control": 0.044804075972010374,
+            "chaos": 0.11942047831276001
+          },
+          "mean_dominant_mode_accuracy": 1.0
+        },
+        "M2": {
+          "mean_mae": 0.08689798165768178,
+          "seed_mae": [
+            0.08623175598543728,
+            0.08851009134117983,
+            0.08199829829357069,
+            0.08742066418752685,
+            0.0903290984806942
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.10939508907992086,
+            "control": 0.05121346777609899,
+            "chaos": 0.10008538811702547
+          },
+          "mean_dominant_mode_accuracy": 1.0
+        },
+        "M3": {
+          "mean_mae": 0.07612502837770466,
+          "seed_mae": [
+            0.07768103323312926,
+            0.08418853390460034,
+            0.06677853100321438,
+            0.07334376538121092,
+            0.07863327836636837
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.07377836317646777,
+            "control": 0.10171960544773555,
+            "chaos": 0.052877116508910624
+          },
+          "mean_dominant_mode_accuracy": 1.0
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.07002262459817049,
+          "seed_mae": [
+            0.07215767797857857,
+            0.07732159696542903,
+            0.061328424361356056,
+            0.06541329633841213,
+            0.07389212734707667
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.07235262228738541,
+            "control": 0.0812445008763265,
+            "chaos": 0.05647075063079955
+          },
+          "mean_dominant_mode_accuracy": 1.0
+        }
+      },
+      "matched_transition_vs_M2": {
+        "mean_mae_reduction": 0.016875357059511282,
+        "seed_mae_reductions": [
+          0.014074078006858712,
+          0.011188494375750799,
+          0.020669873932214637,
+          0.022007367849114723,
+          0.01643697113361753
+        ],
+        "positive_seed_fraction": 1.0
+      }
+    },
+    "control_heavy": {
+      "models": {
+        "public_decision_proxy": {
+          "mean_mae": 0.11432485351433166,
+          "seed_mae": [
+            0.11258910545516028,
+            0.11780404686224678,
+            0.12251429347205693,
+            0.10556426194252279,
+            0.11315255983967155
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.04351568235738483,
+            "control": 0.13392755440647935,
+            "chaos": 0.16553132377913085
+          },
+          "mean_dominant_mode_accuracy": 0.9650000000000001
+        },
+        "M0": {
+          "mean_mae": 0.14126131079997362,
+          "seed_mae": [
+            0.1331876857927438,
+            0.14415404433857149,
+            0.15710646385266916,
+            0.1259932270700384,
+            0.1458651329458453
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.046478908609436945,
+            "control": 0.1679680839685913,
+            "chaos": 0.20933693982189264
+          },
+          "mean_dominant_mode_accuracy": 0.9400000000000001
+        },
+        "M1": {
+          "mean_mae": 0.10630634984064402,
+          "seed_mae": [
+            0.10016159712926535,
+            0.1069930294025115,
+            0.11963302507073138,
+            0.10137268290109708,
+            0.10337141469961475
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.04323547900587473,
+            "control": 0.11989851236265481,
+            "chaos": 0.15578505815340252
+          },
+          "mean_dominant_mode_accuracy": 0.97
+        },
+        "M2": {
+          "mean_mae": 0.10398598969471484,
+          "seed_mae": [
+            0.10071945859164196,
+            0.10554524655567403,
+            0.11647217716858302,
+            0.09968649841722407,
+            0.09750656774045113
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.043411812708674474,
+            "control": 0.11703234426213989,
+            "chaos": 0.15151381211333015
+          },
+          "mean_dominant_mode_accuracy": 0.975
+        },
+        "M3": {
+          "mean_mae": 0.05769685231280208,
+          "seed_mae": [
+            0.055521315501284925,
+            0.0690070610004944,
+            0.05690133476565705,
+            0.054020813025979046,
+            0.053033737270594974
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.03402318931473066,
+            "control": 0.0614368685276656,
+            "chaos": 0.07763049909600997
+          },
+          "mean_dominant_mode_accuracy": 0.9949999999999999
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.06844693134184353,
+          "seed_mae": [
+            0.06355291978599714,
+            0.08137696887993397,
+            0.07206904505163896,
+            0.0636933766465944,
+            0.06154234634505317
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.0394764890856835,
+            "control": 0.0715492110506977,
+            "chaos": 0.09431509388914941
+          },
+          "mean_dominant_mode_accuracy": 1.0
+        }
+      },
+      "matched_transition_vs_M2": {
+        "mean_mae_reduction": 0.035539058352871314,
+        "seed_mae_reductions": [
+          0.037166538805644814,
+          0.024168277675740063,
+          0.044403132116944063,
+          0.035993121770629674,
+          0.03596422139539796
+        ],
+        "positive_seed_fraction": 1.0
+      }
+    },
+    "chaos_heavy": {
+      "models": {
+        "public_decision_proxy": {
+          "mean_mae": 0.1850831714150757,
+          "seed_mae": [
+            0.16928341130604777,
+            0.19546345020073028,
+            0.20092383909663603,
+            0.16969529829066404,
+            0.19004985818130027
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.07898062606382486,
+            "control": 0.19909723843740856,
+            "chaos": 0.27717164974399366
+          },
+          "mean_dominant_mode_accuracy": 0.95
+        },
+        "M0": {
+          "mean_mae": 0.21648954879459242,
+          "seed_mae": [
+            0.20138133992095783,
+            0.2198703966321746,
+            0.22389401592347588,
+            0.21170122032239533,
+            0.22560077117395838
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.08454475317488626,
+            "control": 0.240606320099822,
+            "chaos": 0.32431757310906895
+          },
+          "mean_dominant_mode_accuracy": 0.945
+        },
+        "M1": {
+          "mean_mae": 0.16884124259955027,
+          "seed_mae": [
+            0.1449181822024065,
+            0.17417164264851687,
+            0.18325453094559435,
+            0.1593747603317257,
+            0.18248709686950795
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.07258646613818864,
+            "control": 0.18124155530281333,
+            "chaos": 0.2526957063576488
+          },
+          "mean_dominant_mode_accuracy": 0.9949999999999999
+        },
+        "M2": {
+          "mean_mae": 0.1616478633450973,
+          "seed_mae": [
+            0.13647497907373723,
+            0.16938845629430382,
+            0.1759869197640339,
+            0.15201742428406426,
+            0.17437153730934718
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.07336441588653067,
+            "control": 0.16976703933060772,
+            "chaos": 0.24181213481815345
+          },
+          "mean_dominant_mode_accuracy": 0.9949999999999999
+        },
+        "M3": {
+          "mean_mae": 0.15475079578881443,
+          "seed_mae": [
+            0.13345561932528438,
+            0.16762505283527554,
+            0.16562944631777268,
+            0.13407342117495866,
+            0.17297043929078088
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.06757689017258864,
+            "control": 0.1655712175923346,
+            "chaos": 0.23110427960152
+          },
+          "mean_dominant_mode_accuracy": 0.9850000000000001
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.1476905544097336,
+          "seed_mae": [
+            0.13180985143814725,
+            0.16456182251168705,
+            0.14905242075171157,
+            0.13298852763263286,
+            0.16004014971448915
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.06656747584070896,
+            "control": 0.15639150555301806,
+            "chaos": 0.22011268183547372
+          },
+          "mean_dominant_mode_accuracy": 0.9949999999999999
+        }
+      },
+      "matched_transition_vs_M2": {
+        "mean_mae_reduction": 0.013957308935363705,
+        "seed_mae_reductions": [
+          0.0046651276355899884,
+          0.004826633782616774,
+          0.026934499012322338,
+          0.0190288966514314,
+          0.014331387594858025
+        ],
+        "positive_seed_fraction": 1.0
+      }
+    },
+    "balanced": {
+      "models": {
+        "public_decision_proxy": {
+          "mean_mae": 0.05983441374823173,
+          "seed_mae": [
+            0.06236266757811928,
+            0.06113978589940776,
+            0.05292010241472734,
+            0.053558486910425265,
+            0.06919102593847905
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.02997223019731774,
+            "control": 0.06771348569907192,
+            "chaos": 0.08181752534830555
+          },
+          "mean_dominant_mode_accuracy": 0.48999999999999994
+        },
+        "M0": {
+          "mean_mae": 0.04779108225215335,
+          "seed_mae": [
+            0.04596924463925224,
+            0.05077203691202518,
+            0.0478368345920306,
+            0.04110467004043419,
+            0.05327262507702457
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.027706792614209875,
+            "control": 0.05317501633942312,
+            "chaos": 0.06249143780282708
+          },
+          "mean_dominant_mode_accuracy": 0.505
+        },
+        "M1": {
+          "mean_mae": 0.058396610054420796,
+          "seed_mae": [
+            0.056431748270329686,
+            0.06398818572645053,
+            0.05594618951034825,
+            0.05844267158196034,
+            0.05717425518301516
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.03101538673289293,
+            "control": 0.06297078449065005,
+            "chaos": 0.0812036589397194
+          },
+          "mean_dominant_mode_accuracy": 0.445
+        },
+        "M2": {
+          "mean_mae": 0.059631144213937705,
+          "seed_mae": [
+            0.05798604938032859,
+            0.06313012760405051,
+            0.05666432264453983,
+            0.06149145013878323,
+            0.05888377130198637
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.032467673424031826,
+            "control": 0.06432120731634547,
+            "chaos": 0.08210455190143581
+          },
+          "mean_dominant_mode_accuracy": 0.48999999999999994
+        },
+        "M3": {
+          "mean_mae": 0.07570896794555623,
+          "seed_mae": [
+            0.07044995791678729,
+            0.0743981631982429,
+            0.08459407026660262,
+            0.07862234647283953,
+            0.07048030187330877
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.039977280629176735,
+            "control": 0.07957240601023755,
+            "chaos": 0.10757721719725441
+          },
+          "mean_dominant_mode_accuracy": 0.445
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.06807947343186331,
+          "seed_mae": [
+            0.07670063162613859,
+            0.07153842413413009,
+            0.06546530270184206,
+            0.06758485074819484,
+            0.059108157949010996
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.04111176167559181,
+            "control": 0.06996390798103941,
+            "chaos": 0.09316275063895872
+          },
+          "mean_dominant_mode_accuracy": 0.43
+        }
+      },
+      "matched_transition_vs_M2": {
+        "mean_mae_reduction": -0.008448329217925609,
+        "seed_mae_reductions": [
+          -0.018714582245809998,
+          -0.008408296530079573,
+          -0.008800980057302232,
+          -0.00609340060941161,
+          -0.00022438664702462835
+        ],
+        "positive_seed_fraction": 0.0
+      }
+    },
+    "boundary": {
+      "models": {
+        "public_decision_proxy": {
+          "mean_mae": 0.10135840767698992,
+          "seed_mae": [
+            0.09731220003963684,
+            0.09368217367150455,
+            0.10752924942156898,
+            0.1018841013907199,
+            0.10638431386151925
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.05171144618277822,
+            "control": 0.12604032080554933,
+            "chaos": 0.1263234560426422
+          },
+          "mean_dominant_mode_accuracy": 0.8549999999999999
+        },
+        "M0": {
+          "mean_mae": 0.1090496332299089,
+          "seed_mae": [
+            0.10862250788549914,
+            0.10186134562445598,
+            0.11152167529741602,
+            0.11036511265878077,
+            0.11287752468339261
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.05255349438688881,
+            "control": 0.1348208385970531,
+            "chaos": 0.1397745667057848
+          },
+          "mean_dominant_mode_accuracy": 0.8700000000000001
+        },
+        "M1": {
+          "mean_mae": 0.09175477363319066,
+          "seed_mae": [
+            0.09290048936351462,
+            0.08785542989256939,
+            0.09024538560209798,
+            0.09077346748781843,
+            0.09699909581995285
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.04969593928225501,
+            "control": 0.1130272631924221,
+            "chaos": 0.11254111842489489
+          },
+          "mean_dominant_mode_accuracy": 0.885
+        },
+        "M2": {
+          "mean_mae": 0.09119563014442027,
+          "seed_mae": [
+            0.09315709385227629,
+            0.08810759977656084,
+            0.0900359468225714,
+            0.0907467455792666,
+            0.09393076469142617
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.050463993967105526,
+            "control": 0.11304630378263833,
+            "chaos": 0.11007659268351688
+          },
+          "mean_dominant_mode_accuracy": 0.885
+        },
+        "M3": {
+          "mean_mae": 0.0889775061081213,
+          "seed_mae": [
+            0.08650464205619472,
+            0.09725039875827532,
+            0.07945368856259792,
+            0.08914483362902766,
+            0.09253396753451094
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.0531904446402886,
+            "control": 0.10401322576937007,
+            "chaos": 0.10972884791470527
+          },
+          "mean_dominant_mode_accuracy": 0.865
+        },
+        "M2_plus_matched_transitions": {
+          "mean_mae": 0.09648809151437016,
+          "seed_mae": [
+            0.09694136566530703,
+            0.09949131595998635,
+            0.09331223190080146,
+            0.10016587599672938,
+            0.09252966804902656
+          ],
+          "mean_per_mode_mae": {
+            "pressure": 0.053088266153681285,
+            "control": 0.11753864531325604,
+            "chaos": 0.11883736307617312
+          },
+          "mean_dominant_mode_accuracy": 0.875
+        }
+      },
+      "matched_transition_vs_M2": {
+        "mean_mae_reduction": -0.005292461369949897,
+        "seed_mae_reductions": [
+          -0.0037842718130307457,
+          -0.011383716183425513,
+          -0.0032762850782300512,
+          -0.009419130417462784,
+          0.0014010966423996102
+        ],
+        "positive_seed_fraction": 0.2
+      }
+    }
+  },
+  "provenance": {
+    "human_data_accessed": false,
+    "frozen_evidence_modified": false,
+    "private_rank_used_as_predictor": false,
+    "training_is_fixed": true
+  },
+  "limitations": "Simulation-based synthetic mixture recovery only. Training distribution may not cover test regions. Region results share a simulator and fixed training data; seeds do not imply independent populations. No CFR, regret, exploitability, or causal identification. Dominant-mode accuracy can be misleading within heavy regions. Matched-transition selection depends on actions."
+}
