@@ -1,0 +1,3672 @@
+{
+  "status": "completed",
+  "design": {
+    "budgets": [
+      100,
+      500,
+      2000
+    ],
+    "seeds": [
+      2201,
+      2202,
+      2203,
+      2204,
+      2205
+    ],
+    "hands_per_seat": 200,
+    "temperature": 0.35,
+    "bootstrap_samples": 2000,
+    "matched_deals_across_conditions": true,
+    "independent_learning_state_per_condition_and_seat": true,
+    "cfr_fixed_within_tournament": true
+  },
+  "ablations": {
+    "adaptive": [
+      true,
+      true
+    ],
+    "frozen": [
+      false,
+      false
+    ],
+    "opponent_only": [
+      true,
+      false
+    ],
+    "history_only": [
+      false,
+      true
+    ]
+  },
+  "budgets": {
+    "100": {
+      "cfr_evaluation": {
+        "iterations": 100,
+        "profile_value_player0": -0.11311155437417433,
+        "best_response_player0": 0.12954543721202408,
+        "best_response_player1": 0.3026149925393431,
+        "nash_conv": 0.43216042975136715,
+        "exploitability": 0.21608021487568357
+      },
+      "cases": {
+        "pressure": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -2.209,
+              "replicate_interval_95": [
+                -2.3215,
+                -2.0919999999999996
+              ],
+              "delta_vs_frozen": -0.18249999999999997,
+              "delta_vs_frozen_interval_95": [
+                -0.2350000000000001,
+                -0.10749999999999989
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.908,
+                -2.242,
+                -2.209
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -2.0265,
+              "replicate_interval_95": [
+                -2.2079999999999997,
+                -1.8950000000000002
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -2.006,
+                -2.105,
+                -2.0265
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -2.152,
+              "replicate_interval_95": [
+                -2.2935,
+                -2.034
+              ],
+              "delta_vs_frozen": -0.12549999999999994,
+              "delta_vs_frozen_interval_95": [
+                -0.2409999999999998,
+                -0.03199999999999994
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.9140000000000001,
+                -2.102,
+                -2.152
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -1.9365,
+              "replicate_interval_95": [
+                -2.1689999999999996,
+                -1.7157000000000016
+              ],
+              "delta_vs_frozen": 0.09000000000000004,
+              "delta_vs_frozen_interval_95": [
+                -0.0959999999999999,
+                0.27599999999999997
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.8599999999999999,
+                -1.884,
+                -1.9365
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -2.155,
+                  "seat1_mean": -2.37,
+                  "seat_average_payoff": -2.2625,
+                  "cumulative_quarter_half_full": [
+                    -0.96,
+                    -1.53,
+                    -2.2625
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.04,
+                  "seat1_mean": -1.97,
+                  "seat_average_payoff": -2.005,
+                  "cumulative_quarter_half_full": [
+                    -1.1400000000000001,
+                    -1.855,
+                    -2.005
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.98,
+                  "seat1_mean": -2.17,
+                  "seat_average_payoff": -2.075,
+                  "cumulative_quarter_half_full": [
+                    -1.1,
+                    -1.325,
+                    -2.075
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.415,
+                  "seat1_mean": -1.85,
+                  "seat_average_payoff": -1.6325,
+                  "cumulative_quarter_half_full": [
+                    -0.82,
+                    -1.26,
+                    -1.6325
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.46,
+                  "seat1_mean": -2.55,
+                  "seat_average_payoff": -2.005,
+                  "cumulative_quarter_half_full": [
+                    -1.3599999999999999,
+                    -1.975,
+                    -2.005
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.64,
+                  "seat1_mean": -2.015,
+                  "seat_average_payoff": -1.8275000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.26,
+                    -2.005,
+                    -1.8275000000000001
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.73,
+                  "seat1_mean": -2.62,
+                  "seat_average_payoff": -2.175,
+                  "cumulative_quarter_half_full": [
+                    -1.26,
+                    -2.06,
+                    -2.175
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.435,
+                  "seat1_mean": -2.305,
+                  "seat_average_payoff": -1.87,
+                  "cumulative_quarter_half_full": [
+                    -1.26,
+                    -1.8399999999999999,
+                    -1.87
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -2.395,
+                  "seat1_mean": -2.435,
+                  "seat_average_payoff": -2.415,
+                  "cumulative_quarter_half_full": [
+                    -2.35,
+                    -3.225,
+                    -2.415
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.43,
+                  "seat1_mean": -2.31,
+                  "seat_average_payoff": -2.37,
+                  "cumulative_quarter_half_full": [
+                    -2.9699999999999998,
+                    -2.625,
+                    -2.37
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.52,
+                  "seat1_mean": -2.315,
+                  "seat_average_payoff": -2.4175,
+                  "cumulative_quarter_half_full": [
+                    -2.5100000000000002,
+                    -2.735,
+                    -2.4175
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -2.03,
+                  "seat1_mean": -2.44,
+                  "seat_average_payoff": -2.235,
+                  "cumulative_quarter_half_full": [
+                    -2.5100000000000002,
+                    -2.405,
+                    -2.235
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -2.945,
+                  "seat1_mean": -1.48,
+                  "seat_average_payoff": -2.2125,
+                  "cumulative_quarter_half_full": [
+                    -2.28,
+                    -1.9649999999999999,
+                    -2.2125
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.845,
+                  "seat1_mean": -1.13,
+                  "seat_average_payoff": -1.9875,
+                  "cumulative_quarter_half_full": [
+                    -2.23,
+                    -1.835,
+                    -1.9875
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.84,
+                  "seat1_mean": -1.13,
+                  "seat_average_payoff": -1.9849999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.96,
+                    -1.81,
+                    -1.9849999999999999
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -2.84,
+                  "seat1_mean": -1.665,
+                  "seat_average_payoff": -2.2525,
+                  "cumulative_quarter_half_full": [
+                    -2.28,
+                    -1.9250000000000003,
+                    -2.2525
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -2.175,
+                  "seat1_mean": -2.125,
+                  "seat_average_payoff": -2.15,
+                  "cumulative_quarter_half_full": [
+                    -2.59,
+                    -2.515,
+                    -2.15
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.855,
+                  "seat1_mean": -2.03,
+                  "seat_average_payoff": -1.9425,
+                  "cumulative_quarter_half_full": [
+                    -2.4299999999999997,
+                    -2.205,
+                    -1.9425
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.185,
+                  "seat1_mean": -2.03,
+                  "seat_average_payoff": -2.1075,
+                  "cumulative_quarter_half_full": [
+                    -2.74,
+                    -2.58,
+                    -2.1075
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.615,
+                  "seat1_mean": -1.77,
+                  "seat_average_payoff": -1.6925,
+                  "cumulative_quarter_half_full": [
+                    -2.43,
+                    -1.9900000000000002,
+                    -1.6925
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "control": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -0.8385,
+              "replicate_interval_95": [
+                -0.976,
+                -0.7150000000000001
+              ],
+              "delta_vs_frozen": 0.061999999999999965,
+              "delta_vs_frozen_interval_95": [
+                -0.16450000000000004,
+                0.2445
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.8699999999999999,
+                -0.834,
+                -0.8385
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -0.9004999999999999,
+              "replicate_interval_95": [
+                -1.0125,
+                -0.7675
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.97,
+                -0.932,
+                -0.9004999999999999
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -0.784,
+              "replicate_interval_95": [
+                -0.9179999999999999,
+                -0.6615
+              ],
+              "delta_vs_frozen": 0.11649999999999998,
+              "delta_vs_frozen_interval_95": [
+                -0.128825,
+                0.333
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.8219999999999998,
+                -0.776,
+                -0.784
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -0.907,
+              "replicate_interval_95": [
+                -1.0515,
+                -0.7625
+              ],
+              "delta_vs_frozen": -0.006500000000000017,
+              "delta_vs_frozen_interval_95": [
+                -0.17008749999999997,
+                0.13699999999999996
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.6280000000000001,
+                -0.7889999999999999,
+                -0.907
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.025,
+                  "seat1_mean": -0.935,
+                  "seat_average_payoff": -0.98,
+                  "cumulative_quarter_half_full": [
+                    -0.91,
+                    -0.855,
+                    -0.98
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.16,
+                  "seat1_mean": -0.815,
+                  "seat_average_payoff": -0.9874999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.95,
+                    -0.73,
+                    -0.9874999999999999
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.83,
+                  "seat1_mean": -0.485,
+                  "seat_average_payoff": -0.6575,
+                  "cumulative_quarter_half_full": [
+                    -0.83,
+                    -0.645,
+                    -0.6575
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.505,
+                  "seat1_mean": -0.52,
+                  "seat_average_payoff": -1.0125,
+                  "cumulative_quarter_half_full": [
+                    -0.78,
+                    -0.76,
+                    -1.0125
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.985,
+                  "seat1_mean": -0.515,
+                  "seat_average_payoff": -0.75,
+                  "cumulative_quarter_half_full": [
+                    -0.32999999999999996,
+                    -0.635,
+                    -0.75
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.755,
+                  "seat1_mean": -1.06,
+                  "seat_average_payoff": -0.9075,
+                  "cumulative_quarter_half_full": [
+                    -0.77,
+                    -0.8899999999999999,
+                    -0.9075
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.96,
+                  "seat1_mean": -0.89,
+                  "seat_average_payoff": -0.925,
+                  "cumulative_quarter_half_full": [
+                    -0.61,
+                    -0.6699999999999999,
+                    -0.925
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.43,
+                  "seat1_mean": -0.945,
+                  "seat_average_payoff": -0.6875,
+                  "cumulative_quarter_half_full": [
+                    0.13,
+                    -0.24000000000000002,
+                    -0.6875
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.945,
+                  "seat1_mean": -0.38,
+                  "seat_average_payoff": -0.6625,
+                  "cumulative_quarter_half_full": [
+                    -0.64,
+                    -0.705,
+                    -0.6625
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.13,
+                  "seat1_mean": -0.595,
+                  "seat_average_payoff": -0.8624999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.12,
+                    -0.85,
+                    -0.8624999999999999
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.7,
+                  "seat1_mean": -0.595,
+                  "seat_average_payoff": -0.6475,
+                  "cumulative_quarter_half_full": [
+                    -0.69,
+                    -0.68,
+                    -0.6475
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.975,
+                  "seat1_mean": -0.48,
+                  "seat_average_payoff": -0.7275,
+                  "cumulative_quarter_half_full": [
+                    -0.39,
+                    -0.7999999999999999,
+                    -0.7275
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.57,
+                  "seat1_mean": -0.53,
+                  "seat_average_payoff": -1.05,
+                  "cumulative_quarter_half_full": [
+                    -1.1600000000000001,
+                    -0.945,
+                    -1.05
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.17,
+                  "seat1_mean": -0.155,
+                  "seat_average_payoff": -0.6625,
+                  "cumulative_quarter_half_full": [
+                    -0.9900000000000001,
+                    -0.595,
+                    -0.6625
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.415,
+                  "seat1_mean": -0.59,
+                  "seat_average_payoff": -1.0025,
+                  "cumulative_quarter_half_full": [
+                    -1.0,
+                    -1.0,
+                    -1.0025
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.69,
+                  "seat1_mean": -0.275,
+                  "seat_average_payoff": -0.9824999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.03,
+                    -0.9699999999999999,
+                    -0.9824999999999999
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.915,
+                  "seat1_mean": -0.585,
+                  "seat_average_payoff": -0.75,
+                  "cumulative_quarter_half_full": [
+                    -1.31,
+                    -1.03,
+                    -0.75
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.505,
+                  "seat1_mean": -0.66,
+                  "seat_average_payoff": -1.0825,
+                  "cumulative_quarter_half_full": [
+                    -1.02,
+                    -1.5950000000000002,
+                    -1.0825
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.125,
+                  "seat1_mean": -0.25,
+                  "seat_average_payoff": -0.6875,
+                  "cumulative_quarter_half_full": [
+                    -0.98,
+                    -0.885,
+                    -0.6875
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.435,
+                  "seat1_mean": -0.815,
+                  "seat_average_payoff": -1.125,
+                  "cumulative_quarter_half_full": [
+                    -1.07,
+                    -1.175,
+                    -1.125
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "chaos": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -0.993,
+              "replicate_interval_95": [
+                -1.199,
+                -0.7754999999999999
+              ],
+              "delta_vs_frozen": 0.0405,
+              "delta_vs_frozen_interval_95": [
+                -0.10050000000000003,
+                0.17600000000000005
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.126,
+                -0.9790000000000001,
+                -0.993
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.0335,
+              "replicate_interval_95": [
+                -1.1324999999999998,
+                -0.9159000000000006
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.138,
+                -1.061,
+                -1.0335
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.0210000000000001,
+              "replicate_interval_95": [
+                -1.1355,
+                -0.9055
+              ],
+              "delta_vs_frozen": 0.012499999999999978,
+              "delta_vs_frozen_interval_95": [
+                -0.12669999999999987,
+                0.19849999999999998
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.178,
+                -1.08,
+                -1.0210000000000001
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -1.041,
+              "replicate_interval_95": [
+                -1.188,
+                -0.915
+              ],
+              "delta_vs_frozen": -0.007499999999999995,
+              "delta_vs_frozen_interval_95": [
+                -0.1105,
+                0.0955
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.1540000000000001,
+                -0.9510000000000002,
+                -1.041
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.56,
+                  "seat1_mean": -0.59,
+                  "seat_average_payoff": -1.075,
+                  "cumulative_quarter_half_full": [
+                    -0.8200000000000001,
+                    -0.97,
+                    -1.075
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.43,
+                  "seat1_mean": -0.945,
+                  "seat_average_payoff": -1.1875,
+                  "cumulative_quarter_half_full": [
+                    -0.9299999999999999,
+                    -1.02,
+                    -1.1875
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.065,
+                  "seat1_mean": -0.64,
+                  "seat_average_payoff": -0.8525,
+                  "cumulative_quarter_half_full": [
+                    -0.8899999999999999,
+                    -0.8200000000000001,
+                    -0.8525
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.51,
+                  "seat1_mean": -0.76,
+                  "seat_average_payoff": -1.135,
+                  "cumulative_quarter_half_full": [
+                    -0.8300000000000001,
+                    -0.62,
+                    -1.135
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.57,
+                  "seat1_mean": -1.065,
+                  "seat_average_payoff": -0.8174999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.87,
+                    -0.715,
+                    -0.8174999999999999
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.945,
+                  "seat1_mean": -1.06,
+                  "seat_average_payoff": -1.0025,
+                  "cumulative_quarter_half_full": [
+                    -0.74,
+                    -1.155,
+                    -1.0025
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.74,
+                  "seat1_mean": -1.07,
+                  "seat_average_payoff": -0.905,
+                  "cumulative_quarter_half_full": [
+                    -0.41000000000000003,
+                    -0.72,
+                    -0.905
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.03,
+                  "seat1_mean": -0.91,
+                  "seat_average_payoff": -0.97,
+                  "cumulative_quarter_half_full": [
+                    -0.83,
+                    -0.9,
+                    -0.97
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.5,
+                  "seat1_mean": -0.975,
+                  "seat_average_payoff": -1.2375,
+                  "cumulative_quarter_half_full": [
+                    -1.4900000000000002,
+                    -1.405,
+                    -1.2375
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.015,
+                  "seat1_mean": -1.18,
+                  "seat_average_payoff": -1.0975,
+                  "cumulative_quarter_half_full": [
+                    -1.52,
+                    -1.37,
+                    -1.0975
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.095,
+                  "seat1_mean": -1.235,
+                  "seat_average_payoff": -1.165,
+                  "cumulative_quarter_half_full": [
+                    -1.3199999999999998,
+                    -1.225,
+                    -1.165
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.4,
+                  "seat1_mean": -1.195,
+                  "seat_average_payoff": -1.2974999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.29,
+                    -1.06,
+                    -1.2974999999999999
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.635,
+                  "seat1_mean": -0.82,
+                  "seat_average_payoff": -1.2275,
+                  "cumulative_quarter_half_full": [
+                    -1.5,
+                    -1.1500000000000001,
+                    -1.2275
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.555,
+                  "seat1_mean": -0.565,
+                  "seat_average_payoff": -1.06,
+                  "cumulative_quarter_half_full": [
+                    -1.45,
+                    -0.925,
+                    -1.06
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.84,
+                  "seat1_mean": -0.5,
+                  "seat_average_payoff": -1.17,
+                  "cumulative_quarter_half_full": [
+                    -1.77,
+                    -1.315,
+                    -1.17
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.29,
+                  "seat1_mean": -0.49,
+                  "seat_average_payoff": -0.89,
+                  "cumulative_quarter_half_full": [
+                    -1.77,
+                    -0.99,
+                    -0.89
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.6,
+                  "seat1_mean": -0.615,
+                  "seat_average_payoff": -0.6074999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.9500000000000001,
+                    -0.655,
+                    -0.6074999999999999
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.95,
+                  "seat1_mean": -0.69,
+                  "seat_average_payoff": -0.82,
+                  "cumulative_quarter_half_full": [
+                    -1.05,
+                    -0.835,
+                    -0.82
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.14,
+                  "seat1_mean": -0.885,
+                  "seat_average_payoff": -1.0125,
+                  "cumulative_quarter_half_full": [
+                    -1.5,
+                    -1.32,
+                    -1.0125
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.18,
+                  "seat1_mean": -0.645,
+                  "seat_average_payoff": -0.9125,
+                  "cumulative_quarter_half_full": [
+                    -1.0499999999999998,
+                    -1.185,
+                    -0.9125
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "balanced": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -1.407,
+              "replicate_interval_95": [
+                -1.53,
+                -1.2560000000000002
+              ],
+              "delta_vs_frozen": 0.1944999999999999,
+              "delta_vs_frozen_interval_95": [
+                0.09799999999999986,
+                0.2909999999999999
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.4819999999999998,
+                -1.3370000000000002,
+                -1.407
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.6015000000000001,
+              "replicate_interval_95": [
+                -1.6915,
+                -1.4884999999999997
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.466,
+                -1.501,
+                -1.6015000000000001
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.6275,
+              "replicate_interval_95": [
+                -1.7974999999999999,
+                -1.473
+              ],
+              "delta_vs_frozen": -0.025999999999999933,
+              "delta_vs_frozen_interval_95": [
+                -0.17199999999999988,
+                0.08350000000000009
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.614,
+                -1.449,
+                -1.6275
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -1.3495000000000001,
+              "replicate_interval_95": [
+                -1.4965,
+                -1.2025
+              ],
+              "delta_vs_frozen": 0.25199999999999995,
+              "delta_vs_frozen_interval_95": [
+                0.1514999999999999,
+                0.36850000000000005
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.512,
+                -1.4280000000000002,
+                -1.3495000000000001
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.635,
+                  "seat1_mean": -1.465,
+                  "seat_average_payoff": -1.55,
+                  "cumulative_quarter_half_full": [
+                    -1.96,
+                    -1.245,
+                    -1.55
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.565,
+                  "seat1_mean": -1.67,
+                  "seat_average_payoff": -1.6175,
+                  "cumulative_quarter_half_full": [
+                    -0.64,
+                    -0.9750000000000001,
+                    -1.6175
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.84,
+                  "seat1_mean": -1.21,
+                  "seat_average_payoff": -1.525,
+                  "cumulative_quarter_half_full": [
+                    -0.9500000000000001,
+                    -0.97,
+                    -1.525
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.675,
+                  "seat1_mean": -1.31,
+                  "seat_average_payoff": -1.4925000000000002,
+                  "cumulative_quarter_half_full": [
+                    -1.23,
+                    -1.375,
+                    -1.4925000000000002
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.795,
+                  "seat1_mean": -1.45,
+                  "seat_average_payoff": -1.1225,
+                  "cumulative_quarter_half_full": [
+                    -0.83,
+                    -0.835,
+                    -1.1225
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.525,
+                  "seat1_mean": -1.24,
+                  "seat_average_payoff": -1.3824999999999998,
+                  "cumulative_quarter_half_full": [
+                    -0.49,
+                    -1.22,
+                    -1.3824999999999998
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.135,
+                  "seat1_mean": -1.625,
+                  "seat_average_payoff": -1.38,
+                  "cumulative_quarter_half_full": [
+                    -1.0699999999999998,
+                    -1.255,
+                    -1.38
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.18,
+                  "seat1_mean": -1.18,
+                  "seat_average_payoff": -1.18,
+                  "cumulative_quarter_half_full": [
+                    -1.02,
+                    -1.405,
+                    -1.18
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.635,
+                  "seat1_mean": -1.48,
+                  "seat_average_payoff": -1.5575,
+                  "cumulative_quarter_half_full": [
+                    -1.51,
+                    -1.7,
+                    -1.5575
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.675,
+                  "seat1_mean": -1.535,
+                  "seat_average_payoff": -1.605,
+                  "cumulative_quarter_half_full": [
+                    -1.71,
+                    -1.7149999999999999,
+                    -1.605
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.06,
+                  "seat1_mean": -1.785,
+                  "seat_average_payoff": -1.9224999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.96,
+                    -1.955,
+                    -1.9224999999999999
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.02,
+                  "seat1_mean": -1.28,
+                  "seat_average_payoff": -1.15,
+                  "cumulative_quarter_half_full": [
+                    -2.41,
+                    -1.52,
+                    -1.15
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -2.115,
+                  "seat1_mean": -0.77,
+                  "seat_average_payoff": -1.4425000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.56,
+                    -1.325,
+                    -1.4425000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.615,
+                  "seat1_mean": -0.835,
+                  "seat_average_payoff": -1.725,
+                  "cumulative_quarter_half_full": [
+                    -2.34,
+                    -1.77,
+                    -1.725
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.235,
+                  "seat1_mean": -0.985,
+                  "seat_average_payoff": -1.6099999999999999,
+                  "cumulative_quarter_half_full": [
+                    -2.3899999999999997,
+                    -1.2,
+                    -1.6099999999999999
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.8,
+                  "seat1_mean": -1.345,
+                  "seat_average_payoff": -1.5725,
+                  "cumulative_quarter_half_full": [
+                    -1.52,
+                    -1.26,
+                    -1.5725
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.995,
+                  "seat1_mean": -1.73,
+                  "seat_average_payoff": -1.3625,
+                  "cumulative_quarter_half_full": [
+                    -1.5499999999999998,
+                    -1.58,
+                    -1.3625
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.74,
+                  "seat1_mean": -1.615,
+                  "seat_average_payoff": -1.6775,
+                  "cumulative_quarter_half_full": [
+                    -2.15,
+                    -1.8250000000000002,
+                    -1.6775
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.865,
+                  "seat1_mean": -1.535,
+                  "seat_average_payoff": -1.7,
+                  "cumulative_quarter_half_full": [
+                    -1.7000000000000002,
+                    -1.865,
+                    -1.7
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.285,
+                  "seat1_mean": -1.42,
+                  "seat_average_payoff": -1.3525,
+                  "cumulative_quarter_half_full": [
+                    -1.38,
+                    -1.58,
+                    -1.3525
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "500": {
+      "cfr_evaluation": {
+        "iterations": 500,
+        "profile_value_player0": -0.08660053632140191,
+        "best_response_player0": -0.020652975454986004,
+        "best_response_player1": 0.1601919478890092,
+        "nash_conv": 0.1395389724340232,
+        "exploitability": 0.0697694862170116
+      },
+      "cases": {
+        "pressure": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -1.5844999999999998,
+              "replicate_interval_95": [
+                -1.8695,
+                -1.294
+              ],
+              "delta_vs_frozen": -0.008000000000000007,
+              "delta_vs_frozen_interval_95": [
+                -0.17699999999999996,
+                0.16099999999999995
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.596,
+                -1.526,
+                -1.5844999999999998
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.5764999999999998,
+              "replicate_interval_95": [
+                -1.7515,
+                -1.4320000000000002
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.27,
+                -1.4580000000000002,
+                -1.5764999999999998
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.653,
+              "replicate_interval_95": [
+                -1.83,
+                -1.4975
+              ],
+              "delta_vs_frozen": -0.07650000000000005,
+              "delta_vs_frozen_interval_95": [
+                -0.17750000000000007,
+                0.0004999999999999894
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.516,
+                -1.573,
+                -1.653
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -1.522,
+              "replicate_interval_95": [
+                -1.7919999999999998,
+                -1.252
+              ],
+              "delta_vs_frozen": 0.05449999999999995,
+              "delta_vs_frozen_interval_95": [
+                -0.08850000000000002,
+                0.2334999999999999
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.4780000000000002,
+                -1.3690000000000002,
+                -1.522
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.82,
+                  "seat1_mean": -1.44,
+                  "seat_average_payoff": -1.63,
+                  "cumulative_quarter_half_full": [
+                    -1.47,
+                    -1.495,
+                    -1.63
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.435,
+                  "seat1_mean": -1.485,
+                  "seat_average_payoff": -1.46,
+                  "cumulative_quarter_half_full": [
+                    -1.04,
+                    -1.4,
+                    -1.46
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.5,
+                  "seat1_mean": -1.485,
+                  "seat_average_payoff": -1.4925000000000002,
+                  "cumulative_quarter_half_full": [
+                    -1.1400000000000001,
+                    -1.44,
+                    -1.4925000000000002
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.76,
+                  "seat1_mean": -1.44,
+                  "seat_average_payoff": -1.6,
+                  "cumulative_quarter_half_full": [
+                    -1.18,
+                    -1.425,
+                    -1.6
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.42,
+                  "seat1_mean": -2.42,
+                  "seat_average_payoff": -1.92,
+                  "cumulative_quarter_half_full": [
+                    -1.51,
+                    -1.7850000000000001,
+                    -1.92
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.15,
+                  "seat1_mean": -2.21,
+                  "seat_average_payoff": -1.68,
+                  "cumulative_quarter_half_full": [
+                    -1.19,
+                    -1.885,
+                    -1.68
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.26,
+                  "seat1_mean": -2.075,
+                  "seat_average_payoff": -1.6675,
+                  "cumulative_quarter_half_full": [
+                    -1.19,
+                    -1.885,
+                    -1.6675
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.365,
+                  "seat1_mean": -2.1,
+                  "seat_average_payoff": -1.7325,
+                  "cumulative_quarter_half_full": [
+                    -1.51,
+                    -1.805,
+                    -1.7325
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.245,
+                  "seat1_mean": -1.18,
+                  "seat_average_payoff": -1.2125,
+                  "cumulative_quarter_half_full": [
+                    -1.44,
+                    -1.54,
+                    -1.2125
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.37,
+                  "seat1_mean": -1.43,
+                  "seat_average_payoff": -1.4,
+                  "cumulative_quarter_half_full": [
+                    -1.04,
+                    -1.2650000000000001,
+                    -1.4
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.27,
+                  "seat1_mean": -2.06,
+                  "seat_average_payoff": -1.665,
+                  "cumulative_quarter_half_full": [
+                    -1.47,
+                    -1.55,
+                    -1.665
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.165,
+                  "seat1_mean": -1.38,
+                  "seat_average_payoff": -1.2725,
+                  "cumulative_quarter_half_full": [
+                    -1.47,
+                    -1.28,
+                    -1.2725
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -2.02,
+                  "seat1_mean": -1.895,
+                  "seat_average_payoff": -1.9575,
+                  "cumulative_quarter_half_full": [
+                    -2.8200000000000003,
+                    -1.725,
+                    -1.9575
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.36,
+                  "seat1_mean": -1.425,
+                  "seat_average_payoff": -1.8925,
+                  "cumulative_quarter_half_full": [
+                    -2.26,
+                    -1.555,
+                    -1.8925
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.57,
+                  "seat1_mean": -1.425,
+                  "seat_average_payoff": -1.9975,
+                  "cumulative_quarter_half_full": [
+                    -2.26,
+                    -1.555,
+                    -1.9975
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.88,
+                  "seat1_mean": -2.015,
+                  "seat_average_payoff": -1.9475,
+                  "cumulative_quarter_half_full": [
+                    -2.49,
+                    -1.605,
+                    -1.9475
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.12,
+                  "seat1_mean": -1.285,
+                  "seat_average_payoff": -1.2025000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.74,
+                    -1.085,
+                    -1.2025000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.505,
+                  "seat1_mean": -1.395,
+                  "seat_average_payoff": -1.45,
+                  "cumulative_quarter_half_full": [
+                    -0.8200000000000001,
+                    -1.185,
+                    -1.45
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.44,
+                  "seat1_mean": -1.445,
+                  "seat_average_payoff": -1.4425,
+                  "cumulative_quarter_half_full": [
+                    -1.52,
+                    -1.435,
+                    -1.4425
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.03,
+                  "seat1_mean": -1.085,
+                  "seat_average_payoff": -1.0575,
+                  "cumulative_quarter_half_full": [
+                    -0.74,
+                    -0.73,
+                    -1.0575
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "control": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -0.8150000000000001,
+              "replicate_interval_95": [
+                -0.8634999999999999,
+                -0.7585
+              ],
+              "delta_vs_frozen": 0.022499999999999944,
+              "delta_vs_frozen_interval_95": [
+                -0.14050000000000004,
+                0.12099999999999993
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.5700000000000001,
+                -0.8039999999999999,
+                -0.8150000000000001
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -0.8375,
+              "replicate_interval_95": [
+                -0.9354999999999999,
+                -0.7178250000000009
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.79,
+                -0.7879999999999999,
+                -0.8375
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -0.8299999999999998,
+              "replicate_interval_95": [
+                -0.9489999999999998,
+                -0.6785
+              ],
+              "delta_vs_frozen": 0.007500000000000018,
+              "delta_vs_frozen_interval_95": [
+                -0.034499999999999933,
+                0.04599999999999995
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.708,
+                -0.8310000000000001,
+                -0.8299999999999998
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -0.724,
+              "replicate_interval_95": [
+                -0.768,
+                -0.6799999999999999
+              ],
+              "delta_vs_frozen": 0.1134999999999999,
+              "delta_vs_frozen_interval_95": [
+                -0.036500000000000046,
+                0.2489999999999999
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.728,
+                -0.737,
+                -0.724
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.115,
+                  "seat1_mean": -0.505,
+                  "seat_average_payoff": -0.81,
+                  "cumulative_quarter_half_full": [
+                    -0.53,
+                    -0.855,
+                    -0.81
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.15,
+                  "seat1_mean": -0.72,
+                  "seat_average_payoff": -0.9349999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.15,
+                    -0.8,
+                    -0.9349999999999999
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.015,
+                  "seat1_mean": -0.72,
+                  "seat_average_payoff": -0.8674999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.41,
+                    -0.775,
+                    -0.8674999999999999
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.1,
+                  "seat1_mean": -0.195,
+                  "seat_average_payoff": -0.6475000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.8400000000000001,
+                    -0.785,
+                    -0.6475000000000001
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.85,
+                  "seat1_mean": -0.835,
+                  "seat_average_payoff": -0.8425,
+                  "cumulative_quarter_half_full": [
+                    -0.7300000000000001,
+                    -0.8899999999999999,
+                    -0.8425
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.865,
+                  "seat1_mean": -1.075,
+                  "seat_average_payoff": -0.97,
+                  "cumulative_quarter_half_full": [
+                    -0.91,
+                    -0.7849999999999999,
+                    -0.97
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.19,
+                  "seat1_mean": -0.825,
+                  "seat_average_payoff": -1.0074999999999998,
+                  "cumulative_quarter_half_full": [
+                    -0.9099999999999999,
+                    -0.9750000000000001,
+                    -1.0074999999999998
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.835,
+                  "seat1_mean": -0.535,
+                  "seat_average_payoff": -0.685,
+                  "cumulative_quarter_half_full": [
+                    -0.4,
+                    -0.515,
+                    -0.685
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.815,
+                  "seat1_mean": -0.81,
+                  "seat_average_payoff": -0.8125,
+                  "cumulative_quarter_half_full": [
+                    -0.73,
+                    -0.755,
+                    -0.8125
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.26,
+                  "seat1_mean": -0.475,
+                  "seat_average_payoff": -0.8674999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.6,
+                    -0.67,
+                    -0.8674999999999999
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.185,
+                  "seat1_mean": -0.525,
+                  "seat_average_payoff": -0.855,
+                  "cumulative_quarter_half_full": [
+                    -0.74,
+                    -0.7350000000000001,
+                    -0.855
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.98,
+                  "seat1_mean": -0.555,
+                  "seat_average_payoff": -0.7675000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.57,
+                    -0.5800000000000001,
+                    -0.7675000000000001
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.41,
+                  "seat1_mean": -0.385,
+                  "seat_average_payoff": -0.8975,
+                  "cumulative_quarter_half_full": [
+                    -0.44,
+                    -0.715,
+                    -0.8975
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.015,
+                  "seat1_mean": -0.19,
+                  "seat_average_payoff": -0.6024999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.6599999999999999,
+                    -0.63,
+                    -0.6024999999999999
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.745,
+                  "seat1_mean": -0.36,
+                  "seat_average_payoff": -0.5525,
+                  "cumulative_quarter_half_full": [
+                    -0.75,
+                    -0.64,
+                    -0.5525
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.135,
+                  "seat1_mean": -0.335,
+                  "seat_average_payoff": -0.735,
+                  "cumulative_quarter_half_full": [
+                    -0.5,
+                    -0.515,
+                    -0.735
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.74,
+                  "seat1_mean": -0.685,
+                  "seat_average_payoff": -0.7125,
+                  "cumulative_quarter_half_full": [
+                    -0.42000000000000004,
+                    -0.805,
+                    -0.7125
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.03,
+                  "seat1_mean": -0.595,
+                  "seat_average_payoff": -0.8125,
+                  "cumulative_quarter_half_full": [
+                    -0.63,
+                    -1.055,
+                    -0.8125
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.96,
+                  "seat1_mean": -0.775,
+                  "seat_average_payoff": -0.8674999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.73,
+                    -1.03,
+                    -0.8674999999999999
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.07,
+                  "seat1_mean": -0.5,
+                  "seat_average_payoff": -0.785,
+                  "cumulative_quarter_half_full": [
+                    -1.33,
+                    -1.29,
+                    -0.785
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "chaos": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -1.068,
+              "replicate_interval_95": [
+                -1.2375,
+                -0.9339999999999999
+              ],
+              "delta_vs_frozen": -0.03750000000000005,
+              "delta_vs_frozen_interval_95": [
+                -0.2505,
+                0.16849999999999996
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.134,
+                -1.103,
+                -1.068
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.0305,
+              "replicate_interval_95": [
+                -1.1190000000000002,
+                -0.942
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.1360000000000001,
+                -1.0210000000000001,
+                -1.0305
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.2585000000000002,
+              "replicate_interval_95": [
+                -1.4064999999999999,
+                -1.1164999999999998
+              ],
+              "delta_vs_frozen": -0.22799999999999992,
+              "delta_vs_frozen_interval_95": [
+                -0.376,
+                -0.07999999999999999
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.2959999999999998,
+                -1.2189999999999999,
+                -1.2585000000000002
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -0.8370000000000001,
+              "replicate_interval_95": [
+                -1.0130000000000001,
+                -0.6345000000000001
+              ],
+              "delta_vs_frozen": 0.19349999999999998,
+              "delta_vs_frozen_interval_95": [
+                -0.05900000000000003,
+                0.45949999999999996
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.3820000000000001,
+                -1.03,
+                -0.8370000000000001
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.155,
+                  "seat1_mean": -0.61,
+                  "seat_average_payoff": -0.8825000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.64,
+                    -0.685,
+                    -0.8825000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.185,
+                  "seat1_mean": -0.855,
+                  "seat_average_payoff": -1.02,
+                  "cumulative_quarter_half_full": [
+                    -0.22,
+                    -0.54,
+                    -1.02
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.23,
+                  "seat1_mean": -0.895,
+                  "seat_average_payoff": -1.0625,
+                  "cumulative_quarter_half_full": [
+                    -0.8599999999999999,
+                    -0.805,
+                    -1.0625
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.23,
+                  "seat1_mean": -0.61,
+                  "seat_average_payoff": -0.9199999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.42,
+                    -1.185,
+                    -0.9199999999999999
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.725,
+                  "seat1_mean": -1.145,
+                  "seat_average_payoff": -0.935,
+                  "cumulative_quarter_half_full": [
+                    -1.05,
+                    -0.69,
+                    -0.935
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.01,
+                  "seat1_mean": -1.165,
+                  "seat_average_payoff": -1.0875,
+                  "cumulative_quarter_half_full": [
+                    -0.89,
+                    -1.07,
+                    -1.0875
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.965,
+                  "seat1_mean": -1.265,
+                  "seat_average_payoff": -1.115,
+                  "cumulative_quarter_half_full": [
+                    -0.71,
+                    -1.035,
+                    -1.115
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.13,
+                  "seat1_mean": -0.77,
+                  "seat_average_payoff": -0.45,
+                  "cumulative_quarter_half_full": [
+                    -0.63,
+                    -0.405,
+                    -0.45
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.05,
+                  "seat1_mean": -1.31,
+                  "seat_average_payoff": -1.1800000000000002,
+                  "cumulative_quarter_half_full": [
+                    -1.2,
+                    -1.355,
+                    -1.1800000000000002
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.23,
+                  "seat1_mean": -0.55,
+                  "seat_average_payoff": -0.89,
+                  "cumulative_quarter_half_full": [
+                    -1.09,
+                    -1.2650000000000001,
+                    -0.89
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.475,
+                  "seat1_mean": -0.92,
+                  "seat_average_payoff": -1.1975,
+                  "cumulative_quarter_half_full": [
+                    -1.5,
+                    -1.615,
+                    -1.1975
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.235,
+                  "seat1_mean": -0.63,
+                  "seat_average_payoff": -0.9325000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.25,
+                    -1.07,
+                    -0.9325000000000001
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.625,
+                  "seat1_mean": -1.09,
+                  "seat_average_payoff": -1.3575,
+                  "cumulative_quarter_half_full": [
+                    -1.71,
+                    -1.4249999999999998,
+                    -1.3575
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.305,
+                  "seat1_mean": -0.635,
+                  "seat_average_payoff": -0.97,
+                  "cumulative_quarter_half_full": [
+                    -1.9900000000000002,
+                    -1.075,
+                    -0.97
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.93,
+                  "seat1_mean": -1.015,
+                  "seat_average_payoff": -1.4725,
+                  "cumulative_quarter_half_full": [
+                    -2.0300000000000002,
+                    -1.3499999999999999,
+                    -1.4725
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.66,
+                  "seat1_mean": -0.59,
+                  "seat_average_payoff": -1.125,
+                  "cumulative_quarter_half_full": [
+                    -2.21,
+                    -1.415,
+                    -1.125
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.27,
+                  "seat1_mean": -0.7,
+                  "seat_average_payoff": -0.985,
+                  "cumulative_quarter_half_full": [
+                    -1.07,
+                    -1.36,
+                    -0.985
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.325,
+                  "seat1_mean": -1.045,
+                  "seat_average_payoff": -1.185,
+                  "cumulative_quarter_half_full": [
+                    -1.49,
+                    -1.155,
+                    -1.185
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.505,
+                  "seat1_mean": -1.385,
+                  "seat_average_payoff": -1.4449999999999998,
+                  "cumulative_quarter_half_full": [
+                    -1.38,
+                    -1.29,
+                    -1.4449999999999998
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.88,
+                  "seat1_mean": -0.635,
+                  "seat_average_payoff": -0.7575000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.4,
+                    -1.075,
+                    -0.7575000000000001
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "balanced": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -1.1344999999999998,
+              "replicate_interval_95": [
+                -1.1915,
+                -1.0785
+              ],
+              "delta_vs_frozen": 0.20750000000000007,
+              "delta_vs_frozen_interval_95": [
+                -0.008499999999999818,
+                0.39949999999999997
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.2240000000000002,
+                -1.191,
+                -1.1344999999999998
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.342,
+              "replicate_interval_95": [
+                -1.497,
+                -1.1560000000000001
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.344,
+                -1.267,
+                -1.342
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.544,
+              "replicate_interval_95": [
+                -1.7189999999999999,
+                -1.3704999999999998
+              ],
+              "delta_vs_frozen": -0.20199999999999996,
+              "delta_vs_frozen_interval_95": [
+                -0.3535,
+                0.005500000000000016
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.416,
+                -1.543,
+                -1.544
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -1.144,
+              "replicate_interval_95": [
+                -1.2807374999999999,
+                -1.006
+              ],
+              "delta_vs_frozen": 0.198,
+              "delta_vs_frozen_interval_95": [
+                0.0312500000000001,
+                0.3915
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.308,
+                -1.162,
+                -1.144
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.39,
+                  "seat1_mean": -0.95,
+                  "seat_average_payoff": -1.17,
+                  "cumulative_quarter_half_full": [
+                    -0.78,
+                    -0.915,
+                    -1.17
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.925,
+                  "seat1_mean": -1.145,
+                  "seat_average_payoff": -1.0350000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.2000000000000002,
+                    -0.8150000000000001,
+                    -1.0350000000000001
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.51,
+                  "seat1_mean": -1.41,
+                  "seat_average_payoff": -1.46,
+                  "cumulative_quarter_half_full": [
+                    -0.47,
+                    -0.85,
+                    -1.46
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.33,
+                  "seat1_mean": -0.81,
+                  "seat_average_payoff": -1.07,
+                  "cumulative_quarter_half_full": [
+                    -1.1,
+                    -1.1199999999999999,
+                    -1.07
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.785,
+                  "seat1_mean": -1.3,
+                  "seat_average_payoff": -1.0425,
+                  "cumulative_quarter_half_full": [
+                    -0.92,
+                    -1.185,
+                    -1.0425
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.505,
+                  "seat1_mean": -1.325,
+                  "seat_average_payoff": -1.415,
+                  "cumulative_quarter_half_full": [
+                    -1.25,
+                    -1.41,
+                    -1.415
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.325,
+                  "seat1_mean": -2.2,
+                  "seat_average_payoff": -1.7625000000000002,
+                  "cumulative_quarter_half_full": [
+                    -1.65,
+                    -2.0,
+                    -1.7625000000000002
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.105,
+                  "seat1_mean": -1.695,
+                  "seat_average_payoff": -1.4,
+                  "cumulative_quarter_half_full": [
+                    -1.38,
+                    -1.605,
+                    -1.4
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.205,
+                  "seat1_mean": -1.265,
+                  "seat_average_payoff": -1.2349999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.8900000000000001,
+                    -1.5150000000000001,
+                    -1.2349999999999999
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.165,
+                  "seat1_mean": -1.285,
+                  "seat_average_payoff": -1.225,
+                  "cumulative_quarter_half_full": [
+                    -1.3199999999999998,
+                    -1.47,
+                    -1.225
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.675,
+                  "seat1_mean": -1.22,
+                  "seat_average_payoff": -1.4475,
+                  "cumulative_quarter_half_full": [
+                    -1.4700000000000002,
+                    -1.545,
+                    -1.4475
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.07,
+                  "seat1_mean": -1.085,
+                  "seat_average_payoff": -1.0775000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.38,
+                    -1.17,
+                    -1.0775000000000001
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.735,
+                  "seat1_mean": -0.55,
+                  "seat_average_payoff": -1.1425,
+                  "cumulative_quarter_half_full": [
+                    -1.26,
+                    -0.94,
+                    -1.1425
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.2,
+                  "seat1_mean": -0.97,
+                  "seat_average_payoff": -1.585,
+                  "cumulative_quarter_half_full": [
+                    -1.47,
+                    -1.17,
+                    -1.585
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.3,
+                  "seat1_mean": -1.29,
+                  "seat_average_payoff": -1.795,
+                  "cumulative_quarter_half_full": [
+                    -2.39,
+                    -1.79,
+                    -1.795
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.555,
+                  "seat1_mean": -0.97,
+                  "seat_average_payoff": -1.2625,
+                  "cumulative_quarter_half_full": [
+                    -1.54,
+                    -1.29,
+                    -1.2625
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.875,
+                  "seat1_mean": -1.29,
+                  "seat_average_payoff": -1.0825,
+                  "cumulative_quarter_half_full": [
+                    -1.27,
+                    -1.4,
+                    -1.0825
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.585,
+                  "seat1_mean": -1.315,
+                  "seat_average_payoff": -1.45,
+                  "cumulative_quarter_half_full": [
+                    -1.48,
+                    -1.47,
+                    -1.45
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.405,
+                  "seat1_mean": -1.105,
+                  "seat_average_payoff": -1.255,
+                  "cumulative_quarter_half_full": [
+                    -1.1,
+                    -1.5299999999999998,
+                    -1.255
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.93,
+                  "seat1_mean": -0.89,
+                  "seat_average_payoff": -0.91,
+                  "cumulative_quarter_half_full": [
+                    -1.14,
+                    -0.625,
+                    -0.91
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "2000": {
+      "cfr_evaluation": {
+        "iterations": 2000,
+        "profile_value_player0": -0.08096676196114598,
+        "best_response_player0": -0.05444374229072946,
+        "best_response_player1": 0.11465179000407819,
+        "nash_conv": 0.06020804771334873,
+        "exploitability": 0.030104023856674364
+      },
+      "cases": {
+        "pressure": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -1.2095,
+              "replicate_interval_95": [
+                -1.363,
+                -1.0314999999999999
+              ],
+              "delta_vs_frozen": 0.18500000000000008,
+              "delta_vs_frozen_interval_95": [
+                0.10200000000000013,
+                0.27300000000000013
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.276,
+                -1.056,
+                -1.2095
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.3945,
+              "replicate_interval_95": [
+                -1.5829999999999997,
+                -1.2289999999999999
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.296,
+                -1.3290000000000002,
+                -1.3945
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.2885,
+              "replicate_interval_95": [
+                -1.5240375,
+                -1.0625
+              ],
+              "delta_vs_frozen": 0.10600000000000005,
+              "delta_vs_frozen_interval_95": [
+                0.004500000000000037,
+                0.20250000000000007
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.1800000000000002,
+                -1.2819999999999998,
+                -1.2885
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -1.1965,
+              "replicate_interval_95": [
+                -1.3265,
+                -1.0549999999999997
+              ],
+              "delta_vs_frozen": 0.19800000000000004,
+              "delta_vs_frozen_interval_95": [
+                0.11699999999999999,
+                0.2655
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.302,
+                -1.145,
+                -1.1965
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.105,
+                  "seat1_mean": -1.13,
+                  "seat_average_payoff": -1.1175,
+                  "cumulative_quarter_half_full": [
+                    -1.29,
+                    -0.81,
+                    -1.1175
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.375,
+                  "seat1_mean": -1.22,
+                  "seat_average_payoff": -1.2974999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.19,
+                    -1.1300000000000001,
+                    -1.2974999999999999
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.45,
+                  "seat1_mean": -1.22,
+                  "seat_average_payoff": -1.335,
+                  "cumulative_quarter_half_full": [
+                    -1.19,
+                    -1.29,
+                    -1.335
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.295,
+                  "seat1_mean": -1.215,
+                  "seat_average_payoff": -1.255,
+                  "cumulative_quarter_half_full": [
+                    -1.29,
+                    -0.82,
+                    -1.255
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.085,
+                  "seat1_mean": -1.805,
+                  "seat_average_payoff": -1.4449999999999998,
+                  "cumulative_quarter_half_full": [
+                    -1.0,
+                    -1.3900000000000001,
+                    -1.4449999999999998
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.89,
+                  "seat1_mean": -2.1,
+                  "seat_average_payoff": -1.495,
+                  "cumulative_quarter_half_full": [
+                    -1.0,
+                    -1.56,
+                    -1.495
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.925,
+                  "seat1_mean": -1.89,
+                  "seat_average_payoff": -1.4075,
+                  "cumulative_quarter_half_full": [
+                    -1.0,
+                    -1.56,
+                    -1.4075
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.965,
+                  "seat1_mean": -1.495,
+                  "seat_average_payoff": -1.23,
+                  "cumulative_quarter_half_full": [
+                    -1.0,
+                    -1.52,
+                    -1.23
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.88,
+                  "seat1_mean": -1.58,
+                  "seat_average_payoff": -1.23,
+                  "cumulative_quarter_half_full": [
+                    -0.9099999999999999,
+                    -1.275,
+                    -1.23
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.68,
+                  "seat1_mean": -2.03,
+                  "seat_average_payoff": -1.355,
+                  "cumulative_quarter_half_full": [
+                    -1.07,
+                    -1.38,
+                    -1.355
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.75,
+                  "seat1_mean": -1.46,
+                  "seat_average_payoff": -1.105,
+                  "cumulative_quarter_half_full": [
+                    -0.94,
+                    -1.3199999999999998,
+                    -1.105
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.885,
+                  "seat1_mean": -1.44,
+                  "seat_average_payoff": -1.1625,
+                  "cumulative_quarter_half_full": [
+                    -0.98,
+                    -1.2999999999999998,
+                    -1.1625
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.825,
+                  "seat1_mean": -0.9,
+                  "seat_average_payoff": -1.3625,
+                  "cumulative_quarter_half_full": [
+                    -2.23,
+                    -1.145,
+                    -1.3625
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.39,
+                  "seat1_mean": -1.025,
+                  "seat_average_payoff": -1.7075,
+                  "cumulative_quarter_half_full": [
+                    -2.07,
+                    -1.3,
+                    -1.7075
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.38,
+                  "seat1_mean": -1.025,
+                  "seat_average_payoff": -1.7025,
+                  "cumulative_quarter_half_full": [
+                    -1.99,
+                    -1.3599999999999999,
+                    -1.7025
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.91,
+                  "seat1_mean": -0.9,
+                  "seat_average_payoff": -1.405,
+                  "cumulative_quarter_half_full": [
+                    -2.23,
+                    -1.145,
+                    -1.405
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.065,
+                  "seat1_mean": -0.72,
+                  "seat_average_payoff": -0.8925,
+                  "cumulative_quarter_half_full": [
+                    -0.9500000000000001,
+                    -0.66,
+                    -0.8925
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.155,
+                  "seat1_mean": -1.08,
+                  "seat_average_payoff": -1.1175000000000002,
+                  "cumulative_quarter_half_full": [
+                    -1.15,
+                    -1.2750000000000001,
+                    -1.1175000000000002
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.865,
+                  "seat1_mean": -0.92,
+                  "seat_average_payoff": -0.8925000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.78,
+                    -0.8799999999999999,
+                    -0.8925000000000001
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.765,
+                  "seat1_mean": -1.095,
+                  "seat_average_payoff": -0.9299999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.01,
+                    -0.94,
+                    -0.9299999999999999
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "control": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -0.834,
+              "replicate_interval_95": [
+                -0.958,
+                -0.724
+              ],
+              "delta_vs_frozen": -0.010000000000000054,
+              "delta_vs_frozen_interval_95": [
+                -0.13100000000000006,
+                0.11099999999999996
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.666,
+                -0.8220000000000001,
+                -0.834
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -0.8239999999999998,
+              "replicate_interval_95": [
+                -0.8965,
+                -0.7515
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.744,
+                -0.818,
+                -0.8239999999999998
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -0.8789999999999999,
+              "replicate_interval_95": [
+                -1.0125,
+                -0.6725000000000001
+              ],
+              "delta_vs_frozen": -0.055000000000000014,
+              "delta_vs_frozen_interval_95": [
+                -0.24650000000000002,
+                0.20249999999999996
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.9179999999999999,
+                -0.8859999999999999,
+                -0.8789999999999999
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -0.786,
+              "replicate_interval_95": [
+                -0.8324999999999999,
+                -0.743
+              ],
+              "delta_vs_frozen": 0.03799999999999999,
+              "delta_vs_frozen_interval_95": [
+                -0.026500000000000034,
+                0.11600000000000002
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.566,
+                -0.694,
+                -0.786
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.935,
+                  "seat1_mean": -0.355,
+                  "seat_average_payoff": -0.645,
+                  "cumulative_quarter_half_full": [
+                    -0.5900000000000001,
+                    -0.625,
+                    -0.645
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.135,
+                  "seat1_mean": -0.51,
+                  "seat_average_payoff": -0.8225,
+                  "cumulative_quarter_half_full": [
+                    -0.63,
+                    -0.645,
+                    -0.8225
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.355,
+                  "seat1_mean": -0.745,
+                  "seat_average_payoff": -1.05,
+                  "cumulative_quarter_half_full": [
+                    -1.44,
+                    -1.09,
+                    -1.05
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.135,
+                  "seat1_mean": -0.585,
+                  "seat_average_payoff": -0.86,
+                  "cumulative_quarter_half_full": [
+                    -0.48,
+                    -0.395,
+                    -0.86
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.845,
+                  "seat1_mean": -0.925,
+                  "seat_average_payoff": -0.885,
+                  "cumulative_quarter_half_full": [
+                    -0.57,
+                    -0.85,
+                    -0.885
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.58,
+                  "seat1_mean": -0.905,
+                  "seat_average_payoff": -0.7424999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.5,
+                    -0.6900000000000001,
+                    -0.7424999999999999
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.9,
+                  "seat1_mean": -1.085,
+                  "seat_average_payoff": -0.9924999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.69,
+                    -0.7300000000000001,
+                    -0.9924999999999999
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.655,
+                  "seat1_mean": -0.855,
+                  "seat_average_payoff": -0.755,
+                  "cumulative_quarter_half_full": [
+                    -0.21000000000000002,
+                    -0.61,
+                    -0.755
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.71,
+                  "seat1_mean": -0.805,
+                  "seat_average_payoff": -0.7575000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.6299999999999999,
+                    -0.69,
+                    -0.7575000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.865,
+                  "seat1_mean": -0.94,
+                  "seat_average_payoff": -0.9025,
+                  "cumulative_quarter_half_full": [
+                    -0.39,
+                    -0.8150000000000001,
+                    -0.9025
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.365,
+                  "seat1_mean": -0.63,
+                  "seat_average_payoff": -0.4975,
+                  "cumulative_quarter_half_full": [
+                    -0.12000000000000001,
+                    -0.63,
+                    -0.4975
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.865,
+                  "seat1_mean": -0.6,
+                  "seat_average_payoff": -0.7324999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.9099999999999999,
+                    -0.7450000000000001,
+                    -0.7324999999999999
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.485,
+                  "seat1_mean": -0.65,
+                  "seat_average_payoff": -1.0675000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.95,
+                    -1.0550000000000002,
+                    -1.0675000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.495,
+                  "seat1_mean": -0.36,
+                  "seat_average_payoff": -0.9275,
+                  "cumulative_quarter_half_full": [
+                    -1.23,
+                    -0.87,
+                    -0.9275
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.345,
+                  "seat1_mean": -0.41,
+                  "seat_average_payoff": -0.8775,
+                  "cumulative_quarter_half_full": [
+                    -1.28,
+                    -0.7300000000000001,
+                    -0.8775
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.23,
+                  "seat1_mean": -0.44,
+                  "seat_average_payoff": -0.835,
+                  "cumulative_quarter_half_full": [
+                    -0.66,
+                    -0.8,
+                    -0.835
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.055,
+                  "seat1_mean": -0.575,
+                  "seat_average_payoff": -0.815,
+                  "cumulative_quarter_half_full": [
+                    -0.5900000000000001,
+                    -0.8899999999999999,
+                    -0.815
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.845,
+                  "seat1_mean": -0.605,
+                  "seat_average_payoff": -0.725,
+                  "cumulative_quarter_half_full": [
+                    -0.97,
+                    -1.0699999999999998,
+                    -0.725
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.335,
+                  "seat1_mean": -0.62,
+                  "seat_average_payoff": -0.9775,
+                  "cumulative_quarter_half_full": [
+                    -1.06,
+                    -1.25,
+                    -0.9775
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.855,
+                  "seat1_mean": -0.64,
+                  "seat_average_payoff": -0.7475,
+                  "cumulative_quarter_half_full": [
+                    -0.57,
+                    -0.92,
+                    -0.7475
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "chaos": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -0.8505,
+              "replicate_interval_95": [
+                -0.933,
+                -0.7940000000000002
+              ],
+              "delta_vs_frozen": 0.22949999999999998,
+              "delta_vs_frozen_interval_95": [
+                0.029387499999999997,
+                0.45899999999999996
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.0560000000000003,
+                -0.9390000000000001,
+                -0.8505
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.08,
+              "replicate_interval_95": [
+                -1.2710000000000001,
+                -0.9545
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.042,
+                -1.0100000000000002,
+                -1.08
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.0505,
+              "replicate_interval_95": [
+                -1.2625,
+                -0.8978500000000007
+              ],
+              "delta_vs_frozen": 0.029500000000000016,
+              "delta_vs_frozen_interval_95": [
+                -0.08750000000000005,
+                0.11900000000000004
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.1920000000000002,
+                -1.074,
+                -1.0505
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -0.7619999999999999,
+              "replicate_interval_95": [
+                -0.8854999999999998,
+                -0.6424999999999998
+              ],
+              "delta_vs_frozen": 0.31800000000000006,
+              "delta_vs_frozen_interval_95": [
+                0.11250000000000009,
+                0.5640000000000001
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -0.708,
+                -0.678,
+                -0.7619999999999999
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.91,
+                  "seat1_mean": -1.11,
+                  "seat_average_payoff": -1.01,
+                  "cumulative_quarter_half_full": [
+                    -1.3599999999999999,
+                    -1.05,
+                    -1.01
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.93,
+                  "seat1_mean": -0.885,
+                  "seat_average_payoff": -0.9075,
+                  "cumulative_quarter_half_full": [
+                    -0.89,
+                    -0.9550000000000001,
+                    -0.9075
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.355,
+                  "seat1_mean": -0.805,
+                  "seat_average_payoff": -1.08,
+                  "cumulative_quarter_half_full": [
+                    -1.02,
+                    -1.255,
+                    -1.08
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.815,
+                  "seat1_mean": -0.885,
+                  "seat_average_payoff": -0.85,
+                  "cumulative_quarter_half_full": [
+                    -0.71,
+                    -0.595,
+                    -0.85
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.785,
+                  "seat1_mean": -0.81,
+                  "seat_average_payoff": -0.7975000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.26,
+                    -0.8999999999999999,
+                    -0.7975000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.835,
+                  "seat1_mean": -1.145,
+                  "seat_average_payoff": -0.99,
+                  "cumulative_quarter_half_full": [
+                    -0.5700000000000001,
+                    -0.7050000000000001,
+                    -0.99
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.8,
+                  "seat1_mean": -0.975,
+                  "seat_average_payoff": -0.8875,
+                  "cumulative_quarter_half_full": [
+                    -0.85,
+                    -0.7749999999999999,
+                    -0.8875
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.315,
+                  "seat1_mean": -0.815,
+                  "seat_average_payoff": -0.565,
+                  "cumulative_quarter_half_full": [
+                    -0.27,
+                    -0.395,
+                    -0.565
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.94,
+                  "seat1_mean": -0.77,
+                  "seat_average_payoff": -0.855,
+                  "cumulative_quarter_half_full": [
+                    -0.74,
+                    -1.13,
+                    -0.855
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.14,
+                  "seat1_mean": -0.98,
+                  "seat_average_payoff": -1.06,
+                  "cumulative_quarter_half_full": [
+                    -1.0,
+                    -1.005,
+                    -1.06
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.98,
+                  "seat1_mean": -0.96,
+                  "seat_average_payoff": -0.97,
+                  "cumulative_quarter_half_full": [
+                    -1.1600000000000001,
+                    -1.065,
+                    -0.97
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.7,
+                  "seat1_mean": -0.745,
+                  "seat_average_payoff": -0.7224999999999999,
+                  "cumulative_quarter_half_full": [
+                    -0.78,
+                    -0.835,
+                    -0.7224999999999999
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.27,
+                  "seat1_mean": -0.35,
+                  "seat_average_payoff": -0.81,
+                  "cumulative_quarter_half_full": [
+                    -0.69,
+                    -0.53,
+                    -0.81
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.37,
+                  "seat1_mean": -1.5,
+                  "seat_average_payoff": -1.435,
+                  "cumulative_quarter_half_full": [
+                    -1.67,
+                    -1.365,
+                    -1.435
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.59,
+                  "seat1_mean": -1.325,
+                  "seat_average_payoff": -1.4575,
+                  "cumulative_quarter_half_full": [
+                    -1.5,
+                    -1.24,
+                    -1.4575
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.85,
+                  "seat1_mean": -0.59,
+                  "seat_average_payoff": -0.72,
+                  "cumulative_quarter_half_full": [
+                    -0.48,
+                    -0.5,
+                    -0.72
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.92,
+                  "seat1_mean": -0.64,
+                  "seat_average_payoff": -0.78,
+                  "cumulative_quarter_half_full": [
+                    -1.23,
+                    -1.085,
+                    -0.78
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.975,
+                  "seat1_mean": -1.04,
+                  "seat_average_payoff": -1.0075,
+                  "cumulative_quarter_half_full": [
+                    -1.08,
+                    -1.02,
+                    -1.0075
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.655,
+                  "seat1_mean": -1.06,
+                  "seat_average_payoff": -0.8575,
+                  "cumulative_quarter_half_full": [
+                    -1.4300000000000002,
+                    -1.035,
+                    -0.8575
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -0.88,
+                  "seat1_mean": -1.025,
+                  "seat_average_payoff": -0.9524999999999999,
+                  "cumulative_quarter_half_full": [
+                    -1.2999999999999998,
+                    -1.065,
+                    -0.9524999999999999
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "balanced": {
+          "conditions": {
+            "adaptive": {
+              "mean_pcc_payoff": -1.035,
+              "replicate_interval_95": [
+                -1.1975000000000002,
+                -0.9065000000000001
+              ],
+              "delta_vs_frozen": 0.2099999999999999,
+              "delta_vs_frozen_interval_95": [
+                -0.013500000000000068,
+                0.39799999999999996
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.276,
+                -0.9789999999999999,
+                -1.035
+              ]
+            },
+            "frozen": {
+              "mean_pcc_payoff": -1.2449999999999999,
+              "replicate_interval_95": [
+                -1.3854999999999997,
+                -1.041
+              ],
+              "delta_vs_frozen": 0.0,
+              "delta_vs_frozen_interval_95": [
+                0.0,
+                0.0
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.1400000000000001,
+                -1.208,
+                -1.2449999999999999
+              ]
+            },
+            "opponent_only": {
+              "mean_pcc_payoff": -1.2725,
+              "replicate_interval_95": [
+                -1.509,
+                -1.113
+              ],
+              "delta_vs_frozen": -0.027500000000000035,
+              "delta_vs_frozen_interval_95": [
+                -0.2685,
+                0.19949999999999993
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.302,
+                -1.299,
+                -1.2725
+              ]
+            },
+            "history_only": {
+              "mean_pcc_payoff": -1.205,
+              "replicate_interval_95": [
+                -1.2630000000000001,
+                -1.1420000000000001
+              ],
+              "delta_vs_frozen": 0.039999999999999945,
+              "delta_vs_frozen_interval_95": [
+                -0.18049999999999994,
+                0.18399999999999989
+              ],
+              "mean_cumulative_quarter_half_full": [
+                -1.15,
+                -1.2309999999999999,
+                -1.205
+              ]
+            }
+          },
+          "replicates": [
+            {
+              "seed": 2201,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.165,
+                  "seat1_mean": -0.465,
+                  "seat_average_payoff": -0.8150000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.52,
+                    -0.58,
+                    -0.8150000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.515,
+                  "seat1_mean": -1.125,
+                  "seat_average_payoff": -1.3199999999999998,
+                  "cumulative_quarter_half_full": [
+                    -0.85,
+                    -1.08,
+                    -1.3199999999999998
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.46,
+                  "seat1_mean": -0.625,
+                  "seat_average_payoff": -1.0425,
+                  "cumulative_quarter_half_full": [
+                    -0.5,
+                    -0.585,
+                    -1.0425
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.22,
+                  "seat1_mean": -0.965,
+                  "seat_average_payoff": -1.0925,
+                  "cumulative_quarter_half_full": [
+                    -0.62,
+                    -0.9850000000000001,
+                    -1.0925
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2202,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.645,
+                  "seat1_mean": -1.235,
+                  "seat_average_payoff": -0.9400000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.03,
+                    -0.96,
+                    -0.9400000000000001
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -1.025,
+                  "seat1_mean": -1.55,
+                  "seat_average_payoff": -1.2875,
+                  "cumulative_quarter_half_full": [
+                    -0.8899999999999999,
+                    -1.385,
+                    -1.2875
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -0.685,
+                  "seat1_mean": -1.705,
+                  "seat_average_payoff": -1.195,
+                  "cumulative_quarter_half_full": [
+                    -1.4700000000000002,
+                    -1.605,
+                    -1.195
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.09,
+                  "seat1_mean": -1.44,
+                  "seat_average_payoff": -1.2650000000000001,
+                  "cumulative_quarter_half_full": [
+                    -0.81,
+                    -1.24,
+                    -1.2650000000000001
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2203,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.785,
+                  "seat1_mean": -1.29,
+                  "seat_average_payoff": -1.0375,
+                  "cumulative_quarter_half_full": [
+                    -1.21,
+                    -0.98,
+                    -1.0375
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.835,
+                  "seat1_mean": -1.81,
+                  "seat_average_payoff": -1.3225,
+                  "cumulative_quarter_half_full": [
+                    -1.5,
+                    -1.555,
+                    -1.3225
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.39,
+                  "seat1_mean": -0.895,
+                  "seat_average_payoff": -1.1425,
+                  "cumulative_quarter_half_full": [
+                    -1.1800000000000002,
+                    -1.315,
+                    -1.1425
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.62,
+                  "seat1_mean": -0.715,
+                  "seat_average_payoff": -1.1675,
+                  "cumulative_quarter_half_full": [
+                    -0.98,
+                    -1.185,
+                    -1.1675
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2204,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -1.745,
+                  "seat1_mean": -0.92,
+                  "seat_average_payoff": -1.3325,
+                  "cumulative_quarter_half_full": [
+                    -1.6199999999999999,
+                    -0.96,
+                    -1.3325
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -2.245,
+                  "seat1_mean": -0.635,
+                  "seat_average_payoff": -1.44,
+                  "cumulative_quarter_half_full": [
+                    -1.18,
+                    -0.9049999999999999,
+                    -1.44
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -2.025,
+                  "seat1_mean": -1.395,
+                  "seat_average_payoff": -1.71,
+                  "cumulative_quarter_half_full": [
+                    -1.77,
+                    -1.42,
+                    -1.71
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.61,
+                  "seat1_mean": -0.96,
+                  "seat_average_payoff": -1.2850000000000001,
+                  "cumulative_quarter_half_full": [
+                    -1.3199999999999998,
+                    -0.895,
+                    -1.2850000000000001
+                  ]
+                }
+              }
+            },
+            {
+              "seed": 2205,
+              "conditions": {
+                "adaptive": {
+                  "seat0_mean": -0.855,
+                  "seat1_mean": -1.245,
+                  "seat_average_payoff": -1.05,
+                  "cumulative_quarter_half_full": [
+                    -2.0,
+                    -1.415,
+                    -1.05
+                  ]
+                },
+                "frozen": {
+                  "seat0_mean": -0.715,
+                  "seat1_mean": -0.995,
+                  "seat_average_payoff": -0.855,
+                  "cumulative_quarter_half_full": [
+                    -1.28,
+                    -1.115,
+                    -0.855
+                  ]
+                },
+                "opponent_only": {
+                  "seat0_mean": -1.14,
+                  "seat1_mean": -1.405,
+                  "seat_average_payoff": -1.2725,
+                  "cumulative_quarter_half_full": [
+                    -1.5899999999999999,
+                    -1.5699999999999998,
+                    -1.2725
+                  ]
+                },
+                "history_only": {
+                  "seat0_mean": -1.115,
+                  "seat1_mean": -1.315,
+                  "seat_average_payoff": -1.2149999999999999,
+                  "cumulative_quarter_half_full": [
+                    -2.02,
+                    -1.85,
+                    -1.2149999999999999
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "limitations": "Paired replicate bootstrap intervals use replicate means, not independent hands. Early/late cumulative means are descriptive, not independent learning-rate estimates. No exploitability inference for PCC.",
+  "provenance": {
+    "human_data_accessed": false,
+    "frozen_evidence_modified": false
+  }
+}
