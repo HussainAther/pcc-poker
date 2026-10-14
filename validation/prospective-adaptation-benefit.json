@@ -1,0 +1,1927 @@
+{
+  "status": "completed",
+  "analysis_status": "prospective_balanced_adaptation_benefit_replication",
+  "design": {
+    "design_version": "pcc-poker-patch16-v1",
+    "primary_case": "balanced",
+    "primary_cfr_iterations": 2000,
+    "secondary_cfr_iterations": 500,
+    "primary_endpoint": "paired_adaptive_minus_frozen_seat_averaged_net_chips_per_hand",
+    "primary_decision_rule": "95% two-sided percentile paired-replicate bootstrap interval lower bound > 0",
+    "primary_alpha_nominal_two_sided": 0.05,
+    "secondary_inference": "descriptive; no multiplicity-adjusted claim",
+    "seeds": [
+      2601,
+      2602,
+      2603,
+      2604,
+      2605,
+      2606,
+      2607,
+      2608,
+      2609,
+      2610,
+      2611,
+      2612,
+      2613,
+      2614,
+      2615,
+      2616,
+      2617,
+      2618,
+      2619,
+      2620,
+      2621,
+      2622,
+      2623,
+      2624,
+      2625,
+      2626,
+      2627,
+      2628,
+      2629,
+      2630
+    ],
+    "hands_per_seat": 200,
+    "temperature": 0.35,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 2600,
+    "paired_deals": true,
+    "independent_agent_state_by_condition_and_seat": true,
+    "cfr_fixed_in_each_match": true,
+    "policy_tuning_on_replication_data": false
+  },
+  "design_sha256": "e918c33ee494635e9a33f5ea8cded11c34130c525d8500015200edc977425049",
+  "results": {
+    "500": {
+      "role": "secondary",
+      "full_vs_frozen": {
+        "mean": 0.05158333333333332,
+        "seed_values": [
+          -0.07000000000000006,
+          0.11249999999999982,
+          0.30500000000000016,
+          0.26250000000000007,
+          0.3175000000000001,
+          -0.19750000000000012,
+          0.0924999999999998,
+          0.0625,
+          -0.19499999999999995,
+          -0.2925,
+          0.039999999999999925,
+          0.22749999999999992,
+          0.4475,
+          -0.21499999999999986,
+          0.09499999999999975,
+          -0.24,
+          0.08999999999999997,
+          -0.26,
+          -0.15500000000000003,
+          0.3425,
+          0.10250000000000004,
+          0.04000000000000026,
+          -0.06000000000000005,
+          0.1499999999999998,
+          0.09749999999999992,
+          0.22250000000000014,
+          -0.21999999999999997,
+          0.12749999999999995,
+          -0.03249999999999997,
+          0.34999999999999987
+        ],
+        "paired_replicate_interval_95": [
+          -0.019833333333333352,
+          0.12491666666666666
+        ],
+        "positive_replicate_fraction": 0.6333333333333333,
+        "interval_excludes_zero_positive": false
+      },
+      "absolute_adaptive_payoff": {
+        "mean": -1.1130833333333334,
+        "seed_values": [
+          -1.1725,
+          -1.31,
+          -0.8574999999999999,
+          -0.86,
+          -1.115,
+          -1.0775000000000001,
+          -1.1,
+          -1.0825,
+          -1.1675,
+          -1.0725,
+          -0.8575,
+          -0.86,
+          -1.1525,
+          -1.19,
+          -1.0550000000000002,
+          -1.5,
+          -0.9525,
+          -1.3975,
+          -1.3475,
+          -1.1875,
+          -0.9924999999999999,
+          -1.0699999999999998,
+          -1.2,
+          -0.9825,
+          -1.2,
+          -1.1275,
+          -1.4675,
+          -0.7475,
+          -1.4475,
+          -0.8425
+        ],
+        "paired_replicate_interval_95": [
+          -1.1807500000000002,
+          -1.0430833333333331
+        ],
+        "positive_replicate_fraction": 0.0,
+        "interval_excludes_zero_positive": false
+      },
+      "replicates": [
+        {
+          "seed": 2601,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.475,
+              "seat1_mean": -0.87,
+              "seat_average_payoff": -1.1725,
+              "cumulative_quarter_half_full": [
+                -1.6099999999999999,
+                -1.4049999999999998,
+                -1.1725
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.805,
+              "seat1_mean": -0.4,
+              "seat_average_payoff": -1.1025,
+              "cumulative_quarter_half_full": [
+                -0.7599999999999999,
+                -1.2349999999999999,
+                -1.1025
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.07000000000000006,
+          "seat0_adaptation_gain": 0.32999999999999985,
+          "seat1_adaptation_gain": -0.47
+        },
+        {
+          "seed": 2602,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.435,
+              "seat1_mean": -1.185,
+              "seat_average_payoff": -1.31,
+              "cumulative_quarter_half_full": [
+                -1.34,
+                -0.79,
+                -1.31
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.46,
+              "seat1_mean": -1.385,
+              "seat_average_payoff": -1.4224999999999999,
+              "cumulative_quarter_half_full": [
+                -0.97,
+                -1.04,
+                -1.4224999999999999
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.11249999999999982,
+          "seat0_adaptation_gain": 0.02499999999999991,
+          "seat1_adaptation_gain": 0.19999999999999996
+        },
+        {
+          "seed": 2603,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.065,
+              "seat1_mean": -0.65,
+              "seat_average_payoff": -0.8574999999999999,
+              "cumulative_quarter_half_full": [
+                -0.8,
+                -0.7100000000000001,
+                -0.8574999999999999
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.145,
+              "seat1_mean": -1.18,
+              "seat_average_payoff": -1.1625,
+              "cumulative_quarter_half_full": [
+                -0.88,
+                -1.0,
+                -1.1625
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.30500000000000016,
+          "seat0_adaptation_gain": 0.08000000000000007,
+          "seat1_adaptation_gain": 0.5299999999999999
+        },
+        {
+          "seed": 2604,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.54,
+              "seat1_mean": -0.18,
+              "seat_average_payoff": -0.86,
+              "cumulative_quarter_half_full": [
+                -0.56,
+                -1.045,
+                -0.86
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.52,
+              "seat1_mean": -0.725,
+              "seat_average_payoff": -1.1225,
+              "cumulative_quarter_half_full": [
+                -0.59,
+                -1.1,
+                -1.1225
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.26250000000000007,
+          "seat0_adaptation_gain": -0.020000000000000018,
+          "seat1_adaptation_gain": 0.5449999999999999
+        },
+        {
+          "seed": 2605,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.58,
+              "seat1_mean": -0.65,
+              "seat_average_payoff": -1.115,
+              "cumulative_quarter_half_full": [
+                -0.33999999999999997,
+                -0.815,
+                -1.115
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.64,
+              "seat1_mean": -1.225,
+              "seat_average_payoff": -1.4325,
+              "cumulative_quarter_half_full": [
+                -1.3900000000000001,
+                -1.08,
+                -1.4325
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.3175000000000001,
+          "seat0_adaptation_gain": 0.05999999999999983,
+          "seat1_adaptation_gain": 0.5750000000000001
+        },
+        {
+          "seed": 2606,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.67,
+              "seat1_mean": -1.485,
+              "seat_average_payoff": -1.0775000000000001,
+              "cumulative_quarter_half_full": [
+                -1.86,
+                -1.335,
+                -1.0775000000000001
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -0.56,
+              "seat1_mean": -1.2,
+              "seat_average_payoff": -0.88,
+              "cumulative_quarter_half_full": [
+                -1.39,
+                -1.3900000000000001,
+                -0.88
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.19750000000000012,
+          "seat0_adaptation_gain": -0.10999999999999999,
+          "seat1_adaptation_gain": -0.28500000000000014
+        },
+        {
+          "seed": 2607,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.475,
+              "seat1_mean": -0.725,
+              "seat_average_payoff": -1.1,
+              "cumulative_quarter_half_full": [
+                -1.2200000000000002,
+                -1.3050000000000002,
+                -1.1
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.49,
+              "seat1_mean": -0.895,
+              "seat_average_payoff": -1.1925,
+              "cumulative_quarter_half_full": [
+                -1.02,
+                -1.08,
+                -1.1925
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.0924999999999998,
+          "seat0_adaptation_gain": 0.014999999999999902,
+          "seat1_adaptation_gain": 0.17000000000000004
+        },
+        {
+          "seed": 2608,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.745,
+              "seat1_mean": -0.42,
+              "seat_average_payoff": -1.0825,
+              "cumulative_quarter_half_full": [
+                -0.93,
+                -0.76,
+                -1.0825
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.975,
+              "seat1_mean": -0.315,
+              "seat_average_payoff": -1.145,
+              "cumulative_quarter_half_full": [
+                -1.02,
+                -0.905,
+                -1.145
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.0625,
+          "seat0_adaptation_gain": 0.22999999999999998,
+          "seat1_adaptation_gain": -0.10499999999999998
+        },
+        {
+          "seed": 2609,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -2.015,
+              "seat1_mean": -0.32,
+              "seat_average_payoff": -1.1675,
+              "cumulative_quarter_half_full": [
+                -1.7,
+                -1.5250000000000001,
+                -1.1675
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -2.0,
+              "seat1_mean": 0.055,
+              "seat_average_payoff": -0.9725,
+              "cumulative_quarter_half_full": [
+                -0.95,
+                -1.145,
+                -0.9725
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.19499999999999995,
+          "seat0_adaptation_gain": -0.015000000000000124,
+          "seat1_adaptation_gain": -0.375
+        },
+        {
+          "seed": 2610,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.325,
+              "seat1_mean": -0.82,
+              "seat_average_payoff": -1.0725,
+              "cumulative_quarter_half_full": [
+                -0.6,
+                -0.63,
+                -1.0725
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.145,
+              "seat1_mean": -0.415,
+              "seat_average_payoff": -0.78,
+              "cumulative_quarter_half_full": [
+                -0.44999999999999996,
+                -0.8150000000000001,
+                -0.78
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.2925,
+          "seat0_adaptation_gain": -0.17999999999999994,
+          "seat1_adaptation_gain": -0.40499999999999997
+        },
+        {
+          "seed": 2611,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.465,
+              "seat1_mean": -0.25,
+              "seat_average_payoff": -0.8575,
+              "cumulative_quarter_half_full": [
+                -0.74,
+                -0.76,
+                -0.8575
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.045,
+              "seat1_mean": -0.75,
+              "seat_average_payoff": -0.8975,
+              "cumulative_quarter_half_full": [
+                -0.67,
+                -1.1849999999999998,
+                -0.8975
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.039999999999999925,
+          "seat0_adaptation_gain": -0.42000000000000015,
+          "seat1_adaptation_gain": 0.5
+        },
+        {
+          "seed": 2612,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.285,
+              "seat1_mean": -0.435,
+              "seat_average_payoff": -0.86,
+              "cumulative_quarter_half_full": [
+                -0.8,
+                -0.565,
+                -0.86
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.38,
+              "seat1_mean": -0.795,
+              "seat_average_payoff": -1.0875,
+              "cumulative_quarter_half_full": [
+                -0.73,
+                -1.045,
+                -1.0875
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.22749999999999992,
+          "seat0_adaptation_gain": 0.09499999999999997,
+          "seat1_adaptation_gain": 0.36000000000000004
+        },
+        {
+          "seed": 2613,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.965,
+              "seat1_mean": -1.34,
+              "seat_average_payoff": -1.1525,
+              "cumulative_quarter_half_full": [
+                -1.1600000000000001,
+                -1.165,
+                -1.1525
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.57,
+              "seat1_mean": -1.63,
+              "seat_average_payoff": -1.6,
+              "cumulative_quarter_half_full": [
+                -1.79,
+                -1.7149999999999999,
+                -1.6
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.4475,
+          "seat0_adaptation_gain": 0.6050000000000001,
+          "seat1_adaptation_gain": 0.2899999999999998
+        },
+        {
+          "seed": 2614,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.095,
+              "seat1_mean": -1.285,
+              "seat_average_payoff": -1.19,
+              "cumulative_quarter_half_full": [
+                -1.32,
+                -1.16,
+                -1.19
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.415,
+              "seat1_mean": -0.535,
+              "seat_average_payoff": -0.9750000000000001,
+              "cumulative_quarter_half_full": [
+                -1.21,
+                -0.93,
+                -0.9750000000000001
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.21499999999999986,
+          "seat0_adaptation_gain": 0.32000000000000006,
+          "seat1_adaptation_gain": -0.7499999999999999
+        },
+        {
+          "seed": 2615,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.04,
+              "seat1_mean": -1.07,
+              "seat_average_payoff": -1.0550000000000002,
+              "cumulative_quarter_half_full": [
+                -0.51,
+                -0.59,
+                -1.0550000000000002
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.15,
+              "seat1_mean": -1.15,
+              "seat_average_payoff": -1.15,
+              "cumulative_quarter_half_full": [
+                -0.92,
+                -1.14,
+                -1.15
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.09499999999999975,
+          "seat0_adaptation_gain": 0.10999999999999988,
+          "seat1_adaptation_gain": 0.07999999999999985
+        },
+        {
+          "seed": 2616,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -2.355,
+              "seat1_mean": -0.645,
+              "seat_average_payoff": -1.5,
+              "cumulative_quarter_half_full": [
+                -0.5599999999999999,
+                -1.315,
+                -1.5
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.995,
+              "seat1_mean": -0.525,
+              "seat_average_payoff": -1.26,
+              "cumulative_quarter_half_full": [
+                -0.79,
+                -1.275,
+                -1.26
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.24,
+          "seat0_adaptation_gain": -0.3599999999999999,
+          "seat1_adaptation_gain": -0.12
+        },
+        {
+          "seed": 2617,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.185,
+              "seat1_mean": -0.72,
+              "seat_average_payoff": -0.9525,
+              "cumulative_quarter_half_full": [
+                -0.37,
+                -0.895,
+                -0.9525
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.425,
+              "seat1_mean": -0.66,
+              "seat_average_payoff": -1.0425,
+              "cumulative_quarter_half_full": [
+                -0.6699999999999999,
+                -1.025,
+                -1.0425
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.08999999999999997,
+          "seat0_adaptation_gain": 0.24,
+          "seat1_adaptation_gain": -0.05999999999999994
+        },
+        {
+          "seed": 2618,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.865,
+              "seat1_mean": -0.93,
+              "seat_average_payoff": -1.3975,
+              "cumulative_quarter_half_full": [
+                -1.42,
+                -1.43,
+                -1.3975
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.955,
+              "seat1_mean": -0.32,
+              "seat_average_payoff": -1.1375,
+              "cumulative_quarter_half_full": [
+                -1.82,
+                -1.005,
+                -1.1375
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.26,
+          "seat0_adaptation_gain": 0.09000000000000008,
+          "seat1_adaptation_gain": -0.6100000000000001
+        },
+        {
+          "seed": 2619,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.64,
+              "seat1_mean": -1.055,
+              "seat_average_payoff": -1.3475,
+              "cumulative_quarter_half_full": [
+                -1.43,
+                -1.525,
+                -1.3475
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.265,
+              "seat1_mean": -1.12,
+              "seat_average_payoff": -1.1925,
+              "cumulative_quarter_half_full": [
+                -0.94,
+                -1.4449999999999998,
+                -1.1925
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.15500000000000003,
+          "seat0_adaptation_gain": -0.375,
+          "seat1_adaptation_gain": 0.06500000000000017
+        },
+        {
+          "seed": 2620,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.99,
+              "seat1_mean": -0.385,
+              "seat_average_payoff": -1.1875,
+              "cumulative_quarter_half_full": [
+                -0.5900000000000001,
+                -1.045,
+                -1.1875
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.845,
+              "seat1_mean": -1.215,
+              "seat_average_payoff": -1.53,
+              "cumulative_quarter_half_full": [
+                -0.76,
+                -0.9299999999999999,
+                -1.53
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.3425,
+          "seat0_adaptation_gain": -0.14500000000000002,
+          "seat1_adaptation_gain": 0.8300000000000001
+        },
+        {
+          "seed": 2621,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.315,
+              "seat1_mean": -0.67,
+              "seat_average_payoff": -0.9924999999999999,
+              "cumulative_quarter_half_full": [
+                -1.2,
+                -0.72,
+                -0.9924999999999999
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.69,
+              "seat1_mean": -0.5,
+              "seat_average_payoff": -1.095,
+              "cumulative_quarter_half_full": [
+                -1.06,
+                -0.875,
+                -1.095
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.10250000000000004,
+          "seat0_adaptation_gain": 0.375,
+          "seat1_adaptation_gain": -0.17000000000000004
+        },
+        {
+          "seed": 2622,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.125,
+              "seat1_mean": -1.015,
+              "seat_average_payoff": -1.0699999999999998,
+              "cumulative_quarter_half_full": [
+                -0.9600000000000001,
+                -0.9,
+                -1.0699999999999998
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.35,
+              "seat1_mean": -0.87,
+              "seat_average_payoff": -1.11,
+              "cumulative_quarter_half_full": [
+                -0.72,
+                -1.115,
+                -1.11
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.04000000000000026,
+          "seat0_adaptation_gain": 0.2250000000000001,
+          "seat1_adaptation_gain": -0.1449999999999999
+        },
+        {
+          "seed": 2623,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.4,
+              "seat1_mean": -1.0,
+              "seat_average_payoff": -1.2,
+              "cumulative_quarter_half_full": [
+                -1.35,
+                -1.12,
+                -1.2
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.005,
+              "seat1_mean": -1.275,
+              "seat_average_payoff": -1.14,
+              "cumulative_quarter_half_full": [
+                -0.62,
+                -1.1099999999999999,
+                -1.14
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.06000000000000005,
+          "seat0_adaptation_gain": -0.395,
+          "seat1_adaptation_gain": 0.2749999999999999
+        },
+        {
+          "seed": 2624,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.06,
+              "seat1_mean": -0.905,
+              "seat_average_payoff": -0.9825,
+              "cumulative_quarter_half_full": [
+                -0.5800000000000001,
+                -1.045,
+                -0.9825
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -2.09,
+              "seat1_mean": -0.175,
+              "seat_average_payoff": -1.1324999999999998,
+              "cumulative_quarter_half_full": [
+                -0.6,
+                -0.73,
+                -1.1324999999999998
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.1499999999999998,
+          "seat0_adaptation_gain": 1.0299999999999998,
+          "seat1_adaptation_gain": -0.73
+        },
+        {
+          "seed": 2625,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.775,
+              "seat1_mean": -1.625,
+              "seat_average_payoff": -1.2,
+              "cumulative_quarter_half_full": [
+                -1.5699999999999998,
+                -1.02,
+                -1.2
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -0.72,
+              "seat1_mean": -1.875,
+              "seat_average_payoff": -1.2974999999999999,
+              "cumulative_quarter_half_full": [
+                -1.9700000000000002,
+                -1.575,
+                -1.2974999999999999
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.09749999999999992,
+          "seat0_adaptation_gain": -0.05500000000000005,
+          "seat1_adaptation_gain": 0.25
+        },
+        {
+          "seed": 2626,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.36,
+              "seat1_mean": -1.895,
+              "seat_average_payoff": -1.1275,
+              "cumulative_quarter_half_full": [
+                -1.3,
+                -0.95,
+                -1.1275
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -0.49,
+              "seat1_mean": -2.21,
+              "seat_average_payoff": -1.35,
+              "cumulative_quarter_half_full": [
+                -1.9000000000000001,
+                -1.53,
+                -1.35
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.22250000000000014,
+          "seat0_adaptation_gain": 0.13,
+          "seat1_adaptation_gain": 0.31499999999999995
+        },
+        {
+          "seed": 2627,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.225,
+              "seat1_mean": -1.71,
+              "seat_average_payoff": -1.4675,
+              "cumulative_quarter_half_full": [
+                -2.12,
+                -1.5499999999999998,
+                -1.4675
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.54,
+              "seat1_mean": -0.955,
+              "seat_average_payoff": -1.2475,
+              "cumulative_quarter_half_full": [
+                -1.1,
+                -1.315,
+                -1.2475
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.21999999999999997,
+          "seat0_adaptation_gain": 0.31499999999999995,
+          "seat1_adaptation_gain": -0.755
+        },
+        {
+          "seed": 2628,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.485,
+              "seat1_mean": -0.01,
+              "seat_average_payoff": -0.7475,
+              "cumulative_quarter_half_full": [
+                -0.79,
+                -0.985,
+                -0.7475
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.505,
+              "seat1_mean": -0.245,
+              "seat_average_payoff": -0.875,
+              "cumulative_quarter_half_full": [
+                -0.74,
+                -0.785,
+                -0.875
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.12749999999999995,
+          "seat0_adaptation_gain": 0.019999999999999796,
+          "seat1_adaptation_gain": 0.235
+        },
+        {
+          "seed": 2629,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -2.445,
+              "seat1_mean": -0.45,
+              "seat_average_payoff": -1.4475,
+              "cumulative_quarter_half_full": [
+                -1.33,
+                -1.7349999999999999,
+                -1.4475
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -2.355,
+              "seat1_mean": -0.475,
+              "seat_average_payoff": -1.415,
+              "cumulative_quarter_half_full": [
+                -1.27,
+                -1.375,
+                -1.415
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.03249999999999997,
+          "seat0_adaptation_gain": -0.08999999999999986,
+          "seat1_adaptation_gain": 0.024999999999999967
+        },
+        {
+          "seed": 2630,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.585,
+              "seat1_mean": -1.1,
+              "seat_average_payoff": -0.8425,
+              "cumulative_quarter_half_full": [
+                -0.32,
+                -1.035,
+                -0.8425
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -0.975,
+              "seat1_mean": -1.41,
+              "seat_average_payoff": -1.1925,
+              "cumulative_quarter_half_full": [
+                -0.3,
+                -1.02,
+                -1.1925
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.34999999999999987,
+          "seat0_adaptation_gain": 0.39,
+          "seat1_adaptation_gain": 0.30999999999999983
+        }
+      ]
+    },
+    "2000": {
+      "role": "primary",
+      "full_vs_frozen": {
+        "mean": 0.17175000000000004,
+        "seed_values": [
+          0.07750000000000012,
+          0.29499999999999993,
+          0.11749999999999994,
+          0.5675000000000001,
+          0.3274999999999999,
+          0.30000000000000004,
+          -0.24499999999999977,
+          0.4224999999999999,
+          0.11499999999999999,
+          0.12500000000000022,
+          0.24750000000000005,
+          0.08499999999999996,
+          0.3325,
+          0.3699999999999999,
+          0.3225,
+          -0.30999999999999983,
+          0.6000000000000001,
+          0.3125,
+          -0.012500000000000178,
+          0.2250000000000001,
+          0.09499999999999997,
+          0.007500000000000062,
+          0.2500000000000002,
+          -0.4524999999999998,
+          0.5075000000000002,
+          0.08250000000000002,
+          -0.20750000000000002,
+          -0.01750000000000007,
+          0.22999999999999998,
+          0.38250000000000006
+        ],
+        "paired_replicate_interval_95": [
+          0.08333333333333333,
+          0.25858333333333333
+        ],
+        "positive_replicate_fraction": 0.8,
+        "interval_excludes_zero_positive": true
+      },
+      "absolute_adaptive_payoff": {
+        "mean": -0.9869166666666663,
+        "seed_values": [
+          -0.8574999999999999,
+          -1.1825,
+          -0.8525,
+          -0.615,
+          -1.4025,
+          -0.79,
+          -1.0274999999999999,
+          -0.935,
+          -1.02,
+          -1.035,
+          -0.59,
+          -0.98,
+          -0.9575,
+          -1.2875,
+          -0.9275,
+          -1.2999999999999998,
+          -0.3675,
+          -0.7775000000000001,
+          -1.2475,
+          -1.27,
+          -1.05,
+          -1.0,
+          -0.95,
+          -1.1949999999999998,
+          -0.9,
+          -1.02,
+          -1.31,
+          -0.8125,
+          -1.185,
+          -0.7625
+        ],
+        "paired_replicate_interval_95": [
+          -1.073,
+          -0.9042499999999998
+        ],
+        "positive_replicate_fraction": 0.0,
+        "interval_excludes_zero_positive": false
+      },
+      "replicates": [
+        {
+          "seed": 2601,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.44,
+              "seat1_mean": -0.275,
+              "seat_average_payoff": -0.8574999999999999,
+              "cumulative_quarter_half_full": [
+                -1.5799999999999998,
+                -1.1199999999999999,
+                -0.8574999999999999
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.77,
+              "seat1_mean": -0.1,
+              "seat_average_payoff": -0.935,
+              "cumulative_quarter_half_full": [
+                -0.6199999999999999,
+                -0.7999999999999999,
+                -0.935
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.07750000000000012,
+          "seat0_adaptation_gain": 0.33000000000000007,
+          "seat1_adaptation_gain": -0.17500000000000002
+        },
+        {
+          "seed": 2602,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.995,
+              "seat1_mean": -1.37,
+              "seat_average_payoff": -1.1825,
+              "cumulative_quarter_half_full": [
+                -1.5499999999999998,
+                -1.345,
+                -1.1825
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.16,
+              "seat1_mean": -1.795,
+              "seat_average_payoff": -1.4775,
+              "cumulative_quarter_half_full": [
+                -1.65,
+                -1.56,
+                -1.4775
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.29499999999999993,
+          "seat0_adaptation_gain": 0.16499999999999992,
+          "seat1_adaptation_gain": 0.4249999999999998
+        },
+        {
+          "seed": 2603,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.21,
+              "seat1_mean": -0.495,
+              "seat_average_payoff": -0.8525,
+              "cumulative_quarter_half_full": [
+                -0.7899999999999999,
+                -0.755,
+                -0.8525
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -0.85,
+              "seat1_mean": -1.09,
+              "seat_average_payoff": -0.97,
+              "cumulative_quarter_half_full": [
+                -1.07,
+                -0.985,
+                -0.97
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.11749999999999994,
+          "seat0_adaptation_gain": -0.36,
+          "seat1_adaptation_gain": 0.5950000000000001
+        },
+        {
+          "seed": 2604,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.055,
+              "seat1_mean": -0.175,
+              "seat_average_payoff": -0.615,
+              "cumulative_quarter_half_full": [
+                -1.1600000000000001,
+                -0.99,
+                -0.615
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.805,
+              "seat1_mean": -0.56,
+              "seat_average_payoff": -1.1825,
+              "cumulative_quarter_half_full": [
+                -0.94,
+                -1.225,
+                -1.1825
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.5675000000000001,
+          "seat0_adaptation_gain": 0.75,
+          "seat1_adaptation_gain": 0.38500000000000006
+        },
+        {
+          "seed": 2605,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.685,
+              "seat1_mean": -1.12,
+              "seat_average_payoff": -1.4025,
+              "cumulative_quarter_half_full": [
+                -0.8600000000000001,
+                -1.085,
+                -1.4025
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -2.12,
+              "seat1_mean": -1.34,
+              "seat_average_payoff": -1.73,
+              "cumulative_quarter_half_full": [
+                -1.65,
+                -1.565,
+                -1.73
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.3274999999999999,
+          "seat0_adaptation_gain": 0.43500000000000005,
+          "seat1_adaptation_gain": 0.21999999999999997
+        },
+        {
+          "seed": 2606,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.595,
+              "seat1_mean": -0.985,
+              "seat_average_payoff": -0.79,
+              "cumulative_quarter_half_full": [
+                -1.31,
+                -1.31,
+                -0.79
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -0.84,
+              "seat1_mean": -1.34,
+              "seat_average_payoff": -1.09,
+              "cumulative_quarter_half_full": [
+                -1.06,
+                -1.17,
+                -1.09
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.30000000000000004,
+          "seat0_adaptation_gain": 0.245,
+          "seat1_adaptation_gain": 0.3550000000000001
+        },
+        {
+          "seed": 2607,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.7,
+              "seat1_mean": -0.355,
+              "seat_average_payoff": -1.0274999999999999,
+              "cumulative_quarter_half_full": [
+                -1.25,
+                -0.975,
+                -1.0274999999999999
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.475,
+              "seat1_mean": -0.09,
+              "seat_average_payoff": -0.7825000000000001,
+              "cumulative_quarter_half_full": [
+                -0.71,
+                -0.78,
+                -0.7825000000000001
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.24499999999999977,
+          "seat0_adaptation_gain": -0.22499999999999987,
+          "seat1_adaptation_gain": -0.265
+        },
+        {
+          "seed": 2608,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.885,
+              "seat1_mean": 0.015,
+              "seat_average_payoff": -0.935,
+              "cumulative_quarter_half_full": [
+                -0.52,
+                -0.57,
+                -0.935
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.83,
+              "seat1_mean": -0.885,
+              "seat_average_payoff": -1.3575,
+              "cumulative_quarter_half_full": [
+                -1.77,
+                -1.35,
+                -1.3575
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.4224999999999999,
+          "seat0_adaptation_gain": -0.05499999999999994,
+          "seat1_adaptation_gain": 0.9
+        },
+        {
+          "seed": 2609,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.695,
+              "seat1_mean": -0.345,
+              "seat_average_payoff": -1.02,
+              "cumulative_quarter_half_full": [
+                -0.79,
+                -0.645,
+                -1.02
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.495,
+              "seat1_mean": -0.775,
+              "seat_average_payoff": -1.135,
+              "cumulative_quarter_half_full": [
+                -0.69,
+                -0.6649999999999999,
+                -1.135
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.11499999999999999,
+          "seat0_adaptation_gain": -0.19999999999999996,
+          "seat1_adaptation_gain": 0.43000000000000005
+        },
+        {
+          "seed": 2610,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.43,
+              "seat1_mean": -0.64,
+              "seat_average_payoff": -1.035,
+              "cumulative_quarter_half_full": [
+                -1.09,
+                -0.705,
+                -1.035
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.695,
+              "seat1_mean": -0.625,
+              "seat_average_payoff": -1.1600000000000001,
+              "cumulative_quarter_half_full": [
+                0.12000000000000002,
+                -0.565,
+                -1.1600000000000001
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.12500000000000022,
+          "seat0_adaptation_gain": 0.2650000000000001,
+          "seat1_adaptation_gain": -0.015000000000000013
+        },
+        {
+          "seed": 2611,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.75,
+              "seat1_mean": -0.43,
+              "seat_average_payoff": -0.59,
+              "cumulative_quarter_half_full": [
+                -1.0,
+                -0.9750000000000001,
+                -0.59
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.69,
+              "seat1_mean": 0.015,
+              "seat_average_payoff": -0.8375,
+              "cumulative_quarter_half_full": [
+                -0.27,
+                -1.01,
+                -0.8375
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.24750000000000005,
+          "seat0_adaptation_gain": 0.94,
+          "seat1_adaptation_gain": -0.445
+        },
+        {
+          "seed": 2612,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.245,
+              "seat1_mean": -0.715,
+              "seat_average_payoff": -0.98,
+              "cumulative_quarter_half_full": [
+                -1.17,
+                -1.085,
+                -0.98
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.25,
+              "seat1_mean": -0.88,
+              "seat_average_payoff": -1.065,
+              "cumulative_quarter_half_full": [
+                -0.7899999999999999,
+                -1.07,
+                -1.065
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.08499999999999996,
+          "seat0_adaptation_gain": 0.004999999999999893,
+          "seat1_adaptation_gain": 0.16500000000000004
+        },
+        {
+          "seed": 2613,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.97,
+              "seat1_mean": -0.945,
+              "seat_average_payoff": -0.9575,
+              "cumulative_quarter_half_full": [
+                -0.96,
+                -0.935,
+                -0.9575
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.07,
+              "seat1_mean": -1.51,
+              "seat_average_payoff": -1.29,
+              "cumulative_quarter_half_full": [
+                -1.4,
+                -1.38,
+                -1.29
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.3325,
+          "seat0_adaptation_gain": 0.10000000000000009,
+          "seat1_adaptation_gain": 0.5650000000000001
+        },
+        {
+          "seed": 2614,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.48,
+              "seat1_mean": -1.095,
+              "seat_average_payoff": -1.2875,
+              "cumulative_quarter_half_full": [
+                -1.21,
+                -1.095,
+                -1.2875
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -2.02,
+              "seat1_mean": -1.295,
+              "seat_average_payoff": -1.6575,
+              "cumulative_quarter_half_full": [
+                -1.3499999999999999,
+                -1.5999999999999999,
+                -1.6575
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.3699999999999999,
+          "seat0_adaptation_gain": 0.54,
+          "seat1_adaptation_gain": 0.19999999999999996
+        },
+        {
+          "seed": 2615,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.01,
+              "seat1_mean": -0.845,
+              "seat_average_payoff": -0.9275,
+              "cumulative_quarter_half_full": [
+                -0.79,
+                -1.005,
+                -0.9275
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.035,
+              "seat1_mean": -1.465,
+              "seat_average_payoff": -1.25,
+              "cumulative_quarter_half_full": [
+                -1.25,
+                -0.895,
+                -1.25
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.3225,
+          "seat0_adaptation_gain": 0.02499999999999991,
+          "seat1_adaptation_gain": 0.6200000000000001
+        },
+        {
+          "seed": 2616,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.345,
+              "seat1_mean": -1.255,
+              "seat_average_payoff": -1.2999999999999998,
+              "cumulative_quarter_half_full": [
+                -1.77,
+                -1.5699999999999998,
+                -1.2999999999999998
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.325,
+              "seat1_mean": -0.655,
+              "seat_average_payoff": -0.99,
+              "cumulative_quarter_half_full": [
+                -0.64,
+                -1.095,
+                -0.99
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.30999999999999983,
+          "seat0_adaptation_gain": -0.020000000000000018,
+          "seat1_adaptation_gain": -0.5999999999999999
+        },
+        {
+          "seed": 2617,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.705,
+              "seat1_mean": -0.03,
+              "seat_average_payoff": -0.3675,
+              "cumulative_quarter_half_full": [
+                0.030000000000000027,
+                0.044999999999999984,
+                -0.3675
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.015,
+              "seat1_mean": -0.92,
+              "seat_average_payoff": -0.9675,
+              "cumulative_quarter_half_full": [
+                -0.79,
+                -1.19,
+                -0.9675
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.6000000000000001,
+          "seat0_adaptation_gain": 0.30999999999999994,
+          "seat1_adaptation_gain": 0.89
+        },
+        {
+          "seed": 2618,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.225,
+              "seat1_mean": -0.33,
+              "seat_average_payoff": -0.7775000000000001,
+              "cumulative_quarter_half_full": [
+                -1.1600000000000001,
+                -1.165,
+                -0.7775000000000001
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.645,
+              "seat1_mean": -0.535,
+              "seat_average_payoff": -1.09,
+              "cumulative_quarter_half_full": [
+                -1.01,
+                -1.04,
+                -1.09
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.3125,
+          "seat0_adaptation_gain": 0.41999999999999993,
+          "seat1_adaptation_gain": 0.20500000000000002
+        },
+        {
+          "seed": 2619,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.85,
+              "seat1_mean": -0.645,
+              "seat_average_payoff": -1.2475,
+              "cumulative_quarter_half_full": [
+                -1.47,
+                -1.565,
+                -1.2475
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.405,
+              "seat1_mean": -1.065,
+              "seat_average_payoff": -1.2349999999999999,
+              "cumulative_quarter_half_full": [
+                -1.01,
+                -1.5699999999999998,
+                -1.2349999999999999
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.012500000000000178,
+          "seat0_adaptation_gain": -0.44500000000000006,
+          "seat1_adaptation_gain": 0.41999999999999993
+        },
+        {
+          "seed": 2620,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.855,
+              "seat1_mean": -0.685,
+              "seat_average_payoff": -1.27,
+              "cumulative_quarter_half_full": [
+                -1.33,
+                -1.09,
+                -1.27
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -2.165,
+              "seat1_mean": -0.825,
+              "seat_average_payoff": -1.495,
+              "cumulative_quarter_half_full": [
+                -1.52,
+                -1.21,
+                -1.495
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.2250000000000001,
+          "seat0_adaptation_gain": 0.31000000000000005,
+          "seat1_adaptation_gain": 0.1399999999999999
+        },
+        {
+          "seed": 2621,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.775,
+              "seat1_mean": -0.325,
+              "seat_average_payoff": -1.05,
+              "cumulative_quarter_half_full": [
+                -0.58,
+                -1.08,
+                -1.05
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.9,
+              "seat1_mean": -0.39,
+              "seat_average_payoff": -1.145,
+              "cumulative_quarter_half_full": [
+                -0.95,
+                -1.27,
+                -1.145
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.09499999999999997,
+          "seat0_adaptation_gain": 0.125,
+          "seat1_adaptation_gain": 0.065
+        },
+        {
+          "seed": 2622,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.44,
+              "seat1_mean": -0.56,
+              "seat_average_payoff": -1.0,
+              "cumulative_quarter_half_full": [
+                -0.88,
+                -1.03,
+                -1.0
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.245,
+              "seat1_mean": -0.77,
+              "seat_average_payoff": -1.0075,
+              "cumulative_quarter_half_full": [
+                -0.8300000000000001,
+                -1.315,
+                -1.0075
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.007500000000000062,
+          "seat0_adaptation_gain": -0.19499999999999984,
+          "seat1_adaptation_gain": 0.20999999999999996
+        },
+        {
+          "seed": 2623,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.17,
+              "seat1_mean": -0.73,
+              "seat_average_payoff": -0.95,
+              "cumulative_quarter_half_full": [
+                -0.42000000000000004,
+                -0.6799999999999999,
+                -0.95
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.36,
+              "seat1_mean": -1.04,
+              "seat_average_payoff": -1.2000000000000002,
+              "cumulative_quarter_half_full": [
+                -1.21,
+                -0.9299999999999999,
+                -1.2000000000000002
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.2500000000000002,
+          "seat0_adaptation_gain": 0.19000000000000017,
+          "seat1_adaptation_gain": 0.31000000000000005
+        },
+        {
+          "seed": 2624,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.505,
+              "seat1_mean": -0.885,
+              "seat_average_payoff": -1.1949999999999998,
+              "cumulative_quarter_half_full": [
+                -0.9099999999999999,
+                -1.05,
+                -1.1949999999999998
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.03,
+              "seat1_mean": -0.455,
+              "seat_average_payoff": -0.7425,
+              "cumulative_quarter_half_full": [
+                0.39,
+                -0.515,
+                -0.7425
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.4524999999999998,
+          "seat0_adaptation_gain": -0.47499999999999987,
+          "seat1_adaptation_gain": -0.43
+        },
+        {
+          "seed": 2625,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.465,
+              "seat1_mean": -1.335,
+              "seat_average_payoff": -0.9,
+              "cumulative_quarter_half_full": [
+                -0.69,
+                -0.645,
+                -0.9
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.32,
+              "seat1_mean": -1.495,
+              "seat_average_payoff": -1.4075000000000002,
+              "cumulative_quarter_half_full": [
+                -1.62,
+                -1.33,
+                -1.4075000000000002
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.5075000000000002,
+          "seat0_adaptation_gain": 0.855,
+          "seat1_adaptation_gain": 0.16000000000000014
+        },
+        {
+          "seed": 2626,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": 0.075,
+              "seat1_mean": -2.115,
+              "seat_average_payoff": -1.02,
+              "cumulative_quarter_half_full": [
+                -1.08,
+                -0.81,
+                -1.02
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -0.185,
+              "seat1_mean": -2.02,
+              "seat_average_payoff": -1.1025,
+              "cumulative_quarter_half_full": [
+                -1.01,
+                -0.91,
+                -1.1025
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.08250000000000002,
+          "seat0_adaptation_gain": 0.26,
+          "seat1_adaptation_gain": -0.0950000000000002
+        },
+        {
+          "seed": 2627,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.12,
+              "seat1_mean": -1.5,
+              "seat_average_payoff": -1.31,
+              "cumulative_quarter_half_full": [
+                -1.36,
+                -1.48,
+                -1.31
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.135,
+              "seat1_mean": -1.07,
+              "seat_average_payoff": -1.1025,
+              "cumulative_quarter_half_full": [
+                -0.98,
+                -1.2,
+                -1.1025
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.20750000000000002,
+          "seat0_adaptation_gain": 0.014999999999999902,
+          "seat1_adaptation_gain": -0.42999999999999994
+        },
+        {
+          "seed": 2628,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.345,
+              "seat1_mean": -0.28,
+              "seat_average_payoff": -0.8125,
+              "cumulative_quarter_half_full": [
+                -1.15,
+                -0.96,
+                -0.8125
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.64,
+              "seat1_mean": 0.05,
+              "seat_average_payoff": -0.7949999999999999,
+              "cumulative_quarter_half_full": [
+                -0.82,
+                -0.955,
+                -0.7949999999999999
+              ]
+            }
+          },
+          "paired_adaptation_gain": -0.01750000000000007,
+          "seat0_adaptation_gain": 0.29499999999999993,
+          "seat1_adaptation_gain": -0.33
+        },
+        {
+          "seed": 2629,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -1.43,
+              "seat1_mean": -0.94,
+              "seat_average_payoff": -1.185,
+              "cumulative_quarter_half_full": [
+                -1.9,
+                -1.3900000000000001,
+                -1.185
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.945,
+              "seat1_mean": -0.885,
+              "seat_average_payoff": -1.415,
+              "cumulative_quarter_half_full": [
+                -0.7,
+                -0.965,
+                -1.415
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.22999999999999998,
+          "seat0_adaptation_gain": 0.5150000000000001,
+          "seat1_adaptation_gain": -0.05499999999999994
+        },
+        {
+          "seed": 2630,
+          "conditions": {
+            "adaptive": {
+              "seat0_mean": -0.77,
+              "seat1_mean": -0.755,
+              "seat_average_payoff": -0.7625,
+              "cumulative_quarter_half_full": [
+                -0.56,
+                -0.7949999999999999,
+                -0.7625
+              ]
+            },
+            "frozen": {
+              "seat0_mean": -1.32,
+              "seat1_mean": -0.97,
+              "seat_average_payoff": -1.145,
+              "cumulative_quarter_half_full": [
+                -0.31999999999999995,
+                -1.0550000000000002,
+                -1.145
+              ]
+            }
+          },
+          "paired_adaptation_gain": 0.38250000000000006,
+          "seat0_adaptation_gain": 0.55,
+          "seat1_adaptation_gain": 0.21499999999999997
+        }
+      ]
+    }
+  },
+  "primary_decision": {
+    "rule": "95% two-sided percentile paired-replicate bootstrap interval lower bound > 0",
+    "criterion_met": true,
+    "mean": 0.17175000000000004,
+    "interval_95": [
+      0.08333333333333333,
+      0.25858333333333333
+    ]
+  },
+  "limitations": "Fixed single CFR training sequence. Repeated hands are dependent within replicate; replicate is bootstrap unit. Previously selected hypothesis, new replicate seeds. Percentile bootstrap is nominal, not a formal guarantee. Secondary comparisons descriptive. Positive relative gain does not imply positive absolute PCC payoff or equilibrium play.",
+  "provenance": {
+    "earlier_reports_read_only": true,
+    "frozen_evidence_modified": false,
+    "human_data_accessed": false,
+    "policies_modified": false
+  }
+}
