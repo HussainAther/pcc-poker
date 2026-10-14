@@ -1,0 +1,681 @@
+{
+  "status": "completed",
+  "analysis_status": "prospective_balanced_adaptation_replication",
+  "design": {
+    "primary_case": "balanced",
+    "primary_cfr_iterations": 2000,
+    "secondary_cfr_iterations": 500,
+    "primary_contrast": "adaptive - opponent_only - history_only + frozen",
+    "seeds": [
+      2401,
+      2402,
+      2403,
+      2404,
+      2405,
+      2406,
+      2407,
+      2408,
+      2409,
+      2410,
+      2411,
+      2412,
+      2413,
+      2414,
+      2415,
+      2416,
+      2417,
+      2418,
+      2419,
+      2420
+    ],
+    "hands_per_seat": 200,
+    "temperature": 0.35,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 2400,
+    "paired_chance_deals": true,
+    "separate_agent_state_per_condition_and_seat": true,
+    "same_seed_across_conditions": true,
+    "cfr_fixed_during_match": true,
+    "no_parameter_tuning_on_test_replicates": true
+  },
+  "design_sha256": "1b1eb481292902651fd7e5c9591ea22ded4c8509e615d7bab4db78e79a162d1f",
+  "results": {
+    "500": {
+      "role": "secondary",
+      "interaction": {
+        "mean": 0.0002499999999999836,
+        "seed_values": [
+          0.04500000000000015,
+          0.23499999999999988,
+          -0.645,
+          0.10499999999999998,
+          0.004999999999999893,
+          0.12750000000000017,
+          -0.4099999999999999,
+          0.009999999999999787,
+          -0.25,
+          -0.5499999999999998,
+          -0.18999999999999995,
+          -0.3649999999999999,
+          0.27249999999999996,
+          0.5374999999999999,
+          0.2925,
+          0.28,
+          0.02499999999999991,
+          -0.15249999999999986,
+          0.49750000000000005,
+          0.13499999999999956
+        ],
+        "paired_replicate_interval_95": [
+          -0.13225,
+          0.13324999999999998
+        ],
+        "positive_replicate_fraction": 0.65
+      },
+      "full_vs_frozen": {
+        "mean": 0.17587500000000006,
+        "seed_values": [
+          0.7150000000000001,
+          -0.09250000000000003,
+          0.2875000000000001,
+          -0.37249999999999983,
+          0.4450000000000002,
+          0.18500000000000005,
+          0.34999999999999987,
+          0.5675000000000001,
+          -0.395,
+          0.41000000000000014,
+          0.4325000000000001,
+          -0.2825,
+          0.3600000000000001,
+          1.03,
+          -0.07250000000000001,
+          -0.4450000000000003,
+          -0.22250000000000014,
+          0.10999999999999965,
+          0.505,
+          0.0025000000000001688
+        ],
+        "paired_replicate_interval_95": [
+          0.009249999999999991,
+          0.342875
+        ],
+        "positive_replicate_fraction": 0.65
+      },
+      "absolute_adaptive_payoff": {
+        "mean": -1.1051250000000001,
+        "seed_values": [
+          -0.96,
+          -1.115,
+          -1.3599999999999999,
+          -1.295,
+          -0.7975,
+          -0.825,
+          -0.9875,
+          -0.7975000000000001,
+          -1.395,
+          -1.1324999999999998,
+          -0.7949999999999999,
+          -1.115,
+          -1.02,
+          -0.645,
+          -0.9025000000000001,
+          -1.6600000000000001,
+          -1.6625,
+          -1.2550000000000001,
+          -0.9125,
+          -1.47
+        ],
+        "paired_replicate_interval_95": [
+          -1.2317499999999997,
+          -0.9829999999999999
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "replicates": [
+        {
+          "seed": 2401,
+          "conditions": {
+            "adaptive": -0.96,
+            "frozen": -1.675,
+            "opponent_only": -1.6400000000000001,
+            "history_only": -1.04
+          },
+          "primary_interaction": 0.04500000000000015,
+          "full_vs_frozen": 0.7150000000000001
+        },
+        {
+          "seed": 2402,
+          "conditions": {
+            "adaptive": -1.115,
+            "frozen": -1.0225,
+            "opponent_only": -1.53,
+            "history_only": -0.8424999999999999
+          },
+          "primary_interaction": 0.23499999999999988,
+          "full_vs_frozen": -0.09250000000000003
+        },
+        {
+          "seed": 2403,
+          "conditions": {
+            "adaptive": -1.3599999999999999,
+            "frozen": -1.6475,
+            "opponent_only": -0.9874999999999999,
+            "history_only": -1.375
+          },
+          "primary_interaction": -0.645,
+          "full_vs_frozen": 0.2875000000000001
+        },
+        {
+          "seed": 2404,
+          "conditions": {
+            "adaptive": -1.295,
+            "frozen": -0.9225000000000001,
+            "opponent_only": -1.04,
+            "history_only": -1.2825
+          },
+          "primary_interaction": 0.10499999999999998,
+          "full_vs_frozen": -0.37249999999999983
+        },
+        {
+          "seed": 2405,
+          "conditions": {
+            "adaptive": -0.7975,
+            "frozen": -1.2425000000000002,
+            "opponent_only": -1.085,
+            "history_only": -0.9600000000000001
+          },
+          "primary_interaction": 0.004999999999999893,
+          "full_vs_frozen": 0.4450000000000002
+        },
+        {
+          "seed": 2406,
+          "conditions": {
+            "adaptive": -0.825,
+            "frozen": -1.01,
+            "opponent_only": -0.92,
+            "history_only": -1.0425
+          },
+          "primary_interaction": 0.12750000000000017,
+          "full_vs_frozen": 0.18500000000000005
+        },
+        {
+          "seed": 2407,
+          "conditions": {
+            "adaptive": -0.9875,
+            "frozen": -1.3375,
+            "opponent_only": -0.9275,
+            "history_only": -0.9875
+          },
+          "primary_interaction": -0.4099999999999999,
+          "full_vs_frozen": 0.34999999999999987
+        },
+        {
+          "seed": 2408,
+          "conditions": {
+            "adaptive": -0.7975000000000001,
+            "frozen": -1.3650000000000002,
+            "opponent_only": -1.2200000000000002,
+            "history_only": -0.9525
+          },
+          "primary_interaction": 0.009999999999999787,
+          "full_vs_frozen": 0.5675000000000001
+        },
+        {
+          "seed": 2409,
+          "conditions": {
+            "adaptive": -1.395,
+            "frozen": -1.0,
+            "opponent_only": -1.0025,
+            "history_only": -1.1425
+          },
+          "primary_interaction": -0.25,
+          "full_vs_frozen": -0.395
+        },
+        {
+          "seed": 2410,
+          "conditions": {
+            "adaptive": -1.1324999999999998,
+            "frozen": -1.5425,
+            "opponent_only": -1.165,
+            "history_only": -0.96
+          },
+          "primary_interaction": -0.5499999999999998,
+          "full_vs_frozen": 0.41000000000000014
+        },
+        {
+          "seed": 2411,
+          "conditions": {
+            "adaptive": -0.7949999999999999,
+            "frozen": -1.2275,
+            "opponent_only": -0.9550000000000001,
+            "history_only": -0.8775
+          },
+          "primary_interaction": -0.18999999999999995,
+          "full_vs_frozen": 0.4325000000000001
+        },
+        {
+          "seed": 2412,
+          "conditions": {
+            "adaptive": -1.115,
+            "frozen": -0.8325,
+            "opponent_only": -1.0250000000000001,
+            "history_only": -0.5575
+          },
+          "primary_interaction": -0.3649999999999999,
+          "full_vs_frozen": -0.2825
+        },
+        {
+          "seed": 2413,
+          "conditions": {
+            "adaptive": -1.02,
+            "frozen": -1.3800000000000001,
+            "opponent_only": -1.62,
+            "history_only": -1.0525
+          },
+          "primary_interaction": 0.27249999999999996,
+          "full_vs_frozen": 0.3600000000000001
+        },
+        {
+          "seed": 2414,
+          "conditions": {
+            "adaptive": -0.645,
+            "frozen": -1.675,
+            "opponent_only": -1.25,
+            "history_only": -1.6075
+          },
+          "primary_interaction": 0.5374999999999999,
+          "full_vs_frozen": 1.03
+        },
+        {
+          "seed": 2415,
+          "conditions": {
+            "adaptive": -0.9025000000000001,
+            "frozen": -0.8300000000000001,
+            "opponent_only": -1.0375,
+            "history_only": -0.9874999999999999
+          },
+          "primary_interaction": 0.2925,
+          "full_vs_frozen": -0.07250000000000001
+        },
+        {
+          "seed": 2416,
+          "conditions": {
+            "adaptive": -1.6600000000000001,
+            "frozen": -1.2149999999999999,
+            "opponent_only": -1.9175,
+            "history_only": -1.2375
+          },
+          "primary_interaction": 0.28,
+          "full_vs_frozen": -0.4450000000000003
+        },
+        {
+          "seed": 2417,
+          "conditions": {
+            "adaptive": -1.6625,
+            "frozen": -1.44,
+            "opponent_only": -1.625,
+            "history_only": -1.5025
+          },
+          "primary_interaction": 0.02499999999999991,
+          "full_vs_frozen": -0.22250000000000014
+        },
+        {
+          "seed": 2418,
+          "conditions": {
+            "adaptive": -1.2550000000000001,
+            "frozen": -1.3649999999999998,
+            "opponent_only": -1.29,
+            "history_only": -1.1775
+          },
+          "primary_interaction": -0.15249999999999986,
+          "full_vs_frozen": 0.10999999999999965
+        },
+        {
+          "seed": 2419,
+          "conditions": {
+            "adaptive": -0.9125,
+            "frozen": -1.4175,
+            "opponent_only": -1.545,
+            "history_only": -1.2825
+          },
+          "primary_interaction": 0.49750000000000005,
+          "full_vs_frozen": 0.505
+        },
+        {
+          "seed": 2420,
+          "conditions": {
+            "adaptive": -1.47,
+            "frozen": -1.4725000000000001,
+            "opponent_only": -1.6549999999999998,
+            "history_only": -1.4224999999999999
+          },
+          "primary_interaction": 0.13499999999999956,
+          "full_vs_frozen": 0.0025000000000001688
+        }
+      ]
+    },
+    "2000": {
+      "role": "primary",
+      "interaction": {
+        "mean": 0.029874999999999978,
+        "seed_values": [
+          0.16500000000000026,
+          -0.24749999999999983,
+          -0.0625,
+          -0.18749999999999978,
+          -0.1924999999999999,
+          0.2649999999999999,
+          -0.4149999999999999,
+          0.1974999999999998,
+          -0.014999999999999902,
+          0.5875000000000001,
+          -0.05999999999999994,
+          -0.41000000000000014,
+          -0.29500000000000015,
+          -0.12750000000000017,
+          0.41999999999999993,
+          0.9799999999999995,
+          0.30249999999999977,
+          -0.5825000000000001,
+          0.03499999999999992,
+          0.2400000000000002
+        ],
+        "paired_replicate_interval_95": [
+          -0.12587499999999996,
+          0.19649999999999995
+        ],
+        "positive_replicate_fraction": 0.45
+      },
+      "full_vs_frozen": {
+        "mean": 0.13750000000000004,
+        "seed_values": [
+          0.2174999999999998,
+          0.09749999999999992,
+          -0.05499999999999994,
+          -0.18249999999999988,
+          0.14749999999999996,
+          -0.23249999999999993,
+          0.41749999999999987,
+          0.4475,
+          -0.01749999999999996,
+          0.16749999999999998,
+          -0.0525000000000001,
+          0.3500000000000001,
+          0.3275000000000001,
+          0.5275000000000001,
+          0.33000000000000007,
+          0.13250000000000028,
+          -0.27749999999999986,
+          -0.11249999999999982,
+          0.4425000000000001,
+          0.07499999999999996
+        ],
+        "paired_replicate_interval_95": [
+          0.03087500000000003,
+          0.24000000000000005
+        ],
+        "positive_replicate_fraction": 0.65
+      },
+      "absolute_adaptive_payoff": {
+        "mean": -1.0079999999999998,
+        "seed_values": [
+          -1.185,
+          -0.915,
+          -1.195,
+          -1.3175,
+          -1.125,
+          -0.9375,
+          -0.6825,
+          -0.7575000000000001,
+          -0.9724999999999999,
+          -0.6775,
+          -0.79,
+          -0.875,
+          -1.1025,
+          -0.9875,
+          -0.69,
+          -1.17,
+          -1.345,
+          -1.3475,
+          -0.9099999999999999,
+          -1.1775
+        ],
+        "paired_replicate_interval_95": [
+          -1.1035,
+          -0.912625
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "replicates": [
+        {
+          "seed": 2401,
+          "conditions": {
+            "adaptive": -1.185,
+            "frozen": -1.4024999999999999,
+            "opponent_only": -1.5550000000000002,
+            "history_only": -1.1975
+          },
+          "primary_interaction": 0.16500000000000026,
+          "full_vs_frozen": 0.2174999999999998
+        },
+        {
+          "seed": 2402,
+          "conditions": {
+            "adaptive": -0.915,
+            "frozen": -1.0125,
+            "opponent_only": -0.7550000000000001,
+            "history_only": -0.925
+          },
+          "primary_interaction": -0.24749999999999983,
+          "full_vs_frozen": 0.09749999999999992
+        },
+        {
+          "seed": 2403,
+          "conditions": {
+            "adaptive": -1.195,
+            "frozen": -1.1400000000000001,
+            "opponent_only": -1.05,
+            "history_only": -1.2225000000000001
+          },
+          "primary_interaction": -0.0625,
+          "full_vs_frozen": -0.05499999999999994
+        },
+        {
+          "seed": 2404,
+          "conditions": {
+            "adaptive": -1.3175,
+            "frozen": -1.135,
+            "opponent_only": -0.9775,
+            "history_only": -1.2875
+          },
+          "primary_interaction": -0.18749999999999978,
+          "full_vs_frozen": -0.18249999999999988
+        },
+        {
+          "seed": 2405,
+          "conditions": {
+            "adaptive": -1.125,
+            "frozen": -1.2725,
+            "opponent_only": -1.2175,
+            "history_only": -0.9874999999999999
+          },
+          "primary_interaction": -0.1924999999999999,
+          "full_vs_frozen": 0.14749999999999996
+        },
+        {
+          "seed": 2406,
+          "conditions": {
+            "adaptive": -0.9375,
+            "frozen": -0.7050000000000001,
+            "opponent_only": -1.2725,
+            "history_only": -0.635
+          },
+          "primary_interaction": 0.2649999999999999,
+          "full_vs_frozen": -0.23249999999999993
+        },
+        {
+          "seed": 2407,
+          "conditions": {
+            "adaptive": -0.6825,
+            "frozen": -1.0999999999999999,
+            "opponent_only": -0.76,
+            "history_only": -0.6074999999999999
+          },
+          "primary_interaction": -0.4149999999999999,
+          "full_vs_frozen": 0.41749999999999987
+        },
+        {
+          "seed": 2408,
+          "conditions": {
+            "adaptive": -0.7575000000000001,
+            "frozen": -1.205,
+            "opponent_only": -1.1575,
+            "history_only": -1.0025
+          },
+          "primary_interaction": 0.1974999999999998,
+          "full_vs_frozen": 0.4475
+        },
+        {
+          "seed": 2409,
+          "conditions": {
+            "adaptive": -0.9724999999999999,
+            "frozen": -0.955,
+            "opponent_only": -0.9325,
+            "history_only": -0.98
+          },
+          "primary_interaction": -0.014999999999999902,
+          "full_vs_frozen": -0.01749999999999996
+        },
+        {
+          "seed": 2410,
+          "conditions": {
+            "adaptive": -0.6775,
+            "frozen": -0.845,
+            "opponent_only": -1.0075,
+            "history_only": -1.1025
+          },
+          "primary_interaction": 0.5875000000000001,
+          "full_vs_frozen": 0.16749999999999998
+        },
+        {
+          "seed": 2411,
+          "conditions": {
+            "adaptive": -0.79,
+            "frozen": -0.7374999999999999,
+            "opponent_only": -0.8225,
+            "history_only": -0.645
+          },
+          "primary_interaction": -0.05999999999999994,
+          "full_vs_frozen": -0.0525000000000001
+        },
+        {
+          "seed": 2412,
+          "conditions": {
+            "adaptive": -0.875,
+            "frozen": -1.225,
+            "opponent_only": -0.865,
+            "history_only": -0.825
+          },
+          "primary_interaction": -0.41000000000000014,
+          "full_vs_frozen": 0.3500000000000001
+        },
+        {
+          "seed": 2413,
+          "conditions": {
+            "adaptive": -1.1025,
+            "frozen": -1.4300000000000002,
+            "opponent_only": -1.1400000000000001,
+            "history_only": -1.0975
+          },
+          "primary_interaction": -0.29500000000000015,
+          "full_vs_frozen": 0.3275000000000001
+        },
+        {
+          "seed": 2414,
+          "conditions": {
+            "adaptive": -0.9875,
+            "frozen": -1.5150000000000001,
+            "opponent_only": -1.3399999999999999,
+            "history_only": -1.0350000000000001
+          },
+          "primary_interaction": -0.12750000000000017,
+          "full_vs_frozen": 0.5275000000000001
+        },
+        {
+          "seed": 2415,
+          "conditions": {
+            "adaptive": -0.69,
+            "frozen": -1.02,
+            "opponent_only": -0.9225,
+            "history_only": -1.2075
+          },
+          "primary_interaction": 0.41999999999999993,
+          "full_vs_frozen": 0.33000000000000007
+        },
+        {
+          "seed": 2416,
+          "conditions": {
+            "adaptive": -1.17,
+            "frozen": -1.3025000000000002,
+            "opponent_only": -1.5425,
+            "history_only": -1.91
+          },
+          "primary_interaction": 0.9799999999999995,
+          "full_vs_frozen": 0.13250000000000028
+        },
+        {
+          "seed": 2417,
+          "conditions": {
+            "adaptive": -1.345,
+            "frozen": -1.0675000000000001,
+            "opponent_only": -1.27,
+            "history_only": -1.4449999999999998
+          },
+          "primary_interaction": 0.30249999999999977,
+          "full_vs_frozen": -0.27749999999999986
+        },
+        {
+          "seed": 2418,
+          "conditions": {
+            "adaptive": -1.3475,
+            "frozen": -1.235,
+            "opponent_only": -1.1275,
+            "history_only": -0.8724999999999999
+          },
+          "primary_interaction": -0.5825000000000001,
+          "full_vs_frozen": -0.11249999999999982
+        },
+        {
+          "seed": 2419,
+          "conditions": {
+            "adaptive": -0.9099999999999999,
+            "frozen": -1.3525,
+            "opponent_only": -1.2574999999999998,
+            "history_only": -1.04
+          },
+          "primary_interaction": 0.03499999999999992,
+          "full_vs_frozen": 0.4425000000000001
+        },
+        {
+          "seed": 2420,
+          "conditions": {
+            "adaptive": -1.1775,
+            "frozen": -1.2525,
+            "opponent_only": -1.52,
+            "history_only": -1.1500000000000001
+          },
+          "primary_interaction": 0.2400000000000002,
+          "full_vs_frozen": 0.07499999999999996
+        }
+      ]
+    }
+  },
+  "interpretation_rule": "Primary contrast is 2000-iteration factorial interaction; evaluate its paired replicate interval before secondary findings. No multiplicity-adjusted confirmatory claim.",
+  "limitations": "Replicate bootstrap intervals are descriptive; learning-dependent hands are not independent. CFR baselines share one trained solver; no full adaptive PCC exploitability claim. A post-observation design selected from Patch 13 requires fresh replication and careful reporting.",
+  "provenance": {
+    "prior_reports_read_only": true,
+    "frozen_evidence_modified": false,
+    "human_data_accessed": false
+  }
+}
