@@ -1,0 +1,3316 @@
+{
+  "status": "completed",
+  "design": {
+    "design_version": "patch19-exploratory-timescale-v1",
+    "interpretation": "exploratory_not_preregistered_confirmation",
+    "seeds": [
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011,
+      3012,
+      3013,
+      3014,
+      3015,
+      3016,
+      3017,
+      3018,
+      3019,
+      3020,
+      3021,
+      3022,
+      3023,
+      3024,
+      3025,
+      3026,
+      3027,
+      3028,
+      3029,
+      3030
+    ],
+    "hands_per_seat": 200,
+    "cfr_iterations": 2000,
+    "temperature": 0.35,
+    "periods": [
+      1,
+      10,
+      25,
+      50,
+      100
+    ],
+    "component_period": 50,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 3000,
+    "conditions": [
+      {
+        "name": "continuous",
+        "opponent_reset_period": null,
+        "history_reset_period": null
+      },
+      {
+        "name": "both_every_1",
+        "opponent_reset_period": 1,
+        "history_reset_period": 1
+      },
+      {
+        "name": "both_every_10",
+        "opponent_reset_period": 10,
+        "history_reset_period": 10
+      },
+      {
+        "name": "both_every_25",
+        "opponent_reset_period": 25,
+        "history_reset_period": 25
+      },
+      {
+        "name": "both_every_50",
+        "opponent_reset_period": 50,
+        "history_reset_period": 50
+      },
+      {
+        "name": "both_every_100",
+        "opponent_reset_period": 100,
+        "history_reset_period": 100
+      },
+      {
+        "name": "opponent_only_reset",
+        "opponent_reset_period": 50,
+        "history_reset_period": null
+      },
+      {
+        "name": "history_only_reset",
+        "opponent_reset_period": null,
+        "history_reset_period": 50
+      }
+    ],
+    "reset_before_hand": "period+1, 2*period+1, ...",
+    "pcc_and_cfr_rng_preserved_across_resets": true,
+    "same_chance_deals_across_arms_and_seats": true,
+    "independent_learning_state_per_arm_and_seat": true
+  },
+  "design_sha256": "5ac4be0dd4d1a6c0fc757ecaaa9dbad648c4160289cf9ee2fada2a3d843b483a",
+  "summaries": {
+    "continuous": {
+      "absolute_payoff": {
+        "mean": -0.9273333333333335,
+        "seed_values": [
+          -0.7425,
+          -1.025,
+          -0.8575,
+          -0.685,
+          -0.735,
+          -0.9625,
+          -0.82,
+          -1.4825,
+          -0.8325,
+          -0.97,
+          -0.915,
+          -0.975,
+          -0.765,
+          -0.985,
+          -1.0075,
+          -0.6675,
+          -0.935,
+          -0.73,
+          -1.3,
+          -0.6875,
+          -1.16,
+          -0.9,
+          -0.7875,
+          -0.815,
+          -1.2075,
+          -0.875,
+          -1.2575,
+          -0.825,
+          -1.055,
+          -0.8575
+        ],
+        "paired_replicate_interval_95": [
+          -1.0001666666666664,
+          -0.8629166666666669
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.0,
+        "seed_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "paired_replicate_interval_95": [
+          0.0,
+          0.0
+        ],
+        "positive_replicate_fraction": 0.0
+      }
+    },
+    "both_every_1": {
+      "absolute_payoff": {
+        "mean": -1.1097499999999998,
+        "seed_values": [
+          -1.0525,
+          -1.0625,
+          -1.31,
+          -0.93,
+          -1.515,
+          -1.2875,
+          -0.9875,
+          -1.5675,
+          -0.945,
+          -1.16,
+          -1.245,
+          -1.2975,
+          -0.8275,
+          -1.2325,
+          -0.7275,
+          -0.8125,
+          -1.175,
+          -0.83,
+          -1.4225,
+          -0.65,
+          -0.93,
+          -0.805,
+          -1.1425,
+          -0.8025,
+          -1.435,
+          -0.9575,
+          -1.4125,
+          -1.4825,
+          -1.27,
+          -1.0175
+        ],
+        "paired_replicate_interval_95": [
+          -1.2039166666666665,
+          -1.0174999999999998
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.18241666666666667,
+        "seed_values": [
+          0.30999999999999994,
+          0.03750000000000009,
+          0.4525,
+          0.245,
+          0.7799999999999999,
+          0.32500000000000007,
+          0.1675000000000001,
+          0.08499999999999996,
+          0.11249999999999993,
+          0.18999999999999995,
+          0.33000000000000007,
+          0.3225000000000001,
+          0.0625,
+          0.24749999999999994,
+          -0.28,
+          0.14500000000000002,
+          0.24,
+          0.09999999999999998,
+          0.12250000000000005,
+          -0.03749999999999998,
+          -0.22999999999999987,
+          -0.09499999999999997,
+          0.3550000000000001,
+          -0.012499999999999956,
+          0.22750000000000004,
+          0.08250000000000002,
+          0.15500000000000003,
+          0.6575,
+          0.21500000000000008,
+          0.16000000000000003
+        ],
+        "paired_replicate_interval_95": [
+          0.10575000000000001,
+          0.26025000000000004
+        ],
+        "positive_replicate_fraction": 0.8333333333333334
+      }
+    },
+    "both_every_10": {
+      "absolute_payoff": {
+        "mean": -1.0615,
+        "seed_values": [
+          -1.235,
+          -0.955,
+          -0.7475,
+          -1.4975,
+          -1.5125,
+          -1.28,
+          -0.875,
+          -1.56,
+          -0.8875,
+          -0.9775,
+          -0.8325,
+          -1.225,
+          -0.835,
+          -1.3,
+          -0.6825,
+          -0.8975,
+          -0.9675,
+          -1.22,
+          -1.41,
+          -0.755,
+          -0.875,
+          -1.09,
+          -0.8425,
+          -0.8,
+          -1.21,
+          -1.2325,
+          -1.365,
+          -0.6275,
+          -1.3625,
+          -0.7875
+        ],
+        "paired_replicate_interval_95": [
+          -1.1605833333333335,
+          -0.9692500000000004
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.13416666666666666,
+        "seed_values": [
+          0.49250000000000005,
+          -0.06999999999999995,
+          -0.10999999999999999,
+          0.8125,
+          0.7775,
+          0.3175,
+          0.05500000000000005,
+          0.07750000000000012,
+          0.05499999999999994,
+          0.007500000000000062,
+          -0.08250000000000002,
+          0.2500000000000001,
+          0.06999999999999995,
+          0.31500000000000006,
+          -0.32500000000000007,
+          0.22999999999999998,
+          0.03249999999999997,
+          0.49,
+          0.10999999999999988,
+          0.0675,
+          -0.2849999999999999,
+          0.19000000000000006,
+          0.05500000000000005,
+          -0.014999999999999902,
+          0.0024999999999999467,
+          0.35749999999999993,
+          0.10749999999999993,
+          -0.1975,
+          0.3075000000000001,
+          -0.07000000000000006
+        ],
+        "paired_replicate_interval_95": [
+          0.04225000000000002,
+          0.2261666666666667
+        ],
+        "positive_replicate_fraction": 0.7333333333333333
+      }
+    },
+    "both_every_25": {
+      "absolute_payoff": {
+        "mean": -1.0296666666666667,
+        "seed_values": [
+          -1.1225,
+          -1.055,
+          -0.81,
+          -0.9275,
+          -1.17,
+          -1.1225,
+          -0.85,
+          -1.59,
+          -0.7725,
+          -0.93,
+          -0.73,
+          -1.3575,
+          -0.6675,
+          -1.025,
+          -0.81,
+          -1.335,
+          -1.2475,
+          -1.11,
+          -1.5375,
+          -0.7575,
+          -1.0375,
+          -1.0825,
+          -0.7275,
+          -0.6575,
+          -1.51,
+          -0.8375,
+          -1.2725,
+          -0.745,
+          -1.425,
+          -0.6675
+        ],
+        "paired_replicate_interval_95": [
+          -1.1281666666666665,
+          -0.9308333333333334
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.10233333333333333,
+        "seed_values": [
+          0.38,
+          0.030000000000000027,
+          -0.04749999999999999,
+          0.24249999999999994,
+          0.43499999999999994,
+          0.16000000000000003,
+          0.030000000000000027,
+          0.10750000000000015,
+          -0.06000000000000005,
+          -0.039999999999999925,
+          -0.18500000000000005,
+          0.38249999999999995,
+          -0.09750000000000003,
+          0.039999999999999925,
+          -0.1975,
+          0.6675,
+          0.3125,
+          0.3800000000000001,
+          0.23750000000000004,
+          0.06999999999999995,
+          -0.12249999999999983,
+          0.1825,
+          -0.05999999999999994,
+          -0.15749999999999997,
+          0.3025,
+          -0.03749999999999998,
+          0.014999999999999902,
+          -0.07999999999999996,
+          0.3700000000000001,
+          -0.19000000000000006
+        ],
+        "paired_replicate_interval_95": [
+          0.02716666666666665,
+          0.18425
+        ],
+        "positive_replicate_fraction": 0.6
+      }
+    },
+    "both_every_50": {
+      "absolute_payoff": {
+        "mean": -1.0021666666666667,
+        "seed_values": [
+          -0.7425,
+          -0.6675,
+          -0.6725,
+          -0.8375,
+          -1.415,
+          -1.325,
+          -1.0825,
+          -1.69,
+          -0.6825,
+          -1.2075,
+          -0.65,
+          -0.9825,
+          -0.63,
+          -1.0175,
+          -1.0075,
+          -0.8375,
+          -1.115,
+          -0.835,
+          -1.73,
+          -0.33,
+          -1.145,
+          -1.035,
+          -1.0525,
+          -0.745,
+          -0.9575,
+          -1.135,
+          -1.325,
+          -1.075,
+          -1.185,
+          -0.9525
+        ],
+        "paired_replicate_interval_95": [
+          -1.116083333333333,
+          -0.8974999999999999
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.07483333333333334,
+        "seed_values": [
+          0.0,
+          -0.35749999999999993,
+          -0.18500000000000005,
+          0.15249999999999997,
+          0.68,
+          0.36249999999999993,
+          0.26250000000000007,
+          0.20750000000000002,
+          -0.15000000000000002,
+          0.23750000000000004,
+          -0.265,
+          0.007500000000000062,
+          -0.135,
+          0.032500000000000084,
+          0.0,
+          0.17000000000000004,
+          0.17999999999999994,
+          0.10499999999999998,
+          0.42999999999999994,
+          -0.3575,
+          -0.014999999999999902,
+          0.1349999999999999,
+          0.265,
+          -0.06999999999999995,
+          -0.25,
+          0.26,
+          0.0674999999999999,
+          0.25,
+          0.13000000000000012,
+          0.09499999999999997
+        ],
+        "paired_replicate_interval_95": [
+          -0.005999999999999991,
+          0.15883333333333333
+        ],
+        "positive_replicate_fraction": 0.6333333333333333
+      }
+    },
+    "both_every_100": {
+      "absolute_payoff": {
+        "mean": -0.9631666666666667,
+        "seed_values": [
+          -0.8625,
+          -0.9475,
+          -0.7725,
+          -0.7375,
+          -1.23,
+          -1.265,
+          -0.8575,
+          -1.4275,
+          -0.8125,
+          -0.9625,
+          -0.7925,
+          -0.855,
+          -0.4525,
+          -1.05,
+          -1.045,
+          -0.76,
+          -1.0825,
+          -1.015,
+          -1.2125,
+          -0.6575,
+          -1.155,
+          -0.9325,
+          -0.6825,
+          -0.8975,
+          -1.385,
+          -1.0925,
+          -1.365,
+          -0.82,
+          -1.055,
+          -0.7125
+        ],
+        "paired_replicate_interval_95": [
+          -1.0478333333333336,
+          -0.8830833333333336
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.03583333333333332,
+        "seed_values": [
+          0.12,
+          -0.0774999999999999,
+          -0.08500000000000008,
+          0.05249999999999999,
+          0.495,
+          0.3024999999999999,
+          0.03750000000000009,
+          -0.05499999999999994,
+          -0.020000000000000018,
+          -0.007499999999999951,
+          -0.12250000000000005,
+          -0.12,
+          -0.3125,
+          0.06500000000000006,
+          0.03749999999999987,
+          0.09250000000000003,
+          0.14749999999999996,
+          0.2849999999999999,
+          -0.08750000000000013,
+          -0.030000000000000027,
+          -0.004999999999999893,
+          0.03249999999999997,
+          -0.10499999999999998,
+          0.08250000000000002,
+          0.1775,
+          0.21750000000000003,
+          0.10749999999999993,
+          -0.0050000000000000044,
+          0.0,
+          -0.14500000000000002
+        ],
+        "paired_replicate_interval_95": [
+          -0.018500000000000006,
+          0.09358333333333332
+        ],
+        "positive_replicate_fraction": 0.5
+      }
+    },
+    "opponent_only_reset": {
+      "absolute_payoff": {
+        "mean": -0.9875833333333334,
+        "seed_values": [
+          -0.8175,
+          -1.2125,
+          -0.635,
+          -0.625,
+          -1.1275,
+          -1.3,
+          -0.8625,
+          -1.54,
+          -0.8225,
+          -0.97,
+          -1.0525,
+          -1.3725,
+          -0.95,
+          -1.13,
+          -0.975,
+          -0.7975,
+          -0.835,
+          -1.0625,
+          -1.2875,
+          -0.8875,
+          -1.1875,
+          -0.935,
+          -0.595,
+          -0.5325,
+          -1.51,
+          -0.925,
+          -1.1775,
+          -0.6275,
+          -1.245,
+          -0.63
+        ],
+        "paired_replicate_interval_95": [
+          -1.0793333333333333,
+          -0.8887500000000002
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.06025000000000002,
+        "seed_values": [
+          0.07499999999999996,
+          0.1875,
+          -0.22250000000000003,
+          -0.06000000000000005,
+          0.39249999999999996,
+          0.3375,
+          0.04250000000000009,
+          0.05750000000000011,
+          -0.010000000000000009,
+          0.0,
+          0.13749999999999996,
+          0.3975000000000001,
+          0.18499999999999994,
+          0.1449999999999999,
+          -0.032500000000000084,
+          0.13,
+          -0.10000000000000009,
+          0.3325,
+          -0.012499999999999956,
+          0.19999999999999996,
+          0.02750000000000008,
+          0.03500000000000003,
+          -0.1925,
+          -0.2825,
+          0.3025,
+          0.050000000000000044,
+          -0.08000000000000007,
+          -0.1975,
+          0.19000000000000017,
+          -0.22750000000000004
+        ],
+        "paired_replicate_interval_95": [
+          -0.003499999999999992,
+          0.12433333333333337
+        ],
+        "positive_replicate_fraction": 0.6
+      }
+    },
+    "history_only_reset": {
+      "absolute_payoff": {
+        "mean": -0.9790833333333334,
+        "seed_values": [
+          -0.82,
+          -0.81,
+          -0.83,
+          -0.59,
+          -1.43,
+          -1.34,
+          -1.2775,
+          -1.4025,
+          -0.955,
+          -0.81,
+          -0.645,
+          -1.0225,
+          -0.8125,
+          -0.93,
+          -0.84,
+          -1.0,
+          -1.13,
+          -0.86,
+          -1.2875,
+          -0.84,
+          -1.1425,
+          -0.705,
+          -0.8575,
+          -0.6125,
+          -1.195,
+          -0.9725,
+          -1.2975,
+          -0.6975,
+          -1.33,
+          -0.93
+        ],
+        "paired_replicate_interval_95": [
+          -1.065,
+          -0.8946666666666666
+        ],
+        "positive_replicate_fraction": 0.0
+      },
+      "continuous_minus_condition": {
+        "mean": 0.051750000000000004,
+        "seed_values": [
+          0.0774999999999999,
+          -0.21499999999999986,
+          -0.02750000000000008,
+          -0.09500000000000008,
+          0.695,
+          0.37750000000000006,
+          0.45750000000000013,
+          -0.07999999999999985,
+          0.12249999999999994,
+          -0.15999999999999992,
+          -0.27,
+          0.04749999999999999,
+          0.04749999999999999,
+          -0.05499999999999994,
+          -0.1675000000000001,
+          0.3325,
+          0.19499999999999984,
+          0.13,
+          -0.012499999999999956,
+          0.15249999999999997,
+          -0.01749999999999985,
+          -0.19500000000000006,
+          0.07000000000000006,
+          -0.2024999999999999,
+          -0.012499999999999956,
+          0.09750000000000003,
+          0.040000000000000036,
+          -0.12749999999999995,
+          0.27500000000000013,
+          0.07250000000000001
+        ],
+        "paired_replicate_interval_95": [
+          -0.020583333333333318,
+          0.13149999999999995
+        ],
+        "positive_replicate_fraction": 0.5333333333333333
+      }
+    }
+  },
+  "replicates": [
+    {
+      "seed": 3001,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.955,
+          "seat1_mean": -0.53,
+          "seat_average_payoff": -0.7425,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.19,
+            "second_half": -0.54
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.385,
+          "seat1_mean": -0.72,
+          "seat_average_payoff": -1.0525,
+          "segments": {
+            "first_quarter": -0.96,
+            "second_quarter": -0.99,
+            "second_half": -1.13
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.465,
+          "seat1_mean": -1.005,
+          "seat_average_payoff": -1.235,
+          "segments": {
+            "first_quarter": -1.48,
+            "second_quarter": -1.35,
+            "second_half": -1.055
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.455,
+          "seat1_mean": -0.79,
+          "seat_average_payoff": -1.1225,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -1.3,
+            "second_half": -1.055
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.96,
+          "seat1_mean": -0.525,
+          "seat_average_payoff": -0.7425,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -0.71,
+            "second_half": -0.78
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.025,
+          "seat1_mean": -0.7,
+          "seat_average_payoff": -0.8625,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.19,
+            "second_half": -0.78
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.955,
+          "seat1_mean": -0.68,
+          "seat_average_payoff": -0.8175,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.22,
+            "second_half": -0.675
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.77,
+          "seat1_mean": -0.87,
+          "seat_average_payoff": -0.82,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -0.64,
+            "second_half": -0.97
+          }
+        }
+      }
+    },
+    {
+      "seed": 3002,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.89,
+          "seat1_mean": -1.16,
+          "seat_average_payoff": -1.025,
+          "segments": {
+            "first_quarter": -0.76,
+            "second_quarter": -1.06,
+            "second_half": -1.14
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.06,
+          "seat1_mean": -1.065,
+          "seat_average_payoff": -1.0625,
+          "segments": {
+            "first_quarter": -1.43,
+            "second_quarter": -0.81,
+            "second_half": -1.005
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.675,
+          "seat1_mean": -1.235,
+          "seat_average_payoff": -0.955,
+          "segments": {
+            "first_quarter": -1.22,
+            "second_quarter": -0.74,
+            "second_half": -0.93
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.8,
+          "seat1_mean": -1.31,
+          "seat_average_payoff": -1.055,
+          "segments": {
+            "first_quarter": -1.3,
+            "second_quarter": -1.03,
+            "second_half": -0.945
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.505,
+          "seat1_mean": -0.83,
+          "seat_average_payoff": -0.6675,
+          "segments": {
+            "first_quarter": -0.76,
+            "second_quarter": -0.2,
+            "second_half": -0.855
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.775,
+          "seat1_mean": -1.12,
+          "seat_average_payoff": -0.9475,
+          "segments": {
+            "first_quarter": -0.76,
+            "second_quarter": -1.06,
+            "second_half": -0.985
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.98,
+          "seat1_mean": -1.445,
+          "seat_average_payoff": -1.2125,
+          "segments": {
+            "first_quarter": -0.76,
+            "second_quarter": -0.9,
+            "second_half": -1.595
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.72,
+          "seat1_mean": -0.9,
+          "seat_average_payoff": -0.81,
+          "segments": {
+            "first_quarter": -0.76,
+            "second_quarter": -0.5,
+            "second_half": -0.99
+          }
+        }
+      }
+    },
+    {
+      "seed": 3003,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.175,
+          "seat1_mean": -0.54,
+          "seat_average_payoff": -0.8575,
+          "segments": {
+            "first_quarter": -0.94,
+            "second_quarter": 0.1,
+            "second_half": -1.295
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.49,
+          "seat1_mean": -1.13,
+          "seat_average_payoff": -1.31,
+          "segments": {
+            "first_quarter": -1.03,
+            "second_quarter": -0.9,
+            "second_half": -1.655
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.905,
+          "seat1_mean": -0.59,
+          "seat_average_payoff": -0.7475,
+          "segments": {
+            "first_quarter": -0.56,
+            "second_quarter": -0.43,
+            "second_half": -1.0
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.96,
+          "seat1_mean": -0.66,
+          "seat_average_payoff": -0.81,
+          "segments": {
+            "first_quarter": -0.47,
+            "second_quarter": -0.92,
+            "second_half": -0.925
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.745,
+          "seat1_mean": -0.6,
+          "seat_average_payoff": -0.6725,
+          "segments": {
+            "first_quarter": -0.94,
+            "second_quarter": 0.1,
+            "second_half": -0.925
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.09,
+          "seat1_mean": -0.455,
+          "seat_average_payoff": -0.7725,
+          "segments": {
+            "first_quarter": -0.94,
+            "second_quarter": 0.1,
+            "second_half": -1.125
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.74,
+          "seat1_mean": -0.53,
+          "seat_average_payoff": -0.635,
+          "segments": {
+            "first_quarter": -0.94,
+            "second_quarter": 0.02,
+            "second_half": -0.81
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.905,
+          "seat1_mean": -0.755,
+          "seat_average_payoff": -0.83,
+          "segments": {
+            "first_quarter": -0.94,
+            "second_quarter": 0.36,
+            "second_half": -1.37
+          }
+        }
+      }
+    },
+    {
+      "seed": 3004,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.26,
+          "seat1_mean": -0.11,
+          "seat_average_payoff": -0.685,
+          "segments": {
+            "first_quarter": 0.05,
+            "second_quarter": -0.57,
+            "second_half": -1.11
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.545,
+          "seat1_mean": -0.315,
+          "seat_average_payoff": -0.93,
+          "segments": {
+            "first_quarter": -0.23,
+            "second_quarter": -1.52,
+            "second_half": -0.985
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.91,
+          "seat1_mean": -1.085,
+          "seat_average_payoff": -1.4975,
+          "segments": {
+            "first_quarter": -0.57,
+            "second_quarter": -1.82,
+            "second_half": -1.8
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.28,
+          "seat1_mean": -0.575,
+          "seat_average_payoff": -0.9275,
+          "segments": {
+            "first_quarter": -0.17,
+            "second_quarter": -1.37,
+            "second_half": -1.085
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.08,
+          "seat1_mean": -0.595,
+          "seat_average_payoff": -0.8375,
+          "segments": {
+            "first_quarter": 0.05,
+            "second_quarter": -0.85,
+            "second_half": -1.275
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.51,
+          "seat1_mean": 0.035,
+          "seat_average_payoff": -0.7375,
+          "segments": {
+            "first_quarter": 0.05,
+            "second_quarter": -0.57,
+            "second_half": -1.215
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.22,
+          "seat1_mean": -0.03,
+          "seat_average_payoff": -0.625,
+          "segments": {
+            "first_quarter": 0.05,
+            "second_quarter": -1.04,
+            "second_half": -0.755
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.92,
+          "seat1_mean": -0.26,
+          "seat_average_payoff": -0.59,
+          "segments": {
+            "first_quarter": 0.05,
+            "second_quarter": -0.91,
+            "second_half": -0.75
+          }
+        }
+      }
+    },
+    {
+      "seed": 3005,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.23,
+          "seat1_mean": -0.24,
+          "seat_average_payoff": -0.735,
+          "segments": {
+            "first_quarter": -1.83,
+            "second_quarter": 0.16,
+            "second_half": -0.635
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -2.08,
+          "seat1_mean": -0.95,
+          "seat_average_payoff": -1.515,
+          "segments": {
+            "first_quarter": -2.25,
+            "second_quarter": -1.49,
+            "second_half": -1.16
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -2.185,
+          "seat1_mean": -0.84,
+          "seat_average_payoff": -1.5125,
+          "segments": {
+            "first_quarter": -1.86,
+            "second_quarter": -1.28,
+            "second_half": -1.455
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.58,
+          "seat1_mean": -0.76,
+          "seat_average_payoff": -1.17,
+          "segments": {
+            "first_quarter": -1.61,
+            "second_quarter": -0.82,
+            "second_half": -1.125
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -2.185,
+          "seat1_mean": -0.645,
+          "seat_average_payoff": -1.415,
+          "segments": {
+            "first_quarter": -1.83,
+            "second_quarter": -0.62,
+            "second_half": -1.605
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.395,
+          "seat1_mean": -1.065,
+          "seat_average_payoff": -1.23,
+          "segments": {
+            "first_quarter": -1.83,
+            "second_quarter": 0.16,
+            "second_half": -1.625
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.765,
+          "seat1_mean": -0.49,
+          "seat_average_payoff": -1.1275,
+          "segments": {
+            "first_quarter": -1.83,
+            "second_quarter": -0.29,
+            "second_half": -1.195
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.9,
+          "seat1_mean": -0.96,
+          "seat_average_payoff": -1.43,
+          "segments": {
+            "first_quarter": -1.83,
+            "second_quarter": -0.88,
+            "second_half": -1.505
+          }
+        }
+      }
+    },
+    {
+      "seed": 3006,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.585,
+          "seat1_mean": -1.34,
+          "seat_average_payoff": -0.9625,
+          "segments": {
+            "first_quarter": -0.83,
+            "second_quarter": -0.71,
+            "second_half": -1.155
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.3,
+          "seat1_mean": -1.275,
+          "seat_average_payoff": -1.2875,
+          "segments": {
+            "first_quarter": -0.75,
+            "second_quarter": -1.37,
+            "second_half": -1.515
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.97,
+          "seat1_mean": -1.59,
+          "seat_average_payoff": -1.28,
+          "segments": {
+            "first_quarter": -1.01,
+            "second_quarter": -0.77,
+            "second_half": -1.67
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.94,
+          "seat1_mean": -1.305,
+          "seat_average_payoff": -1.1225,
+          "segments": {
+            "first_quarter": -0.79,
+            "second_quarter": -0.63,
+            "second_half": -1.535
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.005,
+          "seat1_mean": -1.645,
+          "seat_average_payoff": -1.325,
+          "segments": {
+            "first_quarter": -0.83,
+            "second_quarter": -1.49,
+            "second_half": -1.49
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.94,
+          "seat1_mean": -1.59,
+          "seat_average_payoff": -1.265,
+          "segments": {
+            "first_quarter": -0.83,
+            "second_quarter": -0.71,
+            "second_half": -1.76
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.145,
+          "seat1_mean": -1.455,
+          "seat_average_payoff": -1.3,
+          "segments": {
+            "first_quarter": -0.83,
+            "second_quarter": -1.28,
+            "second_half": -1.545
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.005,
+          "seat1_mean": -1.675,
+          "seat_average_payoff": -1.34,
+          "segments": {
+            "first_quarter": -0.83,
+            "second_quarter": -1.02,
+            "second_half": -1.755
+          }
+        }
+      }
+    },
+    {
+      "seed": 3007,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.99,
+          "seat1_mean": -0.65,
+          "seat_average_payoff": -0.82,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.46,
+            "second_half": -0.99
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.4,
+          "seat1_mean": -0.575,
+          "seat_average_payoff": -0.9875,
+          "segments": {
+            "first_quarter": -0.99,
+            "second_quarter": -0.65,
+            "second_half": -1.155
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.165,
+          "seat1_mean": -0.585,
+          "seat_average_payoff": -0.875,
+          "segments": {
+            "first_quarter": -0.93,
+            "second_quarter": -0.27,
+            "second_half": -1.15
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.36,
+          "seat1_mean": -0.34,
+          "seat_average_payoff": -0.85,
+          "segments": {
+            "first_quarter": -0.77,
+            "second_quarter": -0.88,
+            "second_half": -0.875
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.955,
+          "seat1_mean": -1.21,
+          "seat_average_payoff": -1.0825,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.8,
+            "second_half": -1.345
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.98,
+          "seat1_mean": -0.735,
+          "seat_average_payoff": -0.8575,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.46,
+            "second_half": -1.065
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.085,
+          "seat1_mean": -0.64,
+          "seat_average_payoff": -0.8625,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.72,
+            "second_half": -0.945
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.435,
+          "seat1_mean": -1.12,
+          "seat_average_payoff": -1.2775,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -1.19,
+            "second_half": -1.54
+          }
+        }
+      }
+    },
+    {
+      "seed": 3008,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.66,
+          "seat1_mean": -1.305,
+          "seat_average_payoff": -1.4825,
+          "segments": {
+            "first_quarter": -1.22,
+            "second_quarter": -1.88,
+            "second_half": -1.415
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.725,
+          "seat1_mean": -1.41,
+          "seat_average_payoff": -1.5675,
+          "segments": {
+            "first_quarter": -0.74,
+            "second_quarter": -2.54,
+            "second_half": -1.495
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.725,
+          "seat1_mean": -1.395,
+          "seat_average_payoff": -1.56,
+          "segments": {
+            "first_quarter": -0.95,
+            "second_quarter": -2.13,
+            "second_half": -1.58
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.76,
+          "seat1_mean": -1.42,
+          "seat_average_payoff": -1.59,
+          "segments": {
+            "first_quarter": -1.73,
+            "second_quarter": -1.86,
+            "second_half": -1.385
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.665,
+          "seat1_mean": -1.715,
+          "seat_average_payoff": -1.69,
+          "segments": {
+            "first_quarter": -1.22,
+            "second_quarter": -2.32,
+            "second_half": -1.61
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.745,
+          "seat1_mean": -1.11,
+          "seat_average_payoff": -1.4275,
+          "segments": {
+            "first_quarter": -1.22,
+            "second_quarter": -1.88,
+            "second_half": -1.305
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.855,
+          "seat1_mean": -1.225,
+          "seat_average_payoff": -1.54,
+          "segments": {
+            "first_quarter": -1.22,
+            "second_quarter": -1.71,
+            "second_half": -1.615
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.59,
+          "seat1_mean": -1.215,
+          "seat_average_payoff": -1.4025,
+          "segments": {
+            "first_quarter": -1.22,
+            "second_quarter": -2.13,
+            "second_half": -1.13
+          }
+        }
+      }
+    },
+    {
+      "seed": 3009,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.495,
+          "seat1_mean": -0.17,
+          "seat_average_payoff": -0.8325,
+          "segments": {
+            "first_quarter": -0.71,
+            "second_quarter": -0.93,
+            "second_half": -0.845
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.55,
+          "seat1_mean": -0.34,
+          "seat_average_payoff": -0.945,
+          "segments": {
+            "first_quarter": -1.22,
+            "second_quarter": -0.87,
+            "second_half": -0.845
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.46,
+          "seat1_mean": -0.315,
+          "seat_average_payoff": -0.8875,
+          "segments": {
+            "first_quarter": -0.55,
+            "second_quarter": -0.88,
+            "second_half": -1.06
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.105,
+          "seat1_mean": -0.44,
+          "seat_average_payoff": -0.7725,
+          "segments": {
+            "first_quarter": -0.69,
+            "second_quarter": -0.97,
+            "second_half": -0.715
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.475,
+          "seat1_mean": 0.11,
+          "seat_average_payoff": -0.6825,
+          "segments": {
+            "first_quarter": -0.71,
+            "second_quarter": -1.01,
+            "second_half": -0.505
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.54,
+          "seat1_mean": -0.085,
+          "seat_average_payoff": -0.8125,
+          "segments": {
+            "first_quarter": -0.71,
+            "second_quarter": -0.93,
+            "second_half": -0.805
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.37,
+          "seat1_mean": -0.275,
+          "seat_average_payoff": -0.8225,
+          "segments": {
+            "first_quarter": -0.71,
+            "second_quarter": -0.73,
+            "second_half": -0.925
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.645,
+          "seat1_mean": -0.265,
+          "seat_average_payoff": -0.955,
+          "segments": {
+            "first_quarter": -0.71,
+            "second_quarter": -1.1,
+            "second_half": -1.005
+          }
+        }
+      }
+    },
+    {
+      "seed": 3010,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.805,
+          "seat1_mean": -1.135,
+          "seat_average_payoff": -0.97,
+          "segments": {
+            "first_quarter": -0.82,
+            "second_quarter": -1.21,
+            "second_half": -0.925
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.17,
+          "seat1_mean": -1.15,
+          "seat_average_payoff": -1.16,
+          "segments": {
+            "first_quarter": -1.36,
+            "second_quarter": -1.57,
+            "second_half": -0.855
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.555,
+          "seat1_mean": -1.4,
+          "seat_average_payoff": -0.9775,
+          "segments": {
+            "first_quarter": -0.57,
+            "second_quarter": -1.46,
+            "second_half": -0.94
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.945,
+          "seat1_mean": -0.915,
+          "seat_average_payoff": -0.93,
+          "segments": {
+            "first_quarter": -0.87,
+            "second_quarter": -1.44,
+            "second_half": -0.705
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.37,
+          "seat1_mean": -1.045,
+          "seat_average_payoff": -1.2075,
+          "segments": {
+            "first_quarter": -0.82,
+            "second_quarter": -2.15,
+            "second_half": -0.93
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.75,
+          "seat1_mean": -1.175,
+          "seat_average_payoff": -0.9625,
+          "segments": {
+            "first_quarter": -0.82,
+            "second_quarter": -1.21,
+            "second_half": -0.91
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.895,
+          "seat1_mean": -1.045,
+          "seat_average_payoff": -0.97,
+          "segments": {
+            "first_quarter": -0.82,
+            "second_quarter": -1.58,
+            "second_half": -0.74
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.365,
+          "seat1_mean": -0.255,
+          "seat_average_payoff": -0.81,
+          "segments": {
+            "first_quarter": -0.82,
+            "second_quarter": -1.21,
+            "second_half": -0.605
+          }
+        }
+      }
+    },
+    {
+      "seed": 3011,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.435,
+          "seat1_mean": -0.395,
+          "seat_average_payoff": -0.915,
+          "segments": {
+            "first_quarter": -0.62,
+            "second_quarter": -1.27,
+            "second_half": -0.885
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.52,
+          "seat1_mean": -0.97,
+          "seat_average_payoff": -1.245,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -1.79,
+            "second_half": -1.055
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.305,
+          "seat1_mean": -0.36,
+          "seat_average_payoff": -0.8325,
+          "segments": {
+            "first_quarter": -0.8,
+            "second_quarter": -1.15,
+            "second_half": -0.69
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.085,
+          "seat1_mean": -0.375,
+          "seat_average_payoff": -0.73,
+          "segments": {
+            "first_quarter": -1.1,
+            "second_quarter": -0.63,
+            "second_half": -0.595
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.13,
+          "seat1_mean": -0.17,
+          "seat_average_payoff": -0.65,
+          "segments": {
+            "first_quarter": -0.62,
+            "second_quarter": -1.11,
+            "second_half": -0.435
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.35,
+          "seat1_mean": -0.235,
+          "seat_average_payoff": -0.7925,
+          "segments": {
+            "first_quarter": -0.62,
+            "second_quarter": -1.27,
+            "second_half": -0.64
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.425,
+          "seat1_mean": -0.68,
+          "seat_average_payoff": -1.0525,
+          "segments": {
+            "first_quarter": -0.62,
+            "second_quarter": -1.37,
+            "second_half": -1.11
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.045,
+          "seat1_mean": -0.245,
+          "seat_average_payoff": -0.645,
+          "segments": {
+            "first_quarter": -0.62,
+            "second_quarter": -1.18,
+            "second_half": -0.39
+          }
+        }
+      }
+    },
+    {
+      "seed": 3012,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.26,
+          "seat1_mean": -0.69,
+          "seat_average_payoff": -0.975,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -1.12,
+            "second_half": -0.85
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.64,
+          "seat1_mean": -0.955,
+          "seat_average_payoff": -1.2975,
+          "segments": {
+            "first_quarter": -1.54,
+            "second_quarter": -2.33,
+            "second_half": -0.66
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.565,
+          "seat1_mean": -0.885,
+          "seat_average_payoff": -1.225,
+          "segments": {
+            "first_quarter": -1.04,
+            "second_quarter": -1.49,
+            "second_half": -1.185
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.805,
+          "seat1_mean": -0.91,
+          "seat_average_payoff": -1.3575,
+          "segments": {
+            "first_quarter": -0.98,
+            "second_quarter": -1.76,
+            "second_half": -1.345
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.43,
+          "seat1_mean": -0.535,
+          "seat_average_payoff": -0.9825,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -1.25,
+            "second_half": -0.8
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.315,
+          "seat1_mean": -0.395,
+          "seat_average_payoff": -0.855,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -1.12,
+            "second_half": -0.61
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.935,
+          "seat1_mean": -0.81,
+          "seat_average_payoff": -1.3725,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -1.62,
+            "second_half": -1.395
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.635,
+          "seat1_mean": -0.41,
+          "seat_average_payoff": -1.0225,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -1.09,
+            "second_half": -0.96
+          }
+        }
+      }
+    },
+    {
+      "seed": 3013,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.48,
+          "seat1_mean": -1.05,
+          "seat_average_payoff": -0.765,
+          "segments": {
+            "first_quarter": -0.44,
+            "second_quarter": -0.96,
+            "second_half": -0.83
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -0.37,
+          "seat1_mean": -1.285,
+          "seat_average_payoff": -0.8275,
+          "segments": {
+            "first_quarter": -1.27,
+            "second_quarter": -0.93,
+            "second_half": -0.555
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.645,
+          "seat1_mean": -1.025,
+          "seat_average_payoff": -0.835,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -0.75,
+            "second_half": -0.945
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.375,
+          "seat1_mean": -0.96,
+          "seat_average_payoff": -0.6675,
+          "segments": {
+            "first_quarter": -1.08,
+            "second_quarter": -0.25,
+            "second_half": -0.67
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.235,
+          "seat1_mean": -1.025,
+          "seat_average_payoff": -0.63,
+          "segments": {
+            "first_quarter": -0.44,
+            "second_quarter": -1.16,
+            "second_half": -0.46
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.53,
+          "seat1_mean": -0.375,
+          "seat_average_payoff": -0.4525,
+          "segments": {
+            "first_quarter": -0.44,
+            "second_quarter": -0.96,
+            "second_half": -0.205
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.67,
+          "seat1_mean": -1.23,
+          "seat_average_payoff": -0.95,
+          "segments": {
+            "first_quarter": -0.44,
+            "second_quarter": -1.35,
+            "second_half": -1.005
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.495,
+          "seat1_mean": -1.13,
+          "seat_average_payoff": -0.8125,
+          "segments": {
+            "first_quarter": -0.44,
+            "second_quarter": -1.32,
+            "second_half": -0.745
+          }
+        }
+      }
+    },
+    {
+      "seed": 3014,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.215,
+          "seat1_mean": -0.755,
+          "seat_average_payoff": -0.985,
+          "segments": {
+            "first_quarter": -1.29,
+            "second_quarter": -0.88,
+            "second_half": -0.885
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.565,
+          "seat1_mean": -0.9,
+          "seat_average_payoff": -1.2325,
+          "segments": {
+            "first_quarter": -1.28,
+            "second_quarter": -2.29,
+            "second_half": -0.68
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.5,
+          "seat1_mean": -1.1,
+          "seat_average_payoff": -1.3,
+          "segments": {
+            "first_quarter": -1.55,
+            "second_quarter": -1.77,
+            "second_half": -0.94
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.94,
+          "seat1_mean": -1.11,
+          "seat_average_payoff": -1.025,
+          "segments": {
+            "first_quarter": -1.44,
+            "second_quarter": -1.59,
+            "second_half": -0.535
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.365,
+          "seat1_mean": -0.67,
+          "seat_average_payoff": -1.0175,
+          "segments": {
+            "first_quarter": -1.29,
+            "second_quarter": -1.31,
+            "second_half": -0.735
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.525,
+          "seat1_mean": -0.575,
+          "seat_average_payoff": -1.05,
+          "segments": {
+            "first_quarter": -1.29,
+            "second_quarter": -0.88,
+            "second_half": -1.015
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.545,
+          "seat1_mean": -0.715,
+          "seat_average_payoff": -1.13,
+          "segments": {
+            "first_quarter": -1.29,
+            "second_quarter": -1.34,
+            "second_half": -0.945
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.13,
+          "seat1_mean": -0.73,
+          "seat_average_payoff": -0.93,
+          "segments": {
+            "first_quarter": -1.29,
+            "second_quarter": -1.06,
+            "second_half": -0.685
+          }
+        }
+      }
+    },
+    {
+      "seed": 3015,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.665,
+          "seat1_mean": -0.35,
+          "seat_average_payoff": -1.0075,
+          "segments": {
+            "first_quarter": -0.34,
+            "second_quarter": -1.61,
+            "second_half": -1.04
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.255,
+          "seat1_mean": -0.2,
+          "seat_average_payoff": -0.7275,
+          "segments": {
+            "first_quarter": -0.57,
+            "second_quarter": -0.91,
+            "second_half": -0.715
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.235,
+          "seat1_mean": -0.13,
+          "seat_average_payoff": -0.6825,
+          "segments": {
+            "first_quarter": -0.72,
+            "second_quarter": -0.59,
+            "second_half": -0.71
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.345,
+          "seat1_mean": -0.275,
+          "seat_average_payoff": -0.81,
+          "segments": {
+            "first_quarter": -0.46,
+            "second_quarter": -0.86,
+            "second_half": -0.96
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.45,
+          "seat1_mean": -0.565,
+          "seat_average_payoff": -1.0075,
+          "segments": {
+            "first_quarter": -0.34,
+            "second_quarter": -1.93,
+            "second_half": -0.88
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.355,
+          "seat1_mean": -0.735,
+          "seat_average_payoff": -1.045,
+          "segments": {
+            "first_quarter": -0.34,
+            "second_quarter": -1.61,
+            "second_half": -1.115
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.19,
+          "seat1_mean": -0.76,
+          "seat_average_payoff": -0.975,
+          "segments": {
+            "first_quarter": -0.34,
+            "second_quarter": -1.09,
+            "second_half": -1.235
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.22,
+          "seat1_mean": -0.46,
+          "seat_average_payoff": -0.84,
+          "segments": {
+            "first_quarter": -0.34,
+            "second_quarter": -1.47,
+            "second_half": -0.775
+          }
+        }
+      }
+    },
+    {
+      "seed": 3016,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.925,
+          "seat1_mean": -0.41,
+          "seat_average_payoff": -0.6675,
+          "segments": {
+            "first_quarter": -1.64,
+            "second_quarter": -0.25,
+            "second_half": -0.39
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.14,
+          "seat1_mean": -0.485,
+          "seat_average_payoff": -0.8125,
+          "segments": {
+            "first_quarter": -1.98,
+            "second_quarter": -1.12,
+            "second_half": -0.075
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.13,
+          "seat1_mean": -0.665,
+          "seat_average_payoff": -0.8975,
+          "segments": {
+            "first_quarter": -1.75,
+            "second_quarter": -0.72,
+            "second_half": -0.56
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.59,
+          "seat1_mean": -1.08,
+          "seat_average_payoff": -1.335,
+          "segments": {
+            "first_quarter": -2.41,
+            "second_quarter": -1.0,
+            "second_half": -0.965
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.08,
+          "seat1_mean": -0.595,
+          "seat_average_payoff": -0.8375,
+          "segments": {
+            "first_quarter": -1.64,
+            "second_quarter": -0.76,
+            "second_half": -0.475
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.915,
+          "seat1_mean": -0.605,
+          "seat_average_payoff": -0.76,
+          "segments": {
+            "first_quarter": -1.64,
+            "second_quarter": -0.25,
+            "second_half": -0.575
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.21,
+          "seat1_mean": -0.385,
+          "seat_average_payoff": -0.7975,
+          "segments": {
+            "first_quarter": -1.64,
+            "second_quarter": -0.12,
+            "second_half": -0.715
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.36,
+          "seat1_mean": -0.64,
+          "seat_average_payoff": -1.0,
+          "segments": {
+            "first_quarter": -1.64,
+            "second_quarter": -0.8,
+            "second_half": -0.78
+          }
+        }
+      }
+    },
+    {
+      "seed": 3017,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.595,
+          "seat1_mean": -0.275,
+          "seat_average_payoff": -0.935,
+          "segments": {
+            "first_quarter": -0.97,
+            "second_quarter": -0.85,
+            "second_half": -0.96
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.4,
+          "seat1_mean": -0.95,
+          "seat_average_payoff": -1.175,
+          "segments": {
+            "first_quarter": -0.97,
+            "second_quarter": -1.32,
+            "second_half": -1.205
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.28,
+          "seat1_mean": -0.655,
+          "seat_average_payoff": -0.9675,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.43,
+            "second_half": -1.3
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.78,
+          "seat1_mean": -0.715,
+          "seat_average_payoff": -1.2475,
+          "segments": {
+            "first_quarter": -1.45,
+            "second_quarter": -0.85,
+            "second_half": -1.345
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.845,
+          "seat1_mean": -0.385,
+          "seat_average_payoff": -1.115,
+          "segments": {
+            "first_quarter": -0.97,
+            "second_quarter": -1.04,
+            "second_half": -1.225
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.94,
+          "seat1_mean": -0.225,
+          "seat_average_payoff": -1.0825,
+          "segments": {
+            "first_quarter": -0.97,
+            "second_quarter": -0.85,
+            "second_half": -1.255
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.505,
+          "seat1_mean": -0.165,
+          "seat_average_payoff": -0.835,
+          "segments": {
+            "first_quarter": -0.97,
+            "second_quarter": -0.37,
+            "second_half": -1.0
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.76,
+          "seat1_mean": -0.5,
+          "seat_average_payoff": -1.13,
+          "segments": {
+            "first_quarter": -0.97,
+            "second_quarter": -1.28,
+            "second_half": -1.135
+          }
+        }
+      }
+    },
+    {
+      "seed": 3018,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.805,
+          "seat1_mean": -0.655,
+          "seat_average_payoff": -0.73,
+          "segments": {
+            "first_quarter": -0.79,
+            "second_quarter": -1.17,
+            "second_half": -0.48
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.005,
+          "seat1_mean": -0.655,
+          "seat_average_payoff": -0.83,
+          "segments": {
+            "first_quarter": -1.26,
+            "second_quarter": -0.53,
+            "second_half": -0.765
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.275,
+          "seat1_mean": -1.165,
+          "seat_average_payoff": -1.22,
+          "segments": {
+            "first_quarter": -0.89,
+            "second_quarter": -1.21,
+            "second_half": -1.39
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.385,
+          "seat1_mean": -0.835,
+          "seat_average_payoff": -1.11,
+          "segments": {
+            "first_quarter": -0.67,
+            "second_quarter": -1.31,
+            "second_half": -1.23
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.965,
+          "seat1_mean": -0.705,
+          "seat_average_payoff": -0.835,
+          "segments": {
+            "first_quarter": -0.79,
+            "second_quarter": -1.12,
+            "second_half": -0.715
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.075,
+          "seat1_mean": -0.955,
+          "seat_average_payoff": -1.015,
+          "segments": {
+            "first_quarter": -0.79,
+            "second_quarter": -1.17,
+            "second_half": -1.05
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.175,
+          "seat1_mean": -0.95,
+          "seat_average_payoff": -1.0625,
+          "segments": {
+            "first_quarter": -0.79,
+            "second_quarter": -1.85,
+            "second_half": -0.805
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.085,
+          "seat1_mean": -0.635,
+          "seat_average_payoff": -0.86,
+          "segments": {
+            "first_quarter": -0.79,
+            "second_quarter": -0.83,
+            "second_half": -0.91
+          }
+        }
+      }
+    },
+    {
+      "seed": 3019,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.135,
+          "seat1_mean": -1.465,
+          "seat_average_payoff": -1.3,
+          "segments": {
+            "first_quarter": -2.09,
+            "second_quarter": -0.86,
+            "second_half": -1.125
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.09,
+          "seat1_mean": -1.755,
+          "seat_average_payoff": -1.4225,
+          "segments": {
+            "first_quarter": -2.07,
+            "second_quarter": -0.88,
+            "second_half": -1.37
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.345,
+          "seat1_mean": -1.475,
+          "seat_average_payoff": -1.41,
+          "segments": {
+            "first_quarter": -2.53,
+            "second_quarter": -0.64,
+            "second_half": -1.235
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.455,
+          "seat1_mean": -1.62,
+          "seat_average_payoff": -1.5375,
+          "segments": {
+            "first_quarter": -2.32,
+            "second_quarter": -0.93,
+            "second_half": -1.45
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.64,
+          "seat1_mean": -1.82,
+          "seat_average_payoff": -1.73,
+          "segments": {
+            "first_quarter": -2.09,
+            "second_quarter": -1.48,
+            "second_half": -1.675
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.01,
+          "seat1_mean": -1.415,
+          "seat_average_payoff": -1.2125,
+          "segments": {
+            "first_quarter": -2.09,
+            "second_quarter": -0.86,
+            "second_half": -0.95
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.91,
+          "seat1_mean": -1.665,
+          "seat_average_payoff": -1.2875,
+          "segments": {
+            "first_quarter": -2.09,
+            "second_quarter": -0.68,
+            "second_half": -1.19
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.845,
+          "seat1_mean": -1.73,
+          "seat_average_payoff": -1.2875,
+          "segments": {
+            "first_quarter": -2.09,
+            "second_quarter": -1.29,
+            "second_half": -0.885
+          }
+        }
+      }
+    },
+    {
+      "seed": 3020,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.615,
+          "seat1_mean": -0.76,
+          "seat_average_payoff": -0.6875,
+          "segments": {
+            "first_quarter": -0.32,
+            "second_quarter": -0.64,
+            "second_half": -0.895
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -0.865,
+          "seat1_mean": -0.435,
+          "seat_average_payoff": -0.65,
+          "segments": {
+            "first_quarter": -0.37,
+            "second_quarter": -1.05,
+            "second_half": -0.59
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.155,
+          "seat1_mean": -0.355,
+          "seat_average_payoff": -0.755,
+          "segments": {
+            "first_quarter": -0.24,
+            "second_quarter": -0.49,
+            "second_half": -1.145
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.215,
+          "seat1_mean": -0.3,
+          "seat_average_payoff": -0.7575,
+          "segments": {
+            "first_quarter": -0.36,
+            "second_quarter": -0.88,
+            "second_half": -0.895
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.795,
+          "seat1_mean": 0.135,
+          "seat_average_payoff": -0.33,
+          "segments": {
+            "first_quarter": -0.32,
+            "second_quarter": -0.51,
+            "second_half": -0.245
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.97,
+          "seat1_mean": -0.345,
+          "seat_average_payoff": -0.6575,
+          "segments": {
+            "first_quarter": -0.32,
+            "second_quarter": -0.64,
+            "second_half": -0.835
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.325,
+          "seat1_mean": -0.45,
+          "seat_average_payoff": -0.8875,
+          "segments": {
+            "first_quarter": -0.32,
+            "second_quarter": -0.92,
+            "second_half": -1.155
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.175,
+          "seat1_mean": -0.505,
+          "seat_average_payoff": -0.84,
+          "segments": {
+            "first_quarter": -0.32,
+            "second_quarter": -1.23,
+            "second_half": -0.905
+          }
+        }
+      }
+    },
+    {
+      "seed": 3021,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -2.08,
+          "seat1_mean": -0.24,
+          "seat_average_payoff": -1.16,
+          "segments": {
+            "first_quarter": -1.62,
+            "second_quarter": -0.8,
+            "second_half": -1.11
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.525,
+          "seat1_mean": -0.335,
+          "seat_average_payoff": -0.93,
+          "segments": {
+            "first_quarter": -1.18,
+            "second_quarter": -0.64,
+            "second_half": -0.95
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.385,
+          "seat1_mean": -0.365,
+          "seat_average_payoff": -0.875,
+          "segments": {
+            "first_quarter": -0.75,
+            "second_quarter": -0.58,
+            "second_half": -1.085
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.485,
+          "seat1_mean": -0.59,
+          "seat_average_payoff": -1.0375,
+          "segments": {
+            "first_quarter": -0.75,
+            "second_quarter": -1.3,
+            "second_half": -1.05
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.83,
+          "seat1_mean": -0.46,
+          "seat_average_payoff": -1.145,
+          "segments": {
+            "first_quarter": -1.62,
+            "second_quarter": -0.64,
+            "second_half": -1.16
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -2.07,
+          "seat1_mean": -0.24,
+          "seat_average_payoff": -1.155,
+          "segments": {
+            "first_quarter": -1.62,
+            "second_quarter": -0.8,
+            "second_half": -1.1
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -2.02,
+          "seat1_mean": -0.355,
+          "seat_average_payoff": -1.1875,
+          "segments": {
+            "first_quarter": -1.62,
+            "second_quarter": -0.83,
+            "second_half": -1.15
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.835,
+          "seat1_mean": -0.45,
+          "seat_average_payoff": -1.1425,
+          "segments": {
+            "first_quarter": -1.62,
+            "second_quarter": -0.6,
+            "second_half": -1.175
+          }
+        }
+      }
+    },
+    {
+      "seed": 3022,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.19,
+          "seat1_mean": -0.61,
+          "seat_average_payoff": -0.9,
+          "segments": {
+            "first_quarter": -0.92,
+            "second_quarter": -0.95,
+            "second_half": -0.865
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.2,
+          "seat1_mean": -0.41,
+          "seat_average_payoff": -0.805,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.42,
+            "second_half": -0.55
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.48,
+          "seat1_mean": -0.7,
+          "seat_average_payoff": -1.09,
+          "segments": {
+            "first_quarter": -0.85,
+            "second_quarter": -1.46,
+            "second_half": -1.025
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.715,
+          "seat1_mean": -0.45,
+          "seat_average_payoff": -1.0825,
+          "segments": {
+            "first_quarter": -1.09,
+            "second_quarter": -1.21,
+            "second_half": -1.015
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.16,
+          "seat1_mean": -0.91,
+          "seat_average_payoff": -1.035,
+          "segments": {
+            "first_quarter": -0.92,
+            "second_quarter": -1.57,
+            "second_half": -0.825
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.33,
+          "seat1_mean": -0.535,
+          "seat_average_payoff": -0.9325,
+          "segments": {
+            "first_quarter": -0.92,
+            "second_quarter": -0.95,
+            "second_half": -0.93
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.34,
+          "seat1_mean": -0.53,
+          "seat_average_payoff": -0.935,
+          "segments": {
+            "first_quarter": -0.92,
+            "second_quarter": -0.87,
+            "second_half": -0.975
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.04,
+          "seat1_mean": -0.37,
+          "seat_average_payoff": -0.705,
+          "segments": {
+            "first_quarter": -0.92,
+            "second_quarter": -0.82,
+            "second_half": -0.54
+          }
+        }
+      }
+    },
+    {
+      "seed": 3023,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.915,
+          "seat1_mean": -0.66,
+          "seat_average_payoff": -0.7875,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.62,
+            "second_half": -0.845
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.3,
+          "seat1_mean": -0.985,
+          "seat_average_payoff": -1.1425,
+          "segments": {
+            "first_quarter": -0.79,
+            "second_quarter": -1.55,
+            "second_half": -1.115
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.88,
+          "seat1_mean": -0.805,
+          "seat_average_payoff": -0.8425,
+          "segments": {
+            "first_quarter": -0.51,
+            "second_quarter": -1.27,
+            "second_half": -0.795
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.8,
+          "seat1_mean": -0.655,
+          "seat_average_payoff": -0.7275,
+          "segments": {
+            "first_quarter": -0.81,
+            "second_quarter": -1.04,
+            "second_half": -0.53
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.345,
+          "seat1_mean": -0.76,
+          "seat_average_payoff": -1.0525,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.74,
+            "second_half": -1.315
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.915,
+          "seat1_mean": -0.45,
+          "seat_average_payoff": -0.6825,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.62,
+            "second_half": -0.635
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.86,
+          "seat1_mean": -0.33,
+          "seat_average_payoff": -0.595,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.85,
+            "second_half": -0.345
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.975,
+          "seat1_mean": -0.74,
+          "seat_average_payoff": -0.8575,
+          "segments": {
+            "first_quarter": -0.84,
+            "second_quarter": -0.78,
+            "second_half": -0.905
+          }
+        }
+      }
+    },
+    {
+      "seed": 3024,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.04,
+          "seat1_mean": -0.59,
+          "seat_average_payoff": -0.815,
+          "segments": {
+            "first_quarter": -0.8,
+            "second_quarter": -0.95,
+            "second_half": -0.755
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.0,
+          "seat1_mean": -0.605,
+          "seat_average_payoff": -0.8025,
+          "segments": {
+            "first_quarter": -0.36,
+            "second_quarter": -1.24,
+            "second_half": -0.805
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.765,
+          "seat1_mean": -0.835,
+          "seat_average_payoff": -0.8,
+          "segments": {
+            "first_quarter": -0.55,
+            "second_quarter": -1.09,
+            "second_half": -0.78
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.715,
+          "seat1_mean": -0.6,
+          "seat_average_payoff": -0.6575,
+          "segments": {
+            "first_quarter": -0.71,
+            "second_quarter": -0.67,
+            "second_half": -0.625
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.65,
+          "seat1_mean": -0.84,
+          "seat_average_payoff": -0.745,
+          "segments": {
+            "first_quarter": -0.8,
+            "second_quarter": -0.16,
+            "second_half": -1.01
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.855,
+          "seat1_mean": -0.94,
+          "seat_average_payoff": -0.8975,
+          "segments": {
+            "first_quarter": -0.8,
+            "second_quarter": -0.95,
+            "second_half": -0.92
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.815,
+          "seat1_mean": -0.25,
+          "seat_average_payoff": -0.5325,
+          "segments": {
+            "first_quarter": -0.8,
+            "second_quarter": 0.17,
+            "second_half": -0.75
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.5,
+          "seat1_mean": -0.725,
+          "seat_average_payoff": -0.6125,
+          "segments": {
+            "first_quarter": -0.8,
+            "second_quarter": -0.33,
+            "second_half": -0.66
+          }
+        }
+      }
+    },
+    {
+      "seed": 3025,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -0.94,
+          "seat1_mean": -1.475,
+          "seat_average_payoff": -1.2075,
+          "segments": {
+            "first_quarter": -1.44,
+            "second_quarter": -1.25,
+            "second_half": -1.07
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.575,
+          "seat1_mean": -1.295,
+          "seat_average_payoff": -1.435,
+          "segments": {
+            "first_quarter": -1.11,
+            "second_quarter": -2.0,
+            "second_half": -1.315
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.035,
+          "seat1_mean": -1.385,
+          "seat_average_payoff": -1.21,
+          "segments": {
+            "first_quarter": -1.97,
+            "second_quarter": -0.81,
+            "second_half": -1.03
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.44,
+          "seat1_mean": -1.58,
+          "seat_average_payoff": -1.51,
+          "segments": {
+            "first_quarter": -1.42,
+            "second_quarter": -1.42,
+            "second_half": -1.6
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -0.6,
+          "seat1_mean": -1.315,
+          "seat_average_payoff": -0.9575,
+          "segments": {
+            "first_quarter": -1.44,
+            "second_quarter": -1.0,
+            "second_half": -0.695
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.31,
+          "seat1_mean": -1.46,
+          "seat_average_payoff": -1.385,
+          "segments": {
+            "first_quarter": -1.44,
+            "second_quarter": -1.25,
+            "second_half": -1.425
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.17,
+          "seat1_mean": -1.85,
+          "seat_average_payoff": -1.51,
+          "segments": {
+            "first_quarter": -1.44,
+            "second_quarter": -1.54,
+            "second_half": -1.53
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.905,
+          "seat1_mean": -1.485,
+          "seat_average_payoff": -1.195,
+          "segments": {
+            "first_quarter": -1.44,
+            "second_quarter": -1.04,
+            "second_half": -1.15
+          }
+        }
+      }
+    },
+    {
+      "seed": 3026,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.055,
+          "seat1_mean": -0.695,
+          "seat_average_payoff": -0.875,
+          "segments": {
+            "first_quarter": -1.35,
+            "second_quarter": -0.53,
+            "second_half": -0.81
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.315,
+          "seat1_mean": -0.6,
+          "seat_average_payoff": -0.9575,
+          "segments": {
+            "first_quarter": -0.55,
+            "second_quarter": -1.16,
+            "second_half": -1.06
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.76,
+          "seat1_mean": -0.705,
+          "seat_average_payoff": -1.2325,
+          "segments": {
+            "first_quarter": -0.82,
+            "second_quarter": -1.78,
+            "second_half": -1.165
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.04,
+          "seat1_mean": -0.635,
+          "seat_average_payoff": -0.8375,
+          "segments": {
+            "first_quarter": -0.97,
+            "second_quarter": -0.02,
+            "second_half": -1.18
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.36,
+          "seat1_mean": -0.91,
+          "seat_average_payoff": -1.135,
+          "segments": {
+            "first_quarter": -1.35,
+            "second_quarter": -0.53,
+            "second_half": -1.33
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.41,
+          "seat1_mean": -0.775,
+          "seat_average_payoff": -1.0925,
+          "segments": {
+            "first_quarter": -1.35,
+            "second_quarter": -0.53,
+            "second_half": -1.245
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.28,
+          "seat1_mean": -0.57,
+          "seat_average_payoff": -0.925,
+          "segments": {
+            "first_quarter": -1.35,
+            "second_quarter": -0.53,
+            "second_half": -0.91
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.425,
+          "seat1_mean": -0.52,
+          "seat_average_payoff": -0.9725,
+          "segments": {
+            "first_quarter": -1.35,
+            "second_quarter": -0.53,
+            "second_half": -1.005
+          }
+        }
+      }
+    },
+    {
+      "seed": 3027,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.76,
+          "seat1_mean": -0.755,
+          "seat_average_payoff": -1.2575,
+          "segments": {
+            "first_quarter": -1.39,
+            "second_quarter": -0.75,
+            "second_half": -1.445
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.985,
+          "seat1_mean": -0.84,
+          "seat_average_payoff": -1.4125,
+          "segments": {
+            "first_quarter": -0.44,
+            "second_quarter": -1.15,
+            "second_half": -2.03
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -2.46,
+          "seat1_mean": -0.27,
+          "seat_average_payoff": -1.365,
+          "segments": {
+            "first_quarter": -1.06,
+            "second_quarter": -1.18,
+            "second_half": -1.61
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.875,
+          "seat1_mean": -0.67,
+          "seat_average_payoff": -1.2725,
+          "segments": {
+            "first_quarter": -1.65,
+            "second_quarter": -0.7,
+            "second_half": -1.37
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.925,
+          "seat1_mean": -0.725,
+          "seat_average_payoff": -1.325,
+          "segments": {
+            "first_quarter": -1.39,
+            "second_quarter": -0.88,
+            "second_half": -1.515
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.99,
+          "seat1_mean": -0.74,
+          "seat_average_payoff": -1.365,
+          "segments": {
+            "first_quarter": -1.39,
+            "second_quarter": -0.75,
+            "second_half": -1.66
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.7,
+          "seat1_mean": -0.655,
+          "seat_average_payoff": -1.1775,
+          "segments": {
+            "first_quarter": -1.39,
+            "second_quarter": -0.9,
+            "second_half": -1.21
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.915,
+          "seat1_mean": -0.68,
+          "seat_average_payoff": -1.2975,
+          "segments": {
+            "first_quarter": -1.39,
+            "second_quarter": -0.91,
+            "second_half": -1.445
+          }
+        }
+      }
+    },
+    {
+      "seed": 3028,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.015,
+          "seat1_mean": -0.635,
+          "seat_average_payoff": -0.825,
+          "segments": {
+            "first_quarter": -0.23,
+            "second_quarter": -1.1,
+            "second_half": -0.985
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.5,
+          "seat1_mean": -1.465,
+          "seat_average_payoff": -1.4825,
+          "segments": {
+            "first_quarter": -0.78,
+            "second_quarter": -1.6,
+            "second_half": -1.775
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -0.66,
+          "seat1_mean": -0.595,
+          "seat_average_payoff": -0.6275,
+          "segments": {
+            "first_quarter": -0.65,
+            "second_quarter": -0.66,
+            "second_half": -0.6
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.88,
+          "seat1_mean": -0.61,
+          "seat_average_payoff": -0.745,
+          "segments": {
+            "first_quarter": -0.09,
+            "second_quarter": -1.38,
+            "second_half": -0.755
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.055,
+          "seat1_mean": -1.095,
+          "seat_average_payoff": -1.075,
+          "segments": {
+            "first_quarter": -0.23,
+            "second_quarter": -1.27,
+            "second_half": -1.4
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -0.99,
+          "seat1_mean": -0.65,
+          "seat_average_payoff": -0.82,
+          "segments": {
+            "first_quarter": -0.23,
+            "second_quarter": -1.1,
+            "second_half": -0.975
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -0.865,
+          "seat1_mean": -0.39,
+          "seat_average_payoff": -0.6275,
+          "segments": {
+            "first_quarter": -0.23,
+            "second_quarter": -0.28,
+            "second_half": -1.0
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -0.825,
+          "seat1_mean": -0.57,
+          "seat_average_payoff": -0.6975,
+          "segments": {
+            "first_quarter": -0.23,
+            "second_quarter": -1.03,
+            "second_half": -0.765
+          }
+        }
+      }
+    },
+    {
+      "seed": 3029,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.57,
+          "seat1_mean": -0.54,
+          "seat_average_payoff": -1.055,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.51,
+            "second_half": -1.005
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.955,
+          "seat1_mean": -0.585,
+          "seat_average_payoff": -1.27,
+          "segments": {
+            "first_quarter": -0.57,
+            "second_quarter": -1.72,
+            "second_half": -1.395
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -2.03,
+          "seat1_mean": -0.695,
+          "seat_average_payoff": -1.3625,
+          "segments": {
+            "first_quarter": -0.43,
+            "second_quarter": -1.9,
+            "second_half": -1.56
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -1.975,
+          "seat1_mean": -0.875,
+          "seat_average_payoff": -1.425,
+          "segments": {
+            "first_quarter": -0.74,
+            "second_quarter": -2.06,
+            "second_half": -1.45
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.98,
+          "seat1_mean": -0.39,
+          "seat_average_payoff": -1.185,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.98,
+            "second_half": -1.03
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.675,
+          "seat1_mean": -0.435,
+          "seat_average_payoff": -1.055,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.51,
+            "second_half": -1.005
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.885,
+          "seat1_mean": -0.605,
+          "seat_average_payoff": -1.245,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -1.64,
+            "second_half": -1.32
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -2.11,
+          "seat1_mean": -0.55,
+          "seat_average_payoff": -1.33,
+          "segments": {
+            "first_quarter": -0.7,
+            "second_quarter": -2.01,
+            "second_half": -1.305
+          }
+        }
+      }
+    },
+    {
+      "seed": 3030,
+      "arms": {
+        "continuous": {
+          "seat0_mean": -1.21,
+          "seat1_mean": -0.505,
+          "seat_average_payoff": -0.8575,
+          "segments": {
+            "first_quarter": -1.38,
+            "second_quarter": -1.24,
+            "second_half": -0.405
+          }
+        },
+        "both_every_1": {
+          "seat0_mean": -1.59,
+          "seat1_mean": -0.445,
+          "seat_average_payoff": -1.0175,
+          "segments": {
+            "first_quarter": -1.29,
+            "second_quarter": -0.92,
+            "second_half": -0.93
+          }
+        },
+        "both_every_10": {
+          "seat0_mean": -1.18,
+          "seat1_mean": -0.395,
+          "seat_average_payoff": -0.7875,
+          "segments": {
+            "first_quarter": -0.62,
+            "second_quarter": -1.12,
+            "second_half": -0.705
+          }
+        },
+        "both_every_25": {
+          "seat0_mean": -0.88,
+          "seat1_mean": -0.455,
+          "seat_average_payoff": -0.6675,
+          "segments": {
+            "first_quarter": -1.15,
+            "second_quarter": -0.42,
+            "second_half": -0.55
+          }
+        },
+        "both_every_50": {
+          "seat0_mean": -1.34,
+          "seat1_mean": -0.565,
+          "seat_average_payoff": -0.9525,
+          "segments": {
+            "first_quarter": -1.38,
+            "second_quarter": -0.35,
+            "second_half": -1.04
+          }
+        },
+        "both_every_100": {
+          "seat0_mean": -1.06,
+          "seat1_mean": -0.365,
+          "seat_average_payoff": -0.7125,
+          "segments": {
+            "first_quarter": -1.38,
+            "second_quarter": -1.24,
+            "second_half": -0.115
+          }
+        },
+        "opponent_only_reset": {
+          "seat0_mean": -1.05,
+          "seat1_mean": -0.21,
+          "seat_average_payoff": -0.63,
+          "segments": {
+            "first_quarter": -1.38,
+            "second_quarter": -0.08,
+            "second_half": -0.53
+          }
+        },
+        "history_only_reset": {
+          "seat0_mean": -1.46,
+          "seat1_mean": -0.4,
+          "seat_average_payoff": -0.93,
+          "segments": {
+            "first_quarter": -1.38,
+            "second_quarter": -0.47,
+            "second_half": -0.935
+          }
+        }
+      }
+    }
+  ],
+  "limitations": "Exploratory comparisons selected after Patch 18. Intervals descriptive, unadjusted for multiple comparisons. Common RNG streams do not guarantee matched realized actions. Reset changes future policy behavior; results are conditional on a single fixed CFR solution and game setting.",
+  "provenance": {
+    "prior_reports_read_only": true,
+    "pcc_policy_unchanged": true,
+    "cfr_solver_unchanged": true,
+    "human_data_accessed": false
+  }
+}
