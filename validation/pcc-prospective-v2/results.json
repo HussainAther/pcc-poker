@@ -1,0 +1,81 @@
+{
+  "measurements_sha256": "00ce07e55ce042ac4f92d1e96af17dfff30c48cc52eb3b0df739a7edede99db4",
+  "primary_point_estimate_criterion_met": false,
+  "protocol_sha256": "bb3410b34a48d5e847b83eece591fecb1d4d6aa085d15692cb31a5e5cfd25c8f",
+  "results": {
+    "A_to_B": {
+      "augmented_mse": {
+        "heldout_card_response": 0.10961594627371132,
+        "value_vs_loose": 0.28341725947284585,
+        "value_vs_tight": 0.4156582700318835
+      },
+      "baseline_mse": {
+        "heldout_card_response": 0.09347589284983568,
+        "value_vs_loose": 0.25534839553694383,
+        "value_vs_tight": 0.3442373982624832
+      },
+      "conditional_ci95": {
+        "heldout_card_response": [
+          -18.719468400716515,
+          -7.45711053559133
+        ],
+        "value_vs_loose": [
+          -5.751457207264781,
+          -1.9747544771647583
+        ],
+        "value_vs_tight": [
+          -14.78030096166342,
+          -7.8233663532484625
+        ]
+      },
+      "improvement": {
+        "heldout_card_response": -12.918751345373455,
+        "value_vs_loose": -3.703559425784313,
+        "value_vs_tight": -11.157512285399173
+      },
+      "n_test": 32,
+      "n_train": 32
+    },
+    "B_to_A": {
+      "augmented_mse": {
+        "heldout_card_response": 0.0028075973633796183,
+        "value_vs_loose": 0.12244658910566053,
+        "value_vs_tight": 0.011933848057102833
+      },
+      "baseline_mse": {
+        "heldout_card_response": 0.004051553240912244,
+        "value_vs_loose": 0.14288098895088602,
+        "value_vs_tight": 0.013693625392217574
+      },
+      "conditional_ci95": {
+        "heldout_card_response": [
+          0.09560480037345093,
+          0.1698201142750094
+        ],
+        "value_vs_loose": [
+          0.16818451465375917,
+          0.23295231733696614
+        ],
+        "value_vs_tight": [
+          0.029963099712837858,
+          0.08576743630443022
+        ]
+      },
+      "improvement": {
+        "heldout_card_response": 0.13097771189023596,
+        "value_vs_loose": 0.20090720975764928,
+        "value_vs_tight": 0.056899612256228034
+      },
+      "n_test": 32,
+      "n_train": 32
+    }
+  },
+  "scope": "new-seed in-silico prospective replication, not independent lab replication",
+  "uncertainty_limitations": [
+    "CIs condition on training models and do not capture training-policy sampling uncertainty.",
+    "CIs are descriptive, not multiplicity-adjusted or confirmatory significance tests.",
+    "New seeds share simulator, generator families, and measurement definitions with the original.",
+    "The frozen source hash is integrity metadata, not independent preregistration.",
+    "No new parameter or feature selection is permitted based on these results."
+  ]
+}
