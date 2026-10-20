@@ -1,0 +1,258 @@
+{
+  "policy-062": {
+    "family": "sampled-chance CFR",
+    "seed": 730001
+  },
+  "policy-059": {
+    "family": "sampled-chance CFR",
+    "seed": 730102
+  },
+  "policy-029": {
+    "family": "sampled-chance CFR",
+    "seed": 730203
+  },
+  "policy-001": {
+    "family": "sampled-chance CFR",
+    "seed": 730304
+  },
+  "policy-054": {
+    "family": "sampled-chance CFR",
+    "seed": 730405
+  },
+  "policy-024": {
+    "family": "sampled-chance CFR",
+    "seed": 730506
+  },
+  "policy-052": {
+    "family": "sampled-chance CFR",
+    "seed": 730607
+  },
+  "policy-044": {
+    "family": "sampled-chance CFR",
+    "seed": 730708
+  },
+  "policy-049": {
+    "family": "sampled-chance CFR",
+    "seed": 730809
+  },
+  "policy-031": {
+    "family": "sampled-chance CFR",
+    "seed": 730910
+  },
+  "policy-025": {
+    "family": "sampled-chance CFR",
+    "seed": 731011
+  },
+  "policy-014": {
+    "family": "sampled-chance CFR",
+    "seed": 731112
+  },
+  "policy-045": {
+    "family": "sampled-chance CFR",
+    "seed": 731213
+  },
+  "policy-033": {
+    "family": "sampled-chance CFR",
+    "seed": 731314
+  },
+  "policy-063": {
+    "family": "sampled-chance CFR",
+    "seed": 731415
+  },
+  "policy-002": {
+    "family": "sampled-chance CFR",
+    "seed": 731516
+  },
+  "policy-010": {
+    "family": "sampled-chance CFR",
+    "seed": 731617
+  },
+  "policy-000": {
+    "family": "sampled-chance CFR",
+    "seed": 731718
+  },
+  "policy-061": {
+    "family": "sampled-chance CFR",
+    "seed": 731819
+  },
+  "policy-048": {
+    "family": "sampled-chance CFR",
+    "seed": 731920
+  },
+  "policy-050": {
+    "family": "sampled-chance CFR",
+    "seed": 732021
+  },
+  "policy-047": {
+    "family": "sampled-chance CFR",
+    "seed": 732122
+  },
+  "policy-023": {
+    "family": "sampled-chance CFR",
+    "seed": 732223
+  },
+  "policy-019": {
+    "family": "sampled-chance CFR",
+    "seed": 732324
+  },
+  "policy-058": {
+    "family": "sampled-chance CFR",
+    "seed": 732425
+  },
+  "policy-006": {
+    "family": "sampled-chance CFR",
+    "seed": 732526
+  },
+  "policy-051": {
+    "family": "sampled-chance CFR",
+    "seed": 732627
+  },
+  "policy-005": {
+    "family": "sampled-chance CFR",
+    "seed": 732728
+  },
+  "policy-008": {
+    "family": "sampled-chance CFR",
+    "seed": 732829
+  },
+  "policy-037": {
+    "family": "sampled-chance CFR",
+    "seed": 732930
+  },
+  "policy-013": {
+    "family": "sampled-chance CFR",
+    "seed": 733031
+  },
+  "policy-011": {
+    "family": "sampled-chance CFR",
+    "seed": 733132
+  },
+  "policy-007": {
+    "family": "equity pot-odds logit",
+    "seed": 930001
+  },
+  "policy-056": {
+    "family": "equity pot-odds logit",
+    "seed": 930102
+  },
+  "policy-028": {
+    "family": "equity pot-odds logit",
+    "seed": 930203
+  },
+  "policy-043": {
+    "family": "equity pot-odds logit",
+    "seed": 930304
+  },
+  "policy-009": {
+    "family": "equity pot-odds logit",
+    "seed": 930405
+  },
+  "policy-012": {
+    "family": "equity pot-odds logit",
+    "seed": 930506
+  },
+  "policy-020": {
+    "family": "equity pot-odds logit",
+    "seed": 930607
+  },
+  "policy-026": {
+    "family": "equity pot-odds logit",
+    "seed": 930708
+  },
+  "policy-038": {
+    "family": "equity pot-odds logit",
+    "seed": 930809
+  },
+  "policy-035": {
+    "family": "equity pot-odds logit",
+    "seed": 930910
+  },
+  "policy-057": {
+    "family": "equity pot-odds logit",
+    "seed": 931011
+  },
+  "policy-030": {
+    "family": "equity pot-odds logit",
+    "seed": 931112
+  },
+  "policy-036": {
+    "family": "equity pot-odds logit",
+    "seed": 931213
+  },
+  "policy-021": {
+    "family": "equity pot-odds logit",
+    "seed": 931314
+  },
+  "policy-034": {
+    "family": "equity pot-odds logit",
+    "seed": 931415
+  },
+  "policy-060": {
+    "family": "equity pot-odds logit",
+    "seed": 931516
+  },
+  "policy-032": {
+    "family": "equity pot-odds logit",
+    "seed": 931617
+  },
+  "policy-041": {
+    "family": "equity pot-odds logit",
+    "seed": 931718
+  },
+  "policy-004": {
+    "family": "equity pot-odds logit",
+    "seed": 931819
+  },
+  "policy-016": {
+    "family": "equity pot-odds logit",
+    "seed": 931920
+  },
+  "policy-042": {
+    "family": "equity pot-odds logit",
+    "seed": 932021
+  },
+  "policy-046": {
+    "family": "equity pot-odds logit",
+    "seed": 932122
+  },
+  "policy-039": {
+    "family": "equity pot-odds logit",
+    "seed": 932223
+  },
+  "policy-003": {
+    "family": "equity pot-odds logit",
+    "seed": 932324
+  },
+  "policy-027": {
+    "family": "equity pot-odds logit",
+    "seed": 932425
+  },
+  "policy-053": {
+    "family": "equity pot-odds logit",
+    "seed": 932526
+  },
+  "policy-022": {
+    "family": "equity pot-odds logit",
+    "seed": 932627
+  },
+  "policy-055": {
+    "family": "equity pot-odds logit",
+    "seed": 932728
+  },
+  "policy-018": {
+    "family": "equity pot-odds logit",
+    "seed": 932829
+  },
+  "policy-040": {
+    "family": "equity pot-odds logit",
+    "seed": 932930
+  },
+  "policy-015": {
+    "family": "equity pot-odds logit",
+    "seed": 933031
+  },
+  "policy-017": {
+    "family": "equity pot-odds logit",
+    "seed": 933132
+  }
+}
