@@ -1,0 +1,104 @@
+{
+  "comparison_caveat": "Original and prospective studies differ in baseline features and fitting; do not pool or interpret changes as an effect of fresh seeds alone.",
+  "frozen_evidence_modified": false,
+  "integrity": {
+    "explanation": "freeze CLI hashes canonical JSON; run results hash indented protocol.json bytes; unequal hashes are expected",
+    "freeze_cli_canonical_sha256": "a0f45dd27ea5d767004628ff40871f6ab8582d80f19de6915f396aff6e044c27",
+    "measurements_file_byte_sha256": "00ce07e55ce042ac4f92d1e96af17dfff30c48cc52eb3b0df739a7edede99db4",
+    "protocol_file_byte_sha256": "bb3410b34a48d5e847b83eece591fecb1d4d6aa085d15692cb31a5e5cfd25c8f",
+    "reported_results_recomputed": true,
+    "source_commitments_match_current_code": true
+  },
+  "limitations": [
+    "Same simulator and generator families; not external replication.",
+    "Bootstrap intervals condition on trained models, omit training-sample uncertainty and multiplicity adjustment.",
+    "This post-outcome audit verifies reproducibility, not independent preregistration.",
+    "Do not select model settings based on this exploratory synthesis."
+  ],
+  "original_frozen_descriptive": {
+    "A_to_B": {
+      "heldout_card_response": {
+        "normalized_improvement": -2.4863349771380827
+      },
+      "value_vs_loose": {
+        "normalized_improvement": 0.10316743519459198
+      },
+      "value_vs_tight": {
+        "normalized_improvement": -0.38666174204570103
+      }
+    },
+    "B_to_A": {
+      "heldout_card_response": {
+        "normalized_improvement": -0.008711645325374665
+      },
+      "value_vs_loose": {
+        "normalized_improvement": -0.03114714257890201
+      },
+      "value_vs_tight": {
+        "normalized_improvement": -0.023466339316477798
+      }
+    }
+  },
+  "primary_point_estimate_criterion_met": false,
+  "prospective": {
+    "A_to_B": {
+      "heldout_card_response": {
+        "augmented_mse": 0.10961594627371132,
+        "baseline_mse": 0.09347589284983568,
+        "conditional_ci95": [
+          -18.719468400716515,
+          -7.45711053559133
+        ],
+        "normalized_improvement": -12.918751345373455
+      },
+      "value_vs_loose": {
+        "augmented_mse": 0.28341725947284585,
+        "baseline_mse": 0.25534839553694383,
+        "conditional_ci95": [
+          -5.751457207264781,
+          -1.9747544771647583
+        ],
+        "normalized_improvement": -3.703559425784313
+      },
+      "value_vs_tight": {
+        "augmented_mse": 0.4156582700318835,
+        "baseline_mse": 0.3442373982624832,
+        "conditional_ci95": [
+          -14.78030096166342,
+          -7.8233663532484625
+        ],
+        "normalized_improvement": -11.157512285399173
+      }
+    },
+    "B_to_A": {
+      "heldout_card_response": {
+        "augmented_mse": 0.0028075973633796183,
+        "baseline_mse": 0.004051553240912244,
+        "conditional_ci95": [
+          0.09560480037345093,
+          0.1698201142750094
+        ],
+        "normalized_improvement": 0.13097771189023596
+      },
+      "value_vs_loose": {
+        "augmented_mse": 0.12244658910566053,
+        "baseline_mse": 0.14288098895088602,
+        "conditional_ci95": [
+          0.16818451465375917,
+          0.23295231733696614
+        ],
+        "normalized_improvement": 0.20090720975764928
+      },
+      "value_vs_tight": {
+        "augmented_mse": 0.011933848057102833,
+        "baseline_mse": 0.013693625392217574,
+        "conditional_ci95": [
+          0.029963099712837858,
+          0.08576743630443022
+        ],
+        "normalized_improvement": 0.056899612256228034
+      }
+    }
+  },
+  "status": "verified"
+}

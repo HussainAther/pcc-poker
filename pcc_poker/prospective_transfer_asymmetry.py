@@ -1,0 +1,191 @@
+"""Patch 31: protocol-first, repeated-cohort PCC transfer-asymmetry replication.
+
+The directional hypothesis was motivated by the prior v2 results. This is a
+prospective *follow-up*, not an independently preregistered confirmation.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+
+import numpy as np
+
+from . import blind_discriminant as experiment
+from .leduc_cfr import LeducCFR
+from .prospective_pcc_replication import (SOURCES, canonical, hashes, scores,
+                                          sha, write_exclusive)
+from .low_dimensional_pcc_audit import ENDPOINTS
+
+PROTOCOL = {
+    'protocol_id': 'pcc-transfer-asymmetry-v3',
+    'replications': 8,
+    'policies_per_family_per_replication': 24,
+    'seed_base_A': 3100001,
+    'seed_base_B': 5100001,
+    'seed_stride': 137,
+    'replication_stride': 100003,
+    'ridge_penalty': 10.0,
+    'baseline_columns': [5, 6, 7],
+    'candidate_columns': [0, 1, 2],
+    'endpoints': list(ENDPOINTS),
+    'primary_endpoint': 'value_vs_loose',
+    'primary_statistic': 'mean across cohorts of (B_to_A improvement - A_to_B improvement)',
+    'primary_direction': 'positive',
+    'primary_point_criterion': 'primary asymmetry mean > 0',
+    'bootstrap_seed': 31031,
+    'bootstrap_repetitions': 5000,
+    'confidence_percentiles': [2.5, 97.5],
+    'inference_unit': 'independently seeded paired A/B cohorts, not individual policies',
+    'analysis': 'fixed model; paired cohort bootstrap including training-policy variation',
+    'no_selection': 'no parameter, feature, endpoint or direction tuning based on this run',
+}
+SOURCE_NAMES = tuple(sorted(set(SOURCES + ('prospective_transfer_asymmetry.py',))))
+
+
+def source_hashes():
+    directory = Path(__file__).parent
+    return {name: sha((directory / name).read_bytes()) for name in SOURCE_NAMES}
+
+
+def frozen_object():
+    return {'protocol': PROTOCOL, 'sources': source_hashes(),
+            'status': 'frozen_before_policy_generation'}
+
+
+def freeze(directory):
+    directory = Path(directory)
+    directory.mkdir(parents=True, exist_ok=False)
+    obj = frozen_object()
+    write_exclusive(directory / 'protocol.json', obj)
+    return {'status': 'frozen', 'protocol_file_sha256': sha((directory / 'protocol.json').read_bytes()),
+            'protocol_canonical_sha256': sha(canonical(obj))}
+
+
+def verify(directory, require_fresh=True):
+    directory = Path(directory)
+    observed = json.loads((directory / 'protocol.json').read_text(encoding='utf8'))
+    if observed != frozen_object():
+        raise RuntimeError('frozen protocol or committed source files differ')
+    if require_fresh and any((directory / name).exists() for name in ('measurements.json', 'results.json')):
+        raise FileExistsError('results already exist; refusing to overwrite or rerun')
+    return observed
+
+
+def cohort_seed(family, replication, index):
+    return (PROTOCOL[f'seed_base_{family}'] +
+            replication * PROTOCOL['replication_stride'] +
+            index * PROTOCOL['seed_stride'])
+
+
+def summarize(cohort_results, n_boot=None):
+    """Resample *paired replications*, capturing both fitted-cohort variations.
+
+    This is descriptive bootstrap uncertainty, not an adjusted confirmatory test.
+    """
+    if len(cohort_results) < 2:
+        raise ValueError('at least two independently generated cohorts required')
+    n_boot = PROTOCOL['bootstrap_repetitions'] if n_boot is None else n_boot
+    if n_boot < 1:
+        raise ValueError('positive bootstrap repetitions required')
+    directions = ('A_to_B', 'B_to_A')
+    out = {'n_cohorts': len(cohort_results), 'endpoints': {}}
+    rng = np.random.default_rng(PROTOCOL['bootstrap_seed'])
+    draws = rng.integers(0, len(cohort_results), size=(n_boot, len(cohort_results)))
+    for endpoint in ENDPOINTS:
+        values = np.asarray([[r[d]['improvement'][endpoint] for d in directions]
+                             for r in cohort_results], dtype=float)
+        if not np.isfinite(values).all():
+            raise ValueError('nonfinite improvement')
+        gap = values[:, 1] - values[:, 0]
+        low, high = np.percentile(gap[draws].mean(axis=1),
+                                  PROTOCOL['confidence_percentiles'])
+        out['endpoints'][endpoint] = {
+            'mean_improvement_A_to_B': float(values[:, 0].mean()),
+            'mean_improvement_B_to_A': float(values[:, 1].mean()),
+            'paired_asymmetry_per_cohort': gap.tolist(),
+            'paired_asymmetry_mean': float(gap.mean()),
+            'cohort_bootstrap_ci95': [float(low), float(high)],
+            'fraction_cohorts_positive': float(np.mean(gap > 0)),
+        }
+    primary = out['endpoints'][PROTOCOL['primary_endpoint']]
+    out['primary_point_estimate_criterion_met'] = primary['paired_asymmetry_mean'] > 0
+    out['primary_interval_excludes_zero_positive'] = primary['cohort_bootstrap_ci95'][0] > 0
+    return out
+
+
+def run(directory):
+    directory = Path(directory)
+    verify(directory)
+    solver = LeducCFR()
+    reference = experiment.compile_measurements(solver)
+    opponents = [experiment.conventional_policy(solver, parameters=p)
+                 for p in ((5., -1.5, .5, 0.), (2., 1.5, .8, 0.))]
+    records, results = [], []
+    seen = set()
+    for rep in range(PROTOCOL['replications']):
+        group = {'A': [], 'B': []}
+        for family in ('A', 'B'):
+            for i in range(PROTOCOL['policies_per_family_per_replication']):
+                seed = cohort_seed(family, rep, i)
+                if seed in seen:
+                    raise RuntimeError('policy seed collision')
+                seen.add(seed)
+                policy = (experiment.sampled_cfr(solver, seed) if family == 'A'
+                          else experiment.conventional_policy(solver, seed))
+                experiment.validate_policy(solver, policy)
+                baseline, candidate = experiment.measure(solver, policy, reference)
+                outcomes = [experiment.cross_value(solver, policy, opponent)
+                            for opponent in opponents]
+                outcomes.append(experiment.matched_response(solver, policy))
+                row = {'id': f'r{rep:02d}-{family}-{i:02d}', 'replication': rep,
+                       'family': family, 'seed': seed, 'baseline': baseline.tolist(),
+                       'candidate': candidate.tolist(), 'outcomes': outcomes}
+                records.append(row)
+                group[family].append(row)
+        result = {
+            'A_to_B': scores(group['A'], group['B'], PROTOCOL['bootstrap_seed'] + 2 * rep, 100),
+            'B_to_A': scores(group['B'], group['A'], PROTOCOL['bootstrap_seed'] + 2 * rep + 1, 100),
+        }
+        results.append(result)
+        print(f'generated replication {rep + 1}/{PROTOCOL["replications"]}', flush=True)
+    verify(directory)
+    write_exclusive(directory / 'measurements.json', records)
+    report = {
+        'scope': 'fresh-seed repeated-cohort in-silico asymmetry replication',
+        'protocol_sha256': sha((directory / 'protocol.json').read_bytes()),
+        'measurements_sha256': sha((directory / 'measurements.json').read_bytes()),
+        'cohort_results': results,
+        'summary': summarize(results),
+        'frozen_evidence_modified': False,
+        'limitations': [
+            'Directional hypothesis motivated by previously observed results; not independent preregistration.',
+            'The bootstrap resamples only eight generated cohorts and may be imprecise.',
+            'Same simulator and policy families as prior work; no external validation.',
+            'No multiplicity-adjusted confirmatory inference; secondary endpoints descriptive.',
+            'Models and features are fixed and must not be tuned after this run.',
+        ],
+    }
+    write_exclusive(directory / 'results.json', report)
+    return report
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('command', choices=('freeze', 'run', 'verify'))
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args(argv)
+    if args.command == 'freeze':
+        result = freeze(args.output)
+    elif args.command == 'run':
+        report = run(args.output)
+        result = {'summary': report['summary'], 'results_file': str(args.output / 'results.json')}
+    else:
+        verify(args.output, require_fresh=False)
+        result = {'status': 'protocol_and_source_verified'}
+    print(json.dumps(result, indent=2, allow_nan=False))
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

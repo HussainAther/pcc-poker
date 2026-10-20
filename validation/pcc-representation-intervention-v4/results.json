@@ -1,0 +1,1306 @@
+{
+  "cohort_results": [
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.7083333333333334,
+          "control": 0.6666666666666666,
+          "pressure": 0.9583333333333334
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.08176410925207199,
+            "value_vs_loose": 0.34486813964559593,
+            "value_vs_tight": 0.14327554000323492
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.020861306153487812,
+            "value_vs_loose": 0.23869865553681593,
+            "value_vs_tight": 0.03566750013576372
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.055168224944608234,
+            "value_vs_loose": 0.2949655860888756,
+            "value_vs_tight": 0.0942718768944229
+          },
+          "unchanged": {
+            "heldout_card_response": 0.09672737311530187,
+            "value_vs_loose": 0.3952681377248269,
+            "value_vs_tight": 0.18630881190475726
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 48.326444740951956,
+            "value_vs_loose": 17.18773236580673,
+            "value_vs_tight": 24.724624090002962
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 21.103864977132357,
+            "value_vs_loose": 8.078703048273692,
+            "value_vs_tight": 11.259355257197436
+          },
+          "unchanged": {
+            "heldout_card_response": -11.873367192313562,
+            "value_vs_loose": -8.159234129229013,
+            "value_vs_tight": -9.887564836590407
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 11.873367192313562,
+            "value_vs_loose": 8.159234129229013,
+            "value_vs_tight": 9.887564836590407
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 60.199811933265515,
+            "value_vs_loose": 25.346966495035744,
+            "value_vs_tight": 34.61218892659337
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 32.97723216944592,
+            "value_vs_loose": 16.237937177502705,
+            "value_vs_tight": 21.14692009378784
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.0,
+          "pressure": 0.9166666666666666
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.0016055522028268503,
+            "value_vs_loose": 0.07252199379423291,
+            "value_vs_tight": 0.006044461447774405
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0015385307830831606,
+            "value_vs_loose": 0.058305379641984616,
+            "value_vs_tight": 0.0059857201976834945
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0017129201875828338,
+            "value_vs_loose": 0.057744243183693165,
+            "value_vs_tight": 0.005990757092480186
+          },
+          "unchanged": {
+            "heldout_card_response": 0.001936803132152053,
+            "value_vs_loose": 0.05701374246945201,
+            "value_vs_tight": 0.005998827208025029
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.006466968213744965,
+            "value_vs_loose": 0.12750675129307454,
+            "value_vs_tight": 0.0023437052594027126
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": -0.010360051267881034,
+            "value_vs_loose": 0.13253950283733232,
+            "value_vs_tight": 0.0021427392124119845
+          },
+          "unchanged": {
+            "heldout_card_response": -0.03196275517456881,
+            "value_vs_loose": 0.13909125783980103,
+            "value_vs_tight": 0.00182075130413351
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 0.03196275517456881,
+            "value_vs_loose": -0.13909125783980103,
+            "value_vs_tight": -0.00182075130413351
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.038429723388313776,
+            "value_vs_loose": -0.011584506546726488,
+            "value_vs_tight": 0.0005229539552692024
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.021602703906687778,
+            "value_vs_loose": -0.006551755002468707,
+            "value_vs_tight": 0.00032198790827847433
+          }
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.75,
+          "control": 0.5,
+          "pressure": 1.0
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.02795278861530963,
+            "value_vs_loose": 0.2977613286701933,
+            "value_vs_tight": 0.03774352814761131
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.018773609716589704,
+            "value_vs_loose": 0.2330610794937811,
+            "value_vs_tight": 0.03540897011007325
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.02074517123988284,
+            "value_vs_loose": 0.27505918169392835,
+            "value_vs_tight": 0.03791611695081757
+          },
+          "unchanged": {
+            "heldout_card_response": 0.03132528502434558,
+            "value_vs_loose": 0.32171987919201633,
+            "value_vs_tight": 0.03506429764785721
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 6.672333348758808,
+            "value_vs_loose": 22.297447161640644,
+            "value_vs_tight": 0.6387148997295071
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 5.239207810391426,
+            "value_vs_loose": 7.823770837093051,
+            "value_vs_tight": -0.04721880474240492
+          },
+          "unchanged": {
+            "heldout_card_response": -2.4514633069977507,
+            "value_vs_loose": -8.256761312823604,
+            "value_vs_tight": 0.7330143061285015
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 2.4514633069977507,
+            "value_vs_loose": 8.256761312823604,
+            "value_vs_tight": -0.7330143061285015
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 9.123796655756557,
+            "value_vs_loose": 30.554208474464247,
+            "value_vs_tight": -0.09429940639899438
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 7.690671117389177,
+            "value_vs_loose": 16.080532149916657,
+            "value_vs_tight": -0.7802331108709064
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.08333333333333333,
+          "pressure": 0.0
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.002918269617235007,
+            "value_vs_loose": 0.12360348396100178,
+            "value_vs_tight": 0.012293139694253871
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0021319450760096145,
+            "value_vs_loose": 0.10646678269383685,
+            "value_vs_tight": 0.010967822803672275
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0021319450760096145,
+            "value_vs_loose": 0.10646678269383685,
+            "value_vs_tight": 0.010967822803672275
+          },
+          "unchanged": {
+            "heldout_card_response": 0.0021409270427913698,
+            "value_vs_loose": 0.10636844149765762,
+            "value_vs_tight": 0.010967461014156493
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.08081105561759737,
+            "value_vs_loose": 0.1686055358742285,
+            "value_vs_tight": 0.05974094020613981
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.08081105561759737,
+            "value_vs_loose": 0.1686055358742285,
+            "value_vs_tight": 0.05974094020613981
+          },
+          "unchanged": {
+            "heldout_card_response": 0.07988797337979171,
+            "value_vs_loose": 0.1695731007411076,
+            "value_vs_tight": 0.059757248491337955
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": -0.07988797337979171,
+            "value_vs_loose": -0.1695731007411076,
+            "value_vs_tight": -0.059757248491337955
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0009230822378056507,
+            "value_vs_loose": -0.0009675648668790959,
+            "value_vs_tight": -1.6308285198143768e-05
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0009230822378056507,
+            "value_vs_loose": -0.0009675648668790959,
+            "value_vs_tight": -1.6308285198143768e-05
+          }
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.9166666666666666,
+          "control": 0.6666666666666666,
+          "pressure": 0.9583333333333334
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.03712093292264026,
+            "value_vs_loose": 0.4509434142187671,
+            "value_vs_tight": 0.08179164994148425
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.01466490283839199,
+            "value_vs_loose": 0.24966473118265012,
+            "value_vs_tight": 0.04340567252518863
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.027934496073200324,
+            "value_vs_loose": 0.33508437279328,
+            "value_vs_tight": 0.07142397313641236
+          },
+          "unchanged": {
+            "heldout_card_response": 0.04768559849417358,
+            "value_vs_loose": 0.5293933440934169,
+            "value_vs_tight": 0.13466084775327916
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 17.881570106208162,
+            "value_vs_loose": 34.45172979778869,
+            "value_vs_tight": 8.665720385838336
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 7.315091489155937,
+            "value_vs_loose": 19.83093455110422,
+            "value_vs_tight": 2.3405262622114296
+          },
+          "unchanged": {
+            "heldout_card_response": -8.412564792497728,
+            "value_vs_loose": -13.42782924613995,
+            "value_vs_tight": -11.935339832354952
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 8.412564792497728,
+            "value_vs_loose": 13.42782924613995,
+            "value_vs_tight": 11.935339832354952
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 26.294134898705888,
+            "value_vs_loose": 47.879559043928644,
+            "value_vs_tight": 20.60106021819329
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 15.727656281653665,
+            "value_vs_loose": 33.25876379724417,
+            "value_vs_tight": 14.275866094566382
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.0,
+          "pressure": 0.0
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.015199154797862623,
+            "value_vs_loose": 0.29712809897479964,
+            "value_vs_tight": 0.027477415034332108
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.01946564998666604,
+            "value_vs_loose": 0.37029579735441104,
+            "value_vs_tight": 0.04009145852038268
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.01946564998666604,
+            "value_vs_loose": 0.37029579735441104,
+            "value_vs_tight": 0.04009145852038268
+          },
+          "unchanged": {
+            "heldout_card_response": 0.01946564998666604,
+            "value_vs_loose": 0.37029579735441104,
+            "value_vs_tight": 0.04009145852038268
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": -0.6043053220209743,
+            "value_vs_loose": -0.7242282248692988,
+            "value_vs_tight": -0.483479153439432
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": -0.6043053220209743,
+            "value_vs_loose": -0.7242282248692988,
+            "value_vs_tight": -0.483479153439432
+          },
+          "unchanged": {
+            "heldout_card_response": -0.6043053220209743,
+            "value_vs_loose": -0.7242282248692988,
+            "value_vs_tight": -0.483479153439432
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 0.6043053220209743,
+            "value_vs_loose": 0.7242282248692988,
+            "value_vs_tight": 0.483479153439432
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          }
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.875,
+          "control": 0.625,
+          "pressure": 0.9583333333333334
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.15408851832392723,
+            "value_vs_loose": 0.2586787559020626,
+            "value_vs_tight": 0.1325768148763841
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.023784776565369297,
+            "value_vs_loose": 0.19026257287760928,
+            "value_vs_tight": 0.017509859682333182
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.08582764243242356,
+            "value_vs_loose": 0.21969103698727546,
+            "value_vs_tight": 0.07635225844534564
+          },
+          "unchanged": {
+            "heldout_card_response": 0.1875811274644226,
+            "value_vs_loose": 0.27036393518646934,
+            "value_vs_tight": 0.16466454776243722
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 74.54851209750193,
+            "value_vs_loose": 19.696093175929825,
+            "value_vs_tight": 17.793302475881607
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 39.05295936637695,
+            "value_vs_loose": 11.224036631627696,
+            "value_vs_tight": 8.694247079560027
+          },
+          "unchanged": {
+            "heldout_card_response": -19.161569299472088,
+            "value_vs_loose": -3.3640049735142297,
+            "value_vs_tight": -4.961865342173887
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 19.161569299472088,
+            "value_vs_loose": 3.3640049735142297,
+            "value_vs_tight": 4.961865342173887
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 93.71008139697402,
+            "value_vs_loose": 23.060098149444055,
+            "value_vs_tight": 22.755167818055494
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 58.21452866584904,
+            "value_vs_loose": 14.588041605141925,
+            "value_vs_tight": 13.656112421733914
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.041666666666666664,
+          "pressure": 0.16666666666666666
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.013258179574259949,
+            "value_vs_loose": 0.2325019375200089,
+            "value_vs_tight": 0.01381667701987318
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.013081433888319205,
+            "value_vs_loose": 0.22867265802009004,
+            "value_vs_tight": 0.01464460163273034
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.013082056789540478,
+            "value_vs_loose": 0.2289339093430491,
+            "value_vs_tight": 0.014690322112344894
+          },
+          "unchanged": {
+            "heldout_card_response": 0.013089293299137989,
+            "value_vs_loose": 0.2292350690093485,
+            "value_vs_tight": 0.014752747292960167
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.056151765893188446,
+            "value_vs_loose": 0.06375380099808543,
+            "value_vs_tight": -0.04985154611738973
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.05595387136826492,
+            "value_vs_loose": 0.05940421908462838,
+            "value_vs_tight": -0.05260449797148244
+          },
+          "unchanged": {
+            "heldout_card_response": 0.053654846129598185,
+            "value_vs_loose": 0.054390201843445375,
+            "value_vs_tight": -0.05636328436580062
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": -0.053654846129598185,
+            "value_vs_loose": -0.054390201843445375,
+            "value_vs_tight": 0.05636328436580062
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0024969197635902663,
+            "value_vs_loose": 0.009363599154640054,
+            "value_vs_tight": 0.006511738248410881
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.002299025238666739,
+            "value_vs_loose": 0.005014017241183009,
+            "value_vs_tight": 0.0037587863943181745
+          }
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.6666666666666666,
+          "control": 0.8333333333333334,
+          "pressure": 0.9583333333333334
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.013033931579531461,
+            "value_vs_loose": 0.9250420984125188,
+            "value_vs_tight": 0.10815073715172595
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.01718483713551696,
+            "value_vs_loose": 0.3994543643802005,
+            "value_vs_tight": 0.04265220828889726
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.014368342872862908,
+            "value_vs_loose": 0.6929323051119879,
+            "value_vs_tight": 0.0806618927312295
+          },
+          "unchanged": {
+            "heldout_card_response": 0.013339200742538903,
+            "value_vs_loose": 1.0586862665098908,
+            "value_vs_tight": 0.1344142416915499
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": -4.493996926426892,
+            "value_vs_loose": 77.0741871941443,
+            "value_vs_tight": 13.698489604364983
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": -1.4447065031806288,
+            "value_vs_loose": 34.0374641569151,
+            "value_vs_tight": 5.7490703389504265
+          },
+          "unchanged": {
+            "heldout_card_response": -0.3305010585726618,
+            "value_vs_loose": -19.598089838050065,
+            "value_vs_tight": -5.492800375202707
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 0.3305010585726618,
+            "value_vs_loose": 19.598089838050065,
+            "value_vs_tight": 5.492800375202707
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": -4.1634958678542295,
+            "value_vs_loose": 96.67227703219437,
+            "value_vs_tight": 19.19128997956769
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": -1.114205444607967,
+            "value_vs_loose": 53.635553994965164,
+            "value_vs_tight": 11.241870714153134
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.0,
+          "pressure": 0.375
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.004565294310219477,
+            "value_vs_loose": 0.18413560484560673,
+            "value_vs_tight": 0.01717883885215352
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.00235189542231487,
+            "value_vs_loose": 0.15139314485520633,
+            "value_vs_tight": 0.01598993872599682
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0023405366076254177,
+            "value_vs_loose": 0.15184400234684764,
+            "value_vs_tight": 0.0160501751738923
+          },
+          "unchanged": {
+            "heldout_card_response": 0.002325842264278822,
+            "value_vs_loose": 0.15242925479621874,
+            "value_vs_tight": 0.016157972799141655
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.22975990811680627,
+            "value_vs_loose": 0.29655000221612743,
+            "value_vs_tight": 0.061808238411638954
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.2309389997995689,
+            "value_vs_loose": 0.2924665646801394,
+            "value_vs_tight": 0.058676681226402905
+          },
+          "unchanged": {
+            "heldout_card_response": 0.23246433307573527,
+            "value_vs_loose": 0.2871659056823463,
+            "value_vs_tight": 0.05307252560808438
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": -0.23246433307573527,
+            "value_vs_loose": -0.2871659056823463,
+            "value_vs_tight": -0.05307252560808438
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": -0.0027044249589290113,
+            "value_vs_loose": 0.00938409653378111,
+            "value_vs_tight": 0.008735712803554578
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": -0.0015253332761663936,
+            "value_vs_loose": 0.005300658997793054,
+            "value_vs_tight": 0.0056041556183185305
+          }
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.5833333333333334,
+          "control": 0.75,
+          "pressure": 1.0
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.06348720036894763,
+            "value_vs_loose": 0.6849675024839925,
+            "value_vs_tight": 0.02706289810190742
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.01647949183283867,
+            "value_vs_loose": 0.17676615201022047,
+            "value_vs_tight": 0.01509135285717652
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.04716603887355689,
+            "value_vs_loose": 0.40398510374239044,
+            "value_vs_tight": 0.0208637224445536
+          },
+          "unchanged": {
+            "heldout_card_response": 0.07504611322235842,
+            "value_vs_loose": 0.8058459809695179,
+            "value_vs_tight": 0.03015693658085432
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 38.53363364085546,
+            "value_vs_loose": 106.82738669975785,
+            "value_vs_tight": 2.902866347776913
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 13.378947352294864,
+            "value_vs_loose": 59.06441479978676,
+            "value_vs_tight": 1.5031792497806937
+          },
+          "unchanged": {
+            "heldout_card_response": -9.475188794573288,
+            "value_vs_loose": -25.409479830805793,
+            "value_vs_tight": -0.750244015760199
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 9.475188794573288,
+            "value_vs_loose": 25.409479830805793,
+            "value_vs_tight": 0.750244015760199
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 48.008822435428755,
+            "value_vs_loose": 132.23686653056365,
+            "value_vs_tight": 3.6531103635371123
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 22.85413614686815,
+            "value_vs_loose": 84.47389463059255,
+            "value_vs_tight": 2.2534232655408926
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.0,
+          "pressure": 0.0
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.009458026687364902,
+            "value_vs_loose": 0.18231302262658386,
+            "value_vs_tight": 0.014075582102378808
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.00968939083906653,
+            "value_vs_loose": 0.19636084430702713,
+            "value_vs_tight": 0.01772305198770856
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.00968939083906653,
+            "value_vs_loose": 0.19636084430702713,
+            "value_vs_tight": 0.01772305198770856
+          },
+          "unchanged": {
+            "heldout_card_response": 0.00968939083906653,
+            "value_vs_loose": 0.19636084430702713,
+            "value_vs_tight": 0.01772305198770856
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": -0.05339666304287098,
+            "value_vs_loose": -0.3393661012735644,
+            "value_vs_tight": -0.34113256776491724
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": -0.05339666304287098,
+            "value_vs_loose": -0.3393661012735644,
+            "value_vs_tight": -0.34113256776491724
+          },
+          "unchanged": {
+            "heldout_card_response": -0.05339666304287098,
+            "value_vs_loose": -0.3393661012735644,
+            "value_vs_tight": -0.34113256776491724
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 0.05339666304287098,
+            "value_vs_loose": 0.3393661012735644,
+            "value_vs_tight": 0.34113256776491724
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          }
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.7916666666666666,
+          "control": 0.6666666666666666,
+          "pressure": 0.9166666666666666
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.10233868845280404,
+            "value_vs_loose": 0.6112066963577176,
+            "value_vs_tight": 0.06069833437853651
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.019323334073514647,
+            "value_vs_loose": 0.2596885202544666,
+            "value_vs_tight": 0.04150009530214783
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.06557577319116341,
+            "value_vs_loose": 0.46162472785113423,
+            "value_vs_tight": 0.052891302167318306
+          },
+          "unchanged": {
+            "heldout_card_response": 0.1402795421430888,
+            "value_vs_loose": 0.7500682566938166,
+            "value_vs_tight": 0.06623310186034476
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 31.417876525866966,
+            "value_vs_loose": 46.00481076671754,
+            "value_vs_tight": 5.886817666484214
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 13.913242207507668,
+            "value_vs_loose": 19.576484583366693,
+            "value_vs_tight": 2.39389534430445
+          },
+          "unchanged": {
+            "heldout_card_response": -14.35904316063168,
+            "value_vs_loose": -18.173455144911014,
+            "value_vs_tight": -1.6971435172855487
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 14.35904316063168,
+            "value_vs_loose": 18.173455144911014,
+            "value_vs_tight": 1.6971435172855487
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 45.776919686498644,
+            "value_vs_loose": 64.17826591162856,
+            "value_vs_tight": 7.5839611837697625
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 28.272285368139347,
+            "value_vs_loose": 37.74993972827771,
+            "value_vs_tight": 4.091038861589999
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.0,
+          "pressure": 0.0
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.00737958100992813,
+            "value_vs_loose": 0.17034480322165743,
+            "value_vs_tight": 0.022253907826090404
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.006361616686528736,
+            "value_vs_loose": 0.1617573736169571,
+            "value_vs_tight": 0.02373415686997089
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.006361616686528736,
+            "value_vs_loose": 0.1617573736169571,
+            "value_vs_tight": 0.02373415686997089
+          },
+          "unchanged": {
+            "heldout_card_response": 0.006361616686528736,
+            "value_vs_loose": 0.1617573736169571,
+            "value_vs_tight": 0.02373415686997089
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.13863218066405797,
+            "value_vs_loose": 0.10313537606468913,
+            "value_vs_tight": -0.048090525001233494
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.13863218066405797,
+            "value_vs_loose": 0.10313537606468913,
+            "value_vs_tight": -0.048090525001233494
+          },
+          "unchanged": {
+            "heldout_card_response": 0.13863218066405797,
+            "value_vs_loose": 0.10313537606468913,
+            "value_vs_tight": -0.048090525001233494
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": -0.13863218066405797,
+            "value_vs_loose": -0.10313537606468913,
+            "value_vs_tight": 0.048090525001233494
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          }
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.7916666666666666,
+          "control": 0.4166666666666667,
+          "pressure": 0.9583333333333334
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.01750597621014783,
+            "value_vs_loose": 0.2636501766504071,
+            "value_vs_tight": 0.026915437392062688
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.013530276392452105,
+            "value_vs_loose": 0.20280072137954586,
+            "value_vs_tight": 0.031628993361103135
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.015721981103773895,
+            "value_vs_loose": 0.22090327141299979,
+            "value_vs_tight": 0.02833755154916695
+          },
+          "unchanged": {
+            "heldout_card_response": 0.019253718355481366,
+            "value_vs_loose": 0.30656464649876075,
+            "value_vs_tight": 0.032186051909877854
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": 4.645558551639143,
+            "value_vs_loose": 10.364293938489416,
+            "value_vs_tight": -1.205029147269293
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 2.0845773329288355,
+            "value_vs_loose": 7.280944239666837,
+            "value_vs_tight": -0.3635660680197248
+          },
+          "unchanged": {
+            "heldout_card_response": -2.042216173659756,
+            "value_vs_loose": -7.30948498623238,
+            "value_vs_tight": -1.3474421773506402
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 2.042216173659756,
+            "value_vs_loose": 7.30948498623238,
+            "value_vs_tight": 1.3474421773506402
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 6.687774725298899,
+            "value_vs_loose": 17.673778924721795,
+            "value_vs_tight": 0.142413030081347
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 4.126793506588592,
+            "value_vs_loose": 14.590429225899216,
+            "value_vs_tight": 0.9838761093309153
+          }
+        }
+      },
+      "B_to_A": {
+        "clipped_pcc_fraction": {
+          "chaos": 0.0,
+          "control": 0.0,
+          "pressure": 0.0
+        },
+        "mse": {
+          "baseline": {
+            "heldout_card_response": 0.00819879158627483,
+            "value_vs_loose": 0.2022903843919666,
+            "value_vs_tight": 0.009627228168624036
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.011073372468210956,
+            "value_vs_loose": 0.24894352652494886,
+            "value_vs_tight": 0.014832621203467273
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.011073372468210956,
+            "value_vs_loose": 0.24894352652494886,
+            "value_vs_tight": 0.014832621203467273
+          },
+          "unchanged": {
+            "heldout_card_response": 0.011073372468210956,
+            "value_vs_loose": 0.24894352652494886,
+            "value_vs_tight": 0.014832621203467273
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "normalized_improvement_vs_baseline": {
+          "clip_all_to_training_range": {
+            "heldout_card_response": -0.2463868402255755,
+            "value_vs_loose": -0.3503631308588713,
+            "value_vs_tight": -0.14570823360641244
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": -0.2463868402255755,
+            "value_vs_loose": -0.3503631308588713,
+            "value_vs_tight": -0.14570823360641244
+          },
+          "unchanged": {
+            "heldout_card_response": -0.2463868402255755,
+            "value_vs_loose": -0.3503631308588713,
+            "value_vs_tight": -0.14570823360641244
+          }
+        },
+        "normalized_improvement_vs_unchanged": {
+          "baseline": {
+            "heldout_card_response": 0.2463868402255755,
+            "value_vs_loose": 0.3503631308588713,
+            "value_vs_tight": 0.14570823360641244
+          },
+          "clip_all_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "clip_pcc_to_training_range": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "frozen_evidence_modified": false,
+  "limitations": [
+    "Clipping inputs intervenes on model representation, not the game or generating mechanism.",
+    "Preselected primary hypothesis motivated by inspected earlier data; not independent preregistration.",
+    "Eight cohort bootstrap intervals are descriptive and may be imprecise.",
+    "Training-range clipping has no guarantee of fixing joint distribution shift.",
+    "No external simulator validation, no multiplicity-adjusted secondary testing."
+  ],
+  "measurements_sha256": "5acb7c241dbba23c0d89b1b31b0a3ed78d3c2a3161623c67f06daee72e5f5ce8",
+  "protocol_sha256": "e7382caebd986144ba0057006d1396ca96e1d66c1db7822435715f81a89f183f",
+  "scope": "fresh-seed computational input intervention; not causal identification of PCC constructs",
+  "summary": {
+    "directions": {
+      "A_to_B": {
+        "clip_all_to_training_range": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              15.854607589463619,
+              57.81485404657856
+            ],
+            "cohort_values": [
+              60.199811933265515,
+              9.123796655756557,
+              26.294134898705888,
+              93.71008139697402,
+              -4.1634958678542295,
+              48.008822435428755,
+              45.776919686498644,
+              6.687774725298899
+            ],
+            "fraction_positive": 0.875,
+            "mean": 35.70473073300926
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              31.098325839193272,
+              84.05629364033102
+            ],
+            "cohort_values": [
+              25.346966495035744,
+              30.554208474464247,
+              47.879559043928644,
+              23.060098149444055,
+              96.67227703219437,
+              132.23686653056365,
+              64.17826591162856,
+              17.673778924721795
+            ],
+            "fraction_positive": 1.0,
+            "mean": 54.700252570247635
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              5.817158667297288,
+              21.763847938294273
+            ],
+            "cohort_values": [
+              34.61218892659337,
+              -0.09429940639899438,
+              20.60106021819329,
+              22.755167818055494,
+              19.19128997956769,
+              3.6531103635371123,
+              7.5839611837697625,
+              0.142413030081347
+            ],
+            "fraction_positive": 0.875,
+            "mean": 13.555611514174883
+          }
+        },
+        "clip_pcc_to_training_range": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              9.625911362461002,
+              34.42469210271324
+            ],
+            "cohort_values": [
+              32.97723216944592,
+              7.690671117389177,
+              15.727656281653665,
+              58.21452866584904,
+              -1.114205444607967,
+              22.85413614686815,
+              28.272285368139347,
+              4.126793506588592
+            ],
+            "fraction_positive": 0.875,
+            "mean": 21.09363722641574
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              20.049220671762857,
+              51.879123962287956
+            ],
+            "cohort_values": [
+              16.237937177502705,
+              16.080532149916657,
+              33.25876379724417,
+              14.588041605141925,
+              53.635553994965164,
+              84.47389463059255,
+              37.74993972827771,
+              14.590429225899216
+            ],
+            "fraction_positive": 1.0,
+            "mean": 33.82688653869251
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              3.5479899534137496,
+              13.496162792009944
+            ],
+            "cohort_values": [
+              21.14692009378784,
+              -0.7802331108709064,
+              14.275866094566382,
+              13.656112421733914,
+              11.241870714153134,
+              2.2534232655408926,
+              4.091038861589999,
+              0.9838761093309153
+            ],
+            "fraction_positive": 0.875,
+            "mean": 8.358609306229022
+          }
+        }
+      },
+      "B_to_A": {
+        "clip_all_to_training_range": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -0.0006761062397322528,
+              0.01472326124106645
+            ],
+            "cohort_values": [
+              0.038429723388313776,
+              0.0009230822378056507,
+              0.0,
+              0.0024969197635902663,
+              -0.0027044249589290113,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.375,
+            "mean": 0.004893162553847585
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -0.0032946856690523134,
+              0.0046869239221052905
+            ],
+            "cohort_values": [
+              -0.011584506546726488,
+              -0.0009675648668790959,
+              0.0,
+              0.009363599154640054,
+              0.00938409653378111,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.25,
+            "mean": 0.0007744530343519475
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              5.925363745934639e-05,
+              0.004413202469058413
+            ],
+            "cohort_values": [
+              0.0005229539552692024,
+              -1.6308285198143768e-05,
+              0.0,
+              0.006511738248410881,
+              0.008735712803554578,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.375,
+            "mean": 0.0019692620902545645
+          }
+        },
+        "clip_pcc_to_training_range": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -0.0002846218237290552,
+              0.008485103615153802
+            ],
+            "cohort_values": [
+              0.021602703906687778,
+              0.0009230822378056507,
+              0.0,
+              0.002299025238666739,
+              -0.0015253332761663936,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.375,
+            "mean": 0.002912434763374222
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -0.0019865429713623456,
+              0.0025786690597440157
+            ],
+            "cohort_values": [
+              -0.006551755002468707,
+              -0.0009675648668790959,
+              0.0,
+              0.005014017241183009,
+              0.005300658997793054,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.25,
+            "mean": 0.0003494195462035325
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              3.413288158550538e-05,
+              0.0028020778091592652
+            ],
+            "cohort_values": [
+              0.00032198790827847433,
+              -1.6308285198143768e-05,
+              0.0,
+              0.0037587863943181745,
+              0.0056041556183185305,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.375,
+            "mean": 0.0012085777044646296
+          }
+        }
+      }
+    },
+    "n_cohorts": 8,
+    "primary_bootstrap_interval_positive": true,
+    "primary_point_estimate_criterion_met": true
+  }
+}

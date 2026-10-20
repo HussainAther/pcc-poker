@@ -1,0 +1,52 @@
+{
+  "protocol": {
+    "analysis": "fixed model; paired cohort bootstrap including training-policy variation",
+    "baseline_columns": [
+      5,
+      6,
+      7
+    ],
+    "bootstrap_repetitions": 5000,
+    "bootstrap_seed": 31031,
+    "candidate_columns": [
+      0,
+      1,
+      2
+    ],
+    "confidence_percentiles": [
+      2.5,
+      97.5
+    ],
+    "endpoints": [
+      "value_vs_tight",
+      "value_vs_loose",
+      "heldout_card_response"
+    ],
+    "inference_unit": "independently seeded paired A/B cohorts, not individual policies",
+    "no_selection": "no parameter, feature, endpoint or direction tuning based on this run",
+    "policies_per_family_per_replication": 24,
+    "primary_direction": "positive",
+    "primary_endpoint": "value_vs_loose",
+    "primary_point_criterion": "primary asymmetry mean > 0",
+    "primary_statistic": "mean across cohorts of (B_to_A improvement - A_to_B improvement)",
+    "protocol_id": "pcc-transfer-asymmetry-v3",
+    "replication_stride": 100003,
+    "replications": 8,
+    "ridge_penalty": 10.0,
+    "seed_base_A": 3100001,
+    "seed_base_B": 5100001,
+    "seed_stride": 137
+  },
+  "sources": {
+    "behavioral.py": "f36c16b56ac0d4bd10c129bc6bf71d70587c75a8ca991b169fdeeda9d4fe65c6",
+    "blind_discriminant.py": "7f60ac83add61108459612ec019a9f735fe3f7c6db81fad7666ec54f537f36b2",
+    "engine.py": "a407d0649705dc891c64fa4a79734029005dbe2084633ff285d57f223346670c",
+    "leduc_cfr.py": "95bce9e6e02a0478531a0baa20f047922fb27280566bd8a15b927e44dfd02ea8",
+    "low_dimensional_pcc_audit.py": "905bf37bb2850132a4adba719c9135f47d5061ab411ca2c532383cd49a038d2a",
+    "policies.py": "4ac1da49039ddfe4a7d06afe60170f383d4d43cd8fad1028ae16b1a44f3b11bd",
+    "prospective_pcc_replication.py": "1bd186bba1bd2c70a95d2ff95d624cb3fd545c81021ddf415e01f7ca52e8b25e",
+    "prospective_transfer_asymmetry.py": "7c2e7d859c42ba1145a2c33d0b81b0b8f6480977e517acf5da94b0c4211791c0",
+    "value_floor.py": "981a87a08d6eef3ae5c441551ba7be34de088de903b72bb091ca8c58c2c91844"
+  },
+  "status": "frozen_before_policy_generation"
+}

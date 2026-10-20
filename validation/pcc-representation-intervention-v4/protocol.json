@@ -1,0 +1,56 @@
+{
+  "protocol": {
+    "baseline_columns": [
+      5,
+      6,
+      7
+    ],
+    "bootstrap_repetitions": 5000,
+    "bootstrap_seed": 33033,
+    "candidate_columns": [
+      0,
+      1,
+      2
+    ],
+    "confidence_percentiles": [
+      2.5,
+      97.5
+    ],
+    "endpoints": [
+      "value_vs_tight",
+      "value_vs_loose",
+      "heldout_card_response"
+    ],
+    "id": "pcc-representation-intervention-v4",
+    "interventions": {
+      "clip_all_to_training_range": "standardized test baseline and PCC values clipped to training min/max (secondary)",
+      "clip_pcc_to_training_range": "only standardized test PCC values clipped to per-column train min/max",
+      "unchanged": "training-only standardized baseline+PCC"
+    },
+    "no_selection": "all comparisons fixed, no changes based on results",
+    "policies_per_family": 24,
+    "policy_stride": 149,
+    "primary_criterion": "mean clipped-vs-unchanged improvement > 0",
+    "primary_direction": "A_to_B",
+    "primary_endpoint": "value_vs_loose",
+    "primary_statistic": "mean cohort normalized MSE improvement: clipped PCC vs unchanged PCC",
+    "replication_stride": 100019,
+    "replications": 8,
+    "ridge_penalty": 10.0,
+    "seed_A": 7300001,
+    "seed_B": 9300001
+  },
+  "sources": {
+    "behavioral.py": "f36c16b56ac0d4bd10c129bc6bf71d70587c75a8ca991b169fdeeda9d4fe65c6",
+    "blind_discriminant.py": "7f60ac83add61108459612ec019a9f735fe3f7c6db81fad7666ec54f537f36b2",
+    "engine.py": "a407d0649705dc891c64fa4a79734029005dbe2084633ff285d57f223346670c",
+    "leduc_cfr.py": "95bce9e6e02a0478531a0baa20f047922fb27280566bd8a15b927e44dfd02ea8",
+    "low_dimensional_pcc_audit.py": "905bf37bb2850132a4adba719c9135f47d5061ab411ca2c532383cd49a038d2a",
+    "policies.py": "4ac1da49039ddfe4a7d06afe60170f383d4d43cd8fad1028ae16b1a44f3b11bd",
+    "prospective_pcc_replication.py": "1bd186bba1bd2c70a95d2ff95d624cb3fd545c81021ddf415e01f7ca52e8b25e",
+    "prospective_representation_intervention.py": "4f2faf7dccb54e57bb360bcd7e4dc474b30f86496866758e050569ef708b3637",
+    "prospective_transfer_asymmetry.py": "7c2e7d859c42ba1145a2c33d0b81b0b8f6480977e517acf5da94b0c4211791c0",
+    "value_floor.py": "981a87a08d6eef3ae5c441551ba7be34de088de903b72bb091ca8c58c2c91844"
+  },
+  "status": "frozen_before_policy_generation"
+}
