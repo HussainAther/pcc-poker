@@ -1,0 +1,386 @@
+diff --git a/mnt/data/pcc_work/pcc-poker/pcc_poker/independent_solver_audit.py b/mnt/data/pcc_work/pcc-poker/pcc_poker/independent_solver_audit.py
+deleted file mode 100644
+index 2aba5dd..0000000
+--- a/mnt/data/pcc_work/pcc-poker/pcc_poker/independent_solver_audit.py
++++ /dev/null
+@@ -1,142 +0,0 @@
+-"""Patch 24: independently evaluate Leduc policy values and pure best responses.
+-
+-Independent transitions/payoffs are provided by blind_leduc_reference; this
+-module does not call the local game tree or local best-response implementation.
+-External OpenSpiel parity is NOT claimed by this audit.
+-"""
+-from __future__ import annotations
+-
+-import argparse
+-from collections import defaultdict
+-import json
+-from pathlib import Path
+-
+-from . import blind_leduc_reference as ref
+-from .leduc_cfr import LeducCFR
+-
+-
+-def independent_values(policy):
+-    """Exact value and infoset-constrained BR using physical-card chance weights."""
+-    nodes = []
+-    infos = defaultdict(list)
+-    roots = []
+-
+-    def build(state, depth):
+-        idx = len(nodes)
+-        nodes.append(None)
+-        actions = ref.legal(state)
+-        k = ref.key(state) if actions else None
+-        children = tuple(build(ref.step(state, a), depth + 1) for a in actions)
+-        nodes[idx] = (state, depth, k, actions, children)
+-        if k is not None:
+-            infos[k].append(idx)
+-        return idx
+-
+-    for cards, multiplicity in ref.physical_triples().items():
+-        roots.append((build(ref.start(cards), 0), multiplicity / 120.0))
+-    for k, ids in infos.items():
+-        signatures = {(nodes[i][1], nodes[i][3]) for i in ids}
+-        if len(signatures) != 1:
+-            raise ValueError(f'inconsistent independent infoset: {k}')
+-        if k not in policy or len(policy[k]) != len(nodes[ids[0]][3]):
+-            raise ValueError(f'missing/incompatible policy infoset: {k}')
+-        probs = policy[k]
+-        if any(float(p) < -1e-12 for p in probs) or abs(sum(float(p) for p in probs) - 1) > 1e-8:
+-            raise ValueError(f'invalid policy probabilities: {k}')
+-
+-    def expected(player):
+-        values = [0.0] * len(nodes)
+-        for i in range(len(nodes) - 1, -1, -1):
+-            state, _, key, _, children = nodes[i]
+-            values[i] = (sum(float(p) * values[c] for p, c in zip(policy[key], children))
+-                         if key is not None else ref.payoff(state, player))
+-        return sum(w * values[i] for i, w in roots)
+-
+-    def best_response(player):
+-        reaches = [0.0] * len(nodes)
+-        for i, weight in roots:
+-            reaches[i] = weight
+-        for i, (state, _, key, _, children) in enumerate(nodes):
+-            if key is None:
+-                continue
+-            if state['turn'] == player:
+-                for child in children:
+-                    reaches[child] += reaches[i]
+-            else:
+-                for p, child in zip(policy[key], children):
+-                    reaches[child] += reaches[i] * float(p)
+-        values = [0.0] * len(nodes)
+-        by_depth = defaultdict(list)
+-        for key, ids in infos.items():
+-            by_depth[nodes[ids[0]][1]].append((key, ids))
+-        for i, (state, _, key, _, _) in enumerate(nodes):
+-            if key is None:
+-                values[i] = ref.payoff(state, player)
+-        for depth in sorted(by_depth, reverse=True):
+-            for key, ids in by_depth[depth]:
+-                if key[0] == player:
+-                    scores = [sum(reaches[i] * values[nodes[i][4][a]] for i in ids)
+-                              for a in range(len(nodes[ids[0]][4]))]
+-                    chosen = max(range(len(scores)), key=lambda a: scores[a])
+-                    for i in ids:
+-                        values[i] = values[nodes[i][4][chosen]]
+-                else:
+-                    for i in ids:
+-                        values[i] = sum(float(p) * values[c] for p, c in zip(policy[key], nodes[i][4]))
+-        return sum(w * values[i] for i, w in roots)
+-
+-    value0 = expected(0)
+-    value1 = expected(1)
+-    br0 = best_response(0)
+-    br1 = best_response(1)
+-    return {'profile_value_player0': value0, 'profile_value_player1': value1,
+-            'best_response_player0': br0, 'best_response_player1': br1,
+-            'nash_conv': br0 + br1, 'exploitability': (br0 + br1) / 2,
+-            'independent_nodes': len(nodes), 'independent_infosets': len(infos)}
+-
+-
+-def audit(iterations=2, tolerance=1e-8):
+-    if iterations < 0 or tolerance <= 0:
+-        raise ValueError('iterations must be nonnegative and tolerance positive')
+-    solver = LeducCFR()
+-    if iterations:
+-        solver.train(iterations)
+-    policy = solver.average_strategy()
+-    local = solver.evaluate()
+-    independent = independent_values(policy)
+-    fields = ('profile_value_player0', 'best_response_player0',
+-              'best_response_player1', 'nash_conv', 'exploitability')
+-    deltas = {field: abs(float(local[field]) - float(independent[field])) for field in fields}
+-    deltas['zero_sum_profile'] = abs(independent['profile_value_player0'] + independent['profile_value_player1'])
+-    passed = all(delta <= tolerance for delta in deltas.values())
+-    return {'status': 'pass' if passed else 'fail', 'iterations': iterations,
+-            'tolerance': tolerance, 'deltas': deltas, 'local': local,
+-            'independent': independent,
+-            'scope': 'Independent physical-card Leduc evaluator and infoset best response',
+-            'limitations': 'Not an external OpenSpiel solver comparison; shared game rules may still contain conceptual errors.',
+-            'frozen_evidence_modified': False}
+-
+-
+-def main(argv=None):
+-    parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--iterations', type=int, default=2)
+-    parser.add_argument('--tolerance', type=float, default=1e-8)
+-    parser.add_argument('--output', type=Path, help='Optional new report path (never overwrites)')
+-    args = parser.parse_args(argv)
+-    try:
+-        result = audit(args.iterations, args.tolerance)
+-    except ValueError as exc:
+-        parser.error(str(exc))
+-    serialized = json.dumps(result, indent=2) + '\n'
+-    if args.output:
+-        if args.output.exists():
+-            parser.error(f'refusing to overwrite {args.output}')
+-        args.output.parent.mkdir(parents=True, exist_ok=True)
+-        with args.output.open('x', encoding='utf-8') as file:
+-            file.write(serialized)
+-    print(serialized, end='')
+-    return 0 if result['status'] == 'pass' else 1
+-
+-
+-if __name__ == '__main__':
+-    raise SystemExit(main())
+diff --git a/pcc_poker/independent_solver_audit.py b/pcc_poker/independent_solver_audit.py
+new file mode 100644
+index 0000000..2aba5dd
+--- /dev/null
++++ b/pcc_poker/independent_solver_audit.py
+@@ -0,0 +1,142 @@
++"""Patch 24: independently evaluate Leduc policy values and pure best responses.
++
++Independent transitions/payoffs are provided by blind_leduc_reference; this
++module does not call the local game tree or local best-response implementation.
++External OpenSpiel parity is NOT claimed by this audit.
++"""
++from __future__ import annotations
++
++import argparse
++from collections import defaultdict
++import json
++from pathlib import Path
++
++from . import blind_leduc_reference as ref
++from .leduc_cfr import LeducCFR
++
++
++def independent_values(policy):
++    """Exact value and infoset-constrained BR using physical-card chance weights."""
++    nodes = []
++    infos = defaultdict(list)
++    roots = []
++
++    def build(state, depth):
++        idx = len(nodes)
++        nodes.append(None)
++        actions = ref.legal(state)
++        k = ref.key(state) if actions else None
++        children = tuple(build(ref.step(state, a), depth + 1) for a in actions)
++        nodes[idx] = (state, depth, k, actions, children)
++        if k is not None:
++            infos[k].append(idx)
++        return idx
++
++    for cards, multiplicity in ref.physical_triples().items():
++        roots.append((build(ref.start(cards), 0), multiplicity / 120.0))
++    for k, ids in infos.items():
++        signatures = {(nodes[i][1], nodes[i][3]) for i in ids}
++        if len(signatures) != 1:
++            raise ValueError(f'inconsistent independent infoset: {k}')
++        if k not in policy or len(policy[k]) != len(nodes[ids[0]][3]):
++            raise ValueError(f'missing/incompatible policy infoset: {k}')
++        probs = policy[k]
++        if any(float(p) < -1e-12 for p in probs) or abs(sum(float(p) for p in probs) - 1) > 1e-8:
++            raise ValueError(f'invalid policy probabilities: {k}')
++
++    def expected(player):
++        values = [0.0] * len(nodes)
++        for i in range(len(nodes) - 1, -1, -1):
++            state, _, key, _, children = nodes[i]
++            values[i] = (sum(float(p) * values[c] for p, c in zip(policy[key], children))
++                         if key is not None else ref.payoff(state, player))
++        return sum(w * values[i] for i, w in roots)
++
++    def best_response(player):
++        reaches = [0.0] * len(nodes)
++        for i, weight in roots:
++            reaches[i] = weight
++        for i, (state, _, key, _, children) in enumerate(nodes):
++            if key is None:
++                continue
++            if state['turn'] == player:
++                for child in children:
++                    reaches[child] += reaches[i]
++            else:
++                for p, child in zip(policy[key], children):
++                    reaches[child] += reaches[i] * float(p)
++        values = [0.0] * len(nodes)
++        by_depth = defaultdict(list)
++        for key, ids in infos.items():
++            by_depth[nodes[ids[0]][1]].append((key, ids))
++        for i, (state, _, key, _, _) in enumerate(nodes):
++            if key is None:
++                values[i] = ref.payoff(state, player)
++        for depth in sorted(by_depth, reverse=True):
++            for key, ids in by_depth[depth]:
++                if key[0] == player:
++                    scores = [sum(reaches[i] * values[nodes[i][4][a]] for i in ids)
++                              for a in range(len(nodes[ids[0]][4]))]
++                    chosen = max(range(len(scores)), key=lambda a: scores[a])
++                    for i in ids:
++                        values[i] = values[nodes[i][4][chosen]]
++                else:
++                    for i in ids:
++                        values[i] = sum(float(p) * values[c] for p, c in zip(policy[key], nodes[i][4]))
++        return sum(w * values[i] for i, w in roots)
++
++    value0 = expected(0)
++    value1 = expected(1)
++    br0 = best_response(0)
++    br1 = best_response(1)
++    return {'profile_value_player0': value0, 'profile_value_player1': value1,
++            'best_response_player0': br0, 'best_response_player1': br1,
++            'nash_conv': br0 + br1, 'exploitability': (br0 + br1) / 2,
++            'independent_nodes': len(nodes), 'independent_infosets': len(infos)}
++
++
++def audit(iterations=2, tolerance=1e-8):
++    if iterations < 0 or tolerance <= 0:
++        raise ValueError('iterations must be nonnegative and tolerance positive')
++    solver = LeducCFR()
++    if iterations:
++        solver.train(iterations)
++    policy = solver.average_strategy()
++    local = solver.evaluate()
++    independent = independent_values(policy)
++    fields = ('profile_value_player0', 'best_response_player0',
++              'best_response_player1', 'nash_conv', 'exploitability')
++    deltas = {field: abs(float(local[field]) - float(independent[field])) for field in fields}
++    deltas['zero_sum_profile'] = abs(independent['profile_value_player0'] + independent['profile_value_player1'])
++    passed = all(delta <= tolerance for delta in deltas.values())
++    return {'status': 'pass' if passed else 'fail', 'iterations': iterations,
++            'tolerance': tolerance, 'deltas': deltas, 'local': local,
++            'independent': independent,
++            'scope': 'Independent physical-card Leduc evaluator and infoset best response',
++            'limitations': 'Not an external OpenSpiel solver comparison; shared game rules may still contain conceptual errors.',
++            'frozen_evidence_modified': False}
++
++
++def main(argv=None):
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--iterations', type=int, default=2)
++    parser.add_argument('--tolerance', type=float, default=1e-8)
++    parser.add_argument('--output', type=Path, help='Optional new report path (never overwrites)')
++    args = parser.parse_args(argv)
++    try:
++        result = audit(args.iterations, args.tolerance)
++    except ValueError as exc:
++        parser.error(str(exc))
++    serialized = json.dumps(result, indent=2) + '\n'
++    if args.output:
++        if args.output.exists():
++            parser.error(f'refusing to overwrite {args.output}')
++        args.output.parent.mkdir(parents=True, exist_ok=True)
++        with args.output.open('x', encoding='utf-8') as file:
++            file.write(serialized)
++    print(serialized, end='')
++    return 0 if result['status'] == 'pass' else 1
++
++
++if __name__ == '__main__':
++    raise SystemExit(main())
+diff --git a/mnt/data/pcc_work/pcc-poker/tests/test_independent_solver_audit.py b/mnt/data/pcc_work/pcc-poker/tests/test_independent_solver_audit.py
+deleted file mode 100644
+index f572202..0000000
+--- a/mnt/data/pcc_work/pcc-poker/tests/test_independent_solver_audit.py
++++ /dev/null
+@@ -1,39 +0,0 @@
+-"""Regression checks for Patch 24 independent exact evaluator."""
+-import pytest
+-
+-from pcc_poker.independent_solver_audit import audit, independent_values, main
+-from pcc_poker.leduc_cfr import LeducCFR
+-
+-
+-@pytest.mark.parametrize('iterations', [0, 1, 2, 5])
+-def test_exact_crosscheck(iterations):
+-    result = audit(iterations)
+-    assert result['status'] == 'pass', result['deltas']
+-    assert result['independent']['nash_conv'] >= -1e-9
+-
+-
+-def test_pure_policy_crosscheck():
+-    solver = LeducCFR()
+-    policy = {k: [1.0] + [0.0] * (len(v) - 1) for k, v in solver.regrets.items()}
+-    independent = independent_values(policy)
+-    assert abs(independent['profile_value_player0'] - solver.profile_value(policy)) < 1e-8
+-    for player in (0, 1):
+-        assert abs(independent[f'best_response_player{player}'] - solver.best_response_value(policy, player)) < 1e-8
+-
+-
+-def test_invalid_probability_rejected():
+-    solver = LeducCFR()
+-    policy = solver.average_strategy()
+-    key = next(iter(policy))
+-    policy[key] = [0.0] * len(policy[key])
+-    with pytest.raises(ValueError, match='invalid policy'):
+-        independent_values(policy)
+-
+-
+-def test_non_overwrite(tmp_path):
+-    target = tmp_path / 'evidence.json'
+-    assert main(['--iterations', '0', '--output', str(target)]) == 0
+-    original = target.read_bytes()
+-    with pytest.raises(SystemExit):
+-        main(['--iterations', '0', '--output', str(target)])
+-    assert target.read_bytes() == original
+diff --git a/tests/test_independent_solver_audit.py b/tests/test_independent_solver_audit.py
+new file mode 100644
+index 0000000..f572202
+--- /dev/null
++++ b/tests/test_independent_solver_audit.py
+@@ -0,0 +1,39 @@
++"""Regression checks for Patch 24 independent exact evaluator."""
++import pytest
++
++from pcc_poker.independent_solver_audit import audit, independent_values, main
++from pcc_poker.leduc_cfr import LeducCFR
++
++
++@pytest.mark.parametrize('iterations', [0, 1, 2, 5])
++def test_exact_crosscheck(iterations):
++    result = audit(iterations)
++    assert result['status'] == 'pass', result['deltas']
++    assert result['independent']['nash_conv'] >= -1e-9
++
++
++def test_pure_policy_crosscheck():
++    solver = LeducCFR()
++    policy = {k: [1.0] + [0.0] * (len(v) - 1) for k, v in solver.regrets.items()}
++    independent = independent_values(policy)
++    assert abs(independent['profile_value_player0'] - solver.profile_value(policy)) < 1e-8
++    for player in (0, 1):
++        assert abs(independent[f'best_response_player{player}'] - solver.best_response_value(policy, player)) < 1e-8
++
++
++def test_invalid_probability_rejected():
++    solver = LeducCFR()
++    policy = solver.average_strategy()
++    key = next(iter(policy))
++    policy[key] = [0.0] * len(policy[key])
++    with pytest.raises(ValueError, match='invalid policy'):
++        independent_values(policy)
++
++
++def test_non_overwrite(tmp_path):
++    target = tmp_path / 'evidence.json'
++    assert main(['--iterations', '0', '--output', str(target)]) == 0
++    original = target.read_bytes()
++    with pytest.raises(SystemExit):
++        main(['--iterations', '0', '--output', str(target)])
++    assert target.read_bytes() == original
