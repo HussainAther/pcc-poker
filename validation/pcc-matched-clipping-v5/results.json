@@ -1,0 +1,2187 @@
+{
+  "cohort_results": [
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": -0.358219288844759,
+            "value_vs_loose": 29.7142859798388,
+            "value_vs_tight": 22.5894509602166
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.5974637595882918,
+            "value_vs_loose": 43.98282138382801,
+            "value_vs_tight": 36.71012313760655
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 5.072925971669015,
+            "value_vs_loose": 23.97636193627676,
+            "value_vs_tight": 30.332360472223783
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -1.551449660981047,
+            "value_vs_loose": -14.181020677176997,
+            "value_vs_tight": -15.455036411026505
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.5957666125479963,
+            "value_vs_loose": 0.08751472681221352,
+            "value_vs_tight": -1.3343642336365533
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.817760658870351,
+            "value_vs_loose": 21.92236201941028,
+            "value_vs_tight": 23.791114140895097
+          },
+          "raw_incremental": {
+            "heldout_card_response": 3.8796955995327274,
+            "value_vs_loose": -19.918944720739034,
+            "value_vs_tight": -7.712126899019316
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.015488304729061458,
+            "value_vs_loose": 0.2559897552184012,
+            "value_vs_tight": 0.11401690232741256
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.013976902162542347,
+            "value_vs_loose": 0.18628988105131164,
+            "value_vs_tight": 0.04877085716310101
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.013628504961695239,
+            "value_vs_loose": 0.2940522545699155,
+            "value_vs_tight": 0.10846449170744364
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.014921784737496967,
+            "value_vs_loose": 0.40114004115318913,
+            "value_vs_tight": 0.21839382709925595
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.01303470360756346,
+            "value_vs_loose": 0.18671737870778962,
+            "value_vs_tight": 0.0426052874253589
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.02105748202339211,
+            "value_vs_loose": 0.30383867831054107,
+            "value_vs_tight": 0.18275913679237252
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.7916666666666666,
+            0.9583333333333334,
+            0.25
+          ],
+          "pcc": [
+            0.9583333333333334,
+            0.625,
+            0.7916666666666666
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": 0.057141093164351765,
+            "value_vs_loose": 0.010799224316456659,
+            "value_vs_tight": -0.15652097660124353
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": 0.057141093164351765,
+            "value_vs_loose": 0.010799224316456659,
+            "value_vs_tight": -0.15652097660124353
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": 0.057141093164351765,
+            "value_vs_loose": 0.010799224316456659,
+            "value_vs_tight": -0.15652097660124353
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.004025779239637337,
+            "value_vs_loose": 0.1433020289902001,
+            "value_vs_tight": 0.025170854000198393
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.004025779239637337,
+            "value_vs_loose": 0.1433020289902001,
+            "value_vs_tight": 0.025170854000198393
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.004025779239637337,
+            "value_vs_loose": 0.1433020289902001,
+            "value_vs_tight": 0.025170854000198393
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.004025779239637337,
+            "value_vs_loose": 0.1433020289902001,
+            "value_vs_tight": 0.025170854000198393
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.004506807526534541,
+            "value_vs_loose": 0.14431807220922524,
+            "value_vs_tight": 0.021228998564392698
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.004506807526534541,
+            "value_vs_loose": 0.14431807220922524,
+            "value_vs_tight": 0.021228998564392698
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 17.226178972293198,
+            "value_vs_loose": 4.847400518553144,
+            "value_vs_tight": 57.53687549839236
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 40.39573572970499,
+            "value_vs_loose": 6.171908974720933,
+            "value_vs_tight": 77.79106388339262
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 27.072859187162322,
+            "value_vs_loose": 6.968898834314788,
+            "value_vs_tight": 51.91284567738034
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -24.249107314837328,
+            "value_vs_loose": -0.5471235080683671,
+            "value_vs_tight": -20.909024940955657
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -1.0795505574255384,
+            "value_vs_loose": 0.777384948099421,
+            "value_vs_tight": -0.6548365559553957
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 31.597673489191845,
+            "value_vs_loose": 1.4753288838899463,
+            "value_vs_tight": 51.18997267748772
+          },
+          "raw_incremental": {
+            "heldout_card_response": -14.402427099968206,
+            "value_vs_loose": 1.5743748076932773,
+            "value_vs_tight": -26.533054761967687
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.06523137663192984,
+            "value_vs_loose": 0.1597710118327664,
+            "value_vs_tight": 0.1284512810388399
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.016994184767342314,
+            "value_vs_loose": 0.1525821703345687,
+            "value_vs_tight": 0.025880537418665115
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.03531105723821747,
+            "value_vs_loose": 0.17807311355909264,
+            "value_vs_tight": 0.16059310423365591
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.1010949241689114,
+            "value_vs_loose": 0.18608054111050587,
+            "value_vs_tight": 0.4198280567096979
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.014746645554085685,
+            "value_vs_loose": 0.15680146931219896,
+            "value_vs_tight": 0.02256433085352023
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.07111020557412599,
+            "value_vs_loose": 0.1946255457864358,
+            "value_vs_tight": 0.28546003831675504
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.7083333333333334,
+            0.9166666666666666,
+            0.4583333333333333
+          ],
+          "pcc": [
+            0.9166666666666666,
+            0.8333333333333334,
+            0.625
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": 0.05920014235349962,
+            "value_vs_loose": 0.11246567387019421,
+            "value_vs_tight": -0.0057481556172896825
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": 0.05920014235349962,
+            "value_vs_loose": 0.11246567387019421,
+            "value_vs_tight": -0.0057481556172896825
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": 0.05920014235349962,
+            "value_vs_loose": 0.11246567387019421,
+            "value_vs_tight": -0.0057481556172896825
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.0038718955103459393,
+            "value_vs_loose": 0.08878493508659539,
+            "value_vs_tight": 0.009948255031196356
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.0038718955103459393,
+            "value_vs_loose": 0.08878493508659539,
+            "value_vs_tight": 0.009948255031196356
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.0038718955103459393,
+            "value_vs_loose": 0.08878493508659539,
+            "value_vs_tight": 0.009948255031196356
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.0038718955103459393,
+            "value_vs_loose": 0.08878493508659539,
+            "value_vs_tight": 0.009948255031196356
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.00437290113655582,
+            "value_vs_loose": 0.09698843724632467,
+            "value_vs_tight": 0.009873721302570455
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.00437290113655582,
+            "value_vs_loose": 0.09698843724632467,
+            "value_vs_tight": 0.009873721302570455
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 3.9391310899263723,
+            "value_vs_loose": 40.50887486375389,
+            "value_vs_tight": 14.700151779539002
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 5.044777218289752,
+            "value_vs_loose": 66.17773199648404,
+            "value_vs_tight": 19.87317174721662
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 2.275508588762967,
+            "value_vs_loose": 48.64085349478679,
+            "value_vs_tight": 13.724064125347738
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -1.3755714405203008,
+            "value_vs_loose": -26.8697535428678,
+            "value_vs_tight": -5.738790718856364
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.2699253121569207,
+            "value_vs_loose": -1.200896410137649,
+            "value_vs_tight": -0.5657707511787449
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 3.916271407166369,
+            "value_vs_loose": 42.03602400157152,
+            "value_vs_tight": 11.72539546928749
+          },
+          "raw_incremental": {
+            "heldout_card_response": -3.0391939416837057,
+            "value_vs_loose": -18.737774911834897,
+            "value_vs_tight": -6.714878373047628
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.013126220154995776,
+            "value_vs_loose": 0.47473796694840115,
+            "value_vs_tight": 0.07183353306315436
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.011347217086444381,
+            "value_vs_loose": 0.24537832261360015,
+            "value_vs_tight": 0.033944589304685364
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.013163001765976817,
+            "value_vs_loose": 0.46109238930211677,
+            "value_vs_tight": 0.09362165204172283
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.019464347804190662,
+            "value_vs_loose": 0.8366980294128318,
+            "value_vs_tight": 0.1795024049206043
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.010912902755404609,
+            "value_vs_loose": 0.23464791992804768,
+            "value_vs_tight": 0.029800693416879246
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.014574234042221107,
+            "value_vs_loose": 0.6692698744629934,
+            "value_vs_tight": 0.1303203699369696
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.7083333333333334,
+            0.9166666666666666,
+            0.3333333333333333
+          ],
+          "pcc": [
+            0.9166666666666666,
+            0.5416666666666666,
+            0.75
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -0.059284148638139154,
+            "value_vs_loose": -0.17961621737839925,
+            "value_vs_tight": -0.233850108569892
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.059284148638139154,
+            "value_vs_loose": -0.17961621737839925,
+            "value_vs_tight": -0.233850108569892
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": -0.059284148638139154,
+            "value_vs_loose": -0.17961621737839925,
+            "value_vs_tight": -0.233850108569892
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.00698479136778287,
+            "value_vs_loose": 0.1962723664902177,
+            "value_vs_tight": 0.024530082773482825
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.00698479136778287,
+            "value_vs_loose": 0.1962723664902177,
+            "value_vs_tight": 0.024530082773482825
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.00698479136778287,
+            "value_vs_loose": 0.1962723664902177,
+            "value_vs_tight": 0.024530082773482825
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.00698479136778287,
+            "value_vs_loose": 0.1962723664902177,
+            "value_vs_tight": 0.024530082773482825
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.006522285495318215,
+            "value_vs_loose": 0.18068519113414175,
+            "value_vs_tight": 0.019586589363499957
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.006522285495318215,
+            "value_vs_loose": 0.18068519113414175,
+            "value_vs_tight": 0.019586589363499957
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 15.159612482848807,
+            "value_vs_loose": 10.971469334471205,
+            "value_vs_tight": 3.815678312392071
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 24.08316996758671,
+            "value_vs_loose": 17.717255853251093,
+            "value_vs_tight": 6.799395931429531
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 17.45990064004218,
+            "value_vs_loose": 15.052652030133386,
+            "value_vs_tight": 5.298795921493104
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -9.774000887126219,
+            "value_vs_loose": -7.6978977230462755,
+            "value_vs_tight": -3.2615489781805524
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.8504434023883186,
+            "value_vs_loose": -0.9521112042663863,
+            "value_vs_tight": -0.2778313591430922
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 16.469129007105646,
+            "value_vs_loose": 10.917333691309022,
+            "value_vs_tight": 3.8316216047942406
+          },
+          "raw_incremental": {
+            "heldout_card_response": -7.4737127299328465,
+            "value_vs_loose": -3.6167150273840942,
+            "value_vs_tight": -1.7784313690795197
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.03660728393128721,
+            "value_vs_loose": 0.47811831711978253,
+            "value_vs_tight": 0.10801758166137822
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.0247307101944733,
+            "value_vs_loose": 0.4252330388822023,
+            "value_vs_tight": 0.09844315076393446
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.03486441741347608,
+            "value_vs_loose": 0.4785427270152383,
+            "value_vs_tight": 0.10796642134030482
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.05678357077451212,
+            "value_vs_loose": 0.5641318911949869,
+            "value_vs_tight": 0.12026168549204103
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.023598834953603664,
+            "value_vs_loose": 0.4177687252976312,
+            "value_vs_tight": 0.09755161963099952
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.04683662971690999,
+            "value_vs_loose": 0.5357777504292277,
+            "value_vs_tight": 0.11455488933262727
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.7916666666666666,
+            0.9583333333333334,
+            0.25
+          ],
+          "pcc": [
+            0.9166666666666666,
+            0.375,
+            0.9166666666666666
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -0.22402711542195272,
+            "value_vs_loose": -0.2792467292702391,
+            "value_vs_tight": -0.18180731790913587
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.22402711542195272,
+            "value_vs_loose": -0.2792467292702391,
+            "value_vs_tight": -0.18180731790913587
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": -0.22402711542195272,
+            "value_vs_loose": -0.2792467292702391,
+            "value_vs_tight": -0.18180731790913587
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.020329603794010977,
+            "value_vs_loose": 0.4404435020937724,
+            "value_vs_tight": 0.07486262873701983
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.020329603794010977,
+            "value_vs_loose": 0.4404435020937724,
+            "value_vs_tight": 0.07486262873701983
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.020329603794010977,
+            "value_vs_loose": 0.4404435020937724,
+            "value_vs_tight": 0.07486262873701983
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.020329603794010977,
+            "value_vs_loose": 0.4404435020937724,
+            "value_vs_tight": 0.07486262873701983
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.017044584469824833,
+            "value_vs_loose": 0.378123229395583,
+            "value_vs_tight": 0.059977085816300145
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.017044584469824833,
+            "value_vs_loose": 0.378123229395583,
+            "value_vs_tight": 0.059977085816300145
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 1.2863774830047212,
+            "value_vs_loose": 23.05352033237729,
+            "value_vs_tight": 15.797374671450877
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 3.9074597803788267,
+            "value_vs_loose": 39.72094426411196,
+            "value_vs_tight": 21.34589756351614
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 3.712153380355452,
+            "value_vs_loose": 26.20244496119735,
+            "value_vs_tight": 18.42834042674084
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -2.923071182953408,
+            "value_vs_loose": -17.169361328010773,
+            "value_vs_tight": -6.182803858159805
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.3019888855793027,
+            "value_vs_loose": -0.5019373962761066,
+            "value_vs_tight": -0.6342809660945445
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 2.900385023019556,
+            "value_vs_loose": 27.227758674760825,
+            "value_vs_tight": 9.778284041939552
+          },
+          "raw_incremental": {
+            "heldout_card_response": -0.4972952856026777,
+            "value_vs_loose": -14.02043669919071,
+            "value_vs_tight": -3.5518381028698425
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.019715885298792285,
+            "value_vs_loose": 0.2275263327012751,
+            "value_vs_tight": 0.09137970196250711
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.015834943407908683,
+            "value_vs_loose": 0.1462647829911213,
+            "value_vs_tight": 0.05140394305793408
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.01732608262814706,
+            "value_vs_loose": 0.20717495279092282,
+            "value_vs_tight": 0.13474578704692083
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.021620577977188516,
+            "value_vs_loose": 0.3399231131609503,
+            "value_vs_tight": 0.20519594702012975
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.015387799372103274,
+            "value_vs_loose": 0.1438176015402904,
+            "value_vs_tight": 0.04683410285512701
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.020884250808839825,
+            "value_vs_loose": 0.27156687416110775,
+            "value_vs_tight": 0.17960581674033008
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.7916666666666666,
+            0.9583333333333334,
+            0.375
+          ],
+          "pcc": [
+            0.9583333333333334,
+            0.4583333333333333,
+            0.8333333333333334
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": 0.005124845462500825,
+            "value_vs_loose": -0.0830993818398404,
+            "value_vs_tight": -0.026136967139186288
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": 0.005124845462500825,
+            "value_vs_loose": -0.0830993818398404,
+            "value_vs_tight": -0.026136967139186288
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": 0.005124845462500825,
+            "value_vs_loose": -0.0830993818398404,
+            "value_vs_tight": -0.026136967139186288
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.003005366524500857,
+            "value_vs_loose": 0.10792174020678447,
+            "value_vs_tight": 0.010871801296695488
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.003005366524500857,
+            "value_vs_loose": 0.10792174020678447,
+            "value_vs_tight": 0.010871801296695488
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.003005366524500857,
+            "value_vs_loose": 0.10792174020678447,
+            "value_vs_tight": 0.010871801296695488
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.003005366524500857,
+            "value_vs_loose": 0.10792174020678447,
+            "value_vs_tight": 0.010871801296695488
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.0030761838641233806,
+            "value_vs_loose": 0.09937719322498634,
+            "value_vs_tight": 0.010146220321480022
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.0030761838641233806,
+            "value_vs_loose": 0.09937719322498634,
+            "value_vs_tight": 0.010146220321480022
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 43.70598041786964,
+            "value_vs_loose": 6.737180575031571,
+            "value_vs_tight": 34.12609531833347
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 64.07800222485554,
+            "value_vs_loose": 3.2086907059907612,
+            "value_vs_tight": 48.33590643971478
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 46.43467587730967,
+            "value_vs_loose": -2.017313115414376,
+            "value_vs_tight": 33.147083549995635
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -20.80613704211854,
+            "value_vs_loose": 3.6073988476747125,
+            "value_vs_tight": -14.889381105985938
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.4341152351326333,
+            "value_vs_loose": 0.07890897863390192,
+            "value_vs_tight": -0.6795699846046227
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 39.27018097657402,
+            "value_vs_loose": -5.6502469345895765,
+            "value_vs_tight": 33.002315919170165
+          },
+          "raw_incremental": {
+            "heldout_card_response": -18.077441582678507,
+            "value_vs_loose": -5.147094842771235,
+            "value_vs_tight": -15.868392874323767
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.03991502974936827,
+            "value_vs_loose": 0.18967620434394264,
+            "value_vs_tight": 0.09620654177627565
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.015897934738450175,
+            "value_vs_loose": 0.21697873479500632,
+            "value_vs_tight": 0.0314760804473889
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.04514450660936464,
+            "value_vs_loose": 0.28552687399138427,
+            "value_vs_tight": 0.1013257343058853
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.09144112245565746,
+            "value_vs_loose": 0.2418067430817844,
+            "value_vs_tight": 0.2516623655335272
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.015386145238779986,
+            "value_vs_loose": 0.21758931180442823,
+            "value_vs_tight": 0.02838041096712873
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.0701291664721513,
+            "value_vs_loose": 0.2019798712768567,
+            "value_vs_tight": 0.17937650736631838
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.7916666666666666,
+            0.9583333333333334,
+            0.16666666666666666
+          ],
+          "pcc": [
+            0.9583333333333334,
+            0.5833333333333334,
+            0.7916666666666666
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": 0.04261955967328936,
+            "value_vs_loose": 0.2070162143956646,
+            "value_vs_tight": 0.03252145355772736
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": 0.04261955967328936,
+            "value_vs_loose": 0.2070162143956646,
+            "value_vs_tight": 0.03252145355772736
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": 0.04261955967328936,
+            "value_vs_loose": 0.2070162143956646,
+            "value_vs_tight": 0.03252145355772736
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.001783444586473082,
+            "value_vs_loose": 0.0867833293165387,
+            "value_vs_tight": 0.0104941003038665
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.001783444586473082,
+            "value_vs_loose": 0.0867833293165387,
+            "value_vs_tight": 0.0104941003038665
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.001783444586473082,
+            "value_vs_loose": 0.0867833293165387,
+            "value_vs_tight": 0.0104941003038665
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.001783444586473082,
+            "value_vs_loose": 0.0867833293165387,
+            "value_vs_tight": 0.0104941003038665
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.002258432530182554,
+            "value_vs_loose": 0.10833933824821472,
+            "value_vs_tight": 0.011139092340323528
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.002258432530182554,
+            "value_vs_loose": 0.10833933824821472,
+            "value_vs_tight": 0.011139092340323528
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 12.774122389046404,
+            "value_vs_loose": 32.95519891286859,
+            "value_vs_tight": 12.674372558237009
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 16.078614162907876,
+            "value_vs_loose": 52.65379395340651,
+            "value_vs_tight": 16.39228020573678
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 14.50271981283445,
+            "value_vs_loose": 39.80120367644747,
+            "value_vs_tight": 14.104114507921183
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -3.6443924261656218,
+            "value_vs_loose": -19.445488269939784,
+            "value_vs_tight": -3.8526790920753142
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.3399006523041516,
+            "value_vs_loose": 0.25310677059814446,
+            "value_vs_tight": -0.13477144457554321
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 6.5647463655524465,
+            "value_vs_loose": 34.30721866018008,
+            "value_vs_tight": 6.93958568126393
+          },
+          "raw_incremental": {
+            "heldout_card_response": -1.9157950023775772,
+            "value_vs_loose": -12.5994835063609,
+            "value_vs_tight": -2.4229371423911394
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.02845512871950068,
+            "value_vs_loose": 0.41284019820841084,
+            "value_vs_tight": 0.06590781521736526
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.024283278684829154,
+            "value_vs_loose": 0.2862141550635505,
+            "value_vs_tight": 0.054628860921529056
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.0362943328548558,
+            "value_vs_loose": 0.4041491768181314,
+            "value_vs_tight": 0.08330534232518312
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.04458218442990647,
+            "value_vs_loose": 0.6246820291004477,
+            "value_vs_tight": 0.10435784743075004
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.0238541613968648,
+            "value_vs_loose": 0.28784117002517906,
+            "value_vs_tight": 0.054220007042446394
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.04216353430333863,
+            "value_vs_loose": 0.5436903269614791,
+            "value_vs_tight": 0.09700742351446708
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.9166666666666666,
+            0.9583333333333334,
+            0.4166666666666667
+          ],
+          "pcc": [
+            0.9583333333333334,
+            0.625,
+            0.9166666666666666
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -0.06616442677214332,
+            "value_vs_loose": -0.06406623625481403,
+            "value_vs_tight": -0.03319574204940716
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.06616442677214332,
+            "value_vs_loose": -0.06406623625481403,
+            "value_vs_tight": -0.03319574204940716
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": -0.06616442677214332,
+            "value_vs_loose": -0.06406623625481403,
+            "value_vs_tight": -0.03319574204940716
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.01635644158360859,
+            "value_vs_loose": 0.23525432250676206,
+            "value_vs_tight": 0.017624836807887474
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.01635644158360859,
+            "value_vs_loose": 0.23525432250676206,
+            "value_vs_tight": 0.017624836807887474
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.01635644158360859,
+            "value_vs_loose": 0.23525432250676206,
+            "value_vs_tight": 0.017624836807887474
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.01635644158360859,
+            "value_vs_loose": 0.23525432250676206,
+            "value_vs_tight": 0.017624836807887474
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.015627816739182905,
+            "value_vs_loose": 0.22628016620124572,
+            "value_vs_tight": 0.016313592154159718
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.015627816739182905,
+            "value_vs_loose": 0.22628016620124572,
+            "value_vs_tight": 0.016313592154159718
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "A_to_B": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 8.36547748582328,
+            "value_vs_loose": 4.506996540347989,
+            "value_vs_tight": -0.2787663065249426
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 19.453906452608372,
+            "value_vs_loose": 16.62453432026313,
+            "value_vs_tight": 0.20137977558071016
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 15.795809748590163,
+            "value_vs_loose": 15.609677420017999,
+            "value_vs_tight": 0.11751647816161277
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -11.482128557787828,
+            "value_vs_loose": -13.05345706276639,
+            "value_vs_tight": -0.6958755421534693
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.39369959100273993,
+            "value_vs_loose": -0.9359192828512479,
+            "value_vs_tight": -0.21572946004781654
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 14.041882492778303,
+            "value_vs_loose": 13.47549659039711,
+            "value_vs_tight": 0.9246233251719832
+          },
+          "raw_incremental": {
+            "heldout_card_response": -4.051796295020946,
+            "value_vs_loose": -1.950776183096379,
+            "value_vs_tight": -0.29959275746691394
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.03860153052462237,
+            "value_vs_loose": 0.35912349638316327,
+            "value_vs_tight": 0.03813762506738557
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.019911794818128752,
+            "value_vs_loose": 0.30629535763487453,
+            "value_vs_tight": 0.035500752447113385
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.029033853294529993,
+            "value_vs_loose": 0.3200240379277222,
+            "value_vs_tight": 0.03152883393151868
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.05270168517565501,
+            "value_vs_loose": 0.378772392297167,
+            "value_vs_tight": 0.036606692568870926
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.019248207458220794,
+            "value_vs_loose": 0.30221508368568856,
+            "value_vs_tight": 0.03431600653792773
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.045872313574201955,
+            "value_vs_loose": 0.3702677045677598,
+            "value_vs_tight": 0.03496138509092191
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.7083333333333334,
+            0.9583333333333334,
+            0.5416666666666666
+          ],
+          "pcc": [
+            0.9583333333333334,
+            0.6666666666666666,
+            0.7916666666666666
+          ]
+        }
+      },
+      "B_to_A": {
+        "comparisons": {
+          "augmented_baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "augmented_both_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "baseline_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "matched_baseline_clipping_incremental": {
+            "heldout_card_response": -0.39708689431459643,
+            "value_vs_loose": -0.5686046195501206,
+            "value_vs_tight": -0.4760554837806345
+          },
+          "matched_both_clipping_incremental": {
+            "heldout_card_response": -0.39708689431459643,
+            "value_vs_loose": -0.5686046195501206,
+            "value_vs_tight": -0.4760554837806345
+          },
+          "pcc_clipping_effect": {
+            "heldout_card_response": 0.0,
+            "value_vs_loose": 0.0,
+            "value_vs_tight": 0.0
+          },
+          "raw_incremental": {
+            "heldout_card_response": -0.39708689431459643,
+            "value_vs_loose": -0.5686046195501206,
+            "value_vs_tight": -0.4760554837806345
+          }
+        },
+        "mse": {
+          "augmented_baseline_clipped": {
+            "heldout_card_response": 0.016857075333514947,
+            "value_vs_loose": 0.35536556777064154,
+            "value_vs_tight": 0.046752966413360464
+          },
+          "augmented_both_clipped": {
+            "heldout_card_response": 0.016857075333514947,
+            "value_vs_loose": 0.35536556777064154,
+            "value_vs_tight": 0.046752966413360464
+          },
+          "augmented_pcc_clipped": {
+            "heldout_card_response": 0.016857075333514947,
+            "value_vs_loose": 0.35536556777064154,
+            "value_vs_tight": 0.046752966413360464
+          },
+          "augmented_raw": {
+            "heldout_card_response": 0.016857075333514947,
+            "value_vs_loose": 0.35536556777064154,
+            "value_vs_tight": 0.046752966413360464
+          },
+          "baseline_clipped": {
+            "heldout_card_response": 0.013823473968119964,
+            "value_vs_loose": 0.2996026130265008,
+            "value_vs_tight": 0.03344898532155477
+          },
+          "baseline_raw": {
+            "heldout_card_response": 0.013823473968119964,
+            "value_vs_loose": 0.2996026130265008,
+            "value_vs_tight": 0.03344898532155477
+          }
+        },
+        "n_test": 24,
+        "n_train": 24,
+        "out_of_range_fraction": {
+          "baseline": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "pcc": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  ],
+  "frozen_evidence_modified": false,
+  "limitations": [
+    "Hypothesis motivated by previous experiments, not independent preregistration.",
+    "Input clipping does not establish causality of PCC constructs.",
+    "Eight cohort bootstrap intervals are descriptive.",
+    "Clipped test-time model inputs differ from the original feature distribution.",
+    "No policy-family-independent simulator or external validation.",
+    "No tuning or selection using held-out results is permitted."
+  ],
+  "measurements_sha256": "fb30b2af9f603051c91e0d2a363e6db95801bb1278bfc09239ec07c20b88d04b",
+  "protocol_sha256": "aef6f834f16cc2a0e81beafca931cec29ea912786ffb2d69bd87517f776d8a81",
+  "scope": "fresh-seed matched input clipping experiment",
+  "summary": {
+    "directions": {
+      "A_to_B": {
+        "augmented_baseline_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              4.930238278630392,
+              22.761272568846216
+            ],
+            "cohort_values": [
+              -0.358219288844759,
+              17.226178972293198,
+              3.9391310899263723,
+              15.159612482848807,
+              1.2863774830047212,
+              43.70598041786964,
+              12.774122389046404,
+              8.36547748582328
+            ],
+            "fraction_positive": 0.875,
+            "mean": 12.762332628995958
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              10.085646569011537,
+              28.425002325946107
+            ],
+            "cohort_values": [
+              29.7142859798388,
+              4.847400518553144,
+              40.50887486375389,
+              10.971469334471205,
+              23.05352033237729,
+              6.737180575031571,
+              32.95519891286859,
+              4.506996540347989
+            ],
+            "fraction_positive": 1.0,
+            "mean": 19.16186588215531
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              9.437236496947907,
+              33.17476588626481
+            ],
+            "cohort_values": [
+              22.5894509602166,
+              57.53687549839236,
+              14.700151779539002,
+              3.815678312392071,
+              15.797374671450877,
+              34.12609531833347,
+              12.674372558237009,
+              -0.2787663065249426
+            ],
+            "fraction_positive": 0.875,
+            "mean": 20.120154099004555
+          }
+        },
+        "augmented_both_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              9.041031995551862,
+              36.68533322822352
+            ],
+            "cohort_values": [
+              0.5974637595882918,
+              40.39573572970499,
+              5.044777218289752,
+              24.08316996758671,
+              3.9074597803788267,
+              64.07800222485554,
+              16.078614162907876,
+              19.453906452608372
+            ],
+            "fraction_positive": 1.0,
+            "mean": 21.704891161990044
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              15.819364840297919,
+              45.91020932783411
+            ],
+            "cohort_values": [
+              43.98282138382801,
+              6.171908974720933,
+              66.17773199648404,
+              17.717255853251093,
+              39.72094426411196,
+              3.2086907059907612,
+              52.65379395340651,
+              16.62453432026313
+            ],
+            "fraction_positive": 1.0,
+            "mean": 30.782210181507054
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              13.62838419285058,
+              45.83752345949546
+            ],
+            "cohort_values": [
+              36.71012313760655,
+              77.79106388339262,
+              19.87317174721662,
+              6.799395931429531,
+              21.34589756351614,
+              48.33590643971478,
+              16.39228020573678,
+              0.20137977558071016
+            ],
+            "fraction_positive": 1.0,
+            "mean": 28.431152335524217
+          }
+        },
+        "baseline_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              8.09859743206485,
+              26.912612547440013
+            ],
+            "cohort_values": [
+              5.072925971669015,
+              27.072859187162322,
+              2.275508588762967,
+              17.45990064004218,
+              3.712153380355452,
+              46.43467587730967,
+              14.50271981283445,
+              15.795809748590163
+            ],
+            "fraction_positive": 1.0,
+            "mean": 16.540819150840775
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              11.167810789810886,
+              32.58902526479389
+            ],
+            "cohort_values": [
+              23.97636193627676,
+              6.968898834314788,
+              48.64085349478679,
+              15.052652030133386,
+              26.20244496119735,
+              -2.017313115414376,
+              39.80120367644747,
+              15.609677420017999
+            ],
+            "fraction_positive": 0.875,
+            "mean": 21.77934740472002
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              10.630768199776286,
+              32.236838248463364
+            ],
+            "cohort_values": [
+              30.332360472223783,
+              51.91284567738034,
+              13.724064125347738,
+              5.298795921493104,
+              18.42834042674084,
+              33.147083549995635,
+              14.104114507921183,
+              0.11751647816161277
+            ],
+            "fraction_positive": 1.0,
+            "mean": 20.883140144908026
+          }
+        },
+        "matched_baseline_clipping_incremental": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -15.528589389080679,
+              -4.0863536036982975
+            ],
+            "cohort_values": [
+              -1.551449660981047,
+              -24.249107314837328,
+              -1.3755714405203008,
+              -9.774000887126219,
+              -2.923071182953408,
+              -20.80613704211854,
+              -3.6443924261656218,
+              -11.482128557787828
+            ],
+            "fraction_positive": 0.0,
+            "mean": -9.475732314061286
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -18.206549103033847,
+              -5.233135508291667
+            ],
+            "cohort_values": [
+              -14.181020677176997,
+              -0.5471235080683671,
+              -26.8697535428678,
+              -7.6978977230462755,
+              -17.169361328010773,
+              3.6073988476747125,
+              -19.445488269939784,
+              -13.05345706276639
+            ],
+            "fraction_positive": 0.125,
+            "mean": -11.91958790802521
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              -13.622191502145832,
+              -4.516705285461985
+            ],
+            "cohort_values": [
+              -15.455036411026505,
+              -20.909024940955657,
+              -5.738790718856364,
+              -3.2615489781805524,
+              -6.182803858159805,
+              -14.889381105985938,
+              -3.8526790920753142,
+              -0.6958755421534693
+            ],
+            "fraction_positive": 0.0,
+            "mean": -8.873142580924199
+          }
+        },
+        "matched_both_clipping_incremental": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -0.7332450575276437,
+              -0.36371907920422125
+            ],
+            "cohort_values": [
+              -0.5957666125479963,
+              -1.0795505574255384,
+              -0.2699253121569207,
+              -0.8504434023883186,
+              -0.3019888855793027,
+              -0.4341152351326333,
+              -0.3399006523041516,
+              -0.39369959100273993
+            ],
+            "fraction_positive": 0.0,
+            "mean": -0.5331737810672003
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -0.7357179191232488,
+              0.1622282967663685
+            ],
+            "cohort_values": [
+              0.08751472681221352,
+              0.777384948099421,
+              -1.200896410137649,
+              -0.9521112042663863,
+              -0.5019373962761066,
+              0.07890897863390192,
+              0.25310677059814446,
+              -0.9359192828512479
+            ],
+            "fraction_positive": 0.5,
+            "mean": -0.2992436086734636
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              -0.8314708516822076,
+              -0.3388964534799107
+            ],
+            "cohort_values": [
+              -1.3343642336365533,
+              -0.6548365559553957,
+              -0.5657707511787449,
+              -0.2778313591430922,
+              -0.6342809660945445,
+              -0.6795699846046227,
+              -0.13477144457554321,
+              -0.21572946004781654
+            ],
+            "fraction_positive": 0.0,
+            "mean": -0.5621443444045392
+          }
+        },
+        "pcc_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              5.926419907146883,
+              24.19008213871489
+            ],
+            "cohort_values": [
+              0.817760658870351,
+              31.597673489191845,
+              3.916271407166369,
+              16.469129007105646,
+              2.900385023019556,
+              39.27018097657402,
+              6.5647463655524465,
+              14.041882492778303
+            ],
+            "fraction_positive": 1.0,
+            "mean": 14.447253677532318
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              7.609454584537748,
+              28.68820741076128
+            ],
+            "cohort_values": [
+              21.92236201941028,
+              1.4753288838899463,
+              42.03602400157152,
+              10.917333691309022,
+              27.227758674760825,
+              -5.6502469345895765,
+              34.30721866018008,
+              13.47549659039711
+            ],
+            "fraction_positive": 0.875,
+            "mean": 18.213909448366152
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              7.483507210614652,
+              29.608555048026123
+            ],
+            "cohort_values": [
+              23.791114140895097,
+              51.18997267748772,
+              11.72539546928749,
+              3.8316216047942406,
+              9.778284041939552,
+              33.002315919170165,
+              6.93958568126393,
+              0.9246233251719832
+            ],
+            "fraction_positive": 1.0,
+            "mean": 17.64786410750127
+          }
+        },
+        "raw_incremental": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -10.60776897115255,
+              -1.214282392947144
+            ],
+            "cohort_values": [
+              3.8796955995327274,
+              -14.402427099968206,
+              -3.0391939416837057,
+              -7.4737127299328465,
+              -0.4972952856026777,
+              -18.077441582678507,
+              -1.9157950023775772,
+              -4.051796295020946
+            ],
+            "fraction_positive": 0.125,
+            "mean": -5.697245792216467
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -14.676813444187374,
+              -4.0626334870558924
+            ],
+            "cohort_values": [
+              -19.918944720739034,
+              1.5743748076932773,
+              -18.737774911834897,
+              -3.6167150273840942,
+              -14.02043669919071,
+              -5.147094842771235,
+              -12.5994835063609,
+              -1.950776183096379
+            ],
+            "fraction_positive": 0.125,
+            "mean": -9.302106385460498
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              -14.437080926539112,
+              -3.092513132157416
+            ],
+            "cohort_values": [
+              -7.712126899019316,
+              -26.533054761967687,
+              -6.714878373047628,
+              -1.7784313690795197,
+              -3.5518381028698425,
+              -15.868392874323767,
+              -2.4229371423911394,
+              -0.29959275746691394
+            ],
+            "fraction_positive": 0.0,
+            "mean": -8.110156535020726
+          }
+        }
+      },
+      "B_to_A": {
+        "augmented_baseline_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          }
+        },
+        "augmented_both_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          }
+        },
+        "baseline_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          }
+        },
+        "matched_baseline_clipping_incremental": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -0.1855843945664255,
+              0.018771831260064743
+            ],
+            "cohort_values": [
+              0.057141093164351765,
+              0.05920014235349962,
+              -0.059284148638139154,
+              -0.22402711542195272,
+              0.005124845462500825,
+              0.04261955967328936,
+              -0.06616442677214332,
+              -0.39708689431459643
+            ],
+            "fraction_positive": 0.5,
+            "mean": -0.07280961806164875
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -0.2708075090460733,
+              0.03984586957495521
+            ],
+            "cohort_values": [
+              0.010799224316456659,
+              0.11246567387019421,
+              -0.17961621737839925,
+              -0.2792467292702391,
+              -0.0830993818398404,
+              0.2070162143956646,
+              -0.06406623625481403,
+              -0.5686046195501206
+            ],
+            "fraction_positive": 0.375,
+            "mean": -0.10554400896388724
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              -0.25460069027644444,
+              -0.0370330274175222
+            ],
+            "cohort_values": [
+              -0.15652097660124353,
+              -0.0057481556172896825,
+              -0.233850108569892,
+              -0.18180731790913587,
+              -0.026136967139186288,
+              0.03252145355772736,
+              -0.03319574204940716,
+              -0.4760554837806345
+            ],
+            "fraction_positive": 0.125,
+            "mean": -0.13509916226363272
+          }
+        },
+        "matched_both_clipping_incremental": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -0.1855843945664255,
+              0.018771831260064743
+            ],
+            "cohort_values": [
+              0.057141093164351765,
+              0.05920014235349962,
+              -0.059284148638139154,
+              -0.22402711542195272,
+              0.005124845462500825,
+              0.04261955967328936,
+              -0.06616442677214332,
+              -0.39708689431459643
+            ],
+            "fraction_positive": 0.5,
+            "mean": -0.07280961806164875
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -0.2708075090460733,
+              0.03984586957495521
+            ],
+            "cohort_values": [
+              0.010799224316456659,
+              0.11246567387019421,
+              -0.17961621737839925,
+              -0.2792467292702391,
+              -0.0830993818398404,
+              0.2070162143956646,
+              -0.06406623625481403,
+              -0.5686046195501206
+            ],
+            "fraction_positive": 0.375,
+            "mean": -0.10554400896388724
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              -0.25460069027644444,
+              -0.0370330274175222
+            ],
+            "cohort_values": [
+              -0.15652097660124353,
+              -0.0057481556172896825,
+              -0.233850108569892,
+              -0.18180731790913587,
+              -0.026136967139186288,
+              0.03252145355772736,
+              -0.03319574204940716,
+              -0.4760554837806345
+            ],
+            "fraction_positive": 0.125,
+            "mean": -0.13509916226363272
+          }
+        },
+        "pcc_clipping_effect": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              0.0,
+              0.0
+            ],
+            "cohort_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fraction_positive": 0.0,
+            "mean": 0.0
+          }
+        },
+        "raw_incremental": {
+          "heldout_card_response": {
+            "cohort_bootstrap_ci95": [
+              -0.1855843945664255,
+              0.018771831260064743
+            ],
+            "cohort_values": [
+              0.057141093164351765,
+              0.05920014235349962,
+              -0.059284148638139154,
+              -0.22402711542195272,
+              0.005124845462500825,
+              0.04261955967328936,
+              -0.06616442677214332,
+              -0.39708689431459643
+            ],
+            "fraction_positive": 0.5,
+            "mean": -0.07280961806164875
+          },
+          "value_vs_loose": {
+            "cohort_bootstrap_ci95": [
+              -0.2708075090460733,
+              0.03984586957495521
+            ],
+            "cohort_values": [
+              0.010799224316456659,
+              0.11246567387019421,
+              -0.17961621737839925,
+              -0.2792467292702391,
+              -0.0830993818398404,
+              0.2070162143956646,
+              -0.06406623625481403,
+              -0.5686046195501206
+            ],
+            "fraction_positive": 0.375,
+            "mean": -0.10554400896388724
+          },
+          "value_vs_tight": {
+            "cohort_bootstrap_ci95": [
+              -0.25460069027644444,
+              -0.0370330274175222
+            ],
+            "cohort_values": [
+              -0.15652097660124353,
+              -0.0057481556172896825,
+              -0.233850108569892,
+              -0.18180731790913587,
+              -0.026136967139186288,
+              0.03252145355772736,
+              -0.03319574204940716,
+              -0.4760554837806345
+            ],
+            "fraction_positive": 0.125,
+            "mean": -0.13509916226363272
+          }
+        }
+      }
+    },
+    "n_cohorts": 8,
+    "primary_bootstrap_interval_positive": false,
+    "primary_point_estimate_criterion_met": false
+  }
+}

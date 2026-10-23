@@ -1,0 +1,199 @@
+{
+  "status": "verified_synthesis",
+  "scope": "PCC-Poker within-simulator cross-family transfer; no external replication",
+  "artifacts": {
+    "patch29_30_prospective": {
+      "verification": "recomputed via Patch 30 audit",
+      "primary_bidirectional_improvement_met": false,
+      "directions": {
+        "A_to_B": {
+          "value_vs_loose": -3.703559425784313,
+          "value_vs_tight": -11.157512285399173,
+          "heldout_card_response": -12.918751345373455
+        },
+        "B_to_A": {
+          "value_vs_loose": 0.20090720975764928,
+          "value_vs_tight": 0.056899612256228034,
+          "heldout_card_response": 0.13097771189023596
+        }
+      },
+      "integrity": {
+        "freeze_cli_canonical_sha256": "a0f45dd27ea5d767004628ff40871f6ab8582d80f19de6915f396aff6e044c27",
+        "protocol_file_byte_sha256": "bb3410b34a48d5e847b83eece591fecb1d4d6aa085d15692cb31a5e5cfd25c8f",
+        "explanation": "freeze CLI hashes canonical JSON; run results hash indented protocol.json bytes; unequal hashes are expected",
+        "measurements_file_byte_sha256": "00ce07e55ce042ac4f92d1e96af17dfff30c48cc52eb3b0df739a7edede99db4",
+        "source_commitments_match_current_code": true,
+        "reported_results_recomputed": true
+      }
+    },
+    "patch31_32_asymmetry": {
+      "verification": "recomputed via Patch 32 audit",
+      "primary_endpoint": "value_vs_loose",
+      "primary_asymmetry_mean": 11.292832016612547,
+      "primary_ci95": [
+        7.457350261936524,
+        16.06514383132766
+      ],
+      "positive_cohort_fraction": 1.0,
+      "primary_criterion_met": true,
+      "descriptive_table": [
+        {
+          "endpoint": "value_vs_tight",
+          "mean_A_to_B": -3.260481818016455,
+          "mean_B_to_A": -0.06960243719906747,
+          "paired_asymmetry_mean": 3.1908793808173876,
+          "cohort_bootstrap_ci95": [
+            1.3271301149699217,
+            5.1198114330579
+          ]
+        },
+        {
+          "endpoint": "value_vs_loose",
+          "mean_A_to_B": -11.353203534610838,
+          "mean_B_to_A": -0.06037151799829023,
+          "paired_asymmetry_mean": 11.292832016612547,
+          "cohort_bootstrap_ci95": [
+            7.457350261936524,
+            16.06514383132766
+          ]
+        },
+        {
+          "endpoint": "heldout_card_response",
+          "mean_A_to_B": -9.842054007952171,
+          "mean_B_to_A": -0.06025057724347848,
+          "paired_asymmetry_mean": 9.781803430708694,
+          "cohort_bootstrap_ci95": [
+            6.562764192631371,
+            13.31907637438178
+          ]
+        }
+      ]
+    },
+    "patch33_representation": {
+      "verification_level": "stored-hash checks only; no independent result recomputation",
+      "protocol_sha256": "e7382caebd986144ba0057006d1396ca96e1d66c1db7822435715f81a89f183f",
+      "measurements_sha256": "5acb7c241dbba23c0d89b1b31b0a3ed78d3c2a3161623c67f06daee72e5f5ce8",
+      "results_sha256": "162c4f240a8794c07fddfd7ae4071b75760174dd23ccd24f632bad85d7930d55",
+      "primary_clipping_improvement_mean": 33.82688653869251,
+      "primary_clipping_ci95": [
+        20.049220671762857,
+        51.879123962287956
+      ],
+      "positive_cohorts": 8,
+      "cohorts": 8
+    },
+    "patch34_35_matched_control": {
+      "verification": "recomputed via Patch 35 audit",
+      "primary_endpoint": "value_vs_loose",
+      "primary_incremental_mean": -0.2992436086734636,
+      "primary_ci95": [
+        -0.7357179191232488,
+        0.1622282967663685
+      ],
+      "positive_cohort_fraction": 0.5,
+      "primary_criterion_met": false,
+      "descriptive_table": [
+        {
+          "direction": "A_to_B",
+          "endpoint": "value_vs_tight",
+          "raw_incremental_mean": -8.110156535020726,
+          "matched_both_incremental_mean": -0.5621443444045392,
+          "matched_both_interval": [
+            -0.8314708516822076,
+            -0.3388964534799107
+          ],
+          "baseline_clipping_effect_mean": 20.883140144908026,
+          "pcc_clipping_effect_mean": 17.64786410750127
+        },
+        {
+          "direction": "A_to_B",
+          "endpoint": "value_vs_loose",
+          "raw_incremental_mean": -9.302106385460498,
+          "matched_both_incremental_mean": -0.2992436086734636,
+          "matched_both_interval": [
+            -0.7357179191232488,
+            0.1622282967663685
+          ],
+          "baseline_clipping_effect_mean": 21.77934740472002,
+          "pcc_clipping_effect_mean": 18.213909448366152
+        },
+        {
+          "direction": "A_to_B",
+          "endpoint": "heldout_card_response",
+          "raw_incremental_mean": -5.697245792216467,
+          "matched_both_incremental_mean": -0.5331737810672003,
+          "matched_both_interval": [
+            -0.7332450575276437,
+            -0.36371907920422125
+          ],
+          "baseline_clipping_effect_mean": 16.540819150840775,
+          "pcc_clipping_effect_mean": 14.447253677532318
+        },
+        {
+          "direction": "B_to_A",
+          "endpoint": "value_vs_tight",
+          "raw_incremental_mean": -0.13509916226363272,
+          "matched_both_incremental_mean": -0.13509916226363272,
+          "matched_both_interval": [
+            -0.25460069027644444,
+            -0.0370330274175222
+          ],
+          "baseline_clipping_effect_mean": 0.0,
+          "pcc_clipping_effect_mean": 0.0
+        },
+        {
+          "direction": "B_to_A",
+          "endpoint": "value_vs_loose",
+          "raw_incremental_mean": -0.10554400896388724,
+          "matched_both_incremental_mean": -0.10554400896388724,
+          "matched_both_interval": [
+            -0.2708075090460733,
+            0.03984586957495521
+          ],
+          "baseline_clipping_effect_mean": 0.0,
+          "pcc_clipping_effect_mean": 0.0
+        },
+        {
+          "direction": "B_to_A",
+          "endpoint": "heldout_card_response",
+          "raw_incremental_mean": -0.07280961806164875,
+          "matched_both_incremental_mean": -0.07280961806164875,
+          "matched_both_interval": [
+            -0.1855843945664255,
+            0.018771831260064743
+          ],
+          "baseline_clipping_effect_mean": 0.0,
+          "pcc_clipping_effect_mean": 0.0
+        }
+      ]
+    }
+  },
+  "research_conclusions": [
+    {
+      "finding": "Universal bidirectional predictive improvement of PCC augmentation",
+      "status": "not supported by prospective Patch 29 criterion"
+    },
+    {
+      "finding": "Directional cross-family transfer asymmetry",
+      "status": "supported across eight simulated cohorts in Patch 31; motivated by earlier outcomes"
+    },
+    {
+      "finding": "Input-range extrapolation contributes to A-to-B failure",
+      "status": "supported by input clipping intervention in Patch 33; not causal identification of PCC constructs"
+    },
+    {
+      "finding": "Incremental PCC advantage under matched clipping",
+      "status": "not demonstrated on primary endpoint in Patch 34"
+    }
+  ],
+  "limits": [
+    "Hypotheses were developed sequentially after earlier results; not independently preregistered.",
+    "The audits share portions of the original experimental evaluators.",
+    "Only eight in-silico cohorts for repeated-cohort experiments; bootstrap intervals are descriptive.",
+    "Different studies use distinct fresh seeds and designs; estimates must not be pooled.",
+    "Secondary endpoints lack multiplicity-controlled confirmatory inference.",
+    "Failure to demonstrate incremental PCC benefit does not prove equivalence or impossibility.",
+    "Results do not validate PCC constructs or extend automatically to human or organizational behavior."
+  ],
+  "frozen_artifacts_modified": false
+}
